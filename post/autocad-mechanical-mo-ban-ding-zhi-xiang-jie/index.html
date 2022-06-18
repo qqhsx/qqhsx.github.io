@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="这是一个收集和共享任何感兴趣的事物的地方 " />
+<meta name="keywords" content="博客 ">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    AutoCAD Mechanical 模板定制详解 | h1985
+</title>
+
+
+
+    <!-- 没开启静态资源加速 -->
+<link rel="shortcut icon" href="https://qqhsx.github.io/favicon.ico?v=1655514589107">
+<link rel="stylesheet" href="https://qqhsx.github.io/styles/main.css">
+<link rel="stylesheet" href="https://qqhsx.github.io/media/css/prism.css">
+<link rel="stylesheet" href="https://qqhsx.github.io/media/css/font-awesome.min.css">
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/jquery.min.js'></script>
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/plugins.js'></script>
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/script.js'></script>
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/aos.js'></script>
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/prism.js'></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/autocjs@1.3.0/dist/autoc.min.css">
+<script type="text/javascript" src="https://unpkg.com/autocjs@1.3.0/dist/autoc.min.js"></script>
+
+
+
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+
+
+
+
+        
+                <!-- 没开启静态资源加速 -->
+                <script>
+                    $(document).ready(function() {
+                        /**
+                         * 给文章的图片添加放大效果
+                         */
+                        var link;
+                        $(".post_content img").each(function() {
+                            link = $(this).attr("src");
+                            $(this).wrap("<a href=\"" + link + "\"rel =\"gallery\"></a>")
+                        })
+                    })
+                </script>
+                
+</head>
+
+<body class="home blog custom-background round-avatars">
+    <!-- <body class="home blog custom-background round-avatars" itemscope="" itemtype="http://schema.org/Organization" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0"></body> -->
+    
+    <div class="Yarn_Background" style="background-image: url(https://api.isoyu.com/bing_images.php);"></div>
+     
+    <!-- 搜索开始 -->
+
+<div class="js-search search-form search-form--modal">
+    <div class="search-form__inner">
+        <div>
+            <div id="search-container" class="ajax_search">
+                <form method="get" id="gridea-search-form" action="https://qqhsx.github.io/search/">
+                    <div class="filter_container">
+                        <input type="text" value="" autocomplete="off" placeholder="请输入要搜索的内容" name="q" id="search-input" />
+                        <ul id="search_filtered" class="search_filtered"></ul>
+                    </div>
+                    <!-- <input type="submit" name="submit" id="searchsubmit" class="searchsubmit" value="" /> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 搜索结束 -->
+<div class="navi" data-aos="fade-down">
+    <div class="bt-nav">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+    </div>
+    <div class="navbar animated fadeInRight">
+        <div class="inner">
+            <nav id="site-navigation" class="main-navigation">
+                <div id="main-menu" class="main-menu-container">
+                    <div class="menu-menu-container">
+                        <ul id="primary-menu" class="menu">
+                            
+                                
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                            <a href="/">
+                                                首页
+                                            </a>
+                                        </li>
+                                        
+                                            
+                                
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                            <a href="/archives">
+                                                归档
+                                            </a>
+                                        </li>
+                                        
+                                            
+                                
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                            <a href="/tags">
+                                                标签
+                                            </a>
+                                        </li>
+                                        
+                                            
+                                
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                            <a href="/post/about">
+                                                关于
+                                            </a>
+                                        </li>
+                                        
+                                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- #site-navigation -->
+        </div>
+    </div>
+</div>
+<div class="hebin" data-aos="fade-down">
+    <i class=" js-toggle-search fa fa-search"></i>
+</div>
+<header id="masthead" class="overlay animated from-bottom" itemprop="brand">
+    <div class="site-branding text-center">
+        <a href="">
+            <figure>
+                
+                    <img class="custom-logo avatar" src="https://qqhsx.github.io/images/avatar.png?v=1655514589107" />
+                    
+            </figure>
+        </a>
+        <h3 class="blog-description"><p>岁月，是任何阶段的记忆，静下来聆听，时间便会回去，停留在某个角落，某个时空里再上演一次心中的故事。</p></h3>
+    </div>
+    <!-- .site-branding -->
+    <div class="decor-part">
+        <div id="particles-js"></div>
+    </div>
+    <div class="animation-header">
+        <div class="decor-wrapper">
+            <svg id="header-decor" class="decor bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+                <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+                <path class="medium left" d="M0 100 L50 50 L0 33.3" fill="rgba(255,255,255, .3)"></path>
+                <path class="medium right" d="M100 100 L50 50 L100 33.3" fill="rgba(255,255,255, .3)"></path>
+                <path class="small left" d="M0 100 L50 50 L0 66.6" fill="rgba(255,255,255, .5)"></path>
+                <path class="small right" d="M100 100 L50 50 L100 66.6" fill="rgba(255,255,255, .5)"></path>
+                <path d="M0 99.9 L50 49.9 L100 99.9 L0 99.9" fill="rgba(255,255,255, 1)"></path>
+                <path d="M48 52 L50 49 L52 52 L48 52" fill="rgba(255,255,255, 1)"></path>
+            </svg>
+        </div>
+    </div>
+</header>
+
+        <!-- 图片放大开始 -->
+
+        <!-- 图片放大结束 -->
+        <div id="main" class="content">
+            <!-- 测试开始 -->
+
+            <!-- 测试结束 -->
+            <!-- 文章开始 -->
+            <div class="container">
+                <article class="js-gallery post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                    <style>
+                        .container {
+                            padding: 10px 0px;
+                        }
+                        
+                        .post {
+                            margin: 0 auto
+                        }
+                    </style>
+
+                    <section class="post_content">
+                        <header class="post_header">
+                            <h1 class="post_title yellow-under">
+                                AutoCAD Mechanical 模板定制详解
+                            </h1>
+                        </header>
+                        <div class="post-body js-gallery">
+                            <h1 id="1-简介">1 简介</h1>
+<p>尽管AutoCAD Mechanical 中有GB 标准，但通常各个公司都会有自己独立的标准或规范。如何在<br>
+AutoCAD Mechanical 中定制模板呢？这篇文章将详细向你讲解。</p>
+<h2 id="文章主要包括以下几个方面">文章主要包括以下几个方面：</h2>
+<ol>
+<li>图框的定制</li>
+<li>标题栏的定制</li>
+<li>明细表的定制</li>
+<li>DWT 模板的配制</li>
+</ol>
+<p>前三个部分是为第四部分DWT 模板配制作准备。模板的配制包括很多内容，比如标注样式、图<br>
+层设置等等，这些内容我们不讲，可以参阅帮助文档。</p>
+<h1 id="2-图框的定制">2 图框的定制</h1>
+<h2 id="21-引导">2.1 引导</h2>
+<p>在AutoCAD Mechanical 中，图框是单独存放在dwg 文件中，作为外部文件插入。<br>
+在AutoCAD Mechanical 2008 及以前版本，这些文件存放在...\acadm\gen\dwg\format 目录下，其中…代表AutoCAD Mechanical 的安装路径。由于Window 系统访问权限限制，AutoCAD Mechanical2009 发生了变化，并且XP 和Vista 不一致。无论哪个版本我们都可以用图１的方式找到它的路径。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图1</div>
+</center>
+推荐将自己定制好的模板存放在此路径下。
+<h2 id="22-定制过程">2.2 定制过程</h2>
+<p>首先，打开软件自带的图框看看有哪些要点，以GB 标准A3 为例。如图2</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图2</div>
+</center>
+由上图注意到，图框由直线和文本组成。那文本是什么意思呢？
+<ul>
+<li>!GENTITLE-INSERT 用于指定标题栏的自动插入点。如果被删除，在插入图框时命令<br>
+行会提示用户手动指定标题栏的插入点。</li>
+<li>!GENTITLE-LU 指定内框的左上角点。</li>
+<li>!GENTITLE-LL 指定内框的左下角点。</li>
+<li>!GENTITLE-RU 指定内框的右上角点。</li>
+<li>!GENTITLE-MAX 指定图框的最大边界。<br>
+<strong>注意坐标原点必须与图框的左下角点对齐。</strong></li>
+</ul>
+<h3 id="定制步骤">定制步骤：</h3>
+<ol>
+<li>根据公司要求画好图框线，注意线型（会影响打印效果）。</li>
+<li>使用TEXT 命令输入上图所示的文本，注意对齐点的位置。</li>
+<li>保存为Border.dwg.<br>
+(如图3，青色文字直接用MTEXT 命令输入即可。)</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图3</div>
+</center>
+<h1 id="3-标题栏定制">3 标题栏定制</h1>
+<h2 id="31-引导">3.1 引导</h2>
+<p>在AutoCAD Mechanical 中，标题栏也单独存放在dwg 文件中，作为外部文件插入。<br>
+我们可以使用与图框相同的方法找到软件自带的标题栏的存放路径，这里不再赘述。<br>
+在AutoCAD Mechanical 2008 及更早的版本中并没有真正的GB 标题栏，软件所提供的标题栏是基<br>
+于ISO 标准的，并不符合GB 标准。在AutoCAD Mechanical 2009 版本中加入了符合GB 标准的标题<br>
+栏。但很多公司都是基于GB 标准定制符合公司要求的标题栏。</p>
+<h2 id="32-定制过程">3.2 定制过程</h2>
+<p>首先，打开AutoCAD Mechanical 2009 自带的GB 标题栏看看有哪些要点。如图４</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图4</div>
+</center>
+我们可以看到图中有二种颜色的文字。红色的文字是永远不会变的文字（比如：设计、审核等提
+示性文字），对同一套模板永远不会变。蓝色文字为动态文字，根据图纸表达信息的不同由设计者输
+入。软件是面向全球发布，为了满足不同国家的语言要求，所以使用GEN….等难懂的格式文本，再通
+过翻译文件翻译成不同的语言。但作为公司标准，我们没有必要这样做，我们直接输入想看到的文字
+即可（也即所输即所得）。
+<h3 id="步骤">步骤：</h3>
+<ol>
+<li>根据公司规范画好线框，注意线型（影响打印效果）；</li>
+<li>使用MTEXT 命令输入红色文字。注意对齐方式，一般为居中对齐；</li>
+<li>使用ATT 命令输入蓝色文字。注意对齐方式及文字大小；</li>
+<li>保存文件为titleblock.dwg。</li>
+</ol>
+<h3 id="注意事项">注意事项：</h3>
+<ul>
+<li>ACM 可以自动填写比例，为了比例的准确性，在第３步输入比例时，我们使用系统变量GENTITLE-<br>
+SCA{3.2}，｛｝内的数值＝格子有效宽度/字高。如图５。</li>
+</ul>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图5</div>
+</center>
+<ul>
+<li>两种颜色的“共 页”和“第 页”的中心分别要对齐。</li>
+<li>技巧提示：输入的过程中先给每个格子画上对角线，便于捕捉格子中心。<br>
+输入完后效果如图６：</li>
+</ul>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图6</div>
+</center>
+<h1 id="4-明细栏的定制">4 明细栏的定制</h1>
+<h2 id="41-引导">4.1 引导</h2>
+<p>尽管AutoCAD Mechanical 2009 已支持GB 标题栏，但还是与GB 标准有出入，而且各公司的标题<br>
+栏不一定与国标一致。</p>
+<h2 id="42-定制过程">4.2 定制过程</h2>
+<p>明细栏由二个块组成，头块和内容块，如图７。下面的那行为头块，上面那行为内容块。两个块<br>
+的名称必须与文件名同名，并以数字区分。比如文件名为XX.dwg，头块的名称必须为XX0，内容块为<br>
+XX1 (如果有多行，则为XX2…)。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图7</div>
+</center>
+<ul>
+<li>头块比较简单，直接输入文本文字即可。</li>
+<li>内容块的定制稍有复杂：<br>
+为了防止用户数据过长而超出格子，我们必须使用变量格式。系统可以根据用户设定的宽高<br>
+比自动计算数据可占宽度，若字符过多，系统会自动压缩字符宽度以防止超出格子。<br>
+格式为： IDGENST{宽高比}<br>
+ID 根据属性名称在附录中查找。尽可能选择意义相近的属性去匹配。为了兼容系统自带的标<br>
+准件库，属性STANDARD 对应代号，DESCR 对应名称，否则标准件无法在明细栏中正确显示。如图<br>
+８。请注意附录中的NAME 属性是STANDARD 和DESCR 的组合，不合适GB 的规则，慎用。</li>
+</ul>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图8</div>
+</center>
+<h3 id="本例中内容块设置如下表">本例中内容块设置如下表：</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容块</th>
+<th>宽高比</th>
+<th>对齐方式</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序号</td>
+<td>1GENST</td>
+<td>6/3.5≈1.8</td>
+<td>居中</td>
+<td>ITEM</td>
+</tr>
+<tr>
+<td>代号</td>
+<td>7GENST</td>
+<td>38/3.5≈10.9</td>
+<td>左对齐</td>
+<td>STANDARD</td>
+</tr>
+<tr>
+<td>名称</td>
+<td>5GENST</td>
+<td>42/3.5＝12</td>
+<td>左对齐</td>
+<td>DESCR</td>
+</tr>
+<tr>
+<td>数量</td>
+<td>2GENST</td>
+<td>6/3.5≈1.8</td>
+<td>居中</td>
+<td>QTY</td>
+</tr>
+<tr>
+<td>材料</td>
+<td>9GENST</td>
+<td>36/3.5≈10.3</td>
+<td>左对齐</td>
+<td>MATERIAL</td>
+</tr>
+<tr>
+<td>单件</td>
+<td>12GENST</td>
+<td>8/3.5≈2.3</td>
+<td>左对齐</td>
+<td>MASS</td>
+</tr>
+<tr>
+<td>总计</td>
+<td>6GENST</td>
+<td>10/3.5≈2.9</td>
+<td>右对齐</td>
+<td>DESCR2</td>
+</tr>
+<tr>
+<td>备注</td>
+<td>24GENST</td>
+<td>18/3.5≈5.2</td>
+<td>左对齐</td>
+<td>NOTE</td>
+</tr>
+</tbody>
+</table>
+<h3 id="步骤-2">步骤：</h3>
+<ol>
+<li>按公司格式画好明细栏画框；</li>
+<li>用MTEXT 命令，输入头块文字；</li>
+<li>用ATT 命令输入内容块文字；<br>
+前三步结果如图9：</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图9</div>
+</center>
+<ol start="4">
+<li>输入块命令（B），将第一行制作成头块，块名称为partlist0，包括中间的那条长横线；</li>
+<li>输入块命令（B），将第二行制作成内容块，块名称为partlist1，不包括中间的那条长横线；<br>
+制作完后内容块变成了空白，如图7 所示。</li>
+<li>保存文件为partlist.dwg</li>
+</ol>
+<h1 id="5-dwt模板文件定制">5 DWT模板文件定制</h1>
+<p>在定制完了图框、标题栏及明细表后，接下来我们就来定制DWT 文件。</p>
+<h3 id="步骤-3">步骤：</h3>
+<ol>
+<li>新建一个文件。</li>
+<li>OP &gt;&gt;AM:Standards, 创建本公司的模板名称，如图10。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图10</div>
+</center>
+<ol start="3">
+<li>双击Drawing Sheet，设置图框和标题栏，如下图；</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图11</div>
+</center>
+<ol start="4">
+<li>双击Parts List，设置明细表，如下图；</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图12</div>
+</center>
+<p><strong>注意：总计的公式是为了自动计算，即数量和单件的乘积。</strong><br>
+5. 设置公司材料库，如下图；</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/07/XARvyT7MksCrbKc.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图13</div>
+</center>
+设置的目的：日后设计过程中可从材料下拉列表选择常用材料，而不用输入，方便快捷。
+6. 设置其它的内容，比如标注样式，不赘述。
+7. 保存文件为DWT 格式。
+# 6 附录：
+
+
+                        </div>
+                        <!-- Tips开始 -->
+                        
+                                <!-- Tips结束 -->
+                                <!-- 文章底部信息开始 -->
+                                <div class="meta split split--responsive cf">
+                                    <div class="split__title">
+                                        <time>2022-06-15</time>
+                                        
+                                            
+                                                <span id="/post/autocad-mechanical-mo-ban-ding-zhi-xiang-jie/" class="leancloud_visitors" data-flag-title="AutoCAD Mechanical 模板定制详解">
+                <em class="post-meta-item-text"> 阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+              </span>
+                                                
+                                                    
+                                                        <a href="https://qqhsx.github.io/tag/vD1b1dOnL/" class="autotag">
+                #教程资料
+              </a>
+                                                        
+                                    </div>
+                                    <div id="social-share"><span class="entypo-share"><i class="fa fa-share-square-o"></i>分享</span></div>
+                                    <div class="slide">
+                                        <a class="btn-slide" title="switch down"><i class="fa fa-chevron-down"></i>折叠评论区</a>
+                                    </div>
+                                </div>
+                                <!-- 文章底部信息结束 -->
+                    </section>
+                </article>
+            </div>
+            <!-- 分享开始 -->
+            <svg id="upTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+      <path d="M0 0 L50 100 L100 0 Z"></path>
+    </svg>
+            <div id="social">
+                <ul>
+                    <li>
+                        <a id="qzoneShare" href="javascript:void(0)" target="_blank"><i class="fa fa-tencent-weibo fa-lg"></i></a>
+                    </li>
+                    <li>
+                        <a id="weiboShare" href="javascript:void(0)" title="weibo" target="_blank"><i
+              class="fa fa-weibo fa-lg"></i></a>
+                    </li>
+                    <li>
+                        <a id="qqShare" href="javascript:void(0)" target="_blank"><i class="fa fa-qq fa-lg"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 分享结束 -->
+            <!-- 文章结束 -->
+
+            <!-- 上下一篇文章开始 -->
+            <!-- 如果有图片展示文章封面，如果没有图片展示默认图片 -->
+            <div class="navpost-part">
+                <div id="NextPrevPosts" style="display: block;">
+                    
+                        <div class="prev aos-init aos-animate" data-aos="slide-right" data-aos-delay="1.5s">
+                            <div class="arrow"><i class="fa fa-angle-double-left"></i>
+                            </div>
+                            <div class="preview">
+                                
+                                        <div class="pull-left featuredImg" style="background-image:url(https://qqhsx.github.io/media/images/no-image.png);"></div>
+                                        
+                                            <a class="pull-left preview-content bold" href="https://qqhsx.github.io/post/bu-xiu-gang-biao-mian-you-na-xie-chu-li-fang-shi/"><span>不锈钢表面有哪些处理方式</span></a>
+                            </div>
+                        </div>
+                        
+                            
+                                <div class="next aos-init aos-animate" data-aos="slide-left" data-aos-delay="1.5s">
+                                    <div class="arrow"><i class="fa fa-angle-double-right"></i></div>
+                                    <div class="preview">
+                                        
+                                                <div class="pull-left featuredImg" style="background-image:url(https://qqhsx.github.io/media/images/no-image.png);"></div>
+                                                
+                                                    <a class="pull-right preview-content bold" href="https://qqhsx.github.io/post/chang-jie-tu-ruan-jian-faststone-capture-97/"><span>
+                长截图软件FastStone Capture 9.7</span></a>
+                                    </div>
+                                </div>
+                </div>
+                
+            </div>
+            <!-- 上下一篇文章结束 -->
+            <!-- 评论区开始 -->
+            <div id="panel" style="display: block;">
+    <div class="comment-area">
+      <section class="comments">
+        <div class="comments-main">
+          
+          <div id="vcomments"></div>
+          <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'UfHLqkCGynvNzXvH444kCVng-gzGzoHsz',
+            appKey:'NXWw441sgzIsto2Snvy4z7qB',
+            visitor: true, // 阅读量统计
+            placeholder: '请留下你的评论吧！' 
+        })
+    </script>
+          
+        </div>
+      </section>
+    </div>
+  </div>
+                <!-- 评论区结束 -->
+        </div>
+        
+<div id="backToTop" style="display: block;">
+    <img src="/media/images/lolisister.gif"/ alt="回到顶部图片">
+</div>
+
+
+  
+
+
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/particles.js'></script>
+
+
+<footer id="footer" class="overlay animated from-top">
+    <div class="decor-wrapper">
+        <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100"
+            preserveAspectRatio="none">
+            <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+            <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+            <path class="medium left" d="M0 0 L50 50 L0 66.6" fill="rgba(255,255,255, .3)"></path>
+            <path class="medium right" d="M100 0 L50 50 L100 66.6" fill="rgba(255,255,255, .3)"></path>
+            <path class="small left" d="M0 0 L50 50 L0 33.3" fill="rgba(255,255,255, .5)"></path>
+            <path class="small right" d="M100 0 L50 50 L100 33.3" fill="rgba(255,255,255, .5)"></path>
+            <path d="M0 0 L50 50 L100 0 L0 0" fill="rgba(255,255,255, 1)"></path>
+            <path d="M48 48 L50 51 L52 48 L48 48" fill="rgba(255,255,255, 1)"></path>
+        </svg>
+    </div>
+    <div class="socialize" data-aos="zoom-in">
+        
+        <a title="github" class="socialicon" href="https://github.com/qqhsx "><i class="fa fa-github"
+                aria-hidden="true"></i></a>
+        
+        
+        
+        <a title="weibo" class="socialicon" href="https://weibo.com/u/3158791337 "><i class="fa fa-weibo"
+                aria-hidden="true"></i></a>
+        
+        
+        
+        <a title="wechat" class="socialicon" href="https://s2.loli.net/2022/06/01/oM6z95dGE8gNHqv.jpg "><i class="fa fa-wechat"
+                aria-hidden="true"></i></a>
+        
+        <div class="wechatimg"><img src="https://s2.loli.net/2022/06/01/oM6z95dGE8gNHqv.jpg "></div>
+        
+        
+        
+        <a title="qq" class="socialicon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=378600950&amp;site=qq&amp;menu=yes "><i class="fa fa-qq"
+                aria-hidden="true"></i></a>
+        
+
+    </div>
+    <div class="cr">
+        Copyright&copy;
+                Powered by <a href="https://github.com/Gloduck/Gridea-Natural" target="_blank">Natural,</a>
+        <a href="https://gridea.dev/" target="_blank">Gridea&#65281;</a> |
+        <a class="rss" href="https://qqhsx.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+</footer>
+            <script>
+    /* 分享代码 */
+    var feature = "";
+    if(feature == ""){
+      feature = "https://qqhsx.github.io/favicon.ico";
+    }
+      $("#weiboShare").click(function(){
+        var url = "http://v.t.sina.com.cn/share/share.php?title=" + document.title + "&url=" + document.url + "&pic=" + feature;
+        window.open(url);
+      })
+      $("#qqShare").click(function () {
+        var url = "http://connect.qq.com/widget/shareqq/index.html?url="+ document.url + "&sharesource=qzone&title="+ document.title +"&pics="+feature;
+        window.open(url);
+        })
+        $("#qzoneShare").click(function () {
+          var url = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" + document.url + "&sharesource=qzone&title="+ document.title +"&pics="+feature;
+          window.open(url);
+      })
+  </script>
+
+                <!-- 测试代码开始 -->
+
+                <!-- 测试代码结束 -->
+</body>
+
+</html>

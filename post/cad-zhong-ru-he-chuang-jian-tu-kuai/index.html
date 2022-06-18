@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="这是一个收集和共享任何感兴趣的事物的地方 " />
+<meta name="keywords" content="博客 ">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    CAD中如何创建图块？ | h1985
+</title>
+
+
+
+    <!-- 没开启静态资源加速 -->
+<link rel="shortcut icon" href="https://qqhsx.github.io/favicon.ico?v=1655514589107">
+<link rel="stylesheet" href="https://qqhsx.github.io/styles/main.css">
+<link rel="stylesheet" href="https://qqhsx.github.io/media/css/prism.css">
+<link rel="stylesheet" href="https://qqhsx.github.io/media/css/font-awesome.min.css">
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/jquery.min.js'></script>
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/plugins.js'></script>
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/script.js'></script>
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/aos.js'></script>
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/prism.js'></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/autocjs@1.3.0/dist/autoc.min.css">
+<script type="text/javascript" src="https://unpkg.com/autocjs@1.3.0/dist/autoc.min.js"></script>
+
+
+
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+
+
+
+
+        
+                <!-- 没开启静态资源加速 -->
+                <script>
+                    $(document).ready(function() {
+                        /**
+                         * 给文章的图片添加放大效果
+                         */
+                        var link;
+                        $(".post_content img").each(function() {
+                            link = $(this).attr("src");
+                            $(this).wrap("<a href=\"" + link + "\"rel =\"gallery\"></a>")
+                        })
+                    })
+                </script>
+                
+</head>
+
+<body class="home blog custom-background round-avatars">
+    <!-- <body class="home blog custom-background round-avatars" itemscope="" itemtype="http://schema.org/Organization" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0"></body> -->
+    
+    <div class="Yarn_Background" style="background-image: url(https://api.isoyu.com/bing_images.php);"></div>
+     
+    <!-- 搜索开始 -->
+
+<div class="js-search search-form search-form--modal">
+    <div class="search-form__inner">
+        <div>
+            <div id="search-container" class="ajax_search">
+                <form method="get" id="gridea-search-form" action="https://qqhsx.github.io/search/">
+                    <div class="filter_container">
+                        <input type="text" value="" autocomplete="off" placeholder="请输入要搜索的内容" name="q" id="search-input" />
+                        <ul id="search_filtered" class="search_filtered"></ul>
+                    </div>
+                    <!-- <input type="submit" name="submit" id="searchsubmit" class="searchsubmit" value="" /> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 搜索结束 -->
+<div class="navi" data-aos="fade-down">
+    <div class="bt-nav">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+    </div>
+    <div class="navbar animated fadeInRight">
+        <div class="inner">
+            <nav id="site-navigation" class="main-navigation">
+                <div id="main-menu" class="main-menu-container">
+                    <div class="menu-menu-container">
+                        <ul id="primary-menu" class="menu">
+                            
+                                
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                            <a href="/">
+                                                首页
+                                            </a>
+                                        </li>
+                                        
+                                            
+                                
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                            <a href="/archives">
+                                                归档
+                                            </a>
+                                        </li>
+                                        
+                                            
+                                
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                            <a href="/tags">
+                                                标签
+                                            </a>
+                                        </li>
+                                        
+                                            
+                                
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                            <a href="/post/about">
+                                                关于
+                                            </a>
+                                        </li>
+                                        
+                                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- #site-navigation -->
+        </div>
+    </div>
+</div>
+<div class="hebin" data-aos="fade-down">
+    <i class=" js-toggle-search fa fa-search"></i>
+</div>
+<header id="masthead" class="overlay animated from-bottom" itemprop="brand">
+    <div class="site-branding text-center">
+        <a href="">
+            <figure>
+                
+                    <img class="custom-logo avatar" src="https://qqhsx.github.io/images/avatar.png?v=1655514589107" />
+                    
+            </figure>
+        </a>
+        <h3 class="blog-description"><p>岁月，是任何阶段的记忆，静下来聆听，时间便会回去，停留在某个角落，某个时空里再上演一次心中的故事。</p></h3>
+    </div>
+    <!-- .site-branding -->
+    <div class="decor-part">
+        <div id="particles-js"></div>
+    </div>
+    <div class="animation-header">
+        <div class="decor-wrapper">
+            <svg id="header-decor" class="decor bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+                <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+                <path class="medium left" d="M0 100 L50 50 L0 33.3" fill="rgba(255,255,255, .3)"></path>
+                <path class="medium right" d="M100 100 L50 50 L100 33.3" fill="rgba(255,255,255, .3)"></path>
+                <path class="small left" d="M0 100 L50 50 L0 66.6" fill="rgba(255,255,255, .5)"></path>
+                <path class="small right" d="M100 100 L50 50 L100 66.6" fill="rgba(255,255,255, .5)"></path>
+                <path d="M0 99.9 L50 49.9 L100 99.9 L0 99.9" fill="rgba(255,255,255, 1)"></path>
+                <path d="M48 52 L50 49 L52 52 L48 52" fill="rgba(255,255,255, 1)"></path>
+            </svg>
+        </div>
+    </div>
+</header>
+
+        <!-- 图片放大开始 -->
+
+        <!-- 图片放大结束 -->
+        <div id="main" class="content">
+            <!-- 测试开始 -->
+
+            <!-- 测试结束 -->
+            <!-- 文章开始 -->
+            <div class="container">
+                <article class="js-gallery post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                    <style>
+                        .container {
+                            padding: 10px 0px;
+                        }
+                        
+                        .post {
+                            margin: 0 auto
+                        }
+                    </style>
+
+                    <section class="post_content">
+                        <header class="post_header">
+                            <h1 class="post_title yellow-under">
+                                CAD中如何创建图块？
+                            </h1>
+                        </header>
+                        <div class="post-body js-gallery">
+                            <p>在制图过程中，有时常需要插入某些特殊符号供图形中使用，此时就需要运用到图块及图块属性功能。利用图块与属性功能绘图，可以有效地提高作图效率与绘图质量，也是绘制复杂图形的重要组成部分。图块创建是CAD绘图中很重要的一项 操作，下面简单介绍一下创建图块的几种方法。</p>
+<h3 id="创建内部块">创建内部块</h3>
+<p>所谓内部块，就是直接在当前图中创建图块，这是创建图块的最常见操作。<br>
+图块是由图形组成的，我们首先要绘制图块所需要的图形，在绘制图形时，对图形本身没有什么明确的要求，但如果希望以后插入图块时内部图形使用所在图层的特性，最好将图形绘制到0层上，而且图形属性都设置为BYLAYER.</p>
+<ol>
+<li>将0图层设置为当前层，绘制图块内部的图形，我们可以简单地绘制一个矩形和一个圆，说有属性都使用默认设置：ByLayer，如下图所示。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/09/quj943bd5UexYGF.png">
+</center>
+如果我们希望图块内图形使用固定的颜色的话，我们也可以单独设置图形的颜色。绘制好图形后，我们就亦可以创建图块了。
+<ol start="2">
+<li>选中刚绘制的图形，<strong>输入B(创建块BLOCK命令的快捷键)，回车</strong>，打开创建图块的对话框，如下图所示。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/09/T5cekCGKt6YaWrj.png">
+</center>
+由于我们事先选择了图形，所以在块名后我们已经可以看到图块的预览效果。如果打开对话框前忘了选择图形或者还需要添加图形，可以单击“选择对象”按钮再去选择图形。
+<ol start="3">
+<li>在左上方的名称文本框中输入TEST，作为图块的名字，如下图所示。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/09/O1qm6LvnHu9QohS.png">
+</center>
+只要选择了图形，输入了名字，其实就可以单击“确定”来创建图块了，但这里还有一个重要的参数必须设置，那就是图块的基点。基点的默认位置为坐标原点，假设我们的图形绘制在原点处，而且原点作为基点非常合适，我们才可以不设置，如果不是如此，就必须设置，否则在插入图块时将会很麻烦。
+<ol start="4">
+<li>单击“拾取点”按钮，捕捉矩形的左下角点作为图块的基点，如下图所示。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/09/bMjQxZ7WidFfHgX.png">
+</center>
+<ol start="5">
+<li>其他选项暂时用默认选项，单击“确定”按钮，完成图块的创建。单击选中创建的图块，观察创建后的图块，如下图所示。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/09/2HkSfWXyhla6MQg.png">
+</center>
+我们可以看到矩形和圆已经成了一个整体，在矩形左下角处有一个蓝色的夹点，这就是图块的基点。我们可以插入一个图块来看看基点的作用。
+<ol start="6">
+<li>输入<strong>I，(INSERT插入图块命令的快捷键)回车</strong>，选择拖出刚创建的名为TEST的图块，然后在图面上确定图块的位置，如下图所示。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/09/VrP3j61TlOufvLY.png">
+</center>
+我们可以看到图块的基点就在光标所在位置，我们通过光标可以很容易就定位图块的位置。
+假如我们忘记了定义基点，而我们的图形又离原点很远，我们在插入图块时会发现图形远离光标，有时甚至会跑到屏幕外边，曾经有人遇到过类似问题，插入了图块却找不到。
+我们可以撤销刚才定义块的操作后重新创建一次图块，不选基点，创建图块，然后插入，你可以看看效果
+<h3 id="创建外部块写块">创建外部块（写块）</h3>
+<p>有一些图块会在不同图纸中重复调用，在这种情况下，我们可以将图块写到一个独立的文件中，然后再插入图块时直接将块文件插入成图块。写块的操作步骤和参数跟创建块基本一样，只是命令不同，最终的结果不一样，下面就简单介绍一下。</p>
+<ol>
+<li>仍然绘制跟上面练习相同的图形，选中图形后，<strong>输入W（WBLOCK写块命令的快捷键）</strong>，打开写块对话框，如下图所示。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/09/C6d2E5cUFJ7vrpg.png">
+</center>
+我们看一下对话框的参数，跟创建图块的对话框相比，块名变成文件名和路径设置，默认路径是我的文档，默认文件名为：新块.dwg，此外，除了增减了几个选项外，其他选项基本相同，。
+<ol start="2">
+<li>设置好基点，将路径和文件名设置成自己需要的名字，如下图所示。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/09/ED2rq3iQNJ5sjyk.png">
+</center>
+<ol start="3">
+<li>单击“确定”按钮，关闭对话框，写块就完成了。<br>
+我们可以打开保存好的块文件，会发现在块文件中矩形和圆仍是独立的图形，而且图形位置也没有变。我们可以插入一个块文件检查一下图块的效果。<br>
+输入I命令，在插入对话框中，单击浏览按钮，浏览打开刚保存的块文件，单击确定按钮，查看图块插入的效果。其实插入图块不光可以插入写好的块文件，也可以将任何一张图纸作为图块插入进来。</li>
+</ol>
+<h3 id="复制粘贴为块">复制粘贴为块</h3>
+<p>除了用上面两个命令外，CAD还可以将图形复制粘贴为块，这种方式就是省去了定义块名和基点的操作，软件会自动给图块起一个名字，这种方式不适用于创建要重复使用的图块，只适用于创建一些一次性使用的图块，有些可能会在定位完成后炸开。<br>
+这种操作步骤很简单，选择要复制的图形，按CTRL+C复制，然后按CTRL+SHIFT+V，就可以创建一个图块，基点通常是被选择图形的左下角点，如下图所示。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://s2.loli.net/2022/06/09/KhkPjb2A9Ixs3Et.png">
+</center>
+我们可以看到块名是类似于A$C6F79284C的一长串字符，如果我们用这种方式创建了几个块，我们要插入时，从名称根本很难判断出需要插入的是哪个。另外如果只是临时使用，然后会炸开，图块虽然被炸开了，但图块定义仍会保存在图里，如果频繁创建、炸开，图纸会变成越来越大，必须定期清理PU图块。
+<h3 id="相关参数简介">相关参数简介</h3>
+<p>创建和写块对话框的中的参数通常都不需要设置，直接使用默认选项即可，下面简单介绍一下几个参数吧。<br>
+<strong>保留</strong>：创建图块定义，但原始图形保持原状。<br>
+<strong>转换为块</strong>：创建图块定义，原始图形也被转换为块。<br>
+<strong>删除</strong>：创建图块定义，原始图形被删除。<br>
+<strong>允许分解</strong>：图块可以被分解（X，或者叫炸开），如果取消勾选此选项，图块无法分解。<br>
+<strong>按统一比例缩放</strong>：图块个轴向的只能按相同比例放大或缩小<br>
+<strong>注释性</strong>：图块可以设置多个比例来适应不同比例的视口和图纸打印需求。这个比较复杂，需要单独讲解。<br>
+<strong>单位</strong>：图块的单位，如果图块被插入到其他单位的图纸中，会自动进行比例转换。</p>
+<h3 id="小结">小结</h3>
+<p>图块在CAD画图中使用频率非常高，图块相关的功能和操作非常多，这里只简单介绍了几种创建图块的方法，已经创建图块的基本参数。<br>
+图块还可以添加文字属性创建成属性块，添加参数、动作、可见性或查询列表等创建成动态块。以后在通过其他文章慢慢给大家介绍。</p>
+<h3 id="注意事项">注意事项</h3>
+<p>以上操作适用于AUTOCAD,浩辰CAD等类似CAD软件<br>
+定义图块前图形最好放到0层，如果不放在0层会带来什么问题后面再讲<br>
+定义图块时一定要定义合适的基点，这样才插入图块时才可以更好地定位。</p>
+
+
+                        </div>
+                        <!-- Tips开始 -->
+                        
+                                <!-- Tips结束 -->
+                                <!-- 文章底部信息开始 -->
+                                <div class="meta split split--responsive cf">
+                                    <div class="split__title">
+                                        <time>2022-06-09</time>
+                                        
+                                            
+                                                <span id="/post/cad-zhong-ru-he-chuang-jian-tu-kuai/" class="leancloud_visitors" data-flag-title="CAD中如何创建图块？">
+                <em class="post-meta-item-text"> 阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+              </span>
+                                                
+                                                    
+                                                        <a href="https://qqhsx.github.io/tag/vD1b1dOnL/" class="autotag">
+                #教程资料
+              </a>
+                                                        
+                                    </div>
+                                    <div id="social-share"><span class="entypo-share"><i class="fa fa-share-square-o"></i>分享</span></div>
+                                    <div class="slide">
+                                        <a class="btn-slide" title="switch down"><i class="fa fa-chevron-down"></i>折叠评论区</a>
+                                    </div>
+                                </div>
+                                <!-- 文章底部信息结束 -->
+                    </section>
+                </article>
+            </div>
+            <!-- 分享开始 -->
+            <svg id="upTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+      <path d="M0 0 L50 100 L100 0 Z"></path>
+    </svg>
+            <div id="social">
+                <ul>
+                    <li>
+                        <a id="qzoneShare" href="javascript:void(0)" target="_blank"><i class="fa fa-tencent-weibo fa-lg"></i></a>
+                    </li>
+                    <li>
+                        <a id="weiboShare" href="javascript:void(0)" title="weibo" target="_blank"><i
+              class="fa fa-weibo fa-lg"></i></a>
+                    </li>
+                    <li>
+                        <a id="qqShare" href="javascript:void(0)" target="_blank"><i class="fa fa-qq fa-lg"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 分享结束 -->
+            <!-- 文章结束 -->
+
+            <!-- 上下一篇文章开始 -->
+            <!-- 如果有图片展示文章封面，如果没有图片展示默认图片 -->
+            <div class="navpost-part">
+                <div id="NextPrevPosts" style="display: block;">
+                    
+                        <div class="prev aos-init aos-animate" data-aos="slide-right" data-aos-delay="1.5s">
+                            <div class="arrow"><i class="fa fa-angle-double-left"></i>
+                            </div>
+                            <div class="preview">
+                                
+                                        <div class="pull-left featuredImg" style="background-image:url(https://qqhsx.github.io/media/images/no-image.png);"></div>
+                                        
+                                            <a class="pull-left preview-content bold" href="https://qqhsx.github.io/post/cad-duo-chong-yin-xian-she-zhi-ji-hui-zhi-ling-jian-bian-hao-de-fang-fa/"><span>CAD多重引线设置及绘制零件编号的方法</span></a>
+                            </div>
+                        </div>
+                        
+                            
+                                <div class="next aos-init aos-animate" data-aos="slide-left" data-aos-delay="1.5s">
+                                    <div class="arrow"><i class="fa fa-angle-double-right"></i></div>
+                                    <div class="preview">
+                                        
+                                                <div class="pull-left featuredImg" style="background-image:url(https://qqhsx.github.io/media/images/no-image.png);"></div>
+                                                
+                                                    <a class="pull-right preview-content bold" href="https://qqhsx.github.io/post/cad-kuai-su-tong-ji-shu-liang-de-fang-fa/"><span>
+                CAD快速统计数量的方法</span></a>
+                                    </div>
+                                </div>
+                </div>
+                
+            </div>
+            <!-- 上下一篇文章结束 -->
+            <!-- 评论区开始 -->
+            <div id="panel" style="display: block;">
+    <div class="comment-area">
+      <section class="comments">
+        <div class="comments-main">
+          
+          <div id="vcomments"></div>
+          <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'UfHLqkCGynvNzXvH444kCVng-gzGzoHsz',
+            appKey:'NXWw441sgzIsto2Snvy4z7qB',
+            visitor: true, // 阅读量统计
+            placeholder: '请留下你的评论吧！' 
+        })
+    </script>
+          
+        </div>
+      </section>
+    </div>
+  </div>
+                <!-- 评论区结束 -->
+        </div>
+        
+<div id="backToTop" style="display: block;">
+    <img src="/media/images/lolisister.gif"/ alt="回到顶部图片">
+</div>
+
+
+  
+
+
+<script type='text/javascript' src='https://qqhsx.github.io/media/js/particles.js'></script>
+
+
+<footer id="footer" class="overlay animated from-top">
+    <div class="decor-wrapper">
+        <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100"
+            preserveAspectRatio="none">
+            <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+            <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+            <path class="medium left" d="M0 0 L50 50 L0 66.6" fill="rgba(255,255,255, .3)"></path>
+            <path class="medium right" d="M100 0 L50 50 L100 66.6" fill="rgba(255,255,255, .3)"></path>
+            <path class="small left" d="M0 0 L50 50 L0 33.3" fill="rgba(255,255,255, .5)"></path>
+            <path class="small right" d="M100 0 L50 50 L100 33.3" fill="rgba(255,255,255, .5)"></path>
+            <path d="M0 0 L50 50 L100 0 L0 0" fill="rgba(255,255,255, 1)"></path>
+            <path d="M48 48 L50 51 L52 48 L48 48" fill="rgba(255,255,255, 1)"></path>
+        </svg>
+    </div>
+    <div class="socialize" data-aos="zoom-in">
+        
+        <a title="github" class="socialicon" href="https://github.com/qqhsx "><i class="fa fa-github"
+                aria-hidden="true"></i></a>
+        
+        
+        
+        <a title="weibo" class="socialicon" href="https://weibo.com/u/3158791337 "><i class="fa fa-weibo"
+                aria-hidden="true"></i></a>
+        
+        
+        
+        <a title="wechat" class="socialicon" href="https://s2.loli.net/2022/06/01/oM6z95dGE8gNHqv.jpg "><i class="fa fa-wechat"
+                aria-hidden="true"></i></a>
+        
+        <div class="wechatimg"><img src="https://s2.loli.net/2022/06/01/oM6z95dGE8gNHqv.jpg "></div>
+        
+        
+        
+        <a title="qq" class="socialicon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=378600950&amp;site=qq&amp;menu=yes "><i class="fa fa-qq"
+                aria-hidden="true"></i></a>
+        
+
+    </div>
+    <div class="cr">
+        Copyright&copy;
+                Powered by <a href="https://github.com/Gloduck/Gridea-Natural" target="_blank">Natural,</a>
+        <a href="https://gridea.dev/" target="_blank">Gridea&#65281;</a> |
+        <a class="rss" href="https://qqhsx.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+</footer>
+            <script>
+    /* 分享代码 */
+    var feature = "";
+    if(feature == ""){
+      feature = "https://qqhsx.github.io/favicon.ico";
+    }
+      $("#weiboShare").click(function(){
+        var url = "http://v.t.sina.com.cn/share/share.php?title=" + document.title + "&url=" + document.url + "&pic=" + feature;
+        window.open(url);
+      })
+      $("#qqShare").click(function () {
+        var url = "http://connect.qq.com/widget/shareqq/index.html?url="+ document.url + "&sharesource=qzone&title="+ document.title +"&pics="+feature;
+        window.open(url);
+        })
+        $("#qzoneShare").click(function () {
+          var url = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" + document.url + "&sharesource=qzone&title="+ document.title +"&pics="+feature;
+          window.open(url);
+      })
+  </script>
+
+                <!-- 测试代码开始 -->
+
+                <!-- 测试代码结束 -->
+</body>
+
+</html>
