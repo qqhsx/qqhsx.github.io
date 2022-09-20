@@ -840,7 +840,10 @@ if(canvas.getContext){
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">H1985</span>
-__由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  &nbsp;由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
 
 </div>
 <div class="wordcount">
@@ -881,34 +884,35 @@ __由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a hr
 <!--改放上面去
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
---><!-- 网站运行时间的设置 -->
-<div class="run_time" style=" text-align:center;">
-  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-  <script>
-    var now = new Date(); 
-    function createtime() { 
-        var grt= new Date("08/18/2022 19:00:00");//此处修改你的建站时间或者网站上线时间 
-        now.setTime(now.getTime()+250); 
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
-    } 
-    setInterval("createtime()",250);
-  </script>
-</div>
+-->
 
+<!-- 字幕滚动效果 -->
 <script src="https://www.unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
 <script src="https://unpkg.com/jquery.marquee@1.5.0/jquery.marquee.min.js" type="text/javascript"></script>
 <div class="marquee-container" style="position: fixed; width: 100%; height: 30px; color: black; background-color: white; left: 0; bottom: 0;">
-<div class="marquee"><i class="fa fa-bullhorn" aria-hidden="true"></i> 本站镜像地址：<i class="fa fa-chain" aria-hidden="true"></i> <a href="https://h1985.gitee.io/" target="_blank" >gitee</a> | 
+<div class="marquee"><i class="fa fa-bullhorn" aria-hidden="true"></i> 
+本站镜像地址：
+<i class="fa fa-chain" aria-hidden="true"></i> <a href="https://h1985.gitee.io/" target="_blank" >gitee</a> | 
 <i class="fa fa-chain" aria-hidden="true"></i> <a href="https://qqhsx.github.io/" target="_blank" >github</a> | 
 <i class="fa fa-chain" aria-hidden="true"></i> <a href="https://h1985.pages.dev/" target="_blank" >pages</a> | 
 <i class="fa fa-chain" aria-hidden="true"></i> <a href="https://h1985.vercel.app/" target="_blank" >vercel</a>
+
+&nbsp;
+<span class="with-love" id="animate">
+  <i class="fa fa-user-circle"></i>
+ </span>
+感谢您的支持与信任！本博客已安全运行了:<span class="smalltxt"><script>// <![CDATA[
+BirthDay=new Date("08 18,2022");//设置为你的建站时间
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+document.write("<font color=red>"+daysold+"</font>天 !");
+// ]]></script></span>
+	
 </div>
 </div>
 <script>$('.marquee').marquee({duration: 25000});</script>
