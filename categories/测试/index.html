@@ -631,14 +631,14 @@ if(canvas.getContext){
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">27k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">24 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -723,21 +723,6 @@ document.write("<font color=red>"+daysold+"</font>天 !");
 
 
 
-
-
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/categories/%E6%B5%8B%E8%AF%95/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.valine.el)
-    .then(() => NexT.utils.getScript(
-      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
-      { condition: window.Valine }
-    ))
-    .then(() => {
-      new Valine(CONFIG.valine);
-    });
-});
-</script>
 <script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
@@ -757,6 +742,21 @@ var options = {
 const darkmode = new Darkmode(options);
 window.darkmode = darkmode;
 darkmode.showWidget();
+</script>
+
+
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/categories/%E6%B5%8B%E8%AF%95/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.valine.el)
+    .then(() => NexT.utils.getScript(
+      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+      { condition: window.Valine }
+    ))
+    .then(() => {
+      new Valine(CONFIG.valine);
+    });
+});
 </script>
 
 
