@@ -21,25 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"h1985.pages.dev","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="残留回忆，描这首歌。">
+    <meta name="description" content="NexT User Docs – Starting to Use — Deployment">
 <meta property="og:type" content="website">
-<meta property="og:title" content="H1985">
-<meta property="og:url" content="https://h1985.pages.dev/tags/%E7%B3%BB%E7%BB%9F%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D/index.html">
+<meta property="og:title" content="Deployment">
+<meta property="og:url" content="https://h1985.pages.dev/docs/getting-started/deployment.html">
 <meta property="og:site_name" content="H1985">
-<meta property="og:description" content="残留回忆，描这首歌。">
+<meta property="og:description" content="NexT User Docs – Starting to Use — Deployment">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-22T00:59:45.176Z">
+<meta property="article:modified_time" content="2022-09-21T12:20:16.000Z">
 <meta property="article:author" content="H1985">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://h1985.pages.dev/tags/%E7%B3%BB%E7%BB%9F%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D/">
+<link rel="canonical" href="https://h1985.pages.dev/docs/getting-started/deployment">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/系统备份恢复/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://h1985.pages.dev/docs/getting-started/deployment.html","path":"docs/getting-started/deployment.html","title":"Deployment"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: 系统备份恢复 | H1985</title>
+<title>Deployment | H1985
+</title>
   
 
 
@@ -159,7 +162,7 @@ daovoice('update');
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -172,6 +175,7 @@ daovoice('update');
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Local-Deployment"><span class="nav-number">1.</span> <span class="nav-text">Local Deployment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Continuous-Integration"><span class="nav-number">2.</span> <span class="nav-text">Continuous Integration</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Netlify"><span class="nav-number">2.1.</span> <span class="nav-text">Netlify</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GitHub-Actions"><span class="nav-number">2.2.</span> <span class="nav-text">GitHub Actions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Travis-CI"><span class="nav-number">2.3.</span> <span class="nav-text">Travis CI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gitlab-CI"><span class="nav-number">2.4.</span> <span class="nav-text">Gitlab CI</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -536,51 +540,257 @@ if(canvas.getContext){
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner page posts-expand">
 
 
-  
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">系统备份恢复
-          <small>标签</small>
-        </h1>
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">Deployment
+</h1>
+
+<div class="post-meta-container">
+    <div class="post-description">NexT User Docs – Starting to Use — Deployment</div>
+  <ul class="breadcrumb">
+            <li><a href="/docs/">DOCS</a></li>
+            <li><a href="/docs/getting-started/">GETTING STARTED</a></li>
+            <li>DEPLOYMENT</li>
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <h3 id="Local-Deployment"><a href="#Local-Deployment" class="headerlink" title="Local Deployment"></a>Local Deployment</h3><ol>
+<li>Modify files locally.</li>
+<li>Localization testing: <code>hexo clean &amp;&amp; hexo s</code>.</li>
+<li>Deployment: <code>hexo g -d</code>.</li>
+</ol>
+<h3 id="Continuous-Integration"><a href="#Continuous-Integration" class="headerlink" title="Continuous Integration"></a>Continuous Integration</h3><ul>
+<li>Edit the file directly online, effective immediately</li>
+<li>Automatic deployment, simultaneous deployment to multiple locations</li>
+</ul>
+<h4 id="Netlify"><a href="#Netlify" class="headerlink" title="Netlify"></a>Netlify</h4><p>Netlify is an all-in-one platform for automating modern web projects. Replace your hosting infrastructure, continuous integration, and deployment pipeline with a single workflow. Integrate dynamic functionality like serverless functions, user authentication, and form handling as your projects grow.</p>
+<p>Perhaps you have already found that this website is deployed on Netlify. Checkout <code>deploy.sh</code> and <code>netlify.toml</code> in <a target="_blank" rel="noopener" href="https://github.com/next-theme/theme-next-docs">theme-next-docs</a> repository for more information.</p>
+<h4 id="GitHub-Actions"><a href="#GitHub-Actions" class="headerlink" title="GitHub Actions"></a>GitHub Actions</h4><p>This Github Action automating Hexo deployment workflow, to allow you to leverage GitHub Actions to publish your Hexo site on Github Pages: <a target="_blank" rel="noopener" href="https://github.com/sma11black/hexo-action">hexo-action</a>.</p>
+<h4 id="Travis-CI"><a href="#Travis-CI" class="headerlink" title="Travis CI"></a>Travis CI</h4><p>Travis CI enables your team to test and ship your apps with confidence. It’s built for everyone and for projects and teams of all sizes, supporting over 20 different languages out of the box, including Javascript and Node.js, Ruby, PHP, Python, Mac&#x2F;iOS, as well as Docker, while giving you full control over the build environment to customize it to your own needs.</p>
+<div class="tabs" id="travis-ci"><ul class="nav-tabs"><li class="tab active"><a href="#travis-ci-1">Get permissions →</a></li><li class="tab"><a href="#travis-ci-2">Configure <code>.travis.yml</code></a></li></ul><div class="tab-content"><div class="tab-pane active" id="travis-ci-1"><p>There are two ways to obtain the necessary permissions for Travis CI. Deploy Key has the advantage of high security, while Access Token has the advantage of being more flexible.</p>
+<div class="tabs" id="get-permissions"><ul class="nav-tabs"><li class="tab active"><a href="#get-permissions-1">Access Token</a></li><li class="tab"><a href="#get-permissions-2">Deploy Key</a></li></ul><div class="tab-content"><div class="tab-pane active" id="get-permissions-1"><p>This method applies to a warehouse with a private Submodule</p>
+<ul>
+<li>Create an empty branch of <code>source</code> in the repository where the blog source is hosted.</li>
+<li>Get the Access Token: Settings → Developer settings → Personal access token → Generate new token. Set access rights according to the actual situation. It should be noted that the access token is only displayed once on this page, and it should be copied, otherwise it can only be regenerated.</li>
+<li>Use github account to log in to <a target="_blank" rel="noopener" href="https://travis-ci.com/">Travis CI website</a>. You can find the warehouses in the current github account, select the warehouses to be deployed, and then click setting. Fill in the personal access token generated by github and select the branch that the warehouse needs to be monitored by Travis.</li>
+</ul></div><div class="tab-pane" id="get-permissions-2"><p>Deploy key is a SSH key set in your repo to grant client read-only (as well as r&#x2F;w, if you want) access to your repo. This method is suitable for most public blog repositories and there are no private sub-modules in the repositories.</p>
+<ul>
+<li><p>Create an empty branch of <code>source</code> in the repository where the blog source is hosted.</p>
+</li>
+<li><p>Generate a ssh key</p>
+  <pre class="line-numbers language-git" data-language="git"><code class="language-git">$ ssh-keygen -t rsa -b 4096 -C <span class="token string">"&#123;email&#125;"</span> -f ~/.ssh/deploy_key<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>Add the deployment public key in your repo, and delete it</p>
+  <pre class="line-numbers language-git" data-language="git"><code class="language-git">$ rm -f deploy_key.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>Use the Travis command to encrypt private key, and add it to git</p>
+  <pre class="line-numbers language-git" data-language="git"><code class="language-git">$ gem install travis
+$ travis login
+$ travis encrypt deploy_key
+$ rm -f deploy_key
+<span class="token command">$ git add deploy_key.enc</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul></div></div></div></div><div class="tab-pane" id="travis-ci-2"><pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>hexo/.travis.yml</span></div><code class="language-yaml"><span class="token key atrule">dist</span><span class="token punctuation">:</span> trusty
+<span class="token key atrule">sudo</span><span class="token punctuation">:</span> required
+
+<span class="token key atrule">addons</span><span class="token punctuation">:</span>
+ <span class="token key atrule">ssh_known_hosts</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> github.com
+   <span class="token punctuation">-</span> git.coding.net
+ <span class="token key atrule">apt</span><span class="token punctuation">:</span>
+   <span class="token key atrule">packages</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> nasm
+
+<span class="token key atrule">env</span><span class="token punctuation">:</span>
+ <span class="token key atrule">global</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> TZ=Asia/Tokyo
+
+<span class="token key atrule">language</span><span class="token punctuation">:</span> node_js
+<span class="token key atrule">node_js</span><span class="token punctuation">:</span> node
+
+<span class="token key atrule">branches</span><span class="token punctuation">:</span>
+ <span class="token key atrule">only</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> source
+
+<span class="token key atrule">git</span><span class="token punctuation">:</span>
+ <span class="token key atrule">depth</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+ <span class="token key atrule">submodules</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+
+<span class="token key atrule">cache</span><span class="token punctuation">:</span>
+ <span class="token key atrule">apt</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+ <span class="token key atrule">npm</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">before_install</span><span class="token punctuation">:</span>
+ <span class="token comment"># Git Config</span>
+ <span class="token punctuation">-</span> sed <span class="token punctuation">-</span>i 's/git@github.com<span class="token punctuation">:</span>/https<span class="token punctuation">:</span>\/\/github.com\//' .gitmodules
+ <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.name "YOUR<span class="token punctuation">-</span>GITHUB<span class="token punctuation">-</span>NAME"
+ <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.email "YOUR<span class="token punctuation">-</span>EMAIL"
+
+ <span class="token comment"># Restore last modified time</span>
+ <span class="token punctuation">-</span> <span class="token string">"git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done"</span>
+
+ <span class="token comment"># Submodules</span>
+ <span class="token punctuation">-</span> git submodule update <span class="token punctuation">-</span><span class="token punctuation">-</span>recursive <span class="token punctuation">-</span><span class="token punctuation">-</span>remote <span class="token punctuation">-</span><span class="token punctuation">-</span>init
+
+ <span class="token comment"># Deploy history</span>
+ <span class="token punctuation">-</span> git clone <span class="token punctuation">-</span><span class="token punctuation">-</span>branch=master <span class="token punctuation">-</span><span class="token punctuation">-</span>single<span class="token punctuation">-</span>branch YOUR<span class="token punctuation">-</span>BLOG<span class="token punctuation">-</span>REPO .deploy_git
+
+ <span class="token comment"># SSH Setup</span>
+ <span class="token punctuation">-</span> openssl aes<span class="token punctuation">-</span>256<span class="token punctuation">-</span>cbc <span class="token punctuation">-</span>K $encrypted_693585a97b8c_key <span class="token punctuation">-</span>iv $encrypted_693585a97b8c_iv <span class="token punctuation">-</span>in deploy_key.enc <span class="token punctuation">-</span>out deploy_key <span class="token punctuation">-</span>d
+ <span class="token punctuation">-</span> eval "$(ssh<span class="token punctuation">-</span>agent <span class="token punctuation">-</span>s)"
+ <span class="token punctuation">-</span> chmod 600 ./deploy_key
+ <span class="token punctuation">-</span> ssh<span class="token punctuation">-</span>add ./deploy_key
+
+<span class="token key atrule">install</span><span class="token punctuation">:</span> npm install
+
+<span class="token key atrule">before_script</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">script</span><span class="token punctuation">:</span>
+ <span class="token punctuation">-</span> hexo clean
+ <span class="token punctuation">-</span> hexo g <span class="token punctuation">-</span>d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></div></div>
+
+<h4 id="Gitlab-CI"><a href="#Gitlab-CI" class="headerlink" title="Gitlab CI"></a>Gitlab CI</h4><p>GitLab offers a continuous integration service and pages service. If you add a <code>.gitlab-ci.yml</code> file to the root directory of your repository, and configure your GitLab project to use a Runner, then each commit or push, triggers your CI pipeline. The <code>.gitlab-ci.yml</code> file tells the GitLab runner what to do. By default it runs a pipeline with three stages: build, test, and deploy. You don’t need to use all three stages; stages with no jobs are simply ignored. And at the end, your websites will be published on GitLab Host automatically.</p>
+<ol>
+<li><p>Add <code>.gitlab-ci.yml</code> to the root directory of your repository, and configure it.</p>
+ <pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>hexo/.gitlab-ci.yml</span></div><code class="language-yaml"><span class="token key atrule">image</span><span class="token punctuation">:</span> node<span class="token punctuation">:</span>lts
+
+<span class="token key atrule">before_script</span><span class="token punctuation">:</span>
+  <span class="token comment"># Set TimeZone, eg: Asia/Shanghai</span>
+  <span class="token comment"># - export TZ='Asia/Shanghai'</span>
+  <span class="token comment"># Restore last modified time</span>
+  <span class="token punctuation">-</span> <span class="token string">"git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done"</span>
+
+<span class="token key atrule">pages</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> build
+  <span class="token key atrule">cache</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> node_modules/
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> npm install
+  <span class="token punctuation">-</span> npx hexo deploy
+  <span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> public
+  <span class="token key atrule">only</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>Upload <code>scaffolds</code>, <code>source</code>, <code>themes</code>, <code>.gitignore</code>, <code>.gitlab-ci.yml</code>, <code>_config.yml</code>, and <code>package.json</code> to <a target="_blank" rel="noopener" href="https://gitlab.com/">your Gitlab repository</a>.</p>
+ <pre class="line-numbers language-git" data-language="git"><code class="language-git"><span class="token command">$ git init</span>
+$ ssh -T git@gitlab.com
+<span class="token command">$ git remote add origin YOUR-GITLAB-REPO-SSH-LINK</span>
+<span class="token command">$ git add .</span>
+<span class="token command">$ git commit<span class="token parameter"> -m</span> </span><span class="token string">"COMMIT MESSAGE"</span>
+<span class="token command">$ git push<span class="token parameter"> -u</span> origin master</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<p>Now, your static website is available at <code>https://yourname.gitlab.io/project</code> that is similar to GitHub. <a target="_blank" rel="noopener" href="https://gitlab.com/help/user/project/pages/index.md">More GitLab Pages config in here</a>.</p>
+<p>Of course, you can also pulish static website on GitHub Pages or others pages service. There are two ways to configure <code>.gitlab-ci.yml</code>:</p>
+<div class="tabs" id="gitlab-ci"><ul class="nav-tabs"><li class="tab active"><a href="#gitlab-ci-1"><code>HTTPS</code></a></li><li class="tab"><a href="#gitlab-ci-2"><code>SSH</code></a></li></ul><div class="tab-content"><div class="tab-pane active" id="gitlab-ci-1"><ul>
+<li><p>Get the Access Token: <code>Settings</code> → <code>Developer settings</code> → <code>Personal access token</code> → <code>Generate new token</code>. Set access rights according to the actual situation. It should be noted that the access token is only displayed once on this page, and it should be copied, otherwise it can only be regenerated.</p>
+</li>
+<li><p>Click <code>SETTINGS-CI/CD → Variables</code> in Gitlab, and defined access token as custom variable <code>GITHUB_ACCESS_TOKEN</code>. Or set <code>USERNAME</code> <code>PASSWORD</code> variable for coding repo.</p>
+</li>
+<li><p>Configure <code>.gitlab-ci.yml</code>: <strong>only add deploy stage at the end of this file</strong></p>
+  <pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>hexo/.gitlab-ci.yml</span></div><code class="language-yaml"><span class="token key atrule">github</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> deploy
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> cd ./public
+  <span class="token punctuation">-</span> git init
+  <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.name "YOUR<span class="token punctuation">-</span>USER<span class="token punctuation">-</span>NAME"
+  <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.email "YOUR<span class="token punctuation">-</span>EMAIL"
+  <span class="token punctuation">-</span> git add .
+  <span class="token punctuation">-</span> git commit <span class="token punctuation">-</span>m "gitlab<span class="token punctuation">-</span>auto<span class="token punctuation">-</span>deploy"
+  <span class="token punctuation">-</span> git push <span class="token punctuation">-</span><span class="token punctuation">-</span>force <span class="token punctuation">-</span><span class="token punctuation">-</span>quiet <span class="token punctuation">-</span><span class="token punctuation">-</span>set<span class="token punctuation">-</span>upstream https<span class="token punctuation">:</span>//$GITHUB_ACCESS_TOKEN@github.com/username/username.github.io.git master <span class="token comment"># replace github_access_token</span>
+  <span class="token comment"># - git config http.postBuffer 524288000</span>
+  <span class="token comment"># - git push --force --quiet --set-upstream https://$USERNAME:$PASSWORD@git.coding.net/username/reponame.git master # replace username &amp; password, please escape the password</span>
+  <span class="token key atrule">only</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul></div><div class="tab-pane" id="gitlab-ci-2"><p>Deploy key is a SSH key set in your repo to grant client read-only (as well as r&#x2F;w, if you want) access to your repo. This method is suitable for most public blog repositories and there are no private sub-modules in the repositories.</p>
+<ul>
+<li><p>Generate a deploy key</p>
+  <pre class="line-numbers language-git" data-language="git"><code class="language-git">$ ssh-keygen -t rsa -b 4096 -C <span class="token string">"&#123;email&#125;"</span> -f ~/.ssh/deploy_key<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>Click <code>SETTINGS-CI/CD → Variables</code> in Gitlab, copy the content of private key and defined it as custom variable <code>DEPLOY_PRIVATE_KEY</code>.</p>
+</li>
+<li><p>Configure <code>.gitlab-ci.yml</code>: <strong>only update script in <code>before_script</code></strong></p>
+  <pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>hexo/.gitlab-ci.yml</span></div><code class="language-yaml"><span class="token key atrule">before_script</span><span class="token punctuation">:</span>
+  <span class="token comment"># Set TimeZone, eg: Asia/Shanghai</span>
+  <span class="token comment"># - export TZ='Asia/Shanghai'</span>
+
+  <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.name "YOUR<span class="token punctuation">-</span>USER<span class="token punctuation">-</span>NAME"
+  <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.email "YOUR<span class="token punctuation">-</span>EMAIL"
+
+  <span class="token comment"># Restore last modified time</span>
+  <span class="token punctuation">-</span> <span class="token string">"git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done"</span>
+  <span class="token comment"># Install ssh-agent if not already installed, it is required by Docker.</span>
+  <span class="token comment"># (change apt-get to yum if you use a CentOS-based image)</span>
+  <span class="token punctuation">-</span> <span class="token string">'which ssh-agent || ( apt-get update -y &amp;&amp; apt-get install openssh-client -y )'</span>
+  <span class="token comment"># Run ssh-agent (inside the build environment)</span>
+  <span class="token punctuation">-</span> eval $(ssh<span class="token punctuation">-</span>agent <span class="token punctuation">-</span>s)
+  <span class="token comment"># Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store</span>
+  <span class="token punctuation">-</span> ssh<span class="token punctuation">-</span>add &lt;(echo "$DEPLOY_PRIVATE_KEY")
+  <span class="token comment"># For Docker builds disable host key checking. Be aware that by adding that</span>
+  <span class="token comment"># you are suspectible to man-in-the-middle attacks.</span>
+  <span class="token comment"># WARNING: Use this only with the Docker executor, if you use it with shell</span>
+  <span class="token comment"># you will overwrite your user's SSH config.</span>
+  <span class="token punctuation">-</span> mkdir <span class="token punctuation">-</span>p ~/.ssh
+  <span class="token punctuation">-</span> <span class="token string">'[[ -f /.dockerenv ]] &amp;&amp; echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'</span>
+  <span class="token comment"># In order to properly check the server's host key, assuming you created the</span>
+  <span class="token comment"># SSH_SERVER_HOSTKEYS variable previously, uncomment the following two lines</span>
+  <span class="token comment"># instead.</span>
+  <span class="token comment"># - mkdir -p ~/.ssh</span>
+  <span class="token comment"># - '[[ -f /.dockerenv ]] &amp;&amp; echo "$SSH_SERVER_HOSTKEYS" > ~/.ssh/known_hosts'</span>
+
+  <span class="token comment"># Install pandoc, eg: v1.19.2.1</span>
+  <span class="token comment"># - wget https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb</span>
+  <span class="token comment"># - dpkg -i ./pandoc-1.19.2.1-1-amd64.deb</span>
+
+<span class="token key atrule">image</span><span class="token punctuation">:</span> node<span class="token punctuation">:</span>lts
+
+<span class="token key atrule">pages</span><span class="token punctuation">:</span>
+  <span class="token key atrule">cache</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> node_modules/
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> npm install
+  <span class="token punctuation">-</span> npx hexo deploy
+
+  <span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> public
+  <span class="token key atrule">only</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul></div></div></div>
+
+<div class="note danger"><p>Variables are not masked, and their values can be shown in the job logs if explicitly asked to do so. So make sure gitlab pipelines can only be viewed by yourself.</p>
+</div>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
       </div>
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-08-15T14:38:09+08:00"
-              content="2022-08-15">
-          08-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/posts/1315606668/" itemprop="url">
-            <span itemprop="name">系统备份恢复</span>
-          </a>
-      </div>
-
       
-    </header>
-  </article>
-
+      
     </div>
-  </div>
-  
-  
-  
+  <ul class="breadcrumb">
+            <li><a href="/docs/">DOCS</a></li>
+            <li><a href="/docs/getting-started/">GETTING STARTED</a></li>
+            <li>DEPLOYMENT</li>
+  </ul>
 
+    
+    
+
+
+    <div class="comments" id="valine-comments"></div>
 </div>
   </main>
 
@@ -722,7 +932,7 @@ darkmode.showWidget();
 </script>
 
 
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/tags/%E7%B3%BB%E7%BB%9F%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D/"}</script>
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/docs/getting-started/deployment.html"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
