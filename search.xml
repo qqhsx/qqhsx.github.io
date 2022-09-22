@@ -508,7 +508,7 @@
 <p><img src="http://imgsrc.baidu.com/super/pic/item/b8389b504fc2d5620bf45633a21190ef77c66c74.jpg" alt="img"></p>
 <p><img src="http://imgsrc.baidu.com/super/pic/item/6d81800a19d8bc3e04f08014c78ba61ea9d34570.jpg" alt="img"></p>
 <p><img src="http://imgsrc.baidu.com/super/pic/item/d31b0ef41bd5ad6e0303e234c4cb39dbb7fd3c72.jpg" alt="img"></p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-RriGpTRYSgNihooM" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-YjeDmgtyEUloKAiR" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
 
 <h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><ul>
 <li><a href="magnet:?xt=urn:btih:ff5aa9c439921ffc0d05fa0fa0d445c299734cf3">The.Next.365.Days.2022.PROPER.720p.NF.WEBRip.DDP5.1.x264-SMURF.无中字</a> 1.73 GB<ul>
@@ -810,10 +810,10 @@ $ <span class="token function">npm</span> <span class="token function">install</
         <category>系统安装工具</category>
       </categories>
       <tags>
-        <tag>Office激活</tag>
         <tag>KMS激活工具</tag>
         <tag>数字权利激活</tag>
         <tag>Windows激活</tag>
+        <tag>Office激活</tag>
         <tag>AAct v4.2.7 汉化便携版</tag>
       </tags>
   </entry>
@@ -859,11 +859,11 @@ $ <span class="token function">npm</span> <span class="token function">install</
         <category>系统安装工具</category>
       </categories>
       <tags>
-        <tag>Office激活</tag>
+        <tag>HEUKMSActivator</tag>
         <tag>KMS激活工具</tag>
         <tag>数字权利激活</tag>
         <tag>Windows激活</tag>
-        <tag>HEUKMSActivator</tag>
+        <tag>Office激活</tag>
       </tags>
   </entry>
   <entry>
@@ -1303,5 +1303,554 @@ $ <span class="token function">npm</span> <span class="token function">install</
         <tag>Hello</tag>
         <tag>测试</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>关于</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>docs</title>
+    <url>/docs/index.html</url>
+    <content><![CDATA[<h3 id="Elegant-and-Powerful-Theme-for-Hexo"><a href="#Elegant-and-Powerful-Theme-for-Hexo" class="headerlink" title="Elegant and Powerful Theme for Hexo"></a>Elegant and Powerful Theme for Hexo</h3><p>Theme NexT has the following features:</p>
+<ul>
+<li>No jQuery.</li>
+<li>Support <a href="https://caniuse.com/prefers-color-scheme">native dark mode</a>.</li>
+<li>Support Pjax to deliver a fast browsing experience.</li>
+<li>Integrated KaTeX and MathJax mathematical formula rendering.</li>
+<li>Integrated PDF.js and mermaid diagram.</li>
+<li>Support Disqus, Changyan, LiveRe, Gitalk, Utterances and Isso comment systems.</li>
+<li>Support a large number of third-party statistics and content sharing services.</li>
+<li>Easy to customize content or modify style.</li>
+</ul>
+<h3 id="Four-Schemes-in-One"><a href="#Four-Schemes-in-One" class="headerlink" title="Four Schemes in One"></a>Four Schemes in One</h3><p>By using different Schemes in NexT, you can simply change the style of your blog, and nearly all options can be used in all schemes.</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>友链</title>
+    <url>/links/index.html</url>
+    <content><![CDATA[<!-- 这是一段被注释掉的文字 
+![友链封面](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170323%2F1b16f2102ad3449197bbbc391ddd67fc_th.jpg&refer=http%3A%2F%2Fimg.mp.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664592251&t=fa4fb028a78595a7a586b2e125f7ec3d)
+
+<div class="links-content">
+<div class="no-icon note warning"><div class="link-info">😁欢迎与我交换友链</div></div>
+-->
+<div class="link-navigation">
+
+<div class="card">
+<img class="ava nomediumzoom" src="https://s2.loli.net/2022/08/19/B9btM7nsXxaNydo.png">
+<div class="card-header">
+<div><a href="https://h1985.pages.dev" target="_blank"> h1985</a> </div>
+<div class="info">让我们一双双渴望知识的眼睛得到满足</div>
+</div>
+</div>
+
+</div>
+
+<hr>
+<div style="text-align:center;"><span class="with-love" id="animate1">
+    <i class="fa fa-heart"></i>
+  </span>欢迎留言与我交换友链<span class="with-love" id="animate2">
+    <i class="fa fa-heart"></i>
+  </span></div>
+
+<hr>
+<div class="note success"><p><strong>友链格式：</strong></p>
+<ul>
+<li>网站名称：h1985</li>
+<li>网站地址：<a href="https://h1985.pages.dev/">https://h1985.pages.dev</a></li>
+<li>网站描述：让我们一双双渴望知识的眼睛得到满足</li>
+<li>网站Logo&#x2F;头像：<a href="https://s2.loli.net/2022/08/19/B9btM7nsXxaNydo.png">https://s2.loli.net/2022/08/19/B9btM7nsXxaNydo.png</a></li>
+</ul>
+</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>资源</title>
+    <url>/resources/index.html</url>
+    <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>说说</title>
+    <url>/shuoshuo/index.html</url>
+    <content><![CDATA[<!-- 引用 artitalk -->
+<script type="text/javascript" src="https://unpkg.com/artitalk"></script>
+<!-- 存放说说的容器 -->
+<div id="artitalk_main"></div>
+<script>
+new Artitalk({
+      serverURL: 'https://coucm1xg.lc-cn-n1-shared.com',
+      appId: 'cOuCm1XgFmGAJaCNASlWKjE5-gzGzoHsz',
+      appKey: 'ikiAW8ZtiKepPPGCuknu06Uz'
+})
+</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>Configuration</title>
+    <url>/docs/getting-started/configuration.html</url>
+    <content><![CDATA[<p>How to configure NexT theme? The traditional approach is to edit <mark class="label primary">NexT config file</mark> (<code>thems/next/_config.yml</code> or <code>node_modules/hexo-theme-next/_config.yml</code>) directly. However, the config file will be overwritten when upgrade NexT theme via git or npm, which brings inconvenience to the configuration of the theme.</p>
+<p>At present, NexT encourages users to use the Alternate Theme Config. It’s a feature of Hexo and the documentation is here: <a href="https://hexo.io/docs/configuration.html#Using-an-Alternate-Config">Hexo Configuration</a>.</p>
+<p>This tutorial shows you how to configure NexT using Alternate Theme Config. Please choose only one of the following solutions and resume next steps.</p>
+<h3 id="config-name-yml"><a href="#config-name-yml" class="headerlink" title="_config.[name].yml"></a><code>_config.[name].yml</code></h3><p>With this way, all your theme configurations locate in config file <code>/_config.[name].yml</code>. Replace <code>[name]</code> with the value of <code>theme</code> option in <mark class="label info">Hexo config file</mark>. For NexT theme, the file name is <code>_config.next.yml</code> by default.</p>
+<h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><ol>
+<li><p>Please ensure you are using Hexo 5.0 or later.</p>
+</li>
+<li><p>Create a config file in site’s root directory, e.g. <code>_config.next.yml</code>.</p>
+</li>
+<li><p>Copy needed NexT theme options from <mark class="label primary">NexT config file</mark> into this config file. If it is the first time to install NexT, then copy the whole <mark class="label primary">NexT config file</mark> by the following command:</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Installed through npm</span>
+<span class="token function">cp</span> node_modules/hexo-theme-next/_config.yml _config.next.yml
+<span class="token comment"># Installed through Git</span>
+<span class="token function">cp</span> themes/next/_config.yml _config.next.yml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h3 id="theme-config"><a href="#theme-config" class="headerlink" title="theme_config"></a><code>theme_config</code></h3><p>With this way, all your Hexo and NexT configurations locate in main <mark class="label info">Hexo config file</mark>. You don’t need to edit <mark class="label primary">NexT config file</mark> or create any new files. But you need to <strong><a href="/docs/troubleshooting.html#Keep-Up-Indentation">keep up indentation</a></strong> within <code>theme_config</code> option.</p>
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><p>Copy needed NexT theme options from <mark class="label primary">NexT config file</mark> into <mark class="label info">Hexo config file</mark>, then</p>
+<ol>
+<li>Move all these settings to the right with two spaces indentation (in Visual Studio Code: select all strings, <kbd>CTRL</kbd> + <kbd>]</kbd>).</li>
+<li>Add <code>theme_config:</code> parameter above all this settings.</li>
+</ol>
+<h3 id="next-yml-Deprecated"><a href="#next-yml-Deprecated" class="headerlink" title="next.yml (Deprecated)"></a><code>next.yml</code> (Deprecated)</h3><p>Older versions of NexT theme also provide another configuration method, which is to place the theme configuration in the <code>/source/_data/next.yml</code> file. This method is deprecated, please use <code>_config.next.yml</code> instead. If the <code>/source/_data/next.yml</code> file exists, move it to the Hexo root directory and rename it to <code>_config.next.yml</code>.</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>Deployment</title>
+    <url>/docs/getting-started/deployment.html</url>
+    <content><![CDATA[<h3 id="Local-Deployment"><a href="#Local-Deployment" class="headerlink" title="Local Deployment"></a>Local Deployment</h3><ol>
+<li>Modify files locally.</li>
+<li>Localization testing: <code>hexo clean &amp;&amp; hexo s</code>.</li>
+<li>Deployment: <code>hexo g -d</code>.</li>
+</ol>
+<h3 id="Continuous-Integration"><a href="#Continuous-Integration" class="headerlink" title="Continuous Integration"></a>Continuous Integration</h3><ul>
+<li>Edit the file directly online, effective immediately</li>
+<li>Automatic deployment, simultaneous deployment to multiple locations</li>
+</ul>
+<h4 id="Netlify"><a href="#Netlify" class="headerlink" title="Netlify"></a>Netlify</h4><p>Netlify is an all-in-one platform for automating modern web projects. Replace your hosting infrastructure, continuous integration, and deployment pipeline with a single workflow. Integrate dynamic functionality like serverless functions, user authentication, and form handling as your projects grow.</p>
+<p>Perhaps you have already found that this website is deployed on Netlify. Checkout <code>deploy.sh</code> and <code>netlify.toml</code> in <a href="https://github.com/next-theme/theme-next-docs">theme-next-docs</a> repository for more information.</p>
+<h4 id="GitHub-Actions"><a href="#GitHub-Actions" class="headerlink" title="GitHub Actions"></a>GitHub Actions</h4><p>This Github Action automating Hexo deployment workflow, to allow you to leverage GitHub Actions to publish your Hexo site on Github Pages: <a href="https://github.com/sma11black/hexo-action">hexo-action</a>.</p>
+<h4 id="Travis-CI"><a href="#Travis-CI" class="headerlink" title="Travis CI"></a>Travis CI</h4><p>Travis CI enables your team to test and ship your apps with confidence. It’s built for everyone and for projects and teams of all sizes, supporting over 20 different languages out of the box, including Javascript and Node.js, Ruby, PHP, Python, Mac&#x2F;iOS, as well as Docker, while giving you full control over the build environment to customize it to your own needs.</p>
+<div class="tabs" id="travis-ci"><ul class="nav-tabs"><li class="tab active"><a href="#travis-ci-1">Get permissions →</a></li><li class="tab"><a href="#travis-ci-2">Configure <code>.travis.yml</code></a></li></ul><div class="tab-content"><div class="tab-pane active" id="travis-ci-1"><p>There are two ways to obtain the necessary permissions for Travis CI. Deploy Key has the advantage of high security, while Access Token has the advantage of being more flexible.</p>
+<div class="tabs" id="get-permissions"><ul class="nav-tabs"><li class="tab active"><a href="#get-permissions-1">Access Token</a></li><li class="tab"><a href="#get-permissions-2">Deploy Key</a></li></ul><div class="tab-content"><div class="tab-pane active" id="get-permissions-1"><p>This method applies to a warehouse with a private Submodule</p>
+<ul>
+<li>Create an empty branch of <code>source</code> in the repository where the blog source is hosted.</li>
+<li>Get the Access Token: Settings → Developer settings → Personal access token → Generate new token. Set access rights according to the actual situation. It should be noted that the access token is only displayed once on this page, and it should be copied, otherwise it can only be regenerated.</li>
+<li>Use github account to log in to <a href="https://travis-ci.com/">Travis CI website</a>. You can find the warehouses in the current github account, select the warehouses to be deployed, and then click setting. Fill in the personal access token generated by github and select the branch that the warehouse needs to be monitored by Travis.</li>
+</ul></div><div class="tab-pane" id="get-permissions-2"><p>Deploy key is a SSH key set in your repo to grant client read-only (as well as r&#x2F;w, if you want) access to your repo. This method is suitable for most public blog repositories and there are no private sub-modules in the repositories.</p>
+<ul>
+<li><p>Create an empty branch of <code>source</code> in the repository where the blog source is hosted.</p>
+</li>
+<li><p>Generate a ssh key</p>
+  <pre class="line-numbers language-git" data-language="git"><code class="language-git">$ ssh-keygen -t rsa -b 4096 -C <span class="token string">"&#123;email&#125;"</span> -f ~/.ssh/deploy_key<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>Add the deployment public key in your repo, and delete it</p>
+  <pre class="line-numbers language-git" data-language="git"><code class="language-git">$ rm -f deploy_key.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>Use the Travis command to encrypt private key, and add it to git</p>
+  <pre class="line-numbers language-git" data-language="git"><code class="language-git">$ gem install travis
+$ travis login
+$ travis encrypt deploy_key
+$ rm -f deploy_key
+<span class="token command">$ git add deploy_key.enc</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul></div></div></div></div><div class="tab-pane" id="travis-ci-2"><pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>hexo/.travis.yml</span></div><code class="language-yaml"><span class="token key atrule">dist</span><span class="token punctuation">:</span> trusty
+<span class="token key atrule">sudo</span><span class="token punctuation">:</span> required
+
+<span class="token key atrule">addons</span><span class="token punctuation">:</span>
+ <span class="token key atrule">ssh_known_hosts</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> github.com
+   <span class="token punctuation">-</span> git.coding.net
+ <span class="token key atrule">apt</span><span class="token punctuation">:</span>
+   <span class="token key atrule">packages</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> nasm
+
+<span class="token key atrule">env</span><span class="token punctuation">:</span>
+ <span class="token key atrule">global</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> TZ=Asia/Tokyo
+
+<span class="token key atrule">language</span><span class="token punctuation">:</span> node_js
+<span class="token key atrule">node_js</span><span class="token punctuation">:</span> node
+
+<span class="token key atrule">branches</span><span class="token punctuation">:</span>
+ <span class="token key atrule">only</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> source
+
+<span class="token key atrule">git</span><span class="token punctuation">:</span>
+ <span class="token key atrule">depth</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+ <span class="token key atrule">submodules</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+
+<span class="token key atrule">cache</span><span class="token punctuation">:</span>
+ <span class="token key atrule">apt</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+ <span class="token key atrule">npm</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">before_install</span><span class="token punctuation">:</span>
+ <span class="token comment"># Git Config</span>
+ <span class="token punctuation">-</span> sed <span class="token punctuation">-</span>i 's/git@github.com<span class="token punctuation">:</span>/https<span class="token punctuation">:</span>\/\/github.com\//' .gitmodules
+ <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.name "YOUR<span class="token punctuation">-</span>GITHUB<span class="token punctuation">-</span>NAME"
+ <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.email "YOUR<span class="token punctuation">-</span>EMAIL"
+
+ <span class="token comment"># Restore last modified time</span>
+ <span class="token punctuation">-</span> <span class="token string">"git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done"</span>
+
+ <span class="token comment"># Submodules</span>
+ <span class="token punctuation">-</span> git submodule update <span class="token punctuation">-</span><span class="token punctuation">-</span>recursive <span class="token punctuation">-</span><span class="token punctuation">-</span>remote <span class="token punctuation">-</span><span class="token punctuation">-</span>init
+
+ <span class="token comment"># Deploy history</span>
+ <span class="token punctuation">-</span> git clone <span class="token punctuation">-</span><span class="token punctuation">-</span>branch=master <span class="token punctuation">-</span><span class="token punctuation">-</span>single<span class="token punctuation">-</span>branch YOUR<span class="token punctuation">-</span>BLOG<span class="token punctuation">-</span>REPO .deploy_git
+
+ <span class="token comment"># SSH Setup</span>
+ <span class="token punctuation">-</span> openssl aes<span class="token punctuation">-</span>256<span class="token punctuation">-</span>cbc <span class="token punctuation">-</span>K $encrypted_693585a97b8c_key <span class="token punctuation">-</span>iv $encrypted_693585a97b8c_iv <span class="token punctuation">-</span>in deploy_key.enc <span class="token punctuation">-</span>out deploy_key <span class="token punctuation">-</span>d
+ <span class="token punctuation">-</span> eval "$(ssh<span class="token punctuation">-</span>agent <span class="token punctuation">-</span>s)"
+ <span class="token punctuation">-</span> chmod 600 ./deploy_key
+ <span class="token punctuation">-</span> ssh<span class="token punctuation">-</span>add ./deploy_key
+
+<span class="token key atrule">install</span><span class="token punctuation">:</span> npm install
+
+<span class="token key atrule">before_script</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">script</span><span class="token punctuation">:</span>
+ <span class="token punctuation">-</span> hexo clean
+ <span class="token punctuation">-</span> hexo g <span class="token punctuation">-</span>d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></div></div>
+
+<h4 id="Gitlab-CI"><a href="#Gitlab-CI" class="headerlink" title="Gitlab CI"></a>Gitlab CI</h4><p>GitLab offers a continuous integration service and pages service. If you add a <code>.gitlab-ci.yml</code> file to the root directory of your repository, and configure your GitLab project to use a Runner, then each commit or push, triggers your CI pipeline. The <code>.gitlab-ci.yml</code> file tells the GitLab runner what to do. By default it runs a pipeline with three stages: build, test, and deploy. You don’t need to use all three stages; stages with no jobs are simply ignored. And at the end, your websites will be published on GitLab Host automatically.</p>
+<ol>
+<li><p>Add <code>.gitlab-ci.yml</code> to the root directory of your repository, and configure it.</p>
+ <pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>hexo/.gitlab-ci.yml</span></div><code class="language-yaml"><span class="token key atrule">image</span><span class="token punctuation">:</span> node<span class="token punctuation">:</span>lts
+
+<span class="token key atrule">before_script</span><span class="token punctuation">:</span>
+  <span class="token comment"># Set TimeZone, eg: Asia/Shanghai</span>
+  <span class="token comment"># - export TZ='Asia/Shanghai'</span>
+  <span class="token comment"># Restore last modified time</span>
+  <span class="token punctuation">-</span> <span class="token string">"git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done"</span>
+
+<span class="token key atrule">pages</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> build
+  <span class="token key atrule">cache</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> node_modules/
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> npm install
+  <span class="token punctuation">-</span> npx hexo deploy
+  <span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> public
+  <span class="token key atrule">only</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>Upload <code>scaffolds</code>, <code>source</code>, <code>themes</code>, <code>.gitignore</code>, <code>.gitlab-ci.yml</code>, <code>_config.yml</code>, and <code>package.json</code> to <a href="https://gitlab.com/">your Gitlab repository</a>.</p>
+ <pre class="line-numbers language-git" data-language="git"><code class="language-git"><span class="token command">$ git init</span>
+$ ssh -T git@gitlab.com
+<span class="token command">$ git remote add origin YOUR-GITLAB-REPO-SSH-LINK</span>
+<span class="token command">$ git add .</span>
+<span class="token command">$ git commit<span class="token parameter"> -m</span> </span><span class="token string">"COMMIT MESSAGE"</span>
+<span class="token command">$ git push<span class="token parameter"> -u</span> origin master</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<p>Now, your static website is available at <code>https://yourname.gitlab.io/project</code> that is similar to GitHub. <a href="https://gitlab.com/help/user/project/pages/index.md">More GitLab Pages config in here</a>.</p>
+<p>Of course, you can also pulish static website on GitHub Pages or others pages service. There are two ways to configure <code>.gitlab-ci.yml</code>:</p>
+<div class="tabs" id="gitlab-ci"><ul class="nav-tabs"><li class="tab active"><a href="#gitlab-ci-1"><code>HTTPS</code></a></li><li class="tab"><a href="#gitlab-ci-2"><code>SSH</code></a></li></ul><div class="tab-content"><div class="tab-pane active" id="gitlab-ci-1"><ul>
+<li><p>Get the Access Token: <code>Settings</code> → <code>Developer settings</code> → <code>Personal access token</code> → <code>Generate new token</code>. Set access rights according to the actual situation. It should be noted that the access token is only displayed once on this page, and it should be copied, otherwise it can only be regenerated.</p>
+</li>
+<li><p>Click <code>SETTINGS-CI/CD → Variables</code> in Gitlab, and defined access token as custom variable <code>GITHUB_ACCESS_TOKEN</code>. Or set <code>USERNAME</code> <code>PASSWORD</code> variable for coding repo.</p>
+</li>
+<li><p>Configure <code>.gitlab-ci.yml</code>: <strong>only add deploy stage at the end of this file</strong></p>
+  <pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>hexo/.gitlab-ci.yml</span></div><code class="language-yaml"><span class="token key atrule">github</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> deploy
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> cd ./public
+  <span class="token punctuation">-</span> git init
+  <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.name "YOUR<span class="token punctuation">-</span>USER<span class="token punctuation">-</span>NAME"
+  <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.email "YOUR<span class="token punctuation">-</span>EMAIL"
+  <span class="token punctuation">-</span> git add .
+  <span class="token punctuation">-</span> git commit <span class="token punctuation">-</span>m "gitlab<span class="token punctuation">-</span>auto<span class="token punctuation">-</span>deploy"
+  <span class="token punctuation">-</span> git push <span class="token punctuation">-</span><span class="token punctuation">-</span>force <span class="token punctuation">-</span><span class="token punctuation">-</span>quiet <span class="token punctuation">-</span><span class="token punctuation">-</span>set<span class="token punctuation">-</span>upstream https<span class="token punctuation">:</span>//$GITHUB_ACCESS_TOKEN@github.com/username/username.github.io.git master <span class="token comment"># replace github_access_token</span>
+  <span class="token comment"># - git config http.postBuffer 524288000</span>
+  <span class="token comment"># - git push --force --quiet --set-upstream https://$USERNAME:$PASSWORD@git.coding.net/username/reponame.git master # replace username &amp; password, please escape the password</span>
+  <span class="token key atrule">only</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul></div><div class="tab-pane" id="gitlab-ci-2"><p>Deploy key is a SSH key set in your repo to grant client read-only (as well as r&#x2F;w, if you want) access to your repo. This method is suitable for most public blog repositories and there are no private sub-modules in the repositories.</p>
+<ul>
+<li><p>Generate a deploy key</p>
+  <pre class="line-numbers language-git" data-language="git"><code class="language-git">$ ssh-keygen -t rsa -b 4096 -C <span class="token string">"&#123;email&#125;"</span> -f ~/.ssh/deploy_key<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>Click <code>SETTINGS-CI/CD → Variables</code> in Gitlab, copy the content of private key and defined it as custom variable <code>DEPLOY_PRIVATE_KEY</code>.</p>
+</li>
+<li><p>Configure <code>.gitlab-ci.yml</code>: <strong>only update script in <code>before_script</code></strong></p>
+  <pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>hexo/.gitlab-ci.yml</span></div><code class="language-yaml"><span class="token key atrule">before_script</span><span class="token punctuation">:</span>
+  <span class="token comment"># Set TimeZone, eg: Asia/Shanghai</span>
+  <span class="token comment"># - export TZ='Asia/Shanghai'</span>
+
+  <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.name "YOUR<span class="token punctuation">-</span>USER<span class="token punctuation">-</span>NAME"
+  <span class="token punctuation">-</span> git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.email "YOUR<span class="token punctuation">-</span>EMAIL"
+
+  <span class="token comment"># Restore last modified time</span>
+  <span class="token punctuation">-</span> <span class="token string">"git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done"</span>
+  <span class="token comment"># Install ssh-agent if not already installed, it is required by Docker.</span>
+  <span class="token comment"># (change apt-get to yum if you use a CentOS-based image)</span>
+  <span class="token punctuation">-</span> <span class="token string">'which ssh-agent || ( apt-get update -y &amp;&amp; apt-get install openssh-client -y )'</span>
+  <span class="token comment"># Run ssh-agent (inside the build environment)</span>
+  <span class="token punctuation">-</span> eval $(ssh<span class="token punctuation">-</span>agent <span class="token punctuation">-</span>s)
+  <span class="token comment"># Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store</span>
+  <span class="token punctuation">-</span> ssh<span class="token punctuation">-</span>add &lt;(echo "$DEPLOY_PRIVATE_KEY")
+  <span class="token comment"># For Docker builds disable host key checking. Be aware that by adding that</span>
+  <span class="token comment"># you are suspectible to man-in-the-middle attacks.</span>
+  <span class="token comment"># WARNING: Use this only with the Docker executor, if you use it with shell</span>
+  <span class="token comment"># you will overwrite your user's SSH config.</span>
+  <span class="token punctuation">-</span> mkdir <span class="token punctuation">-</span>p ~/.ssh
+  <span class="token punctuation">-</span> <span class="token string">'[[ -f /.dockerenv ]] &amp;&amp; echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'</span>
+  <span class="token comment"># In order to properly check the server's host key, assuming you created the</span>
+  <span class="token comment"># SSH_SERVER_HOSTKEYS variable previously, uncomment the following two lines</span>
+  <span class="token comment"># instead.</span>
+  <span class="token comment"># - mkdir -p ~/.ssh</span>
+  <span class="token comment"># - '[[ -f /.dockerenv ]] &amp;&amp; echo "$SSH_SERVER_HOSTKEYS" > ~/.ssh/known_hosts'</span>
+
+  <span class="token comment"># Install pandoc, eg: v1.19.2.1</span>
+  <span class="token comment"># - wget https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb</span>
+  <span class="token comment"># - dpkg -i ./pandoc-1.19.2.1-1-amd64.deb</span>
+
+<span class="token key atrule">image</span><span class="token punctuation">:</span> node<span class="token punctuation">:</span>lts
+
+<span class="token key atrule">pages</span><span class="token punctuation">:</span>
+  <span class="token key atrule">cache</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> node_modules/
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> npm install
+  <span class="token punctuation">-</span> npx hexo deploy
+
+  <span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> public
+  <span class="token key atrule">only</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul></div></div></div>
+
+<div class="note danger"><p>Variables are not masked, and their values can be shown in the job logs if explicitly asked to do so. So make sure gitlab pipelines can only be viewed by yourself.</p>
+</div>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>Getting Started</title>
+    <url>/docs/getting-started/index.html</url>
+    <content><![CDATA[<h3 id="Hexo-Installation"><a href="#Hexo-Installation" class="headerlink" title="Hexo Installation"></a>Hexo Installation</h3><p>If this is your first time using Hexo, you can take some time to review the Hexo Docs to see <a href="https://hexo.io/docs/">how to install Hexo</a> and <a href="https://hexo.io/docs/setup">initialize a site</a>. After the installation is successful, you should be able to execute <code>hexo</code> (or <code>npx hexo</code>) on the command line, and there must be <code>package.json</code>, <code>source</code>, <code>themes</code> and other directories in your <mark class="label info">site root directory</mark>:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> hexo-site
+$ <span class="token function">ls</span>
+_config.yml  node_modules  package-lock.json  package.json  scaffolds  <span class="token builtin class-name">source</span>  themes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<div class="note info"><p>If you are new to Node.js or Hexo, you can also modify the source code of an existing Hexo website instead of creating a new one, to help you understand how Hexo works. In fact, the document you are reading is generated by Hexo with NexT, and you can install it with the following command:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> clone https://github.com/next-theme/theme-next-docs
+$ <span class="token builtin class-name">cd</span> theme-next-docs
+$ <span class="token function">npm</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</div>
+
+<p>Make sure that you have installed Hexo and created a site with it successfully, because the following documents require you to operate in the <mark class="label info">site root directory</mark>.</p>
+<h3 id="NexT-Installation"><a href="#NexT-Installation" class="headerlink" title="NexT Installation"></a>NexT Installation</h3><p>The detailed steps to install or upgrade the theme are as follows.</p>
+<h4 id="Downloading-NexT"><a href="#Downloading-NexT" class="headerlink" title="Downloading NexT"></a>Downloading NexT</h4><p>It’s easy to install Hexo theme: you can choose to install the theme through npm, or download the source code of the theme in the <code>themes</code> directory under <mark class="label info">site root directory</mark>.</p>
+<div class="tabs" id="downloading-next"><ul class="nav-tabs"><li class="tab active"><a href="#downloading-next-1">Using <code>npm</code></a></li><li class="tab"><a href="#downloading-next-2">Using <code>git</code></a></li></ul><div class="tab-content"><div class="tab-pane active" id="downloading-next-1"><p>If you’re using Hexo 5.0 or later, the simplest way to install is through npm.</p>
+<p>Open your Terminal, change to Hexo <mark class="label info">site root directory</mark> and install NexT theme:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> hexo-site
+$ <span class="token function">npm</span> <span class="token function">install</span> hexo-theme-next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div><div class="tab-pane" id="downloading-next-2"><p>If you know about <a href="https://git-scm.com/">Git</a>, you can clone the whole repository and update it in any time with <code>git pull</code> command instead of downloading archive manually.</p>
+<p>Open your terminal, change to Hexo <mark class="label info">site root directory</mark> and clone the latest master branch of NexT theme:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> hexo-site
+$ <span class="token function">git</span> clone https://github.com/next-theme/hexo-theme-next themes/next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></div></div>
+
+<div class="note primary"><p>You can also read <a href="/docs/getting-started/installation.html">detailed installation instructions</a> if you want any other installation variant.</p>
+</div>
+
+<h4 id="Upgrading-NexT"><a href="#Upgrading-NexT" class="headerlink" title="Upgrading NexT"></a>Upgrading NexT</h4><p>A new version of NexT will be released every month. Please read the <a href="https://github.com/next-theme/hexo-theme-next/releases">release notes</a> before updating the theme. You can update NexT by the following command.</p>
+<div class="tabs" id="upgrading-next"><ul class="nav-tabs"><li class="tab active"><a href="#upgrading-next-1">Using <code>npm</code></a></li><li class="tab"><a href="#upgrading-next-2">Using <code>git</code></a></li></ul><div class="tab-content"><div class="tab-pane active" id="upgrading-next-1"><p>Install the latest version throuth npm:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> hexo-site
+$ <span class="token function">npm</span> <span class="token function">install</span> hexo-theme-next@latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div><div class="tab-pane" id="upgrading-next-2"><p>Or update to the latest master branch:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> hexo-site
+$ <span class="token builtin class-name">cd</span> themes/next
+$ <span class="token function">git</span> pull origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>When running <code>git pull</code>, you can bypass merge conflicts (error message like <strong>«Commit your changes or stash them before you can merge»</strong>) by using the <code>Commit</code>, <code>Stash</code> or <code>Reset</code> commands for local changes. See <a href="https://stackoverflow.com/a/15745424/5861495">here</a> how to do it.</p></div></div></div>
+
+<div class="note warning"><p>If you are still using NexT version 5 or 7, you can read <a href="/docs/getting-started/upgrade.html">instructions for upgrading from legacy version</a>.</p>
+</div>
+
+<h3 id="Configuration-Files"><a href="#Configuration-Files" class="headerlink" title="Configuration Files"></a>Configuration Files</h3><p>After the installation of Hexo and NexT, you may found that there are two configuration files using by Hexo and both called <code>_config.yml</code>:</p>
+<ol>
+<li>The first one is under <mark class="label info">site root directory</mark>, which contains Hexo’s config.</li>
+<li>The second one is under <mark class="label primary">theme root directory</mark> (e.g. <code>thems/next/_config.yml</code> or <code>node_modules/hexo-theme-next/_config.yml</code>), which is provided by NexT and contains theme’s config.</li>
+</ol>
+<p>Let’s call the first one – <mark class="label info">Hexo config file</mark>, and the second one – <mark class="label primary">NexT config file</mark>.</p>
+<div class="note warning"><p>However, we do not recommend directly modifying the <mark class="label primary">NexT config file</mark>. It is quite often running into conflict status when updating NexT theme via <code>git pull</code>, or need to merge configurations manually when upgrading to new releases. For the theme installed through npm, it is also difficult to modify the <mark class="label primary">NexT config file</mark> in <code>node_modules</code>.</p>
+<p>In order to resolve this issue, we recommend using the <a href="/docs/getting-started/configuration.html">Alternate Theme Config</a> feature to configure theme NexT.</p>
+</div>
+
+<h3 id="Hexo-Configuration"><a href="#Hexo-Configuration" class="headerlink" title="Hexo Configuration"></a>Hexo Configuration</h3><p>The following settings in <mark class="label info">Hexo config file</mark> are very helpful for optimizing your website.</p>
+<h4 id="Configuring-Author"><a href="#Configuring-Author" class="headerlink" title="Configuring Author"></a>Configuring Author</h4><p>Edit <mark class="label info">Hexo config file</mark> and set the value of <code>author</code> to your nickname.</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>Hexo config file</span></div><code class="language-yaml"><span class="token comment"># Site</span>
+author<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="Configuring-Description"><a href="#Configuring-Description" class="headerlink" title="Configuring Description"></a>Configuring Description</h4><p>Edit <mark class="label info">Hexo config file</mark> and set the value of <code>description</code> to your description, which can be a sentence you like.</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>Hexo config file</span></div><code class="language-yaml"><span class="token comment"># Site</span>
+description<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="Enabling-NexT"><a href="#Enabling-NexT" class="headerlink" title="Enabling NexT"></a>Enabling NexT</h4><p>Like all Hexo themes, after you download it, open <mark class="label info">Hexo config file</mark>, find <code>theme</code> option, and change its value to <code>next</code> (or another theme directory name).</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>Hexo config file</span></div><code class="language-yaml"><span class="token key atrule">theme</span><span class="token punctuation">:</span> next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Now you have installed NexT theme and enabled it. The following steps will help you verify whether NexT is enabled correctly.</p>
+<h3 id="Checking-NexT"><a href="#Checking-NexT" class="headerlink" title="Checking NexT"></a>Checking NexT</h3><p>It’s recommended to use <code>hexo clean</code> to clean Hexo’s cache first.<br>Then start Hexo local server with debug parameter (by adding <code>--debug</code>), the whole command is <code>hexo s --debug</code>. You can see the output while running, and if you find problem, you can use the output to help others locate error better. When it prints:</p>
+<pre class="line-numbers language-none"><code class="language-none">INFO  Hexo is running at http:&#x2F;&#x2F;localhost:4000&#x2F;. Press Ctrl+C to stop.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Now you can open <code>http://localhost:4000</code> in your browser, and check whether the site works correctly.</p>
+<div class="note success"><p>If you find your site looks like this picture, you have installed it correctly. That’s default NexT scheme – Muse.<br><img src="/images/next-default-scheme.png" alt="Default Scheme – Muse"></p>
+</div>
+
+<p>After that we can <a href="/docs/getting-started/deployment.html">configure deployment</a>.</p>
+<p>If everything is OK, in next steps we will change some settings including <a href="/docs/theme-settings/">personalization</a> and <a href="/docs/third-party-services/">third-party services integration</a>.</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>Installation</title>
+    <url>/docs/getting-started/installation.html</url>
+    <content><![CDATA[<h3 id="Select-Version"><a href="#Select-Version" class="headerlink" title="Select Version"></a>Select Version</h3><p>A new version of NexT will be released every month. You can choose to install the latest version or choose a stable old version.</p>
+<div class="tabs" id="download-next"><ul class="nav-tabs"><li class="tab active"><a href="#download-next-1"><mark class="label success">Latest Master Branch</mark></a></li><li class="tab"><a href="#download-next-2">Latest Release Version</a></li><li class="tab"><a href="#download-next-3">Specific Release Version</a></li></ul><div class="tab-content"><div class="tab-pane active" id="download-next-1"><p><strong>Option 1: Download the <a href="https://github.com/next-theme/hexo-theme-next/archive/master.zip">Latest Master Branch</a></strong></p>
+<p>May be <strong>unstable</strong>, but includes <strong>latest features</strong>. At most cases useful and recommended for advanced users and for developers.</p></div><div class="tab-pane" id="download-next-2"><p><strong>Option 2: Download the <a href="https://github.com/next-theme/hexo-theme-next/releases/latest">Latest Release Version</a></strong></p>
+<p>At most cases <strong>stable</strong>. Recommended for beginners.</p></div><div class="tab-pane" id="download-next-3"><p><strong>Option 3: Download the <a href="https://github.com/next-theme/hexo-theme-next/releases">Specific Release Version</a></strong></p>
+<p>In rare cases useful, but not recommended.<br>You must define version. Let’s take <code>v8.0.0</code> as an example. Replace it with any version from <a href="https://github.com/next-theme/hexo-theme-next/tags">tags list</a>.</p></div></div></div>
+
+<h3 id="Get-NexT"><a href="#Get-NexT" class="headerlink" title="Get NexT"></a>Get NexT</h3><p>There are <strong>2 recommended ways</strong> to download NexT: <code>npm</code> and <code>git</code>. You need to <strong>choose only one</strong> of them. Other installation methods, such as downloading and decompressing the theme source code in zip format from GitHub, are no longer recommended, because the installed theme is difficult to manage and upgrade.</p>
+<p>Change dir to <mark class="label info">site root directory</mark> in the command line first, and then continue with the following steps.</p>
+<h4 id="Using-npm"><a href="#Using-npm" class="headerlink" title="Using npm"></a>Using <code>npm</code></h4><p>If you’re using Hexo 5.0 or later, you can install <code>hexo-theme-next</code> through npm.</p>
+<div class="tabs" id="using-npm"><ul class="nav-tabs"><li class="tab active"><a href="#using-npm-1">Latest Release Version</a></li><li class="tab"><a href="#using-npm-2">Specific Release Version</a></li></ul><div class="tab-content"><div class="tab-pane active" id="using-npm-1"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-theme-next@latest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>This variant will install the <strong>latest release version</strong>.</p></div><div class="tab-pane" id="using-npm-2"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-theme-next@8.0.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>This variant will install the <strong>specific release version</strong>.</p></div></div></div>
+
+<h4 id="Using-git"><a href="#Using-git" class="headerlink" title="Using git"></a>Using <code>git</code></h4><div class="tabs" id="using-git"><ul class="nav-tabs"><li class="tab active"><a href="#using-git-1">Latest Master Branch</a></li><li class="tab"><a href="#using-git-2">Specific Release Version</a></li></ul><div class="tab-content"><div class="tab-pane active" id="using-git-1"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> clone https://github.com/next-theme/hexo-theme-next themes/next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Or download via mirror on GitLab:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> clone https://gitlab.com/hexo-theme-next/hexo-theme-next themes/next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>This variant will install the <strong>whole repository</strong> (with <code>.git</code> directory inside).<br>And in any time you can update current version with git (instructions below) and switch to any tagged release or on latest master or any other branch.</p>
+<p>Get tags list:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> themes/next
+$ <span class="token function">git</span> tag <span class="token parameter variable">-l</span>
+<span class="token punctuation">..</span>.
+v8.0.0-rc.1
+v8.0.0-rc.2
+v8.0.0-rc.3
+<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>For example, you want to switch on <code>v8.0.0</code> tagged release version. Input the following command:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout tags/v8.0.0
+Note: switching to <span class="token string">'tags/v8.0.0'</span><span class="token builtin class-name">.</span>
+<span class="token punctuation">..</span>.
+HEAD is now at f27e45b Release v8.0.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>If you want to switch on latest release version without defining tag (optional)</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout <span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> describe <span class="token parameter variable">--tags</span> <span class="token punctuation">$(</span>git rev-list <span class="token parameter variable">--tags</span> --max-count<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token variable">)</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>And if you want to switch back on master branch, input this command:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div><div class="tab-pane" id="using-git-2"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> clone <span class="token parameter variable">--branch</span> v8.0.0 https://github.com/next-theme/hexo-theme-next themes/next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Or download via mirror on GitLab:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> clone <span class="token parameter variable">--branch</span> v8.0.0 https://gitlab.com/hexo-theme-next/hexo-theme-next themes/next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>This variant will install the <strong>specific release version</strong> (with <code>.git</code> directory inside).<br>And in any time you can switch to any tagged release, but with limit to specific version.</p></div></div></div>
+
+<p>And if you see any error message during update (something like <strong>«Commit your changes or stash them before you can merge»</strong>), recommended to learn <a href="/docs/getting-started/configuration.html">Alternate Theme Config</a> feature. Howbeit, you can bypass update errors by <code>Commit</code>, <code>Stash</code> or <code>Discard</code> local changes. See <a href="https://stackoverflow.com/a/15745424/5861495">here</a> how to do it.</p>
+<h3 id="Set-It-Up"><a href="#Set-It-Up" class="headerlink" title="Set It Up"></a>Set It Up</h3><p>When NexT download will complete, we must go back to previous guide and follow <a href="/docs/getting-started/#Enabling-NexT">Enabling NexT</a> instructions.</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>Upgrade</title>
+    <url>/docs/getting-started/upgrade.html</url>
+    <content><![CDATA[<h3 id="NexT-Compatibility-with-Hexo-Version"><a href="#NexT-Compatibility-with-Hexo-Version" class="headerlink" title="NexT Compatibility with Hexo Version"></a>NexT Compatibility with Hexo Version</h3><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Hexo 3.0.0-beta.4 or earlier</th>
+<th>Hexo 3.0.0-rc.1 ~ 3.9</th>
+<th>Hexo 4.0 ~ 4.2.1</th>
+<th>Hexo 5.0 or later</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NexT v0.4.5.1 or earlier</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌ Icon (2)</td>
+<td>❌ Icon (2)</td>
+</tr>
+<tr>
+<td>NexT v0.4.5.2 ~ v7.4.1</td>
+<td>⚠️ Data Files (1)</td>
+<td>✅</td>
+<td>❌ Icon (2)</td>
+<td>❌ Icon (2)</td>
+</tr>
+<tr>
+<td>NexT v7.4.2 ~ v8.1.0</td>
+<td>⚠️ Data Files (1)</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>NexT v8.2.0 or later</td>
+<td>⚠️ Nunjucks (3)</td>
+<td>⚠️ Nunjucks (3)</td>
+<td>⚠️ Nunjucks (3)</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<p>(1): Hexo 3.0.0-beta.4 or earlier does not support Data Files.<br>(2): Icons may not be displayed normally.<br>(3): Nunjucks renderer plugin required.</p>
+<h3 id="NexT-Repositories"><a href="#NexT-Repositories" class="headerlink" title="NexT Repositories"></a>NexT Repositories</h3><p>Due to historical reasons, NexT has three different repositories.</p>
+<table>
+<thead>
+<tr>
+<th>Years</th>
+<th>Version</th>
+<th>Repository</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2014 ~ 2017</td>
+<td>v5</td>
+<td><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></td>
+</tr>
+<tr>
+<td>2018 ~ 2019</td>
+<td>v6 ~ v7</td>
+<td><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></td>
+</tr>
+<tr>
+<td>2020</td>
+<td>v8</td>
+<td><a href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a></td>
+</tr>
+</tbody></table>
+<h3 id="Upgrade-from-Legacy-Version"><a href="#Upgrade-from-Legacy-Version" class="headerlink" title="Upgrade from Legacy Version"></a>Upgrade from Legacy Version</h3><p>It’s recommended to upgrade NexT to version 8 to get the latest features and supports in the new <a href="https://github.com/next-theme/hexo-theme-next">Theme-Next</a> repository.</p>
+<h4 id="Breaking-Changes"><a href="#Breaking-Changes" class="headerlink" title="Breaking Changes"></a>Breaking Changes</h4><p>There are some breaking changes that need attention when upgrading across versions.</p>
+<ol>
+<li><p>Update language configuration (for Simplified Chinese)<br> Since v6.0.3, <code>zh-Hans</code> has been renamed to <code>zh-CN</code>: <a href="https://github.com/theme-next/hexo-theme-next/releases/tag/v6.0.3">https://github.com/theme-next/hexo-theme-next/releases/tag/v6.0.3</a></p>
+<p> Users upgrading to v6.0.3 and later need to explicitly modify the <code>language</code> configuration in <mark class="label info">Hexo config file</mark>, otherwise the language display is incorrect.</p>
+</li>
+<li><p>Since v8.0.0, all libraries under the <code>next/source/lib</code> directory was moved out to <a href="https://github.com/next-theme/plugins">@next-theme&#x2F;plugins</a>. Please see this article for the new 3rd-party libraries installation method: <a href="/docs/third-party-services/#Adding-Plugins">Adding Plugins</a>.</p>
+</li>
+</ol>
+<h4 id="Upgrade"><a href="#Upgrade" class="headerlink" title="Upgrade"></a>Upgrade</h4><p>So, NexT suggest to upgrade from version 5 or 7 to version 8 in this way:</p>
+<ol>
+<li>You need to do some copies of old NexT files:<br> 1.1. <code>_config.yml</code> or <code>next.yml</code> (if you used <a href="/docs/getting-started/configuration.html">Alternate Theme Config</a>).<br> 1.2. Custom CSS files placed in <code>next/source/css/_custom/*</code> and <code>next/source/css/_variables/*</code> directories.<br> 1.3. Custom layout files placed in <code>next/layout/_custom/*</code>.<br> 1.4. Any another possible custom additions which can be finded by compare tools between repositories.</li>
+<li>Then rename the old NexT folder, for example, rename <code>next</code> to <code>next-old</code>.</li>
+<li>Install the new version according to the method provided in this article: <a href="/docs/getting-started/installation.html">installation instructions</a>. Run <code>hexo clean</code> and <code>hexo s</code> to check whether the site works correctly.</li>
+<li>Update Hexo and Hexo plugin<br> If after completing the above steps, an error occurs when executing <code>hexo s</code> or <code>hexo g</code>, it means that there may be a conflict between the old version of Hexo &#x2F; Hexo plugin and the new version of the theme NexT. We recommend upgrading Hexo and Hexo plugins to the latest version. You can run <code>npm outdated</code> to see all the upgradeable plugins.</li>
+<li>If you see any bugs or you simply does not like this version, you can switch back to the old version at any time.</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
 </search>
