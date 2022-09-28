@@ -188,18 +188,18 @@ daovoice('update');
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">61</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -229,6 +229,9 @@ daovoice('update');
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
+          <a href="/posts/2194712517/" title="posts&#x2F;2194712517&#x2F;">网盘电影搜索引擎</a>
+        </li>
+        <li class="links-of-recent-posts-item">
           <a href="/posts/3774131884/" title="posts&#x2F;3774131884&#x2F;">美丽的图画 Picture of Beauty (2017)</a>
         </li>
         <li class="links-of-recent-posts-item">
@@ -239,9 +242,6 @@ daovoice('update');
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/posts/2004151250/" title="posts&#x2F;2004151250&#x2F;">棕榈泉 Palm Springs (2020)</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/posts/2406846742/" title="posts&#x2F;2406846742&#x2F;">wps官方免费版下载安装</a>
         </li>
     </ul>
   </div>
@@ -641,7 +641,7 @@ daovoice('update');
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">27 分钟</span>
+    <span title="站点阅读时长">28 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -732,6 +732,21 @@ document.write("<font color=red>"+daysold+"</font>天 !");
 
 
 
+
+
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/tags/Hello/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.valine.el)
+    .then(() => NexT.utils.getScript(
+      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+      { condition: window.Valine }
+    ))
+    .then(() => {
+      new Valine(CONFIG.valine);
+    });
+});
+</script>
 <script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
@@ -751,21 +766,6 @@ var options = {
 const darkmode = new Darkmode(options);
 window.darkmode = darkmode;
 darkmode.showWidget();
-</script>
-
-
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/tags/Hello/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.valine.el)
-    .then(() => NexT.utils.getScript(
-      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
-      { condition: window.Valine }
-    ))
-    .then(() => {
-      new Valine(CONFIG.valine);
-    });
-});
 </script>
 
 
