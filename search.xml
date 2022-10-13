@@ -726,7 +726,7 @@
 <p><img src="http://imgsrc.baidu.com/super/pic/item/b8389b504fc2d5620bf45633a21190ef77c66c74.jpg" alt="img"></p>
 <p><img src="http://imgsrc.baidu.com/super/pic/item/6d81800a19d8bc3e04f08014c78ba61ea9d34570.jpg" alt="img"></p>
 <p><img src="http://imgsrc.baidu.com/super/pic/item/d31b0ef41bd5ad6e0303e234c4cb39dbb7fd3c72.jpg" alt="img"></p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-lZNsLROdcjVVCRuX" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-mIPlYDURoOEjlCyB" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
 
 <h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-365天：明日之欲 The Next 365 Days‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b15ccb2be704">资源链接</a></p>
 <p>zj-365天：今时之欲 365 Days: This Day‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/34556b292677">资源链接</a></p>
@@ -1050,9 +1050,9 @@ $ <span class="token function">npm</span> <span class="token function">install</
 <li>3.如果坚持必须要在新机器上安装Windows7，请在安装完成后使用Dism++工具往本地安装好的系统上注入USB3.0和NVME驱动。</li>
 <li>4.我们不建议新机器装Windows7，性能发挥不出来。也无法使用新的高级特性，如果因为某些软件必须Win7的缘故，建议用虚拟机安装一个Windows7。</li>
 </ul>
-<h2 id="安装Windows7的具体流程"><a href="#安装Windows7的具体流程" class="headerlink" title="安装Windows7的具体流程"></a>安装Windows7的具体流程</h2><p>与安装Windows8.1或10的方法一样，参见：「<a href="https://h1985.vercel.app/posts/2528470635/">原生安装Windows8.1&amp;10</a>」</p>
+<h2 id="安装Windows7的具体流程"><a href="#安装Windows7的具体流程" class="headerlink" title="安装Windows7的具体流程"></a>安装Windows7的具体流程</h2><p>与安装Windows8.1或10的方法一样，参见：「<a href="/posts/2528470635/">原生安装Windows8.1&amp;10</a>」</p>
 <hr>
-<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="https://h1985.vercel.app/posts/2528470635/">Windows8.1&amp;10官方原版系统下载安装之U盘PE原生安装</a><br><a href="https://h1985.vercel.app/posts/171425204/">Windows官方原版系统下载安装之U盘PE安装器安装</a></p>
+<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="/posts/2528470635/">Windows8.1&amp;10官方原版系统下载安装之U盘PE原生安装</a><br><a href="/posts/171425204/">Windows官方原版系统下载安装之U盘PE安装器安装</a></p>
 <hr>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
@@ -1073,19 +1073,19 @@ $ <span class="token function">npm</span> <span class="token function">install</
 <span id="more"></span>
 
 <h2 id="安装系统前的准备工作"><a href="#安装系统前的准备工作" class="headerlink" title="安装系统前的准备工作"></a>安装系统前的准备工作</h2><ul>
-<li><p>准备好U盘启动盘<br>制作方法在「<a href="https://h1985.vercel.app/posts/174102025/">微PE</a>」、「<a href="https://h1985.vercel.app/posts/3673859036/">U盘魔术师(USM)</a>」、「<a href="https://h1985.vercel.app/posts/258067225/">老毛桃</a>」等文章中有详细的讲解。</p>
+<li><p>准备好U盘启动盘<br>制作方法在「<a href="/posts/174102025/">微PE</a>」、「<a href="/posts/3673859036/">U盘魔术师(USM)</a>」、「<a href="/posts/258067225/">老毛桃</a>」等文章中有详细的讲解。</p>
 </li>
-<li><p>系统下载<br>下载地址在「<a href="https://msdn.itellyou.cn/">msdn</a>」、「<a href="https://hellowindows.cn/">hellowindows</a>」等原版系统镜像下载站。「<a href>点击查看关于系统文件名解释</a>」</p>
+<li><p>系统下载<br>下载地址在「<a href="https://msdn.itellyou.cn/">msdn</a>」、「<a href="https://hellowindows.cn/">hellowindows</a>」等原版系统镜像下载站。「<a href="/posts/3866503405/">点击查看关于系统文件名解释</a>」</p>
 </li>
-<li><p>观察自己的系统所在硬盘是GPT分区表还是MBR「<a href="https://h1985.vercel.app/posts/3960468335/">判断分区表类型GPT还是MBR</a>」<br>如果是GPT的分区表，便可用原生安装。</p>
+<li><p>观察自己的系统所在硬盘是GPT分区表还是MBR「<a href="/posts/3960468335/">判断分区表类型GPT还是MBR</a>」<br>如果是GPT的分区表，便可用原生安装。</p>
 </li>
 <li><p>原生安装方式对UEFI还是Legacy启动PE有严格要求<br>UEFI启动的系统，系统盘所在硬盘的分区表为GPT，PE应为UEFI启动。<br>Legacy启动的系统，系统盘所在硬盘的分区表为MBR，PE应为Legacy启动。<br>请牢记UEFI&lt;-&gt;GPT和Legacy&lt;-&gt;MBR的这种对应关系。并通过当前硬盘的分区表类型判断机器之前是哪种方式启动。<br>若PE启动方式选择错误可以重新选择。</p>
 </li>
-<li><p>判断系统盘所在硬盘的位置？<br>如果您的机器上装了多块硬盘，请做好区分，别装错了。如果需要提前分区，就先分好再装。「<a href="https://h1985.vercel.app/posts/717041725/">硬盘快速分区教程</a>」</p>
+<li><p>判断系统盘所在硬盘的位置？<br>如果您的机器上装了多块硬盘，请做好区分，别装错了。如果需要提前分区，就先分好再装。「<a href="/posts/717041725/">硬盘快速分区教程</a>」</p>
 </li>
-<li><p>请务必提前做好数据备份<br>安装的时候要格式化C盘，请务必将C盘文件备份至其他。必要时，将文档照片类的不可再生数据存储至外部存储器一份。「<a href="https://h1985.vercel.app/posts/1315606668/">系统备份恢复</a>」</p>
+<li><p>请务必提前做好数据备份<br>安装的时候要格式化C盘，请务必将C盘文件备份至其他。必要时，将文档照片类的不可再生数据存储至外部存储器一份。「<a href="/posts/1315606668/">系统备份恢复</a>」</p>
 <blockquote>
-<p>关于如何启动PE和查看分区表类型的方法在「<a href="https://h1985.vercel.app/posts/1571641020/">如何进入PE系统</a>」文章中有详细的讲解。</p>
+<p>关于如何启动PE和查看分区表类型的方法在「<a href="/posts/1571641020/">如何进入PE系统</a>」文章中有详细的讲解。</p>
 </blockquote>
 </li>
 </ul>
@@ -1094,13 +1094,13 @@ $ <span class="token function">npm</span> <span class="token function">install</
 <h2 id="第二步：运行Windows安装程序Setup-exe一步一步开始安装"><a href="#第二步：运行Windows安装程序Setup-exe一步一步开始安装" class="headerlink" title="第二步：运行Windows安装程序Setup.exe一步一步开始安装"></a>第二步：运行Windows安装程序Setup.exe一步一步开始安装</h2><p>运行这个虚拟盘符内的windows安装程序Setup.exe，就进入了windows的原版安装界面。<br><img src="https://s2.loli.net/2022/08/15/j65mTkdguSPUlWy.png" alt="3.png"><br>在Windows安装程序中点击“现在安装”开始，一步步往里点。<br><img src="https://s2.loli.net/2022/08/15/MStuD9ZEV7ariTF.png" alt="4.png"><br>输入您的产品密钥，安装程序会为您匹配相对应的系统版本。<br><img src="https://s2.loli.net/2022/08/15/EpbhXMWL73YRvIK.png" alt="5.png"><br><img src="https://s2.loli.net/2022/08/15/7b4zgl9sTufNjLX.png" alt="6.png"><br><img src="https://s2.loli.net/2022/08/15/EAmg1aD2z7N6jO9.png" alt="7.png"><br>系统版本那里自行选择，安装类型那里选择 “自定义”，直到进入到待安装磁盘位置的页面。<br><img src="https://s2.loli.net/2022/08/15/OLcyPludrqRxkZa.png" alt="8.png"><br>在这个界面中，需要做一个操作，来提升提升安装成功率。请先定位到您系统盘的位置，观察前面有几个小分区，百十来兆的样子，有时候一个，有时候两个，直接把小分区连同系统大分区一起删除。是的您没听错，选中后直接点红××删除它们，留下一个完整的“未分配空间”。<br><img src="https://s2.loli.net/2022/08/15/L5KYs2o4OViktRa.png" alt="9.png"><br>然后在这个未分配空间上点下一步，这个时候系统就开始安装了。<br><img src="https://s2.loli.net/2022/08/15/6qXh4vNIeEAw59M.png" alt="10.png"><br>如果不出意外，等进度走完，重启后，就进入了安装配置阶段。<br><img src="https://s2.loli.net/2022/08/15/7DaVyxYRzqTQsWO.png" alt="11.png"><br><img src="https://s2.loli.net/2022/08/15/OHe4r7aEKkMqRF1.png" alt="12.png"></p>
 <h2 id="第三步：等待系统安装完成，做最后的系统配置"><a href="#第三步：等待系统安装完成，做最后的系统配置" class="headerlink" title="第三步：等待系统安装完成，做最后的系统配置"></a>第三步：等待系统安装完成，做最后的系统配置</h2><p>重启后，进入系统最后配置页，这里会要求您做一些简单的设置，创建登录账户，按照提示操作即可。怎么选都可以。<br><img src="https://s2.loli.net/2022/08/15/HtSO3r9VmyanZGI.png" alt="13.png"><br><img src="https://s2.loli.net/2022/08/15/Tuq1wavQ4eVlptc.png" alt="14.png"><br><img src="https://s2.loli.net/2022/08/15/XubP7M23EJwQUG5.png" alt="15.png"><br><img src="https://s2.loli.net/2022/08/15/lMtYx9kZQDu68VW.png" alt="16.png"><br><img src="https://s2.loli.net/2022/08/15/KcohTYPLViRfvEb.png" alt="17.png"><br><img src="https://s2.loli.net/2022/08/15/zmV7fKWHEYyPuLt.png" alt="18.png"><br><img src="https://s2.loli.net/2022/08/15/VOCcmSLYkowZAj4.png" alt="19.png"><br>至此，系统就算安装完毕了。</p>
 <h2 id="第四步：进入桌面，装驱动装软件"><a href="#第四步：进入桌面，装驱动装软件" class="headerlink" title="第四步：进入桌面，装驱动装软件"></a>第四步：进入桌面，装驱动装软件</h2><p>进入到桌面后，请尽快安装驱动，Win10以上系统会自动联网装驱动，Win7及以下系统需要手工打驱动。<br>您可以自己提前备好需要安装的驱动，也可以用驱动精灵联网装驱动。U盘内自带了一个带网卡驱动的驱动精灵安装包，可以用这个先把网卡驱动装了，再联网装驱动。<br>至此，微PE作为IT维护工具的全部工作结束。</p>
-<h3 id="第五步：系统激活"><a href="#第五步：系统激活" class="headerlink" title="第五步：系统激活"></a>第五步：系统激活</h3><p>后续您需要对系统进行激活。激活方法工具：「<a href="https://h1985.vercel.app/posts/1408820050/">Windows&amp;Office激活工具 HEU KMS Activator</a>」、「<a href="https://h1985.vercel.app/posts/3131456665/">Windows&amp;Office激活工具 AAct</a>」</p>
+<h3 id="第五步：系统激活"><a href="#第五步：系统激活" class="headerlink" title="第五步：系统激活"></a>第五步：系统激活</h3><p>后续您需要对系统进行激活。激活方法工具：「<a href="/posts/1408820050/">Windows&amp;Office激活工具 HEU KMS Activator</a>」、「<a href="/posts/3131456665/">Windows&amp;Office激活工具 AAct</a>」</p>
 <h2 id="常见异常问题解决"><a href="#常见异常问题解决" class="headerlink" title="常见异常问题解决"></a>常见异常问题解决</h2><ul>
 <li>1.提示“Windows 无法安装到这个磁盘。选中的磁盘具有MBR分区表。在 EFI 系统上，Windows 只能安装到 GPT 磁盘”<br>遇到这种报错，是因为要安装系统的那块硬盘是MBR分区表，需要legacy启动的PE才能安装，而PE却是UEFI启动的，因此报错。解决方法是：重启电脑,以legacy方式进入PE，再进行安装就好了。请牢记UEFI&lt;-&gt;GPT和Legacy&lt;-&gt;MBR的这种对应关系。只要严格按照必读教程的要求来，这个提示是不会遇到的。</li>
 <li>2.提示“windows无法安装到这个磁盘 选中的磁盘采用GPT分区形式”<br>和第一种错误恰恰相反，是因为要安装系统的那块硬盘是GPT分区表，而PE却是Legacy启动的。解决方法是：重启电脑,以UEFI方式进入PE，再进行安装就好了。</li>
 </ul>
 <hr>
-<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="https://h1985.vercel.app/posts/171425204/">Windows官方原版系统下载安装之U盘PE安装器安装</a><br><a href="https://h1985.vercel.app/posts/2610634147/">Windows7官方原版系统下载安装之U盘PE原生安装</a></p>
+<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="/posts/171425204/">Windows官方原版系统下载安装之U盘PE安装器安装</a><br><a href="/posts/2610634147/">Windows7官方原版系统下载安装之U盘PE原生安装</a></p>
 <hr>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
@@ -1379,12 +1379,12 @@ $ <span class="token function">npm</span> <span class="token function">install</
 <span id="more"></span>
 
 <h2 id="安装系统前的准备工作"><a href="#安装系统前的准备工作" class="headerlink" title="安装系统前的准备工作"></a>安装系统前的准备工作</h2><ul>
-<li>准备好U盘启动盘<br>制作方法在「<a href="https://h1985.vercel.app/posts/174102025/">微PE</a>」、「<a href="https://h1985.vercel.app/posts/3673859036/">U盘魔术师(USM)</a>」、「<a href="https://h1985.vercel.app/posts/258067225/">老毛桃</a>」等文章中有详细的讲解。</li>
-<li>系统下载<br>下载地址在「<a href="https://msdn.itellyou.cn/">msdn</a>」、「<a href="https://hellowindows.cn/">hellowindows</a>」等原版系统镜像下载站。「<a href>点击查看关于系统文件名解释</a>」</li>
-<li>观察自己的系统所在硬盘是GPT分区表还是MBR「<a href="https://h1985.vercel.app/posts/3960468335/">判断分区表类型GPT还是MBR</a>」<br>如果是MBR的分区表，这样装就好。如果是GPT分区表，推荐原生安装方法：2.1.原生安装Windows8.1&amp;10，或者是安装完手工修复一下UEFI引导。</li>
-<li>判断系统盘所在硬盘的位置？<br>如果您的机器上装了多块硬盘，请做好区分，别装错了。如果需要提前分区，就先分好再装。「<a href="https://h1985.vercel.app/posts/717041725/">硬盘快速分区教程</a>」</li>
-<li>请务必提前做好数据备份<br>安装的时候要格式化C盘，请务必将C盘文件备份至其他。必要时，将文档照片类的不可再生数据存储至外部存储器一份。「<a href="https://h1985.vercel.app/posts/1315606668/">系统备份恢复</a>」<blockquote>
-<p>关于如何启动PE和查看分区表类型的方法在「<a href="https://h1985.vercel.app/posts/1571641020/">如何进入PE系统</a>」文章中有详细的讲解。</p>
+<li>准备好U盘启动盘<br>制作方法在「<a href="/posts/174102025/">微PE</a>」、「<a href="/posts/3673859036/">U盘魔术师(USM)</a>」、「<a href="/posts/258067225/">老毛桃</a>」等文章中有详细的讲解。</li>
+<li>系统下载<br>下载地址在「<a href="https://msdn.itellyou.cn/">msdn</a>」、「<a href="https://hellowindows.cn/">hellowindows</a>」等原版系统镜像下载站。「<a href="/posts/3866503405/">点击查看关于系统文件名解释</a>」</li>
+<li>观察自己的系统所在硬盘是GPT分区表还是MBR「<a href="/posts/3960468335/">判断分区表类型GPT还是MBR</a>」<br>如果是MBR的分区表，这样装就好。如果是GPT分区表，推荐原生安装方法：2.1.原生安装Windows8.1&amp;10，或者是安装完手工修复一下UEFI引导。</li>
+<li>判断系统盘所在硬盘的位置？<br>如果您的机器上装了多块硬盘，请做好区分，别装错了。如果需要提前分区，就先分好再装。「<a href="/posts/717041725/">硬盘快速分区教程</a>」</li>
+<li>请务必提前做好数据备份<br>安装的时候要格式化C盘，请务必将C盘文件备份至其他。必要时，将文档照片类的不可再生数据存储至外部存储器一份。「<a href="/posts/1315606668/">系统备份恢复</a>」<blockquote>
+<p>关于如何启动PE和查看分区表类型的方法在「<a href="/posts/1571641020/">如何进入PE系统</a>」文章中有详细的讲解。</p>
 </blockquote>
 </li>
 </ul>
@@ -1393,9 +1393,9 @@ $ <span class="token function">npm</span> <span class="token function">install</
 <h3 id="第二步：打开桌面上的Windows安装器，输入选项后安装"><a href="#第二步：打开桌面上的Windows安装器，输入选项后安装" class="headerlink" title="第二步：打开桌面上的Windows安装器，输入选项后安装"></a>第二步：打开桌面上的Windows安装器，输入选项后安装</h3><p>执行桌面上的Windows安装器，按照提示进行选择。<br><img src="https://s2.loli.net/2022/08/13/8M4S36ACi9XPkOu.png" alt="3.png"><br>Windows安装器顶部有两个选项卡，右边的支持WIN10、8.1、7的安装，左边的支持XP的安装。请注意区别对待。<br><img src="https://s2.loli.net/2022/08/13/gA4S9vbntGYPfzW.png" alt="4.png"><br>在第一个选项中，请选择系统包install.wim的位置（在刚才挂载出来的虚拟光驱里的source文件夹里），比如H:\sources\install.wim等等。<br>注：如果是安装XP的话，选择左侧的选项卡，第一个选项选择挂载出来的虚拟光驱根目录或I386。<br><img src="https://s2.loli.net/2022/08/13/9OoEWupD7KZNMbX.png" alt="5.png"><br>其余的两项填写要安装到的目标系统盘，正常情况下选择 C: 即可<br>当选择好三个选项之后，左下角的系统版本按照需要进行选择。<br>之后就可以点击开始安装，在弹出的确认对话框中再次点确认即可开始安装。<br><img src="https://s2.loli.net/2022/08/13/FJXWEOpKuklNQwM.png" alt="6.png"><br><img src="https://s2.loli.net/2022/08/13/ISeEvH6Ry4rwozB.png" alt="7.png"><br>安装完成后，若没有自动重启，请手工重启。</p>
 <h3 id="第三步：等待系统安装完成，做最后的系统配置"><a href="#第三步：等待系统安装完成，做最后的系统配置" class="headerlink" title="第三步：等待系统安装完成，做最后的系统配置"></a>第三步：等待系统安装完成，做最后的系统配置</h3><p>重启后，进入系统最后配置页，这里会要求您做一些简单的设置，创建登录账户，按照提示操作即可。怎么选都可以。<br><img src="https://s2.loli.net/2022/08/13/LHd3UAqV5tEQ9JS.png" alt="9.png"><br><img src="https://s2.loli.net/2022/08/13/BYvJOa7DLfXhPIr.png" alt="10.png"><br><img src="https://s2.loli.net/2022/08/13/yei8DMGtRLdcUjZ.png" alt="11.png"><br><img src="https://s2.loli.net/2022/08/13/5nICvZdf4FkercP.png" alt="12.png"><br><img src="https://s2.loli.net/2022/08/13/UNA1wnFyuGilROK.png" alt="13.png"><br><img src="https://s2.loli.net/2022/08/13/jcDhUeXO7CtsRbL.png" alt="14.png"><br><img src="https://s2.loli.net/2022/08/13/Y438Fub5JyqGmAX.png" alt="15.png"></p>
 <h3 id="第四步：进入桌面，装驱动装软件"><a href="#第四步：进入桌面，装驱动装软件" class="headerlink" title="第四步：进入桌面，装驱动装软件"></a>第四步：进入桌面，装驱动装软件</h3><p>进入到桌面后，请尽快安装驱动，Win10以上系统会自动联网装驱动，Win7及以下系统需要手工打驱动。<br>您可以自己提前备好需要安装的驱动，也可以用驱动精灵联网装驱动。U盘内自带了一个带网卡驱动的驱动精灵安装包，可以用这个先把网卡驱动装了，再联网装驱动。<br>至此，微PE作为IT维护工具的全部工作结束。</p>
-<h3 id="第五步：系统激活"><a href="#第五步：系统激活" class="headerlink" title="第五步：系统激活"></a>第五步：系统激活</h3><p>后续您需要对系统进行激活。激活方法工具：「<a href="https://h1985.vercel.app/posts/1408820050/">Windows&amp;Office激活工具 HEU KMS Activator</a>」、「<a href="https://h1985.vercel.app/posts/3131456665/">Windows&amp;Office激活工具 AAct</a>」</p>
+<h3 id="第五步：系统激活"><a href="#第五步：系统激活" class="headerlink" title="第五步：系统激活"></a>第五步：系统激活</h3><p>后续您需要对系统进行激活。激活方法工具：「<a href="/posts/1408820050/">Windows&amp;Office激活工具 HEU KMS Activator</a>」、「<a href="/posts/3131456665/">Windows&amp;Office激活工具 AAct</a>」</p>
 <hr>
-<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="https://h1985.vercel.app/posts/2528470635/">Windows8.1&amp;10官方原版系统下载安装之U盘PE原生安装</a><br><a href="https://h1985.vercel.app/posts/2610634147/">Windows7官方原版系统下载安装之U盘PE原生安装</a></p>
+<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="/posts/2528470635/">Windows8.1&amp;10官方原版系统下载安装之U盘PE原生安装</a><br><a href="/posts/2610634147/">Windows7官方原版系统下载安装之U盘PE原生安装</a></p>
 <hr>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
@@ -1497,29 +1497,6 @@ $ <span class="token function">npm</span> <span class="token function">install</
     <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
-    <title>关于</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
-    <title>说说</title>
-    <url>/shuoshuo/index.html</url>
-    <content><![CDATA[<!-- 引用 artitalk -->
-<script type="text/javascript" src="https://unpkg.com/artitalk"></script>
-<!-- 存放说说的容器 -->
-<div id="artitalk_main"></div>
-<script>
-new Artitalk({
-      serverURL: 'https://coucm1xg.lc-cn-n1-shared.com',
-      appId: 'cOuCm1XgFmGAJaCNASlWKjE5-gzGzoHsz',
-      appKey: 'ikiAW8ZtiKepPPGCuknu06Uz'
-})
-</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
     <title>友链</title>
     <url>/links/index.html</url>
     <content><![CDATA[<!-- 这是一段被注释掉的文字 
@@ -1563,8 +1540,31 @@ new Artitalk({
     <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
+    <title>说说</title>
+    <url>/shuoshuo/index.html</url>
+    <content><![CDATA[<!-- 引用 artitalk -->
+<script type="text/javascript" src="https://unpkg.com/artitalk"></script>
+<!-- 存放说说的容器 -->
+<div id="artitalk_main"></div>
+<script>
+new Artitalk({
+      serverURL: 'https://coucm1xg.lc-cn-n1-shared.com',
+      appId: 'cOuCm1XgFmGAJaCNASlWKjE5-gzGzoHsz',
+      appKey: 'ikiAW8ZtiKepPPGCuknu06Uz'
+})
+</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
     <title>标签</title>
     <url>/tags/index.html</url>
     <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>关于</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
 </search>
