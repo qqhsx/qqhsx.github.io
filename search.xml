@@ -1,129 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo博客源文件备份</title>
-    <url>/posts/3307548722/</url>
-    <content><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
-<p>我是通过Github部署博客的，通过<code>hexo d</code>上传部署到Github的其实是hexo编译后的文件，不包含源文件。而其他文件 ，包括我们写在_posts里面的文章，和配置文件_config.yml，主题文件_config.butterfly.yml等都没有上传到github</p>
-<p>而遇到电脑寄了或者重装系统等不可抗力，想要恢复博客没有源文件只能重来一遍（文章什么的都没有了:new_moon_with_face:），故备份源文件十分重要，特此记录下。</p>
-</blockquote>
-<h3 id="备份博客"><a href="#备份博客" class="headerlink" title="备份博客"></a>备份博客</h3><ul>
-<li>U盘备份（这个没什么好说的）</li>
-<li>将源文件托管在Github&#x2F;Gitee&#x2F;Gitlab上（着重说下这个）</li>
-</ul>
-<h3 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH-Key"></a>生成SSH-Key</h3><p>我选择用Gitee备份，先生成一个Gitee用的SSH-Key</p>
-<p>Ctrl+Alt+T打开终端，输入</p>
-<pre class="line-numbers language-none"><code class="language-none">ssh-keygen -t rsa -C xxxxxxxx@qq.com -f ~&#x2F;.ssh&#x2F;gitee_id_rsa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><a href="mailto:&#120;&#x78;&#120;&#120;&#120;&#120;&#x78;&#120;&#64;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;">&#120;&#x78;&#120;&#120;&#120;&#120;&#x78;&#120;&#64;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;</a>替换为自己的邮箱即可</p>
-<p>一直按ENTER，会生成密钥文件</p>
-<p>打开文件–显示隐藏文件–找到.ssh打开–打开刚刚创建的gitee_id_rsa.pub</p>
-<p>复制里面的内容，打开Gitee–右上角头像下设置–SSH公钥–粘贴公钥，标题随便取</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230320/1.27w1ux0x7x34.png" alt="1"></p>
-<h3 id="新建repository"><a href="#新建repository" class="headerlink" title="新建repository"></a>新建repository</h3><p>在Gitee新建仓库，名称随意，勾选README</p>
-<p>复制仓库地址</p>
-<p>Ctrl+Alt+T打开新终端，输入，git clone 地址</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone git@gitee.com:stringwind&#x2F;blog_backup.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="获取-git"><a href="#获取-git" class="headerlink" title="获取.git"></a>获取.git</h3><p>打开clone来的文件夹–显示隐藏文件–复制.git文件</p>
-<p>将文件粘贴到博客根目录下</p>
-<h3 id="创建-gitignore"><a href="#创建-gitignore" class="headerlink" title="创建.gitignore"></a>创建.gitignore</h3><p>可能已经有了，没有的话创建个，根目录下<code>touch .gitignore</code>，写入</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">.DS_Store
-Thumbs.db
-db.json
-*.log
-node_modules/
-public/
-.deploy*/
-_multiconfig.yml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>上传时候忽略一些文件（都是些安装会自动生成的或是编译后的文件，无须备份）</p>
-<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>博客根目录下执行</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">git add .
-git commit  -m  backup  
-git push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>这样就将源文件备份到Gitee上了</p>
-<p>每次更新后，输入以下命令即可备份</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">git add .
-git commit -m backup
-git push
-hexo g
-hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="一键备份并部署（可选）"><a href="#一键备份并部署（可选）" class="headerlink" title="一键备份并部署（可选）"></a>一键备份并部署（可选）</h3><p>由于每次更新后都要输入大量命令行十分麻烦，遂创建一键部署脚本方便备份部署</p>
-<p>在博客根目录下创建deploy.sh文件，写入</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">echo "Start"
-git add .
-git commit -m backup
-git push
-hexo g
-hexo d
-echo "Finish"
-echo 按任意键继续
-read -n 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>保存后，在博客根目录双击执行或用命令<code>./deploy.sh</code> 即可实现博客的一键备份并部署</p>
-<h3 id="恢复博客"><a href="#恢复博客" class="headerlink" title="恢复博客"></a>恢复博客</h3><h3 id="基础环境搭建"><a href="#基础环境搭建" class="headerlink" title="基础环境搭建"></a>基础环境搭建</h3><p>Hexo博客基础环境已经搭好：比如安装npm、git、nodejs、hexo安装…</p>
-<h3 id="克隆项目到本地"><a href="#克隆项目到本地" class="headerlink" title="克隆项目到本地"></a>克隆项目到本地</h3><p>Ctrl+Alt+T打开终端，输入</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone git@gitee.com:stringwind&#x2F;blog_backup.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>git clone 自己的仓库地址</p>
-<h3 id="恢复博客-1"><a href="#恢复博客-1" class="headerlink" title="恢复博客"></a>恢复博客</h3><p>在clone来的文件夹里执行</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">npm install hexo-cli
-npm install
-npm install hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>这样博客源文件就成功移植了，再用hexo clean、hexo g、hexo d即可部署完成</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
-    <title>Business Editions和Consumer Editions区别详细介绍</title>
-    <url>/posts/3866503405/</url>
-    <content><![CDATA[<blockquote>
-<p>Business Editions和Consumer Editions有什么区别？在微软官网提供的系统ISO版本下载中，拥有两个大版本，分别是Business Editions和Consumer Editions，那么这两个有什么区别呢？</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="二者都内置专业版，不同之处在于："><a href="#二者都内置专业版，不同之处在于：" class="headerlink" title="二者都内置专业版，不同之处在于："></a>二者都内置专业版，不同之处在于：</h2><ul>
-<li>consumer_editions 版本包含：<br>Home（家庭版）; Education（教育版） ; Professional（专业版）。</li>
-<li>business_editions 版本包含：<br>Education（教育版）; Enterprise （企业版）;Professional（专业版）。</li>
-<li>Windows 10 （business editions） VL版<br>ISO镜像包含以下版本（根据需要选择安装）：专业版、企业版、教育版、专业工作站版、专业教育版。</li>
-<li>Windows 10 （consumer editions） 零售版<br>ISO镜像包含以下版本（根据需要选择安装）：家庭版、专业版、教育版、家庭单语言版、专业工作站版、专业教育版。</li>
-</ul>
-<h2 id="Windows-10-各版本区别："><a href="#Windows-10-各版本区别：" class="headerlink" title="Windows 10 各版本区别："></a>Windows 10 各版本区别：</h2><ul>
-<li>家庭版(Home)：<br>供家庭用户使用，无法加入Active Directory和Azure AD，不允许远程链接</li>
-<li>专业版(Professional)：<br>供小型企业使用 在家庭版基础上增加了域账号加入、bitlocker、企业商店等功能</li>
-<li>企业版(Enterprise)：<br>供中大型企业使用 在专业版基础上增加了DirectAccess，AppLocker等高级企业功能</li>
-<li>教育版(Education)：<br>供学校使用 (学校职员, 管理人员, 老师和学生) 其功能基本和企业版的一样</li>
-<li>LTSB版：<br>无Edge浏览器、小娜，无磁贴，可选是否下载和安装补丁，其它版都不能自选补丁</li>
-<li>N版：<br>带“N”的版本相当于阉割版，移除了Windows Media Player，几乎用不到N版。</li>
-</ul>
-<h2 id="Win10各版本详细区别："><a href="#Win10各版本详细区别：" class="headerlink" title="Win10各版本详细区别："></a>Win10各版本详细区别：</h2><ul>
-<li>Windows 10 企业版（和教育版功能一样，功能最完整版本）</li>
-</ul>
-<ol>
-<li>核心功能<br>①熟悉，更好用：自定义开始菜单，Windows Defender 与Windows防火墙，Hiberboot与InstantGo，系统启动更快速，TPM支持，节电模式，Windows更新<br>②Cortana小娜：更自然的语音和按键输入，主动、个性化建议，提醒，从网络、本地以及云中搜索，无需动手，直接喊出“你好，小娜”即可激活<br>③Windows Hello：指纹识别，面部和虹膜识别，企业级安全<br>④多任务操作：虚拟桌面，Snap协同（同一屏幕最多支持显示4个应用），跨不同显示器的Snap功能支持<br>⑤Microsoft Edge：阅读视图，内置墨水书写支持，整合Cortana小娜</li>
-<li>企业特性<br>①基础功能：设备加密，加入域功能，组策略管理器，Bitlocker加密，企业模式Internet Explorer浏览器（EMIE），Assigned Access 8.1（访问分配），远程桌面，Direct Access（直接访问），Windows To Go创建工具，Applocker（应用程序锁定），BranchCache（分支缓存），可通过组策略控制的开始屏幕，<br>②管理部署功能：企业应用旁加载功能，移动设备管理，可加入到Azure活动目录，单点登录到云托管应用，Win10企业商店，粒度UX控制，可轻松从专业版升级到企业版<br>③安全：Microsoft Passport登录，企业数据保护，凭据保护，设备保护<br>④Windows即服务：Windows更新，Windows Update for Business，Current Branch for Business（用于企业的当前更新分支）</li>
-</ol>
-<ul>
-<li>Windows 10 教育版<br>与企业板功能一致，授权方式不同，可轻松从家庭版升级到教育版，（经过测试专业版也可以通过输入教育版key升级到教育版）</li>
-<li>Windows 10 专业版<br>与企业版对比【无】以下功能：<br>①基础功能：Direct Access（直接访问），Windows To Go创建工具，Applocker（应用程序锁定），BranchCache（分支缓存），可通过组策略控制的开始屏幕，<br>②管理部署功能：粒度UX控制<br>③安全：凭据保护，设备保护</li>
-<li>Windows 10 家庭版<br>与专业版对比【无】以下功能：<br>①基础功能：加入域功能，组策略管理器，Bitlocker加密，企业模式Internet Explorer浏览器（EMIE），Assigned Access 8.1（访问分配），远程桌面，Direct Access（直接访问），Windows To Go创建工具，Applocker（应用程序锁定），BranchCache（分支缓存），可通过组策略控制的开始屏幕，<br>②管理部署功能：可加入到Azure活动目录，单点登录到云托管应用，Win10企业商店，粒度UX控制，可轻松从专业版升级到企业版<br>③安全：企业数据保护，凭据保护，设备保护<br>④Windows即服务：Windows Update for Business，Current Branch for Business（用于企业的当前更新分支）</li>
-<li>Windows 10 企业版长期服务分支2015 LTSB<br>与企业版功能一致，可手动设置更新服务，无Edge浏览器，无商店。</li>
-</ul>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>系统安装</category>
-        <category>系统安装教程</category>
-      </categories>
-      <tags>
-        <tag>Business Editions</tag>
-        <tag>Consumer Editions</tag>
-        <tag>Windows 10 各版本区别</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo博客搭建与部署</title>
     <url>/posts/275407383/</url>
     <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
@@ -243,63 +120,81 @@ hexo s	//简写<span aria-hidden="true" class="line-numbers-rows"><span></span><
       </tags>
   </entry>
   <entry>
-    <title>Windows&amp;Office激活工具 AAct v4.2.7 汉化便携版</title>
-    <url>/posts/3131456665/</url>
-    <content><![CDATA[<blockquote>
-<p>AAct是一款由俄罗斯网友Ratiborus制作的非常小巧实用的KMS激活工具，能自动设置密钥管理服务激活Windows、Office VL版本。支持手动安装及删除激活产品密钥、手动创建及删除续期计划任务，该程序无需.NET Framework框架，相比国外其它激活工具，体积小巧、单执行文件、绿色无残留，激活成功率不错！</p>
+    <title>Hexo博客源文件备份</title>
+    <url>/posts/3307548722/</url>
+    <content><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
+<p>我是通过Github部署博客的，通过<code>hexo d</code>上传部署到Github的其实是hexo编译后的文件，不包含源文件。而其他文件 ，包括我们写在_posts里面的文章，和配置文件_config.yml，主题文件_config.butterfly.yml等都没有上传到github</p>
+<p>而遇到电脑寄了或者重装系统等不可抗力，想要恢复博客没有源文件只能重来一遍（文章什么的都没有了:new_moon_with_face:），故备份源文件十分重要，特此记录下。</p>
 </blockquote>
-<span id="more"></span>
+<h3 id="备份博客"><a href="#备份博客" class="headerlink" title="备份博客"></a>备份博客</h3><ul>
+<li>U盘备份（这个没什么好说的）</li>
+<li>将源文件托管在Github&#x2F;Gitee&#x2F;Gitlab上（着重说下这个）</li>
+</ul>
+<h3 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH-Key"></a>生成SSH-Key</h3><p>我选择用Gitee备份，先生成一个Gitee用的SSH-Key</p>
+<p>Ctrl+Alt+T打开终端，输入</p>
+<pre class="line-numbers language-none"><code class="language-none">ssh-keygen -t rsa -C xxxxxxxx@qq.com -f ~&#x2F;.ssh&#x2F;gitee_id_rsa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://s2.loli.net/2022/08/16/Y4dHshNwWji7Xkr.png" alt="1.png"></p>
-<h2 id="AAct-功能特性"><a href="#AAct-功能特性" class="headerlink" title="AAct 功能特性"></a>AAct 功能特性</h2><p>支持Windows、Office 零售版及批量授权版KMS激活；不需任何版本的 .NET Framework 框架支持，可以激活Windows Vista、Windows 7、Windows 8&#x2F;8.1、Windows 10、Server 2008&#x2F;2008 R2、2012&#x2F;2012 R2、Office 2010&#x2F;2013&#x2F;2016 VL 版本。此外，您还可在 Windows XP 上激活 Office 2010 VL。</p>
-<blockquote>
-<p>附注：Network版集成了第三方KMS服务，需联网获取激活信息. 注：这类激活工具行为如报毒，请添加到杀软排除列表正常使用！</p>
-<p>百度网盘下载 （提取码f5ku）：<a href="https://pan.baidu.com/s/1I72SzNbImfnyWfxVpdf5gQ">点击下载AAct v4.2.7 汉化便携版</a></p>
-</blockquote>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>系统安装</category>
-        <category>系统安装工具</category>
-      </categories>
-      <tags>
-        <tag>Office激活</tag>
-        <tag>KMS激活工具</tag>
-        <tag>数字权利激活</tag>
-        <tag>Windows激活</tag>
-        <tag>AAct v4.2.7 汉化便携版</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>U盘魔术师(USM)制作U盘启动盘</title>
-    <url>/posts/3673859036/</url>
-    <content><![CDATA[<blockquote>
-<p>U盘魔术师（USM）是系统总裁自主开发的一款u盘PE启动盘制作工具，其无广告、无流氓、无捆绑、无后门、启动成功率高获得大批用户的喜爱，支持UD、ISO、UDM、安装本机,支持x86及x64_EFI，而且USM内置了大量磁盘控制器驱动(IDE、AHCI、RAID、Nvme(M.2)、USB3.0&#x2F;3.1)、功能超级强大，USM的作者by 红毛樱木 也是在不断的更新。</p>
-</blockquote>
-<span id="more"></span>
+<p><a href="mailto:&#120;&#x78;&#120;&#120;&#x78;&#120;&#120;&#x78;&#64;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;">&#120;&#x78;&#120;&#120;&#x78;&#120;&#120;&#x78;&#64;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;</a>替换为自己的邮箱即可</p>
+<p>一直按ENTER，会生成密钥文件</p>
+<p>打开文件–显示隐藏文件–找到.ssh打开–打开刚刚创建的gitee_id_rsa.pub</p>
+<p>复制里面的内容，打开Gitee–右上角头像下设置–SSH公钥–粘贴公钥，标题随便取</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230320/1.27w1ux0x7x34.png" alt="1"></p>
+<h3 id="新建repository"><a href="#新建repository" class="headerlink" title="新建repository"></a>新建repository</h3><p>在Gitee新建仓库，名称随意，勾选README</p>
+<p>复制仓库地址</p>
+<p>Ctrl+Alt+T打开新终端，输入，git clone 地址</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone git@gitee.com:stringwind&#x2F;blog_backup.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="U盘魔术师优盘启动工具制作步骤："><a href="#U盘魔术师优盘启动工具制作步骤：" class="headerlink" title="U盘魔术师优盘启动工具制作步骤："></a>U盘魔术师优盘启动工具制作步骤：</h2><ol>
-<li>准备一个5G以上的U盘，注意事项，制作的启动盘必须对u盘格式化，所以在制作启动盘之前先把重要文件转移。</li>
-<li>插入U盘到电脑，双击下载的 exe 文件（下载地址在文未）。<br><img src="https://s2.loli.net/2022/08/12/sk89VhJepG4qzY6.png" alt="1.png"></li>
-<li>点击U盘模式，此处选择要制作的U盘，分区设置（使用默认推荐即可），分区格式（建议NTFS），其它默认即可。<br><img src="https://s2.loli.net/2022/08/12/XuGZ8TI3iJmfs9U.png" alt="2.png"></li>
-<li>选择具体的PE内核，如下图v5和v6版本可选择的PE内核，<br><img src="https://s2.loli.net/2022/08/12/NgtIhDqoWjnGAwu.png" alt="3.png"></li>
-<li>在U盘模式下制作优盘PE启动工具，可对PE的界面进行个性化修改，也可在此对原PE进行升级和空间的还原。<br><img src="https://s2.loli.net/2022/08/12/qXIvc9VDFnEi8ho.png" alt="4.png"></li>
-<li>个性化修改启动菜单&#x2F;欢迎界面&#x2F;桌面的背景。<br><img src="https://s2.loli.net/2022/08/12/dcOxPtvQZbsA2WG.png" alt="5.png"></li>
-<li>制作优盘启动前先把优盘内的资料备份好，此步会格式化优盘，以免造成数据丢失。<br><img src="https://s2.loli.net/2022/08/12/ZU1N5FHcaoRh4mM.png" alt="6.png"></li>
-<li>开始制作。待制作完成后拔出优盘即可。<br><img src="https://s2.loli.net/2022/08/12/gyFZ2pbzYJvnor6.png" alt="7.png"><blockquote>
-<p>百度网盘下载 （提取码tc66）：<a href="https://pan.baidu.com/s/1s7LGSDcjWN0wjMng1HpS1g">点击下载U盘魔术师(USM)</a></p>
-</blockquote>
-</li>
-</ol>
+<h3 id="获取-git"><a href="#获取-git" class="headerlink" title="获取.git"></a>获取.git</h3><p>打开clone来的文件夹–显示隐藏文件–复制.git文件</p>
+<p>将文件粘贴到博客根目录下</p>
+<h3 id="创建-gitignore"><a href="#创建-gitignore" class="headerlink" title="创建.gitignore"></a>创建.gitignore</h3><p>可能已经有了，没有的话创建个，根目录下<code>touch .gitignore</code>，写入</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上传时候忽略一些文件（都是些安装会自动生成的或是编译后的文件，无须备份）</p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>博客根目录下执行</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">git add .
+git commit  -m  backup  
+git push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>这样就将源文件备份到Gitee上了</p>
+<p>每次更新后，输入以下命令即可备份</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">git add .
+git commit -m backup
+git push
+hexo g
+hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="一键备份并部署（可选）"><a href="#一键备份并部署（可选）" class="headerlink" title="一键备份并部署（可选）"></a>一键备份并部署（可选）</h3><p>由于每次更新后都要输入大量命令行十分麻烦，遂创建一键部署脚本方便备份部署</p>
+<p>在博客根目录下创建deploy.sh文件，写入</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">echo "Start"
+git add .
+git commit -m backup
+git push
+hexo g
+hexo d
+echo "Finish"
+echo 按任意键继续
+read -n 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>保存后，在博客根目录双击执行或用命令<code>./deploy.sh</code> 即可实现博客的一键备份并部署</p>
+<h3 id="恢复博客"><a href="#恢复博客" class="headerlink" title="恢复博客"></a>恢复博客</h3><h3 id="基础环境搭建"><a href="#基础环境搭建" class="headerlink" title="基础环境搭建"></a>基础环境搭建</h3><p>Hexo博客基础环境已经搭好：比如安装npm、git、nodejs、hexo安装…</p>
+<h3 id="克隆项目到本地"><a href="#克隆项目到本地" class="headerlink" title="克隆项目到本地"></a>克隆项目到本地</h3><p>Ctrl+Alt+T打开终端，输入</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone git@gitee.com:stringwind&#x2F;blog_backup.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>git clone 自己的仓库地址</p>
+<h3 id="恢复博客-1"><a href="#恢复博客-1" class="headerlink" title="恢复博客"></a>恢复博客</h3><p>在clone来的文件夹里执行</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">npm install hexo-cli
+npm install
+npm install hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>这样博客源文件就成功移植了，再用hexo clean、hexo g、hexo d即可部署完成</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>系统安装</category>
-        <category>系统安装工具</category>
-      </categories>
-      <tags>
-        <tag>U盘魔术师</tag>
-        <tag>USM</tag>
-        <tag>U盘启动</tag>
-      </tags>
   </entry>
   <entry>
     <title>U盘启动如何进入PE</title>
@@ -330,6 +225,65 @@ hexo s	//简写<span aria-hidden="true" class="line-numbers-rows"><span></span><
       <tags>
         <tag>U盘启动</tag>
         <tag>PE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>U盘魔术师(USM)制作U盘启动盘</title>
+    <url>/posts/3673859036/</url>
+    <content><![CDATA[<blockquote>
+<p>U盘魔术师（USM）是系统总裁自主开发的一款u盘PE启动盘制作工具，其无广告、无流氓、无捆绑、无后门、启动成功率高获得大批用户的喜爱，支持UD、ISO、UDM、安装本机,支持x86及x64_EFI，而且USM内置了大量磁盘控制器驱动(IDE、AHCI、RAID、Nvme(M.2)、USB3.0&#x2F;3.1)、功能超级强大，USM的作者by 红毛樱木 也是在不断的更新。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="U盘魔术师优盘启动工具制作步骤："><a href="#U盘魔术师优盘启动工具制作步骤：" class="headerlink" title="U盘魔术师优盘启动工具制作步骤："></a>U盘魔术师优盘启动工具制作步骤：</h2><ol>
+<li>准备一个5G以上的U盘，注意事项，制作的启动盘必须对u盘格式化，所以在制作启动盘之前先把重要文件转移。</li>
+<li>插入U盘到电脑，双击下载的 exe 文件（下载地址在文未）。<br><img src="https://s2.loli.net/2022/08/12/sk89VhJepG4qzY6.png" alt="1.png"></li>
+<li>点击U盘模式，此处选择要制作的U盘，分区设置（使用默认推荐即可），分区格式（建议NTFS），其它默认即可。<br><img src="https://s2.loli.net/2022/08/12/XuGZ8TI3iJmfs9U.png" alt="2.png"></li>
+<li>选择具体的PE内核，如下图v5和v6版本可选择的PE内核，<br><img src="https://s2.loli.net/2022/08/12/NgtIhDqoWjnGAwu.png" alt="3.png"></li>
+<li>在U盘模式下制作优盘PE启动工具，可对PE的界面进行个性化修改，也可在此对原PE进行升级和空间的还原。<br><img src="https://s2.loli.net/2022/08/12/qXIvc9VDFnEi8ho.png" alt="4.png"></li>
+<li>个性化修改启动菜单&#x2F;欢迎界面&#x2F;桌面的背景。<br><img src="https://s2.loli.net/2022/08/12/dcOxPtvQZbsA2WG.png" alt="5.png"></li>
+<li>制作优盘启动前先把优盘内的资料备份好，此步会格式化优盘，以免造成数据丢失。<br><img src="https://s2.loli.net/2022/08/12/ZU1N5FHcaoRh4mM.png" alt="6.png"></li>
+<li>开始制作。待制作完成后拔出优盘即可。<br><img src="https://s2.loli.net/2022/08/12/gyFZ2pbzYJvnor6.png" alt="7.png"><blockquote>
+<p>百度网盘下载 （提取码tc66）：<a href="https://pan.baidu.com/s/1s7LGSDcjWN0wjMng1HpS1g">点击下载U盘魔术师(USM)</a></p>
+</blockquote>
+</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>系统安装</category>
+        <category>系统安装工具</category>
+      </categories>
+      <tags>
+        <tag>U盘启动</tag>
+        <tag>U盘魔术师</tag>
+        <tag>USM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows&amp;Office激活工具 AAct v4.2.7 汉化便携版</title>
+    <url>/posts/3131456665/</url>
+    <content><![CDATA[<blockquote>
+<p>AAct是一款由俄罗斯网友Ratiborus制作的非常小巧实用的KMS激活工具，能自动设置密钥管理服务激活Windows、Office VL版本。支持手动安装及删除激活产品密钥、手动创建及删除续期计划任务，该程序无需.NET Framework框架，相比国外其它激活工具，体积小巧、单执行文件、绿色无残留，激活成功率不错！</p>
+</blockquote>
+<span id="more"></span>
+
+<p><img src="https://s2.loli.net/2022/08/16/Y4dHshNwWji7Xkr.png" alt="1.png"></p>
+<h2 id="AAct-功能特性"><a href="#AAct-功能特性" class="headerlink" title="AAct 功能特性"></a>AAct 功能特性</h2><p>支持Windows、Office 零售版及批量授权版KMS激活；不需任何版本的 .NET Framework 框架支持，可以激活Windows Vista、Windows 7、Windows 8&#x2F;8.1、Windows 10、Server 2008&#x2F;2008 R2、2012&#x2F;2012 R2、Office 2010&#x2F;2013&#x2F;2016 VL 版本。此外，您还可在 Windows XP 上激活 Office 2010 VL。</p>
+<blockquote>
+<p>附注：Network版集成了第三方KMS服务，需联网获取激活信息. 注：这类激活工具行为如报毒，请添加到杀软排除列表正常使用！</p>
+<p>百度网盘下载 （提取码f5ku）：<a href="https://pan.baidu.com/s/1I72SzNbImfnyWfxVpdf5gQ">点击下载AAct v4.2.7 汉化便携版</a></p>
+</blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>系统安装</category>
+        <category>系统安装工具</category>
+      </categories>
+      <tags>
+        <tag>Office激活</tag>
+        <tag>KMS激活工具</tag>
+        <tag>数字权利激活</tag>
+        <tag>Windows激活</tag>
+        <tag>AAct v4.2.7 汉化便携版</tag>
       </tags>
   </entry>
   <entry>
@@ -379,6 +333,126 @@ hexo s	//简写<span aria-hidden="true" class="line-numbers-rows"><span></span><
         <tag>数字权利激活</tag>
         <tag>Windows激活</tag>
         <tag>HEUKMSActivator</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title> Windows7官方原版系统下载安装之U盘PE原生安装</title>
+    <url>/posts/2610634147/</url>
+    <content><![CDATA[<blockquote>
+<p>本篇教程将详细介绍使用微PE安装微软原版Windows7系统的具体方法流程、注意事项、异常问题解决等。</p>
+<blockquote>
+<p>其实原生安装Windows7的方法和安装Windows8.1或10的方法步骤完全一样，但由于Win7这个系统比较老，在一些新机器上安装会出问题，这里单独说一注意事项。</p>
+</blockquote>
+</blockquote>
+<span id="more"></span>
+
+<p><img src="https://s2.loli.net/2022/08/15/ezWHsT1IKBj2a6Y.jpg" alt="1.jpg"></p>
+<h2 id="原生安装Windows7的特别提示"><a href="#原生安装Windows7的特别提示" class="headerlink" title="原生安装Windows7的特别提示"></a>原生安装Windows7的特别提示</h2><ul>
+<li>1.如果需要原生安装Windows7，可以在10PE或者8PE内安装。</li>
+<li>2.原版的Windows7比较老，原生连USB3.0驱动都没有，只能装到比较老的机器上。在新机器上要么蓝屏，要么鼠标键盘动不了。</li>
+<li>3.如果坚持必须要在新机器上安装Windows7，请在安装完成后使用Dism++工具往本地安装好的系统上注入USB3.0和NVME驱动。</li>
+<li>4.我们不建议新机器装Windows7，性能发挥不出来。也无法使用新的高级特性，如果因为某些软件必须Win7的缘故，建议用虚拟机安装一个Windows7。</li>
+</ul>
+<h2 id="安装Windows7的具体流程"><a href="#安装Windows7的具体流程" class="headerlink" title="安装Windows7的具体流程"></a>安装Windows7的具体流程</h2><p>与安装Windows8.1或10的方法一样，参见：「<a href="/posts/2528470635/">原生安装Windows8.1&amp;10</a>」</p>
+<hr>
+<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="/posts/2528470635/">Windows8.1&amp;10官方原版系统下载安装之U盘PE原生安装</a><br><a href="/posts/171425204/">Windows官方原版系统下载安装之U盘PE安装器安装</a></p>
+<hr>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>系统安装</category>
+        <category>系统安装教程</category>
+      </categories>
+      <tags>
+        <tag>Windows7安装</tag>
+        <tag>Windows7原版下载</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows8.1&amp;10官方原版系统下载安装之U盘PE原生安装</title>
+    <url>/posts/2528470635/</url>
+    <content><![CDATA[<blockquote>
+<p>本方法支持的系统：Windows 7，Windows 8.1，Windows 10等NT6系列的全部系统。本方法不支持安装XP。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="安装系统前的准备工作"><a href="#安装系统前的准备工作" class="headerlink" title="安装系统前的准备工作"></a>安装系统前的准备工作</h2><ul>
+<li><p>准备好U盘启动盘<br>制作方法在「<a href="/posts/174102025/">微PE</a>」、「<a href="/posts/3673859036/">U盘魔术师(USM)</a>」、「<a href="/posts/258067225/">老毛桃</a>」等文章中有详细的讲解。</p>
+</li>
+<li><p>系统下载<br>下载地址在「<a href="https://msdn.itellyou.cn/">msdn</a>」、「<a href="https://hellowindows.cn/">hellowindows</a>」等原版系统镜像下载站。「<a href="/posts/3866503405/">点击查看关于系统文件名解释</a>」</p>
+</li>
+<li><p>观察自己的系统所在硬盘是GPT分区表还是MBR「<a href="/posts/3960468335/">判断分区表类型GPT还是MBR</a>」<br>如果是GPT的分区表，便可用原生安装。</p>
+</li>
+<li><p>原生安装方式对UEFI还是Legacy启动PE有严格要求<br>UEFI启动的系统，系统盘所在硬盘的分区表为GPT，PE应为UEFI启动。<br>Legacy启动的系统，系统盘所在硬盘的分区表为MBR，PE应为Legacy启动。<br>请牢记UEFI&lt;-&gt;GPT和Legacy&lt;-&gt;MBR的这种对应关系。并通过当前硬盘的分区表类型判断机器之前是哪种方式启动。<br>若PE启动方式选择错误可以重新选择。</p>
+</li>
+<li><p>判断系统盘所在硬盘的位置？<br>如果您的机器上装了多块硬盘，请做好区分，别装错了。如果需要提前分区，就先分好再装。「<a href="/posts/717041725/">硬盘快速分区教程</a>」</p>
+</li>
+<li><p>请务必提前做好数据备份<br>安装的时候要格式化C盘，请务必将C盘文件备份至其他。必要时，将文档照片类的不可再生数据存储至外部存储器一份。「<a href="/posts/1315606668/">系统备份恢复</a>」</p>
+<blockquote>
+<p>关于如何启动PE和查看分区表类型的方法在「<a href="/posts/1571641020/">如何进入PE系统</a>」文章中有详细的讲解。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="正式开始安装系统"><a href="#正式开始安装系统" class="headerlink" title="正式开始安装系统"></a>正式开始安装系统</h2><p>以下以微PEU盘启动盘为例，其它启动盘大同小异。</p>
+<h2 id="第一步：将要安装的系统ISO镜像挂载为虚拟光驱"><a href="#第一步：将要安装的系统ISO镜像挂载为虚拟光驱" class="headerlink" title="第一步：将要安装的系统ISO镜像挂载为虚拟光驱"></a>第一步：将要安装的系统ISO镜像挂载为虚拟光驱</h2><p>从U盘启动进入PE内，打开U盘内您从微软官方下载的系统镜像ISO。<br><img src="https://s2.loli.net/2022/08/15/bps8FKZ94Tlugw1.png" alt="1.png"><br>对着ISO镜像点右键，选择挂载，或者直接双击，该ISO就会被挂载为一个新的虚拟的光盘驱动器，和插入安装光盘效果类似。它会显示在“我的电脑”里，并且有一个盘符。<br><img src="https://s2.loli.net/2022/08/15/e6SUbN5fTCkW3jG.png" alt="2.png"></p>
+<h2 id="第二步：运行Windows安装程序Setup-exe一步一步开始安装"><a href="#第二步：运行Windows安装程序Setup-exe一步一步开始安装" class="headerlink" title="第二步：运行Windows安装程序Setup.exe一步一步开始安装"></a>第二步：运行Windows安装程序Setup.exe一步一步开始安装</h2><p>运行这个虚拟盘符内的windows安装程序Setup.exe，就进入了windows的原版安装界面。<br><img src="https://s2.loli.net/2022/08/15/j65mTkdguSPUlWy.png" alt="3.png"><br>在Windows安装程序中点击“现在安装”开始，一步步往里点。<br><img src="https://s2.loli.net/2022/08/15/MStuD9ZEV7ariTF.png" alt="4.png"><br>输入您的产品密钥，安装程序会为您匹配相对应的系统版本。<br><img src="https://s2.loli.net/2022/08/15/EpbhXMWL73YRvIK.png" alt="5.png"><br><img src="https://s2.loli.net/2022/08/15/7b4zgl9sTufNjLX.png" alt="6.png"><br><img src="https://s2.loli.net/2022/08/15/EAmg1aD2z7N6jO9.png" alt="7.png"><br>系统版本那里自行选择，安装类型那里选择 “自定义”，直到进入到待安装磁盘位置的页面。<br><img src="https://s2.loli.net/2022/08/15/OLcyPludrqRxkZa.png" alt="8.png"><br>在这个界面中，需要做一个操作，来提升提升安装成功率。请先定位到您系统盘的位置，观察前面有几个小分区，百十来兆的样子，有时候一个，有时候两个，直接把小分区连同系统大分区一起删除。是的您没听错，选中后直接点红××删除它们，留下一个完整的“未分配空间”。<br><img src="https://s2.loli.net/2022/08/15/L5KYs2o4OViktRa.png" alt="9.png"><br>然后在这个未分配空间上点下一步，这个时候系统就开始安装了。<br><img src="https://s2.loli.net/2022/08/15/6qXh4vNIeEAw59M.png" alt="10.png"><br>如果不出意外，等进度走完，重启后，就进入了安装配置阶段。<br><img src="https://s2.loli.net/2022/08/15/7DaVyxYRzqTQsWO.png" alt="11.png"><br><img src="https://s2.loli.net/2022/08/15/OHe4r7aEKkMqRF1.png" alt="12.png"></p>
+<h2 id="第三步：等待系统安装完成，做最后的系统配置"><a href="#第三步：等待系统安装完成，做最后的系统配置" class="headerlink" title="第三步：等待系统安装完成，做最后的系统配置"></a>第三步：等待系统安装完成，做最后的系统配置</h2><p>重启后，进入系统最后配置页，这里会要求您做一些简单的设置，创建登录账户，按照提示操作即可。怎么选都可以。<br><img src="https://s2.loli.net/2022/08/15/HtSO3r9VmyanZGI.png" alt="13.png"><br><img src="https://s2.loli.net/2022/08/15/Tuq1wavQ4eVlptc.png" alt="14.png"><br><img src="https://s2.loli.net/2022/08/15/XubP7M23EJwQUG5.png" alt="15.png"><br><img src="https://s2.loli.net/2022/08/15/lMtYx9kZQDu68VW.png" alt="16.png"><br><img src="https://s2.loli.net/2022/08/15/KcohTYPLViRfvEb.png" alt="17.png"><br><img src="https://s2.loli.net/2022/08/15/zmV7fKWHEYyPuLt.png" alt="18.png"><br><img src="https://s2.loli.net/2022/08/15/VOCcmSLYkowZAj4.png" alt="19.png"><br>至此，系统就算安装完毕了。</p>
+<h2 id="第四步：进入桌面，装驱动装软件"><a href="#第四步：进入桌面，装驱动装软件" class="headerlink" title="第四步：进入桌面，装驱动装软件"></a>第四步：进入桌面，装驱动装软件</h2><p>进入到桌面后，请尽快安装驱动，Win10以上系统会自动联网装驱动，Win7及以下系统需要手工打驱动。<br>您可以自己提前备好需要安装的驱动，也可以用驱动精灵联网装驱动。U盘内自带了一个带网卡驱动的驱动精灵安装包，可以用这个先把网卡驱动装了，再联网装驱动。<br>至此，微PE作为IT维护工具的全部工作结束。</p>
+<h3 id="第五步：系统激活"><a href="#第五步：系统激活" class="headerlink" title="第五步：系统激活"></a>第五步：系统激活</h3><p>后续您需要对系统进行激活。激活方法工具：「<a href="/posts/1408820050/">Windows&amp;Office激活工具 HEU KMS Activator</a>」、「<a href="/posts/3131456665/">Windows&amp;Office激活工具 AAct</a>」</p>
+<h2 id="常见异常问题解决"><a href="#常见异常问题解决" class="headerlink" title="常见异常问题解决"></a>常见异常问题解决</h2><ul>
+<li>1.提示“Windows 无法安装到这个磁盘。选中的磁盘具有MBR分区表。在 EFI 系统上，Windows 只能安装到 GPT 磁盘”<br>遇到这种报错，是因为要安装系统的那块硬盘是MBR分区表，需要legacy启动的PE才能安装，而PE却是UEFI启动的，因此报错。解决方法是：重启电脑,以legacy方式进入PE，再进行安装就好了。请牢记UEFI&lt;-&gt;GPT和Legacy&lt;-&gt;MBR的这种对应关系。只要严格按照必读教程的要求来，这个提示是不会遇到的。</li>
+<li>2.提示“windows无法安装到这个磁盘 选中的磁盘采用GPT分区形式”<br>和第一种错误恰恰相反，是因为要安装系统的那块硬盘是GPT分区表，而PE却是Legacy启动的。解决方法是：重启电脑,以UEFI方式进入PE，再进行安装就好了。</li>
+</ul>
+<hr>
+<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="/posts/171425204/">Windows官方原版系统下载安装之U盘PE安装器安装</a><br><a href="/posts/2610634147/">Windows7官方原版系统下载安装之U盘PE原生安装</a></p>
+<hr>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>系统安装</category>
+        <category>系统安装教程</category>
+      </categories>
+      <tags>
+        <tag>Windows8.１安装</tag>
+        <tag>Windows10安装</tag>
+        <tag>Windows下载</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows官方原版系统下载安装之U盘PE安装器安装</title>
+    <url>/posts/171425204/</url>
+    <content><![CDATA[<blockquote>
+<p>本方法支持的系统：Windows 7，Windows 8.1，Windows 10等NT6系列的全部系统。甚至支持安装XP。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="安装系统前的准备工作"><a href="#安装系统前的准备工作" class="headerlink" title="安装系统前的准备工作"></a>安装系统前的准备工作</h2><ul>
+<li>准备好U盘启动盘<br>制作方法在「<a href="/posts/174102025/">微PE</a>」、「<a href="/posts/3673859036/">U盘魔术师(USM)</a>」、「<a href="/posts/258067225/">老毛桃</a>」等文章中有详细的讲解。</li>
+<li>系统下载<br>下载地址在「<a href="https://msdn.itellyou.cn/">msdn</a>」、「<a href="https://hellowindows.cn/">hellowindows</a>」等原版系统镜像下载站。「<a href="/posts/3866503405/">点击查看关于系统文件名解释</a>」</li>
+<li>观察自己的系统所在硬盘是GPT分区表还是MBR「<a href="/posts/3960468335/">判断分区表类型GPT还是MBR</a>」<br>如果是MBR的分区表，这样装就好。如果是GPT分区表，推荐原生安装方法：2.1.原生安装Windows8.1&amp;10，或者是安装完手工修复一下UEFI引导。</li>
+<li>判断系统盘所在硬盘的位置？<br>如果您的机器上装了多块硬盘，请做好区分，别装错了。如果需要提前分区，就先分好再装。「<a href="/posts/717041725/">硬盘快速分区教程</a>」</li>
+<li>请务必提前做好数据备份<br>安装的时候要格式化C盘，请务必将C盘文件备份至其他。必要时，将文档照片类的不可再生数据存储至外部存储器一份。「<a href="/posts/1315606668/">系统备份恢复</a>」<blockquote>
+<p>关于如何启动PE和查看分区表类型的方法在「<a href="/posts/1571641020/">如何进入PE系统</a>」文章中有详细的讲解。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="正式开始安装系统"><a href="#正式开始安装系统" class="headerlink" title="正式开始安装系统"></a>正式开始安装系统</h2><p>以下以微PEU盘启动盘为例，其它启动盘大同小异。</p>
+<h3 id="第一步：将要安装的系统ISO镜像挂载为虚拟光驱"><a href="#第一步：将要安装的系统ISO镜像挂载为虚拟光驱" class="headerlink" title="第一步：将要安装的系统ISO镜像挂载为虚拟光驱"></a>第一步：将要安装的系统ISO镜像挂载为虚拟光驱</h3><p>从U盘启动进入PE内，打开U盘内的存放系统镜像的“ISO”目录，找到要安装的镜像。<br><img src="https://s2.loli.net/2022/08/13/fmzREoHiX4xPjcF.png" alt="1.png"><br>对着ISO镜像点右键，选择挂载，或者直接双击，该ISO就会被挂载为一个新的虚拟的光盘驱动器，和插入安装光盘效果类似。它会显示在“我的电脑”里，并且有一个盘符<br><img src="https://s2.loli.net/2022/08/13/f5J3kSp4XzceH8x.png" alt="2.png"></p>
+<h3 id="第二步：打开桌面上的Windows安装器，输入选项后安装"><a href="#第二步：打开桌面上的Windows安装器，输入选项后安装" class="headerlink" title="第二步：打开桌面上的Windows安装器，输入选项后安装"></a>第二步：打开桌面上的Windows安装器，输入选项后安装</h3><p>执行桌面上的Windows安装器，按照提示进行选择。<br><img src="https://s2.loli.net/2022/08/13/8M4S36ACi9XPkOu.png" alt="3.png"><br>Windows安装器顶部有两个选项卡，右边的支持WIN10、8.1、7的安装，左边的支持XP的安装。请注意区别对待。<br><img src="https://s2.loli.net/2022/08/13/gA4S9vbntGYPfzW.png" alt="4.png"><br>在第一个选项中，请选择系统包install.wim的位置（在刚才挂载出来的虚拟光驱里的source文件夹里），比如H:\sources\install.wim等等。<br>注：如果是安装XP的话，选择左侧的选项卡，第一个选项选择挂载出来的虚拟光驱根目录或I386。<br><img src="https://s2.loli.net/2022/08/13/9OoEWupD7KZNMbX.png" alt="5.png"><br>其余的两项填写要安装到的目标系统盘，正常情况下选择 C: 即可<br>当选择好三个选项之后，左下角的系统版本按照需要进行选择。<br>之后就可以点击开始安装，在弹出的确认对话框中再次点确认即可开始安装。<br><img src="https://s2.loli.net/2022/08/13/FJXWEOpKuklNQwM.png" alt="6.png"><br><img src="https://s2.loli.net/2022/08/13/ISeEvH6Ry4rwozB.png" alt="7.png"><br>安装完成后，若没有自动重启，请手工重启。</p>
+<h3 id="第三步：等待系统安装完成，做最后的系统配置"><a href="#第三步：等待系统安装完成，做最后的系统配置" class="headerlink" title="第三步：等待系统安装完成，做最后的系统配置"></a>第三步：等待系统安装完成，做最后的系统配置</h3><p>重启后，进入系统最后配置页，这里会要求您做一些简单的设置，创建登录账户，按照提示操作即可。怎么选都可以。<br><img src="https://s2.loli.net/2022/08/13/LHd3UAqV5tEQ9JS.png" alt="9.png"><br><img src="https://s2.loli.net/2022/08/13/BYvJOa7DLfXhPIr.png" alt="10.png"><br><img src="https://s2.loli.net/2022/08/13/yei8DMGtRLdcUjZ.png" alt="11.png"><br><img src="https://s2.loli.net/2022/08/13/5nICvZdf4FkercP.png" alt="12.png"><br><img src="https://s2.loli.net/2022/08/13/UNA1wnFyuGilROK.png" alt="13.png"><br><img src="https://s2.loli.net/2022/08/13/jcDhUeXO7CtsRbL.png" alt="14.png"><br><img src="https://s2.loli.net/2022/08/13/Y438Fub5JyqGmAX.png" alt="15.png"></p>
+<h3 id="第四步：进入桌面，装驱动装软件"><a href="#第四步：进入桌面，装驱动装软件" class="headerlink" title="第四步：进入桌面，装驱动装软件"></a>第四步：进入桌面，装驱动装软件</h3><p>进入到桌面后，请尽快安装驱动，Win10以上系统会自动联网装驱动，Win7及以下系统需要手工打驱动。<br>您可以自己提前备好需要安装的驱动，也可以用驱动精灵联网装驱动。U盘内自带了一个带网卡驱动的驱动精灵安装包，可以用这个先把网卡驱动装了，再联网装驱动。<br>至此，微PE作为IT维护工具的全部工作结束。</p>
+<h3 id="第五步：系统激活"><a href="#第五步：系统激活" class="headerlink" title="第五步：系统激活"></a>第五步：系统激活</h3><p>后续您需要对系统进行激活。激活方法工具：「<a href="/posts/1408820050/">Windows&amp;Office激活工具 HEU KMS Activator</a>」、「<a href="/posts/3131456665/">Windows&amp;Office激活工具 AAct</a>」</p>
+<hr>
+<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="/posts/2528470635/">Windows8.1&amp;10官方原版系统下载安装之U盘PE原生安装</a><br><a href="/posts/2610634147/">Windows7官方原版系统下载安装之U盘PE原生安装</a></p>
+<hr>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>系统安装</category>
+        <category>系统安装教程</category>
+      </categories>
+      <tags>
+        <tag>Windows 7</tag>
+        <tag>Windows 8.1</tag>
+        <tag>Windows 10</tag>
+        <tag>原版系统安装</tag>
       </tags>
   </entry>
   <entry>
@@ -437,53 +511,54 @@ hexo s	//简写<span aria-hidden="true" class="line-numbers-rows"><span></span><
       </tags>
   </entry>
   <entry>
-    <title>Windows8.1&amp;10官方原版系统下载安装之U盘PE原生安装</title>
-    <url>/posts/2528470635/</url>
-    <content><![CDATA[<blockquote>
-<p>本方法支持的系统：Windows 7，Windows 8.1，Windows 10等NT6系列的全部系统。本方法不支持安装XP。</p>
-</blockquote>
+    <title>wps官方免费版下载安装</title>
+    <url>/posts/2406846742/</url>
+    <content><![CDATA[<h3 id="WPS-Office官网"><a href="#WPS-Office官网" class="headerlink" title="WPS Office官网"></a>WPS Office官网</h3><p>WPS Office官方网站：<a href="https://www.wps.cn/">https://www.wps.cn/</a></p>
+<h3 id="免费下载地址"><a href="#免费下载地址" class="headerlink" title="免费下载地址"></a>免费下载地址</h3><div class="text-center"><a class="btn" href="https://jifendownload.2345.cn/jifen_2345/wpssetup_k378600950_115027.exe"><i class="fa fa-download fa-fw fa-lg"></i>点击下载</a></div>
+
 <span id="more"></span>
 
-<h2 id="安装系统前的准备工作"><a href="#安装系统前的准备工作" class="headerlink" title="安装系统前的准备工作"></a>安装系统前的准备工作</h2><ul>
-<li><p>准备好U盘启动盘<br>制作方法在「<a href="/posts/174102025/">微PE</a>」、「<a href="/posts/3673859036/">U盘魔术师(USM)</a>」、「<a href="/posts/258067225/">老毛桃</a>」等文章中有详细的讲解。</p>
-</li>
-<li><p>系统下载<br>下载地址在「<a href="https://msdn.itellyou.cn/">msdn</a>」、「<a href="https://hellowindows.cn/">hellowindows</a>」等原版系统镜像下载站。「<a href="/posts/3866503405/">点击查看关于系统文件名解释</a>」</p>
-</li>
-<li><p>观察自己的系统所在硬盘是GPT分区表还是MBR「<a href="/posts/3960468335/">判断分区表类型GPT还是MBR</a>」<br>如果是GPT的分区表，便可用原生安装。</p>
-</li>
-<li><p>原生安装方式对UEFI还是Legacy启动PE有严格要求<br>UEFI启动的系统，系统盘所在硬盘的分区表为GPT，PE应为UEFI启动。<br>Legacy启动的系统，系统盘所在硬盘的分区表为MBR，PE应为Legacy启动。<br>请牢记UEFI&lt;-&gt;GPT和Legacy&lt;-&gt;MBR的这种对应关系。并通过当前硬盘的分区表类型判断机器之前是哪种方式启动。<br>若PE启动方式选择错误可以重新选择。</p>
-</li>
-<li><p>判断系统盘所在硬盘的位置？<br>如果您的机器上装了多块硬盘，请做好区分，别装错了。如果需要提前分区，就先分好再装。「<a href="/posts/717041725/">硬盘快速分区教程</a>」</p>
-</li>
-<li><p>请务必提前做好数据备份<br>安装的时候要格式化C盘，请务必将C盘文件备份至其他。必要时，将文档照片类的不可再生数据存储至外部存储器一份。「<a href="/posts/1315606668/">系统备份恢复</a>」</p>
-<blockquote>
-<p>关于如何启动PE和查看分区表类型的方法在「<a href="/posts/1571641020/">如何进入PE系统</a>」文章中有详细的讲解。</p>
+<h3 id="如何下载到电脑桌面？"><a href="#如何下载到电脑桌面？" class="headerlink" title="如何下载到电脑桌面？"></a>如何下载到电脑桌面？</h3><p>首先我们点击上方的电脑版下载链接，以360安全浏览器为演示，此时就会弹出一个下载框，如下图一样。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/1.lv2e3tthb.png" alt="1"></p>
+<p>然后我们点击如上图的【浏览】，就会出现如下图的下载内容保存位置的界面，我们选择【桌面】，然后点击底部的确定。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2.1u27u0zl8wkg.png" alt="2"></p>
+<p>点击确定后会返回到下载框，我们再点击底部的【下载】，过一会儿就会显示下载已经完成，我们在桌面上就可以看见安装包，这样就算是成功把wps office下载到了电脑桌面上了。</p>
+<h3 id="如何安装到电脑桌面？"><a href="#如何安装到电脑桌面？" class="headerlink" title="如何安装到电脑桌面？"></a>如何安装到电脑桌面？</h3><blockquote>
+<p>当我们完成了上面的下载安装包到电脑桌面上之后，我们就可以进行下一个环节，那就是如何安装wps office到电脑桌面上。</p>
 </blockquote>
+<ol>
+<li><p>首先，我们双击打开电脑桌面上已经下载好了的wps安装包，安装包名称是<code>wpssetup_k378600950_115027.exe</code>，建议不要去修改安装包名称，可能会导致无法安装的。</p>
 </li>
-</ul>
-<h2 id="正式开始安装系统"><a href="#正式开始安装系统" class="headerlink" title="正式开始安装系统"></a>正式开始安装系统</h2><p>以下以微PEU盘启动盘为例，其它启动盘大同小异。</p>
-<h2 id="第一步：将要安装的系统ISO镜像挂载为虚拟光驱"><a href="#第一步：将要安装的系统ISO镜像挂载为虚拟光驱" class="headerlink" title="第一步：将要安装的系统ISO镜像挂载为虚拟光驱"></a>第一步：将要安装的系统ISO镜像挂载为虚拟光驱</h2><p>从U盘启动进入PE内，打开U盘内您从微软官方下载的系统镜像ISO。<br><img src="https://s2.loli.net/2022/08/15/bps8FKZ94Tlugw1.png" alt="1.png"><br>对着ISO镜像点右键，选择挂载，或者直接双击，该ISO就会被挂载为一个新的虚拟的光盘驱动器，和插入安装光盘效果类似。它会显示在“我的电脑”里，并且有一个盘符。<br><img src="https://s2.loli.net/2022/08/15/e6SUbN5fTCkW3jG.png" alt="2.png"></p>
-<h2 id="第二步：运行Windows安装程序Setup-exe一步一步开始安装"><a href="#第二步：运行Windows安装程序Setup-exe一步一步开始安装" class="headerlink" title="第二步：运行Windows安装程序Setup.exe一步一步开始安装"></a>第二步：运行Windows安装程序Setup.exe一步一步开始安装</h2><p>运行这个虚拟盘符内的windows安装程序Setup.exe，就进入了windows的原版安装界面。<br><img src="https://s2.loli.net/2022/08/15/j65mTkdguSPUlWy.png" alt="3.png"><br>在Windows安装程序中点击“现在安装”开始，一步步往里点。<br><img src="https://s2.loli.net/2022/08/15/MStuD9ZEV7ariTF.png" alt="4.png"><br>输入您的产品密钥，安装程序会为您匹配相对应的系统版本。<br><img src="https://s2.loli.net/2022/08/15/EpbhXMWL73YRvIK.png" alt="5.png"><br><img src="https://s2.loli.net/2022/08/15/7b4zgl9sTufNjLX.png" alt="6.png"><br><img src="https://s2.loli.net/2022/08/15/EAmg1aD2z7N6jO9.png" alt="7.png"><br>系统版本那里自行选择，安装类型那里选择 “自定义”，直到进入到待安装磁盘位置的页面。<br><img src="https://s2.loli.net/2022/08/15/OLcyPludrqRxkZa.png" alt="8.png"><br>在这个界面中，需要做一个操作，来提升提升安装成功率。请先定位到您系统盘的位置，观察前面有几个小分区，百十来兆的样子，有时候一个，有时候两个，直接把小分区连同系统大分区一起删除。是的您没听错，选中后直接点红××删除它们，留下一个完整的“未分配空间”。<br><img src="https://s2.loli.net/2022/08/15/L5KYs2o4OViktRa.png" alt="9.png"><br>然后在这个未分配空间上点下一步，这个时候系统就开始安装了。<br><img src="https://s2.loli.net/2022/08/15/6qXh4vNIeEAw59M.png" alt="10.png"><br>如果不出意外，等进度走完，重启后，就进入了安装配置阶段。<br><img src="https://s2.loli.net/2022/08/15/7DaVyxYRzqTQsWO.png" alt="11.png"><br><img src="https://s2.loli.net/2022/08/15/OHe4r7aEKkMqRF1.png" alt="12.png"></p>
-<h2 id="第三步：等待系统安装完成，做最后的系统配置"><a href="#第三步：等待系统安装完成，做最后的系统配置" class="headerlink" title="第三步：等待系统安装完成，做最后的系统配置"></a>第三步：等待系统安装完成，做最后的系统配置</h2><p>重启后，进入系统最后配置页，这里会要求您做一些简单的设置，创建登录账户，按照提示操作即可。怎么选都可以。<br><img src="https://s2.loli.net/2022/08/15/HtSO3r9VmyanZGI.png" alt="13.png"><br><img src="https://s2.loli.net/2022/08/15/Tuq1wavQ4eVlptc.png" alt="14.png"><br><img src="https://s2.loli.net/2022/08/15/XubP7M23EJwQUG5.png" alt="15.png"><br><img src="https://s2.loli.net/2022/08/15/lMtYx9kZQDu68VW.png" alt="16.png"><br><img src="https://s2.loli.net/2022/08/15/KcohTYPLViRfvEb.png" alt="17.png"><br><img src="https://s2.loli.net/2022/08/15/zmV7fKWHEYyPuLt.png" alt="18.png"><br><img src="https://s2.loli.net/2022/08/15/VOCcmSLYkowZAj4.png" alt="19.png"><br>至此，系统就算安装完毕了。</p>
-<h2 id="第四步：进入桌面，装驱动装软件"><a href="#第四步：进入桌面，装驱动装软件" class="headerlink" title="第四步：进入桌面，装驱动装软件"></a>第四步：进入桌面，装驱动装软件</h2><p>进入到桌面后，请尽快安装驱动，Win10以上系统会自动联网装驱动，Win7及以下系统需要手工打驱动。<br>您可以自己提前备好需要安装的驱动，也可以用驱动精灵联网装驱动。U盘内自带了一个带网卡驱动的驱动精灵安装包，可以用这个先把网卡驱动装了，再联网装驱动。<br>至此，微PE作为IT维护工具的全部工作结束。</p>
-<h3 id="第五步：系统激活"><a href="#第五步：系统激活" class="headerlink" title="第五步：系统激活"></a>第五步：系统激活</h3><p>后续您需要对系统进行激活。激活方法工具：「<a href="/posts/1408820050/">Windows&amp;Office激活工具 HEU KMS Activator</a>」、「<a href="/posts/3131456665/">Windows&amp;Office激活工具 AAct</a>」</p>
-<h2 id="常见异常问题解决"><a href="#常见异常问题解决" class="headerlink" title="常见异常问题解决"></a>常见异常问题解决</h2><ul>
-<li>1.提示“Windows 无法安装到这个磁盘。选中的磁盘具有MBR分区表。在 EFI 系统上，Windows 只能安装到 GPT 磁盘”<br>遇到这种报错，是因为要安装系统的那块硬盘是MBR分区表，需要legacy启动的PE才能安装，而PE却是UEFI启动的，因此报错。解决方法是：重启电脑,以legacy方式进入PE，再进行安装就好了。请牢记UEFI&lt;-&gt;GPT和Legacy&lt;-&gt;MBR的这种对应关系。只要严格按照必读教程的要求来，这个提示是不会遇到的。</li>
-<li>2.提示“windows无法安装到这个磁盘 选中的磁盘采用GPT分区形式”<br>和第一种错误恰恰相反，是因为要安装系统的那块硬盘是GPT分区表，而PE却是Legacy启动的。解决方法是：重启电脑,以UEFI方式进入PE，再进行安装就好了。</li>
-</ul>
-<hr>
-<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="/posts/171425204/">Windows官方原版系统下载安装之U盘PE安装器安装</a><br><a href="/posts/2610634147/">Windows7官方原版系统下载安装之U盘PE原生安装</a></p>
-<hr>
+<li><p>双击打开安装包后就可以看见安装界面了，如下图。</p>
+</li>
+<li><p>在安装界面，我们首先需要勾选同意“金山办公软件许可协议和隐私策略”，然后再把安装位置修改为您想要安装的电脑盘，建议选择安装在非C盘的位置，可以是D盘或者E盘，这样电脑后期不容易出现卡段，选择好之后再点击【立即安装】。</p>
+</li>
+</ol>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2-1.4zn4rhcfky00.png" alt="2-1"></p>
+<ol start="4">
+<li>点击立即安装后，就会出现wps office正在安装的百分比，安装的速度可能会较慢，这取决于你的电脑反应速度和安装包的大小来决定的。</li>
+</ol>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/3-3.6l0bdz699cg0.png" alt="3-3"></p>
+<ol start="5">
+<li>安装完成后会自动关闭安装界面窗口，此时wps office就已经成功安装在你的电脑上面，同时在电脑桌面上我们也可以看见wps office的快捷键了。</li>
+</ol>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
-        <category>系统安装</category>
-        <category>系统安装教程</category>
+        <category>办公软件安装</category>
+        <category>办公软件安装教程</category>
+        <category>wps Office</category>
       </categories>
       <tags>
-        <tag>Windows8.１安装</tag>
-        <tag>Windows10安装</tag>
-        <tag>Windows下载</tag>
+        <tag>wps</tag>
+        <tag>wps Office下载和安装</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/posts/1/</url>
+    <content><![CDATA[<div class="tabs" id="tab"><ul class="nav-tabs"><li class="tab active"><a href="#tab-1"><i class="fa fa-camera-retro" aria-hidden="true"></i> 随机美图</a></li><li class="tab"><a href="#tab-2"><i class="fa fa-tint" aria-hidden="true"></i> 天气实况</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-1"><p><a href="https://myhkw.cn/open/img/mm"><img src="https://myhkw.cn/open/img/mm"></a></p></div><div class="tab-pane" id="tab-2"><iframe width="900" height="150" frameborder="0" scrolling="no" hspace="0" src="https://i.tianqi.com/?c=code&a=getcode&id=22&py=chongqing&icon=1"></iframe></div></div></div>
+
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
     <title>判断分区表类型GPT还是MBR</title>
@@ -551,38 +626,6 @@ hexo s	//简写<span aria-hidden="true" class="line-numbers-rows"><span></span><
       </tags>
   </entry>
   <entry>
-    <title> Windows7官方原版系统下载安装之U盘PE原生安装</title>
-    <url>/posts/2610634147/</url>
-    <content><![CDATA[<blockquote>
-<p>本篇教程将详细介绍使用微PE安装微软原版Windows7系统的具体方法流程、注意事项、异常问题解决等。</p>
-<blockquote>
-<p>其实原生安装Windows7的方法和安装Windows8.1或10的方法步骤完全一样，但由于Win7这个系统比较老，在一些新机器上安装会出问题，这里单独说一注意事项。</p>
-</blockquote>
-</blockquote>
-<span id="more"></span>
-
-<p><img src="https://s2.loli.net/2022/08/15/ezWHsT1IKBj2a6Y.jpg" alt="1.jpg"></p>
-<h2 id="原生安装Windows7的特别提示"><a href="#原生安装Windows7的特别提示" class="headerlink" title="原生安装Windows7的特别提示"></a>原生安装Windows7的特别提示</h2><ul>
-<li>1.如果需要原生安装Windows7，可以在10PE或者8PE内安装。</li>
-<li>2.原版的Windows7比较老，原生连USB3.0驱动都没有，只能装到比较老的机器上。在新机器上要么蓝屏，要么鼠标键盘动不了。</li>
-<li>3.如果坚持必须要在新机器上安装Windows7，请在安装完成后使用Dism++工具往本地安装好的系统上注入USB3.0和NVME驱动。</li>
-<li>4.我们不建议新机器装Windows7，性能发挥不出来。也无法使用新的高级特性，如果因为某些软件必须Win7的缘故，建议用虚拟机安装一个Windows7。</li>
-</ul>
-<h2 id="安装Windows7的具体流程"><a href="#安装Windows7的具体流程" class="headerlink" title="安装Windows7的具体流程"></a>安装Windows7的具体流程</h2><p>与安装Windows8.1或10的方法一样，参见：「<a href="/posts/2528470635/">原生安装Windows8.1&amp;10</a>」</p>
-<hr>
-<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="/posts/2528470635/">Windows8.1&amp;10官方原版系统下载安装之U盘PE原生安装</a><br><a href="/posts/171425204/">Windows官方原版系统下载安装之U盘PE安装器安装</a></p>
-<hr>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>系统安装</category>
-        <category>系统安装教程</category>
-      </categories>
-      <tags>
-        <tag>Windows7安装</tag>
-        <tag>Windows7原版下载</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>本博客添加的插件</title>
     <url>/posts/3541371186/</url>
     <content><![CDATA[<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> //插件安装
@@ -619,6 +662,36 @@ $ <span class="token function">npm</span> <span class="token function">install</
       </categories>
       <tags>
         <tag>博客插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用Office 2013-2021 C2R Install下载和安装Office</title>
+    <url>/posts/2129523630/</url>
+    <content><![CDATA[<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><blockquote>
+<p><code>Office 2013-20xx C2R Install</code>是一个可以进行微软Office下载、安装、管理的自定义部署工具。支持Office2013-20xx的任意版本，或离线安装部署Office镜像，自定义安装Office产品组件，支持Office零售版转换批量版，在线KMS激活Office，可选内置Office密钥许可证安装。</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h3><p>安装工具下载后解压为单文件版，直接点如下程序运行。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/1.3uzygkbng2m0.png" alt="1"></p>
+<p>勾选下面几项要安装的内容后点击 <code>安装office</code>. 就可以了，它会自动下载安装。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/2.4gnzltwrqsq0.png" alt="2"></p>
+<p>如果出错或提示系统里有去其他的office版本，那需要先把其他的版本卸载干净了才可以装。点击这两个按键可删除</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/3.334eu2p7y660.png" alt="3"></p>
+<p> 如果还不行，请下载网盘里 office uninstall 工具进行卸载，这个工具是根据官方卸载工具思路制作的，可以彻底地卸载清理。适用于 office 2010–2021。</p>
+<h3 id="进行激活"><a href="#进行激活" class="headerlink" title="进行激活"></a>进行激活</h3><p>点击 <code>激活 Office</code> 就可以激活了。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/4.5kpspj913s00.png" alt="4"></p>
+<h3 id="工具下载"><a href="#工具下载" class="headerlink" title="工具下载"></a>工具下载</h3><p><a href="https://cloud.189.cn/web/share?code=vqqYvqaY3qqi">Office xx C2R Install</a>（访问码：5qq1）</p>
+<p><a href="https://cloud.189.cn/web/share?code=jyeUfq6VZZjq">office uninstall 工具</a>（访问码：8opv）</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>办公软件安装</category>
+        <category>办公软件安装教程</category>
+        <category>Microsoft Office</category>
+      </categories>
+      <tags>
+        <tag>Office 2013-2021 C2R Install</tag>
+        <tag>Office下载和安装</tag>
       </tags>
   </entry>
   <entry>
@@ -673,8 +746,8 @@ $ <span class="token function">npm</span> <span class="token function">install</
         <category>Microsoft Office</category>
       </categories>
       <tags>
-        <tag>Office Tool Plus</tag>
         <tag>Office下载和安装</tag>
+        <tag>Office Tool Plus</tag>
       </tags>
   </entry>
   <entry>
@@ -730,11 +803,33 @@ $ <span class="token function">npm</span> <span class="token function">install</
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/posts/1/</url>
-    <content><![CDATA[<div class="tabs" id="tab"><ul class="nav-tabs"><li class="tab active"><a href="#tab-1"><i class="fa fa-camera-retro" aria-hidden="true"></i> 随机美图</a></li><li class="tab"><a href="#tab-2"><i class="fa fa-tint" aria-hidden="true"></i> 天气实况</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-1"><p><a href="https://myhkw.cn/open/img/mm"><img src="https://myhkw.cn/open/img/mm"></a></p></div><div class="tab-pane" id="tab-2"><iframe width="900" height="150" frameborder="0" scrolling="no" hspace="0" src="https://i.tianqi.com/?c=code&a=getcode&id=22&py=chongqing&icon=1"></iframe></div></div></div>
+    <title>网盘电影搜索引擎</title>
+    <url>/posts/2194712517/</url>
+    <content><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
+<p>搜索存储在网盘的电影包括：夸克网盘、百度网盘、阿里云网盘、迅雷云盘等。</p>
+</blockquote>
+<h3 id="友情提示："><a href="#友情提示：" class="headerlink" title="友情提示："></a>友情提示：</h3><ul>
+<li>如果一个站点没有资源，翻至其它站点查看！</li>
+<li>如点击下载没反应，请多点几次、多刷新试试！</li>
+</ul>
+<span id="more"></span>
 
+<h3 id="链接地址："><a href="#链接地址：" class="headerlink" title="链接地址："></a>链接地址：</h3><p>🔗 <a href="http://aileso.cn/index.html">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://gxy112.cn/app/index.html?id=210610ggxx">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://sxjjj.com/apps/index.html?id=2060sn">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://bzwp.jiaoxing.me/apps/index.html?id=2060sn">资源搜索入口</a> 👈👈👈👈</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>资源相关</category>
+      </categories>
+      <tags>
+        <tag>网盘电影</tag>
+        <tag>电影搜索</tag>
+        <tag>搜索引擎</tag>
+      </tags>
   </entry>
   <entry>
     <title>老毛桃制作U盘启动盘</title>
@@ -768,144 +863,144 @@ $ <span class="token function">npm</span> <span class="token function">install</
       </tags>
   </entry>
   <entry>
-    <title>Windows官方原版系统下载安装之U盘PE安装器安装</title>
-    <url>/posts/171425204/</url>
+    <title>Business Editions和Consumer Editions区别详细介绍</title>
+    <url>/posts/3866503405/</url>
     <content><![CDATA[<blockquote>
-<p>本方法支持的系统：Windows 7，Windows 8.1，Windows 10等NT6系列的全部系统。甚至支持安装XP。</p>
+<p>Business Editions和Consumer Editions有什么区别？在微软官网提供的系统ISO版本下载中，拥有两个大版本，分别是Business Editions和Consumer Editions，那么这两个有什么区别呢？</p>
 </blockquote>
 <span id="more"></span>
 
-<h2 id="安装系统前的准备工作"><a href="#安装系统前的准备工作" class="headerlink" title="安装系统前的准备工作"></a>安装系统前的准备工作</h2><ul>
-<li>准备好U盘启动盘<br>制作方法在「<a href="/posts/174102025/">微PE</a>」、「<a href="/posts/3673859036/">U盘魔术师(USM)</a>」、「<a href="/posts/258067225/">老毛桃</a>」等文章中有详细的讲解。</li>
-<li>系统下载<br>下载地址在「<a href="https://msdn.itellyou.cn/">msdn</a>」、「<a href="https://hellowindows.cn/">hellowindows</a>」等原版系统镜像下载站。「<a href="/posts/3866503405/">点击查看关于系统文件名解释</a>」</li>
-<li>观察自己的系统所在硬盘是GPT分区表还是MBR「<a href="/posts/3960468335/">判断分区表类型GPT还是MBR</a>」<br>如果是MBR的分区表，这样装就好。如果是GPT分区表，推荐原生安装方法：2.1.原生安装Windows8.1&amp;10，或者是安装完手工修复一下UEFI引导。</li>
-<li>判断系统盘所在硬盘的位置？<br>如果您的机器上装了多块硬盘，请做好区分，别装错了。如果需要提前分区，就先分好再装。「<a href="/posts/717041725/">硬盘快速分区教程</a>」</li>
-<li>请务必提前做好数据备份<br>安装的时候要格式化C盘，请务必将C盘文件备份至其他。必要时，将文档照片类的不可再生数据存储至外部存储器一份。「<a href="/posts/1315606668/">系统备份恢复</a>」<blockquote>
-<p>关于如何启动PE和查看分区表类型的方法在「<a href="/posts/1571641020/">如何进入PE系统</a>」文章中有详细的讲解。</p>
-</blockquote>
-</li>
+<h2 id="二者都内置专业版，不同之处在于："><a href="#二者都内置专业版，不同之处在于：" class="headerlink" title="二者都内置专业版，不同之处在于："></a>二者都内置专业版，不同之处在于：</h2><ul>
+<li>consumer_editions 版本包含：<br>Home（家庭版）; Education（教育版） ; Professional（专业版）。</li>
+<li>business_editions 版本包含：<br>Education（教育版）; Enterprise （企业版）;Professional（专业版）。</li>
+<li>Windows 10 （business editions） VL版<br>ISO镜像包含以下版本（根据需要选择安装）：专业版、企业版、教育版、专业工作站版、专业教育版。</li>
+<li>Windows 10 （consumer editions） 零售版<br>ISO镜像包含以下版本（根据需要选择安装）：家庭版、专业版、教育版、家庭单语言版、专业工作站版、专业教育版。</li>
 </ul>
-<h2 id="正式开始安装系统"><a href="#正式开始安装系统" class="headerlink" title="正式开始安装系统"></a>正式开始安装系统</h2><p>以下以微PEU盘启动盘为例，其它启动盘大同小异。</p>
-<h3 id="第一步：将要安装的系统ISO镜像挂载为虚拟光驱"><a href="#第一步：将要安装的系统ISO镜像挂载为虚拟光驱" class="headerlink" title="第一步：将要安装的系统ISO镜像挂载为虚拟光驱"></a>第一步：将要安装的系统ISO镜像挂载为虚拟光驱</h3><p>从U盘启动进入PE内，打开U盘内的存放系统镜像的“ISO”目录，找到要安装的镜像。<br><img src="https://s2.loli.net/2022/08/13/fmzREoHiX4xPjcF.png" alt="1.png"><br>对着ISO镜像点右键，选择挂载，或者直接双击，该ISO就会被挂载为一个新的虚拟的光盘驱动器，和插入安装光盘效果类似。它会显示在“我的电脑”里，并且有一个盘符<br><img src="https://s2.loli.net/2022/08/13/f5J3kSp4XzceH8x.png" alt="2.png"></p>
-<h3 id="第二步：打开桌面上的Windows安装器，输入选项后安装"><a href="#第二步：打开桌面上的Windows安装器，输入选项后安装" class="headerlink" title="第二步：打开桌面上的Windows安装器，输入选项后安装"></a>第二步：打开桌面上的Windows安装器，输入选项后安装</h3><p>执行桌面上的Windows安装器，按照提示进行选择。<br><img src="https://s2.loli.net/2022/08/13/8M4S36ACi9XPkOu.png" alt="3.png"><br>Windows安装器顶部有两个选项卡，右边的支持WIN10、8.1、7的安装，左边的支持XP的安装。请注意区别对待。<br><img src="https://s2.loli.net/2022/08/13/gA4S9vbntGYPfzW.png" alt="4.png"><br>在第一个选项中，请选择系统包install.wim的位置（在刚才挂载出来的虚拟光驱里的source文件夹里），比如H:\sources\install.wim等等。<br>注：如果是安装XP的话，选择左侧的选项卡，第一个选项选择挂载出来的虚拟光驱根目录或I386。<br><img src="https://s2.loli.net/2022/08/13/9OoEWupD7KZNMbX.png" alt="5.png"><br>其余的两项填写要安装到的目标系统盘，正常情况下选择 C: 即可<br>当选择好三个选项之后，左下角的系统版本按照需要进行选择。<br>之后就可以点击开始安装，在弹出的确认对话框中再次点确认即可开始安装。<br><img src="https://s2.loli.net/2022/08/13/FJXWEOpKuklNQwM.png" alt="6.png"><br><img src="https://s2.loli.net/2022/08/13/ISeEvH6Ry4rwozB.png" alt="7.png"><br>安装完成后，若没有自动重启，请手工重启。</p>
-<h3 id="第三步：等待系统安装完成，做最后的系统配置"><a href="#第三步：等待系统安装完成，做最后的系统配置" class="headerlink" title="第三步：等待系统安装完成，做最后的系统配置"></a>第三步：等待系统安装完成，做最后的系统配置</h3><p>重启后，进入系统最后配置页，这里会要求您做一些简单的设置，创建登录账户，按照提示操作即可。怎么选都可以。<br><img src="https://s2.loli.net/2022/08/13/LHd3UAqV5tEQ9JS.png" alt="9.png"><br><img src="https://s2.loli.net/2022/08/13/BYvJOa7DLfXhPIr.png" alt="10.png"><br><img src="https://s2.loli.net/2022/08/13/yei8DMGtRLdcUjZ.png" alt="11.png"><br><img src="https://s2.loli.net/2022/08/13/5nICvZdf4FkercP.png" alt="12.png"><br><img src="https://s2.loli.net/2022/08/13/UNA1wnFyuGilROK.png" alt="13.png"><br><img src="https://s2.loli.net/2022/08/13/jcDhUeXO7CtsRbL.png" alt="14.png"><br><img src="https://s2.loli.net/2022/08/13/Y438Fub5JyqGmAX.png" alt="15.png"></p>
-<h3 id="第四步：进入桌面，装驱动装软件"><a href="#第四步：进入桌面，装驱动装软件" class="headerlink" title="第四步：进入桌面，装驱动装软件"></a>第四步：进入桌面，装驱动装软件</h3><p>进入到桌面后，请尽快安装驱动，Win10以上系统会自动联网装驱动，Win7及以下系统需要手工打驱动。<br>您可以自己提前备好需要安装的驱动，也可以用驱动精灵联网装驱动。U盘内自带了一个带网卡驱动的驱动精灵安装包，可以用这个先把网卡驱动装了，再联网装驱动。<br>至此，微PE作为IT维护工具的全部工作结束。</p>
-<h3 id="第五步：系统激活"><a href="#第五步：系统激活" class="headerlink" title="第五步：系统激活"></a>第五步：系统激活</h3><p>后续您需要对系统进行激活。激活方法工具：「<a href="/posts/1408820050/">Windows&amp;Office激活工具 HEU KMS Activator</a>」、「<a href="/posts/3131456665/">Windows&amp;Office激活工具 AAct</a>」</p>
-<hr>
-<h2 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h2><p><a href="/posts/2528470635/">Windows8.1&amp;10官方原版系统下载安装之U盘PE原生安装</a><br><a href="/posts/2610634147/">Windows7官方原版系统下载安装之U盘PE原生安装</a></p>
-<hr>
+<h2 id="Windows-10-各版本区别："><a href="#Windows-10-各版本区别：" class="headerlink" title="Windows 10 各版本区别："></a>Windows 10 各版本区别：</h2><ul>
+<li>家庭版(Home)：<br>供家庭用户使用，无法加入Active Directory和Azure AD，不允许远程链接</li>
+<li>专业版(Professional)：<br>供小型企业使用 在家庭版基础上增加了域账号加入、bitlocker、企业商店等功能</li>
+<li>企业版(Enterprise)：<br>供中大型企业使用 在专业版基础上增加了DirectAccess，AppLocker等高级企业功能</li>
+<li>教育版(Education)：<br>供学校使用 (学校职员, 管理人员, 老师和学生) 其功能基本和企业版的一样</li>
+<li>LTSB版：<br>无Edge浏览器、小娜，无磁贴，可选是否下载和安装补丁，其它版都不能自选补丁</li>
+<li>N版：<br>带“N”的版本相当于阉割版，移除了Windows Media Player，几乎用不到N版。</li>
+</ul>
+<h2 id="Win10各版本详细区别："><a href="#Win10各版本详细区别：" class="headerlink" title="Win10各版本详细区别："></a>Win10各版本详细区别：</h2><ul>
+<li>Windows 10 企业版（和教育版功能一样，功能最完整版本）</li>
+</ul>
+<ol>
+<li>核心功能<br>①熟悉，更好用：自定义开始菜单，Windows Defender 与Windows防火墙，Hiberboot与InstantGo，系统启动更快速，TPM支持，节电模式，Windows更新<br>②Cortana小娜：更自然的语音和按键输入，主动、个性化建议，提醒，从网络、本地以及云中搜索，无需动手，直接喊出“你好，小娜”即可激活<br>③Windows Hello：指纹识别，面部和虹膜识别，企业级安全<br>④多任务操作：虚拟桌面，Snap协同（同一屏幕最多支持显示4个应用），跨不同显示器的Snap功能支持<br>⑤Microsoft Edge：阅读视图，内置墨水书写支持，整合Cortana小娜</li>
+<li>企业特性<br>①基础功能：设备加密，加入域功能，组策略管理器，Bitlocker加密，企业模式Internet Explorer浏览器（EMIE），Assigned Access 8.1（访问分配），远程桌面，Direct Access（直接访问），Windows To Go创建工具，Applocker（应用程序锁定），BranchCache（分支缓存），可通过组策略控制的开始屏幕，<br>②管理部署功能：企业应用旁加载功能，移动设备管理，可加入到Azure活动目录，单点登录到云托管应用，Win10企业商店，粒度UX控制，可轻松从专业版升级到企业版<br>③安全：Microsoft Passport登录，企业数据保护，凭据保护，设备保护<br>④Windows即服务：Windows更新，Windows Update for Business，Current Branch for Business（用于企业的当前更新分支）</li>
+</ol>
+<ul>
+<li>Windows 10 教育版<br>与企业板功能一致，授权方式不同，可轻松从家庭版升级到教育版，（经过测试专业版也可以通过输入教育版key升级到教育版）</li>
+<li>Windows 10 专业版<br>与企业版对比【无】以下功能：<br>①基础功能：Direct Access（直接访问），Windows To Go创建工具，Applocker（应用程序锁定），BranchCache（分支缓存），可通过组策略控制的开始屏幕，<br>②管理部署功能：粒度UX控制<br>③安全：凭据保护，设备保护</li>
+<li>Windows 10 家庭版<br>与专业版对比【无】以下功能：<br>①基础功能：加入域功能，组策略管理器，Bitlocker加密，企业模式Internet Explorer浏览器（EMIE），Assigned Access 8.1（访问分配），远程桌面，Direct Access（直接访问），Windows To Go创建工具，Applocker（应用程序锁定），BranchCache（分支缓存），可通过组策略控制的开始屏幕，<br>②管理部署功能：可加入到Azure活动目录，单点登录到云托管应用，Win10企业商店，粒度UX控制，可轻松从专业版升级到企业版<br>③安全：企业数据保护，凭据保护，设备保护<br>④Windows即服务：Windows Update for Business，Current Branch for Business（用于企业的当前更新分支）</li>
+<li>Windows 10 企业版长期服务分支2015 LTSB<br>与企业版功能一致，可手动设置更新服务，无Edge浏览器，无商店。</li>
+</ul>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>系统安装</category>
         <category>系统安装教程</category>
       </categories>
       <tags>
-        <tag>Windows 7</tag>
-        <tag>Windows 8.1</tag>
-        <tag>Windows 10</tag>
-        <tag>原版系统安装</tag>
+        <tag>Business Editions</tag>
+        <tag>Consumer Editions</tag>
+        <tag>Windows 10 各版本区别</tag>
       </tags>
   </entry>
   <entry>
-    <title>网盘电影搜索引擎</title>
-    <url>/posts/2194712517/</url>
-    <content><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
-<p>搜索存储在网盘的电影包括：夸克网盘、百度网盘、阿里云网盘、迅雷云盘等。</p>
-</blockquote>
-<h3 id="友情提示："><a href="#友情提示：" class="headerlink" title="友情提示："></a>友情提示：</h3><ul>
-<li>如果一个站点没有资源，翻至其它站点查看！</li>
-<li>如点击下载没反应，请多点几次、多刷新试试！</li>
-</ul>
+    <title>365天：明日之欲 The Next 365 Days (2022)</title>
+    <url>/posts/881094206/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/01.2951sd37nhs0.webp" alt="01"></p>
 <span id="more"></span>
 
-<h3 id="链接地址："><a href="#链接地址：" class="headerlink" title="链接地址："></a>链接地址：</h3><p>🔗 <a href="http://aileso.cn/index.html">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://gxy112.cn/app/index.html?id=210610ggxx">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://sxjjj.com/apps/index.html?id=2060sn">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://bzwp.jiaoxing.me/apps/index.html?id=2060sn">资源搜索入口</a> 👈👈👈👈</p>
+<p>导演: <a href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1476433/">托马什·克里马拉</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440514/">布兰卡·利平斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>主演: <a href="https://movie.douban.com/celebrity/1435369/">安娜·玛丽亚·西克拉克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1431444/">米凯莱·莫罗尼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1457057/">西蒙·苏西纳</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440523/">玛格达莱娜·朗帕斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440518/">欧塔萨拉利泽</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 情色<br>制片国家&#x2F;地区: 波兰<br>语言: 波兰语<br>上映日期: 2022-08-19(美国网络)<br>片长: 112分钟<br>又名: 接下来的365天 &#x2F; 黑帮大佬和我的365日3 &#x2F; 再现之欲<br>IMDb: tt21106646</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>  劳拉和马西莫的关系岌岌可危，二人试图克服信任问题，而执着的纳乔想方设法拆散二人。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-ojHWHEQSusOVHDOq" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-365天：明日之欲 The Next 365 Days‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b15ccb2be704">资源链接</a></p>
+<p>zj-365天：今时之欲 365 Days: This Day‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/34556b292677">资源链接</a></p>
+<p>01-黑帮大佬和我的365日 365 dni (2020)<br>压缩包链接: <a href="https://pan.baidu.com/s/1QZDXGHJPoBNYXF9ihyKb0A">资源链接</a> 提取码: yozi</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
-        <category>资源相关</category>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>剧情</category>
       </categories>
       <tags>
-        <tag>网盘电影</tag>
-        <tag>电影搜索</tag>
-        <tag>搜索引擎</tag>
+        <tag>365天：明日之欲</tag>
+        <tag>The Next 365 Days</tag>
       </tags>
   </entry>
   <entry>
-    <title>wps官方免费版下载安装</title>
-    <url>/posts/2406846742/</url>
-    <content><![CDATA[<h3 id="WPS-Office官网"><a href="#WPS-Office官网" class="headerlink" title="WPS Office官网"></a>WPS Office官网</h3><p>WPS Office官方网站：<a href="https://www.wps.cn/">https://www.wps.cn/</a></p>
-<h3 id="免费下载地址"><a href="#免费下载地址" class="headerlink" title="免费下载地址"></a>免费下载地址</h3><div class="text-center"><a class="btn" href="https://jifendownload.2345.cn/jifen_2345/wpssetup_k378600950_115027.exe"><i class="fa fa-download fa-fw fa-lg"></i>点击下载</a></div>
-
+    <title>亲爱的别担心 Don&#39;t Worry Darling (2022)</title>
+    <url>/posts/1567272377/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2880314914.1knsoop4erds.webp" alt="p2880314914"></p>
 <span id="more"></span>
 
-<h3 id="如何下载到电脑桌面？"><a href="#如何下载到电脑桌面？" class="headerlink" title="如何下载到电脑桌面？"></a>如何下载到电脑桌面？</h3><p>首先我们点击上方的电脑版下载链接，以360安全浏览器为演示，此时就会弹出一个下载框，如下图一样。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/1.lv2e3tthb.png" alt="1"></p>
-<p>然后我们点击如上图的【浏览】，就会出现如下图的下载内容保存位置的界面，我们选择【桌面】，然后点击底部的确定。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2.1u27u0zl8wkg.png" alt="2"></p>
-<p>点击确定后会返回到下载框，我们再点击底部的【下载】，过一会儿就会显示下载已经完成，我们在桌面上就可以看见安装包，这样就算是成功把wps office下载到了电脑桌面上了。</p>
-<h3 id="如何安装到电脑桌面？"><a href="#如何安装到电脑桌面？" class="headerlink" title="如何安装到电脑桌面？"></a>如何安装到电脑桌面？</h3><blockquote>
-<p>当我们完成了上面的下载安装包到电脑桌面上之后，我们就可以进行下一个环节，那就是如何安装wps office到电脑桌面上。</p>
-</blockquote>
-<ol>
-<li><p>首先，我们双击打开电脑桌面上已经下载好了的wps安装包，安装包名称是<code>wpssetup_k378600950_115027.exe</code>，建议不要去修改安装包名称，可能会导致无法安装的。</p>
-</li>
-<li><p>双击打开安装包后就可以看见安装界面了，如下图。</p>
-</li>
-<li><p>在安装界面，我们首先需要勾选同意“金山办公软件许可协议和隐私策略”，然后再把安装位置修改为您想要安装的电脑盘，建议选择安装在非C盘的位置，可以是D盘或者E盘，这样电脑后期不容易出现卡段，选择好之后再点击【立即安装】。</p>
-</li>
-</ol>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2-1.4zn4rhcfky00.png" alt="2-1"></p>
-<ol start="4">
-<li>点击立即安装后，就会出现wps office正在安装的百分比，安装的速度可能会较慢，这取决于你的电脑反应速度和安装包的大小来决定的。</li>
-</ol>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/3-3.6l0bdz699cg0.png" alt="3-3"></p>
-<ol start="5">
-<li>安装完成后会自动关闭安装界面窗口，此时wps office就已经成功安装在你的电脑上面，同时在电脑桌面上我们也可以看见wps office的快捷键了。</li>
-</ol>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+<p>导演: <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a><br>编剧: <a href="https://movie.douban.com/celebrity/1393238/">凯瑟琳·西尔伯曼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1032363/">凯莉·凡·戴克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049849/">肖恩·范·戴克</a><br>主演: <a href="https://movie.douban.com/celebrity/1378921/">弗洛伦丝·皮尤</a> &#x2F; <a href="https://movie.douban.com/celebrity/1323310/">哈里·斯泰尔斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053621/">克里斯·派恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1402842/">琪琪·莱恩</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 悬疑 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09-05(威尼斯电影节) &#x2F; 2022-09-23(美国)<br>片长: 122分钟<br>又名: 别担心亲爱的(港&#x2F;台)<br>IMDb: tt10731256</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　这部心理惊悚题材的影片故事设置在1950年代加州沙漠里的一个与世隔绝的乌托邦式群体当中，讲述一位家庭主妇(Pugh饰)意外地发现了看似平静的生活中的恐怖秘密。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/05/12917947001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
-        <category>办公软件安装</category>
-        <category>办公软件安装教程</category>
-        <category>wps Office</category>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>剧情</category>
       </categories>
       <tags>
-        <tag>wps</tag>
-        <tag>wps Office下载和安装</tag>
+        <tag>亲爱的别担心</tag>
+        <tag>Don&#39;t Worry Darling</tag>
       </tags>
   </entry>
   <entry>
-    <title>用Office 2013-2021 C2R Install下载和安装Office</title>
-    <url>/posts/2129523630/</url>
-    <content><![CDATA[<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><blockquote>
-<p><code>Office 2013-20xx C2R Install</code>是一个可以进行微软Office下载、安装、管理的自定义部署工具。支持Office2013-20xx的任意版本，或离线安装部署Office镜像，自定义安装Office产品组件，支持Office零售版转换批量版，在线KMS激活Office，可选内置Office密钥许可证安装。</p>
-</blockquote>
+    <title>伯德小姐 Lady Bird (2017)</title>
+    <url>/posts/1467853209/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2506035804.5jej90vc3iw0.webp" alt="p2506035804"></p>
 <span id="more"></span>
 
-<h3 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h3><p>安装工具下载后解压为单文件版，直接点如下程序运行。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/1.3uzygkbng2m0.png" alt="1"></p>
-<p>勾选下面几项要安装的内容后点击 <code>安装office</code>. 就可以了，它会自动下载安装。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/2.4gnzltwrqsq0.png" alt="2"></p>
-<p>如果出错或提示系统里有去其他的office版本，那需要先把其他的版本卸载干净了才可以装。点击这两个按键可删除</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/3.334eu2p7y660.png" alt="3"></p>
-<p> 如果还不行，请下载网盘里 office uninstall 工具进行卸载，这个工具是根据官方卸载工具思路制作的，可以彻底地卸载清理。适用于 office 2010–2021。</p>
-<h3 id="进行激活"><a href="#进行激活" class="headerlink" title="进行激活"></a>进行激活</h3><p>点击 <code>激活 Office</code> 就可以激活了。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/4.5kpspj913s00.png" alt="4"></p>
-<h3 id="工具下载"><a href="#工具下载" class="headerlink" title="工具下载"></a>工具下载</h3><p><a href="https://cloud.189.cn/web/share?code=vqqYvqaY3qqi">Office xx C2R Install</a>（访问码：5qq1）</p>
-<p><a href="https://cloud.189.cn/web/share?code=jyeUfq6VZZjq">office uninstall 工具</a>（访问码：8opv）</p>
+<p>导演: <a href="https://movie.douban.com/celebrity/1022652/">格蕾塔·葛韦格</a><br>编剧: <a href="https://movie.douban.com/celebrity/1022652/">格蕾塔·葛韦格</a><br>主演: <a href="https://movie.douban.com/celebrity/1022004/">西尔莎·罗南</a> &#x2F; <a href="https://movie.douban.com/celebrity/1121650/">劳里·梅特卡夫</a> &#x2F; <a href="https://movie.douban.com/celebrity/1009889/">崔西·莱茨</a> &#x2F; <a href="https://movie.douban.com/celebrity/1340596/">卢卡斯·赫奇斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1325862/">蒂莫西·柴勒梅德</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 家庭<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2017-09-01(特柳赖德电影节) &#x2F; 2017-11-03(美国)<br>片长: 93分钟<br>又名: 不得鸟小姐(港) &#x2F; 淑女鸟(台) &#x2F; 伯德夫人 &#x2F; 柏德小姐 &#x2F; 飞鸟小姐 &#x2F; 小仙鸟 &#x2F; 青春鸟 &#x2F; 大鸟萌妹(豆友译名)<br>IMDb: tt4925292</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　女孩克里斯汀（西尔莎·罗南 Saoirse Ronan 饰）跟随着家人来到了位于加州的一间教会学校开始了她的高中生涯，虽然心中有百般的不愿意，但克里斯汀尚且没有足够的力量来反抗家人和生活的安排。在学校里，克里斯汀最好的朋友是朱丽（比妮·费尔德斯坦 Beanie Feldstein 饰），三观相近的两人无话不谈。<br>　　克里斯汀参加了舞台剧比赛，并因此结识了名为丹尼（卢卡斯·赫奇斯 Lucas Hedges 饰）的男孩，相互吸引的两人很快就走到了一起。然而，这段感情最终以分手告终。为了和校园交际花珍娜（奥德娅·拉什 Odeya Rush 饰）套近乎，克里斯汀不惜撒谎，遗憾的是，谎言并不能换来真正的友谊。当克里斯汀身陷同凯尔（提莫西·查拉梅 Timothée Chalamet 饰）的感情纠葛之中时，她的家庭也在经历着艰难时期。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/63467cd5ac04ee7595e0b56a/63467cd5ac04ee7595e0b568.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>1080p BD高清mp4版 深影字幕组（1.25 GB）</p>
+<p><a href="https://pan.baidu.com/s/1ZbrgApd24I7Q2Xwy6oIHJA">百度网盘</a>  <a href="ed2k://|file|伯德小姐.2017.1080p.BluRay.AAC.x264.双语字幕-深影字幕组.mp4|1347462757|d467045dbe0b497f7c79e184ad4ea3cf|h=3kpbuvsp5jg62756axs77fbxr677bbnq|/">电驴链接</a>  <a href="magnet:?xt=urn:btih:2c512ba2a219ab20d172acff859ad83b926c78f0">磁力链接</a> </p>
+<p>1080p BD高清mkv版 Fantopia字幕组（2.58 GB）</p>
+<p><a href="https://pan.baidu.com/s/1cNYwV0">百度网盘</a>（密码：6q3j）  </p>
+<p>伯德小姐 Lady Bird 2017 剧情 &#x2F; 家庭美国</p>
+<p>链接：<a href="https://pan.xunlei.com/s/VMhLlDXRtPSBv6jUqZLYqcekA1">迅雷云盘</a>  提取码：wkvx</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
-        <category>办公软件安装</category>
-        <category>办公软件安装教程</category>
-        <category>Microsoft Office</category>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>剧情</category>
       </categories>
       <tags>
-        <tag>Office下载和安装</tag>
-        <tag>Office 2013-2021 C2R Install</tag>
+        <tag>伯德小姐</tag>
+        <tag>Lady Bird</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>侏罗纪世界3 Jurassic World: Dominion (2022)</title>
+    <url>/posts/10763499/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://jsd.cdn.zzko.cn/gh/qqhsx/image@master/20230224/p2873958680.4riw2xb65bw0.webp" alt="p2873958680"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a><br>编剧: <a href="https://movie.douban.com/celebrity/1005924/">艾米丽·卡迈克尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a> &#x2F; <a href="https://movie.douban.com/celebrity/1336443/">德里克·康纳利</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027340/">迈克尔·克莱顿</a><br>主演: <a href="https://movie.douban.com/celebrity/1017967/">克里斯·帕拉特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027772/">布莱丝·达拉斯·霍华德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1006983/">劳拉·邓恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049525/">山姆·尼尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1025109/">杰夫·高布伦</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国 &#x2F; 马耳他<br>语言: 英语<br>上映日期: 2022-06-10(美国&#x2F;中国大陆) &#x2F; 2022-06-01(韩国)<br>片长: 146分钟 &#x2F; 147分钟(中国大陆) &#x2F; 161分钟(加长版)<br>又名: 侏罗纪世界3：统治 &#x2F; 侏罗纪世界：统治霸权(港) &#x2F; 侏罗纪世界：统霸天下(台) &#x2F; 侏罗纪公园6 &#x2F; Jurassic Park 6<br>IMDb: tt8041270</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片为《侏罗纪世界》系列的完结篇，故事的开篇设定在纳布拉尔岛被摧毁的四年后。如今，恐龙在世界各地与人类共同生活、共同捕猎。这一脆弱的平衡将重塑未来，并最终决定人类能否与史上最可怕生物共享这颗星球，并继续站在食物链的顶端。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/04/731611003.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-侏罗纪世界3 Jurassic World: Dominion (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b5f032d37e70">资源链接</a></p>
+<p>zj-[阿里云盘]侏罗纪公园1-3 + 侏罗纪世界1-2<br>HD4K中字合集 <a href="https://www.aliyundrive.com/s/oreFa1kMuxj">资源链接</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>动作</category>
+      </categories>
+      <tags>
+        <tag>侏罗纪世界3</tag>
+        <tag>[object Object]</tag>
       </tags>
   </entry>
   <entry>
@@ -981,33 +1076,6 @@ $ <span class="token function">npm</span> <span class="token function">install</
       </tags>
   </entry>
   <entry>
-    <title>伯德小姐 Lady Bird (2017)</title>
-    <url>/posts/1467853209/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2506035804.5jej90vc3iw0.webp" alt="p2506035804"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1022652/">格蕾塔·葛韦格</a><br>编剧: <a href="https://movie.douban.com/celebrity/1022652/">格蕾塔·葛韦格</a><br>主演: <a href="https://movie.douban.com/celebrity/1022004/">西尔莎·罗南</a> &#x2F; <a href="https://movie.douban.com/celebrity/1121650/">劳里·梅特卡夫</a> &#x2F; <a href="https://movie.douban.com/celebrity/1009889/">崔西·莱茨</a> &#x2F; <a href="https://movie.douban.com/celebrity/1340596/">卢卡斯·赫奇斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1325862/">蒂莫西·柴勒梅德</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 家庭<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2017-09-01(特柳赖德电影节) &#x2F; 2017-11-03(美国)<br>片长: 93分钟<br>又名: 不得鸟小姐(港) &#x2F; 淑女鸟(台) &#x2F; 伯德夫人 &#x2F; 柏德小姐 &#x2F; 飞鸟小姐 &#x2F; 小仙鸟 &#x2F; 青春鸟 &#x2F; 大鸟萌妹(豆友译名)<br>IMDb: tt4925292</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　女孩克里斯汀（西尔莎·罗南 Saoirse Ronan 饰）跟随着家人来到了位于加州的一间教会学校开始了她的高中生涯，虽然心中有百般的不愿意，但克里斯汀尚且没有足够的力量来反抗家人和生活的安排。在学校里，克里斯汀最好的朋友是朱丽（比妮·费尔德斯坦 Beanie Feldstein 饰），三观相近的两人无话不谈。<br>　　克里斯汀参加了舞台剧比赛，并因此结识了名为丹尼（卢卡斯·赫奇斯 Lucas Hedges 饰）的男孩，相互吸引的两人很快就走到了一起。然而，这段感情最终以分手告终。为了和校园交际花珍娜（奥德娅·拉什 Odeya Rush 饰）套近乎，克里斯汀不惜撒谎，遗憾的是，谎言并不能换来真正的友谊。当克里斯汀身陷同凯尔（提莫西·查拉梅 Timothée Chalamet 饰）的感情纠葛之中时，她的家庭也在经历着艰难时期。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/63467cd5ac04ee7595e0b56a/63467cd5ac04ee7595e0b568.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>1080p BD高清mp4版 深影字幕组（1.25 GB）</p>
-<p><a href="https://pan.baidu.com/s/1ZbrgApd24I7Q2Xwy6oIHJA">百度网盘</a>  <a href="ed2k://|file|伯德小姐.2017.1080p.BluRay.AAC.x264.双语字幕-深影字幕组.mp4|1347462757|d467045dbe0b497f7c79e184ad4ea3cf|h=3kpbuvsp5jg62756axs77fbxr677bbnq|/">电驴链接</a>  <a href="magnet:?xt=urn:btih:2c512ba2a219ab20d172acff859ad83b926c78f0">磁力链接</a> </p>
-<p>1080p BD高清mkv版 Fantopia字幕组（2.58 GB）</p>
-<p><a href="https://pan.baidu.com/s/1cNYwV0">百度网盘</a>（密码：6q3j）  </p>
-<p>伯德小姐 Lady Bird 2017 剧情 &#x2F; 家庭美国</p>
-<p>链接：<a href="https://pan.xunlei.com/s/VMhLlDXRtPSBv6jUqZLYqcekA1">迅雷云盘</a>  提取码：wkvx</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>剧情</category>
-      </categories>
-      <tags>
-        <tag>伯德小姐</tag>
-        <tag>Lady Bird</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>安多 第一季 Andor Season 1 (2022)</title>
     <url>/posts/3434146964/</url>
     <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2879897605.6eqxk62rot00.webp" alt="p2879897605"></p>
@@ -1033,48 +1101,27 @@ $ <span class="token function">npm</span> <span class="token function">install</
       </tags>
   </entry>
   <entry>
-    <title>365天：明日之欲 The Next 365 Days (2022)</title>
-    <url>/posts/881094206/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/01.2951sd37nhs0.webp" alt="01"></p>
+    <title>小黄人大眼萌：神偷奶爸前传 Minions: The Rise of Gru (2022)</title>
+    <url>/posts/402055868/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2583875683.2td3bw5sbbk0.webp" alt="p2583875683"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1476433/">托马什·克里马拉</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440514/">布兰卡·利平斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>主演: <a href="https://movie.douban.com/celebrity/1435369/">安娜·玛丽亚·西克拉克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1431444/">米凯莱·莫罗尼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1457057/">西蒙·苏西纳</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440523/">玛格达莱娜·朗帕斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440518/">欧塔萨拉利泽</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 情色<br>制片国家&#x2F;地区: 波兰<br>语言: 波兰语<br>上映日期: 2022-08-19(美国网络)<br>片长: 112分钟<br>又名: 接下来的365天 &#x2F; 黑帮大佬和我的365日3 &#x2F; 再现之欲<br>IMDb: tt21106646</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>  劳拉和马西莫的关系岌岌可危，二人试图克服信任问题，而执着的纳乔想方设法拆散二人。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-tbmOxIboGagkagkk" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1313385/">凯尔·巴尔达</a> &#x2F; <a href="https://movie.douban.com/celebrity/1202456/">布拉德·埃布尔森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1475609/">乔纳森·德尔瓦尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1410663/">马修·福格尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1116519/">布莱恩·林奇</a><br>主演: <a href="https://movie.douban.com/celebrity/1054391/">史蒂夫·卡瑞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313061/">皮埃尔·柯芬</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002730/">艾伦·阿金</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049487/">塔拉吉·P·汉森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022664/">杨紫琼</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 科幻 &#x2F; 动画 &#x2F; 犯罪 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语 &#x2F; 越南语<br>上映日期: 2022-08-19(中国大陆) &#x2F; 2022-06-13(安锡国际动画节) &#x2F; 2022-07-01(美国)<br>片长: 87分钟 &#x2F; 88分钟(中国大陆)<br>又名: 小黄人大眼萌2：格鲁的崛起 &#x2F; 小黄人2：格鲁的崛起 &#x2F; 小小兵2:格鲁的崛起(台) &#x2F; 小黄人大眼萌Ⅱ &#x2F; 小黄人Ⅱ &#x2F; 迷你兵团Ⅱ(港) &#x2F; 小小兵Ⅱ(台) &#x2F; 小黄人大电影Ⅱ &#x2F; Minions 2<br>IMDb: tt5113044</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片是2015年推出的小黄人独立电影《小黄人大眼萌》的直接前传。作为《神偷奶爸》的衍生作品，讲述了小黄人们在“前格鲁”时代为其他主人服务的经历，不过少年格鲁曾经出现在这部衍生电影里，续集将围绕他与小黄人们结缘的过程展开。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/03/340907002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-365天：明日之欲 The Next 365 Days‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b15ccb2be704">资源链接</a></p>
-<p>zj-365天：今时之欲 365 Days: This Day‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/34556b292677">资源链接</a></p>
-<p>01-黑帮大佬和我的365日 365 dni (2020)<br>压缩包链接: <a href="https://pan.baidu.com/s/1QZDXGHJPoBNYXF9ihyKb0A">资源链接</a> 提取码: yozi</p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-小黄人大眼萌2：神偷奶爸前传 Minions: The Rise of Gru (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/f49f1f3d3168">资源链接</a></p>
+<p>zj-小黄人大眼萌1 Minions (2015)国英双语语中字<br>阿里云盘: <a href="https://pan.quark.cn/s/40f9f08abc60">资源链接</a></p>
+<p>zj-神偷奶爸1-3合集 国英双语配音60帧1080P<br>阿里云盘 <a href="https://www.aliyundrive.com/s/y3zApogb4XK">资源链接</a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
         <category>电影</category>
-        <category>剧情</category>
+        <category>喜剧</category>
       </categories>
       <tags>
-        <tag>365天：明日之欲</tag>
-        <tag>The Next 365 Days</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>亲爱的别担心 Don&#39;t Worry Darling (2022)</title>
-    <url>/posts/1567272377/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2880314914.1knsoop4erds.webp" alt="p2880314914"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a><br>编剧: <a href="https://movie.douban.com/celebrity/1393238/">凯瑟琳·西尔伯曼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1032363/">凯莉·凡·戴克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049849/">肖恩·范·戴克</a><br>主演: <a href="https://movie.douban.com/celebrity/1378921/">弗洛伦丝·皮尤</a> &#x2F; <a href="https://movie.douban.com/celebrity/1323310/">哈里·斯泰尔斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053621/">克里斯·派恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1402842/">琪琪·莱恩</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 悬疑 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09-05(威尼斯电影节) &#x2F; 2022-09-23(美国)<br>片长: 122分钟<br>又名: 别担心亲爱的(港&#x2F;台)<br>IMDb: tt10731256</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　这部心理惊悚题材的影片故事设置在1950年代加州沙漠里的一个与世隔绝的乌托邦式群体当中，讲述一位家庭主妇(Pugh饰)意外地发现了看似平静的生活中的恐怖秘密。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/05/12917947001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>剧情</category>
-      </categories>
-      <tags>
-        <tag>亲爱的别担心</tag>
-        <tag>Don&#39;t Worry Darling</tag>
+        <tag>[object Object]</tag>
+        <tag>小黄人大眼萌：神偷奶爸前传</tag>
       </tags>
   </entry>
   <entry>
@@ -1135,57 +1182,6 @@ $ <span class="token function">npm</span> <span class="token function">install</
       </tags>
   </entry>
   <entry>
-    <title>小黄人大眼萌：神偷奶爸前传 Minions: The Rise of Gru (2022)</title>
-    <url>/posts/402055868/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2583875683.2td3bw5sbbk0.webp" alt="p2583875683"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1313385/">凯尔·巴尔达</a> &#x2F; <a href="https://movie.douban.com/celebrity/1202456/">布拉德·埃布尔森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1475609/">乔纳森·德尔瓦尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1410663/">马修·福格尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1116519/">布莱恩·林奇</a><br>主演: <a href="https://movie.douban.com/celebrity/1054391/">史蒂夫·卡瑞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313061/">皮埃尔·柯芬</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002730/">艾伦·阿金</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049487/">塔拉吉·P·汉森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022664/">杨紫琼</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 科幻 &#x2F; 动画 &#x2F; 犯罪 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语 &#x2F; 越南语<br>上映日期: 2022-08-19(中国大陆) &#x2F; 2022-06-13(安锡国际动画节) &#x2F; 2022-07-01(美国)<br>片长: 87分钟 &#x2F; 88分钟(中国大陆)<br>又名: 小黄人大眼萌2：格鲁的崛起 &#x2F; 小黄人2：格鲁的崛起 &#x2F; 小小兵2:格鲁的崛起(台) &#x2F; 小黄人大眼萌Ⅱ &#x2F; 小黄人Ⅱ &#x2F; 迷你兵团Ⅱ(港) &#x2F; 小小兵Ⅱ(台) &#x2F; 小黄人大电影Ⅱ &#x2F; Minions 2<br>IMDb: tt5113044</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片是2015年推出的小黄人独立电影《小黄人大眼萌》的直接前传。作为《神偷奶爸》的衍生作品，讲述了小黄人们在“前格鲁”时代为其他主人服务的经历，不过少年格鲁曾经出现在这部衍生电影里，续集将围绕他与小黄人们结缘的过程展开。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/03/340907002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-小黄人大眼萌2：神偷奶爸前传 Minions: The Rise of Gru (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/f49f1f3d3168">资源链接</a></p>
-<p>zj-小黄人大眼萌1 Minions (2015)国英双语语中字<br>阿里云盘: <a href="https://pan.quark.cn/s/40f9f08abc60">资源链接</a></p>
-<p>zj-神偷奶爸1-3合集 国英双语配音60帧1080P<br>阿里云盘 <a href="https://www.aliyundrive.com/s/y3zApogb4XK">资源链接</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>喜剧</category>
-      </categories>
-      <tags>
-        <tag>小黄人大眼萌：神偷奶爸前传</tag>
-        <tag>[object Object]</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>正常人 Normal People (2020)</title>
-    <url>/posts/1389522547/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2871864815.1uvr8tp3udxc.webp" alt="p2871864815"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1037497/">伦尼·阿伯拉罕森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1274953/">希提·麦克唐纳</a><br>编剧: <a href="https://movie.douban.com/celebrity/1436408/">萨莉·鲁尼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1381793/">爱丽丝·伯奇</a> &#x2F; <a href="https://movie.douban.com/celebrity/1305080/">马克·奥罗</a><br>主演: <a href="https://movie.douban.com/celebrity/1392188/">黛西·埃德加-琼斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1417866/">保罗·麦斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1436659/">艾略特·撒奥特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1097901/">莎拉·格林</a> &#x2F; <a href="https://movie.douban.com/celebrity/1436660/">德斯蒙德·伊斯特伍德</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情<br>制片国家&#x2F;地区: 爱尔兰 &#x2F; 英国 &#x2F; 美国<br>语言: 英语<br>首播: 2020-12-25(中国大陆) &#x2F; 2020-04-26(英国) &#x2F; 2020-04-29(美国)<br>集数: 12<br>单集片长: 30分钟 &#x2F; 45分钟(中国大陆8集版)<br>又名: 普通人类(台) &#x2F; 普通人 &#x2F; 常人<br>IMDb: tt9059760</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　故事围绕着主人公玛丽安娜与康奈尔在爱尔兰西部小镇最后的学校时光，到两人前往圣三一学院读书的复杂生活展开。黛西·埃德加-琼斯饰演孤独、易受惊吓的玛丽安娜，新人保罗·梅斯卡尔饰演外向、受欢迎的康纳尔。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/63467f491a2abd60c804aae7/63467f491a2abd60c804aae5.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>阿里云盘</p>
-<p><a href="https://www.aliyundrive.com/s/od4udkjimP4">第1-12集</a> </p>
-<p>夸克网盘</p>
-<p><a href="https://pan.quark.cn/s/4293a18bbd01">第1-12集</a> </p>
-<p>磁力链接</p>
-<p><a href="magnet:?xt=urn:btih:69399da51711fbaf5c41bbda1f1cd173fd4366a2">第1集</a>复制链接  <a href="magnet:?xt=urn:btih:fc4e24094c3239f7c12f810f9f2f8043b9dbd372">第2集</a>复制链接  <a href="magnet:?xt=urn:btih:bf69a6db50ff231d167c877b6c40bf91d32eaa1a">第3集</a>复制链接  <a href="magnet:?xt=urn:btih:570e091895edbf9529fd8eba927a7722e62a1a59">第4集</a>复制链接  <a href="magnet:?xt=urn:btih:b0b2ea7cc2e648a9e8f04039b846087807d5290c">第5集</a>复制链接  <a href="magnet:?xt=urn:btih:7e761dcaa4e1c3ab148aeb2094a4eaa63339a6a2">第6集</a>复制链接  <a href="magnet:?xt=urn:btih:8ae9344ea7b4d993a4b9f23f107204bf678d6a5a">第7集</a>复制链接  <a href="magnet:?xt=urn:btih:b3c6fba30423ab8684c724ebede86fecba4d1547">第8集</a>复制链接  <a href="magnet:?xt=urn:btih:b5d065af7e6464bf445602ef567f70002fefcc23">第9集</a>复制链接  <a href="magnet:?xt=urn:btih:a9ff6ff4a37aa694d14d91ba2f72b0526958ed99">第10集</a>复制链接  <a href="magnet:?xt=urn:btih:28d7b784e43cf48de0403967c0d7a5bc39eb8d4e">第11集</a>复制链接  <a href="magnet:?xt=urn:btih:8f8dc2aa594bf08cb364f1f042fa630e0c5a1f03">第12集</a>复制链接 </p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>剧集</category>
-        <category>剧情</category>
-      </categories>
-      <tags>
-        <tag>正常人</tag>
-        <tag>Normal People</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>新·奥特曼 シン・ウルトラマン (2022)</title>
     <url>/posts/994048635/</url>
     <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://jsd.cdn.zzko.cn/gh/qqhsx/image@master/20230224/p2871914751.2u8lmvv718u0.webp" alt="p2871914751"></p>
@@ -1239,6 +1235,88 @@ $ <span class="token function">npm</span> <span class="token function">install</
       </tags>
   </entry>
   <entry>
+    <title>棕榈泉 Palm Springs (2020)</title>
+    <url>/posts/2004151250/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2588167301.3o1k9ys1a4s0.webp" alt="p2588167301"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1432658/">马克斯·巴尔巴科夫</a><br>编剧: <a href="https://movie.douban.com/celebrity/1439877/">安迪·塞拉</a> &#x2F; <a href="https://movie.douban.com/celebrity/1432658/">马克斯·巴尔巴科夫</a><br>主演: <a href="https://movie.douban.com/celebrity/1025187/">安迪·萨姆伯格</a> &#x2F; <a href="https://movie.douban.com/celebrity/1236978/">克里斯汀·米利欧缇</a> &#x2F; <a href="https://movie.douban.com/celebrity/1270961/">卡米拉·门德斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049768/">泰勒·霍奇林</a> &#x2F; <a href="https://movie.douban.com/celebrity/1147911/">J·K·西蒙斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 爱情<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2020-01-26(圣丹斯电影节) &#x2F; 2020-07-10(美国)<br>片长: 90分钟<br>又名: 恋爱假期无限Loop(港) &#x2F; 棕榈泉不思议(台)<br>IMDb: tt9484998</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　奈尔斯（安迪·萨姆伯格 Andy Samberg 饰）和女友的感情之路早已经走到了尽头，可即便如此，他还是勉强跟着她去参加了一场婚礼。婚礼现场，谁也不认识的奈尔斯百无聊赖，一个名为萨拉（克丽斯汀·米里奥蒂 Cristin Milioti 饰）的放荡不羁的女孩吸引了奈尔斯的注意。<br>　　萨拉是新娘的姐姐，实际上，她和新郎长期保持着肉体关系，就连新婚前一晚，她都是在新郎的床上度过的！这样一个令全家人都感到头疼的姑娘，在奈尔斯的眼中却显得格外有吸引力，在同女友分手后，奈尔斯和萨拉渐渐走到了一起。萨拉泼辣的个性给奈尔斯的生活带来了惊喜，却也制造了种种麻烦，当奈尔斯发现自己真的深深地爱上了萨拉时，后者却不告而别。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2020/06/10821615001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>1080p HD高清.mp4（1.11 GB）NEW字幕组</p>
+<p><a href="https://pan.baidu.com/s/1bbdUWP4KYouXm19vBXKlHg">百度网盘</a>（提取码：NEWN）  <a href="magnet:?xt=urn:btih:16abef8eba6610192d8729cbedc3ab82cee64feb">磁力链接</a></p>
+<p>1080p HD高清.mp4（2.66 GB）远鉴字幕组</p>
+<p><a href="https://pan.baidu.com/s/1IEPC9DnauwQqcuwTEXlhJQ">百度网盘</a>（密码：yjnb）  </p>
+<p>1080p HD高清.mp4（1.26 GB）人人影视</p>
+<p><a href="magnet:?xt=urn:btih:f61f7baa22076cff2b2fe3d471b5b49c21af9814">磁力链接</a></p>
+<p>720p HD高清.mp4（1.02 GB）</p>
+<p><a href="magnet:?xt=urn:btih:842485ac5e441115697502c46e5592211fe5a604&dn=棕榈泉HD中英双字.mp4">磁力链接</a></p>
+<p>1080p HD高清.mkv（1.5 GB）</p>
+<p><a href="magnet:?xt=urn:btih:603e21aa83af7702099c12515f7402512f39020b&dn=棕榈泉.HD.1080p.中英双字幕.mkv">磁力链接</a>  <a href="thunder://QUFmdHA6Ly95Z2R5ODp5Z2R5OEB5ZzY5LmR5ZHl0dC5uZXQ6ODAwOC/R9LnitefTsHd3dy55Z2R5OC5jb20u19jptciqLkJELjEwODBwLtbQ06LLq9fWxLsubWt2Wlo=">迅雷链接</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>喜剧</category>
+      </categories>
+      <tags>
+        <tag>棕榈泉</tag>
+        <tag>Palm Springs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正常人 Normal People (2020)</title>
+    <url>/posts/1389522547/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2871864815.1uvr8tp3udxc.webp" alt="p2871864815"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1037497/">伦尼·阿伯拉罕森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1274953/">希提·麦克唐纳</a><br>编剧: <a href="https://movie.douban.com/celebrity/1436408/">萨莉·鲁尼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1381793/">爱丽丝·伯奇</a> &#x2F; <a href="https://movie.douban.com/celebrity/1305080/">马克·奥罗</a><br>主演: <a href="https://movie.douban.com/celebrity/1392188/">黛西·埃德加-琼斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1417866/">保罗·麦斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1436659/">艾略特·撒奥特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1097901/">莎拉·格林</a> &#x2F; <a href="https://movie.douban.com/celebrity/1436660/">德斯蒙德·伊斯特伍德</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情<br>制片国家&#x2F;地区: 爱尔兰 &#x2F; 英国 &#x2F; 美国<br>语言: 英语<br>首播: 2020-12-25(中国大陆) &#x2F; 2020-04-26(英国) &#x2F; 2020-04-29(美国)<br>集数: 12<br>单集片长: 30分钟 &#x2F; 45分钟(中国大陆8集版)<br>又名: 普通人类(台) &#x2F; 普通人 &#x2F; 常人<br>IMDb: tt9059760</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　故事围绕着主人公玛丽安娜与康奈尔在爱尔兰西部小镇最后的学校时光，到两人前往圣三一学院读书的复杂生活展开。黛西·埃德加-琼斯饰演孤独、易受惊吓的玛丽安娜，新人保罗·梅斯卡尔饰演外向、受欢迎的康纳尔。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/63467f491a2abd60c804aae7/63467f491a2abd60c804aae5.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>阿里云盘</p>
+<p><a href="https://www.aliyundrive.com/s/od4udkjimP4">第1-12集</a> </p>
+<p>夸克网盘</p>
+<p><a href="https://pan.quark.cn/s/4293a18bbd01">第1-12集</a> </p>
+<p>磁力链接</p>
+<p><a href="magnet:?xt=urn:btih:69399da51711fbaf5c41bbda1f1cd173fd4366a2">第1集</a>复制链接  <a href="magnet:?xt=urn:btih:fc4e24094c3239f7c12f810f9f2f8043b9dbd372">第2集</a>复制链接  <a href="magnet:?xt=urn:btih:bf69a6db50ff231d167c877b6c40bf91d32eaa1a">第3集</a>复制链接  <a href="magnet:?xt=urn:btih:570e091895edbf9529fd8eba927a7722e62a1a59">第4集</a>复制链接  <a href="magnet:?xt=urn:btih:b0b2ea7cc2e648a9e8f04039b846087807d5290c">第5集</a>复制链接  <a href="magnet:?xt=urn:btih:7e761dcaa4e1c3ab148aeb2094a4eaa63339a6a2">第6集</a>复制链接  <a href="magnet:?xt=urn:btih:8ae9344ea7b4d993a4b9f23f107204bf678d6a5a">第7集</a>复制链接  <a href="magnet:?xt=urn:btih:b3c6fba30423ab8684c724ebede86fecba4d1547">第8集</a>复制链接  <a href="magnet:?xt=urn:btih:b5d065af7e6464bf445602ef567f70002fefcc23">第9集</a>复制链接  <a href="magnet:?xt=urn:btih:a9ff6ff4a37aa694d14d91ba2f72b0526958ed99">第10集</a>复制链接  <a href="magnet:?xt=urn:btih:28d7b784e43cf48de0403967c0d7a5bc39eb8d4e">第11集</a>复制链接  <a href="magnet:?xt=urn:btih:8f8dc2aa594bf08cb364f1f042fa630e0c5a1f03">第12集</a>复制链接 </p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>剧集</category>
+        <category>剧情</category>
+      </categories>
+      <tags>
+        <tag>正常人</tag>
+        <tag>Normal People</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>毒液2 Venom: Let There Be Carnage (2021)</title>
+    <url>/posts/4092041784/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2685731324.5f22prn7lfo0.webp" alt="p2685731324"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1002708/">安迪·瑟金斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1115889/">凯莉·马塞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a><br>主演: <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053560/">伍迪·哈里森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049491/">米歇尔·威廉姆斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049542/">娜奥米·哈里斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1217248/">瑞德·斯科特</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2021-10-01(美国)<br>片长: 97分钟<br>又名: 毒魔：血战大屠杀(港) &#x2F; 猛毒2：血蜘蛛(台) &#x2F; 毒液2：屠杀开始 &#x2F; 毒液：屠杀开始 &#x2F; 毒液：放纵屠杀 &#x2F; 毒液2：屠杀将至 &#x2F; Venom 2<br>IMDb: tt7097896</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　电影讲述了外星共生体“毒液”与宿主埃迪（汤姆·哈迪 饰）这对“最佳拍档”遇上致命反派共生体“卡内奇”（伍迪·哈里森 饰），超级英雄和邪恶反派的宿命之战即将开始。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2021/05/11057476001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.baidu.com/s/11MOJaOkGiXJ0uSf4Vhznrw"><strong>百度网盘下载</strong></a></p>
+<p><a href="https://pan.xunlei.com/s/VNCZsXeHy-FM56mjLH3EUvWNA1"><strong>迅雷网盘下载</strong></a> </p>
+<p><a href="https://pan.quark.cn/s/c90bd9eb3dc8"><strong>夸克网盘下载(不限速)</strong></a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>动作</category>
+      </categories>
+      <tags>
+        <tag>毒液2</tag>
+        <tag>Venom</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>沼泽深处的女孩 Where the Crawdads Sing (2022)</title>
     <url>/posts/2162698263/</url>
     <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2871410057.3h3gq7v5v9w0.webp" alt="p2871410057"></p>
@@ -1289,34 +1367,47 @@ $ <span class="token function">npm</span> <span class="token function">install</
       </tags>
   </entry>
   <entry>
-    <title>棕榈泉 Palm Springs (2020)</title>
-    <url>/posts/2004151250/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2588167301.3o1k9ys1a4s0.webp" alt="p2588167301"></p>
+    <title>浮生梦 My Cousin Rachel (2017)</title>
+    <url>/posts/655245191/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2462459613.5spwigv0auo0.webp" alt="p2462459613"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1432658/">马克斯·巴尔巴科夫</a><br>编剧: <a href="https://movie.douban.com/celebrity/1439877/">安迪·塞拉</a> &#x2F; <a href="https://movie.douban.com/celebrity/1432658/">马克斯·巴尔巴科夫</a><br>主演: <a href="https://movie.douban.com/celebrity/1025187/">安迪·萨姆伯格</a> &#x2F; <a href="https://movie.douban.com/celebrity/1236978/">克里斯汀·米利欧缇</a> &#x2F; <a href="https://movie.douban.com/celebrity/1270961/">卡米拉·门德斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049768/">泰勒·霍奇林</a> &#x2F; <a href="https://movie.douban.com/celebrity/1147911/">J·K·西蒙斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 爱情<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2020-01-26(圣丹斯电影节) &#x2F; 2020-07-10(美国)<br>片长: 90分钟<br>又名: 恋爱假期无限Loop(港) &#x2F; 棕榈泉不思议(台)<br>IMDb: tt9484998</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　奈尔斯（安迪·萨姆伯格 Andy Samberg 饰）和女友的感情之路早已经走到了尽头，可即便如此，他还是勉强跟着她去参加了一场婚礼。婚礼现场，谁也不认识的奈尔斯百无聊赖，一个名为萨拉（克丽斯汀·米里奥蒂 Cristin Milioti 饰）的放荡不羁的女孩吸引了奈尔斯的注意。<br>　　萨拉是新娘的姐姐，实际上，她和新郎长期保持着肉体关系，就连新婚前一晚，她都是在新郎的床上度过的！这样一个令全家人都感到头疼的姑娘，在奈尔斯的眼中却显得格外有吸引力，在同女友分手后，奈尔斯和萨拉渐渐走到了一起。萨拉泼辣的个性给奈尔斯的生活带来了惊喜，却也制造了种种麻烦，当奈尔斯发现自己真的深深地爱上了萨拉时，后者却不告而别。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2020/06/10821615001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1018187/">罗杰·米歇尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1018187/">罗杰·米歇尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1045383/">达芙妮·杜穆里埃</a><br>主演: <a href="https://movie.douban.com/celebrity/1010617/">山姆·克拉弗林</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018989/">蕾切尔·薇兹</a> &#x2F; <a href="https://movie.douban.com/celebrity/1009367/">伊恩·格雷</a> &#x2F; <a href="https://movie.douban.com/celebrity/1314352/">荷丽黛·格兰杰</a> &#x2F; <a href="https://movie.douban.com/celebrity/1375373/">波佩·李·弗里尔</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 悬疑<br>制片国家&#x2F;地区: 英国 &#x2F; 美国<br>语言: 英语<br>上映日期: 2017-06-09(英国)<br>片长: 106分钟<br>又名: 遗孀美人心(台) &#x2F; 情陷黑寡妇(港) &#x2F; 断肠花<br>IMDb: tt4411596</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　菲利普（山姆·克拉弗林 Sam Claflin 饰）和自己的表兄阿姆布罗斯（迪诺·布加迪 Deano Bugatti 饰）之间的关系非常的好，两人经常来往。一天，菲利普震惊的收到了阿姆布罗斯的死讯，菲利普不相信这一切仅仅只是一场意外这么简单，于是决定亲自前往阿姆布罗斯留下的那豪华的别墅里去一探究竟。<br>　　在那里，菲利普遇见了表嫂蕾切尔（蕾切尔·薇姿 Rachel Weisz 饰），菲利普怀疑这个美丽且恶毒的女人为了继承丈夫的巨额遗产而谋杀了他。但在两人朝夕相处的过程里，菲利普渐渐爱上了风情万种的蕾切尔，慢慢的打消了疑虑。可这一切对于蕾切尔来说意味着什么呢？她脑袋里的算盘没有人知道。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/2017/02/My-Cousin-Rachel-Trailer-1-SD-GoldPoster_com.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>1080p HD高清.mp4（1.11 GB）NEW字幕组</p>
-<p><a href="https://pan.baidu.com/s/1bbdUWP4KYouXm19vBXKlHg">百度网盘</a>（提取码：NEWN）  <a href="magnet:?xt=urn:btih:16abef8eba6610192d8729cbedc3ab82cee64feb">磁力链接</a></p>
-<p>1080p HD高清.mp4（2.66 GB）远鉴字幕组</p>
-<p><a href="https://pan.baidu.com/s/1IEPC9DnauwQqcuwTEXlhJQ">百度网盘</a>（密码：yjnb）  </p>
-<p>1080p HD高清.mp4（1.26 GB）人人影视</p>
-<p><a href="magnet:?xt=urn:btih:f61f7baa22076cff2b2fe3d471b5b49c21af9814">磁力链接</a></p>
-<p>720p HD高清.mp4（1.02 GB）</p>
-<p><a href="magnet:?xt=urn:btih:842485ac5e441115697502c46e5592211fe5a604&dn=棕榈泉HD中英双字.mp4">磁力链接</a></p>
-<p>1080p HD高清.mkv（1.5 GB）</p>
-<p><a href="magnet:?xt=urn:btih:603e21aa83af7702099c12515f7402512f39020b&dn=棕榈泉.HD.1080p.中英双字幕.mkv">磁力链接</a>  <a href="thunder://QUFmdHA6Ly95Z2R5ODp5Z2R5OEB5ZzY5LmR5ZHl0dC5uZXQ6ODAwOC/R9LnitefTsHd3dy55Z2R5OC5jb20u19jptciqLkJELjEwODBwLtbQ06LLq9fWxLsubWt2Wlo=">迅雷链接</a></p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>浮生梦2017（迅雷） 链接：<a href="https://pan.xunlei.com/s/VN8Yt86xvKzCm-bnrJDLq81HA1">资源链接</a> 提取码：ke5t</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
         <category>电影</category>
-        <category>喜剧</category>
+        <category>剧情</category>
       </categories>
       <tags>
-        <tag>棕榈泉</tag>
-        <tag>Palm Springs</tag>
+        <tag>浮生梦</tag>
+        <tag>My Cousin Rachel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神秘海域 Uncharted (2022)</title>
+    <url>/posts/997295892/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2867565763.2fwjua90rp1c.webp" alt="p2867565763"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1274906/">鲁本·弗雷斯彻</a><br>编剧: <a href="https://movie.douban.com/celebrity/1178355/">雷夫·贾金斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1306770/">阿特·马库姆</a> &#x2F; <a href="https://movie.douban.com/celebrity/1286819/">马特·霍洛维</a><br>主演: <a href="https://movie.douban.com/celebrity/1325351/">汤姆·赫兰德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1035674/">马克·沃尔伯格</a> &#x2F; <a href="https://movie.douban.com/celebrity/1391500/">索菲娅·阿里</a> &#x2F; <a href="https://movie.douban.com/celebrity/1378292/">塔蒂·加布里埃</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022582/">安东尼奥·班德拉斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语 &#x2F; 西班牙语<br>上映日期: 2022-03-14(中国大陆) &#x2F; 2022-02-18(美国)<br>片长: 116分钟<br>又名: 秘境探险(港&#x2F;台) &#x2F; 神秘海域：德雷克船长的宝藏 &#x2F; Uncharted: Drake’s Fortune<br>IMDb: tt1464335</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　足智多谋的内森·德雷克（汤姆·赫兰德 饰）和经验丰富的寻宝者维克多·苏利文（马克·沃尔伯格 饰）组成搭档，追寻费迪南·麦哲伦500年前遗失的宝藏。一开始，这似乎只是个简单的寻宝工作，但很快演变成了一场惊险刺激、横跨全球的竞赛。他们必须赶在冷酷无情的蒙卡达（安东尼奥·班德拉斯 饰）之前寻得宝藏。蒙卡达坚信他和他的家族才是宝藏的正当继承人。若内森和苏利文能破译线索，解开这世界上最古老的谜团，他们便能找到价值50亿美元的宝藏，甚至还可能找到内森失踪已久的哥哥……但首先，他们必须学会通力合作。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2021/12/10069629002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-神秘海域 Uncharted‎ (2022)1080P<br>夸克链接：<a href="https://pan.quark.cn/s/6048c693f316">资源链接</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>动作</category>
+      </categories>
+      <tags>
+        <tag>神秘海域</tag>
+        <tag>Uncharted</tag>
       </tags>
   </entry>
   <entry>
@@ -1367,52 +1458,6 @@ $ <span class="token function">npm</span> <span class="token function">install</
       <tags>
         <tag>美丽的图画</tag>
         <tag>Picture of Beauty</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>毒液2 Venom: Let There Be Carnage (2021)</title>
-    <url>/posts/4092041784/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2685731324.5f22prn7lfo0.webp" alt="p2685731324"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1002708/">安迪·瑟金斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1115889/">凯莉·马塞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a><br>主演: <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053560/">伍迪·哈里森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049491/">米歇尔·威廉姆斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049542/">娜奥米·哈里斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1217248/">瑞德·斯科特</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2021-10-01(美国)<br>片长: 97分钟<br>又名: 毒魔：血战大屠杀(港) &#x2F; 猛毒2：血蜘蛛(台) &#x2F; 毒液2：屠杀开始 &#x2F; 毒液：屠杀开始 &#x2F; 毒液：放纵屠杀 &#x2F; 毒液2：屠杀将至 &#x2F; Venom 2<br>IMDb: tt7097896</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　电影讲述了外星共生体“毒液”与宿主埃迪（汤姆·哈迪 饰）这对“最佳拍档”遇上致命反派共生体“卡内奇”（伍迪·哈里森 饰），超级英雄和邪恶反派的宿命之战即将开始。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2021/05/11057476001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.baidu.com/s/11MOJaOkGiXJ0uSf4Vhznrw"><strong>百度网盘下载</strong></a></p>
-<p><a href="https://pan.xunlei.com/s/VNCZsXeHy-FM56mjLH3EUvWNA1"><strong>迅雷网盘下载</strong></a> </p>
-<p><a href="https://pan.quark.cn/s/c90bd9eb3dc8"><strong>夸克网盘下载(不限速)</strong></a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>动作</category>
-      </categories>
-      <tags>
-        <tag>毒液2</tag>
-        <tag>Venom</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>神秘海域 Uncharted (2022)</title>
-    <url>/posts/997295892/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2867565763.2fwjua90rp1c.webp" alt="p2867565763"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1274906/">鲁本·弗雷斯彻</a><br>编剧: <a href="https://movie.douban.com/celebrity/1178355/">雷夫·贾金斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1306770/">阿特·马库姆</a> &#x2F; <a href="https://movie.douban.com/celebrity/1286819/">马特·霍洛维</a><br>主演: <a href="https://movie.douban.com/celebrity/1325351/">汤姆·赫兰德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1035674/">马克·沃尔伯格</a> &#x2F; <a href="https://movie.douban.com/celebrity/1391500/">索菲娅·阿里</a> &#x2F; <a href="https://movie.douban.com/celebrity/1378292/">塔蒂·加布里埃</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022582/">安东尼奥·班德拉斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语 &#x2F; 西班牙语<br>上映日期: 2022-03-14(中国大陆) &#x2F; 2022-02-18(美国)<br>片长: 116分钟<br>又名: 秘境探险(港&#x2F;台) &#x2F; 神秘海域：德雷克船长的宝藏 &#x2F; Uncharted: Drake’s Fortune<br>IMDb: tt1464335</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　足智多谋的内森·德雷克（汤姆·赫兰德 饰）和经验丰富的寻宝者维克多·苏利文（马克·沃尔伯格 饰）组成搭档，追寻费迪南·麦哲伦500年前遗失的宝藏。一开始，这似乎只是个简单的寻宝工作，但很快演变成了一场惊险刺激、横跨全球的竞赛。他们必须赶在冷酷无情的蒙卡达（安东尼奥·班德拉斯 饰）之前寻得宝藏。蒙卡达坚信他和他的家族才是宝藏的正当继承人。若内森和苏利文能破译线索，解开这世界上最古老的谜团，他们便能找到价值50亿美元的宝藏，甚至还可能找到内森失踪已久的哥哥……但首先，他们必须学会通力合作。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2021/12/10069629002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-神秘海域 Uncharted‎ (2022)1080P<br>夸克链接：<a href="https://pan.quark.cn/s/6048c693f316">资源链接</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>动作</category>
-      </categories>
-      <tags>
-        <tag>神秘海域</tag>
-        <tag>Uncharted</tag>
       </tags>
   </entry>
   <entry>
@@ -1471,16 +1516,17 @@ $ <span class="token function">npm</span> <span class="token function">install</
       </tags>
   </entry>
   <entry>
-    <title>浮生梦 My Cousin Rachel (2017)</title>
-    <url>/posts/655245191/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2462459613.5spwigv0auo0.webp" alt="p2462459613"></p>
+    <title>金发梦露 Blonde (2022)</title>
+    <url>/posts/1930996649/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230316/p2880423946.3ue72wb3jps0.webp" alt="p2880423946"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1018187/">罗杰·米歇尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1018187/">罗杰·米歇尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1045383/">达芙妮·杜穆里埃</a><br>主演: <a href="https://movie.douban.com/celebrity/1010617/">山姆·克拉弗林</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018989/">蕾切尔·薇兹</a> &#x2F; <a href="https://movie.douban.com/celebrity/1009367/">伊恩·格雷</a> &#x2F; <a href="https://movie.douban.com/celebrity/1314352/">荷丽黛·格兰杰</a> &#x2F; <a href="https://movie.douban.com/celebrity/1375373/">波佩·李·弗里尔</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 悬疑<br>制片国家&#x2F;地区: 英国 &#x2F; 美国<br>语言: 英语<br>上映日期: 2017-06-09(英国)<br>片长: 106分钟<br>又名: 遗孀美人心(台) &#x2F; 情陷黑寡妇(港) &#x2F; 断肠花<br>IMDb: tt4411596</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　菲利普（山姆·克拉弗林 Sam Claflin 饰）和自己的表兄阿姆布罗斯（迪诺·布加迪 Deano Bugatti 饰）之间的关系非常的好，两人经常来往。一天，菲利普震惊的收到了阿姆布罗斯的死讯，菲利普不相信这一切仅仅只是一场意外这么简单，于是决定亲自前往阿姆布罗斯留下的那豪华的别墅里去一探究竟。<br>　　在那里，菲利普遇见了表嫂蕾切尔（蕾切尔·薇姿 Rachel Weisz 饰），菲利普怀疑这个美丽且恶毒的女人为了继承丈夫的巨额遗产而谋杀了他。但在两人朝夕相处的过程里，菲利普渐渐爱上了风情万种的蕾切尔，慢慢的打消了疑虑。可这一切对于蕾切尔来说意味着什么呢？她脑袋里的算盘没有人知道。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/2017/02/My-Cousin-Rachel-Trailer-1-SD-GoldPoster_com.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1282551/">安德鲁·多米尼克</a><br>编剧: <a href="https://movie.douban.com/celebrity/1282551/">安德鲁·多米尼克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018817/">乔伊斯·卡罗尔·欧茨</a><br>主演: <a href="https://movie.douban.com/celebrity/1045259/">安娜·德·阿玛斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002665/">艾德里安·布洛迪</a> &#x2F; <a href="https://movie.douban.com/celebrity/1044985/">鲍比·坎纳瓦尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1010615/">朱丽安妮·尼科尔森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1422376/">莉莉·费舍尔</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 传记<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09-08(威尼斯电影节) &#x2F; 2022-09-16(美国) &#x2F; 2022-09-28(美国网络)<br>片长: 166分钟<br>又名: 金发女郎 &#x2F; 金发美人<br>IMDb: tt1655389</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　《金发梦露》改编自乔伊思·卡罗尔·奥特兹的畅销小说，大胆地再现了好莱坞最不朽的偶像之一玛丽莲·梦露的生活。从她作为诺玛·简的动荡童年，到她的明星地位和爱情纠葛，《金发梦露》模糊了事实和虚构的界限，探索了她的公众自我和私人自我之间日益扩大的割裂。该片由安德鲁·多米尼克担任编剧和导演，由安娜·德·阿玛斯领衔主演，其他演员阵容包括鲍比·坎纳瓦尔、艾德里安·布洛迪、朱丽安妮·尼科尔森、泽维尔·塞缪尔和埃文·威廉斯。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/634cbb3d464bc51138c20654/634cbb3d464bc51138c20652.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>浮生梦2017（迅雷） 链接：<a href="https://pan.xunlei.com/s/VN8Yt86xvKzCm-bnrJDLq81HA1">资源链接</a> 提取码：ke5t</p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>金发梦露（迅雷）链接：<a href="https://pan.xunlei.com/s/VNEKjdZGKg7ia3hv5pwTsuVMA1#">资源链接</a> 提取码：6a4e</p>
+<p>金发梦露（夸克）链接：<a href="https://pan.quark.cn/s/03d6455e6baa">资源链接</a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
@@ -1488,8 +1534,8 @@ $ <span class="token function">npm</span> <span class="token function">install</
         <category>剧情</category>
       </categories>
       <tags>
-        <tag>浮生梦</tag>
-        <tag>My Cousin Rachel</tag>
+        <tag>金发梦露</tag>
+        <tag>Blonde</tag>
       </tags>
   </entry>
   <entry>
@@ -1517,76 +1563,6 @@ $ <span class="token function">npm</span> <span class="token function">install</
       </tags>
   </entry>
   <entry>
-    <title>龙之家族 第一季 House of the Dragon Season 1 (2022)</title>
-    <url>/posts/1502457577/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2877623642.2xfpe7q8bc80.webp" alt="p2877623642"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1350650/">米格尔·萨普什尼克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018362/">格雷格·艾坦尼斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1288535/">克莱尔·基尔纳</a> &#x2F; <a href="https://movie.douban.com/celebrity/1038146/">格塔·帕特尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1341737/">莱恩·康道尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1338176/">萨拉·海斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1222833/">加布里埃尔·丰塞卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1477595/">Ira Parker</a> &#x2F; <a href="https://movie.douban.com/celebrity/1459638/">查梅樱·德·格兰特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1050234/">乔治·马丁</a><br>主演: <a href="https://movie.douban.com/celebrity/1049604/">帕迪·康斯戴恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1197648/">马特·史密斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1428242/">米莉·阿尔柯克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1401811/">艾玛·达西</a> &#x2F; <a href="https://movie.douban.com/celebrity/1010549/">瑞斯·伊凡斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 动作 &#x2F; 爱情 &#x2F; 奇幻 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>首播: 2022-08-21(美国)<br>季数: 12<br>集数: 10<br>单集片长: 60分钟<br>又名: 龙族 &#x2F; 权力的游戏前传：龙族 &#x2F; 权力的游戏衍生剧：龙族 &#x2F; 坦格利安 &#x2F; 龙王家族 &#x2F; 权力的游戏：龙之堡 &#x2F; Fire &amp; Blood<br>IMDb: tt11198330</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　本剧改编自乔治·马丁的《血与火》，背景为《权力的游戏》涉及事件的200年前，聚焦坦格利安家族。故事将讲述坦格利安家族的衰落，以及被称之为“血龙狂舞”的家族内战。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/07/330696003.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VND0ZO4Q863AQVp7dM7SucopA1"><strong>迅雷网盘下载</strong></a></p>
-<p><a href="https://pan.baidu.com/s/16-EggVjl8yJpGVpv1WsYtg"><strong>百度网盘下载</strong></a></p>
-<p><a href="https://pan.quark.cn/s/4ddc6acc76f2"><strong>夸克网盘下载(下载满速)</strong></a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>剧集</category>
-        <category>剧情</category>
-      </categories>
-      <tags>
-        <tag>龙之家族</tag>
-        <tag>House of the Dragon</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>金发梦露 Blonde (2022)</title>
-    <url>/posts/1930996649/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230316/p2880423946.3ue72wb3jps0.webp" alt="p2880423946"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1282551/">安德鲁·多米尼克</a><br>编剧: <a href="https://movie.douban.com/celebrity/1282551/">安德鲁·多米尼克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018817/">乔伊斯·卡罗尔·欧茨</a><br>主演: <a href="https://movie.douban.com/celebrity/1045259/">安娜·德·阿玛斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002665/">艾德里安·布洛迪</a> &#x2F; <a href="https://movie.douban.com/celebrity/1044985/">鲍比·坎纳瓦尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1010615/">朱丽安妮·尼科尔森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1422376/">莉莉·费舍尔</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 传记<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09-08(威尼斯电影节) &#x2F; 2022-09-16(美国) &#x2F; 2022-09-28(美国网络)<br>片长: 166分钟<br>又名: 金发女郎 &#x2F; 金发美人<br>IMDb: tt1655389</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　《金发梦露》改编自乔伊思·卡罗尔·奥特兹的畅销小说，大胆地再现了好莱坞最不朽的偶像之一玛丽莲·梦露的生活。从她作为诺玛·简的动荡童年，到她的明星地位和爱情纠葛，《金发梦露》模糊了事实和虚构的界限，探索了她的公众自我和私人自我之间日益扩大的割裂。该片由安德鲁·多米尼克担任编剧和导演，由安娜·德·阿玛斯领衔主演，其他演员阵容包括鲍比·坎纳瓦尔、艾德里安·布洛迪、朱丽安妮·尼科尔森、泽维尔·塞缪尔和埃文·威廉斯。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/634cbb3d464bc51138c20654/634cbb3d464bc51138c20652.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>金发梦露（迅雷）链接：<a href="https://pan.xunlei.com/s/VNEKjdZGKg7ia3hv5pwTsuVMA1#">资源链接</a> 提取码：6a4e</p>
-<p>金发梦露（夸克）链接：<a href="https://pan.quark.cn/s/03d6455e6baa">资源链接</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>剧情</category>
-      </categories>
-      <tags>
-        <tag>金发梦露</tag>
-        <tag>Blonde</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>侏罗纪世界3 Jurassic World: Dominion (2022)</title>
-    <url>/posts/10763499/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://jsd.cdn.zzko.cn/gh/qqhsx/image@master/20230224/p2873958680.4riw2xb65bw0.webp" alt="p2873958680"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a><br>编剧: <a href="https://movie.douban.com/celebrity/1005924/">艾米丽·卡迈克尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a> &#x2F; <a href="https://movie.douban.com/celebrity/1336443/">德里克·康纳利</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027340/">迈克尔·克莱顿</a><br>主演: <a href="https://movie.douban.com/celebrity/1017967/">克里斯·帕拉特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027772/">布莱丝·达拉斯·霍华德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1006983/">劳拉·邓恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049525/">山姆·尼尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1025109/">杰夫·高布伦</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国 &#x2F; 马耳他<br>语言: 英语<br>上映日期: 2022-06-10(美国&#x2F;中国大陆) &#x2F; 2022-06-01(韩国)<br>片长: 146分钟 &#x2F; 147分钟(中国大陆) &#x2F; 161分钟(加长版)<br>又名: 侏罗纪世界3：统治 &#x2F; 侏罗纪世界：统治霸权(港) &#x2F; 侏罗纪世界：统霸天下(台) &#x2F; 侏罗纪公园6 &#x2F; Jurassic Park 6<br>IMDb: tt8041270</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片为《侏罗纪世界》系列的完结篇，故事的开篇设定在纳布拉尔岛被摧毁的四年后。如今，恐龙在世界各地与人类共同生活、共同捕猎。这一脆弱的平衡将重塑未来，并最终决定人类能否与史上最可怕生物共享这颗星球，并继续站在食物链的顶端。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/04/731611003.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-侏罗纪世界3 Jurassic World: Dominion (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b5f032d37e70">资源链接</a></p>
-<p>zj-[阿里云盘]侏罗纪公园1-3 + 侏罗纪世界1-2<br>HD4K中字合集 <a href="https://www.aliyundrive.com/s/oreFa1kMuxj">资源链接</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>动作</category>
-      </categories>
-      <tags>
-        <tag>[object Object]</tag>
-        <tag>侏罗纪世界3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>黑寡妇 Black Widow (2021)</title>
     <url>/posts/1126312363/</url>
     <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2669336065.19kpzzqlgdr4.webp" alt="p2669336065"></p>
@@ -1609,6 +1585,30 @@ $ <span class="token function">npm</span> <span class="token function">install</
       <tags>
         <tag>黑寡妇</tag>
         <tag>Black Widow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>龙之家族 第一季 House of the Dragon Season 1 (2022)</title>
+    <url>/posts/1502457577/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2877623642.2xfpe7q8bc80.webp" alt="p2877623642"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1350650/">米格尔·萨普什尼克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018362/">格雷格·艾坦尼斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1288535/">克莱尔·基尔纳</a> &#x2F; <a href="https://movie.douban.com/celebrity/1038146/">格塔·帕特尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1341737/">莱恩·康道尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1338176/">萨拉·海斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1222833/">加布里埃尔·丰塞卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1477595/">Ira Parker</a> &#x2F; <a href="https://movie.douban.com/celebrity/1459638/">查梅樱·德·格兰特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1050234/">乔治·马丁</a><br>主演: <a href="https://movie.douban.com/celebrity/1049604/">帕迪·康斯戴恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1197648/">马特·史密斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1428242/">米莉·阿尔柯克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1401811/">艾玛·达西</a> &#x2F; <a href="https://movie.douban.com/celebrity/1010549/">瑞斯·伊凡斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 动作 &#x2F; 爱情 &#x2F; 奇幻 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>首播: 2022-08-21(美国)<br>季数: 12<br>集数: 10<br>单集片长: 60分钟<br>又名: 龙族 &#x2F; 权力的游戏前传：龙族 &#x2F; 权力的游戏衍生剧：龙族 &#x2F; 坦格利安 &#x2F; 龙王家族 &#x2F; 权力的游戏：龙之堡 &#x2F; Fire &amp; Blood<br>IMDb: tt11198330</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　本剧改编自乔治·马丁的《血与火》，背景为《权力的游戏》涉及事件的200年前，聚焦坦格利安家族。故事将讲述坦格利安家族的衰落，以及被称之为“血龙狂舞”的家族内战。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/07/330696003.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VND0ZO4Q863AQVp7dM7SucopA1"><strong>迅雷网盘下载</strong></a></p>
+<p><a href="https://pan.baidu.com/s/16-EggVjl8yJpGVpv1WsYtg"><strong>百度网盘下载</strong></a></p>
+<p><a href="https://pan.quark.cn/s/4ddc6acc76f2"><strong>夸克网盘下载(下载满速)</strong></a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>剧集</category>
+        <category>剧情</category>
+      </categories>
+      <tags>
+        <tag>龙之家族</tag>
+        <tag>House of the Dragon</tag>
       </tags>
   </entry>
   <entry>
@@ -1668,6 +1668,11 @@ $ <span class="token function">npm</span> <span class="token function">install</
     <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
+    <title>标签</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
     <title>说说</title>
     <url>/shuoshuo/index.html</url>
     <content><![CDATA[<!-- 引用 artitalk -->
@@ -1681,10 +1686,5 @@ new Artitalk({
       appKey: 'ikiAW8ZtiKepPPGCuknu06Uz'
 })
 </script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
-    <title>标签</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
 </search>
