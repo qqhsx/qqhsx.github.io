@@ -3161,9 +3161,3 @@ blockquote {
   color: #713c99;
   background-color: rgba(66,185,131,0.1);
 }
-/*代码*/
-pre {
-  border-radius: 4px;
-  border-left: 5px solid #6ce26c;
-}
-*
