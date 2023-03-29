@@ -354,7 +354,7 @@ daovoice('update');
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -386,7 +386,7 @@ daovoice('update');
 <p>Ctrl+Alt+T打开终端，输入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C xxxxxxxx@qq.com -f ~/.ssh/gitee_id_rsa</span><br></pre></td></tr></table></figure>
 
-<p><a href="mailto:&#x78;&#120;&#x78;&#x78;&#120;&#x78;&#x78;&#x78;&#64;&#113;&#113;&#46;&#x63;&#111;&#109;">&#x78;&#120;&#x78;&#x78;&#120;&#x78;&#x78;&#x78;&#64;&#113;&#113;&#46;&#x63;&#111;&#109;</a>替换为自己的邮箱即可</p>
+<p><a href="mailto:&#120;&#120;&#x78;&#120;&#120;&#120;&#x78;&#120;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#120;&#120;&#x78;&#120;&#120;&#120;&#x78;&#120;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;</a>替换为自己的邮箱即可</p>
 <p>一直按ENTER，会生成密钥文件</p>
 <p>打开文件–显示隐藏文件–找到.ssh打开–打开刚刚创建的gitee_id_rsa.pub</p>
 <p>复制里面的内容，打开Gitee–右上角头像下设置–SSH公钥–粘贴公钥，标题随便取</p>
@@ -648,21 +648,6 @@ document.write("<font color=red>"+daysold+"</font>天 !");
 
 
 
-
-
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/posts/3307548722/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.valine.el)
-    .then(() => NexT.utils.getScript(
-      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
-      { condition: window.Valine }
-    ))
-    .then(() => {
-      new Valine(CONFIG.valine);
-    });
-});
-</script>
 <script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
@@ -682,6 +667,21 @@ var options = {
 const darkmode = new Darkmode(options);
 window.darkmode = darkmode;
 darkmode.showWidget();
+</script>
+
+
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/posts/3307548722/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.valine.el)
+    .then(() => NexT.utils.getScript(
+      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+      { condition: window.Valine }
+    ))
+    .then(() => {
+      new Valine(CONFIG.valine);
+    });
+});
 </script>
 
 

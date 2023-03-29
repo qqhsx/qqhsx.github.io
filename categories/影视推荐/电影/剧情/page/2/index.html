@@ -507,21 +507,6 @@ document.write("<font color=red>"+daysold+"</font>天 !");
 
 
 
-
-
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/categories/%E5%BD%B1%E8%A7%86%E6%8E%A8%E8%8D%90/%E7%94%B5%E5%BD%B1/%E5%89%A7%E6%83%85/page/2/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.valine.el)
-    .then(() => NexT.utils.getScript(
-      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
-      { condition: window.Valine }
-    ))
-    .then(() => {
-      new Valine(CONFIG.valine);
-    });
-});
-</script>
 <script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
@@ -541,6 +526,21 @@ var options = {
 const darkmode = new Darkmode(options);
 window.darkmode = darkmode;
 darkmode.showWidget();
+</script>
+
+
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/categories/%E5%BD%B1%E8%A7%86%E6%8E%A8%E8%8D%90/%E7%94%B5%E5%BD%B1/%E5%89%A7%E6%83%85/page/2/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.valine.el)
+    .then(() => NexT.utils.getScript(
+      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+      { condition: window.Valine }
+    ))
+    .then(() => {
+      new Valine(CONFIG.valine);
+    });
+});
 </script>
 
 
