@@ -2934,3 +2934,11 @@ blockquote {
   color: #713c99;
   background-color: rgba(66,185,131,0.1);
 }
+code {
+  padding: 2px 4px;
+  overflow-wrap: break-word;
+  color: #c7254e;
+  background: #f9f2f4;
+  border-radius: 3px;
+  font-size: 18px;
+}
