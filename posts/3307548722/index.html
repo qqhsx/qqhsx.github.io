@@ -371,7 +371,7 @@ daovoice('update');
 <p>Ctrl+Alt+T打开终端，输入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C xxxxxxxx@qq.com -f ~/.ssh/gitee_id_rsa</span><br></pre></td></tr></table></figure>
 
-<p><a href="mailto:&#120;&#x78;&#120;&#x78;&#x78;&#x78;&#x78;&#120;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;">&#120;&#x78;&#120;&#x78;&#x78;&#x78;&#x78;&#120;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;</a>替换为自己的邮箱即可</p>
+<p><a href="mailto:&#x78;&#x78;&#x78;&#x78;&#120;&#x78;&#x78;&#120;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;">&#x78;&#x78;&#x78;&#x78;&#120;&#x78;&#x78;&#120;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;</a>替换为自己的邮箱即可</p>
 <p>一直按ENTER，会生成密钥文件</p>
 <p>打开文件–显示隐藏文件–找到.ssh打开–打开刚刚创建的gitee_id_rsa.pub</p>
 <p>复制里面的内容，打开Gitee–右上角头像下设置–SSH公钥–粘贴公钥，标题随便取</p>
@@ -575,6 +575,20 @@ document.write("<font color=red>"+daysold+"</font>天 !");
 
 
 <script src="https://myhkw.cn/api/player/1663824970130" id="myhk" key="1663824970130" m="1"></script>
+
+
+
+<script>
+jQuery(document).ready(function() {
+    function c() {
+        /* 排除首页（记得自行修改下首页地址） */
+	if (location.href != "https://qqhsx.github.io/") { document.title = document[a] ? "(つェ⊂)誒呀→《" + d + "》" : "(*´∇｀*) 咦好了→《" + d + "》" }
+    }
+    var a, b, d = document.title;
+    "undefined" != typeof document.hidden ? (a = "hidden", b = "visibilitychange") : "undefined" != typeof document.mozHidden ? (a = "mozHidden", b = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (a = "webkitHidden", b = "webkitvisibilitychange");
+    "undefined" == typeof document.addEventListener && "undefined" == typeof document[a] || document.addEventListener(b, c, !1)
+});
+</script>
 
 
 
