@@ -2657,7 +2657,6 @@ mark.search-keyword {
   color: var(--text-color);
   margin-top: 12px;
   max-height: calc(100vh - 24px);
-  visibility: hidden;
 }
 .site-state-item {
   padding: 0 10px;
@@ -2883,6 +2882,10 @@ mark.search-keyword {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+.weather {
+  float: left;
+  margin: 35px 15px;
 }
 #busuanzi_value_site_pv,
 #busuanzi_value_site_uv {
