@@ -2883,10 +2883,6 @@ mark.search-keyword {
   overflow: hidden;
   white-space: nowrap;
 }
-.weather {
-  float: left;
-  margin: 35px 15px;
-}
 #busuanzi_value_site_pv,
 #busuanzi_value_site_uv {
   color: #00bfff;
