@@ -170,7 +170,49 @@ document.write("<font color=red>"+daysold+"</font>天 !");
       <p class="site-title">H1985</p>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">让我们一双双渴望知识的眼睛得到满足</p>
+  <div class="site-description" itemprop="description"><div id="binft"></div>  
+  <script>
+    var binft = function (r) {
+      function t() {
+        return b[Math.floor(Math.random() * b.length)]
+      }  
+      function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+      }
+      function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+          var l = document.createElement("span");
+          l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+      }
+      function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+      }
+      var l = "",
+      o = ["人生在勤，不索何获", "专注Hexo技术分享","日日待明日,万事成蹉跎"].map(function (r) {
+      return r + ""
+      }),
+      a = 2,
+      g = 1,
+      s = 5,
+      d = 75,
+      b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+      c = {
+        text: "",
+        prefixP: -s,
+        skillI: 0,
+        skillP: 0,
+        direction: "forward",
+        delay: a,
+        step: g
+      };
+      i()
+      };
+      binft(document.getElementById('binft'));
+  </script>
+  </div>
   </div>
 
   <div class="site-nav-right">
@@ -449,7 +491,7 @@ document.write("<font color=red>"+daysold+"</font>天 !");
 
 <p>导演: <a target="_blank" rel="noopener" href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a target="_blank" rel="noopener" href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>编剧: <a target="_blank" rel="noopener" href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a target="_blank" rel="noopener" href="https://movie.douban.com/celebrity/1476433/">托马什·克里马拉</a> &#x2F; <a target="_blank" rel="noopener" href="https://movie.douban.com/celebrity/1440514/">布兰卡·利平斯卡</a> &#x2F; <a target="_blank" rel="noopener" href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>主演: <a target="_blank" rel="noopener" href="https://movie.douban.com/celebrity/1435369/">安娜·玛丽亚·西克拉克</a> &#x2F; <a target="_blank" rel="noopener" href="https://movie.douban.com/celebrity/1431444/">米凯莱·莫罗尼</a> &#x2F; <a target="_blank" rel="noopener" href="https://movie.douban.com/celebrity/1457057/">西蒙·苏西纳</a> &#x2F; <a target="_blank" rel="noopener" href="https://movie.douban.com/celebrity/1440523/">玛格达莱娜·朗帕斯卡</a> &#x2F; <a target="_blank" rel="noopener" href="https://movie.douban.com/celebrity/1440518/">欧塔萨拉利泽</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 情色<br>制片国家&#x2F;地区: 波兰<br>语言: 波兰语<br>上映日期: 2022-08-19(美国网络)<br>片长: 112分钟<br>又名: 接下来的365天 &#x2F; 黑帮大佬和我的365日3 &#x2F; 再现之欲<br>IMDb: tt21106646</p>
 <h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>  劳拉和马西莫的关系岌岌可危，二人试图克服信任问题，而执着的纳乔想方设法拆散二人。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-GhMZeKhcKXkbVHMb" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-KusxwoeDNXPWBBld" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
 
 <h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-365天：明日之欲 The Next 365 Days‎ (2022)<br>夸克链接：<a target="_blank" rel="noopener" href="https://pan.quark.cn/s/b15ccb2be704">资源链接</a></p>
 <p>zj-365天：今时之欲 365 Days: This Day‎ (2022)<br>夸克链接：<a target="_blank" rel="noopener" href="https://pan.quark.cn/s/34556b292677">资源链接</a></p>
