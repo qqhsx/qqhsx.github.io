@@ -613,6 +613,25 @@ document.write("<font color=red>"+daysold+"</font>天 !");
 </ul>
 </div>
 
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.jpg">
+      </div>
+  </div>
+</div>
+
           <div class="post-tags">
               <a href="/tags/%E5%8F%B0%E5%8C%97%E6%99%9A%E4%B9%9D%E6%9C%9D%E4%BA%94/" rel="tag"><i class="fa fa-tag"></i> 台北晚九朝五</a>
           </div>
@@ -740,21 +759,6 @@ jQuery(document).ready(function() {
 
 
 
-
-
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":true,"enableQQ":true,"requiredFields":[],"el":"#valine-comments","path":"/posts/3139209651/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.valine.el)
-    .then(() => NexT.utils.getScript(
-      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
-      { condition: window.Valine }
-    ))
-    .then(() => {
-      new Valine(CONFIG.valine);
-    });
-});
-</script>
 <script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
@@ -774,6 +778,21 @@ var options = {
 const darkmode = new Darkmode(options);
 window.darkmode = darkmode;
 darkmode.showWidget();
+</script>
+
+
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"UfHLqkCGynvNzXvH444kCVng-gzGzoHsz","appKey":"NXWw441sgzIsto2Snvy4z7qB","serverURLs":"https://ufhlqkcg.lc-cn-n1-shared.com","placeholder":"欢迎畅所欲言..","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":true,"enableQQ":true,"requiredFields":[],"el":"#valine-comments","path":"/posts/3139209651/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.valine.el)
+    .then(() => NexT.utils.getScript(
+      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+      { condition: window.Valine }
+    ))
+    .then(() => {
+      new Valine(CONFIG.valine);
+    });
+});
 </script>
 
 
