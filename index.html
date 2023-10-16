@@ -468,7 +468,7 @@ document.write("<font color=red>"+daysold+"</font>天 !");
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-16 09:46:53" itemprop="dateModified" datetime="2023-10-16T09:46:53+08:00">2023-10-16</time>
+      <time title="修改时间：2023-10-16 09:52:59" itemprop="dateModified" datetime="2023-10-16T09:52:59+08:00">2023-10-16</time>
     </span>
 
   
@@ -495,23 +495,21 @@ document.write("<font color=red>"+daysold+"</font>天 !");
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>这是一篇使用JavaScript获取API数据的示例文章。下面是包含JavaScript代码的示例：</p>
+          <script>
+    $.ajax({
+        url: 'https://www.zhihu.com/api/v4/columns/c_1261258401923026944/items',
+        type: 'get',
+        success: function (data) {
+            // 在此处处理从接口获取的数据
+            let content = data.data[0].content;
+            // 在文章中插入数据
+            $('#api-data').html(content);
+        }
+    });
+</script>
 <div id="api-data">
-    <!-- 这里将显示从API获取的数据 -->
-</div>
-
-<script>
-$.ajax({
-    url: 'https://www.zhihu.com/api/v4/columns/c_1261258401923026944/items',
-    type: 'get',
-    success: function (data) {
-        // 在此处处理从接口获取的数据
-        let content = data.data[0].content;
-        // 在文章中插入数据
-        $('#api-data').html(content);
-    }
-});
-</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    <!-- 这里将显示从接口获取的数据 -->
+</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
       
     </div>
 
@@ -573,7 +571,7 @@ $.ajax({
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-16 09:38:25" itemprop="dateModified" datetime="2023-10-16T09:38:25+08:00">2023-10-16</time>
+      <time title="修改时间：2023-10-16 09:47:13" itemprop="dateModified" datetime="2023-10-16T09:47:13+08:00">2023-10-16</time>
     </span>
 
   

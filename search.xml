@@ -117,6 +117,67 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo博客源文件备份</title>
+    <url>/posts/3307548722/</url>
+    <content><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
+<p>我是通过Github部署博客的，通过<code>hexo d</code>上传部署到Github的其实是hexo编译后的文件，不包含源文件。而其他文件 ，包括我们写在_posts里面的文章，和配置文件_config.yml，主题文件_config.butterfly.yml等都没有上传到github</p>
+<p>而遇到电脑寄了或者重装系统等不可抗力，想要恢复博客没有源文件只能重来一遍（文章什么的都没有了:new_moon_with_face:），故备份源文件十分重要，特此记录下。</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="备份博客"><a href="#备份博客" class="headerlink" title="备份博客"></a>备份博客</h3><ul>
+<li>U盘备份（这个没什么好说的）</li>
+<li>将源文件托管在Github&#x2F;Gitee&#x2F;Gitlab上（着重说下这个）</li>
+</ul>
+<h3 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH-Key"></a>生成SSH-Key</h3><p>我选择用Gitee备份，先生成一个Gitee用的SSH-Key</p>
+<p>Ctrl+Alt+T打开终端，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C xxxxxxxx@qq.com -f ~/.ssh/gitee_id_rsa</span><br></pre></td></tr></table></figure>
+
+<p><a href="mailto:&#120;&#120;&#120;&#x78;&#x78;&#120;&#120;&#120;&#x40;&#x71;&#113;&#46;&#x63;&#111;&#109;">&#120;&#120;&#120;&#x78;&#x78;&#120;&#120;&#120;&#x40;&#x71;&#113;&#46;&#x63;&#111;&#109;</a>替换为自己的邮箱即可</p>
+<p>一直按ENTER，会生成密钥文件</p>
+<p>打开文件–显示隐藏文件–找到.ssh打开–打开刚刚创建的gitee_id_rsa.pub</p>
+<p>复制里面的内容，打开Gitee–右上角头像下设置–SSH公钥–粘贴公钥，标题随便取</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230321/1.7f4i4jknn100.jpg" alt="1"></p>
+<h3 id="新建repository"><a href="#新建repository" class="headerlink" title="新建repository"></a>新建repository</h3><p>在Gitee新建仓库，名称随意，勾选README</p>
+<p>复制仓库地址</p>
+<p>Ctrl+Alt+T打开新终端，输入，git clone 地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:stringwind/blog_backup.git</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取-git"><a href="#获取-git" class="headerlink" title="获取.git"></a>获取.git</h3><p>打开clone来的文件夹–显示隐藏文件–复制.git文件</p>
+<p>将文件粘贴到博客根目录下</p>
+<h3 id="创建-gitignore"><a href="#创建-gitignore" class="headerlink" title="创建.gitignore"></a>创建.gitignore</h3><p>可能已经有了，没有的话创建个，根目录下<code>touch .gitignore</code>，写入</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">_multiconfig.yml</span><br></pre></td></tr></table></figure>
+
+<p>上传时候忽略一些文件（都是些安装会自动生成的或是编译后的文件，无须备份）</p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>博客根目录下执行</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit  -m  backup  </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>这样就将源文件备份到Gitee上了</p>
+<p>每次更新后，输入以下命令即可备份</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m backup</span><br><span class="line">git push</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="一键备份并部署（可选）"><a href="#一键备份并部署（可选）" class="headerlink" title="一键备份并部署（可选）"></a>一键备份并部署（可选）</h3><p>由于每次更新后都要输入大量命令行十分麻烦，遂创建一键部署脚本方便备份部署</p>
+<p>在博客根目录下创建deploy.sh文件，写入</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">echo &quot;Start&quot;</span><br><span class="line">git add .</span><br><span class="line">git commit -m backup</span><br><span class="line">git push</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">echo &quot;Finish&quot;</span><br><span class="line">echo 按任意键继续</span><br><span class="line">read -n 1</span><br></pre></td></tr></table></figure>
+
+<p>保存后，在博客根目录双击执行或用命令<code>./deploy.sh</code> 即可实现博客的一键备份并部署</p>
+<h3 id="恢复博客"><a href="#恢复博客" class="headerlink" title="恢复博客"></a>恢复博客</h3><h3 id="基础环境搭建"><a href="#基础环境搭建" class="headerlink" title="基础环境搭建"></a>基础环境搭建</h3><p>Hexo博客基础环境已经搭好：比如安装npm、git、nodejs、hexo安装…</p>
+<h3 id="克隆项目到本地"><a href="#克隆项目到本地" class="headerlink" title="克隆项目到本地"></a>克隆项目到本地</h3><p>Ctrl+Alt+T打开终端，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:stringwind/blog_backup.git</span><br></pre></td></tr></table></figure>
+
+<p>git clone 自己的仓库地址</p>
+<h3 id="恢复博客-1"><a href="#恢复博客-1" class="headerlink" title="恢复博客"></a>恢复博客</h3><p>在clone来的文件夹里执行</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>这样博客源文件就成功移植了，再用hexo clean、hexo g、hexo d即可部署完成</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <tags>
+        <tag>hexo博客备份</tag>
+        <tag>next主题</tag>
+        <tag>博客源文件备份</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo博客搭建与部署</title>
     <url>/posts/275407383/</url>
     <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
@@ -215,64 +276,35 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo博客源文件备份</title>
-    <url>/posts/3307548722/</url>
-    <content><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
-<p>我是通过Github部署博客的，通过<code>hexo d</code>上传部署到Github的其实是hexo编译后的文件，不包含源文件。而其他文件 ，包括我们写在_posts里面的文章，和配置文件_config.yml，主题文件_config.butterfly.yml等都没有上传到github</p>
-<p>而遇到电脑寄了或者重装系统等不可抗力，想要恢复博客没有源文件只能重来一遍（文章什么的都没有了:new_moon_with_face:），故备份源文件十分重要，特此记录下。</p>
+    <title>U盘魔术师(USM)制作U盘启动盘</title>
+    <url>/posts/3673859036/</url>
+    <content><![CDATA[<blockquote>
+<p>U盘魔术师（USM）是系统总裁自主开发的一款u盘PE启动盘制作工具，其无广告、无流氓、无捆绑、无后门、启动成功率高获得大批用户的喜爱，支持UD、ISO、UDM、安装本机,支持x86及x64_EFI，而且USM内置了大量磁盘控制器驱动(IDE、AHCI、RAID、Nvme(M.2)、USB3.0&#x2F;3.1)、功能超级强大，USM的作者by 红毛樱木 也是在不断的更新。</p>
 </blockquote>
 <span id="more"></span>
 
-<h3 id="备份博客"><a href="#备份博客" class="headerlink" title="备份博客"></a>备份博客</h3><ul>
-<li>U盘备份（这个没什么好说的）</li>
-<li>将源文件托管在Github&#x2F;Gitee&#x2F;Gitlab上（着重说下这个）</li>
-</ul>
-<h3 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH-Key"></a>生成SSH-Key</h3><p>我选择用Gitee备份，先生成一个Gitee用的SSH-Key</p>
-<p>Ctrl+Alt+T打开终端，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C xxxxxxxx@qq.com -f ~/.ssh/gitee_id_rsa</span><br></pre></td></tr></table></figure>
-
-<p><a href="mailto:&#120;&#x78;&#x78;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#113;&#x2e;&#x63;&#x6f;&#109;">&#120;&#x78;&#x78;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#113;&#x2e;&#x63;&#x6f;&#109;</a>替换为自己的邮箱即可</p>
-<p>一直按ENTER，会生成密钥文件</p>
-<p>打开文件–显示隐藏文件–找到.ssh打开–打开刚刚创建的gitee_id_rsa.pub</p>
-<p>复制里面的内容，打开Gitee–右上角头像下设置–SSH公钥–粘贴公钥，标题随便取</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230321/1.7f4i4jknn100.jpg" alt="1"></p>
-<h3 id="新建repository"><a href="#新建repository" class="headerlink" title="新建repository"></a>新建repository</h3><p>在Gitee新建仓库，名称随意，勾选README</p>
-<p>复制仓库地址</p>
-<p>Ctrl+Alt+T打开新终端，输入，git clone 地址</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:stringwind/blog_backup.git</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取-git"><a href="#获取-git" class="headerlink" title="获取.git"></a>获取.git</h3><p>打开clone来的文件夹–显示隐藏文件–复制.git文件</p>
-<p>将文件粘贴到博客根目录下</p>
-<h3 id="创建-gitignore"><a href="#创建-gitignore" class="headerlink" title="创建.gitignore"></a>创建.gitignore</h3><p>可能已经有了，没有的话创建个，根目录下<code>touch .gitignore</code>，写入</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">_multiconfig.yml</span><br></pre></td></tr></table></figure>
-
-<p>上传时候忽略一些文件（都是些安装会自动生成的或是编译后的文件，无须备份）</p>
-<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>博客根目录下执行</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit  -m  backup  </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p>这样就将源文件备份到Gitee上了</p>
-<p>每次更新后，输入以下命令即可备份</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m backup</span><br><span class="line">git push</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<h3 id="一键备份并部署（可选）"><a href="#一键备份并部署（可选）" class="headerlink" title="一键备份并部署（可选）"></a>一键备份并部署（可选）</h3><p>由于每次更新后都要输入大量命令行十分麻烦，遂创建一键部署脚本方便备份部署</p>
-<p>在博客根目录下创建deploy.sh文件，写入</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">echo &quot;Start&quot;</span><br><span class="line">git add .</span><br><span class="line">git commit -m backup</span><br><span class="line">git push</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">echo &quot;Finish&quot;</span><br><span class="line">echo 按任意键继续</span><br><span class="line">read -n 1</span><br></pre></td></tr></table></figure>
-
-<p>保存后，在博客根目录双击执行或用命令<code>./deploy.sh</code> 即可实现博客的一键备份并部署</p>
-<h3 id="恢复博客"><a href="#恢复博客" class="headerlink" title="恢复博客"></a>恢复博客</h3><h3 id="基础环境搭建"><a href="#基础环境搭建" class="headerlink" title="基础环境搭建"></a>基础环境搭建</h3><p>Hexo博客基础环境已经搭好：比如安装npm、git、nodejs、hexo安装…</p>
-<h3 id="克隆项目到本地"><a href="#克隆项目到本地" class="headerlink" title="克隆项目到本地"></a>克隆项目到本地</h3><p>Ctrl+Alt+T打开终端，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:stringwind/blog_backup.git</span><br></pre></td></tr></table></figure>
-
-<p>git clone 自己的仓库地址</p>
-<h3 id="恢复博客-1"><a href="#恢复博客-1" class="headerlink" title="恢复博客"></a>恢复博客</h3><p>在clone来的文件夹里执行</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<p>这样博客源文件就成功移植了，再用hexo clean、hexo g、hexo d即可部署完成</p>
+<h2 id="U盘魔术师优盘启动工具制作步骤："><a href="#U盘魔术师优盘启动工具制作步骤：" class="headerlink" title="U盘魔术师优盘启动工具制作步骤："></a>U盘魔术师优盘启动工具制作步骤：</h2><ol>
+<li>准备一个5G以上的U盘，注意事项，制作的启动盘必须对u盘格式化，所以在制作启动盘之前先把重要文件转移。</li>
+<li>插入U盘到电脑，双击下载的 exe 文件（下载地址在文未）。<br><img src="https://s2.loli.net/2022/08/12/sk89VhJepG4qzY6.png" alt="1.png"></li>
+<li>点击U盘模式，此处选择要制作的U盘，分区设置（使用默认推荐即可），分区格式（建议NTFS），其它默认即可。<br><img src="https://s2.loli.net/2022/08/12/XuGZ8TI3iJmfs9U.png" alt="2.png"></li>
+<li>选择具体的PE内核，如下图v5和v6版本可选择的PE内核，<br><img src="https://s2.loli.net/2022/08/12/NgtIhDqoWjnGAwu.png" alt="3.png"></li>
+<li>在U盘模式下制作优盘PE启动工具，可对PE的界面进行个性化修改，也可在此对原PE进行升级和空间的还原。<br><img src="https://s2.loli.net/2022/08/12/qXIvc9VDFnEi8ho.png" alt="4.png"></li>
+<li>个性化修改启动菜单&#x2F;欢迎界面&#x2F;桌面的背景。<br><img src="https://s2.loli.net/2022/08/12/dcOxPtvQZbsA2WG.png" alt="5.png"></li>
+<li>制作优盘启动前先把优盘内的资料备份好，此步会格式化优盘，以免造成数据丢失。<br><img src="https://s2.loli.net/2022/08/12/ZU1N5FHcaoRh4mM.png" alt="6.png"></li>
+<li>开始制作。待制作完成后拔出优盘即可。<br><img src="https://s2.loli.net/2022/08/12/gyFZ2pbzYJvnor6.png" alt="7.png"><blockquote>
+<p>百度网盘下载 （提取码tc66）：<a href="https://pan.baidu.com/s/1s7LGSDcjWN0wjMng1HpS1g">点击下载U盘魔术师(USM)</a></p>
+</blockquote>
+</li>
+</ol>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>系统安装</category>
+        <category>系统安装工具</category>
+      </categories>
       <tags>
-        <tag>hexo博客备份</tag>
-        <tag>next主题</tag>
-        <tag>博客源文件备份</tag>
+        <tag>U盘魔术师</tag>
+        <tag>USM</tag>
+        <tag>U盘启动</tag>
       </tags>
   </entry>
   <entry>
@@ -304,38 +336,6 @@
       <tags>
         <tag>U盘启动</tag>
         <tag>PE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>U盘魔术师(USM)制作U盘启动盘</title>
-    <url>/posts/3673859036/</url>
-    <content><![CDATA[<blockquote>
-<p>U盘魔术师（USM）是系统总裁自主开发的一款u盘PE启动盘制作工具，其无广告、无流氓、无捆绑、无后门、启动成功率高获得大批用户的喜爱，支持UD、ISO、UDM、安装本机,支持x86及x64_EFI，而且USM内置了大量磁盘控制器驱动(IDE、AHCI、RAID、Nvme(M.2)、USB3.0&#x2F;3.1)、功能超级强大，USM的作者by 红毛樱木 也是在不断的更新。</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="U盘魔术师优盘启动工具制作步骤："><a href="#U盘魔术师优盘启动工具制作步骤：" class="headerlink" title="U盘魔术师优盘启动工具制作步骤："></a>U盘魔术师优盘启动工具制作步骤：</h2><ol>
-<li>准备一个5G以上的U盘，注意事项，制作的启动盘必须对u盘格式化，所以在制作启动盘之前先把重要文件转移。</li>
-<li>插入U盘到电脑，双击下载的 exe 文件（下载地址在文未）。<br><img src="https://s2.loli.net/2022/08/12/sk89VhJepG4qzY6.png" alt="1.png"></li>
-<li>点击U盘模式，此处选择要制作的U盘，分区设置（使用默认推荐即可），分区格式（建议NTFS），其它默认即可。<br><img src="https://s2.loli.net/2022/08/12/XuGZ8TI3iJmfs9U.png" alt="2.png"></li>
-<li>选择具体的PE内核，如下图v5和v6版本可选择的PE内核，<br><img src="https://s2.loli.net/2022/08/12/NgtIhDqoWjnGAwu.png" alt="3.png"></li>
-<li>在U盘模式下制作优盘PE启动工具，可对PE的界面进行个性化修改，也可在此对原PE进行升级和空间的还原。<br><img src="https://s2.loli.net/2022/08/12/qXIvc9VDFnEi8ho.png" alt="4.png"></li>
-<li>个性化修改启动菜单&#x2F;欢迎界面&#x2F;桌面的背景。<br><img src="https://s2.loli.net/2022/08/12/dcOxPtvQZbsA2WG.png" alt="5.png"></li>
-<li>制作优盘启动前先把优盘内的资料备份好，此步会格式化优盘，以免造成数据丢失。<br><img src="https://s2.loli.net/2022/08/12/ZU1N5FHcaoRh4mM.png" alt="6.png"></li>
-<li>开始制作。待制作完成后拔出优盘即可。<br><img src="https://s2.loli.net/2022/08/12/gyFZ2pbzYJvnor6.png" alt="7.png"><blockquote>
-<p>百度网盘下载 （提取码tc66）：<a href="https://pan.baidu.com/s/1s7LGSDcjWN0wjMng1HpS1g">点击下载U盘魔术师(USM)</a></p>
-</blockquote>
-</li>
-</ol>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>系统安装</category>
-        <category>系统安装工具</category>
-      </categories>
-      <tags>
-        <tag>U盘启动</tag>
-        <tag>U盘魔术师</tag>
-        <tag>USM</tag>
       </tags>
   </entry>
   <entry>
@@ -834,6 +834,36 @@
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
+    <title>微PE制作U盘启动盘</title>
+    <url>/posts/174102025/</url>
+    <content><![CDATA[<blockquote>
+<p>微PE工具箱算是一款轻量级的WinPE工具了，这款微PE工具箱可以说是不忘初心吧这么多年了还是在坚持无广告、无流氓、无捆绑、无后门的原则，做一款有用的PE、良心PE、纯净版PE工具箱。WinPE工具箱，装机维护最得力的助手，最后救命稻草。化繁为简，小材大用，一键安装，极速启动。微PE工具箱，最好用的PE工具箱，没有之一。无任何广告推广，内核完整精简，性价比超高的第三方工具合集。2.0采用的全新Win10PE内核，堪称最好用的PE维护系统。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="pe工具箱制作步骤"><a href="#pe工具箱制作步骤" class="headerlink" title="pe工具箱制作步骤"></a>pe工具箱制作步骤</h2><ol>
+<li>准备一个5G以上的U盘，注意事项，制作的启动盘必须对u盘格式化，所以在制作启动盘之前先把重要文件转移。</li>
+<li>插入U盘到电脑，双击下载的 exe 文件（下载地址在文未）。<br><img src="https://s2.loli.net/2022/08/12/UDar6fhAuLMEwBZ.png" alt="1.png"></li>
+<li>设置安装方式（本文选取安装到 U 盘）。<br><img src="https://s2.loli.net/2022/08/12/9nRQVBKPhm6fYG1.png" alt="2.png"></li>
+<li>进行简单设置，选项默认就好了，点击立即安装到U盘耐心等候即可。<br><img src="https://s2.loli.net/2022/08/12/BEMI8C3wYugtLrR.png" alt="3.png"></li>
+<li>制作过程稍作等待，大概需要一两分钟的时间，需要注意的是在安装38%或55%到时会卡一段较长时间。<br><img src="https://s2.loli.net/2022/08/12/KeQ1VR2OTiYPu3W.png" alt="4.png"></li>
+<li>当弹出安装完成的提示时，我们的微PE系统维护U盘就制作完成了。<br><img src="https://s2.loli.net/2022/08/12/IYPtqjFUpuf5CmL.png" alt="5.png"><blockquote>
+<p>百度网盘下载 （提取码ynrn）：<a href="https://pan.baidu.com/s/1yz-Elgzi8eY5wkC4AG_fWw">点击下载微PE工具箱</a></p>
+</blockquote>
+</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>系统安装</category>
+        <category>系统安装工具</category>
+      </categories>
+      <tags>
+        <tag>U盘启动</tag>
+        <tag>PE</tag>
+        <tag>微PE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>判断分区表类型GPT还是MBR</title>
     <url>/posts/3960468335/</url>
     <content><![CDATA[<blockquote>
@@ -869,34 +899,23 @@
       </tags>
   </entry>
   <entry>
-    <title>微PE制作U盘启动盘</title>
-    <url>/posts/174102025/</url>
-    <content><![CDATA[<blockquote>
-<p>微PE工具箱算是一款轻量级的WinPE工具了，这款微PE工具箱可以说是不忘初心吧这么多年了还是在坚持无广告、无流氓、无捆绑、无后门的原则，做一款有用的PE、良心PE、纯净版PE工具箱。WinPE工具箱，装机维护最得力的助手，最后救命稻草。化繁为简，小材大用，一键安装，极速启动。微PE工具箱，最好用的PE工具箱，没有之一。无任何广告推广，内核完整精简，性价比超高的第三方工具合集。2.0采用的全新Win10PE内核，堪称最好用的PE维护系统。</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="pe工具箱制作步骤"><a href="#pe工具箱制作步骤" class="headerlink" title="pe工具箱制作步骤"></a>pe工具箱制作步骤</h2><ol>
-<li>准备一个5G以上的U盘，注意事项，制作的启动盘必须对u盘格式化，所以在制作启动盘之前先把重要文件转移。</li>
-<li>插入U盘到电脑，双击下载的 exe 文件（下载地址在文未）。<br><img src="https://s2.loli.net/2022/08/12/UDar6fhAuLMEwBZ.png" alt="1.png"></li>
-<li>设置安装方式（本文选取安装到 U 盘）。<br><img src="https://s2.loli.net/2022/08/12/9nRQVBKPhm6fYG1.png" alt="2.png"></li>
-<li>进行简单设置，选项默认就好了，点击立即安装到U盘耐心等候即可。<br><img src="https://s2.loli.net/2022/08/12/BEMI8C3wYugtLrR.png" alt="3.png"></li>
-<li>制作过程稍作等待，大概需要一两分钟的时间，需要注意的是在安装38%或55%到时会卡一段较长时间。<br><img src="https://s2.loli.net/2022/08/12/KeQ1VR2OTiYPu3W.png" alt="4.png"></li>
-<li>当弹出安装完成的提示时，我们的微PE系统维护U盘就制作完成了。<br><img src="https://s2.loli.net/2022/08/12/IYPtqjFUpuf5CmL.png" alt="5.png"><blockquote>
-<p>百度网盘下载 （提取码ynrn）：<a href="https://pan.baidu.com/s/1yz-Elgzi8eY5wkC4AG_fWw">点击下载微PE工具箱</a></p>
-</blockquote>
-</li>
-</ol>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>系统安装</category>
-        <category>系统安装工具</category>
-      </categories>
-      <tags>
-        <tag>U盘启动</tag>
-        <tag>PE</tag>
-        <tag>微PE</tag>
-      </tags>
+    <title>每天60秒读懂世界！</title>
+    <url>/posts/183145408/</url>
+    <content><![CDATA[<script>
+    $.ajax({
+        url: 'https://www.zhihu.com/api/v4/columns/c_1261258401923026944/items',
+        type: 'get',
+        success: function (data) {
+            // 在此处处理从接口获取的数据
+            let content = data.data[0].content;
+            // 在文章中插入数据
+            $('#api-data').html(content);
+        }
+    });
+</script>
+<div id="api-data">
+    <!-- 这里将显示从接口获取的数据 -->
+</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
     <title>本博客添加的插件</title>
@@ -935,27 +954,6 @@
         <tag>Hexo</tag>
         <tag>博客搭建</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>每天60秒读懂世界！</title>
-    <url>/posts/183145408/</url>
-    <content><![CDATA[<p>这是一篇使用JavaScript获取API数据的示例文章。下面是包含JavaScript代码的示例：</p>
-<div id="api-data">
-    <!-- 这里将显示从API获取的数据 -->
-</div>
-
-<script>
-$.ajax({
-    url: 'https://www.zhihu.com/api/v4/columns/c_1261258401923026944/items',
-    type: 'get',
-    success: function (data) {
-        // 在此处处理从接口获取的数据
-        let content = data.data[0].content;
-        // 在文章中插入数据
-        $('#api-data').html(content);
-    }
-});
-</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
     <title>用Office 2013-2021 C2R Install下载和安装Office</title>
@@ -1044,6 +1042,31 @@ $.ajax({
       </tags>
   </entry>
   <entry>
+    <title>系统备份恢复</title>
+    <url>/posts/1315606668/</url>
+    <content><![CDATA[<blockquote>
+<p>本篇教程将详细介绍使用微PE安装原版安装版以外Ghost&amp;Wim格式系统的具体方法流程、注意事项等。<br>本方法支持的格式：.gho .wim .esd</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="系统备份恢复的特别提示"><a href="#系统备份恢复的特别提示" class="headerlink" title="系统备份恢复的特别提示"></a>系统备份恢复的特别提示</h2><ul>
+<li>备份恢复保存的镜像文件支持.gho .wim .esd。</li>
+<li>我们推荐使用wim格式的备份，特别是GPT分区表。</li>
+<li>在做系统备份操作之前，请多次确认恢复、备份的分区是否正确，以免数据丢失。</li>
+</ul>
+<h2 id="系统备份恢复的具体流程"><a href="#系统备份恢复的具体流程" class="headerlink" title="系统备份恢复的具体流程"></a>系统备份恢复的具体流程</h2><p><img src="https://s2.loli.net/2022/08/15/jltQyIhaDb8rcTR.png" alt="1.png"></p>
+<h2 id="系统备份"><a href="#系统备份" class="headerlink" title="系统备份"></a>系统备份</h2><p>进入PE后，打开桌面上的CGI工具。选择备份分区，选中要备份的分区位置，并选择.gho .wim要保存的镜像位置。<br>之后点开始执行，系统盘就备份到镜像了。</p>
+<h2 id="系统还原"><a href="#系统还原" class="headerlink" title="系统还原"></a>系统还原</h2><p>进入PE后，打开桌面上的CGI工具。选择还原分区，选中要还原的分区位置，并选择要恢复的.gho .wim镜像。<br>之后点开始执行，镜像就恢复到系统盘了。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>系统安装</category>
+        <category>系统安装教程</category>
+      </categories>
+      <tags>
+        <tag>系统备份恢复</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>硬盘快速分区教程</title>
     <url>/posts/717041725/</url>
     <content><![CDATA[<blockquote>
@@ -1068,31 +1091,6 @@ $.ajax({
       </categories>
       <tags>
         <tag>硬盘分区</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>系统备份恢复</title>
-    <url>/posts/1315606668/</url>
-    <content><![CDATA[<blockquote>
-<p>本篇教程将详细介绍使用微PE安装原版安装版以外Ghost&amp;Wim格式系统的具体方法流程、注意事项等。<br>本方法支持的格式：.gho .wim .esd</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="系统备份恢复的特别提示"><a href="#系统备份恢复的特别提示" class="headerlink" title="系统备份恢复的特别提示"></a>系统备份恢复的特别提示</h2><ul>
-<li>备份恢复保存的镜像文件支持.gho .wim .esd。</li>
-<li>我们推荐使用wim格式的备份，特别是GPT分区表。</li>
-<li>在做系统备份操作之前，请多次确认恢复、备份的分区是否正确，以免数据丢失。</li>
-</ul>
-<h2 id="系统备份恢复的具体流程"><a href="#系统备份恢复的具体流程" class="headerlink" title="系统备份恢复的具体流程"></a>系统备份恢复的具体流程</h2><p><img src="https://s2.loli.net/2022/08/15/jltQyIhaDb8rcTR.png" alt="1.png"></p>
-<h2 id="系统备份"><a href="#系统备份" class="headerlink" title="系统备份"></a>系统备份</h2><p>进入PE后，打开桌面上的CGI工具。选择备份分区，选中要备份的分区位置，并选择.gho .wim要保存的镜像位置。<br>之后点开始执行，系统盘就备份到镜像了。</p>
-<h2 id="系统还原"><a href="#系统还原" class="headerlink" title="系统还原"></a>系统还原</h2><p>进入PE后，打开桌面上的CGI工具。选择还原分区，选中要还原的分区位置，并选择要恢复的.gho .wim镜像。<br>之后点开始执行，镜像就恢复到系统盘了。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>系统安装</category>
-        <category>系统安装教程</category>
-      </categories>
-      <tags>
-        <tag>系统备份恢复</tag>
       </tags>
   </entry>
   <entry>
@@ -1163,7 +1161,7 @@ $.ajax({
 
 <p>导演: <a href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1476433/">托马什·克里马拉</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440514/">布兰卡·利平斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>主演: <a href="https://movie.douban.com/celebrity/1435369/">安娜·玛丽亚·西克拉克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1431444/">米凯莱·莫罗尼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1457057/">西蒙·苏西纳</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440523/">玛格达莱娜·朗帕斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440518/">欧塔萨拉利泽</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 情色<br>制片国家&#x2F;地区: 波兰<br>语言: 波兰语<br>上映日期: 2022-08-19(美国网络)<br>片长: 112分钟<br>又名: 接下来的365天 &#x2F; 黑帮大佬和我的365日3 &#x2F; 再现之欲<br>IMDb: tt21106646</p>
 <h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>  劳拉和马西莫的关系岌岌可危，二人试图克服信任问题，而执着的纳乔想方设法拆散二人。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-BYZkZgXGwIPLIRsv" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-HmQKpLgIVWdSdXrf" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
 
 <h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-365天：明日之欲 The Next 365 Days‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b15ccb2be704">资源链接</a></p>
 <p>zj-365天：今时之欲 365 Days: This Day‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/34556b292677">资源链接</a></p>
@@ -1348,30 +1346,6 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>小黄人大眼萌：神偷奶爸前传 Minions: The Rise of Gru (2022)</title>
-    <url>/posts/402055868/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2583875683.2td3bw5sbbk0.webp" alt="p2583875683"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1313385/">凯尔·巴尔达</a> &#x2F; <a href="https://movie.douban.com/celebrity/1202456/">布拉德·埃布尔森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1475609/">乔纳森·德尔瓦尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1410663/">马修·福格尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1116519/">布莱恩·林奇</a><br>主演: <a href="https://movie.douban.com/celebrity/1054391/">史蒂夫·卡瑞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313061/">皮埃尔·柯芬</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002730/">艾伦·阿金</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049487/">塔拉吉·P·汉森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022664/">杨紫琼</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 科幻 &#x2F; 动画 &#x2F; 犯罪 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语 &#x2F; 越南语<br>上映日期: 2022-08-19(中国大陆) &#x2F; 2022-06-13(安锡国际动画节) &#x2F; 2022-07-01(美国)<br>片长: 87分钟 &#x2F; 88分钟(中国大陆)<br>又名: 小黄人大眼萌2：格鲁的崛起 &#x2F; 小黄人2：格鲁的崛起 &#x2F; 小小兵2:格鲁的崛起(台) &#x2F; 小黄人大眼萌Ⅱ &#x2F; 小黄人Ⅱ &#x2F; 迷你兵团Ⅱ(港) &#x2F; 小小兵Ⅱ(台) &#x2F; 小黄人大电影Ⅱ &#x2F; Minions 2<br>IMDb: tt5113044</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片是2015年推出的小黄人独立电影《小黄人大眼萌》的直接前传。作为《神偷奶爸》的衍生作品，讲述了小黄人们在“前格鲁”时代为其他主人服务的经历，不过少年格鲁曾经出现在这部衍生电影里，续集将围绕他与小黄人们结缘的过程展开。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/03/340907002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-小黄人大眼萌2：神偷奶爸前传 Minions: The Rise of Gru (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/f49f1f3d3168">资源链接</a></p>
-<p>zj-小黄人大眼萌1 Minions (2015)国英双语语中字<br>阿里云盘: <a href="https://pan.quark.cn/s/40f9f08abc60">资源链接</a></p>
-<p>zj-神偷奶爸1-3合集 国英双语配音60帧1080P<br>阿里云盘 <a href="https://www.aliyundrive.com/s/y3zApogb4XK">资源链接</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>喜剧</category>
-      </categories>
-      <tags>
-        <tag>[object Object]</tag>
-        <tag>小黄人大眼萌：神偷奶爸前传</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>待绽蔷薇 Starlet (2012)</title>
     <url>/posts/1343436196/</url>
     <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p1902182383.2g76o3egu39c.webp" alt="p1902182383"></p>
@@ -1404,28 +1378,27 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>教师情事 A Teacher (2020)</title>
-    <url>/posts/1586774167/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2619787967.4arel80ex960.webp" alt="p2619787967"></p>
+    <title>小黄人大眼萌：神偷奶爸前传 Minions: The Rise of Gru (2022)</title>
+    <url>/posts/402055868/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2583875683.2td3bw5sbbk0.webp" alt="p2583875683"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1372348/">汉娜·菲德尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1292995/">安德鲁·尼尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1344100/">吉莉安·罗伯斯比尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1372348/">汉娜·菲德尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1399145/">罗莎·汉德尔尔曼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1436398/">布·基勒布鲁</a> &#x2F; <a href="https://movie.douban.com/celebrity/1447454/">Dana Kitchens</a> &#x2F; <a href="https://movie.douban.com/celebrity/1292995/">安德鲁·尼尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1382671/">鲁比·雷·斯皮格尔</a><br>主演: <a href="https://movie.douban.com/celebrity/1031801/">凯特·玛拉</a> &#x2F; <a href="https://movie.douban.com/celebrity/1322130/">尼克·罗宾森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1315353/">阿什利·祖克曼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1238165/">肖恩·哈珀</a> &#x2F; <a href="https://movie.douban.com/celebrity/1373200/">亚当·大卫·汤普森</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>首播: 2020-11-10(美国)<br>集数: 10<br>IMDb: tt10680614</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　本剧翻拍自汉娜·菲德尔2013年自编自导的同名影片，菲德尔出任该剧导演兼编剧。故事围绕一位高中女教师与学生发生恋情的故事展开。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2020/09/11034128001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1313385/">凯尔·巴尔达</a> &#x2F; <a href="https://movie.douban.com/celebrity/1202456/">布拉德·埃布尔森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1475609/">乔纳森·德尔瓦尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1410663/">马修·福格尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1116519/">布莱恩·林奇</a><br>主演: <a href="https://movie.douban.com/celebrity/1054391/">史蒂夫·卡瑞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313061/">皮埃尔·柯芬</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002730/">艾伦·阿金</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049487/">塔拉吉·P·汉森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022664/">杨紫琼</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 科幻 &#x2F; 动画 &#x2F; 犯罪 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语 &#x2F; 越南语<br>上映日期: 2022-08-19(中国大陆) &#x2F; 2022-06-13(安锡国际动画节) &#x2F; 2022-07-01(美国)<br>片长: 87分钟 &#x2F; 88分钟(中国大陆)<br>又名: 小黄人大眼萌2：格鲁的崛起 &#x2F; 小黄人2：格鲁的崛起 &#x2F; 小小兵2:格鲁的崛起(台) &#x2F; 小黄人大眼萌Ⅱ &#x2F; 小黄人Ⅱ &#x2F; 迷你兵团Ⅱ(港) &#x2F; 小小兵Ⅱ(台) &#x2F; 小黄人大电影Ⅱ &#x2F; Minions 2<br>IMDb: tt5113044</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片是2015年推出的小黄人独立电影《小黄人大眼萌》的直接前传。作为《神偷奶爸》的衍生作品，讲述了小黄人们在“前格鲁”时代为其他主人服务的经历，不过少年格鲁曾经出现在这部衍生电影里，续集将围绕他与小黄人们结缘的过程展开。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/03/340907002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>教师情事 A Teacher 2020全集[美剧]链接：<a href="https://pan.xunlei.com/s/VN9FnvbDpsvcNo1hf7v6CcCCA1?pwd=rsr9#">迅雷网盘</a>  提取码：rsr9</p>
-<p>教师情事（迅雷）链接：<a href="https://pan.xunlei.com/s/VN2Kj_rzkg10sup6VTqLavetA1">资源链接</a> 提取码：aq7x</p>
-<p>教师情事链接：<a href="https://pan.xunlei.com/s/VN2Kj_rzkg10sup6VTqLavetA1">资源链接</a> 提取码：aq7x</p>
-<p>教师情事 A Teacher 2020全集美剧 链接：<a href="https://pan.xunlei.com/s/VNCxg6t8CrSwjA0SMQyAGoJKA1">迅雷云盘</a></p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-小黄人大眼萌2：神偷奶爸前传 Minions: The Rise of Gru (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/f49f1f3d3168">资源链接</a></p>
+<p>zj-小黄人大眼萌1 Minions (2015)国英双语语中字<br>阿里云盘: <a href="https://pan.quark.cn/s/40f9f08abc60">资源链接</a></p>
+<p>zj-神偷奶爸1-3合集 国英双语配音60帧1080P<br>阿里云盘 <a href="https://www.aliyundrive.com/s/y3zApogb4XK">资源链接</a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
-        <category>剧集</category>
-        <category>剧情</category>
+        <category>电影</category>
+        <category>喜剧</category>
       </categories>
       <tags>
-        <tag>教师情事</tag>
-        <tag>A Teacher</tag>
+        <tag>[object Object]</tag>
+        <tag>小黄人大眼萌：神偷奶爸前传</tag>
       </tags>
   </entry>
   <entry>
@@ -1450,6 +1423,31 @@ $.ajax({
       <tags>
         <tag>新·奥特曼</tag>
         <tag>シン・ウルトラマン</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>教师情事 A Teacher (2020)</title>
+    <url>/posts/1586774167/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2619787967.4arel80ex960.webp" alt="p2619787967"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1372348/">汉娜·菲德尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1292995/">安德鲁·尼尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1344100/">吉莉安·罗伯斯比尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1372348/">汉娜·菲德尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1399145/">罗莎·汉德尔尔曼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1436398/">布·基勒布鲁</a> &#x2F; <a href="https://movie.douban.com/celebrity/1447454/">Dana Kitchens</a> &#x2F; <a href="https://movie.douban.com/celebrity/1292995/">安德鲁·尼尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1382671/">鲁比·雷·斯皮格尔</a><br>主演: <a href="https://movie.douban.com/celebrity/1031801/">凯特·玛拉</a> &#x2F; <a href="https://movie.douban.com/celebrity/1322130/">尼克·罗宾森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1315353/">阿什利·祖克曼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1238165/">肖恩·哈珀</a> &#x2F; <a href="https://movie.douban.com/celebrity/1373200/">亚当·大卫·汤普森</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>首播: 2020-11-10(美国)<br>集数: 10<br>IMDb: tt10680614</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　本剧翻拍自汉娜·菲德尔2013年自编自导的同名影片，菲德尔出任该剧导演兼编剧。故事围绕一位高中女教师与学生发生恋情的故事展开。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2020/09/11034128001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>教师情事 A Teacher 2020全集[美剧]链接：<a href="https://pan.xunlei.com/s/VN9FnvbDpsvcNo1hf7v6CcCCA1?pwd=rsr9#">迅雷网盘</a>  提取码：rsr9</p>
+<p>教师情事（迅雷）链接：<a href="https://pan.xunlei.com/s/VN2Kj_rzkg10sup6VTqLavetA1">资源链接</a> 提取码：aq7x</p>
+<p>教师情事链接：<a href="https://pan.xunlei.com/s/VN2Kj_rzkg10sup6VTqLavetA1">资源链接</a> 提取码：aq7x</p>
+<p>教师情事 A Teacher 2020全集美剧 链接：<a href="https://pan.xunlei.com/s/VNCxg6t8CrSwjA0SMQyAGoJKA1">迅雷云盘</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>剧集</category>
+        <category>剧情</category>
+      </categories>
+      <tags>
+        <tag>教师情事</tag>
+        <tag>A Teacher</tag>
       </tags>
   </entry>
   <entry>
@@ -1540,30 +1538,6 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>毒液2 Venom: Let There Be Carnage (2021)</title>
-    <url>/posts/4092041784/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2685731324.5f22prn7lfo0.webp" alt="p2685731324"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1002708/">安迪·瑟金斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1115889/">凯莉·马塞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a><br>主演: <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053560/">伍迪·哈里森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049491/">米歇尔·威廉姆斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049542/">娜奥米·哈里斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1217248/">瑞德·斯科特</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2021-10-01(美国)<br>片长: 97分钟<br>又名: 毒魔：血战大屠杀(港) &#x2F; 猛毒2：血蜘蛛(台) &#x2F; 毒液2：屠杀开始 &#x2F; 毒液：屠杀开始 &#x2F; 毒液：放纵屠杀 &#x2F; 毒液2：屠杀将至 &#x2F; Venom 2<br>IMDb: tt7097896</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　电影讲述了外星共生体“毒液”与宿主埃迪（汤姆·哈迪 饰）这对“最佳拍档”遇上致命反派共生体“卡内奇”（伍迪·哈里森 饰），超级英雄和邪恶反派的宿命之战即将开始。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2021/05/11057476001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.baidu.com/s/11MOJaOkGiXJ0uSf4Vhznrw"><strong>百度网盘下载</strong></a></p>
-<p><a href="https://pan.xunlei.com/s/VNCZsXeHy-FM56mjLH3EUvWNA1"><strong>迅雷网盘下载</strong></a> </p>
-<p><a href="https://pan.quark.cn/s/c90bd9eb3dc8"><strong>夸克网盘下载(不限速)</strong></a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>动作</category>
-      </categories>
-      <tags>
-        <tag>毒液2</tag>
-        <tag>Venom</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>沼泽深处的女孩 Where the Crawdads Sing (2022)</title>
     <url>/posts/2162698263/</url>
     <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2871410057.3h3gq7v5v9w0.webp" alt="p2871410057"></p>
@@ -1585,6 +1559,30 @@ $.ajax({
       <tags>
         <tag>沼泽深处的女孩</tag>
         <tag>Where the Crawdads Sing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>毒液2 Venom: Let There Be Carnage (2021)</title>
+    <url>/posts/4092041784/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2685731324.5f22prn7lfo0.webp" alt="p2685731324"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1002708/">安迪·瑟金斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1115889/">凯莉·马塞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a><br>主演: <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053560/">伍迪·哈里森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049491/">米歇尔·威廉姆斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049542/">娜奥米·哈里斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1217248/">瑞德·斯科特</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2021-10-01(美国)<br>片长: 97分钟<br>又名: 毒魔：血战大屠杀(港) &#x2F; 猛毒2：血蜘蛛(台) &#x2F; 毒液2：屠杀开始 &#x2F; 毒液：屠杀开始 &#x2F; 毒液：放纵屠杀 &#x2F; 毒液2：屠杀将至 &#x2F; Venom 2<br>IMDb: tt7097896</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　电影讲述了外星共生体“毒液”与宿主埃迪（汤姆·哈迪 饰）这对“最佳拍档”遇上致命反派共生体“卡内奇”（伍迪·哈里森 饰），超级英雄和邪恶反派的宿命之战即将开始。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2021/05/11057476001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.baidu.com/s/11MOJaOkGiXJ0uSf4Vhznrw"><strong>百度网盘下载</strong></a></p>
+<p><a href="https://pan.xunlei.com/s/VNCZsXeHy-FM56mjLH3EUvWNA1"><strong>迅雷网盘下载</strong></a> </p>
+<p><a href="https://pan.quark.cn/s/c90bd9eb3dc8"><strong>夸克网盘下载(不限速)</strong></a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>动作</category>
+      </categories>
+      <tags>
+        <tag>毒液2</tag>
+        <tag>Venom</tag>
       </tags>
   </entry>
   <entry>
@@ -2061,6 +2059,14 @@ $.ajax({
       </categories>
   </entry>
   <entry>
+    <title>关于</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
     <title>Top-search 热搜排行榜</title>
     <url>/Top_search/index.html</url>
     <content><![CDATA[<h1 id="今日热点"><a href="#今日热点" class="headerlink" title="今日热点"></a>今日热点</h1><p>更新时间: 2023-10-09 04:37:00</p>
@@ -2098,16 +2104,13 @@ $.ajax({
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
-    <title>关于</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
     <title>分类</title>
     <url>/categories/index.html</url>
+    <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>qqnews</title>
+    <url>/qqnews/index.html</url>
     <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
@@ -2147,11 +2150,6 @@ $.ajax({
 <li>网站Logo&#x2F;头像：<a href="https://s2.loli.net/2022/08/19/B9btM7nsXxaNydo.png">https://s2.loli.net/2022/08/19/B9btM7nsXxaNydo.png</a></li>
 </ul>
 </div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
-    <title>qqnews</title>
-    <url>/qqnews/index.html</url>
-    <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
     <title>资源</title>
