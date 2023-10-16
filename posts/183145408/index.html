@@ -22,15 +22,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"qqhsx.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="$.ajax({                  url: &#39;https:&#x2F;&#x2F;www.zhihu.com&#x2F;api&#x2F;v4&#x2F;columns&#x2F;c_1261258401923026944&#x2F;items&#39;,         type: &#39;get&#39;,         success: function (data) {             &#x2F;&#x2F; 在此处处理从接口获取的数据">
+    <meta name="description" content="这是一篇使用JavaScript获取API数据的示例文章。下面是包含JavaScript代码的示例： 12345678910111213141516&lt;div id&#x3D;&quot;api-data&quot;&gt;    &lt;!-- 这里将显示从API获取的数据 --&gt;&lt;&#x2F;div&gt;&lt;script&gt;$.ajax(&amp;#123;    url: &amp;#x27;http">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天60秒读懂世界！">
 <meta property="og:url" content="https://qqhsx.github.io/posts/183145408/index.html">
 <meta property="og:site_name" content="H1985">
-<meta property="og:description" content="$.ajax({                  url: &#39;https:&#x2F;&#x2F;www.zhihu.com&#x2F;api&#x2F;v4&#x2F;columns&#x2F;c_1261258401923026944&#x2F;items&#39;,         type: &#39;get&#39;,         success: function (data) {             &#x2F;&#x2F; 在此处处理从接口获取的数据">
+<meta property="og:description" content="这是一篇使用JavaScript获取API数据的示例文章。下面是包含JavaScript代码的示例： 12345678910111213141516&lt;div id&#x3D;&quot;api-data&quot;&gt;    &lt;!-- 这里将显示从API获取的数据 --&gt;&lt;&#x2F;div&gt;&lt;script&gt;$.ajax(&amp;#123;    url: &amp;#x27;http">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-31T06:08:30.000Z">
-<meta property="article:modified_time" content="2023-10-16T01:23:11.674Z">
+<meta property="article:modified_time" content="2023-10-16T01:37:52.585Z">
 <meta property="article:author" content="H1985">
 <meta name="twitter:card" content="summary">
 
@@ -419,7 +419,7 @@ document.write("<font color=red>"+daysold+"</font>天 !");
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-16 09:23:11" itemprop="dateModified" datetime="2023-10-16T09:23:11+08:00">2023-10-16</time>
+      <time title="修改时间：2023-10-16 09:37:52" itemprop="dateModified" datetime="2023-10-16T09:37:52+08:00">2023-10-16</time>
     </span>
 
   
@@ -445,23 +445,8 @@ document.write("<font color=red>"+daysold+"</font>天 !");
     
     
     
-    <div class="post-body" itemprop="articleBody"><script>
-    $.ajax({
-        <!-- url: 'https://api.03c3.cn/zb/html.php', -->
-        url: 'https://www.zhihu.com/api/v4/columns/c_1261258401923026944/items',
-        type: 'get',
-        success: function (data) {
-            // 在此处处理从接口获取的数据
-            let content = data.data[0].content;
-            // 在文章中插入数据
-            $('#api-data').html(content);
-        }
-    });
-</script>
-<div id="api-data">
-    <!-- 这里将显示从接口获取的数据 -->
-</div>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    <div class="post-body" itemprop="articleBody"><p>这是一篇使用JavaScript获取API数据的示例文章。下面是包含JavaScript代码的示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;api-data&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 这里将显示从API获取的数据 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">$.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">url</span>: <span class="string">&#x27;https://www.zhihu.com/api/v4/columns/c_1261258401923026944/items&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">type</span>: <span class="string">&#x27;get&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 在此处处理从接口获取的数据</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">let</span> content = data.<span class="property">data</span>[<span class="number">0</span>].<span class="property">content</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 在文章中插入数据</span></span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&#x27;#api-data&#x27;</span>).<span class="title function_">html</span>(content);</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     
