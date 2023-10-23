@@ -71,98 +71,6 @@
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
-    <title>Hexo博客源文件备份</title>
-    <url>/posts/3307548722/</url>
-    <content><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
-<p>我是通过Github部署博客的，通过<code>hexo d</code>上传部署到Github的其实是hexo编译后的文件，不包含源文件。而其他文件 ，包括我们写在_posts里面的文章，和配置文件_config.yml，主题文件_config.butterfly.yml等都没有上传到github</p>
-<p>而遇到电脑寄了或者重装系统等不可抗力，想要恢复博客没有源文件只能重来一遍（文章什么的都没有了:new_moon_with_face:），故备份源文件十分重要，特此记录下。</p>
-</blockquote>
-<span id="more"></span>
-
-<h3 id="备份博客"><a href="#备份博客" class="headerlink" title="备份博客"></a>备份博客</h3><ul>
-<li>U盘备份（这个没什么好说的）</li>
-<li>将源文件托管在Github&#x2F;Gitee&#x2F;Gitlab上（着重说下这个）</li>
-</ul>
-<h3 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH-Key"></a>生成SSH-Key</h3><p>我选择用Gitee备份，先生成一个Gitee用的SSH-Key</p>
-<p>Ctrl+Alt+T打开终端，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C xxxxxxxx@qq.com -f ~/.ssh/gitee_id_rsa</span><br></pre></td></tr></table></figure>
-
-<p><a href="mailto:&#x78;&#x78;&#120;&#x78;&#120;&#x78;&#x78;&#120;&#x40;&#113;&#x71;&#46;&#99;&#111;&#109;">&#x78;&#x78;&#120;&#x78;&#120;&#x78;&#x78;&#120;&#x40;&#113;&#x71;&#46;&#99;&#111;&#109;</a>替换为自己的邮箱即可</p>
-<p>一直按ENTER，会生成密钥文件</p>
-<p>打开文件–显示隐藏文件–找到.ssh打开–打开刚刚创建的gitee_id_rsa.pub</p>
-<p>复制里面的内容，打开Gitee–右上角头像下设置–SSH公钥–粘贴公钥，标题随便取</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230321/1.7f4i4jknn100.jpg" alt="1"></p>
-<h3 id="新建repository"><a href="#新建repository" class="headerlink" title="新建repository"></a>新建repository</h3><p>在Gitee新建仓库，名称随意，勾选README</p>
-<p>复制仓库地址</p>
-<p>Ctrl+Alt+T打开新终端，输入，git clone 地址</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:stringwind/blog_backup.git</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取-git"><a href="#获取-git" class="headerlink" title="获取.git"></a>获取.git</h3><p>打开clone来的文件夹–显示隐藏文件–复制.git文件</p>
-<p>将文件粘贴到博客根目录下</p>
-<h3 id="创建-gitignore"><a href="#创建-gitignore" class="headerlink" title="创建.gitignore"></a>创建.gitignore</h3><p>可能已经有了，没有的话创建个，根目录下<code>touch .gitignore</code>，写入</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">_multiconfig.yml</span><br></pre></td></tr></table></figure>
-
-<p>上传时候忽略一些文件（都是些安装会自动生成的或是编译后的文件，无须备份）</p>
-<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>博客根目录下执行</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit  -m  backup  </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p>这样就将源文件备份到Gitee上了</p>
-<p>每次更新后，输入以下命令即可备份</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m backup</span><br><span class="line">git push</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<h3 id="一键备份并部署（可选）"><a href="#一键备份并部署（可选）" class="headerlink" title="一键备份并部署（可选）"></a>一键备份并部署（可选）</h3><p>由于每次更新后都要输入大量命令行十分麻烦，遂创建一键部署脚本方便备份部署</p>
-<p>在博客根目录下创建deploy.sh文件，写入</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">echo &quot;Start&quot;</span><br><span class="line">git add .</span><br><span class="line">git commit -m backup</span><br><span class="line">git push</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">echo &quot;Finish&quot;</span><br><span class="line">echo 按任意键继续</span><br><span class="line">read -n 1</span><br></pre></td></tr></table></figure>
-
-<p>保存后，在博客根目录双击执行或用命令<code>./deploy.sh</code> 即可实现博客的一键备份并部署</p>
-<h3 id="恢复博客"><a href="#恢复博客" class="headerlink" title="恢复博客"></a>恢复博客</h3><h3 id="基础环境搭建"><a href="#基础环境搭建" class="headerlink" title="基础环境搭建"></a>基础环境搭建</h3><p>Hexo博客基础环境已经搭好：比如安装npm、git、nodejs、hexo安装…</p>
-<h3 id="克隆项目到本地"><a href="#克隆项目到本地" class="headerlink" title="克隆项目到本地"></a>克隆项目到本地</h3><p>Ctrl+Alt+T打开终端，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:stringwind/blog_backup.git</span><br></pre></td></tr></table></figure>
-
-<p>git clone 自己的仓库地址</p>
-<h3 id="恢复博客-1"><a href="#恢复博客-1" class="headerlink" title="恢复博客"></a>恢复博客</h3><p>在clone来的文件夹里执行</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<p>这样博客源文件就成功移植了，再用hexo clean、hexo g、hexo d即可部署完成</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <tags>
-        <tag>hexo博客备份</tag>
-        <tag>next主题</tag>
-        <tag>博客源文件备份</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>U盘启动如何进入PE</title>
-    <url>/posts/1571641020/</url>
-    <content><![CDATA[<blockquote>
-<p>U盘制作完毕后，需要进入PE才可以进行重装系统，那么如何进入PE对许多新手来说是一个难题，下面以F老毛桃为例给大家展示两种进入pe的方式。</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="第一种：快捷键启动（第一种方式较为简单，建议先尝试第一种）"><a href="#第一种：快捷键启动（第一种方式较为简单，建议先尝试第一种）" class="headerlink" title="第一种：快捷键启动（第一种方式较为简单，建议先尝试第一种）"></a>第一种：快捷键启动（第一种方式较为简单，建议先尝试第一种）</h2><ol>
-<li>找到自己电脑型号的BOIS快捷键，如图所示，可以通过网站下方的U盘快捷键查询自身机型所需快捷键。<br><img src="https://s2.loli.net/2022/08/12/DrvyZH2sKcV9dx3.gif" alt="1.gif"></li>
-<li>以戴尔为例（不同主板可能出现的界面不一样）插入启动U盘，然后在开机时一直按快捷键，直到出现启动项选择界面，如下图所示，选择带有USB字样的或者选择自己的U盘名称标识。(这里我u盘名称就是Sandisk Cruzer pcp1.26)<br><img src="https://s2.loli.net/2022/08/12/bdx9V16BmyCNKT7.png" alt="2.png"></li>
-<li>进入老毛桃主菜单后，通过“↑↓”键选择“【1】启动Win10 X64PE(2G以上内存)”后回车确认，成功进入winpe。<br><img src="https://s2.loli.net/2022/08/12/ursqHSg6LokX4Ob.png" alt="3.png"></li>
-</ol>
-<h2 id="第二种：-BIOS设置U盘为第一启动"><a href="#第二种：-BIOS设置U盘为第一启动" class="headerlink" title="第二种： BIOS设置U盘为第一启动"></a>第二种： BIOS设置U盘为第一启动</h2><ol>
-<li>大家在第一种方式无效的情况下需进入BIOS设置中选择，按下机型对应的进入BIOS的快捷键，一般会是F2或者DEL键，无效的话大家就根据自己的机型百度一下就行。（注意：有的电脑机型在开机时可在屏幕上看到快捷键的提示，一般在屏幕左下角或者右下角）<br><img src="https://s2.loli.net/2022/08/12/sfSpO5Ry9b3lTik.png" alt="4.png"></li>
-<li>进入BIOS设置后，如下图用左右方向键移动到boot选项，然后在用上下方向键移动到“1ST boot priority”选项回车选中，在弹出来的框中回车选择带有USB字样的选项，按F10保存退出即可，接着再次开启电脑就会自动使用U盘启动。<br><img src="https://s2.loli.net/2022/08/12/h8TyUmQBtpSn5ws.png" alt="5.png"></li>
-</ol>
-<h2 id="成功进入PE主菜单后"><a href="#成功进入PE主菜单后" class="headerlink" title="成功进入PE主菜单后"></a>成功进入PE主菜单后</h2><ol>
-<li>进入PE主菜单后，通过“↑↓”键选择“【1】启动Win10 X64PE(2G以上内存)”后回车确认，成功进入winpe。<br><img src="https://s2.loli.net/2022/08/12/deDOXUANgmlJ5jn.png" alt="6.png"></li>
-<li>如果是uefi启动的朋友在设置完启动顺序后会直接出现如下界面进入pe。<br><img src="https://s2.loli.net/2022/08/12/RQjUcbEhrviYPN8.png" alt="7.png"></li>
-</ol>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>系统安装</category>
-        <category>系统安装教程</category>
-      </categories>
-      <tags>
-        <tag>U盘启动</tag>
-        <tag>PE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Business Editions和Consumer Editions区别详细介绍</title>
     <url>/posts/3866503405/</url>
     <content><![CDATA[<blockquote>
@@ -307,30 +215,64 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows&amp;Office激活工具 AAct v4.2.7 汉化便携版</title>
-    <url>/posts/3131456665/</url>
-    <content><![CDATA[<blockquote>
-<p>AAct是一款由俄罗斯网友Ratiborus制作的非常小巧实用的KMS激活工具，能自动设置密钥管理服务激活Windows、Office VL版本。支持手动安装及删除激活产品密钥、手动创建及删除续期计划任务，该程序无需.NET Framework框架，相比国外其它激活工具，体积小巧、单执行文件、绿色无残留，激活成功率不错！</p>
+    <title>Hexo博客源文件备份</title>
+    <url>/posts/3307548722/</url>
+    <content><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
+<p>我是通过Github部署博客的，通过<code>hexo d</code>上传部署到Github的其实是hexo编译后的文件，不包含源文件。而其他文件 ，包括我们写在_posts里面的文章，和配置文件_config.yml，主题文件_config.butterfly.yml等都没有上传到github</p>
+<p>而遇到电脑寄了或者重装系统等不可抗力，想要恢复博客没有源文件只能重来一遍（文章什么的都没有了:new_moon_with_face:），故备份源文件十分重要，特此记录下。</p>
 </blockquote>
 <span id="more"></span>
 
-<p><img src="https://s2.loli.net/2022/08/16/Y4dHshNwWji7Xkr.png" alt="1.png"></p>
-<h2 id="AAct-功能特性"><a href="#AAct-功能特性" class="headerlink" title="AAct 功能特性"></a>AAct 功能特性</h2><p>支持Windows、Office 零售版及批量授权版KMS激活；不需任何版本的 .NET Framework 框架支持，可以激活Windows Vista、Windows 7、Windows 8&#x2F;8.1、Windows 10、Server 2008&#x2F;2008 R2、2012&#x2F;2012 R2、Office 2010&#x2F;2013&#x2F;2016 VL 版本。此外，您还可在 Windows XP 上激活 Office 2010 VL。</p>
-<blockquote>
-<p>附注：Network版集成了第三方KMS服务，需联网获取激活信息. 注：这类激活工具行为如报毒，请添加到杀软排除列表正常使用！</p>
-<p>百度网盘下载 （提取码f5ku）：<a href="https://pan.baidu.com/s/1I72SzNbImfnyWfxVpdf5gQ">点击下载AAct v4.2.7 汉化便携版</a></p>
-</blockquote>
+<h3 id="备份博客"><a href="#备份博客" class="headerlink" title="备份博客"></a>备份博客</h3><ul>
+<li>U盘备份（这个没什么好说的）</li>
+<li>将源文件托管在Github&#x2F;Gitee&#x2F;Gitlab上（着重说下这个）</li>
+</ul>
+<h3 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH-Key"></a>生成SSH-Key</h3><p>我选择用Gitee备份，先生成一个Gitee用的SSH-Key</p>
+<p>Ctrl+Alt+T打开终端，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C xxxxxxxx@qq.com -f ~/.ssh/gitee_id_rsa</span><br></pre></td></tr></table></figure>
+
+<p><a href="mailto:&#x78;&#120;&#120;&#120;&#x78;&#x78;&#x78;&#120;&#x40;&#x71;&#113;&#x2e;&#x63;&#111;&#109;">&#x78;&#120;&#120;&#120;&#x78;&#x78;&#x78;&#120;&#x40;&#x71;&#113;&#x2e;&#x63;&#111;&#109;</a>替换为自己的邮箱即可</p>
+<p>一直按ENTER，会生成密钥文件</p>
+<p>打开文件–显示隐藏文件–找到.ssh打开–打开刚刚创建的gitee_id_rsa.pub</p>
+<p>复制里面的内容，打开Gitee–右上角头像下设置–SSH公钥–粘贴公钥，标题随便取</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230321/1.7f4i4jknn100.jpg" alt="1"></p>
+<h3 id="新建repository"><a href="#新建repository" class="headerlink" title="新建repository"></a>新建repository</h3><p>在Gitee新建仓库，名称随意，勾选README</p>
+<p>复制仓库地址</p>
+<p>Ctrl+Alt+T打开新终端，输入，git clone 地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:stringwind/blog_backup.git</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取-git"><a href="#获取-git" class="headerlink" title="获取.git"></a>获取.git</h3><p>打开clone来的文件夹–显示隐藏文件–复制.git文件</p>
+<p>将文件粘贴到博客根目录下</p>
+<h3 id="创建-gitignore"><a href="#创建-gitignore" class="headerlink" title="创建.gitignore"></a>创建.gitignore</h3><p>可能已经有了，没有的话创建个，根目录下<code>touch .gitignore</code>，写入</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">_multiconfig.yml</span><br></pre></td></tr></table></figure>
+
+<p>上传时候忽略一些文件（都是些安装会自动生成的或是编译后的文件，无须备份）</p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>博客根目录下执行</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit  -m  backup  </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>这样就将源文件备份到Gitee上了</p>
+<p>每次更新后，输入以下命令即可备份</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m backup</span><br><span class="line">git push</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="一键备份并部署（可选）"><a href="#一键备份并部署（可选）" class="headerlink" title="一键备份并部署（可选）"></a>一键备份并部署（可选）</h3><p>由于每次更新后都要输入大量命令行十分麻烦，遂创建一键部署脚本方便备份部署</p>
+<p>在博客根目录下创建deploy.sh文件，写入</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">echo &quot;Start&quot;</span><br><span class="line">git add .</span><br><span class="line">git commit -m backup</span><br><span class="line">git push</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">echo &quot;Finish&quot;</span><br><span class="line">echo 按任意键继续</span><br><span class="line">read -n 1</span><br></pre></td></tr></table></figure>
+
+<p>保存后，在博客根目录双击执行或用命令<code>./deploy.sh</code> 即可实现博客的一键备份并部署</p>
+<h3 id="恢复博客"><a href="#恢复博客" class="headerlink" title="恢复博客"></a>恢复博客</h3><h3 id="基础环境搭建"><a href="#基础环境搭建" class="headerlink" title="基础环境搭建"></a>基础环境搭建</h3><p>Hexo博客基础环境已经搭好：比如安装npm、git、nodejs、hexo安装…</p>
+<h3 id="克隆项目到本地"><a href="#克隆项目到本地" class="headerlink" title="克隆项目到本地"></a>克隆项目到本地</h3><p>Ctrl+Alt+T打开终端，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:stringwind/blog_backup.git</span><br></pre></td></tr></table></figure>
+
+<p>git clone 自己的仓库地址</p>
+<h3 id="恢复博客-1"><a href="#恢复博客-1" class="headerlink" title="恢复博客"></a>恢复博客</h3><p>在clone来的文件夹里执行</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>这样博客源文件就成功移植了，再用hexo clean、hexo g、hexo d即可部署完成</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>系统安装</category>
-        <category>系统安装工具</category>
-      </categories>
       <tags>
-        <tag>Office激活</tag>
-        <tag>KMS激活工具</tag>
-        <tag>数字权利激活</tag>
-        <tag>Windows激活</tag>
-        <tag>AAct v4.2.7 汉化便携版</tag>
+        <tag>hexo博客备份</tag>
+        <tag>next主题</tag>
+        <tag>博客源文件备份</tag>
       </tags>
   </entry>
   <entry>
@@ -360,9 +302,67 @@
         <category>系统安装工具</category>
       </categories>
       <tags>
-        <tag>U盘启动</tag>
         <tag>U盘魔术师</tag>
         <tag>USM</tag>
+        <tag>U盘启动</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>U盘启动如何进入PE</title>
+    <url>/posts/1571641020/</url>
+    <content><![CDATA[<blockquote>
+<p>U盘制作完毕后，需要进入PE才可以进行重装系统，那么如何进入PE对许多新手来说是一个难题，下面以F老毛桃为例给大家展示两种进入pe的方式。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="第一种：快捷键启动（第一种方式较为简单，建议先尝试第一种）"><a href="#第一种：快捷键启动（第一种方式较为简单，建议先尝试第一种）" class="headerlink" title="第一种：快捷键启动（第一种方式较为简单，建议先尝试第一种）"></a>第一种：快捷键启动（第一种方式较为简单，建议先尝试第一种）</h2><ol>
+<li>找到自己电脑型号的BOIS快捷键，如图所示，可以通过网站下方的U盘快捷键查询自身机型所需快捷键。<br><img src="https://s2.loli.net/2022/08/12/DrvyZH2sKcV9dx3.gif" alt="1.gif"></li>
+<li>以戴尔为例（不同主板可能出现的界面不一样）插入启动U盘，然后在开机时一直按快捷键，直到出现启动项选择界面，如下图所示，选择带有USB字样的或者选择自己的U盘名称标识。(这里我u盘名称就是Sandisk Cruzer pcp1.26)<br><img src="https://s2.loli.net/2022/08/12/bdx9V16BmyCNKT7.png" alt="2.png"></li>
+<li>进入老毛桃主菜单后，通过“↑↓”键选择“【1】启动Win10 X64PE(2G以上内存)”后回车确认，成功进入winpe。<br><img src="https://s2.loli.net/2022/08/12/ursqHSg6LokX4Ob.png" alt="3.png"></li>
+</ol>
+<h2 id="第二种：-BIOS设置U盘为第一启动"><a href="#第二种：-BIOS设置U盘为第一启动" class="headerlink" title="第二种： BIOS设置U盘为第一启动"></a>第二种： BIOS设置U盘为第一启动</h2><ol>
+<li>大家在第一种方式无效的情况下需进入BIOS设置中选择，按下机型对应的进入BIOS的快捷键，一般会是F2或者DEL键，无效的话大家就根据自己的机型百度一下就行。（注意：有的电脑机型在开机时可在屏幕上看到快捷键的提示，一般在屏幕左下角或者右下角）<br><img src="https://s2.loli.net/2022/08/12/sfSpO5Ry9b3lTik.png" alt="4.png"></li>
+<li>进入BIOS设置后，如下图用左右方向键移动到boot选项，然后在用上下方向键移动到“1ST boot priority”选项回车选中，在弹出来的框中回车选择带有USB字样的选项，按F10保存退出即可，接着再次开启电脑就会自动使用U盘启动。<br><img src="https://s2.loli.net/2022/08/12/h8TyUmQBtpSn5ws.png" alt="5.png"></li>
+</ol>
+<h2 id="成功进入PE主菜单后"><a href="#成功进入PE主菜单后" class="headerlink" title="成功进入PE主菜单后"></a>成功进入PE主菜单后</h2><ol>
+<li>进入PE主菜单后，通过“↑↓”键选择“【1】启动Win10 X64PE(2G以上内存)”后回车确认，成功进入winpe。<br><img src="https://s2.loli.net/2022/08/12/deDOXUANgmlJ5jn.png" alt="6.png"></li>
+<li>如果是uefi启动的朋友在设置完启动顺序后会直接出现如下界面进入pe。<br><img src="https://s2.loli.net/2022/08/12/RQjUcbEhrviYPN8.png" alt="7.png"></li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>系统安装</category>
+        <category>系统安装教程</category>
+      </categories>
+      <tags>
+        <tag>U盘启动</tag>
+        <tag>PE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows&amp;Office激活工具 AAct v4.2.7 汉化便携版</title>
+    <url>/posts/3131456665/</url>
+    <content><![CDATA[<blockquote>
+<p>AAct是一款由俄罗斯网友Ratiborus制作的非常小巧实用的KMS激活工具，能自动设置密钥管理服务激活Windows、Office VL版本。支持手动安装及删除激活产品密钥、手动创建及删除续期计划任务，该程序无需.NET Framework框架，相比国外其它激活工具，体积小巧、单执行文件、绿色无残留，激活成功率不错！</p>
+</blockquote>
+<span id="more"></span>
+
+<p><img src="https://s2.loli.net/2022/08/16/Y4dHshNwWji7Xkr.png" alt="1.png"></p>
+<h2 id="AAct-功能特性"><a href="#AAct-功能特性" class="headerlink" title="AAct 功能特性"></a>AAct 功能特性</h2><p>支持Windows、Office 零售版及批量授权版KMS激活；不需任何版本的 .NET Framework 框架支持，可以激活Windows Vista、Windows 7、Windows 8&#x2F;8.1、Windows 10、Server 2008&#x2F;2008 R2、2012&#x2F;2012 R2、Office 2010&#x2F;2013&#x2F;2016 VL 版本。此外，您还可在 Windows XP 上激活 Office 2010 VL。</p>
+<blockquote>
+<p>附注：Network版集成了第三方KMS服务，需联网获取激活信息. 注：这类激活工具行为如报毒，请添加到杀软排除列表正常使用！</p>
+<p>百度网盘下载 （提取码f5ku）：<a href="https://pan.baidu.com/s/1I72SzNbImfnyWfxVpdf5gQ">点击下载AAct v4.2.7 汉化便携版</a></p>
+</blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>系统安装</category>
+        <category>系统安装工具</category>
+      </categories>
+      <tags>
+        <tag>Office激活</tag>
+        <tag>KMS激活工具</tag>
+        <tag>数字权利激活</tag>
+        <tag>Windows激活</tag>
+        <tag>AAct v4.2.7 汉化便携版</tag>
       </tags>
   </entry>
   <entry>
@@ -445,11 +445,6 @@
         <tag>Windows7安装</tag>
         <tag>Windows7原版下载</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/posts/0/</url>
-    <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
     <title>Windows8.1&amp;10官方原版系统下载安装之U盘PE原生安装</title>
@@ -537,6 +532,55 @@
         <tag>Windows 8.1</tag>
         <tag>Windows 10</tag>
         <tag>原版系统安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/1243066710/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">+ fdsa</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<div class="text-center"><a class="btn" href="https://github.com" title="GitHub"><i class="fab fa-github fa-fw fa-lg"></i>GitHub</a></div>
+
+<a class="btn" href="#"><i class="fa fa-home fa-fw fa-lg"></i>Text & Large Icon</a>
+<a class="btn" href="#" title="Title"><i class="fa fa-home fa-fw fa-lg"></i>Text & Large Icon & Title</a>
+
+<div class="tabs" id="tab"><ul class="nav-tabs"><li class="tab active"><a href="#tab-1">tab 1</a></li><li class="tab"><a href="#tab-2">tab 2</a></li><li class="tab"><a href="#tab-3">A</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-1"><p><strong>选项卡 1</strong> </p></div><div class="tab-pane" id="tab-2"><p><strong>选项卡 2</strong></p></div><div class="tab-pane" id="tab-3"><p><strong>选项卡 3</strong> 名字为A</p></div></div></div>
+
+<p><font face="楷体" size="6" color="#9b95c9">幅度萨芬萨芬</font></p>
+<style>
+#grad6 {height: 70px; background-image: linear-gradient(-225deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 100%);}
+</style>
+<div id="grad6" align="center">
+<font face="楷体" size="6" color="#9b95c9">范德萨发生的</font>
+</div>
+
+<table><tr><td bgcolor="DarkSeaGreen">这里的背景色是：DarkSeaGreen，此处输入任意想输入的内容</td></tr></table>
+
+<p>在布局页面 <del><code>themes\next\layout\_layout.swig</code></del> <code>themes\next\layout\_layout.njk</code> 中 body 末尾引入：</p>
+<p>由于 style 标签和标签的 style 属性都被和谐了（<strong>这让Markdown虽然有HTML的躯体，却没有HTML的灵魂！</strong>），所以这里只能是借助 table, tr, td 等表格标签的 bgcolor 属性来实现背景色的功能。</p>
+<p><strong>更新测试一下使用示例：</strong></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>Hello</tag>
+        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -735,6 +779,56 @@
       </tags>
   </entry>
   <entry>
+    <title>wps官方免费版下载安装</title>
+    <url>/posts/2406846742/</url>
+    <content><![CDATA[<h3 id="WPS-Office官网"><a href="#WPS-Office官网" class="headerlink" title="WPS Office官网"></a>WPS Office官网</h3><p>WPS Office官方网站：<a href="https://www.wps.cn/">https://www.wps.cn/</a></p>
+<h3 id="免费下载地址"><a href="#免费下载地址" class="headerlink" title="免费下载地址"></a>免费下载地址</h3><div class="text-center"><a class="btn" href="https://jifendownload.2345.cn/jifen_2345/wpssetup_k378600950_115027.exe"><i class="fa fa-download fa-fw fa-lg"></i>点击下载</a></div>
+
+<span id="more"></span>
+
+<h3 id="如何下载到电脑桌面？"><a href="#如何下载到电脑桌面？" class="headerlink" title="如何下载到电脑桌面？"></a>如何下载到电脑桌面？</h3><p>首先我们点击上方的电脑版下载链接，以360安全浏览器为演示，此时就会弹出一个下载框，如下图一样。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/1.lv2e3tthb.png" alt="1"></p>
+<p>然后我们点击如上图的【浏览】，就会出现如下图的下载内容保存位置的界面，我们选择【桌面】，然后点击底部的确定。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2.1u27u0zl8wkg.png" alt="2"></p>
+<p>点击确定后会返回到下载框，我们再点击底部的【下载】，过一会儿就会显示下载已经完成，我们在桌面上就可以看见安装包，这样就算是成功把wps office下载到了电脑桌面上了。</p>
+<h3 id="如何安装到电脑桌面？"><a href="#如何安装到电脑桌面？" class="headerlink" title="如何安装到电脑桌面？"></a>如何安装到电脑桌面？</h3><blockquote>
+<p>当我们完成了上面的下载安装包到电脑桌面上之后，我们就可以进行下一个环节，那就是如何安装wps office到电脑桌面上。</p>
+</blockquote>
+<ol>
+<li><p>首先，我们双击打开电脑桌面上已经下载好了的wps安装包，安装包名称是<code>wpssetup_k378600950_115027.exe</code>，建议不要去修改安装包名称，可能会导致无法安装的。</p>
+</li>
+<li><p>双击打开安装包后就可以看见安装界面了，如下图。</p>
+</li>
+<li><p>在安装界面，我们首先需要勾选同意“金山办公软件许可协议和隐私策略”，然后再把安装位置修改为您想要安装的电脑盘，建议选择安装在非C盘的位置，可以是D盘或者E盘，这样电脑后期不容易出现卡段，选择好之后再点击【立即安装】。</p>
+</li>
+</ol>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2-1.4zn4rhcfky00.png" alt="2-1"></p>
+<ol start="4">
+<li>点击立即安装后，就会出现wps office正在安装的百分比，安装的速度可能会较慢，这取决于你的电脑反应速度和安装包的大小来决定的。</li>
+</ol>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/3-3.6l0bdz699cg0.png" alt="3-3"></p>
+<ol start="5">
+<li>安装完成后会自动关闭安装界面窗口，此时wps office就已经成功安装在你的电脑上面，同时在电脑桌面上我们也可以看见wps office的快捷键了。</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>办公软件安装</category>
+        <category>办公软件安装教程</category>
+        <category>wps Office</category>
+      </categories>
+      <tags>
+        <tag>wps</tag>
+        <tag>wps Office下载和安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/posts/1/</url>
+    <content><![CDATA[<div class="tabs" id="tab"><ul class="nav-tabs"><li class="tab active"><a href="#tab-1"><i class="fa fa-camera-retro" aria-hidden="true"></i> 随机美图</a></li><li class="tab"><a href="#tab-2"><i class="fa fa-list-alt" aria-hidden="true"></i> 新闻早报</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-1"><p><a href="https://myhkw.cn/open/img/mm"><img src="https://myhkw.cn/open/img/mm"></a></p></div><div class="tab-pane" id="tab-2"><img src="https://v2.alapi.cn/api/zaobao?token=TFqpTjOhLlhDrx6e&format=image"></div></div></div>
+
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
     <title>判断分区表类型GPT还是MBR</title>
     <url>/posts/3960468335/</url>
     <content><![CDATA[<blockquote>
@@ -858,52 +952,33 @@ $.ajax({
 </script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/1243066710/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <title>用Office 2013-2021 C2R Install下载和安装Office</title>
+    <url>/posts/2129523630/</url>
+    <content><![CDATA[<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><blockquote>
+<p><code>Office 2013-20xx C2R Install</code>是一个可以进行微软Office下载、安装、管理的自定义部署工具。支持Office2013-20xx的任意版本，或离线安装部署Office镜像，自定义安装Office产品组件，支持Office零售版转换批量版，在线KMS激活Office，可选内置Office密钥许可证安装。</p>
+</blockquote>
 <span id="more"></span>
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">+ fdsa</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<div class="text-center"><a class="btn" href="https://github.com" title="GitHub"><i class="fab fa-github fa-fw fa-lg"></i>GitHub</a></div>
-
-<a class="btn" href="#"><i class="fa fa-home fa-fw fa-lg"></i>Text & Large Icon</a>
-<a class="btn" href="#" title="Title"><i class="fa fa-home fa-fw fa-lg"></i>Text & Large Icon & Title</a>
-
-<div class="tabs" id="tab"><ul class="nav-tabs"><li class="tab active"><a href="#tab-1">tab 1</a></li><li class="tab"><a href="#tab-2">tab 2</a></li><li class="tab"><a href="#tab-3">A</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-1"><p><strong>选项卡 1</strong> </p></div><div class="tab-pane" id="tab-2"><p><strong>选项卡 2</strong></p></div><div class="tab-pane" id="tab-3"><p><strong>选项卡 3</strong> 名字为A</p></div></div></div>
-
-<p><font face="楷体" size="6" color="#9b95c9">幅度萨芬萨芬</font></p>
-<style>
-#grad6 {height: 70px; background-image: linear-gradient(-225deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 100%);}
-</style>
-<div id="grad6" align="center">
-<font face="楷体" size="6" color="#9b95c9">范德萨发生的</font>
-</div>
-
-<table><tr><td bgcolor="DarkSeaGreen">这里的背景色是：DarkSeaGreen，此处输入任意想输入的内容</td></tr></table>
-
-<p>在布局页面 <del><code>themes\next\layout\_layout.swig</code></del> <code>themes\next\layout\_layout.njk</code> 中 body 末尾引入：</p>
-<p>由于 style 标签和标签的 style 属性都被和谐了（<strong>这让Markdown虽然有HTML的躯体，却没有HTML的灵魂！</strong>），所以这里只能是借助 table, tr, td 等表格标签的 bgcolor 属性来实现背景色的功能。</p>
-<p><strong>更新测试一下使用示例：</strong></p>
+<h3 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h3><p>安装工具下载后解压为单文件版，直接点如下程序运行。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/1.3uzygkbng2m0.png" alt="1"></p>
+<p>勾选下面几项要安装的内容后点击 <code>安装office</code>. 就可以了，它会自动下载安装。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/2.4gnzltwrqsq0.png" alt="2"></p>
+<p>如果出错或提示系统里有去其他的office版本，那需要先把其他的版本卸载干净了才可以装。点击这两个按键可删除</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/3.334eu2p7y660.png" alt="3"></p>
+<p> 如果还不行，请下载网盘里 office uninstall 工具进行卸载，这个工具是根据官方卸载工具思路制作的，可以彻底地卸载清理。适用于 office 2010–2021。</p>
+<h3 id="进行激活"><a href="#进行激活" class="headerlink" title="进行激活"></a>进行激活</h3><p>点击 <code>激活 Office</code> 就可以激活了。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/4.5kpspj913s00.png" alt="4"></p>
+<h3 id="工具下载"><a href="#工具下载" class="headerlink" title="工具下载"></a>工具下载</h3><p><a href="https://cloud.189.cn/web/share?code=vqqYvqaY3qqi">Office xx C2R Install</a>（访问码：5qq1）</p>
+<p><a href="https://cloud.189.cn/web/share?code=jyeUfq6VZZjq">office uninstall 工具</a>（访问码：8opv）</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
-        <category>测试</category>
+        <category>办公软件安装</category>
+        <category>办公软件安装教程</category>
+        <category>Microsoft Office</category>
       </categories>
       <tags>
-        <tag>Hello</tag>
-        <tag>测试</tag>
+        <tag>Office 2013-2021 C2R Install</tag>
+        <tag>Office下载和安装</tag>
       </tags>
   </entry>
   <entry>
@@ -958,8 +1033,8 @@ $.ajax({
         <category>Microsoft Office</category>
       </categories>
       <tags>
-        <tag>Office Tool Plus</tag>
         <tag>Office下载和安装</tag>
+        <tag>Office Tool Plus</tag>
       </tags>
   </entry>
   <entry>
@@ -1015,33 +1090,32 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>用Office 2013-2021 C2R Install下载和安装Office</title>
-    <url>/posts/2129523630/</url>
-    <content><![CDATA[<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><blockquote>
-<p><code>Office 2013-20xx C2R Install</code>是一个可以进行微软Office下载、安装、管理的自定义部署工具。支持Office2013-20xx的任意版本，或离线安装部署Office镜像，自定义安装Office产品组件，支持Office零售版转换批量版，在线KMS激活Office，可选内置Office密钥许可证安装。</p>
+    <title>网盘电影搜索引擎</title>
+    <url>/posts/2194712517/</url>
+    <content><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
+<p>搜索存储在网盘的电影包括：夸克网盘、百度网盘、阿里云网盘、迅雷云盘等。</p>
 </blockquote>
+<h3 id="友情提示："><a href="#友情提示：" class="headerlink" title="友情提示："></a>友情提示：</h3><ul>
+<li>如果一个站点没有资源，翻至其它站点查看！</li>
+<li>如点击下载没反应，请多点几次、多刷新试试！</li>
+</ul>
 <span id="more"></span>
 
-<h3 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h3><p>安装工具下载后解压为单文件版，直接点如下程序运行。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/1.3uzygkbng2m0.png" alt="1"></p>
-<p>勾选下面几项要安装的内容后点击 <code>安装office</code>. 就可以了，它会自动下载安装。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/2.4gnzltwrqsq0.png" alt="2"></p>
-<p>如果出错或提示系统里有去其他的office版本，那需要先把其他的版本卸载干净了才可以装。点击这两个按键可删除</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/3.334eu2p7y660.png" alt="3"></p>
-<p> 如果还不行，请下载网盘里 office uninstall 工具进行卸载，这个工具是根据官方卸载工具思路制作的，可以彻底地卸载清理。适用于 office 2010–2021。</p>
-<h3 id="进行激活"><a href="#进行激活" class="headerlink" title="进行激活"></a>进行激活</h3><p>点击 <code>激活 Office</code> 就可以激活了。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230317/4.5kpspj913s00.png" alt="4"></p>
-<h3 id="工具下载"><a href="#工具下载" class="headerlink" title="工具下载"></a>工具下载</h3><p><a href="https://cloud.189.cn/web/share?code=vqqYvqaY3qqi">Office xx C2R Install</a>（访问码：5qq1）</p>
-<p><a href="https://cloud.189.cn/web/share?code=jyeUfq6VZZjq">office uninstall 工具</a>（访问码：8opv）</p>
+<h3 id="链接地址："><a href="#链接地址：" class="headerlink" title="链接地址："></a>链接地址：</h3><p>🔗 <a href="http://aileso.cn/index.html">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://gxy112.cn/app/index.html?id=210610ggxx">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://sxjjj.com/apps/index.html?id=2060sn">资源搜索入口</a> 👈👈👈👈</p>
+<p>🔗 <a href="http://bzwp.jiaoxing.me/apps/index.html?id=2060sn">资源搜索入口</a> 👈👈👈👈</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
-        <category>办公软件安装</category>
-        <category>办公软件安装教程</category>
-        <category>Microsoft Office</category>
+        <category>资源相关</category>
       </categories>
       <tags>
-        <tag>Office下载和安装</tag>
-        <tag>Office 2013-2021 C2R Install</tag>
+        <tag>网盘电影</tag>
+        <tag>电影搜索</tag>
+        <tag>搜索引擎</tag>
       </tags>
   </entry>
   <entry>
@@ -1076,85 +1150,6 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/posts/1/</url>
-    <content><![CDATA[<div class="tabs" id="tab"><ul class="nav-tabs"><li class="tab active"><a href="#tab-1"><i class="fa fa-camera-retro" aria-hidden="true"></i> 随机美图</a></li><li class="tab"><a href="#tab-2"><i class="fa fa-list-alt" aria-hidden="true"></i> 新闻早报</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-1"><p><a href="https://myhkw.cn/open/img/mm"><img src="https://myhkw.cn/open/img/mm"></a></p></div><div class="tab-pane" id="tab-2"><img src="https://v2.alapi.cn/api/zaobao?token=TFqpTjOhLlhDrx6e&format=image"></div></div></div>
-
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
-    <title>网盘电影搜索引擎</title>
-    <url>/posts/2194712517/</url>
-    <content><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
-<p>搜索存储在网盘的电影包括：夸克网盘、百度网盘、阿里云网盘、迅雷云盘等。</p>
-</blockquote>
-<h3 id="友情提示："><a href="#友情提示：" class="headerlink" title="友情提示："></a>友情提示：</h3><ul>
-<li>如果一个站点没有资源，翻至其它站点查看！</li>
-<li>如点击下载没反应，请多点几次、多刷新试试！</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="链接地址："><a href="#链接地址：" class="headerlink" title="链接地址："></a>链接地址：</h3><p>🔗 <a href="http://aileso.cn/index.html">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://yzjfilm.cn/app/index.html?id=200616nc">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://gxy112.cn/app/index.html?id=210610ggxx">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://sxjjj.com/apps/index.html?id=2060sn">资源搜索入口</a> 👈👈👈👈</p>
-<p>🔗 <a href="http://bzwp.jiaoxing.me/apps/index.html?id=2060sn">资源搜索入口</a> 👈👈👈👈</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>资源相关</category>
-      </categories>
-      <tags>
-        <tag>网盘电影</tag>
-        <tag>电影搜索</tag>
-        <tag>搜索引擎</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>wps官方免费版下载安装</title>
-    <url>/posts/2406846742/</url>
-    <content><![CDATA[<h3 id="WPS-Office官网"><a href="#WPS-Office官网" class="headerlink" title="WPS Office官网"></a>WPS Office官网</h3><p>WPS Office官方网站：<a href="https://www.wps.cn/">https://www.wps.cn/</a></p>
-<h3 id="免费下载地址"><a href="#免费下载地址" class="headerlink" title="免费下载地址"></a>免费下载地址</h3><div class="text-center"><a class="btn" href="https://jifendownload.2345.cn/jifen_2345/wpssetup_k378600950_115027.exe"><i class="fa fa-download fa-fw fa-lg"></i>点击下载</a></div>
-
-<span id="more"></span>
-
-<h3 id="如何下载到电脑桌面？"><a href="#如何下载到电脑桌面？" class="headerlink" title="如何下载到电脑桌面？"></a>如何下载到电脑桌面？</h3><p>首先我们点击上方的电脑版下载链接，以360安全浏览器为演示，此时就会弹出一个下载框，如下图一样。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/1.lv2e3tthb.png" alt="1"></p>
-<p>然后我们点击如上图的【浏览】，就会出现如下图的下载内容保存位置的界面，我们选择【桌面】，然后点击底部的确定。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2.1u27u0zl8wkg.png" alt="2"></p>
-<p>点击确定后会返回到下载框，我们再点击底部的【下载】，过一会儿就会显示下载已经完成，我们在桌面上就可以看见安装包，这样就算是成功把wps office下载到了电脑桌面上了。</p>
-<h3 id="如何安装到电脑桌面？"><a href="#如何安装到电脑桌面？" class="headerlink" title="如何安装到电脑桌面？"></a>如何安装到电脑桌面？</h3><blockquote>
-<p>当我们完成了上面的下载安装包到电脑桌面上之后，我们就可以进行下一个环节，那就是如何安装wps office到电脑桌面上。</p>
-</blockquote>
-<ol>
-<li><p>首先，我们双击打开电脑桌面上已经下载好了的wps安装包，安装包名称是<code>wpssetup_k378600950_115027.exe</code>，建议不要去修改安装包名称，可能会导致无法安装的。</p>
-</li>
-<li><p>双击打开安装包后就可以看见安装界面了，如下图。</p>
-</li>
-<li><p>在安装界面，我们首先需要勾选同意“金山办公软件许可协议和隐私策略”，然后再把安装位置修改为您想要安装的电脑盘，建议选择安装在非C盘的位置，可以是D盘或者E盘，这样电脑后期不容易出现卡段，选择好之后再点击【立即安装】。</p>
-</li>
-</ol>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2-1.4zn4rhcfky00.png" alt="2-1"></p>
-<ol start="4">
-<li>点击立即安装后，就会出现wps office正在安装的百分比，安装的速度可能会较慢，这取决于你的电脑反应速度和安装包的大小来决定的。</li>
-</ol>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/3-3.6l0bdz699cg0.png" alt="3-3"></p>
-<ol start="5">
-<li>安装完成后会自动关闭安装界面窗口，此时wps office就已经成功安装在你的电脑上面，同时在电脑桌面上我们也可以看见wps office的快捷键了。</li>
-</ol>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>办公软件安装</category>
-        <category>办公软件安装教程</category>
-        <category>wps Office</category>
-      </categories>
-      <tags>
-        <tag>wps</tag>
-        <tag>wps Office下载和安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>365天：明日之欲 The Next 365 Days (2022)</title>
     <url>/posts/881094206/</url>
     <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/01.2951sd37nhs0.webp" alt="01"></p>
@@ -1162,7 +1157,7 @@ $.ajax({
 
 <p>导演: <a href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1476433/">托马什·克里马拉</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440514/">布兰卡·利平斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>主演: <a href="https://movie.douban.com/celebrity/1435369/">安娜·玛丽亚·西克拉克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1431444/">米凯莱·莫罗尼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1457057/">西蒙·苏西纳</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440523/">玛格达莱娜·朗帕斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440518/">欧塔萨拉利泽</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 情色<br>制片国家&#x2F;地区: 波兰<br>语言: 波兰语<br>上映日期: 2022-08-19(美国网络)<br>片长: 112分钟<br>又名: 接下来的365天 &#x2F; 黑帮大佬和我的365日3 &#x2F; 再现之欲<br>IMDb: tt21106646</p>
 <h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>  劳拉和马西莫的关系岌岌可危，二人试图克服信任问题，而执着的纳乔想方设法拆散二人。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-tatnFerSAsIKYCib" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-BQqdNEUuHHFWQZup" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
 
 <h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-365天：明日之欲 The Next 365 Days‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b15ccb2be704">资源链接</a></p>
 <p>zj-365天：今时之欲 365 Days: This Day‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/34556b292677">资源链接</a></p>
@@ -1176,6 +1171,27 @@ $.ajax({
       <tags>
         <tag>365天：明日之欲</tag>
         <tag>The Next 365 Days</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>亲爱的别担心 Don&#39;t Worry Darling (2022)</title>
+    <url>/posts/1567272377/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2880314914.1knsoop4erds.webp" alt="p2880314914"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a><br>编剧: <a href="https://movie.douban.com/celebrity/1393238/">凯瑟琳·西尔伯曼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1032363/">凯莉·凡·戴克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049849/">肖恩·范·戴克</a><br>主演: <a href="https://movie.douban.com/celebrity/1378921/">弗洛伦丝·皮尤</a> &#x2F; <a href="https://movie.douban.com/celebrity/1323310/">哈里·斯泰尔斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053621/">克里斯·派恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1402842/">琪琪·莱恩</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 悬疑 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09-05(威尼斯电影节) &#x2F; 2022-09-23(美国)<br>片长: 122分钟<br>又名: 别担心亲爱的(港&#x2F;台)<br>IMDb: tt10731256</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　这部心理惊悚题材的影片故事设置在1950年代加州沙漠里的一个与世隔绝的乌托邦式群体当中，讲述一位家庭主妇(Pugh饰)意外地发现了看似平静的生活中的恐怖秘密。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/05/12917947001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>剧情</category>
+      </categories>
+      <tags>
+        <tag>亲爱的别担心</tag>
+        <tag>Don&#39;t Worry Darling</tag>
       </tags>
   </entry>
   <entry>
@@ -1203,6 +1219,29 @@ $.ajax({
       <tags>
         <tag>伯德小姐</tag>
         <tag>Lady Bird</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>侏罗纪世界3 Jurassic World: Dominion (2022)</title>
+    <url>/posts/10763499/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230331/p2873958680.452lltb70rw0.webp" alt="p2873958680"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a><br>编剧: <a href="https://movie.douban.com/celebrity/1005924/">艾米丽·卡迈克尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a> &#x2F; <a href="https://movie.douban.com/celebrity/1336443/">德里克·康纳利</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027340/">迈克尔·克莱顿</a><br>主演: <a href="https://movie.douban.com/celebrity/1017967/">克里斯·帕拉特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027772/">布莱丝·达拉斯·霍华德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1006983/">劳拉·邓恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049525/">山姆·尼尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1025109/">杰夫·高布伦</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国 &#x2F; 马耳他<br>语言: 英语<br>上映日期: 2022-06-10(美国&#x2F;中国大陆) &#x2F; 2022-06-01(韩国)<br>片长: 146分钟 &#x2F; 147分钟(中国大陆) &#x2F; 161分钟(加长版)<br>又名: 侏罗纪世界3：统治 &#x2F; 侏罗纪世界：统治霸权(港) &#x2F; 侏罗纪世界：统霸天下(台) &#x2F; 侏罗纪公园6 &#x2F; Jurassic Park 6<br>IMDb: tt8041270</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片为《侏罗纪世界》系列的完结篇，故事的开篇设定在纳布拉尔岛被摧毁的四年后。如今，恐龙在世界各地与人类共同生活、共同捕猎。这一脆弱的平衡将重塑未来，并最终决定人类能否与史上最可怕生物共享这颗星球，并继续站在食物链的顶端。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/04/731611003.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-侏罗纪世界3 Jurassic World: Dominion (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b5f032d37e70">资源链接</a></p>
+<p>zj-[阿里云盘]侏罗纪公园1-3 + 侏罗纪世界1-2<br>HD4K中字合集 <a href="https://www.aliyundrive.com/s/oreFa1kMuxj">资源链接</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>动作</category>
+      </categories>
+      <tags>
+        <tag>侏罗纪世界3</tag>
+        <tag>[object Object]</tag>
       </tags>
   </entry>
   <entry>
@@ -1254,24 +1293,27 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>亲爱的别担心 Don&#39;t Worry Darling (2022)</title>
-    <url>/posts/1567272377/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2880314914.1knsoop4erds.webp" alt="p2880314914"></p>
+    <title>子弹列车 Bullet Train (2022)</title>
+    <url>/posts/3031612445/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2876049208.3ziirksm8h00.webp" alt="p2876049208"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a><br>编剧: <a href="https://movie.douban.com/celebrity/1393238/">凯瑟琳·西尔伯曼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1032363/">凯莉·凡·戴克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049849/">肖恩·范·戴克</a><br>主演: <a href="https://movie.douban.com/celebrity/1378921/">弗洛伦丝·皮尤</a> &#x2F; <a href="https://movie.douban.com/celebrity/1323310/">哈里·斯泰尔斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053621/">克里斯·派恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1402842/">琪琪·莱恩</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 悬疑 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09-05(威尼斯电影节) &#x2F; 2022-09-23(美国)<br>片长: 122分钟<br>又名: 别担心亲爱的(港&#x2F;台)<br>IMDb: tt10731256</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　这部心理惊悚题材的影片故事设置在1950年代加州沙漠里的一个与世隔绝的乌托邦式群体当中，讲述一位家庭主妇(Pugh饰)意外地发现了看似平静的生活中的恐怖秘密。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/05/12917947001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1289765/">大卫·雷奇</a><br>编剧: <a href="https://movie.douban.com/celebrity/1409124/">扎克·奥尔维奇</a> &#x2F; <a href="https://movie.douban.com/celebrity/1314682/">伊坂幸太郎</a><br>主演: <a href="https://movie.douban.com/celebrity/1054452/">布拉德·皮特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022713/">乔伊·金</a> &#x2F; <a href="https://movie.douban.com/celebrity/1017887/">亚伦·泰勒-约翰逊</a> &#x2F; <a href="https://movie.douban.com/celebrity/1390623/">布莱恩·泰里·亨利</a> &#x2F; <a href="https://movie.douban.com/celebrity/1396495/">安德鲁·浩二</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 动作 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国 &#x2F; 日本<br>语言: 英语 &#x2F; 日语 &#x2F; 西班牙语 &#x2F; 俄语<br>上映日期: 2022-08-03(洛迦诺电影节) &#x2F; 2022-08-05(美国)<br>片长: 126分钟<br>又名: 杀手疾风号 &#x2F; 杀手列车(港) &#x2F; 新干线 &#x2F; 瓢虫 &#x2F; 杀手界·疾风号 &#x2F; ブレット・トレイン<br>IMDb: tt12593682</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　在东京前往盛冈一趟疾驰的列车上，有五名杀手，他们发现各自的任务其实有着关联。于是问题变成了：谁能活着下车？终点站又有什么在等待着他们？<br>　　影片改编自伊坂幸太郎小说《瓢虫》。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/06/13056974002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VNEABho3luHrvx_Toflvfh4FA1"><strong>迅雷网盘下载</strong></a></p>
+<p><a href="https://pan.baidu.com/s/1FivmtE3ZiPk1xzqJpaF4Nw"><strong>百度网盘下载</strong></a></p>
+<p><a href="https://pan.quark.cn/s/ac83edbb0542"><strong>夸克网盘下载(不限速)</strong></a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
         <category>电影</category>
-        <category>剧情</category>
+        <category>喜剧</category>
       </categories>
       <tags>
-        <tag>亲爱的别担心</tag>
-        <tag>Don&#39;t Worry Darling</tag>
+        <tag>子弹列车</tag>
+        <tag>Bullet Train</tag>
       </tags>
   </entry>
   <entry>
@@ -1300,30 +1342,6 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>子弹列车 Bullet Train (2022)</title>
-    <url>/posts/3031612445/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2876049208.3ziirksm8h00.webp" alt="p2876049208"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1289765/">大卫·雷奇</a><br>编剧: <a href="https://movie.douban.com/celebrity/1409124/">扎克·奥尔维奇</a> &#x2F; <a href="https://movie.douban.com/celebrity/1314682/">伊坂幸太郎</a><br>主演: <a href="https://movie.douban.com/celebrity/1054452/">布拉德·皮特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022713/">乔伊·金</a> &#x2F; <a href="https://movie.douban.com/celebrity/1017887/">亚伦·泰勒-约翰逊</a> &#x2F; <a href="https://movie.douban.com/celebrity/1390623/">布莱恩·泰里·亨利</a> &#x2F; <a href="https://movie.douban.com/celebrity/1396495/">安德鲁·浩二</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 动作 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国 &#x2F; 日本<br>语言: 英语 &#x2F; 日语 &#x2F; 西班牙语 &#x2F; 俄语<br>上映日期: 2022-08-03(洛迦诺电影节) &#x2F; 2022-08-05(美国)<br>片长: 126分钟<br>又名: 杀手疾风号 &#x2F; 杀手列车(港) &#x2F; 新干线 &#x2F; 瓢虫 &#x2F; 杀手界·疾风号 &#x2F; ブレット・トレイン<br>IMDb: tt12593682</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　在东京前往盛冈一趟疾驰的列车上，有五名杀手，他们发现各自的任务其实有着关联。于是问题变成了：谁能活着下车？终点站又有什么在等待着他们？<br>　　影片改编自伊坂幸太郎小说《瓢虫》。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/06/13056974002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VNEABho3luHrvx_Toflvfh4FA1"><strong>迅雷网盘下载</strong></a></p>
-<p><a href="https://pan.baidu.com/s/1FivmtE3ZiPk1xzqJpaF4Nw"><strong>百度网盘下载</strong></a></p>
-<p><a href="https://pan.quark.cn/s/ac83edbb0542"><strong>夸克网盘下载(不限速)</strong></a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>喜剧</category>
-      </categories>
-      <tags>
-        <tag>子弹列车</tag>
-        <tag>Bullet Train</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>小黄人大眼萌：神偷奶爸前传 Minions: The Rise of Gru (2022)</title>
     <url>/posts/402055868/</url>
     <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2583875683.2td3bw5sbbk0.webp" alt="p2583875683"></p>
@@ -1343,8 +1361,8 @@ $.ajax({
         <category>喜剧</category>
       </categories>
       <tags>
-        <tag>小黄人大眼萌：神偷奶爸前传</tag>
         <tag>[object Object]</tag>
+        <tag>小黄人大眼萌：神偷奶爸前传</tag>
       </tags>
   </entry>
   <entry>
@@ -1540,30 +1558,6 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>沼泽深处的女孩 Where the Crawdads Sing (2022)</title>
-    <url>/posts/2162698263/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2871410057.3h3gq7v5v9w0.webp" alt="p2871410057"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1390968/">奥利维亚·纽曼</a><br>编剧: <a href="https://movie.douban.com/celebrity/1321318/">露西·阿里巴</a> &#x2F; <a href="https://movie.douban.com/celebrity/1469252/">迪莉娅·欧文斯</a><br>主演: <a href="https://movie.douban.com/celebrity/1392188/">黛西·埃德加-琼斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1349152/">泰勒·约翰·史密斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1371459/">哈里斯·迪金森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1007009/">大卫·斯特雷泽恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1448903/">迈克尔·凯悦</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 悬疑<br>官方网站: <a href="http://www.wherethecrawdadssing.movie/">www.wherethecrawdadssing.movie/</a><br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09(中国大陆) &#x2F; 2022-07-15(美国)<br>片长: 125分钟<br>又名: 蝲蛄吟唱的地方 &#x2F; 荒野谜尸(港) &#x2F; 沼泽谋杀案(台)<br>IMDb: tt9411972</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片改编自全球现象级畅销小说《蝲蛄吟唱的地方》。<br>　　主角是一名叫做基娅（黛西·埃德加-琼斯 饰）的女孩，她遭到家人遗弃，在北卡罗来纳州中一片危险的沼泽地里独自生活并长大。多年来，基娅受到小镇居民的排挤和歧视，她被戏称为“沼泽女孩”。在情窦初开的年纪，两名小镇 青年陆续闯入了基娅的世界，她敞开了自己的心扉。但爱情的伤害接踵而至，一件突如其来的谜案更让她陷入了失去自由的危险境地。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/03/11076995001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VNCZs-7T6DSILRSCdlgaH8yaA1"><strong>迅雷网盘下载</strong></a></p>
-<p><a href="https://pan.baidu.com/s/1O1XhbNu8j8qnnvi8_x94OA"><strong>百度网盘下载</strong></a> </p>
-<p><a href="https://pan.quark.cn/s/6dba71b412e1"><strong>夸克网盘下载(下载满速)</strong></a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>剧情</category>
-      </categories>
-      <tags>
-        <tag>沼泽深处的女孩</tag>
-        <tag>Where the Crawdads Sing</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>泰坦尼克号 Titanic (1997)</title>
     <url>/posts/3237377596/</url>
     <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p457755166.7i19ov410c40.webp" alt="p457755166"></p>
@@ -1587,6 +1581,30 @@ $.ajax({
       <tags>
         <tag>泰坦尼克号</tag>
         <tag>Titanic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>沼泽深处的女孩 Where the Crawdads Sing (2022)</title>
+    <url>/posts/2162698263/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2871410057.3h3gq7v5v9w0.webp" alt="p2871410057"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1390968/">奥利维亚·纽曼</a><br>编剧: <a href="https://movie.douban.com/celebrity/1321318/">露西·阿里巴</a> &#x2F; <a href="https://movie.douban.com/celebrity/1469252/">迪莉娅·欧文斯</a><br>主演: <a href="https://movie.douban.com/celebrity/1392188/">黛西·埃德加-琼斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1349152/">泰勒·约翰·史密斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1371459/">哈里斯·迪金森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1007009/">大卫·斯特雷泽恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1448903/">迈克尔·凯悦</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 悬疑<br>官方网站: <a href="http://www.wherethecrawdadssing.movie/">www.wherethecrawdadssing.movie/</a><br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09(中国大陆) &#x2F; 2022-07-15(美国)<br>片长: 125分钟<br>又名: 蝲蛄吟唱的地方 &#x2F; 荒野谜尸(港) &#x2F; 沼泽谋杀案(台)<br>IMDb: tt9411972</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片改编自全球现象级畅销小说《蝲蛄吟唱的地方》。<br>　　主角是一名叫做基娅（黛西·埃德加-琼斯 饰）的女孩，她遭到家人遗弃，在北卡罗来纳州中一片危险的沼泽地里独自生活并长大。多年来，基娅受到小镇居民的排挤和歧视，她被戏称为“沼泽女孩”。在情窦初开的年纪，两名小镇 青年陆续闯入了基娅的世界，她敞开了自己的心扉。但爱情的伤害接踵而至，一件突如其来的谜案更让她陷入了失去自由的危险境地。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/03/11076995001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VNCZs-7T6DSILRSCdlgaH8yaA1"><strong>迅雷网盘下载</strong></a></p>
+<p><a href="https://pan.baidu.com/s/1O1XhbNu8j8qnnvi8_x94OA"><strong>百度网盘下载</strong></a> </p>
+<p><a href="https://pan.quark.cn/s/6dba71b412e1"><strong>夸克网盘下载(下载满速)</strong></a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>剧情</category>
+      </categories>
+      <tags>
+        <tag>沼泽深处的女孩</tag>
+        <tag>Where the Crawdads Sing</tag>
       </tags>
   </entry>
   <entry>
@@ -1762,26 +1780,27 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>侏罗纪世界3 Jurassic World: Dominion (2022)</title>
-    <url>/posts/10763499/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230331/p2873958680.452lltb70rw0.webp" alt="p2873958680"></p>
+    <title>魔女嘉莉 Carrie (2013)</title>
+    <url>/posts/2987555558/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p1725743669.41xuginvewy.webp" alt="p1725743669"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a><br>编剧: <a href="https://movie.douban.com/celebrity/1005924/">艾米丽·卡迈克尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a> &#x2F; <a href="https://movie.douban.com/celebrity/1336443/">德里克·康纳利</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027340/">迈克尔·克莱顿</a><br>主演: <a href="https://movie.douban.com/celebrity/1017967/">克里斯·帕拉特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027772/">布莱丝·达拉斯·霍华德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1006983/">劳拉·邓恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049525/">山姆·尼尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1025109/">杰夫·高布伦</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国 &#x2F; 马耳他<br>语言: 英语<br>上映日期: 2022-06-10(美国&#x2F;中国大陆) &#x2F; 2022-06-01(韩国)<br>片长: 146分钟 &#x2F; 147分钟(中国大陆) &#x2F; 161分钟(加长版)<br>又名: 侏罗纪世界3：统治 &#x2F; 侏罗纪世界：统治霸权(港) &#x2F; 侏罗纪世界：统霸天下(台) &#x2F; 侏罗纪公园6 &#x2F; Jurassic Park 6<br>IMDb: tt8041270</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片为《侏罗纪世界》系列的完结篇，故事的开篇设定在纳布拉尔岛被摧毁的四年后。如今，恐龙在世界各地与人类共同生活、共同捕猎。这一脆弱的平衡将重塑未来，并最终决定人类能否与史上最可怕生物共享这颗星球，并继续站在食物链的顶端。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/04/731611003.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1050124/">金伯莉·皮尔斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1384842/">劳伦斯·D·科昂</a> &#x2F; <a href="https://movie.douban.com/celebrity/1373907/">罗伯托·安古列·萨卡撒</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049547/">斯蒂芬·金</a><br>主演: <a href="https://movie.douban.com/celebrity/1054519/">朱丽安·摩尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018981/">科洛·莫瑞兹</a> &#x2F; <a href="https://movie.douban.com/celebrity/1315804/">加布瑞拉·王尔德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313435/">波茜娅·道布尔戴</a> &#x2F; <a href="https://movie.douban.com/celebrity/1227405/">佐伊·贝尔金</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 恐怖<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2013-10-18(美国)<br>片长: 92分钟 &#x2F; 100分钟(未分级版)<br>又名: 血腥嘉莉(港) &#x2F; 新版魔女嘉莉<br>IMDb: tt1939659</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　宛若小兔一般的嘉莉·怀特（科洛·莫瑞兹 Chloë Moretz 饰）在妈妈玛格丽特（朱丽安·摩尔 Julianne Moore饰）的严格看护下成长起来，与学校那群开放浪荡的女孩相比，她就如同从纯洁的童话世界里走出来一样，一尘不染。在一次事件后，过分惶恐的嘉莉成为克莉丝 （波茜娅·道布尔戴 Portia Doubleday 饰）、休（加布瑞拉·王尔德 Gabriella Wilde 饰）等女孩们嘲笑和欺凌的对象。极度的压力和耻感之下，嘉莉意外发现自己仿佛拥有神奇的魔力。另一方面，深感惭愧的休劝说男友汤米。邀请嘉莉参加毕业舞会。而遭到校方惩罚的克莉丝则处心积虑要进一步羞辱嘉莉。<br>　　小魔女用魔力逃脱母亲所编制的樊笼，而她的人生充满更多的不可测…… <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/63477f0041f66d01cb201d35/63477f0041f66d01cb201d33.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-侏罗纪世界3 Jurassic World: Dominion (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b5f032d37e70">资源链接</a></p>
-<p>zj-[阿里云盘]侏罗纪公园1-3 + 侏罗纪世界1-2<br>HD4K中字合集 <a href="https://www.aliyundrive.com/s/oreFa1kMuxj">资源链接</a></p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VN8sA3VOgfbPLDPXjiy8oYsaA1"><strong>迅雷云盘(提取码：c94g)</strong></a></p>
+<p><a href="https://pan.xunlei.com/s/VN8s9W9Lw6G73dD5HAT_TT_xA1"><strong>迅雷云盘(提取码：nueh)</strong></a></p>
+<p><a href="https://pan.baidu.com/s/1AncJ81H95qszeNryVqwugw"><strong>百度网盘(提取码：wamr)</strong></a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
         <category>电影</category>
-        <category>动作</category>
+        <category>剧情</category>
       </categories>
       <tags>
-        <tag>[object Object]</tag>
-        <tag>侏罗纪世界3</tag>
+        <tag>魔女嘉莉</tag>
+        <tag>Carrie</tag>
       </tags>
   </entry>
   <entry>
@@ -1810,27 +1829,27 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>魔女嘉莉 Carrie (2013)</title>
-    <url>/posts/2987555558/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p1725743669.41xuginvewy.webp" alt="p1725743669"></p>
+    <title>龙之家族 第一季 House of the Dragon Season 1 (2022)</title>
+    <url>/posts/1502457577/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2877623642.2xfpe7q8bc80.webp" alt="p2877623642"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1050124/">金伯莉·皮尔斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1384842/">劳伦斯·D·科昂</a> &#x2F; <a href="https://movie.douban.com/celebrity/1373907/">罗伯托·安古列·萨卡撒</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049547/">斯蒂芬·金</a><br>主演: <a href="https://movie.douban.com/celebrity/1054519/">朱丽安·摩尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018981/">科洛·莫瑞兹</a> &#x2F; <a href="https://movie.douban.com/celebrity/1315804/">加布瑞拉·王尔德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313435/">波茜娅·道布尔戴</a> &#x2F; <a href="https://movie.douban.com/celebrity/1227405/">佐伊·贝尔金</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 恐怖<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2013-10-18(美国)<br>片长: 92分钟 &#x2F; 100分钟(未分级版)<br>又名: 血腥嘉莉(港) &#x2F; 新版魔女嘉莉<br>IMDb: tt1939659</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　宛若小兔一般的嘉莉·怀特（科洛·莫瑞兹 Chloë Moretz 饰）在妈妈玛格丽特（朱丽安·摩尔 Julianne Moore饰）的严格看护下成长起来，与学校那群开放浪荡的女孩相比，她就如同从纯洁的童话世界里走出来一样，一尘不染。在一次事件后，过分惶恐的嘉莉成为克莉丝 （波茜娅·道布尔戴 Portia Doubleday 饰）、休（加布瑞拉·王尔德 Gabriella Wilde 饰）等女孩们嘲笑和欺凌的对象。极度的压力和耻感之下，嘉莉意外发现自己仿佛拥有神奇的魔力。另一方面，深感惭愧的休劝说男友汤米。邀请嘉莉参加毕业舞会。而遭到校方惩罚的克莉丝则处心积虑要进一步羞辱嘉莉。<br>　　小魔女用魔力逃脱母亲所编制的樊笼，而她的人生充满更多的不可测…… <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/63477f0041f66d01cb201d35/63477f0041f66d01cb201d33.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1350650/">米格尔·萨普什尼克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018362/">格雷格·艾坦尼斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1288535/">克莱尔·基尔纳</a> &#x2F; <a href="https://movie.douban.com/celebrity/1038146/">格塔·帕特尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1341737/">莱恩·康道尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1338176/">萨拉·海斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1222833/">加布里埃尔·丰塞卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1477595/">Ira Parker</a> &#x2F; <a href="https://movie.douban.com/celebrity/1459638/">查梅樱·德·格兰特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1050234/">乔治·马丁</a><br>主演: <a href="https://movie.douban.com/celebrity/1049604/">帕迪·康斯戴恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1197648/">马特·史密斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1428242/">米莉·阿尔柯克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1401811/">艾玛·达西</a> &#x2F; <a href="https://movie.douban.com/celebrity/1010549/">瑞斯·伊凡斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 动作 &#x2F; 爱情 &#x2F; 奇幻 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>首播: 2022-08-21(美国)<br>季数: 12<br>集数: 10<br>单集片长: 60分钟<br>又名: 龙族 &#x2F; 权力的游戏前传：龙族 &#x2F; 权力的游戏衍生剧：龙族 &#x2F; 坦格利安 &#x2F; 龙王家族 &#x2F; 权力的游戏：龙之堡 &#x2F; Fire &amp; Blood<br>IMDb: tt11198330</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　本剧改编自乔治·马丁的《血与火》，背景为《权力的游戏》涉及事件的200年前，聚焦坦格利安家族。故事将讲述坦格利安家族的衰落，以及被称之为“血龙狂舞”的家族内战。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/07/330696003.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VN8sA3VOgfbPLDPXjiy8oYsaA1"><strong>迅雷云盘(提取码：c94g)</strong></a></p>
-<p><a href="https://pan.xunlei.com/s/VN8s9W9Lw6G73dD5HAT_TT_xA1"><strong>迅雷云盘(提取码：nueh)</strong></a></p>
-<p><a href="https://pan.baidu.com/s/1AncJ81H95qszeNryVqwugw"><strong>百度网盘(提取码：wamr)</strong></a></p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VND0ZO4Q863AQVp7dM7SucopA1"><strong>迅雷网盘下载</strong></a></p>
+<p><a href="https://pan.baidu.com/s/16-EggVjl8yJpGVpv1WsYtg"><strong>百度网盘下载</strong></a></p>
+<p><a href="https://pan.quark.cn/s/4ddc6acc76f2"><strong>夸克网盘下载(下载满速)</strong></a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
-        <category>电影</category>
+        <category>剧集</category>
         <category>剧情</category>
       </categories>
       <tags>
-        <tag>魔女嘉莉</tag>
-        <tag>Carrie</tag>
+        <tag>龙之家族</tag>
+        <tag>House of the Dragon</tag>
       </tags>
   </entry>
   <entry>
@@ -1878,30 +1897,6 @@ $.ajax({
       <categories>
         <category>财经资讯</category>
       </categories>
-  </entry>
-  <entry>
-    <title>龙之家族 第一季 House of the Dragon Season 1 (2022)</title>
-    <url>/posts/1502457577/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2877623642.2xfpe7q8bc80.webp" alt="p2877623642"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1350650/">米格尔·萨普什尼克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018362/">格雷格·艾坦尼斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1288535/">克莱尔·基尔纳</a> &#x2F; <a href="https://movie.douban.com/celebrity/1038146/">格塔·帕特尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1341737/">莱恩·康道尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1338176/">萨拉·海斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1222833/">加布里埃尔·丰塞卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1477595/">Ira Parker</a> &#x2F; <a href="https://movie.douban.com/celebrity/1459638/">查梅樱·德·格兰特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1050234/">乔治·马丁</a><br>主演: <a href="https://movie.douban.com/celebrity/1049604/">帕迪·康斯戴恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1197648/">马特·史密斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1428242/">米莉·阿尔柯克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1401811/">艾玛·达西</a> &#x2F; <a href="https://movie.douban.com/celebrity/1010549/">瑞斯·伊凡斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 动作 &#x2F; 爱情 &#x2F; 奇幻 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>首播: 2022-08-21(美国)<br>季数: 12<br>集数: 10<br>单集片长: 60分钟<br>又名: 龙族 &#x2F; 权力的游戏前传：龙族 &#x2F; 权力的游戏衍生剧：龙族 &#x2F; 坦格利安 &#x2F; 龙王家族 &#x2F; 权力的游戏：龙之堡 &#x2F; Fire &amp; Blood<br>IMDb: tt11198330</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　本剧改编自乔治·马丁的《血与火》，背景为《权力的游戏》涉及事件的200年前，聚焦坦格利安家族。故事将讲述坦格利安家族的衰落，以及被称之为“血龙狂舞”的家族内战。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/07/330696003.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VND0ZO4Q863AQVp7dM7SucopA1"><strong>迅雷网盘下载</strong></a></p>
-<p><a href="https://pan.baidu.com/s/16-EggVjl8yJpGVpv1WsYtg"><strong>百度网盘下载</strong></a></p>
-<p><a href="https://pan.quark.cn/s/4ddc6acc76f2"><strong>夸克网盘下载(下载满速)</strong></a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>剧集</category>
-        <category>剧情</category>
-      </categories>
-      <tags>
-        <tag>龙之家族</tag>
-        <tag>House of the Dragon</tag>
-      </tags>
   </entry>
   <entry>
     <title>A股三大指数低开沪指跌0.17%，ST股板块依旧活跃</title>
@@ -2097,17 +2092,17 @@ $.ajax({
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
     <title>关于</title>
     <url>/about/index.html</url>
     <content><![CDATA[<blockquote>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
     <title>友链</title>
