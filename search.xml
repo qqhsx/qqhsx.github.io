@@ -231,7 +231,7 @@
 <p>Ctrl+Alt+T打开终端，输入</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C xxxxxxxx@qq.com -f ~/.ssh/gitee_id_rsa</span><br></pre></td></tr></table></figure>
 
-<p><a href="mailto:&#120;&#120;&#x78;&#120;&#120;&#x78;&#x78;&#x78;&#64;&#x71;&#x71;&#x2e;&#x63;&#111;&#x6d;">&#120;&#120;&#x78;&#120;&#120;&#x78;&#x78;&#x78;&#64;&#x71;&#x71;&#x2e;&#x63;&#111;&#x6d;</a>替换为自己的邮箱即可</p>
+<p><a href="mailto:&#120;&#x78;&#120;&#120;&#120;&#120;&#x78;&#x78;&#x40;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#x6d;">&#120;&#x78;&#120;&#120;&#120;&#120;&#x78;&#x78;&#x40;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a>替换为自己的邮箱即可</p>
 <p>一直按ENTER，会生成密钥文件</p>
 <p>打开文件–显示隐藏文件–找到.ssh打开–打开刚刚创建的gitee_id_rsa.pub</p>
 <p>复制里面的内容，打开Gitee–右上角头像下设置–SSH公钥–粘贴公钥，标题随便取</p>
@@ -584,56 +584,6 @@
       </tags>
   </entry>
   <entry>
-    <title>wps官方免费版下载安装</title>
-    <url>/posts/2406846742/</url>
-    <content><![CDATA[<h3 id="WPS-Office官网"><a href="#WPS-Office官网" class="headerlink" title="WPS Office官网"></a>WPS Office官网</h3><p>WPS Office官方网站：<a href="https://www.wps.cn/">https://www.wps.cn/</a></p>
-<h3 id="免费下载地址"><a href="#免费下载地址" class="headerlink" title="免费下载地址"></a>免费下载地址</h3><div class="text-center"><a class="btn" href="https://jifendownload.2345.cn/jifen_2345/wpssetup_k378600950_115027.exe"><i class="fa fa-download fa-fw fa-lg"></i>点击下载</a></div>
-
-<span id="more"></span>
-
-<h3 id="如何下载到电脑桌面？"><a href="#如何下载到电脑桌面？" class="headerlink" title="如何下载到电脑桌面？"></a>如何下载到电脑桌面？</h3><p>首先我们点击上方的电脑版下载链接，以360安全浏览器为演示，此时就会弹出一个下载框，如下图一样。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/1.lv2e3tthb.png" alt="1"></p>
-<p>然后我们点击如上图的【浏览】，就会出现如下图的下载内容保存位置的界面，我们选择【桌面】，然后点击底部的确定。</p>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2.1u27u0zl8wkg.png" alt="2"></p>
-<p>点击确定后会返回到下载框，我们再点击底部的【下载】，过一会儿就会显示下载已经完成，我们在桌面上就可以看见安装包，这样就算是成功把wps office下载到了电脑桌面上了。</p>
-<h3 id="如何安装到电脑桌面？"><a href="#如何安装到电脑桌面？" class="headerlink" title="如何安装到电脑桌面？"></a>如何安装到电脑桌面？</h3><blockquote>
-<p>当我们完成了上面的下载安装包到电脑桌面上之后，我们就可以进行下一个环节，那就是如何安装wps office到电脑桌面上。</p>
-</blockquote>
-<ol>
-<li><p>首先，我们双击打开电脑桌面上已经下载好了的wps安装包，安装包名称是<code>wpssetup_k378600950_115027.exe</code>，建议不要去修改安装包名称，可能会导致无法安装的。</p>
-</li>
-<li><p>双击打开安装包后就可以看见安装界面了，如下图。</p>
-</li>
-<li><p>在安装界面，我们首先需要勾选同意“金山办公软件许可协议和隐私策略”，然后再把安装位置修改为您想要安装的电脑盘，建议选择安装在非C盘的位置，可以是D盘或者E盘，这样电脑后期不容易出现卡段，选择好之后再点击【立即安装】。</p>
-</li>
-</ol>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2-1.4zn4rhcfky00.png" alt="2-1"></p>
-<ol start="4">
-<li>点击立即安装后，就会出现wps office正在安装的百分比，安装的速度可能会较慢，这取决于你的电脑反应速度和安装包的大小来决定的。</li>
-</ol>
-<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/3-3.6l0bdz699cg0.png" alt="3-3"></p>
-<ol start="5">
-<li>安装完成后会自动关闭安装界面窗口，此时wps office就已经成功安装在你的电脑上面，同时在电脑桌面上我们也可以看见wps office的快捷键了。</li>
-</ol>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>办公软件安装</category>
-        <category>办公软件安装教程</category>
-        <category>wps Office</category>
-      </categories>
-      <tags>
-        <tag>wps</tag>
-        <tag>wps Office下载和安装</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/posts/1/</url>
-    <content><![CDATA[<div class="tabs" id="tab"><ul class="nav-tabs"><li class="tab active"><a href="#tab-1"><i class="fa fa-camera-retro" aria-hidden="true"></i> 随机美图</a></li><li class="tab"><a href="#tab-2"><i class="fa fa-list-alt" aria-hidden="true"></i> 新闻早报</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-1"><p><a href="https://myhkw.cn/open/img/mm"><img src="https://myhkw.cn/open/img/mm"></a></p></div><div class="tab-pane" id="tab-2"><img src="https://v2.alapi.cn/api/zaobao?token=TFqpTjOhLlhDrx6e&format=image"></div></div></div>
-
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
     <title>hexo博客next8主题美化</title>
     <url>/posts/3278445100/</url>
     <content><![CDATA[<blockquote>
@@ -827,6 +777,56 @@
         <tag>hexo博客</tag>
         <tag>next主题美化</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>wps官方免费版下载安装</title>
+    <url>/posts/2406846742/</url>
+    <content><![CDATA[<h3 id="WPS-Office官网"><a href="#WPS-Office官网" class="headerlink" title="WPS Office官网"></a>WPS Office官网</h3><p>WPS Office官方网站：<a href="https://www.wps.cn/">https://www.wps.cn/</a></p>
+<h3 id="免费下载地址"><a href="#免费下载地址" class="headerlink" title="免费下载地址"></a>免费下载地址</h3><div class="text-center"><a class="btn" href="https://jifendownload.2345.cn/jifen_2345/wpssetup_k378600950_115027.exe"><i class="fa fa-download fa-fw fa-lg"></i>点击下载</a></div>
+
+<span id="more"></span>
+
+<h3 id="如何下载到电脑桌面？"><a href="#如何下载到电脑桌面？" class="headerlink" title="如何下载到电脑桌面？"></a>如何下载到电脑桌面？</h3><p>首先我们点击上方的电脑版下载链接，以360安全浏览器为演示，此时就会弹出一个下载框，如下图一样。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/1.lv2e3tthb.png" alt="1"></p>
+<p>然后我们点击如上图的【浏览】，就会出现如下图的下载内容保存位置的界面，我们选择【桌面】，然后点击底部的确定。</p>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2.1u27u0zl8wkg.png" alt="2"></p>
+<p>点击确定后会返回到下载框，我们再点击底部的【下载】，过一会儿就会显示下载已经完成，我们在桌面上就可以看见安装包，这样就算是成功把wps office下载到了电脑桌面上了。</p>
+<h3 id="如何安装到电脑桌面？"><a href="#如何安装到电脑桌面？" class="headerlink" title="如何安装到电脑桌面？"></a>如何安装到电脑桌面？</h3><blockquote>
+<p>当我们完成了上面的下载安装包到电脑桌面上之后，我们就可以进行下一个环节，那就是如何安装wps office到电脑桌面上。</p>
+</blockquote>
+<ol>
+<li><p>首先，我们双击打开电脑桌面上已经下载好了的wps安装包，安装包名称是<code>wpssetup_k378600950_115027.exe</code>，建议不要去修改安装包名称，可能会导致无法安装的。</p>
+</li>
+<li><p>双击打开安装包后就可以看见安装界面了，如下图。</p>
+</li>
+<li><p>在安装界面，我们首先需要勾选同意“金山办公软件许可协议和隐私策略”，然后再把安装位置修改为您想要安装的电脑盘，建议选择安装在非C盘的位置，可以是D盘或者E盘，这样电脑后期不容易出现卡段，选择好之后再点击【立即安装】。</p>
+</li>
+</ol>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/2-1.4zn4rhcfky00.png" alt="2-1"></p>
+<ol start="4">
+<li>点击立即安装后，就会出现wps office正在安装的百分比，安装的速度可能会较慢，这取决于你的电脑反应速度和安装包的大小来决定的。</li>
+</ol>
+<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230303/3-3.6l0bdz699cg0.png" alt="3-3"></p>
+<ol start="5">
+<li>安装完成后会自动关闭安装界面窗口，此时wps office就已经成功安装在你的电脑上面，同时在电脑桌面上我们也可以看见wps office的快捷键了。</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>办公软件安装</category>
+        <category>办公软件安装教程</category>
+        <category>wps Office</category>
+      </categories>
+      <tags>
+        <tag>wps</tag>
+        <tag>wps Office下载和安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/posts/1/</url>
+    <content><![CDATA[<div class="tabs" id="tab"><ul class="nav-tabs"><li class="tab active"><a href="#tab-1"><i class="fa fa-camera-retro" aria-hidden="true"></i> 随机美图</a></li><li class="tab"><a href="#tab-2"><i class="fa fa-list-alt" aria-hidden="true"></i> 新闻早报</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-1"><p><a href="https://myhkw.cn/open/img/mm"><img src="https://myhkw.cn/open/img/mm"></a></p></div><div class="tab-pane" id="tab-2"><img src="https://v2.alapi.cn/api/zaobao?token=TFqpTjOhLlhDrx6e&format=image"></div></div></div>
+
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
     <title>判断分区表类型GPT还是MBR</title>
@@ -1157,7 +1157,7 @@ $.ajax({
 
 <p>导演: <a href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1437768/">芭芭拉·比尔拉瓦斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1476433/">托马什·克里马拉</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440514/">布兰卡·利平斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1206897/">托马斯·曼丁斯</a><br>主演: <a href="https://movie.douban.com/celebrity/1435369/">安娜·玛丽亚·西克拉克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1431444/">米凯莱·莫罗尼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1457057/">西蒙·苏西纳</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440523/">玛格达莱娜·朗帕斯卡</a> &#x2F; <a href="https://movie.douban.com/celebrity/1440518/">欧塔萨拉利泽</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 情色<br>制片国家&#x2F;地区: 波兰<br>语言: 波兰语<br>上映日期: 2022-08-19(美国网络)<br>片长: 112分钟<br>又名: 接下来的365天 &#x2F; 黑帮大佬和我的365日3 &#x2F; 再现之欲<br>IMDb: tt21106646</p>
 <h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>  劳拉和马西莫的关系岌岌可危，二人试图克服信任问题，而执着的纳乔想方设法拆散二人。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-gQKDSitXcKILBBeW" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video id="mmedia-dEGJZzuukYrFWvTl" controls="true" key="vaule" vide="video" src="https://img.goldposter.com/video/2022/08/13332113001.mp4"></video>
 
 <h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-365天：明日之欲 The Next 365 Days‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b15ccb2be704">资源链接</a></p>
 <p>zj-365天：今时之欲 365 Days: This Day‎ (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/34556b292677">资源链接</a></p>
@@ -1171,6 +1171,27 @@ $.ajax({
       <tags>
         <tag>365天：明日之欲</tag>
         <tag>The Next 365 Days</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>亲爱的别担心 Don&#39;t Worry Darling (2022)</title>
+    <url>/posts/1567272377/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2880314914.1knsoop4erds.webp" alt="p2880314914"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a><br>编剧: <a href="https://movie.douban.com/celebrity/1393238/">凯瑟琳·西尔伯曼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1032363/">凯莉·凡·戴克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049849/">肖恩·范·戴克</a><br>主演: <a href="https://movie.douban.com/celebrity/1378921/">弗洛伦丝·皮尤</a> &#x2F; <a href="https://movie.douban.com/celebrity/1323310/">哈里·斯泰尔斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053621/">克里斯·派恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1402842/">琪琪·莱恩</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 悬疑 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09-05(威尼斯电影节) &#x2F; 2022-09-23(美国)<br>片长: 122分钟<br>又名: 别担心亲爱的(港&#x2F;台)<br>IMDb: tt10731256</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　这部心理惊悚题材的影片故事设置在1950年代加州沙漠里的一个与世隔绝的乌托邦式群体当中，讲述一位家庭主妇(Pugh饰)意外地发现了看似平静的生活中的恐怖秘密。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/05/12917947001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>剧情</category>
+      </categories>
+      <tags>
+        <tag>亲爱的别担心</tag>
+        <tag>Don&#39;t Worry Darling</tag>
       </tags>
   </entry>
   <entry>
@@ -1198,6 +1219,29 @@ $.ajax({
       <tags>
         <tag>伯德小姐</tag>
         <tag>Lady Bird</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>侏罗纪世界3 Jurassic World: Dominion (2022)</title>
+    <url>/posts/10763499/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230331/p2873958680.452lltb70rw0.webp" alt="p2873958680"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a><br>编剧: <a href="https://movie.douban.com/celebrity/1005924/">艾米丽·卡迈克尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a> &#x2F; <a href="https://movie.douban.com/celebrity/1336443/">德里克·康纳利</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027340/">迈克尔·克莱顿</a><br>主演: <a href="https://movie.douban.com/celebrity/1017967/">克里斯·帕拉特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027772/">布莱丝·达拉斯·霍华德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1006983/">劳拉·邓恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049525/">山姆·尼尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1025109/">杰夫·高布伦</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国 &#x2F; 马耳他<br>语言: 英语<br>上映日期: 2022-06-10(美国&#x2F;中国大陆) &#x2F; 2022-06-01(韩国)<br>片长: 146分钟 &#x2F; 147分钟(中国大陆) &#x2F; 161分钟(加长版)<br>又名: 侏罗纪世界3：统治 &#x2F; 侏罗纪世界：统治霸权(港) &#x2F; 侏罗纪世界：统霸天下(台) &#x2F; 侏罗纪公园6 &#x2F; Jurassic Park 6<br>IMDb: tt8041270</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片为《侏罗纪世界》系列的完结篇，故事的开篇设定在纳布拉尔岛被摧毁的四年后。如今，恐龙在世界各地与人类共同生活、共同捕猎。这一脆弱的平衡将重塑未来，并最终决定人类能否与史上最可怕生物共享这颗星球，并继续站在食物链的顶端。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/04/731611003.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-侏罗纪世界3 Jurassic World: Dominion (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b5f032d37e70">资源链接</a></p>
+<p>zj-[阿里云盘]侏罗纪公园1-3 + 侏罗纪世界1-2<br>HD4K中字合集 <a href="https://www.aliyundrive.com/s/oreFa1kMuxj">资源链接</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>动作</category>
+      </categories>
+      <tags>
+        <tag>侏罗纪世界3</tag>
+        <tag>[object Object]</tag>
       </tags>
   </entry>
   <entry>
@@ -1249,24 +1293,27 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>亲爱的别担心 Don&#39;t Worry Darling (2022)</title>
-    <url>/posts/1567272377/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2880314914.1knsoop4erds.webp" alt="p2880314914"></p>
+    <title>子弹列车 Bullet Train (2022)</title>
+    <url>/posts/3031612445/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2876049208.3ziirksm8h00.webp" alt="p2876049208"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a><br>编剧: <a href="https://movie.douban.com/celebrity/1393238/">凯瑟琳·西尔伯曼</a> &#x2F; <a href="https://movie.douban.com/celebrity/1032363/">凯莉·凡·戴克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049849/">肖恩·范·戴克</a><br>主演: <a href="https://movie.douban.com/celebrity/1378921/">弗洛伦丝·皮尤</a> &#x2F; <a href="https://movie.douban.com/celebrity/1323310/">哈里·斯泰尔斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053621/">克里斯·派恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1031795/">奥利维亚·王尔德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1402842/">琪琪·莱恩</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 悬疑 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09-05(威尼斯电影节) &#x2F; 2022-09-23(美国)<br>片长: 122分钟<br>又名: 别担心亲爱的(港&#x2F;台)<br>IMDb: tt10731256</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　这部心理惊悚题材的影片故事设置在1950年代加州沙漠里的一个与世隔绝的乌托邦式群体当中，讲述一位家庭主妇(Pugh饰)意外地发现了看似平静的生活中的恐怖秘密。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/05/12917947001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1289765/">大卫·雷奇</a><br>编剧: <a href="https://movie.douban.com/celebrity/1409124/">扎克·奥尔维奇</a> &#x2F; <a href="https://movie.douban.com/celebrity/1314682/">伊坂幸太郎</a><br>主演: <a href="https://movie.douban.com/celebrity/1054452/">布拉德·皮特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022713/">乔伊·金</a> &#x2F; <a href="https://movie.douban.com/celebrity/1017887/">亚伦·泰勒-约翰逊</a> &#x2F; <a href="https://movie.douban.com/celebrity/1390623/">布莱恩·泰里·亨利</a> &#x2F; <a href="https://movie.douban.com/celebrity/1396495/">安德鲁·浩二</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 动作 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国 &#x2F; 日本<br>语言: 英语 &#x2F; 日语 &#x2F; 西班牙语 &#x2F; 俄语<br>上映日期: 2022-08-03(洛迦诺电影节) &#x2F; 2022-08-05(美国)<br>片长: 126分钟<br>又名: 杀手疾风号 &#x2F; 杀手列车(港) &#x2F; 新干线 &#x2F; 瓢虫 &#x2F; 杀手界·疾风号 &#x2F; ブレット・トレイン<br>IMDb: tt12593682</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　在东京前往盛冈一趟疾驰的列车上，有五名杀手，他们发现各自的任务其实有着关联。于是问题变成了：谁能活着下车？终点站又有什么在等待着他们？<br>　　影片改编自伊坂幸太郎小说《瓢虫》。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/06/13056974002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VNEABho3luHrvx_Toflvfh4FA1"><strong>迅雷网盘下载</strong></a></p>
+<p><a href="https://pan.baidu.com/s/1FivmtE3ZiPk1xzqJpaF4Nw"><strong>百度网盘下载</strong></a></p>
+<p><a href="https://pan.quark.cn/s/ac83edbb0542"><strong>夸克网盘下载(不限速)</strong></a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
         <category>电影</category>
-        <category>剧情</category>
+        <category>喜剧</category>
       </categories>
       <tags>
-        <tag>亲爱的别担心</tag>
-        <tag>Don&#39;t Worry Darling</tag>
+        <tag>子弹列车</tag>
+        <tag>Bullet Train</tag>
       </tags>
   </entry>
   <entry>
@@ -1295,18 +1342,18 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>子弹列车 Bullet Train (2022)</title>
-    <url>/posts/3031612445/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2876049208.3ziirksm8h00.webp" alt="p2876049208"></p>
+    <title>小黄人大眼萌：神偷奶爸前传 Minions: The Rise of Gru (2022)</title>
+    <url>/posts/402055868/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2583875683.2td3bw5sbbk0.webp" alt="p2583875683"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1289765/">大卫·雷奇</a><br>编剧: <a href="https://movie.douban.com/celebrity/1409124/">扎克·奥尔维奇</a> &#x2F; <a href="https://movie.douban.com/celebrity/1314682/">伊坂幸太郎</a><br>主演: <a href="https://movie.douban.com/celebrity/1054452/">布拉德·皮特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022713/">乔伊·金</a> &#x2F; <a href="https://movie.douban.com/celebrity/1017887/">亚伦·泰勒-约翰逊</a> &#x2F; <a href="https://movie.douban.com/celebrity/1390623/">布莱恩·泰里·亨利</a> &#x2F; <a href="https://movie.douban.com/celebrity/1396495/">安德鲁·浩二</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 动作 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国 &#x2F; 日本<br>语言: 英语 &#x2F; 日语 &#x2F; 西班牙语 &#x2F; 俄语<br>上映日期: 2022-08-03(洛迦诺电影节) &#x2F; 2022-08-05(美国)<br>片长: 126分钟<br>又名: 杀手疾风号 &#x2F; 杀手列车(港) &#x2F; 新干线 &#x2F; 瓢虫 &#x2F; 杀手界·疾风号 &#x2F; ブレット・トレイン<br>IMDb: tt12593682</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　在东京前往盛冈一趟疾驰的列车上，有五名杀手，他们发现各自的任务其实有着关联。于是问题变成了：谁能活着下车？终点站又有什么在等待着他们？<br>　　影片改编自伊坂幸太郎小说《瓢虫》。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/06/13056974002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1313385/">凯尔·巴尔达</a> &#x2F; <a href="https://movie.douban.com/celebrity/1202456/">布拉德·埃布尔森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1475609/">乔纳森·德尔瓦尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1410663/">马修·福格尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1116519/">布莱恩·林奇</a><br>主演: <a href="https://movie.douban.com/celebrity/1054391/">史蒂夫·卡瑞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313061/">皮埃尔·柯芬</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002730/">艾伦·阿金</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049487/">塔拉吉·P·汉森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022664/">杨紫琼</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 科幻 &#x2F; 动画 &#x2F; 犯罪 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语 &#x2F; 越南语<br>上映日期: 2022-08-19(中国大陆) &#x2F; 2022-06-13(安锡国际动画节) &#x2F; 2022-07-01(美国)<br>片长: 87分钟 &#x2F; 88分钟(中国大陆)<br>又名: 小黄人大眼萌2：格鲁的崛起 &#x2F; 小黄人2：格鲁的崛起 &#x2F; 小小兵2:格鲁的崛起(台) &#x2F; 小黄人大眼萌Ⅱ &#x2F; 小黄人Ⅱ &#x2F; 迷你兵团Ⅱ(港) &#x2F; 小小兵Ⅱ(台) &#x2F; 小黄人大电影Ⅱ &#x2F; Minions 2<br>IMDb: tt5113044</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片是2015年推出的小黄人独立电影《小黄人大眼萌》的直接前传。作为《神偷奶爸》的衍生作品，讲述了小黄人们在“前格鲁”时代为其他主人服务的经历，不过少年格鲁曾经出现在这部衍生电影里，续集将围绕他与小黄人们结缘的过程展开。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/03/340907002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VNEABho3luHrvx_Toflvfh4FA1"><strong>迅雷网盘下载</strong></a></p>
-<p><a href="https://pan.baidu.com/s/1FivmtE3ZiPk1xzqJpaF4Nw"><strong>百度网盘下载</strong></a></p>
-<p><a href="https://pan.quark.cn/s/ac83edbb0542"><strong>夸克网盘下载(不限速)</strong></a></p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-小黄人大眼萌2：神偷奶爸前传 Minions: The Rise of Gru (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/f49f1f3d3168">资源链接</a></p>
+<p>zj-小黄人大眼萌1 Minions (2015)国英双语语中字<br>阿里云盘: <a href="https://pan.quark.cn/s/40f9f08abc60">资源链接</a></p>
+<p>zj-神偷奶爸1-3合集 国英双语配音60帧1080P<br>阿里云盘 <a href="https://www.aliyundrive.com/s/y3zApogb4XK">资源链接</a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
@@ -1314,8 +1361,8 @@ $.ajax({
         <category>喜剧</category>
       </categories>
       <tags>
-        <tag>子弹列车</tag>
-        <tag>Bullet Train</tag>
+        <tag>[object Object]</tag>
+        <tag>小黄人大眼萌：神偷奶爸前传</tag>
       </tags>
   </entry>
   <entry>
@@ -1351,30 +1398,6 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>新·奥特曼 シン・ウルトラマン (2022)</title>
-    <url>/posts/994048635/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230325/p2871914751.3rux51g1zx00.webp" alt="p2871914751"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1051346/">樋口真嗣</a><br>编剧: <a href="https://movie.douban.com/celebrity/1059748/">庵野秀明</a><br>主演: <a href="https://movie.douban.com/celebrity/1025531/">斋藤工</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018667/">长泽雅美</a> &#x2F; <a href="https://movie.douban.com/celebrity/1001042/">西岛秀俊</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002071/">有冈大贵</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313429/">早见明里</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 科幻<br>官方网站: <a href="http://shin-ultraman.jp/">shin-ultraman.jp</a><br>制片国家&#x2F;地区: 日本<br>语言: 日语<br>上映日期: 2022-05-13(日本)<br>片长: 112分钟<br>又名: 真·奥特曼 &#x2F; 正宗超人力霸王 &#x2F; 新‧超人(港) &#x2F; 新．超人力霸王(台) &#x2F; Shin Ultraman<br>IMDb: tt10737918</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　《新·奥特曼》是圆谷株式会社、东宝株式会社、Khara联合制作，东宝株式会社发行的电影。该片由庵野秀明制片、编剧，樋口真嗣担任总导演和特技导演，斋藤工、长泽雅美、西岛秀俊主演，于2022年5月13日在日本上映。该片以现代社会为舞台，以能够体验存在“至今为止谁也没有见过的奥特曼”的世界为目标。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/04/11049080002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VNDdDigJz2hsnE31wMgD51EvA1"><strong>迅雷网盘下载</strong></a></p>
-<p><a href="https://pan.baidu.com/s/1S7reLxmsFAESFkTjhGUHkw"><strong>百度网盘下载</strong></a></p>
-<p><a href="https://pan.quark.cn/s/9d0fc7d6f4bd"><strong>夸克网盘下载(不限速)</strong></a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>科幻</category>
-      </categories>
-      <tags>
-        <tag>新·奥特曼</tag>
-        <tag>シン・ウルトラマン</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>教师情事 A Teacher (2020)</title>
     <url>/posts/1586774167/</url>
     <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2619787967.4arel80ex960.webp" alt="p2619787967"></p>
@@ -1400,18 +1423,78 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>小黄人大眼萌：神偷奶爸前传 Minions: The Rise of Gru (2022)</title>
-    <url>/posts/402055868/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2583875683.2td3bw5sbbk0.webp" alt="p2583875683"></p>
+    <title>新·奥特曼 シン・ウルトラマン (2022)</title>
+    <url>/posts/994048635/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230325/p2871914751.3rux51g1zx00.webp" alt="p2871914751"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1313385/">凯尔·巴尔达</a> &#x2F; <a href="https://movie.douban.com/celebrity/1202456/">布拉德·埃布尔森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1475609/">乔纳森·德尔瓦尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1410663/">马修·福格尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1116519/">布莱恩·林奇</a><br>主演: <a href="https://movie.douban.com/celebrity/1054391/">史蒂夫·卡瑞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313061/">皮埃尔·柯芬</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002730/">艾伦·阿金</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049487/">塔拉吉·P·汉森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1022664/">杨紫琼</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 科幻 &#x2F; 动画 &#x2F; 犯罪 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国<br>语言: 英语 &#x2F; 越南语<br>上映日期: 2022-08-19(中国大陆) &#x2F; 2022-06-13(安锡国际动画节) &#x2F; 2022-07-01(美国)<br>片长: 87分钟 &#x2F; 88分钟(中国大陆)<br>又名: 小黄人大眼萌2：格鲁的崛起 &#x2F; 小黄人2：格鲁的崛起 &#x2F; 小小兵2:格鲁的崛起(台) &#x2F; 小黄人大眼萌Ⅱ &#x2F; 小黄人Ⅱ &#x2F; 迷你兵团Ⅱ(港) &#x2F; 小小兵Ⅱ(台) &#x2F; 小黄人大电影Ⅱ &#x2F; Minions 2<br>IMDb: tt5113044</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片是2015年推出的小黄人独立电影《小黄人大眼萌》的直接前传。作为《神偷奶爸》的衍生作品，讲述了小黄人们在“前格鲁”时代为其他主人服务的经历，不过少年格鲁曾经出现在这部衍生电影里，续集将围绕他与小黄人们结缘的过程展开。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/03/340907002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1051346/">樋口真嗣</a><br>编剧: <a href="https://movie.douban.com/celebrity/1059748/">庵野秀明</a><br>主演: <a href="https://movie.douban.com/celebrity/1025531/">斋藤工</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018667/">长泽雅美</a> &#x2F; <a href="https://movie.douban.com/celebrity/1001042/">西岛秀俊</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002071/">有冈大贵</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313429/">早见明里</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 科幻<br>官方网站: <a href="http://shin-ultraman.jp/">shin-ultraman.jp</a><br>制片国家&#x2F;地区: 日本<br>语言: 日语<br>上映日期: 2022-05-13(日本)<br>片长: 112分钟<br>又名: 真·奥特曼 &#x2F; 正宗超人力霸王 &#x2F; 新‧超人(港) &#x2F; 新．超人力霸王(台) &#x2F; Shin Ultraman<br>IMDb: tt10737918</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　《新·奥特曼》是圆谷株式会社、东宝株式会社、Khara联合制作，东宝株式会社发行的电影。该片由庵野秀明制片、编剧，樋口真嗣担任总导演和特技导演，斋藤工、长泽雅美、西岛秀俊主演，于2022年5月13日在日本上映。该片以现代社会为舞台，以能够体验存在“至今为止谁也没有见过的奥特曼”的世界为目标。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/04/11049080002.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-小黄人大眼萌2：神偷奶爸前传 Minions: The Rise of Gru (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/f49f1f3d3168">资源链接</a></p>
-<p>zj-小黄人大眼萌1 Minions (2015)国英双语语中字<br>阿里云盘: <a href="https://pan.quark.cn/s/40f9f08abc60">资源链接</a></p>
-<p>zj-神偷奶爸1-3合集 国英双语配音60帧1080P<br>阿里云盘 <a href="https://www.aliyundrive.com/s/y3zApogb4XK">资源链接</a></p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VNDdDigJz2hsnE31wMgD51EvA1"><strong>迅雷网盘下载</strong></a></p>
+<p><a href="https://pan.baidu.com/s/1S7reLxmsFAESFkTjhGUHkw"><strong>百度网盘下载</strong></a></p>
+<p><a href="https://pan.quark.cn/s/9d0fc7d6f4bd"><strong>夸克网盘下载(不限速)</strong></a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>科幻</category>
+      </categories>
+      <tags>
+        <tag>新·奥特曼</tag>
+        <tag>シン・ウルトラマン</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>月光男孩 Moonlight (2016)</title>
+    <url>/posts/4196538404/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2446673548.7i1d8h1qnvk0.webp" alt="p2446673548"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1307235/">巴里·詹金斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1307235/">巴里·詹金斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1365019/">塔瑞尔·麦卡尼</a><br>主演: <a href="https://movie.douban.com/celebrity/1340760/">崔凡特·罗兹</a> &#x2F; <a href="https://movie.douban.com/celebrity/1343701/">安德烈·霍兰</a> &#x2F; <a href="https://movie.douban.com/celebrity/1004702/">马赫沙拉·阿里</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049542/">娜奥米·哈里斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1363386/">加奈儿·梦奈</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 同性<br>官方网站: <a href="http://moonlight.movie/">moonlight.movie&#x2F;</a><br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2016-09-02(特柳赖德电影节) &#x2F; 2016-10-21(美国)<br>片长: 111分钟<br>又名: 月亮喜欢蓝(港) &#x2F; 月光下的蓝色男孩(台) &#x2F; 月光人生 &#x2F; 蓝色月光 &#x2F; 月光<br>IMDb: tt4975722</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　奇伦（艾什顿·桑德斯 Ashton Sanders 饰）的母亲宝拉（娜奥米·哈里斯 Naomie Harris 饰）吸毒成瘾根本无心照顾孩子，奇伦从小在孤独中长大，因为过于瘦小的身材而时常遭到周围人的欺侮和作弄。一次偶然中，奇伦结识了毒贩胡安（马赫沙拉·阿里 Maher shala Ali 饰），从此，胡安和其女友特蕾莎（加奈儿·梦奈 Janelle Monae 饰）的住处成为了奇伦的第二个家。<br>　　凯文（贾雷尔·杰罗姆 Jharrel Jerome 饰）是奇伦唯一的朋友，随着时间的推移，两人之间的感情渐渐超越了友谊。然而，为了隐藏自己的性取向，凯文不得不在同伴的怂恿下对奇伦大打出手，之后，两人再也没有见过面。一晃眼多年过去，奇伦忽然接到了凯文打来的电话，两人终于决定正视各自心中真正的感情。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/2016/08/Moonlight-Trailer-1-SD-GoldPoster_com.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>720p BD高清rmvb版（1.16 GB）</p>
+<p><a href="ed2k://|file|月光男孩.720pBD高清中英双字.rmvb|1248200671|4E37AD35E7254A6990C26F1F0DB070E0|h=UU7HRQ6D7QZNZCED6DFPNFIKIQ23X7NI|/">电驴链接</a>  <a href="thunder://QUFlZDJrOi8vfGZpbGV81MK54sTQuqIuNzIwcEJEuN/H5dbQ06LLq9fWLnJtdmJ8MTI0ODIwMDY3MXw0RTM3QUQzNUU3MjU0QTY5OTBDMjZGMUYwREIwNzBFMHxoPVVVN0hSUTZEN1FaTlpDRUQ2REZQTkZJS0lRMjNYN05JfC9aWg==">迅雷链接</a> </p>
+<p>1080p BD高清mp4版 Fantopia字幕组（2.55 GB）</p>
+<p><a href="http://pan.baidu.com/s/1slq9fEd">百度网盘</a>（密码：7i5n）  <a href="ed2k://|file|月光男孩.1080p.BluRay.x264.中英字幕-Fantopia.mp4|2743299366|2360dc003364d06f2aeaa44247f5c971|h=g7adry4zvs7t6wqu2ixj3sitqidm7dc5|/">电驴链接</a>  <a href="thunder://QUFlZDJrOi8vfGZpbGV81MK54sTQuqIuMTA4MHAuQmx1UmF5LngyNjQu1tDTotfWxLstRmFudG9waWEubXA0fDI3NDMyOTkzNjZ8MjM2MGRjMDAzMzY0ZDA2ZjJhZWFhNDQyNDdmNWM5NzF8aD1nN2Fkcnk0enZzN3Q2d3F1Mml4ajNzaXRxaWRtN2RjNXwvWlo=">迅雷链接</a> </p>
+<p>1080p BD高清mkv版 SSK字幕组（2.48 GB）</p>
+<p><a href="http://pan.baidu.com/s/1boXyC5h">百度网盘</a> </p>
+<p>1080p HD高清mp4版 药丸字幕组（2.35 GB）</p>
+<p><a href="http://pan.baidu.com/s/1gfspaMn">百度网盘</a>（密码：1450）  </p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>剧情</category>
+      </categories>
+      <tags>
+        <tag>月光男孩</tag>
+        <tag>Moonlight</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>棕榈泉 Palm Springs (2020)</title>
+    <url>/posts/2004151250/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2588167301.3o1k9ys1a4s0.webp" alt="p2588167301"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1432658/">马克斯·巴尔巴科夫</a><br>编剧: <a href="https://movie.douban.com/celebrity/1439877/">安迪·塞拉</a> &#x2F; <a href="https://movie.douban.com/celebrity/1432658/">马克斯·巴尔巴科夫</a><br>主演: <a href="https://movie.douban.com/celebrity/1025187/">安迪·萨姆伯格</a> &#x2F; <a href="https://movie.douban.com/celebrity/1236978/">克里斯汀·米利欧缇</a> &#x2F; <a href="https://movie.douban.com/celebrity/1270961/">卡米拉·门德斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049768/">泰勒·霍奇林</a> &#x2F; <a href="https://movie.douban.com/celebrity/1147911/">J·K·西蒙斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 爱情<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2020-01-26(圣丹斯电影节) &#x2F; 2020-07-10(美国)<br>片长: 90分钟<br>又名: 恋爱假期无限Loop(港) &#x2F; 棕榈泉不思议(台)<br>IMDb: tt9484998</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　奈尔斯（安迪·萨姆伯格 Andy Samberg 饰）和女友的感情之路早已经走到了尽头，可即便如此，他还是勉强跟着她去参加了一场婚礼。婚礼现场，谁也不认识的奈尔斯百无聊赖，一个名为萨拉（克丽斯汀·米里奥蒂 Cristin Milioti 饰）的放荡不羁的女孩吸引了奈尔斯的注意。<br>　　萨拉是新娘的姐姐，实际上，她和新郎长期保持着肉体关系，就连新婚前一晚，她都是在新郎的床上度过的！这样一个令全家人都感到头疼的姑娘，在奈尔斯的眼中却显得格外有吸引力，在同女友分手后，奈尔斯和萨拉渐渐走到了一起。萨拉泼辣的个性给奈尔斯的生活带来了惊喜，却也制造了种种麻烦，当奈尔斯发现自己真的深深地爱上了萨拉时，后者却不告而别。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2020/06/10821615001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>1080p HD高清.mp4（1.11 GB）NEW字幕组</p>
+<p><a href="https://pan.baidu.com/s/1bbdUWP4KYouXm19vBXKlHg">百度网盘</a>（提取码：NEWN）  <a href="magnet:?xt=urn:btih:16abef8eba6610192d8729cbedc3ab82cee64feb">磁力链接</a></p>
+<p>1080p HD高清.mp4（2.66 GB）远鉴字幕组</p>
+<p><a href="https://pan.baidu.com/s/1IEPC9DnauwQqcuwTEXlhJQ">百度网盘</a>（密码：yjnb）  </p>
+<p>1080p HD高清.mp4（1.26 GB）人人影视</p>
+<p><a href="magnet:?xt=urn:btih:f61f7baa22076cff2b2fe3d471b5b49c21af9814">磁力链接</a></p>
+<p>720p HD高清.mp4（1.02 GB）</p>
+<p><a href="magnet:?xt=urn:btih:842485ac5e441115697502c46e5592211fe5a604&dn=棕榈泉HD中英双字.mp4">磁力链接</a></p>
+<p>1080p HD高清.mkv（1.5 GB）</p>
+<p><a href="magnet:?xt=urn:btih:603e21aa83af7702099c12515f7402512f39020b&dn=棕榈泉.HD.1080p.中英双字幕.mkv">磁力链接</a>  <a href="thunder://QUFmdHA6Ly95Z2R5ODp5Z2R5OEB5ZzY5LmR5ZHl0dC5uZXQ6ODAwOC/R9LnitefTsHd3dy55Z2R5OC5jb20u19jptciqLkJELjEwODBwLtbQ06LLq9fWxLsubWt2Wlo=">迅雷链接</a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
@@ -1419,8 +1502,8 @@ $.ajax({
         <category>喜剧</category>
       </categories>
       <tags>
-        <tag>小黄人大眼萌：神偷奶爸前传</tag>
-        <tag>[object Object]</tag>
+        <tag>棕榈泉</tag>
+        <tag>Palm Springs</tag>
       </tags>
   </entry>
   <entry>
@@ -1451,32 +1534,27 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>月光男孩 Moonlight (2016)</title>
-    <url>/posts/4196538404/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2446673548.7i1d8h1qnvk0.webp" alt="p2446673548"></p>
+    <title>毒液2 Venom: Let There Be Carnage (2021)</title>
+    <url>/posts/4092041784/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2685731324.5f22prn7lfo0.webp" alt="p2685731324"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1307235/">巴里·詹金斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1307235/">巴里·詹金斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1365019/">塔瑞尔·麦卡尼</a><br>主演: <a href="https://movie.douban.com/celebrity/1340760/">崔凡特·罗兹</a> &#x2F; <a href="https://movie.douban.com/celebrity/1343701/">安德烈·霍兰</a> &#x2F; <a href="https://movie.douban.com/celebrity/1004702/">马赫沙拉·阿里</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049542/">娜奥米·哈里斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1363386/">加奈儿·梦奈</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 同性<br>官方网站: <a href="http://moonlight.movie/">moonlight.movie&#x2F;</a><br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2016-09-02(特柳赖德电影节) &#x2F; 2016-10-21(美国)<br>片长: 111分钟<br>又名: 月亮喜欢蓝(港) &#x2F; 月光下的蓝色男孩(台) &#x2F; 月光人生 &#x2F; 蓝色月光 &#x2F; 月光<br>IMDb: tt4975722</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　奇伦（艾什顿·桑德斯 Ashton Sanders 饰）的母亲宝拉（娜奥米·哈里斯 Naomie Harris 饰）吸毒成瘾根本无心照顾孩子，奇伦从小在孤独中长大，因为过于瘦小的身材而时常遭到周围人的欺侮和作弄。一次偶然中，奇伦结识了毒贩胡安（马赫沙拉·阿里 Maher shala Ali 饰），从此，胡安和其女友特蕾莎（加奈儿·梦奈 Janelle Monae 饰）的住处成为了奇伦的第二个家。<br>　　凯文（贾雷尔·杰罗姆 Jharrel Jerome 饰）是奇伦唯一的朋友，随着时间的推移，两人之间的感情渐渐超越了友谊。然而，为了隐藏自己的性取向，凯文不得不在同伴的怂恿下对奇伦大打出手，之后，两人再也没有见过面。一晃眼多年过去，奇伦忽然接到了凯文打来的电话，两人终于决定正视各自心中真正的感情。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/2016/08/Moonlight-Trailer-1-SD-GoldPoster_com.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1002708/">安迪·瑟金斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1115889/">凯莉·马塞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a><br>主演: <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053560/">伍迪·哈里森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049491/">米歇尔·威廉姆斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049542/">娜奥米·哈里斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1217248/">瑞德·斯科特</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2021-10-01(美国)<br>片长: 97分钟<br>又名: 毒魔：血战大屠杀(港) &#x2F; 猛毒2：血蜘蛛(台) &#x2F; 毒液2：屠杀开始 &#x2F; 毒液：屠杀开始 &#x2F; 毒液：放纵屠杀 &#x2F; 毒液2：屠杀将至 &#x2F; Venom 2<br>IMDb: tt7097896</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　电影讲述了外星共生体“毒液”与宿主埃迪（汤姆·哈迪 饰）这对“最佳拍档”遇上致命反派共生体“卡内奇”（伍迪·哈里森 饰），超级英雄和邪恶反派的宿命之战即将开始。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2021/05/11057476001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>720p BD高清rmvb版（1.16 GB）</p>
-<p><a href="ed2k://|file|月光男孩.720pBD高清中英双字.rmvb|1248200671|4E37AD35E7254A6990C26F1F0DB070E0|h=UU7HRQ6D7QZNZCED6DFPNFIKIQ23X7NI|/">电驴链接</a>  <a href="thunder://QUFlZDJrOi8vfGZpbGV81MK54sTQuqIuNzIwcEJEuN/H5dbQ06LLq9fWLnJtdmJ8MTI0ODIwMDY3MXw0RTM3QUQzNUU3MjU0QTY5OTBDMjZGMUYwREIwNzBFMHxoPVVVN0hSUTZEN1FaTlpDRUQ2REZQTkZJS0lRMjNYN05JfC9aWg==">迅雷链接</a> </p>
-<p>1080p BD高清mp4版 Fantopia字幕组（2.55 GB）</p>
-<p><a href="http://pan.baidu.com/s/1slq9fEd">百度网盘</a>（密码：7i5n）  <a href="ed2k://|file|月光男孩.1080p.BluRay.x264.中英字幕-Fantopia.mp4|2743299366|2360dc003364d06f2aeaa44247f5c971|h=g7adry4zvs7t6wqu2ixj3sitqidm7dc5|/">电驴链接</a>  <a href="thunder://QUFlZDJrOi8vfGZpbGV81MK54sTQuqIuMTA4MHAuQmx1UmF5LngyNjQu1tDTotfWxLstRmFudG9waWEubXA0fDI3NDMyOTkzNjZ8MjM2MGRjMDAzMzY0ZDA2ZjJhZWFhNDQyNDdmNWM5NzF8aD1nN2Fkcnk0enZzN3Q2d3F1Mml4ajNzaXRxaWRtN2RjNXwvWlo=">迅雷链接</a> </p>
-<p>1080p BD高清mkv版 SSK字幕组（2.48 GB）</p>
-<p><a href="http://pan.baidu.com/s/1boXyC5h">百度网盘</a> </p>
-<p>1080p HD高清mp4版 药丸字幕组（2.35 GB）</p>
-<p><a href="http://pan.baidu.com/s/1gfspaMn">百度网盘</a>（密码：1450）  </p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.baidu.com/s/11MOJaOkGiXJ0uSf4Vhznrw"><strong>百度网盘下载</strong></a></p>
+<p><a href="https://pan.xunlei.com/s/VNCZsXeHy-FM56mjLH3EUvWNA1"><strong>迅雷网盘下载</strong></a> </p>
+<p><a href="https://pan.quark.cn/s/c90bd9eb3dc8"><strong>夸克网盘下载(不限速)</strong></a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
         <category>电影</category>
-        <category>剧情</category>
+        <category>动作</category>
       </categories>
       <tags>
-        <tag>月光男孩</tag>
-        <tag>Moonlight</tag>
+        <tag>毒液2</tag>
+        <tag>Venom</tag>
       </tags>
   </entry>
   <entry>
@@ -1530,58 +1608,25 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>棕榈泉 Palm Springs (2020)</title>
-    <url>/posts/2004151250/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2588167301.3o1k9ys1a4s0.webp" alt="p2588167301"></p>
+    <title>浮生梦 My Cousin Rachel (2017)</title>
+    <url>/posts/655245191/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2462459613.5spwigv0auo0.webp" alt="p2462459613"></p>
 <span id="more"></span>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1432658/">马克斯·巴尔巴科夫</a><br>编剧: <a href="https://movie.douban.com/celebrity/1439877/">安迪·塞拉</a> &#x2F; <a href="https://movie.douban.com/celebrity/1432658/">马克斯·巴尔巴科夫</a><br>主演: <a href="https://movie.douban.com/celebrity/1025187/">安迪·萨姆伯格</a> &#x2F; <a href="https://movie.douban.com/celebrity/1236978/">克里斯汀·米利欧缇</a> &#x2F; <a href="https://movie.douban.com/celebrity/1270961/">卡米拉·门德斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049768/">泰勒·霍奇林</a> &#x2F; <a href="https://movie.douban.com/celebrity/1147911/">J·K·西蒙斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 喜剧 &#x2F; 爱情<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2020-01-26(圣丹斯电影节) &#x2F; 2020-07-10(美国)<br>片长: 90分钟<br>又名: 恋爱假期无限Loop(港) &#x2F; 棕榈泉不思议(台)<br>IMDb: tt9484998</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　奈尔斯（安迪·萨姆伯格 Andy Samberg 饰）和女友的感情之路早已经走到了尽头，可即便如此，他还是勉强跟着她去参加了一场婚礼。婚礼现场，谁也不认识的奈尔斯百无聊赖，一个名为萨拉（克丽斯汀·米里奥蒂 Cristin Milioti 饰）的放荡不羁的女孩吸引了奈尔斯的注意。<br>　　萨拉是新娘的姐姐，实际上，她和新郎长期保持着肉体关系，就连新婚前一晚，她都是在新郎的床上度过的！这样一个令全家人都感到头疼的姑娘，在奈尔斯的眼中却显得格外有吸引力，在同女友分手后，奈尔斯和萨拉渐渐走到了一起。萨拉泼辣的个性给奈尔斯的生活带来了惊喜，却也制造了种种麻烦，当奈尔斯发现自己真的深深地爱上了萨拉时，后者却不告而别。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2020/06/10821615001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+<p>导演: <a href="https://movie.douban.com/celebrity/1018187/">罗杰·米歇尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1018187/">罗杰·米歇尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1045383/">达芙妮·杜穆里埃</a><br>主演: <a href="https://movie.douban.com/celebrity/1010617/">山姆·克拉弗林</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018989/">蕾切尔·薇兹</a> &#x2F; <a href="https://movie.douban.com/celebrity/1009367/">伊恩·格雷</a> &#x2F; <a href="https://movie.douban.com/celebrity/1314352/">荷丽黛·格兰杰</a> &#x2F; <a href="https://movie.douban.com/celebrity/1375373/">波佩·李·弗里尔</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 悬疑<br>制片国家&#x2F;地区: 英国 &#x2F; 美国<br>语言: 英语<br>上映日期: 2017-06-09(英国)<br>片长: 106分钟<br>又名: 遗孀美人心(台) &#x2F; 情陷黑寡妇(港) &#x2F; 断肠花<br>IMDb: tt4411596</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　菲利普（山姆·克拉弗林 Sam Claflin 饰）和自己的表兄阿姆布罗斯（迪诺·布加迪 Deano Bugatti 饰）之间的关系非常的好，两人经常来往。一天，菲利普震惊的收到了阿姆布罗斯的死讯，菲利普不相信这一切仅仅只是一场意外这么简单，于是决定亲自前往阿姆布罗斯留下的那豪华的别墅里去一探究竟。<br>　　在那里，菲利普遇见了表嫂蕾切尔（蕾切尔·薇姿 Rachel Weisz 饰），菲利普怀疑这个美丽且恶毒的女人为了继承丈夫的巨额遗产而谋杀了他。但在两人朝夕相处的过程里，菲利普渐渐爱上了风情万种的蕾切尔，慢慢的打消了疑虑。可这一切对于蕾切尔来说意味着什么呢？她脑袋里的算盘没有人知道。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/2017/02/My-Cousin-Rachel-Trailer-1-SD-GoldPoster_com.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>1080p HD高清.mp4（1.11 GB）NEW字幕组</p>
-<p><a href="https://pan.baidu.com/s/1bbdUWP4KYouXm19vBXKlHg">百度网盘</a>（提取码：NEWN）  <a href="magnet:?xt=urn:btih:16abef8eba6610192d8729cbedc3ab82cee64feb">磁力链接</a></p>
-<p>1080p HD高清.mp4（2.66 GB）远鉴字幕组</p>
-<p><a href="https://pan.baidu.com/s/1IEPC9DnauwQqcuwTEXlhJQ">百度网盘</a>（密码：yjnb）  </p>
-<p>1080p HD高清.mp4（1.26 GB）人人影视</p>
-<p><a href="magnet:?xt=urn:btih:f61f7baa22076cff2b2fe3d471b5b49c21af9814">磁力链接</a></p>
-<p>720p HD高清.mp4（1.02 GB）</p>
-<p><a href="magnet:?xt=urn:btih:842485ac5e441115697502c46e5592211fe5a604&dn=棕榈泉HD中英双字.mp4">磁力链接</a></p>
-<p>1080p HD高清.mkv（1.5 GB）</p>
-<p><a href="magnet:?xt=urn:btih:603e21aa83af7702099c12515f7402512f39020b&dn=棕榈泉.HD.1080p.中英双字幕.mkv">磁力链接</a>  <a href="thunder://QUFmdHA6Ly95Z2R5ODp5Z2R5OEB5ZzY5LmR5ZHl0dC5uZXQ6ODAwOC/R9LnitefTsHd3dy55Z2R5OC5jb20u19jptciqLkJELjEwODBwLtbQ06LLq9fWxLsubWt2Wlo=">迅雷链接</a></p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>浮生梦2017（迅雷） 链接：<a href="https://pan.xunlei.com/s/VN8Yt86xvKzCm-bnrJDLq81HA1">资源链接</a> 提取码：ke5t</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
         <category>电影</category>
-        <category>喜剧</category>
+        <category>剧情</category>
       </categories>
       <tags>
-        <tag>棕榈泉</tag>
-        <tag>Palm Springs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>毒液2 Venom: Let There Be Carnage (2021)</title>
-    <url>/posts/4092041784/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2685731324.5f22prn7lfo0.webp" alt="p2685731324"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1002708/">安迪·瑟金斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1115889/">凯莉·马塞尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a><br>主演: <a href="https://movie.douban.com/celebrity/1049489/">汤姆·哈迪</a> &#x2F; <a href="https://movie.douban.com/celebrity/1053560/">伍迪·哈里森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049491/">米歇尔·威廉姆斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049542/">娜奥米·哈里斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1217248/">瑞德·斯科特</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 惊悚<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2021-10-01(美国)<br>片长: 97分钟<br>又名: 毒魔：血战大屠杀(港) &#x2F; 猛毒2：血蜘蛛(台) &#x2F; 毒液2：屠杀开始 &#x2F; 毒液：屠杀开始 &#x2F; 毒液：放纵屠杀 &#x2F; 毒液2：屠杀将至 &#x2F; Venom 2<br>IMDb: tt7097896</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　电影讲述了外星共生体“毒液”与宿主埃迪（汤姆·哈迪 饰）这对“最佳拍档”遇上致命反派共生体“卡内奇”（伍迪·哈里森 饰），超级英雄和邪恶反派的宿命之战即将开始。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2021/05/11057476001.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.baidu.com/s/11MOJaOkGiXJ0uSf4Vhznrw"><strong>百度网盘下载</strong></a></p>
-<p><a href="https://pan.xunlei.com/s/VNCZsXeHy-FM56mjLH3EUvWNA1"><strong>迅雷网盘下载</strong></a> </p>
-<p><a href="https://pan.quark.cn/s/c90bd9eb3dc8"><strong>夸克网盘下载(不限速)</strong></a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>动作</category>
-      </categories>
-      <tags>
-        <tag>毒液2</tag>
-        <tag>Venom</tag>
+        <tag>浮生梦</tag>
+        <tag>My Cousin Rachel</tag>
       </tags>
   </entry>
   <entry>
@@ -1607,16 +1652,15 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>浮生梦 My Cousin Rachel (2017)</title>
-    <url>/posts/655245191/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2462459613.5spwigv0auo0.webp" alt="p2462459613"></p>
+    <title>窒恋 Sous Emprise (2022)</title>
+    <url>/posts/471343497/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/01.2moxsoucixi0.webp" alt="01"></p>
 <span id="more"></span>
+<p>导演: <a href="https://movie.douban.com/celebrity/1000928/">大卫·M·罗森索</a><br>编剧: <a href="https://movie.douban.com/celebrity/1000928/">大卫·M·罗森索</a><br>主演: [Sofiane Zermani](<a href="https://movie.douban.com/subject_search?search_text=Sofiane">https://movie.douban.com/subject_search?search_text=Sofiane</a> Zermani) &#x2F; <a href="https://movie.douban.com/celebrity/1341878/">卡蜜尔·罗</a> &#x2F; <a href="https://movie.douban.com/celebrity/1255971/">凯撒·东布瓦</a> &#x2F; <a href="https://movie.douban.com/celebrity/1232348/">扎克瑞·察赛里奥德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1444484/">洛朗·费尔南德斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 惊悚 &#x2F; 运动<br>官方网站: <a href="https://www.netflix.com/sg-zh/title/81513875">https://www.netflix.com/sg-zh/title/81513875</a><br>制片国家&#x2F;地区: 法国<br>语言: 法语<br>上映日期: 2022-09-09(法国)<br>片长: 118分钟<br>又名: NO LIMIT<br>IMDb: tt14995258</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　罗克萨娜（卡蜜尔·罗饰）遇到了自由跳水世界冠军帕斯卡尔·戈蒂埃（索非昂·泽尔马尼饰），并坠入了爱河。帕斯卡尔引导罗克萨娜进入一项常在死亡边缘徘徊的刺激极限运动，她既是帕斯卡尔的情人，也是学生。从一场比赛到另一场比赛，在世界各地的潜水地点，罗克萨娜开始突破一个又一个极限，完全沉浸在挑战所带来的激情中…但终点又在何处呢？《无限制自由潜水》基于真实事件改编。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/6346851b1a2abd60c804b476/6346851b1a2abd60c804b474.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
 
-<p>导演: <a href="https://movie.douban.com/celebrity/1018187/">罗杰·米歇尔</a><br>编剧: <a href="https://movie.douban.com/celebrity/1018187/">罗杰·米歇尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1045383/">达芙妮·杜穆里埃</a><br>主演: <a href="https://movie.douban.com/celebrity/1010617/">山姆·克拉弗林</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018989/">蕾切尔·薇兹</a> &#x2F; <a href="https://movie.douban.com/celebrity/1009367/">伊恩·格雷</a> &#x2F; <a href="https://movie.douban.com/celebrity/1314352/">荷丽黛·格兰杰</a> &#x2F; <a href="https://movie.douban.com/celebrity/1375373/">波佩·李·弗里尔</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 悬疑<br>制片国家&#x2F;地区: 英国 &#x2F; 美国<br>语言: 英语<br>上映日期: 2017-06-09(英国)<br>片长: 106分钟<br>又名: 遗孀美人心(台) &#x2F; 情陷黑寡妇(港) &#x2F; 断肠花<br>IMDb: tt4411596</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　菲利普（山姆·克拉弗林 Sam Claflin 饰）和自己的表兄阿姆布罗斯（迪诺·布加迪 Deano Bugatti 饰）之间的关系非常的好，两人经常来往。一天，菲利普震惊的收到了阿姆布罗斯的死讯，菲利普不相信这一切仅仅只是一场意外这么简单，于是决定亲自前往阿姆布罗斯留下的那豪华的别墅里去一探究竟。<br>　　在那里，菲利普遇见了表嫂蕾切尔（蕾切尔·薇姿 Rachel Weisz 饰），菲利普怀疑这个美丽且恶毒的女人为了继承丈夫的巨额遗产而谋杀了他。但在两人朝夕相处的过程里，菲利普渐渐爱上了风情万种的蕾切尔，慢慢的打消了疑虑。可这一切对于蕾切尔来说意味着什么呢？她脑袋里的算盘没有人知道。 <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/2017/02/My-Cousin-Rachel-Trailer-1-SD-GoldPoster_com.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>浮生梦2017（迅雷） 链接：<a href="https://pan.xunlei.com/s/VN8Yt86xvKzCm-bnrJDLq81HA1">资源链接</a> 提取码：ke5t</p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>wl-窒恋 Sous Emprise (2022)<br>夸克网盘 <a href="https://pan.quark.cn/s/a0290c2d62db">资源链接</a><br>百度网盘 <a href="https://pan.baidu.com/s/1CeqX8trBLQt6KSmweeILXQ?pwd=trex">资源链接</a><br>阿里云网盘 <a href="https://www.aliyundrive.com/s/xQnb6RDgoU6">资源链接</a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>影视推荐</category>
@@ -1624,8 +1668,8 @@ $.ajax({
         <category>剧情</category>
       </categories>
       <tags>
-        <tag>浮生梦</tag>
-        <tag>My Cousin Rachel</tag>
+        <tag>窒恋</tag>
+        <tag>Sous Emprise</tag>
       </tags>
   </entry>
   <entry>
@@ -1655,27 +1699,6 @@ $.ajax({
       <tags>
         <tag>美丽的图画</tag>
         <tag>Picture of Beauty</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>窒恋 Sous Emprise (2022)</title>
-    <url>/posts/471343497/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/01.2moxsoucixi0.webp" alt="01"></p>
-<span id="more"></span>
-<p>导演: <a href="https://movie.douban.com/celebrity/1000928/">大卫·M·罗森索</a><br>编剧: <a href="https://movie.douban.com/celebrity/1000928/">大卫·M·罗森索</a><br>主演: [Sofiane Zermani](<a href="https://movie.douban.com/subject_search?search_text=Sofiane">https://movie.douban.com/subject_search?search_text=Sofiane</a> Zermani) &#x2F; <a href="https://movie.douban.com/celebrity/1341878/">卡蜜尔·罗</a> &#x2F; <a href="https://movie.douban.com/celebrity/1255971/">凯撒·东布瓦</a> &#x2F; <a href="https://movie.douban.com/celebrity/1232348/">扎克瑞·察赛里奥德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1444484/">洛朗·费尔南德斯</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 爱情 &#x2F; 惊悚 &#x2F; 运动<br>官方网站: <a href="https://www.netflix.com/sg-zh/title/81513875">https://www.netflix.com/sg-zh/title/81513875</a><br>制片国家&#x2F;地区: 法国<br>语言: 法语<br>上映日期: 2022-09-09(法国)<br>片长: 118分钟<br>又名: NO LIMIT<br>IMDb: tt14995258</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　罗克萨娜（卡蜜尔·罗饰）遇到了自由跳水世界冠军帕斯卡尔·戈蒂埃（索非昂·泽尔马尼饰），并坠入了爱河。帕斯卡尔引导罗克萨娜进入一项常在死亡边缘徘徊的刺激极限运动，她既是帕斯卡尔的情人，也是学生。从一场比赛到另一场比赛，在世界各地的潜水地点，罗克萨娜开始突破一个又一个极限，完全沉浸在挑战所带来的激情中…但终点又在何处呢？《无限制自由潜水》基于真实事件改编。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/6346851b1a2abd60c804b476/6346851b1a2abd60c804b474.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>wl-窒恋 Sous Emprise (2022)<br>夸克网盘 <a href="https://pan.quark.cn/s/a0290c2d62db">资源链接</a><br>百度网盘 <a href="https://pan.baidu.com/s/1CeqX8trBLQt6KSmweeILXQ?pwd=trex">资源链接</a><br>阿里云网盘 <a href="https://www.aliyundrive.com/s/xQnb6RDgoU6">资源链接</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>剧情</category>
-      </categories>
-      <tags>
-        <tag>窒恋</tag>
-        <tag>Sous Emprise</tag>
       </tags>
   </entry>
   <entry>
@@ -1734,6 +1757,53 @@ $.ajax({
       </tags>
   </entry>
   <entry>
+    <title>金发梦露 Blonde (2022)</title>
+    <url>/posts/1930996649/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230316/p2880423946.3ue72wb3jps0.webp" alt="p2880423946"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1282551/">安德鲁·多米尼克</a><br>编剧: <a href="https://movie.douban.com/celebrity/1282551/">安德鲁·多米尼克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018817/">乔伊斯·卡罗尔·欧茨</a><br>主演: <a href="https://movie.douban.com/celebrity/1045259/">安娜·德·阿玛斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002665/">艾德里安·布洛迪</a> &#x2F; <a href="https://movie.douban.com/celebrity/1044985/">鲍比·坎纳瓦尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1010615/">朱丽安妮·尼科尔森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1422376/">莉莉·费舍尔</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 传记<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09-08(威尼斯电影节) &#x2F; 2022-09-16(美国) &#x2F; 2022-09-28(美国网络)<br>片长: 166分钟<br>又名: 金发女郎 &#x2F; 金发美人<br>IMDb: tt1655389</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　《金发梦露》改编自乔伊思·卡罗尔·奥特兹的畅销小说，大胆地再现了好莱坞最不朽的偶像之一玛丽莲·梦露的生活。从她作为诺玛·简的动荡童年，到她的明星地位和爱情纠葛，《金发梦露》模糊了事实和虚构的界限，探索了她的公众自我和私人自我之间日益扩大的割裂。该片由安德鲁·多米尼克担任编剧和导演，由安娜·德·阿玛斯领衔主演，其他演员阵容包括鲍比·坎纳瓦尔、艾德里安·布洛迪、朱丽安妮·尼科尔森、泽维尔·塞缪尔和埃文·威廉斯。</p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/634cbb3d464bc51138c20654/634cbb3d464bc51138c20652.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>金发梦露（迅雷）链接：<a href="https://pan.xunlei.com/s/VNEKjdZGKg7ia3hv5pwTsuVMA1#">资源链接</a> 提取码：6a4e</p>
+<p>金发梦露（夸克）链接：<a href="https://pan.quark.cn/s/03d6455e6baa">资源链接</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>剧情</category>
+      </categories>
+      <tags>
+        <tag>金发梦露</tag>
+        <tag>Blonde</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>魔女嘉莉 Carrie (2013)</title>
+    <url>/posts/2987555558/</url>
+    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p1725743669.41xuginvewy.webp" alt="p1725743669"></p>
+<span id="more"></span>
+
+<p>导演: <a href="https://movie.douban.com/celebrity/1050124/">金伯莉·皮尔斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1384842/">劳伦斯·D·科昂</a> &#x2F; <a href="https://movie.douban.com/celebrity/1373907/">罗伯托·安古列·萨卡撒</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049547/">斯蒂芬·金</a><br>主演: <a href="https://movie.douban.com/celebrity/1054519/">朱丽安·摩尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018981/">科洛·莫瑞兹</a> &#x2F; <a href="https://movie.douban.com/celebrity/1315804/">加布瑞拉·王尔德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313435/">波茜娅·道布尔戴</a> &#x2F; <a href="https://movie.douban.com/celebrity/1227405/">佐伊·贝尔金</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 恐怖<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2013-10-18(美国)<br>片长: 92分钟 &#x2F; 100分钟(未分级版)<br>又名: 血腥嘉莉(港) &#x2F; 新版魔女嘉莉<br>IMDb: tt1939659</p>
+<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　宛若小兔一般的嘉莉·怀特（科洛·莫瑞兹 Chloë Moretz 饰）在妈妈玛格丽特（朱丽安·摩尔 Julianne Moore饰）的严格看护下成长起来，与学校那群开放浪荡的女孩相比，她就如同从纯洁的童话世界里走出来一样，一尘不染。在一次事件后，过分惶恐的嘉莉成为克莉丝 （波茜娅·道布尔戴 Portia Doubleday 饰）、休（加布瑞拉·王尔德 Gabriella Wilde 饰）等女孩们嘲笑和欺凌的对象。极度的压力和耻感之下，嘉莉意外发现自己仿佛拥有神奇的魔力。另一方面，深感惭愧的休劝说男友汤米。邀请嘉莉参加毕业舞会。而遭到校方惩罚的克莉丝则处心积虑要进一步羞辱嘉莉。<br>　　小魔女用魔力逃脱母亲所编制的樊笼，而她的人生充满更多的不可测…… <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
+<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/63477f0041f66d01cb201d35/63477f0041f66d01cb201d33.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
+
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VN8sA3VOgfbPLDPXjiy8oYsaA1"><strong>迅雷云盘(提取码：c94g)</strong></a></p>
+<p><a href="https://pan.xunlei.com/s/VN8s9W9Lw6G73dD5HAT_TT_xA1"><strong>迅雷云盘(提取码：nueh)</strong></a></p>
+<p><a href="https://pan.baidu.com/s/1AncJ81H95qszeNryVqwugw"><strong>百度网盘(提取码：wamr)</strong></a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>影视推荐</category>
+        <category>电影</category>
+        <category>剧情</category>
+      </categories>
+      <tags>
+        <tag>魔女嘉莉</tag>
+        <tag>Carrie</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>黑寡妇 Black Widow (2021)</title>
     <url>/posts/1126312363/</url>
     <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p2669336065.19kpzzqlgdr4.webp" alt="p2669336065"></p>
@@ -1783,76 +1853,6 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>魔女嘉莉 Carrie (2013)</title>
-    <url>/posts/2987555558/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230224/p1725743669.41xuginvewy.webp" alt="p1725743669"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1050124/">金伯莉·皮尔斯</a><br>编剧: <a href="https://movie.douban.com/celebrity/1384842/">劳伦斯·D·科昂</a> &#x2F; <a href="https://movie.douban.com/celebrity/1373907/">罗伯托·安古列·萨卡撒</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049547/">斯蒂芬·金</a><br>主演: <a href="https://movie.douban.com/celebrity/1054519/">朱丽安·摩尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018981/">科洛·莫瑞兹</a> &#x2F; <a href="https://movie.douban.com/celebrity/1315804/">加布瑞拉·王尔德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1313435/">波茜娅·道布尔戴</a> &#x2F; <a href="https://movie.douban.com/celebrity/1227405/">佐伊·贝尔金</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 恐怖<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2013-10-18(美国)<br>片长: 92分钟 &#x2F; 100分钟(未分级版)<br>又名: 血腥嘉莉(港) &#x2F; 新版魔女嘉莉<br>IMDb: tt1939659</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　宛若小兔一般的嘉莉·怀特（科洛·莫瑞兹 Chloë Moretz 饰）在妈妈玛格丽特（朱丽安·摩尔 Julianne Moore饰）的严格看护下成长起来，与学校那群开放浪荡的女孩相比，她就如同从纯洁的童话世界里走出来一样，一尘不染。在一次事件后，过分惶恐的嘉莉成为克莉丝 （波茜娅·道布尔戴 Portia Doubleday 饰）、休（加布瑞拉·王尔德 Gabriella Wilde 饰）等女孩们嘲笑和欺凌的对象。极度的压力和耻感之下，嘉莉意外发现自己仿佛拥有神奇的魔力。另一方面，深感惭愧的休劝说男友汤米。邀请嘉莉参加毕业舞会。而遭到校方惩罚的克莉丝则处心积虑要进一步羞辱嘉莉。<br>　　小魔女用魔力逃脱母亲所编制的樊笼，而她的人生充满更多的不可测…… <a href="https://movie.douban.com/help/movie#t0-qs">©豆瓣</a></p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/63477f0041f66d01cb201d35/63477f0041f66d01cb201d33.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://pan.xunlei.com/s/VN8sA3VOgfbPLDPXjiy8oYsaA1"><strong>迅雷云盘(提取码：c94g)</strong></a></p>
-<p><a href="https://pan.xunlei.com/s/VN8s9W9Lw6G73dD5HAT_TT_xA1"><strong>迅雷云盘(提取码：nueh)</strong></a></p>
-<p><a href="https://pan.baidu.com/s/1AncJ81H95qszeNryVqwugw"><strong>百度网盘(提取码：wamr)</strong></a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>剧情</category>
-      </categories>
-      <tags>
-        <tag>魔女嘉莉</tag>
-        <tag>Carrie</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>金发梦露 Blonde (2022)</title>
-    <url>/posts/1930996649/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230316/p2880423946.3ue72wb3jps0.webp" alt="p2880423946"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1282551/">安德鲁·多米尼克</a><br>编剧: <a href="https://movie.douban.com/celebrity/1282551/">安德鲁·多米尼克</a> &#x2F; <a href="https://movie.douban.com/celebrity/1018817/">乔伊斯·卡罗尔·欧茨</a><br>主演: <a href="https://movie.douban.com/celebrity/1045259/">安娜·德·阿玛斯</a> &#x2F; <a href="https://movie.douban.com/celebrity/1002665/">艾德里安·布洛迪</a> &#x2F; <a href="https://movie.douban.com/celebrity/1044985/">鲍比·坎纳瓦尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1010615/">朱丽安妮·尼科尔森</a> &#x2F; <a href="https://movie.douban.com/celebrity/1422376/">莉莉·费舍尔</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 剧情 &#x2F; 传记<br>制片国家&#x2F;地区: 美国<br>语言: 英语<br>上映日期: 2022-09-08(威尼斯电影节) &#x2F; 2022-09-16(美国) &#x2F; 2022-09-28(美国网络)<br>片长: 166分钟<br>又名: 金发女郎 &#x2F; 金发美人<br>IMDb: tt1655389</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　《金发梦露》改编自乔伊思·卡罗尔·奥特兹的畅销小说，大胆地再现了好莱坞最不朽的偶像之一玛丽莲·梦露的生活。从她作为诺玛·简的动荡童年，到她的明星地位和爱情纠葛，《金发梦露》模糊了事实和虚构的界限，探索了她的公众自我和私人自我之间日益扩大的割裂。该片由安德鲁·多米尼克担任编剧和导演，由安娜·德·阿玛斯领衔主演，其他演员阵容包括鲍比·坎纳瓦尔、艾德里安·布洛迪、朱丽安妮·尼科尔森、泽维尔·塞缪尔和埃文·威廉斯。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://wave.video/embed/634cbb3d464bc51138c20654/634cbb3d464bc51138c20652.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>金发梦露（迅雷）链接：<a href="https://pan.xunlei.com/s/VNEKjdZGKg7ia3hv5pwTsuVMA1#">资源链接</a> 提取码：6a4e</p>
-<p>金发梦露（夸克）链接：<a href="https://pan.quark.cn/s/03d6455e6baa">资源链接</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>剧情</category>
-      </categories>
-      <tags>
-        <tag>金发梦露</tag>
-        <tag>Blonde</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>侏罗纪世界3 Jurassic World: Dominion (2022)</title>
-    <url>/posts/10763499/</url>
-    <content><![CDATA[<h3 id="影片封面"><a href="#影片封面" class="headerlink" title="影片封面"></a>影片封面</h3><p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/20230331/p2873958680.452lltb70rw0.webp" alt="p2873958680"></p>
-<span id="more"></span>
-
-<p>导演: <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a><br>编剧: <a href="https://movie.douban.com/celebrity/1005924/">艾米丽·卡迈克尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1220581/">科林·特莱沃若</a> &#x2F; <a href="https://movie.douban.com/celebrity/1336443/">德里克·康纳利</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027340/">迈克尔·克莱顿</a><br>主演: <a href="https://movie.douban.com/celebrity/1017967/">克里斯·帕拉特</a> &#x2F; <a href="https://movie.douban.com/celebrity/1027772/">布莱丝·达拉斯·霍华德</a> &#x2F; <a href="https://movie.douban.com/celebrity/1006983/">劳拉·邓恩</a> &#x2F; <a href="https://movie.douban.com/celebrity/1049525/">山姆·尼尔</a> &#x2F; <a href="https://movie.douban.com/celebrity/1025109/">杰夫·高布伦</a> &#x2F; <a href="javascript:;">更多…</a><br>类型: 动作 &#x2F; 科幻 &#x2F; 冒险<br>制片国家&#x2F;地区: 美国 &#x2F; 马耳他<br>语言: 英语<br>上映日期: 2022-06-10(美国&#x2F;中国大陆) &#x2F; 2022-06-01(韩国)<br>片长: 146分钟 &#x2F; 147分钟(中国大陆) &#x2F; 161分钟(加长版)<br>又名: 侏罗纪世界3：统治 &#x2F; 侏罗纪世界：统治霸权(港) &#x2F; 侏罗纪世界：统霸天下(台) &#x2F; 侏罗纪公园6 &#x2F; Jurassic Park 6<br>IMDb: tt8041270</p>
-<h3 id="剧情简介"><a href="#剧情简介" class="headerlink" title="剧情简介"></a>剧情简介</h3><p>　　影片为《侏罗纪世界》系列的完结篇，故事的开篇设定在纳布拉尔岛被摧毁的四年后。如今，恐龙在世界各地与人类共同生活、共同捕猎。这一脆弱的平衡将重塑未来，并最终决定人类能否与史上最可怕生物共享这颗星球，并继续站在食物链的顶端。</p>
-<h3 id="预告片"><a href="#预告片" class="headerlink" title="预告片"></a>预告片</h3><video src="https://img.goldposter.com/video/2022/04/731611003.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster></video>
-
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>zj-侏罗纪世界3 Jurassic World: Dominion (2022)<br>夸克链接：<a href="https://pan.quark.cn/s/b5f032d37e70">资源链接</a></p>
-<p>zj-[阿里云盘]侏罗纪公园1-3 + 侏罗纪世界1-2<br>HD4K中字合集 <a href="https://www.aliyundrive.com/s/oreFa1kMuxj">资源链接</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>影视推荐</category>
-        <category>电影</category>
-        <category>动作</category>
-      </categories>
-      <tags>
-        <tag>[object Object]</tag>
-        <tag>侏罗纪世界3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>核污染水排海，日本经济也必将自食恶果</title>
     <url>/posts/3393199133/</url>
     <content><![CDATA[<p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/Blog-picture/914e-c51e8b028526880e5004c8acc64cbc39.22vdbxsbx2u8.jpg" alt="914e-c51e8b028526880e5004c8acc64cbc39"></p>
@@ -1897,26 +1897,6 @@ $.ajax({
       <categories>
         <category>财经资讯</category>
       </categories>
-  </entry>
-  <entry>
-    <title>“半数领导人没在场”，泽连斯基联大演讲反应冷淡，还惹恼一大片国家</title>
-    <url>/posts/2594068449/</url>
-    <content><![CDATA[<p><video controls src="magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel"></video></p>
-<script src="https://cdn.jsdelivr.net/npm/@webtor/embed-sdk-js/dist/index.min.js" charset="utf-8" async></script>
-
-<video controls src="magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel" poster="https://via.placeholder.com/150/0000FF/808080" width="100%" data-title="Sintel">
-    <track srclang="en" label="test" default src="https://raw.githubusercontent.com/andreyvit/subtitle-tools/master/sample.srt">
-</video>
-<script src="https://cdn.jsdelivr.net/npm/@webtor/embed-sdk-js/dist/index.min.js" charset="utf-8" async></script>
-
-<p><a href="magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel" download>Please make sure that JavaScript is enabled</a></p>
-<script src="https://cdn.jsdelivr.net/npm/@webtor/embed-sdk-js/dist/index.min.js" charset="utf-8" async></script>
-
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <tags>
-        <tag>腾讯新闻</tag>
-        <tag>qqnews</tag>
-      </tags>
   </entry>
   <entry>
     <title>A股三大指数低开沪指跌0.17%，ST股板块依旧活跃</title>
@@ -1981,23 +1961,24 @@ $.ajax({
       </tags>
   </entry>
   <entry>
-    <title>原始社会的经济活动的小故事</title>
-    <url>/posts/3940230411/</url>
-    <content><![CDATA[<blockquote>
-<p>很久很久以前，在一个广袤的森林之中，生活着一个原始部落。这个部落由几十名部落成员组成，他们过着与大自然紧密相连的生活，依靠着狩猎、采集和捕捞来维持生计。</p>
-</blockquote>
-<p>在这个部落中，有一位年长的猎人，名叫卡尔。卡尔是部落中最擅长狩猎的人，他精通各种猎技，能够追踪猎物的足迹，准确地用长矛猎取野兽。而另一位名叫艾娜的年轻女性则是部落中最熟练的采集者，她知道哪些植物可以食用，哪些可以用来制作草药，以及如何收集果实和坚果。</p>
-<span id="more"></span>
+    <title>“半数领导人没在场”，泽连斯基联大演讲反应冷淡，还惹恼一大片国家</title>
+    <url>/posts/2594068449/</url>
+    <content><![CDATA[<p><video controls src="magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel"></video></p>
+<script src="https://cdn.jsdelivr.net/npm/@webtor/embed-sdk-js/dist/index.min.js" charset="utf-8" async></script>
 
-<p>卡尔和艾娜经常在黎明时分开始一天的工作。卡尔拿着他的长矛，潜入森林深处，跟随着野兽的足迹，寻找着可以猎取的猎物。与此同时，艾娜背着一个简单的篮子，漫步在森林间，仔细地采集各种植物，有些可以当作食物，有些可以用来制作草药，为部落的人们提供食物和药材。</p>
-<p>一天，部落的首领召集了所有的部落成员。他们围坐在篝火旁，开始分配资源。卡尔带来了他成功猎取的野兽，而艾娜则拿出了她采集到的植物。首领决定将野兽的肉分成几份，让每个家庭都能够分享。而草药和植物则被保存下来，用于制作药物和调味品。</p>
-<p>在部落中，人们之间也会进行一些物品的交换。有一次，卡尔和艾娜在森林中偶然相遇。卡尔正好猎到了一只兔子，而艾娜则采集到了一种稀有的草药。他们互相交换了一部分，卡尔拿了一些草药，艾娜则得到了一块新鲜的兔肉。</p>
-<p>随着时间的推移，部落的成员们逐渐形成了一种简单的经济互动模式。他们依靠彼此的技能和资源，共同维持着生活的平衡。尽管原始社会的经济活动相对简单，但这个部落通过互相合作、交换和分享，找到了在大自然中生存的方式。这个古老的故事让我们可以想象原始社会中人们是如何通过基本的经济活动来满足他们的需求和欲望的。</p>
+<video controls src="magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel" poster="https://via.placeholder.com/150/0000FF/808080" width="100%" data-title="Sintel">
+    <track srclang="en" label="test" default src="https://raw.githubusercontent.com/andreyvit/subtitle-tools/master/sample.srt">
+</video>
+<script src="https://cdn.jsdelivr.net/npm/@webtor/embed-sdk-js/dist/index.min.js" charset="utf-8" async></script>
+
+<p><a href="magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel" download>Please make sure that JavaScript is enabled</a></p>
+<script src="https://cdn.jsdelivr.net/npm/@webtor/embed-sdk-js/dist/index.min.js" charset="utf-8" async></script>
+
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>古代史</category>
-        <category>原始社会</category>
-      </categories>
+      <tags>
+        <tag>腾讯新闻</tag>
+        <tag>qqnews</tag>
+      </tags>
   </entry>
   <entry>
     <title>原始人们的经济生活，他们是如何发展</title>
@@ -2016,6 +1997,52 @@ $.ajax({
 <p>稻子更不用说，是很重要的粮食作物。第一次发掘出有稻子遗存的其实是个瑞典的地质学家，他在一九三一年来到中国，发掘了著名的仰韶遗址，从这个遗址中，他发现了一块“陶器残片”并把它带回了瑞典。过了几年后，当他在整理东西的时候，发现，这个“残片上”竟然有稻谷的痕迹，于是他在一九四四年出版了一本书提到了这件事，后来一个日本考古学家找到了他，并把这个“残片”又带回了日本做研究，日本人的做事态度是很细致的，于是，尴尬的事情发生了：他经过仔细观察之后发现其实，这根本就不是一块“陶器残片”而是一块被火烧过的“红砖土”。仰韶文化的时间距今七千年左右，但是因为那位瑞典的地质学家在挖掘的时候没有说清楚是在哪个地层挖的，所以没有办法确定生活在仰韶文化时期的人们就已经开始种植水稻了。</p>
 <p><img src="https://cdn.staticaly.com/gh/qqhsx/image@master/Blog-picture/05.5nnn9r8f8ns0.webp" alt="05"></p>
 <p>关于史前时代的家畜，目前已知最早的是狗，狗成为家畜已经有九千年的历史啦，而且就像我们是从猿的一支进化来的一样，狗也是有祖先的，它的祖先是——狼。而，猪这个动物，最早的时候是被当做是祭祀品存在的，但是现在的猪和之前的猪有很大的不同，之前的猪的吻部很长，现在它们的吻部都很短了。除此之外，鸡、羊、马都是在史前时代就已经成为人类的家畜了。但是羊并不是中国本身就有的，从目前的资料来看，西亚地区比我们驯养羊的时间要早得多，所以，我们中国的羊应该是从西亚那边传过来的。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>古代史</category>
+        <category>原始社会</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>原始社会的经济活动</title>
+    <url>/posts/2422726915/</url>
+    <content><![CDATA[<blockquote>
+<p>原始社会通常被认为是人类历史上最早的社会形态之一，其特点是人们生活在简单的部落或氏族中，生产方式主要依靠狩猎、采集和捕捞。在这种社会中，经济活动的性质可能与现代社会有很大的不同。</p>
+</blockquote>
+<p>尽管原始社会的经济活动可能没有像现代社会中那样高度复杂和多样化，但仍然可以认为存在一种原始的经济活动。人们在原始社会中必须满足食物、衣物和住所等基本需求，因此他们会进行资源的获取、分配和交换。这些经济活动可能包括：</p>
+<span id="more"></span>
+<ol>
+<li><p><strong>狩猎、采集和捕捞：</strong> 人们依靠捕猎动物、采集植物和捕捞水生生物来获取食物和原材料。</p>
+</li>
+<li><p><strong>资源分配：</strong> 在原始社会中，资源可能是共享的，部落成员会根据需要和权力分配资源。</p>
+</li>
+<li><p><strong>物品交换：</strong> 虽然交换可能不像现代社会中那样发达，但人们可能会通过礼物、互换和其他方式交换物品，以满足彼此的需求。</p>
+</li>
+<li><p><strong>分工：</strong> 即使在原始社会中，人们也可能因性别、年龄和技能的不同而分工，有些人可能更擅长狩猎，而另一些人则更擅长制作工具或其他物品。</p>
+</li>
+<li><p><strong>社会规范和价值观：</strong> 即使在原始社会，也可能存在一些社会规范和价值观，影响着资源的分配、交换方式和人际关系。</p>
+</li>
+</ol>
+<p>总之，虽然原始社会的经济活动与现代社会相比可能较为简单，但仍然可以认为存在一种基本的经济组织和活动。需要注意的是，关于原始社会的了解主要依赖于考古学、人类学等学科的研究，因此有关这一时期的具体情况存在一定程度的不确定性。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>古代史</category>
+        <category>原始社会</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>原始社会的经济活动的小故事</title>
+    <url>/posts/3940230411/</url>
+    <content><![CDATA[<blockquote>
+<p>很久很久以前，在一个广袤的森林之中，生活着一个原始部落。这个部落由几十名部落成员组成，他们过着与大自然紧密相连的生活，依靠着狩猎、采集和捕捞来维持生计。</p>
+</blockquote>
+<p>在这个部落中，有一位年长的猎人，名叫卡尔。卡尔是部落中最擅长狩猎的人，他精通各种猎技，能够追踪猎物的足迹，准确地用长矛猎取野兽。而另一位名叫艾娜的年轻女性则是部落中最熟练的采集者，她知道哪些植物可以食用，哪些可以用来制作草药，以及如何收集果实和坚果。</p>
+<span id="more"></span>
+
+<p>卡尔和艾娜经常在黎明时分开始一天的工作。卡尔拿着他的长矛，潜入森林深处，跟随着野兽的足迹，寻找着可以猎取的猎物。与此同时，艾娜背着一个简单的篮子，漫步在森林间，仔细地采集各种植物，有些可以当作食物，有些可以用来制作草药，为部落的人们提供食物和药材。</p>
+<p>一天，部落的首领召集了所有的部落成员。他们围坐在篝火旁，开始分配资源。卡尔带来了他成功猎取的野兽，而艾娜则拿出了她采集到的植物。首领决定将野兽的肉分成几份，让每个家庭都能够分享。而草药和植物则被保存下来，用于制作药物和调味品。</p>
+<p>在部落中，人们之间也会进行一些物品的交换。有一次，卡尔和艾娜在森林中偶然相遇。卡尔正好猎到了一只兔子，而艾娜则采集到了一种稀有的草药。他们互相交换了一部分，卡尔拿了一些草药，艾娜则得到了一块新鲜的兔肉。</p>
+<p>随着时间的推移，部落的成员们逐渐形成了一种简单的经济互动模式。他们依靠彼此的技能和资源，共同维持着生活的平衡。尽管原始社会的经济活动相对简单，但这个部落通过互相合作、交换和分享，找到了在大自然中生存的方式。这个古老的故事让我们可以想象原始社会中人们是如何通过基本的经济活动来满足他们的需求和欲望的。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>古代史</category>
@@ -2073,33 +2100,6 @@ $.ajax({
       </categories>
   </entry>
   <entry>
-    <title>原始社会的经济活动</title>
-    <url>/posts/2422726915/</url>
-    <content><![CDATA[<blockquote>
-<p>原始社会通常被认为是人类历史上最早的社会形态之一，其特点是人们生活在简单的部落或氏族中，生产方式主要依靠狩猎、采集和捕捞。在这种社会中，经济活动的性质可能与现代社会有很大的不同。</p>
-</blockquote>
-<p>尽管原始社会的经济活动可能没有像现代社会中那样高度复杂和多样化，但仍然可以认为存在一种原始的经济活动。人们在原始社会中必须满足食物、衣物和住所等基本需求，因此他们会进行资源的获取、分配和交换。这些经济活动可能包括：</p>
-<span id="more"></span>
-<ol>
-<li><p><strong>狩猎、采集和捕捞：</strong> 人们依靠捕猎动物、采集植物和捕捞水生生物来获取食物和原材料。</p>
-</li>
-<li><p><strong>资源分配：</strong> 在原始社会中，资源可能是共享的，部落成员会根据需要和权力分配资源。</p>
-</li>
-<li><p><strong>物品交换：</strong> 虽然交换可能不像现代社会中那样发达，但人们可能会通过礼物、互换和其他方式交换物品，以满足彼此的需求。</p>
-</li>
-<li><p><strong>分工：</strong> 即使在原始社会中，人们也可能因性别、年龄和技能的不同而分工，有些人可能更擅长狩猎，而另一些人则更擅长制作工具或其他物品。</p>
-</li>
-<li><p><strong>社会规范和价值观：</strong> 即使在原始社会，也可能存在一些社会规范和价值观，影响着资源的分配、交换方式和人际关系。</p>
-</li>
-</ol>
-<p>总之，虽然原始社会的经济活动与现代社会相比可能较为简单，但仍然可以认为存在一种基本的经济组织和活动。需要注意的是，关于原始社会的了解主要依赖于考古学、人类学等学科的研究，因此有关这一时期的具体情况存在一定程度的不确定性。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>古代史</category>
-        <category>原始社会</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Top-search 热搜排行榜</title>
     <url>/Top_search/index.html</url>
     <content><![CDATA[<h1 id="今日热点"><a href="#今日热点" class="headerlink" title="今日热点"></a>今日热点</h1><p>更新时间: 2023-10-09 04:37:00</p>
@@ -2135,6 +2135,14 @@ $.ajax({
 <h2 id="热点：李子柒商业版图盘点"><a href="#热点：李子柒商业版图盘点" class="headerlink" title="热点：李子柒商业版图盘点"></a>热点：<a href="https://cn.bing.com/search?q=%E6%9D%8E%E5%AD%90%E6%9F%92%E5%95%86%E4%B8%9A%E7%89%88%E5%9B%BE%E7%9B%98%E7%82%B9">李子柒商业版图盘点</a></h2><p>排行：30<br>热度：2189409<br>详细描述：</p>
 <h2 id="热点：陈奕迅演唱会志愿者称被性骚扰"><a href="#热点：陈奕迅演唱会志愿者称被性骚扰" class="headerlink" title="热点：陈奕迅演唱会志愿者称被性骚扰"></a>热点：<a href="https://cn.bing.com/search?q=%E9%99%88%E5%A5%95%E8%BF%85%E6%BC%94%E5%94%B1%E4%BC%9A%E5%BF%97%E6%84%BF%E8%80%85%E7%A7%B0%E8%A2%AB%E6%80%A7%E9%AA%9A%E6%89%B0">陈奕迅演唱会志愿者称被性骚扰</a></h2><p>排行：31<br>热度：2052372<br>详细描述：</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+  </entry>
+  <entry>
+    <title>关于</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
   <entry>
     <title>分类</title>
@@ -2208,13 +2216,5 @@ new Artitalk({
     <title>标签</title>
     <url>/tags/index.html</url>
     <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
-    <title>关于</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
 </search>
