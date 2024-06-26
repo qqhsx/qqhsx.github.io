@@ -255,7 +255,7 @@
 <ul>
 <li><h3 id="这是一个测试如何在-Hexo-文章中插入图片的示例。"><a href="#这是一个测试如何在-Hexo-文章中插入图片的示例。" class="headerlink" title="这是一个测试如何在 Hexo 文章中插入图片的示例。"></a>这是一个测试如何在 Hexo 文章中插入图片的示例。</h3></li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img your-image-file.png 测试图片 %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
 
 <p>这样写在Typora中显示正常，在<a target="_blank" rel="noopener" href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
 <ul>
@@ -283,7 +283,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
 
 <p>使用起来发现这格式还是有些不方便，在用Тypora编写时一般会在<code>文件-偏好设置-图像</code>页面中设置图片插入时的的动作参数。如果选择<code>复制到指定路径./$&#123;filename&#125;</code>会发现在插入图片时是以下的格式，同时会在文章的同目录中生成一个与文件名相同的目录，所插入的图片会自动放在这里面。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img your-image-file.png 测试图片 %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><h3 id="接着换回到hexo-asset-image这个插件安装"><a href="#接着换回到hexo-asset-image这个插件安装" class="headerlink" title="接着换回到hexo-asset-image这个插件安装"></a>接着换回到<a target="_blank" rel="noopener" href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a>这个插件安装</h3></li>
@@ -291,7 +291,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
 
 <p>都说这个插件失效了所以开始就没去安装它，但最终还是用上它了。它能处理下面这种图片格式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img your-image-file.png 测试图片 %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
 
 
     </div>
