@@ -142,6 +142,48 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo-theme-next主题安装</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
+<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<ol start="2">
+<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
+</li>
+<li><p>next theme 配置文件路径</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
+</blockquote>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
+<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
+</li>
+<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
+</li>
+</ul>
+<blockquote>
+<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>next主题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Test Image Insert</title>
     <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
     <content><![CDATA[<blockquote>
@@ -195,48 +237,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo-theme-next主题安装</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
-<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<ol start="2">
-<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
-</li>
-<li><p>next theme 配置文件路径</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
-</blockquote>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
-<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
-</li>
-<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
-</li>
-</ul>
-<blockquote>
-<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>next主题</tag>
       </tags>
   </entry>
   <entry>
@@ -1424,8 +1424,7 @@
 <p>现在的美国如果发生恶性通货膨胀，它必将成为有史以来”获此殊荣”的最大最发达的经济体。但是，这并不意味着这种情况不会发生。到目前为止，美元的储备货币地位一直是美国手中的王牌。也就是说，哪怕基本面再差，世界各国还是会接受美元。然而，一旦失去储备货币地位，美元的下场就会和其他已经崩溃的货币一样。</p>
 <p>美国必须正视这些可能性，并在能够掌控自己的命运之前，及时悬崖勒马。</p>
 <p><img src="/%E4%B9%A6%E7%B1%8D/%E7%BB%8F%E6%B5%8E%E7%9B%B8%E5%85%B3/%E5%B0%8F%E5%B2%9B%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E9%B1%BC,%E7%BE%8E%E5%85%83%E5%92%8C%E7%BB%8F%E6%B5%8E%E7%9A%84%E6%95%85%E4%BA%8B/image3.jpeg" alt="Image00002.jpg"></p>
-<p>后记</p>
-<p>故事中，美索尼亚国的结局惨淡，但美国这个超级大国却未必是同样的命运。不幸的是，美国的领导人依旧推行消费计划，而且数额更加庞大，实际上正是类似的政策引起了金融危机。他们越是执迷不悟，最后的结局就越悲惨。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>故事中，美索尼亚国的结局惨淡，但美国这个超级大国却未必是同样的命运。不幸的是，美国的领导人依旧推行消费计划，而且数额更加庞大，实际上正是类似的政策引起了金融危机。他们越是执迷不悟，最后的结局就越悲惨。</p>
 <p>虽然用政府经济刺激计划应对资本主义的失败这一想法是凯恩斯首创的，但是直到艾伦·格林斯潘、乔治·布什、本·伯南克和巴拉克·奥巴马登上历史舞台以后，这一思想才开始成为体系。2002年以前，我们从未见过如此庞大的联邦赤字（现在每年都超过1.5万亿美元），如此大规模地实行超低利率和操控信贷市场也是前所未有的。</p>
 <p>虽然错误如此明显，但美国还是一错再错。</p>
 <p>早在2002年，也就是充斥着大量不当投资的互联网经济时期，数百亿美元的资金涌入了毫无前途的公司，那时经济本来应该进入一个长期的衰退时期。但是新当选的乔治·布什不希望糟糕的经济环境影响他连任。所以，他和顾问们选择了凯恩斯主义的解决办法，政府支出和宽松信贷都达到了前所未有的规模。</p>
@@ -1447,8 +1446,7 @@
 <p>多年以来，美国人一直入不敷出，现在他们必须下决心过量入为出的生活。如果能够做到这一点，并任由自由市场的力量发挥作用，他们就能重新平衡经济，为实实在在的发展打下基础。</p>
 <p>然而，如果他们选择寄希望于借贷、印钞机以及政府承诺的毫无痛苦的解决办法，那他们都要回到徒手捕鱼的状态。</p>
 <p><img src="/%E4%B9%A6%E7%B1%8D/%E7%BB%8F%E6%B5%8E%E7%9B%B8%E5%85%B3/%E5%B0%8F%E5%B2%9B%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E9%B1%BC,%E7%BE%8E%E5%85%83%E5%92%8C%E7%BB%8F%E6%B5%8E%E7%9A%84%E6%95%85%E4%BA%8B/image3.jpeg" alt="Image00002.jpg"></p>
-<p>致谢</p>
-<p>本书的寓言模型借自《经济增长模式与停滞的原因》一书。该书出版于1985年，作者欧文·A·希夫慷慨地把书中的理念传给了他的儿子们。</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>本书的寓言模型借自《经济增长模式与停滞的原因》一书。该书出版于1985年，作者欧文·A·希夫慷慨地把书中的理念传给了他的儿子们。</p>
 <p>作者还要感谢布伦丹·利奇。他为本书创作了插图，迅速而富有创意，从视觉层面展现了我们的幽默感与我们对经济的看法。我们还要感谢欧洲太平洋资本公司（Euro<br>Pacific Capital）的A·J·范·斯莱克（A.J. Van<br>Slyke），他为书中的材料提供了许多宝贵建议。最后我们还要感谢这些年来所有支持过我们父亲的人，谢谢你们的观点和信件。这些对他来说意义非凡。</p>
 <p>图书在版编目（CIP）数据</p>
 <p>小岛经济学&#x2F;（美）希夫著；胡晓姣，吕靖纬，陈志超译. -- 3版. --<br>北京：中信出版社，2016.9</p>
