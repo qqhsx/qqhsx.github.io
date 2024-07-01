@@ -19,27 +19,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>newpost</title>
-    <url>/newpost/</url>
-    <content><![CDATA[<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p><a href="https://qqhsx.github.io/">2023</a></p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
-</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
-</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
-</div></div></div>
-
-
-
-<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2022</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
-</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
-</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
-</div></div></div>
-
-]]></content>
-  </entry>
-  <entry>
     <title>Hexo博客搭建与部署</title>
     <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
@@ -140,6 +119,27 @@
         <tag>Hexo</tag>
         <tag>博客搭建</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>newpost</title>
+    <url>/newpost/</url>
+    <content><![CDATA[<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p><a href="https://qqhsx.github.io/">2023</a></p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
+</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
+</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
+</div></div></div>
+
+
+
+<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2022</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
+</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
+</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
+</div></div></div>
+
+]]></content>
   </entry>
   <entry>
     <title>Test Image Insert</title>
@@ -303,6 +303,55 @@
       </categories>
       <tags>
         <tag>中国经济</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是年增率？</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/</url>
+    <content><![CDATA[<p>当然，可以详细说明“年增率”及其应用。</p>
+<h3 id="什么是年增率？"><a href="#什么是年增率？" class="headerlink" title="什么是年增率？"></a>什么是年增率？</h3><p>年增率（Year-over-Year Growth Rate）是用来衡量一个指标（如收入、利润、房价等）在一年的时间跨度内增长（或减少）的百分比。用简洁的公式表示：</p>
+<span id="more"></span>
+<p><img src="/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/image-20240701161122258.png" alt="image-20240701161122258"></p>
+<p>比如，如果某公司在2023年的收入为5000万元，而在2024年增至5500万元，那么其年增率为：</p>
+<p><img src="/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/image-20240701161221319.png" alt="image-20240701161221319"></p>
+<h3 id="年增率的应用"><a href="#年增率的应用" class="headerlink" title="年增率的应用"></a>年增率的应用</h3><p>年增率的计算和分析在多个领域都有广泛应用，以下是一些主要应用场景：</p>
+<h4 id="1-经济分析"><a href="#1-经济分析" class="headerlink" title="1. 经济分析"></a>1. <strong>经济分析</strong></h4><ul>
+<li><strong>国内生产总值（GDP）</strong>：经济学家和政府通过年增率来衡量一个国家或地区经济增长的速度。</li>
+<li><strong>物价指数</strong>：如消费者物价指数（CPI）的年增率，用于衡量通货膨胀水平。</li>
+<li><strong>失业率</strong>：用年增率来衡量失业人口的变化情况。</li>
+</ul>
+<h4 id="2-企业财务分析"><a href="#2-企业财务分析" class="headerlink" title="2. 企业财务分析"></a>2. <strong>企业财务分析</strong></h4><ul>
+<li><strong>收入和利润</strong>：公司用年增率来衡量销售收入、净利润等财务指标的增长情况，从而评估经营业绩。</li>
+<li><strong>成本和开支</strong>：跟踪各项成本和开支的年增率，发现并控制上升过快的费用。</li>
+</ul>
+<h4 id="3-金融分析"><a href="#3-金融分析" class="headerlink" title="3. 金融分析"></a>3. <strong>金融分析</strong></h4><ul>
+<li><strong>股价和市场指数</strong>：投资者会用年增率来分析股票和市场指数的涨跌幅度，以评估投资组合的表现。</li>
+<li><strong>贷款利率</strong>：银行和金融机构通过年增率分析利率的变化以调整利率策略。</li>
+</ul>
+<h4 id="4-房地产市场"><a href="#4-房地产市场" class="headerlink" title="4. 房地产市场"></a>4. <strong>房地产市场</strong></h4><ul>
+<li><strong>房价</strong>：用房价的年增率来分析地产市场的热度和健康状况，辅助购房和投资决策。</li>
+<li><strong>租金</strong>：租金水平的年增率分析可以用于衡量租赁市场的变化。</li>
+</ul>
+<h4 id="5-社会发展"><a href="#5-社会发展" class="headerlink" title="5. 社会发展"></a>5. <strong>社会发展</strong></h4><ul>
+<li><strong>人口增长率</strong>：用年增率分析人口的自然增长或减少情况，为制定公共政策提供依据。</li>
+<li><strong>教育和健康指标</strong>：用年增率分析入学率、毕业率、医疗覆盖率等社会发展指标。</li>
+</ul>
+<h3 id="年增率的优点"><a href="#年增率的优点" class="headerlink" title="年增率的优点"></a>年增率的优点</h3><ul>
+<li><strong>直观对比</strong>：年增率提供了一个简单、直接的指标，可以方便地进行不同年份之间的对比。</li>
+<li><strong>趋势分析</strong>：通过连续几年的年增率，可以观察长期趋势，发现周期性或者结构性的变化。</li>
+<li><strong>宏观经济及企业表现评估</strong>：帮助政策制定者、投资者、企业管理者了解经济和行业状况，进行了更为科学的决策。</li>
+</ul>
+<h3 id="年增率的局限性"><a href="#年增率的局限性" class="headerlink" title="年增率的局限性"></a>年增率的局限性</h3><ul>
+<li><strong>忽略季节性</strong>：年增率通常无法反映季节性变化及其他周期性波动，需要与其他分析指标配合使用。</li>
+<li><strong>可能被短期波动影响</strong>：短期波动或异常值可能导致年增率出现偏差，需谨慎解读。</li>
+</ul>
+<p>总体而言，年增率是一个非常有用的指标。无论是在经济分析、企业管理还是金融投资领域，理解和应用年增率都有助于更好地掌握发展动态和趋势。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>年增率</tag>
       </tags>
   </entry>
   <entry>
