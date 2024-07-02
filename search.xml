@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>newpost</title>
     <url>/newpost/</url>
     <content><![CDATA[<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p><a href="https://qqhsx.github.io/">2023</a></p>
@@ -19,24 +37,6 @@
 </div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
 </div></div></div>
 
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -198,48 +198,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo-theme-next主题安装</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
-<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<ol start="2">
-<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
-</li>
-<li><p>next theme 配置文件路径</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
-</blockquote>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
-<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
-</li>
-<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
-</li>
-</ul>
-<blockquote>
-<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>next主题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>中国经济包含哪些方面</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E6%96%B9%E9%9D%A2/</url>
     <content><![CDATA[<p>中国经济涵盖了多个方面，包括但不限于以下几个重要领域：</p>
@@ -306,6 +264,187 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo-theme-next主题安装</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
+<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<ol start="2">
+<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
+</li>
+<li><p>next theme 配置文件路径</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
+</blockquote>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
+<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
+</li>
+<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
+</li>
+</ul>
+<blockquote>
+<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>next主题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>通货紧缩</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E9%80%9A%E8%B4%A7%E7%B4%A7%E7%BC%A9/</url>
+    <content><![CDATA[<h4 id="小镇的故事"><a href="#小镇的故事" class="headerlink" title="小镇的故事"></a>小镇的故事</h4><p>在一个宁静的小镇上，居民们的生活就是买东西和卖东西。</p>
+<p><strong>一、一切正常的时候</strong></p>
+<ol>
+<li><strong>市场运作</strong>：小镇的商店、农场和工厂都在正常运作。居民们赚取薪水，然后用这些钱买食物、衣物和其他日常必需品。</li>
+<li><strong>价格稳定</strong>：市场上的商品和服务价格相对稳定。比如，一个面包的价格是5块钱，一杯牛奶的价格是2块钱。</li>
+</ol>
+<p><strong>二、进入通货紧缩阶段</strong></p>
+<p>有一天，小镇上的居民储蓄变得高了，他们开始减少消费，更多的是把钱存到银行或直接留在家里。这种减少消费的行为引发了一系列连锁反应。让我们看看可能导致这一变化的原因：</p>
+<ol>
+<li><strong>对未来的不确定性增加</strong>：小镇上的居民听说镇上的大工厂要裁员，或者听到经济衰退的传言，导致他们对未来感到不安，所以更愿意储蓄以备不时之需。</li>
+<li><strong>利率上升</strong>：银行突然提高了存款利率，居民们发现把钱存到银行可以获得更多的利息收入，于是他们更倾向于把钱存起来，而不是用于消费。</li>
+<li><strong>政府政策</strong>：政府出台了新的税收政策或福利计划，鼓励居民储蓄而不是消费，导致短期内储蓄增加。</li>
+<li><strong>消费习惯改变</strong>：由于科技进步，在线购物平台推出了更多的储蓄产品和理财工具，小镇居民开始意识到储蓄和理财的重要性。</li>
+<li><strong>债务偿还压力</strong>：部分居民可能背负了较多的债务，他们需要紧缩开支以更快地偿还债务，减少额外的消费支出。</li>
+</ol>
+<h3 id="监测市场动向的迹象"><a href="#监测市场动向的迹象" class="headerlink" title="监测市场动向的迹象"></a>监测市场动向的迹象</h3><p>你可以通过以下迹象判断市场进入了通货紧缩阶段：</p>
+<ol>
+<li><strong>消费者物价指数（CPI）下降</strong>：你注意到政府公布的CPI数据显示，整体物价水平持续下降，这表明通货紧缩正在发生。</li>
+<li><strong>商铺和服务业收入下降</strong>：你从镇上的商铺和提供服务的小商家那里了解到，他们的收入显著减少，这反映出消费需求下降。</li>
+<li><strong>失业率上升</strong>：你发现更多的居民失去工作，镇上的失业率在上升，这是消费减少的直接后果。</li>
+<li><strong>库存增加</strong>：商店和工厂的库存商品越积越多，货物卖不出去，价格只能一降再降。</li>
+</ol>
+<h3 id="具体案例分析"><a href="#具体案例分析" class="headerlink" title="具体案例分析"></a>具体案例分析</h3><p>结合上述原因与迹象，具体看看这些变化如何推动通货紧缩的发生：</p>
+<ol>
+<li><p><strong>对未来的不确定性增加</strong></p>
+<ul>
+<li><strong>例子</strong>：居民在听说大工厂即将裁员后，纷纷减少消费，更加注重储蓄以备不时之需。</li>
+</ul>
+</li>
+<li><p><strong>利率上升</strong></p>
+<ul>
+<li><strong>例子</strong>：银行提高存款利率，居民们将更多的钱存进银行，使得市场上的流通资金减少，消费欲望降低。</li>
+</ul>
+</li>
+</ol>
+<h3 id="其他可能导致通货紧缩的因素"><a href="#其他可能导致通货紧缩的因素" class="headerlink" title="其他可能导致通货紧缩的因素"></a>其他可能导致通货紧缩的因素</h3><p><strong>1. 货币供应减少</strong></p>
+<ul>
+<li><strong>例子</strong>：镇长宣布，银行为了稳定财务状况，限制了贷款供应，结果居民们借不到钱，减少了支出，触发价格下跌。</li>
+</ul>
+<p><strong>2. 生产过剩</strong></p>
+<ul>
+<li><strong>例子</strong>：面包厂技术升级，面包生产量增加，但消费需求没变，价格下跌。</li>
+</ul>
+<p><strong>3. 债务紧缩</strong></p>
+<ul>
+<li><strong>例子</strong>：居民们优先还债，减少消费，市场需求下降。</li>
+</ul>
+<p><strong>4. 技术发展</strong></p>
+<ul>
+<li><strong>例子</strong>：自动化设备降低了农产品生产成本，需求不足的情况下，价格下跌。</li>
+</ul>
+<p><strong>5. 市场信心不足</strong></p>
+<ul>
+<li><strong>例子</strong>：居民对未来收入不确定，减少消费，存更多的钱。</li>
+</ul>
+<h3 id="危机加剧"><a href="#危机加剧" class="headerlink" title="危机加剧"></a>危机加剧</h3><p>这些因素共同作用，加剧了小镇的经济困境：</p>
+<ol>
+<li><strong>持续降价</strong>：商品价格一降再降，但即便如此，需求仍低迷。</li>
+<li><strong>恶性循环</strong>：低消费导致收入下降，更多企业倒闭或裁员，居民收入进一步减少。</li>
+</ol>
+<h3 id="解困措施"><a href="#解困措施" class="headerlink" title="解困措施"></a>解困措施</h3><p>镇长意识到问题的严重性，决定采取一些措施来应对通货紧缩：</p>
+<h4 id="货币政策"><a href="#货币政策" class="headerlink" title="货币政策"></a>货币政策</h4><ol>
+<li><strong>降低利率</strong>：央行可以降低基准利率，使得贷款更便宜，鼓励消费和投资。</li>
+<li><strong>量化宽松</strong>：央行通过购买政府债券、机构债券、甚至是企业债券，增加市场中的货币供应，降低长期利率，刺激投资和消费。具体过程如下：<ul>
+<li><strong>购买债券</strong>：央行从商业银行和其他金融机构购买政府债券或其他高质量的金融资产。</li>
+<li><strong>注入流动性</strong>：央行通过购买债券，将现金注入这些金融机构，增加其可用资本。</li>
+<li><strong>刺激放贷</strong>：金融机构拥有更多流动性后，更有能力向企业和个人发放贷款，从而促进投资和消费。</li>
+<li><strong>降低长期利率</strong>：由于央行大量购买债券，债券价格上涨，收益率（即利率）降低，这使得长期贷款的成本下降，促进投资和消费。</li>
+</ul>
+</li>
+</ol>
+<h4 id="财政政策"><a href="#财政政策" class="headerlink" title="财政政策"></a>财政政策</h4><ol start="3">
+<li><strong>政府支出增加</strong>：政府可以增加基建项目和公共服务的投资，创造更多就业机会，提高居民收入。</li>
+<li><strong>减税</strong>：政府可以通过降低个人所得税、企业税等，增加居民和企业的可支配收入，刺激消费和投资。</li>
+<li><strong>直接补贴</strong>：向居民直接发放现金补贴，提高消费能力。</li>
+</ol>
+<h4 id="信心管理"><a href="#信心管理" class="headerlink" title="信心管理"></a>信心管理</h4><ol start="6">
+<li><strong>积极宣传和沟通</strong>：政府和央行可以发布乐观的经济预期和积极的措施，稳定市场信心。</li>
+<li><strong>政策透明度</strong>：确保政策的透明度和一致性，增强市场对政府应对经济问题的信心。</li>
+</ol>
+<h4 id="结构性改革"><a href="#结构性改革" class="headerlink" title="结构性改革"></a>结构性改革</h4><ol start="8">
+<li><strong>劳动力市场改革</strong>：通过培训和职业教育，提高劳动力技能，降低失业率。</li>
+<li><strong>促进创新和技术发展</strong>：通过研发支持和补贴，鼓励企业进行创新，提高生产效率和竞争力。</li>
+</ol>
+<h4 id="国际合作"><a href="#国际合作" class="headerlink" title="国际合作"></a>国际合作</h4><ol start="10">
+<li><strong>国际协调</strong>：与其他国家的央行和政府协调货币和财政政策，防止全球性通缩。</li>
+<li><strong>外汇干预</strong>：通过外汇市场干预，防止本币过度升值，提升出口竞争力，刺激经济增长。</li>
+</ol>
+<h4 id="资本市场措施"><a href="#资本市场措施" class="headerlink" title="资本市场措施"></a>资本市场措施</h4><ol start="12">
+<li><strong>改善融资环境</strong>：通过降低市场准入门槛和减少融资壁垒，促进中小企业获得更容易的资金支持。</li>
+<li><strong>金融扶持政策</strong>：制定优惠融资政策帮助面临困境的行业和企业恢复生产，稳定经济运行。</li>
+</ol>
+<h4 id="其他措施"><a href="#其他措施" class="headerlink" title="其他措施"></a>其他措施</h4><ol start="14">
+<li><strong>社会保障和福利</strong>：加强社会保障体系，提高失业救济金和社会福利，保障居民基本消费能力。</li>
+<li><strong>价格调控措施</strong>：短期内政府可以通过调控关键商品和服务的价格，防止价格急剧下滑。</li>
+</ol>
+<h3 id="连锁反应"><a href="#连锁反应" class="headerlink" title="连锁反应"></a>连锁反应</h3><p>这些因素往往不会单独发生，它们可以互相影响和推动，进一步加剧通货紧缩的局面。一个综合例子：</p>
+<ul>
+<li>银行减少货币供应 -&gt; 消费减少 -&gt; 企业销售下降 -&gt; 价格下跌 -&gt; 企业利润减少 -&gt; 更多的企业裁员或倒闭 -&gt; 失业增加 -&gt; 进一步消费减少 -&gt; 价格继续下跌。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通货紧缩不仅仅是由于储蓄变高和消费减少引起的。货币供应减少、生产过剩、债务压力、技术发展、市场信心不足等因素都可能导致通货紧缩。这些因素及早期迹象常常互相交织，造成复杂的经济现象。政府和央行有多种政策手段可以用来应对通货紧缩，包括货币政策、财政政策、信心管理、结构性改革、国际合作、资本市场措施以及其他措施。这些措施相辅相成，可以帮助缓解通货紧缩，促进经济复苏。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>通货紧缩</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>伊尹放太甲</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E5%95%86%E6%9C%9D/%E4%BC%8A%E5%B0%B9%E6%94%BE%E5%A4%AA%E7%94%B2/</url>
+    <content><![CDATA[<p>在伊尹的协助下，汤成功推翻了夏朝的统治，建立了商朝。商朝建立之初，百废待兴，汤又在伊尹的帮助下完善了各项典章制度，使商迅速恢复了社会秩序，走上正轨。商汤在位三十年，临终时，因为特别信任伊尹，把辅佐继任帝王的重任嘱托于他。</p>
+<span id="more"></span>
+
+<p>商朝时，继承的法则是兄死弟及，没有弟弟，才轮到儿子继承。商汤没有弟弟，因此应该是长子太丁继位。可是汤还在世时，太丁就死了，因此按照礼法，应该由太丁的弟弟外丙继位。于是伊尹便扶持外丙继承了王位。外丙在位三年就去世了，他的弟弟仲壬继位，仲壬体弱多病，注定也是个短命君王，在位四年就病亡了。这时能继承王位的只有商汤的孙子、太丁的儿子——太甲了。此时的太甲只有十岁，但伊尹还是毫不犹豫地扶持年幼的太甲登上了商朝君主的宝座。他自己则掌握大权，尽心尽职地从旁辅佐，教给太甲如何区分是非对错和治理国家的方法，希望把太甲调教成一代贤君。</p>
+<p>太甲年幼少不更事，开始还能听伊尹的教导，谨言慎行，恪守祖辈的礼法，认真对待政事。可是，他小小年纪就登上权力的顶峰，众星捧月般地长大，而且自幼丧父，没有受过严格的管教。没几年，他顽劣的性情就开始滋长，自认是一国之君，万人之上，没人能管得了自己，渐渐变得忘乎所以，对伊尹的教导也开始不耐烦起来。他觉得伊尹虽为宰相，却是奴隶出身，自己凭什么要听他的教训。因此，当伊尹给他讲祖宗的规矩，向他传授汤立下的法度，用历史上贤君的故事教育他时，根本听不进去，而且表现得很敌对。渐渐地，他变得恣意妄为，喜声乐，醉酒宴，一再地破坏礼法。更可怕的是，他竟越来越像夏桀，喜欢滥用民力，暴虐嗜杀，百姓苦不堪言，对他的不满越积越深。</p>
+<p>对于太甲的无心长进，暴虐成性，伊尹和群臣都忧心忡忡，一再规劝，提醒太甲作为一代君王，要有所为有所不为。然而，太甲根本听不进伊尹的规劝，不但一意孤行，甚至还变本加厉。伊尹非常忧虑，担心如果继续放纵太甲这样胡闹下去，汤好不容易打下来的天下，就会被他葬送。</p>
+<p>为了商朝的天下，为了能把太甲调教成一代明君，伊尹决定对太甲下一剂猛药。正好快要到汤的忌日了，按规矩，君主要带领朝廷上下举行盛大的祭祀活动。太甲贪玩，根本不想主持这种规规矩矩、枯燥乏味的仪式，可是伊尹一再强调身为汤的子孙，继承了汤打下的天下，这件事他责无旁贷，除非他不想做这个君主了。太甲无奈，勉为其难主持祭奠，带领群臣来到了汤的墓地——桐宫。祭奠一开始，伊尹宣读祭文，向汤的亡灵宣告，为了商朝能千秋万代，要将幼主留在桐宫，让他反思自己的言行，帮他领悟治国的道理。太甲听完祭文，才知道自己要被囚于桐宫，接受训导，一下就慌了神，可是群臣百官都在场，显然大家都支持伊尹的决定，他已经骑虎难下，只能听从了。</p>
+<p>太甲住进了桐宫，但国家大事不能无人管理，伊尹便摄政当国，代行天子职责。为了教导太甲上进，伊尹给他写了《伊训》、《肆命》、《祖后》三篇训词：《伊训》中说，腐败、淫荡、逆乱之风是丧家乱国的根本，身为君主要想让国家长治久安，就要修身养性，多听贤臣的意见；《肆命》是讲分辨是非的方法，清楚地说明应做什么样的事情，不应做什么样的事情；《祖后》则专门讲商汤时候的典法制度，教育太甲祖先的规矩不可破，不能为了贪一时之快，而背弃祖训，为所欲为。</p>
+<p>桐宫远在商都郊外，虽是商朝开国之君汤的陵墓，却非常简陋，跟普通人的墓没什么两样，只有一座又低又矮的宫室，以便每年到此祭奠。太甲是享乐惯了的人，怎能甘心呆在这里受苦。为了能让太甲安心悔过，伊尹语重心长地对他说：“我年事已高，本没有争权夺位的野心，可是先王临终托孤，辅佐幼主，自己重任在身。为了不辜负先王的嘱托，不能对你放任不管。你还是商朝的国君，但是在执政之前要多学习、走正道，修身养性，提高治国安邦的能力。所以要趁着这次机会，在这里好好学习如何做一个英明的君王。”</p>
+<p>太甲知道此事已经无可挽回，再加上伊尹的一番话也让他有些感触，便不再反抗，表示会老实地呆在桐宫学习。太甲在此，没有高床软卧，没有锦衣玉食，远离前呼后拥，远离奢华的享受，也远离各种诱惑，每天他早晚守候着祖父商汤的陵墓，读着伊尹写给他的训词，过着简朴的生活，心竟真的渐渐平静下来。</p>
+<p>太甲逐渐了解到祖父历尽艰辛，打下商朝天下，还能俭以修身，仁以立德，由衷地崇拜起祖父来，再想想自己对国家没什么贡献，就登上王位，却不思治国，只贪图玩乐，还暴虐地对待百姓，真羞愧难当。同时，他想到伊尹对自己苦心教诲，自己却不能理解，懊悔不及。于是，太甲下定决定要好好读书，做一个不负祖父亡灵的明君，学习为君为政所必需的德行与知识，掌握国家法度，以及如何应对国家的困境。</p>
+<p>就这样，在不断地学习与悔过自新中，太甲在桐宫一住就是三年。这三年间，太甲真的脱胎换骨了，他认真学习，以祖父为榜样，严格要求自己，尤其注重修炼自己的德行。伊尹也经常派德才兼备的人给他授课，同时了解他在桐宫的情况。经过一番了解，伊尹确定太甲已经改过向善，也具备了一定才识，可以回来当君主了。于是，伊尹带领文武大臣来到桐宫，用隆重的仪式把太甲接回了亳都，让太甲归位主政，自己只从旁辅佐。</p>
+<p>经过三年的蜕变，太甲归位后，果然完全改掉了过去的顽劣性情。他虽然年纪轻轻，却成熟沉稳，对待国家大事从不懈怠，还发扬商汤的德政，勤俭爱民，凡是为大局着想，从不做违反祖制和朝廷法律的事。在他和伊尹的统治下，商朝社会稳定，百姓安康，诸侯臣服，进入了一个稳定发展鼎盛时期。《史记·殷本纪》中说太甲复位后，“诸侯咸归殷，百姓以宁”。太甲因此赢得了群臣和百姓的尊敬，被称为“太宗”。伊尹又作《太甲训》三篇，褒扬太甲的德政。</p>
+<p>不过，太甲当政期间，对国家大事起决定性作用的还是伊尹，直到太甲的儿子沃丁继承王位八年后，伊尹才去世。据说，他去世的时候，天降大雾，三日不散。沃丁感念他对商朝鞠躬尽瘁的功德，亲自主持丧事，用天子之礼厚葬了他，将他安葬在亳都的郊区。</p>
+<p>伊尹不仅是辅佐汤夺取天下的开国元勋，而且是名副其实的“五朝元老”，他以其卓越的才能和忠诚，为商王朝延续六百年的统治奠定了坚实的基础，是我国历史上最早的贤能相国圣人，史称“元圣”。在甲骨卜辞的记载中，伊尹不但被列为“旧老臣”之首，受到隆重祭祀，而且还与汤同祭，单独享祀。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>商朝</category>
+      </categories>
+      <tags>
+        <tag>伊尹放太甲</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>什么是年增率？</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/</url>
     <content><![CDATA[<h3 id="什么是年增率？"><a href="#什么是年增率？" class="headerlink" title="什么是年增率？"></a>什么是年增率？</h3><p>年增率（Year-over-Year Growth Rate）是用来衡量一个指标（如收入、利润、房价等）在一年的时间跨度内增长（或减少）的百分比。用简洁的公式表示：</p>
@@ -355,101 +494,6 @@
       </tags>
   </entry>
   <entry>
-    <title>通货紧缩</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E9%80%9A%E8%B4%A7%E7%B4%A7%E7%BC%A9/</url>
-    <content><![CDATA[<h4 id="小镇的故事"><a href="#小镇的故事" class="headerlink" title="小镇的故事"></a>小镇的故事</h4><p>在一个宁静的小镇上，居民们的生活就是买东西和卖东西。</p>
-<p><strong>一、一切正常的时候</strong></p>
-<ol>
-<li><strong>市场运作</strong>：小镇的商店、农场和工厂都在正常运作。居民们赚取薪水，然后用这些钱买食物、衣物和其他日常必需品。</li>
-<li><strong>价格稳定</strong>：市场上的商品和服务价格相对稳定。比如，一个面包的价格是5块钱，一杯牛奶的价格是2块钱。</li>
-</ol>
-<span id="more"></span>
-
-<p><strong>二、进入通货紧缩阶段</strong></p>
-<p>有一天，小镇上的居民储蓄变得高了，他们开始减少消费，更多的是把钱存到银行或直接留在家里。这种减少消费的行为引发了一系列连锁反应。让我们看看可能导致这一变化的原因：</p>
-<ol>
-<li><strong>对未来的不确定性增加</strong>：小镇上的居民听说镇上的大工厂要裁员，或者听到经济衰退的传言，导致他们对未来感到不安，所以更愿意储蓄以备不时之需。</li>
-<li><strong>利率上升</strong>：银行突然提高了存款利率，居民们发现把钱存到银行可以获得更多的利息收入，于是他们更倾向于把钱存起来，而不是用于消费。</li>
-<li><strong>政府政策</strong>：政府出台了新的税收政策或福利计划，鼓励居民储蓄而不是消费，导致短期内储蓄增加。</li>
-<li><strong>消费习惯改变</strong>：由于科技进步，在线购物平台推出了更多的储蓄产品和理财工具，小镇居民开始意识到储蓄和理财的重要性。</li>
-<li><strong>债务偿还压力</strong>：部分居民可能背负了较多的债务，他们需要紧缩开支以更快地偿还债务，减少额外的消费支出。</li>
-</ol>
-<h3 id="监测市场动向的迹象"><a href="#监测市场动向的迹象" class="headerlink" title="监测市场动向的迹象"></a>监测市场动向的迹象</h3><p>你可以通过以下迹象判断市场进入了通货紧缩阶段：</p>
-<ol>
-<li><strong>消费者物价指数（CPI）下降</strong>：你注意到政府公布的CPI数据显示，整体物价水平持续下降，这表明通货紧缩正在发生。</li>
-<li><strong>商铺和服务业收入下降</strong>：你从镇上的商铺和提供服务的小商家那里了解到，他们的收入显著减少，这反映出消费需求下降。</li>
-<li><strong>失业率上升</strong>：你发现更多的居民失去工作，镇上的失业率在上升，这是消费减少的直接后果。</li>
-<li><strong>库存增加</strong>：商店和工厂的库存商品越积越多，货物卖不出去，价格只能一降再降。</li>
-</ol>
-<h3 id="具体案例分析"><a href="#具体案例分析" class="headerlink" title="具体案例分析"></a>具体案例分析</h3><p>让我们结合上述原因与迹象，具体看看这些变化如何推动通货紧缩的发生：</p>
-<ol>
-<li><p><strong>对未来的不确定性增加</strong></p>
-<ul>
-<li><strong>例子</strong>：居民在听说大工厂即将裁员后，纷纷减少消费，更加注重储蓄以备不时之需。</li>
-</ul>
-</li>
-<li><p><strong>利率上升</strong></p>
-<ul>
-<li><strong>例子</strong>：银行提高存款利率，居民们将更多的钱存进银行，使得市场上的流通资金减少，消费欲望降低。</li>
-</ul>
-</li>
-</ol>
-<h3 id="其他可能导致通货紧缩的因素"><a href="#其他可能导致通货紧缩的因素" class="headerlink" title="其他可能导致通货紧缩的因素"></a>其他可能导致通货紧缩的因素</h3><p><strong>1. 货币供应减少</strong></p>
-<p>如果有一天镇上的银行突然减少了货币供应，这意味着市场上流通的钱变少了，居民们手中的现金也变少了。</p>
-<ul>
-<li><strong>例子</strong>：镇长宣布，银行为了稳定财务状况，限制了贷款供应，结果居民们借不到钱，减少了支出，触发价格下跌。</li>
-</ul>
-<p><strong>2. 生产过剩</strong></p>
-<p>当小镇上的工厂生产力大幅提高，但需求没增加，货品积压在仓库里。</p>
-<ul>
-<li><strong>例子</strong>：面包厂技术升级，面包生产量增加，但消费需求没变，价格下跌。</li>
-</ul>
-<p><strong>3. 债务紧缩</strong></p>
-<p>如果居民和企业都背负了大量的债务，偿还债务变成了首要任务，导致消费和投资减少。</p>
-<ul>
-<li><strong>例子</strong>：居民们优先还债，减少消费，市场需求下降。</li>
-</ul>
-<p><strong>4. 技术发展</strong></p>
-<p>科技进步使得商品生产成本大幅降低，价格因此下降。</p>
-<ul>
-<li><strong>例子</strong>：自动化设备降低了农产品生产成本，需求不足的情况下，价格下跌。</li>
-</ul>
-<p><strong>5. 市场信心不足</strong></p>
-<p>如果居民对未来经济不乐观，消费欲望下降，会导致通货紧缩。</p>
-<ul>
-<li><strong>例子</strong>：居民对未来收入不确定，减少消费，存更多的钱。</li>
-</ul>
-<h3 id="危机加剧"><a href="#危机加剧" class="headerlink" title="危机加剧"></a>危机加剧</h3><p>这些因素共同作用，加剧了小镇的经济困境：</p>
-<ol>
-<li><strong>持续降价</strong>：商品价格一降再降，但即便如此，需求仍低迷。</li>
-<li><strong>恶性循环</strong>：低消费导致收入下降，更多企业倒闭或裁员，居民收入进一步减少。</li>
-</ol>
-<h3 id="解困措施"><a href="#解困措施" class="headerlink" title="解困措施"></a>解困措施</h3><p>镇长意识到问题的严重性，决定采取一些措施来应对通货紧缩：</p>
-<ol>
-<li><strong>增加货币供应</strong>：通过银行贷款和财政政策，镇长鼓励居民贷款消费或投资创造就业。</li>
-<li><strong>刺激消费</strong>：镇长发布了一系列消费券，鼓励居民在本地商店购物。比如，花50块钱的消费券可以抵100块钱的商品消费。</li>
-<li><strong>大力投资基础设施</strong>：政府决定修建新的道路和公园，提供更多的就业机会，让居民有收入，从工作中获利并恢复消费信心。</li>
-</ol>
-<h3 id="连锁反应"><a href="#连锁反应" class="headerlink" title="连锁反应"></a>连锁反应</h3><p>这些因素往往不会单独发生，它们可以互相影响和推动，进一步加剧通货紧缩的局面。一个综合例子：</p>
-<ul>
-<li>银行减少货币供应 -&gt; 消费减少 -&gt; 企业销售下降 -&gt; 价格下跌 -&gt; 企业利润减少 -&gt; 更多的企业裁员或倒闭 -&gt; 失业增加 -&gt; 进一步消费减少 -&gt; 价格继续下跌。</li>
-</ul>
-<h3 id="应对措施"><a href="#应对措施" class="headerlink" title="应对措施"></a>应对措施</h3><p>政府和央行通常会采取相应的政策措施来应对通货紧缩，比如：</p>
-<ul>
-<li><strong>货币政策</strong>：降低利率、增加货币供应。</li>
-<li><strong>财政政策</strong>：政府增加支出，通过基建项目或者直接现金补贴来刺激消费。</li>
-<li><strong>信心管理</strong>：政府和央行发出积极信号，稳定市场信心。</li>
-</ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通货紧缩不仅仅是由于储蓄变高和消费减少引起的。货币供应减少、生产过剩、债务压力、技术发展、市场信心不足等因素都可能导致通货紧缩。这些因素及早期迹象常常互相交织，造成复杂的经济现象。了解这些，可以帮助更全面地理解和应对通货紧缩。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>通货紧缩</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>大禹治水</title>
     <url>/%E5%8E%86%E5%8F%B2/%E5%A4%8F%E6%9C%9D/%E5%A4%A7%E7%A6%B9%E6%B2%BB%E6%B0%B4/</url>
     <content><![CDATA[<p>据说尧舜时代正值冰河时代后期，气候转暖，冰雪消融，致使海平面迅速升高，海水倒灌；古黄河改道从苏北平原入海，淮河淤积，汹涌的洪水淹没了淮、泗流域，沧海横流，洪水泛滥，泰山以西到沂蒙以南至苏北地区成了一片汪洋，天地万物在滔天的洪水中沉沉浮浮。对于当时的情景，《尚书·尧典》中这样描写：“汤汤洪水方割，荡荡怀山襄陵，浩浩滔天。”</p>
@@ -479,30 +523,27 @@
       </tags>
   </entry>
   <entry>
-    <title>伊尹放太甲</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E5%95%86%E6%9C%9D/%E4%BC%8A%E5%B0%B9%E6%94%BE%E5%A4%AA%E7%94%B2/</url>
-    <content><![CDATA[<p>在伊尹的协助下，汤成功推翻了夏朝的统治，建立了商朝。商朝建立之初，百废待兴，汤又在伊尹的帮助下完善了各项典章制度，使商迅速恢复了社会秩序，走上正轨。商汤在位三十年，临终时，因为特别信任伊尹，把辅佐继任帝王的重任嘱托于他。</p>
+    <title>盘古开天辟地</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E7%9B%98%E5%8F%A4%E5%BC%80%E5%A4%A9%E8%BE%9F%E5%9C%B0/</url>
+    <content><![CDATA[<p>盘古开天辟地的传说在我国流传广泛。它以浅近质朴的方式表达了华夏先民对自己民族创世历史的深邃认识。在这个传说中，盘古是开启这个世界的始祖。</p>
 <span id="more"></span>
 
-<p>商朝时，继承的法则是兄死弟及，没有弟弟，才轮到儿子继承。商汤没有弟弟，因此应该是长子太丁继位。可是汤还在世时，太丁就死了，因此按照礼法，应该由太丁的弟弟外丙继位。于是伊尹便扶持外丙继承了王位。外丙在位三年就去世了，他的弟弟仲壬继位，仲壬体弱多病，注定也是个短命君王，在位四年就病亡了。这时能继承王位的只有商汤的孙子、太丁的儿子——太甲了。此时的太甲只有十岁，但伊尹还是毫不犹豫地扶持年幼的太甲登上了商朝君主的宝座。他自己则掌握大权，尽心尽职地从旁辅佐，教给太甲如何区分是非对错和治理国家的方法，希望把太甲调教成一代贤君。</p>
-<p>太甲年幼少不更事，开始还能听伊尹的教导，谨言慎行，恪守祖辈的礼法，认真对待政事。可是，他小小年纪就登上权力的顶峰，众星捧月般地长大，而且自幼丧父，没有受过严格的管教。没几年，他顽劣的性情就开始滋长，自认是一国之君，万人之上，没人能管得了自己，渐渐变得忘乎所以，对伊尹的教导也开始不耐烦起来。他觉得伊尹虽为宰相，却是奴隶出身，自己凭什么要听他的教训。因此，当伊尹给他讲祖宗的规矩，向他传授汤立下的法度，用历史上贤君的故事教育他时，根本听不进去，而且表现得很敌对。渐渐地，他变得恣意妄为，喜声乐，醉酒宴，一再地破坏礼法。更可怕的是，他竟越来越像夏桀，喜欢滥用民力，暴虐嗜杀，百姓苦不堪言，对他的不满越积越深。</p>
-<p>对于太甲的无心长进，暴虐成性，伊尹和群臣都忧心忡忡，一再规劝，提醒太甲作为一代君王，要有所为有所不为。然而，太甲根本听不进伊尹的规劝，不但一意孤行，甚至还变本加厉。伊尹非常忧虑，担心如果继续放纵太甲这样胡闹下去，汤好不容易打下来的天下，就会被他葬送。</p>
-<p>为了商朝的天下，为了能把太甲调教成一代明君，伊尹决定对太甲下一剂猛药。正好快要到汤的忌日了，按规矩，君主要带领朝廷上下举行盛大的祭祀活动。太甲贪玩，根本不想主持这种规规矩矩、枯燥乏味的仪式，可是伊尹一再强调身为汤的子孙，继承了汤打下的天下，这件事他责无旁贷，除非他不想做这个君主了。太甲无奈，勉为其难主持祭奠，带领群臣来到了汤的墓地——桐宫。祭奠一开始，伊尹宣读祭文，向汤的亡灵宣告，为了商朝能千秋万代，要将幼主留在桐宫，让他反思自己的言行，帮他领悟治国的道理。太甲听完祭文，才知道自己要被囚于桐宫，接受训导，一下就慌了神，可是群臣百官都在场，显然大家都支持伊尹的决定，他已经骑虎难下，只能听从了。</p>
-<p>太甲住进了桐宫，但国家大事不能无人管理，伊尹便摄政当国，代行天子职责。为了教导太甲上进，伊尹给他写了《伊训》、《肆命》、《祖后》三篇训词：《伊训》中说，腐败、淫荡、逆乱之风是丧家乱国的根本，身为君主要想让国家长治久安，就要修身养性，多听贤臣的意见；《肆命》是讲分辨是非的方法，清楚地说明应做什么样的事情，不应做什么样的事情；《祖后》则专门讲商汤时候的典法制度，教育太甲祖先的规矩不可破，不能为了贪一时之快，而背弃祖训，为所欲为。</p>
-<p>桐宫远在商都郊外，虽是商朝开国之君汤的陵墓，却非常简陋，跟普通人的墓没什么两样，只有一座又低又矮的宫室，以便每年到此祭奠。太甲是享乐惯了的人，怎能甘心呆在这里受苦。为了能让太甲安心悔过，伊尹语重心长地对他说：“我年事已高，本没有争权夺位的野心，可是先王临终托孤，辅佐幼主，自己重任在身。为了不辜负先王的嘱托，不能对你放任不管。你还是商朝的国君，但是在执政之前要多学习、走正道，修身养性，提高治国安邦的能力。所以要趁着这次机会，在这里好好学习如何做一个英明的君王。”</p>
-<p>太甲知道此事已经无可挽回，再加上伊尹的一番话也让他有些感触，便不再反抗，表示会老实地呆在桐宫学习。太甲在此，没有高床软卧，没有锦衣玉食，远离前呼后拥，远离奢华的享受，也远离各种诱惑，每天他早晚守候着祖父商汤的陵墓，读着伊尹写给他的训词，过着简朴的生活，心竟真的渐渐平静下来。</p>
-<p>太甲逐渐了解到祖父历尽艰辛，打下商朝天下，还能俭以修身，仁以立德，由衷地崇拜起祖父来，再想想自己对国家没什么贡献，就登上王位，却不思治国，只贪图玩乐，还暴虐地对待百姓，真羞愧难当。同时，他想到伊尹对自己苦心教诲，自己却不能理解，懊悔不及。于是，太甲下定决定要好好读书，做一个不负祖父亡灵的明君，学习为君为政所必需的德行与知识，掌握国家法度，以及如何应对国家的困境。</p>
-<p>就这样，在不断地学习与悔过自新中，太甲在桐宫一住就是三年。这三年间，太甲真的脱胎换骨了，他认真学习，以祖父为榜样，严格要求自己，尤其注重修炼自己的德行。伊尹也经常派德才兼备的人给他授课，同时了解他在桐宫的情况。经过一番了解，伊尹确定太甲已经改过向善，也具备了一定才识，可以回来当君主了。于是，伊尹带领文武大臣来到桐宫，用隆重的仪式把太甲接回了亳都，让太甲归位主政，自己只从旁辅佐。</p>
-<p>经过三年的蜕变，太甲归位后，果然完全改掉了过去的顽劣性情。他虽然年纪轻轻，却成熟沉稳，对待国家大事从不懈怠，还发扬商汤的德政，勤俭爱民，凡是为大局着想，从不做违反祖制和朝廷法律的事。在他和伊尹的统治下，商朝社会稳定，百姓安康，诸侯臣服，进入了一个稳定发展鼎盛时期。《史记·殷本纪》中说太甲复位后，“诸侯咸归殷，百姓以宁”。太甲因此赢得了群臣和百姓的尊敬，被称为“太宗”。伊尹又作《太甲训》三篇，褒扬太甲的德政。</p>
-<p>不过，太甲当政期间，对国家大事起决定性作用的还是伊尹，直到太甲的儿子沃丁继承王位八年后，伊尹才去世。据说，他去世的时候，天降大雾，三日不散。沃丁感念他对商朝鞠躬尽瘁的功德，亲自主持丧事，用天子之礼厚葬了他，将他安葬在亳都的郊区。</p>
-<p>伊尹不仅是辅佐汤夺取天下的开国元勋，而且是名副其实的“五朝元老”，他以其卓越的才能和忠诚，为商王朝延续六百年的统治奠定了坚实的基础，是我国历史上最早的贤能相国圣人，史称“元圣”。在甲骨卜辞的记载中，伊尹不但被列为“旧老臣”之首，受到隆重祭祀，而且还与汤同祭，单独享祀。</p>
+<p>在遥远的上古时期，没有所谓的天，也没有所谓的地，天地混沌一体，就像一个鸡蛋，连个窟窿都没有，谁也说不清那是什么，于是人们就暂且用帝江来称呼它。混混沌沌的帝江有两个好友：一个叫倏，一个叫忽。</p>
+<p>倏和忽见帝江如此混沌，就和它商量，想帮它凿通七窍，让它的气息可以出入，帝江欣然同意。于是，倏和忽开始了工作，他们每天为帝江凿通一窍，七天后，七窍通了，可帝江却也因此一命呜呼了。</p>
+<p>帝江死后，它的肚子里的精髓孕育成了一股气。一万八千年后，这股气幻化成人形——他就是盘古。</p>
+<p>盘古在帝江的肚子里不知睡了多久，猛然醒来，睁开眼睛，发现眼前一片黑暗。他想要走出这无处不在的黑暗，可是腿一动就被东西挡住，胳膊一伸就碰到阻碍，原来自己被这黑暗紧紧地包裹住了。难道自己必须在这黑暗的包围下蜷缩地活着？想到这些他的心中顿时燃起了怒火，他从自己的嘴中拔下一颗牙，把它变成了威力无比的神斧，他抡起神斧朝眼前的混沌用力挥去。突然传来一阵山崩一样的巨响，黑暗混沌出现了一个裂口，接着，那些轻盈清澈的气体冉冉升起，成了天，另外那些沉重污浊的东西就缓缓下沉，铺成了地。从此宇宙结束了混沌不分的状态，有了天和地。盘古站在中间只觉得身心舒畅。</p>
+<p>盘古站立起来，天就接着升高，地也继续下沉。天地还有些相连的地方，他就一手拿着凿子，一手拿着斧头，对那些东西连劈带凿，终于让天地完全分开。他怕天地会再次合拢，就头顶天，脚踏地，支撑在天地之间。他施展法力，使身体每天增高一丈，随着他的增高，天也跟着升高一丈，地也随着加厚一丈。就这样，又过了一万八千年，天已经高得遥不可及，地也厚得不能再厚了，盘古变成了一个顶天立地的巨人。这个巨人有多高呢？据说他的身长达到了九万里。这么高大的柱子支撑着天地，使它们终于无法再合并到一起。</p>
+<p>可是这位开天辟地的巨人支撑了这么久，已经筋疲力尽了。他疲惫地张开眼，欣赏着自己开辟的新天地，叹息了一声，就慢慢地倒在了地上，带着微笑永久地闭上了眼睛。</p>
+<p>他巨大的身体横亘在地上，头幻化成东岳泰山，脚幻化成西岳华山，左臂幻化成南岳衡山，右臂幻化成北岳恒山，而腹部就幻化成了中岳嵩山；他呼出的最后一口气，变成了风和空中的云雾，他的那声叹息就变成了雷鸣，他的左眼变成了普照大地的太阳，右眼变成了照亮黑夜的月亮，浓密的头发变成了点点的繁星，奔流的血液变成了江河湖海，肌肉变成孕育万物的沃土，骨骼变成了花草树木，筋脉变成了条条道路，牙齿和骨骼变成了玉石和金属；就连他身上留下的汗水都变成了甘霖雨露，滋润万物。</p>
+<p>伟大的英雄盘古，不但给人类开辟了天地，还用自己的躯体将大千世界装饰得生机勃勃。</p>
+<p>当然，这只是神话，人们不会真的认为是盘古创造了天地万物。考古学家通过科考，已经发现了元谋人、北京人、山顶洞人等史前人类的遗址，进一步揭开了人类起源进化之谜。但是，在没有文字的情况下，这些神话传说只靠口耳相传就可以流传后世，不正表明人类对生命的热爱，对美好的追求是生生不息的吗？盘古代表的是一种精神，他为人类生存的世界拼尽了全力，献出了所有，这种献身精神成为历代仁人志士追求的最高境界。</p>
 ]]></content>
       <categories>
         <category>历史</category>
-        <category>商朝</category>
+        <category>远古时代</category>
       </categories>
       <tags>
-        <tag>伊尹放太甲</tag>
+        <tag>盘古开天辟地</tag>
       </tags>
   </entry>
   <entry>
@@ -530,30 +571,6 @@
       </categories>
       <tags>
         <tag>女娲传说</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>盘古开天辟地</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E7%9B%98%E5%8F%A4%E5%BC%80%E5%A4%A9%E8%BE%9F%E5%9C%B0/</url>
-    <content><![CDATA[<p>盘古开天辟地的传说在我国流传广泛。它以浅近质朴的方式表达了华夏先民对自己民族创世历史的深邃认识。在这个传说中，盘古是开启这个世界的始祖。</p>
-<span id="more"></span>
-
-<p>在遥远的上古时期，没有所谓的天，也没有所谓的地，天地混沌一体，就像一个鸡蛋，连个窟窿都没有，谁也说不清那是什么，于是人们就暂且用帝江来称呼它。混混沌沌的帝江有两个好友：一个叫倏，一个叫忽。</p>
-<p>倏和忽见帝江如此混沌，就和它商量，想帮它凿通七窍，让它的气息可以出入，帝江欣然同意。于是，倏和忽开始了工作，他们每天为帝江凿通一窍，七天后，七窍通了，可帝江却也因此一命呜呼了。</p>
-<p>帝江死后，它的肚子里的精髓孕育成了一股气。一万八千年后，这股气幻化成人形——他就是盘古。</p>
-<p>盘古在帝江的肚子里不知睡了多久，猛然醒来，睁开眼睛，发现眼前一片黑暗。他想要走出这无处不在的黑暗，可是腿一动就被东西挡住，胳膊一伸就碰到阻碍，原来自己被这黑暗紧紧地包裹住了。难道自己必须在这黑暗的包围下蜷缩地活着？想到这些他的心中顿时燃起了怒火，他从自己的嘴中拔下一颗牙，把它变成了威力无比的神斧，他抡起神斧朝眼前的混沌用力挥去。突然传来一阵山崩一样的巨响，黑暗混沌出现了一个裂口，接着，那些轻盈清澈的气体冉冉升起，成了天，另外那些沉重污浊的东西就缓缓下沉，铺成了地。从此宇宙结束了混沌不分的状态，有了天和地。盘古站在中间只觉得身心舒畅。</p>
-<p>盘古站立起来，天就接着升高，地也继续下沉。天地还有些相连的地方，他就一手拿着凿子，一手拿着斧头，对那些东西连劈带凿，终于让天地完全分开。他怕天地会再次合拢，就头顶天，脚踏地，支撑在天地之间。他施展法力，使身体每天增高一丈，随着他的增高，天也跟着升高一丈，地也随着加厚一丈。就这样，又过了一万八千年，天已经高得遥不可及，地也厚得不能再厚了，盘古变成了一个顶天立地的巨人。这个巨人有多高呢？据说他的身长达到了九万里。这么高大的柱子支撑着天地，使它们终于无法再合并到一起。</p>
-<p>可是这位开天辟地的巨人支撑了这么久，已经筋疲力尽了。他疲惫地张开眼，欣赏着自己开辟的新天地，叹息了一声，就慢慢地倒在了地上，带着微笑永久地闭上了眼睛。</p>
-<p>他巨大的身体横亘在地上，头幻化成东岳泰山，脚幻化成西岳华山，左臂幻化成南岳衡山，右臂幻化成北岳恒山，而腹部就幻化成了中岳嵩山；他呼出的最后一口气，变成了风和空中的云雾，他的那声叹息就变成了雷鸣，他的左眼变成了普照大地的太阳，右眼变成了照亮黑夜的月亮，浓密的头发变成了点点的繁星，奔流的血液变成了江河湖海，肌肉变成孕育万物的沃土，骨骼变成了花草树木，筋脉变成了条条道路，牙齿和骨骼变成了玉石和金属；就连他身上留下的汗水都变成了甘霖雨露，滋润万物。</p>
-<p>伟大的英雄盘古，不但给人类开辟了天地，还用自己的躯体将大千世界装饰得生机勃勃。</p>
-<p>当然，这只是神话，人们不会真的认为是盘古创造了天地万物。考古学家通过科考，已经发现了元谋人、北京人、山顶洞人等史前人类的遗址，进一步揭开了人类起源进化之谜。但是，在没有文字的情况下，这些神话传说只靠口耳相传就可以流传后世，不正表明人类对生命的热爱，对美好的追求是生生不息的吗？盘古代表的是一种精神，他为人类生存的世界拼尽了全力，献出了所有，这种献身精神成为历代仁人志士追求的最高境界。</p>
-]]></content>
-      <categories>
-        <category>历史</category>
-        <category>远古时代</category>
-      </categories>
-      <tags>
-        <tag>盘古开天辟地</tag>
       </tags>
   </entry>
   <entry>
@@ -1979,19 +1996,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>economy</title>
     <url>/economy/index.html</url>
     <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
@@ -2397,13 +2401,26 @@
 </div></div></div>]]></content>
   </entry>
   <entry>
+    <title>标签</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>schedule</title>
     <url>/schedule/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>标签</title>
-    <url>/tags/index.html</url>
+    <title>分类</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>关于</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
   </entry>
 </search>
