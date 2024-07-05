@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #4dbdff;
+    background: #8cffaf;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2818,13 +2818,15 @@ header.header {
     display: none;
   }
 }
-/* 为文章内的超链接添加图标 */
-.post-body p a::after {
-  content: "🔗"; /* 使用Unicode字符作为图标 */
-  margin-left: 5px; /* 与链接文字保持一定距离 */
-  font-size: 0.9em; /* 调整图标大小 */
-  color: inherit; /* 继承链接颜色 */
-  vertical-align: middle; /* 垂直对齐 */
+/* 如果需要使用Font Awesome图标，可以使用以下代码 */
+.post-body p a:not(.more-link)::after {
+  content: '\f08e'; /* Font Awesome的链接图标代码 */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-left: 5px;
+  font-size: 0.9em;
+  color: inherit;
+  vertical-align: middle;
 }
 .timeline {
   margin: 0 0 20px 10px;
