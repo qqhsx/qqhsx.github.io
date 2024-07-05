@@ -19,129 +19,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>newpost</title>
-    <url>/newpost/</url>
-    <content><![CDATA[<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p><a href="https://qqhsx.github.io/">2023</a></p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
-</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
-</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
-</div></div></div>
-
-
-
-<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2022</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
-</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
-</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
-</div></div></div>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>Hexo博客搭建与部署</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
-<h2 id="搭建环境准备"><a href="#搭建环境准备" class="headerlink" title="搭建环境准备"></a>搭建环境准备</h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><span id="more"></span>
-
-<p>Git是一个先进的分布式版本控制工具，可以有效处理不同规模的项目版本管理。这里用于管理你的Hexo文章，将本地的博客上传至Github。到Git官网选择合适的版本<a href="https://gitforwindows.org/">下载</a>，安装后会有一个Git Bash的命令行工具，之后用该工具操作Git。</p>
-<p><img src="https://s2.loli.net/2022/09/02/yERzbHxNWFDkGYj.png" alt="1"></p>
-<p>检查是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/09/02/Ig54dwxlKL7iNW2.png" alt="2"></p>
-<p>正常显示版本号，无报错即为安装成功。<br>另外，Windows环境下在Git安装完成后，可以使用Git Bash来进行后续命令行操作。</p>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Hexo基于Node.js，所以需要安装Node.js及npm工具。可进入Node.js中文网<a href="http://nodejs.cn/download/">下载</a>，选择LTS（长期支持版本）即可。<br>检查是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s2.loli.net/2022/09/02/y6HEt7ubvYxj4De.png" alt="3"></p>
-<p>正常显示版本号，无报错即为安装成功。</p>
-<h2 id="博客本地搭建"><a href="#博客本地搭建" class="headerlink" title="博客本地搭建"></a>博客本地搭建</h2><h3 id="安装Hexo框架"><a href="#安装Hexo框架" class="headerlink" title="安装Hexo框架"></a>安装Hexo框架</h3><p>右键打开Git Bash，输入命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>检查是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s2.loli.net/2022/09/02/OXSGPjcFAWuTL1w.png" alt="4"></p>
-<p>正常显示版本号，无报错即为安装成功。</p>
-<h3 id="初始化博客进入文件夹，安装一下npm"><a href="#初始化博客进入文件夹，安装一下npm" class="headerlink" title="初始化博客进入文件夹，安装一下npm"></a>初始化博客进入文件夹，安装一下npm</h3><p>运行Git Bash执行以下命令：</p>
-<p>命令为在当前位置新建一个文件夹作为博客的目录，例如这里我将博客目录设置为myblog，并设置myblog为当前目录后安装npm</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<h3 id="博客目录介绍"><a href="#博客目录介绍" class="headerlink" title="博客目录介绍"></a>博客目录介绍</h3><p>新建完成后，指定文件夹的目录如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-
-<p><code>_config.yml</code> 网站的配置信息，可以在此配置大部分的参数。<br><code> package.json</code> 应用程序的信息，新添加的插件内容也会显示在这里，可以不做修改。<br><code>scaffolds</code> 模板文件夹，新建文章时，Hexo会根据scaffolds来建立文件。Hexo的模板是指在新建的Markdown文件中默认填充的内容，我们可以在模板上添加自定义内容，比如categories，tags等。<br><code>source</code> 存放用户资源的地方，也就是我们的博客内容。初始设置两个文件夹，posts（文章）和drafts（草稿）。之后通过命令新建页面后，文件夹数量会增加。<br><code>themes</code> 主题文件夹，用于存放主题文件包，Hexo会根据主题内容生成静态页面，默认主题为landscape，可根据个人喜好进行更改。</p>
-<h3 id="博客本地效果"><a href="#博客本地效果" class="headerlink" title="博客本地效果"></a>博客本地效果</h3><p>Git Bash执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>启动hexo服务，访问<a href="http://localhost:4000/">http://localhost:4000</a>即可看到生成的博客页面。使用Ctrl+C可关闭本地服务。</p>
-<p><img src="https://s2.loli.net/2022/09/02/vsMUKSwT3D9B1kt.png" alt="5"></p>
-<h2 id="博客Github部署"><a href="#博客Github部署" class="headerlink" title="博客Github部署"></a>博客Github部署</h2><h3 id="创建个人仓库"><a href="#创建个人仓库" class="headerlink" title="创建个人仓库"></a>创建个人仓库</h3><p>这里需要Github账号，如果没有可以去<a href="https://github.com/join">注册</a>一个。</p>
-<p><img src="https://s2.loli.net/2022/09/02/EdzSKevZrViq3UY.png" alt="6"></p>
-<p><a href="https://github.com/login">登录</a>Github，新建一个仓库，命名格式为：用户名.github.io。比如，我的用户名是qqhsx，我的仓库名为qqhsx.github.io。注意这里必须按此格式命名，只有这样，之后部署到GitHub pages的时候，才会被识别。</p>
-<p><img src="https://s2.loli.net/2022/09/02/zVEjxBYukKmqD9e.png" alt="7"></p>
-<p><img src="https://s2.loli.net/2022/09/02/rplmdP6XA3LBuqJ.png" alt="8"></p>
-<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>打开Git Bash，输入以下命令，生成本地密钥。这里用户名和邮箱仅作演示，用户名为你Github的用户名，邮箱为你Github的邮箱。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxxxxx@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>输入以下命令，检查输入是否正确：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
-
-<p>确认无误后，输入以下命令，创建SSH：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>无脑下一步即可,此时在用户文件夹下，已经生成了.ssh文件夹，在本地找到这个文件夹。</p>
-<p><img src="https://s2.loli.net/2022/09/02/ZWifwTv9LH3ohkq.png" alt="9"></p>
-<p><code>id_rsa</code>是你这台电脑的私人秘钥，<code>id_rsa.pub</code>是公共秘钥。<br>把公钥放在GitHub上，当你连接自己的Github账号时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过Git上传你的文件到GitHub上。<br>在Github的设置中，找到<code>SSH and GPG keys</code>，新建SSH Key，以文本方式打开<code>id_rsa.pub</code>文件，将内容复制到Key，标题随便起，添加Key。</p>
-<p><img src="https://s2.loli.net/2022/09/02/tyk78woW5fNjxMB.png" alt="10"></p>
-<p><img src="https://s2.loli.net/2022/09/02/yOwjdV8YcNrsCl3.png" alt="11"></p>
-<h3 id="部署代码到Github"><a href="#部署代码到Github" class="headerlink" title="部署代码到Github"></a>部署代码到Github</h3><p>打开站点配置文件<code>_config.yml</code>，拉到最底部，找到deploy字段，按如下格式修改其内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:qqhsx/qqhsx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>其中repository字段可在Github获取：</p>
-<p><img src="https://s2.loli.net/2022/09/02/HYXNjdn7GVAcDL1.png" alt="12"></p>
-<p>回到Git Bash，安装deploy-git ，用于使用命令部署到Github。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>然后执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean	//可省略</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>出现下图所示说明部署成功，此时代码已同步至Github。</p>
-<p><img src="https://s2.loli.net/2022/09/02/8WosUtrcAlgNJiI.png" alt="13"></p>
-<p>打开网址<a href="http://yourname.github.io/">http://yourname.github.io</a>就可以看到Hexo博客了。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>Hexo文档中命令很多，但你并不需要记住每一个。在博客的使用过程中，主要的命令如下：</p>
-<p><code>init</code>用于新建网站</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>new</code>用于新建文章或页面</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>generate</code>用于生成静态页面</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo g	//简写</span><br></pre></td></tr></table></figure>
-
-<p><code>deploy</code>用于将内容部署到网站</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line">hexo -g</span><br></pre></td></tr></table></figure>
-
-<p><code>publish</code>用于将内容从drafts文件夹移动到posts文件夹</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>server</code>用于启动服务器进行预览，默认情况下，访问入口为<a href="http://localhost:4000/">http://localhost:4000/</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br><span class="line">hexo s	//简写</span><br></pre></td></tr></table></figure>
-
-<div class="note info"><p>实际上，除了第一次部署时，需要用到hexo init这个命令，平时写博客的过程中，最常用的就是：</p>
-<p><code>hexo n</code> 新建文章&#x2F;页面<br><code>hexo g</code> 生成静态页面<br><code>hexo s</code> 本地查看内容<br><code>hexo d</code> 部署到Github</p>
-<p>如果需要清除之前生成的内容，可以在生成静态页面前执行hexo clean，其他情况只需要以上四条命令即可。</p>
-</div>]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Test Image Insert</title>
     <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
     <content><![CDATA[<blockquote>
@@ -198,46 +75,25 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo-theme-next主题安装</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
-<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
+    <title>newpost</title>
+    <url>/newpost/</url>
+    <content><![CDATA[<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p><a href="https://qqhsx.github.io/">2023</a></p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
+</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
+</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
+</div></div></div>
 
-<ol start="2">
-<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
-</li>
-<li><p>next theme 配置文件路径</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
-</blockquote>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
-<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
-</li>
-<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
-</li>
-</ul>
-<blockquote>
-<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
-</blockquote>
+<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2022</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
+</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
+</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
+</div></div></div>
+
 ]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>next主题</tag>
-      </tags>
   </entry>
   <entry>
     <title>中国房价高歌猛涨时期</title>
@@ -338,6 +194,79 @@
       </tags>
   </entry>
   <entry>
+    <title>保障性住房</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E4%BF%9D%E9%9A%9C%E6%80%A7%E4%BD%8F%E6%88%BF/</url>
+    <content><![CDATA[<p>保障性住房是中国政府为了解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的一系列住房政策和项目。保障性住房主要包括以下几种类型：</p>
+<span id="more"></span>
+
+<h3 id="1-经济适用房"><a href="#1-经济适用房" class="headerlink" title="1. 经济适用房"></a>1. 经济适用房</h3><p>经济适用房是指政府提供政策支持、限定建设标准和销售价格，面向城镇中低收入家庭销售的普通商品住房。其主要目的是为了帮助中低收入家庭解决住房问题。以下是对经济适用房的详细描述：</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p><strong>价格相对较低</strong>：<br>经济适用房的售价通常低于同地段的商品房市场价格，因为政府对土地出让金、税费等方面给予了一定的优惠和减免。因此，经济适用房的价格相对较低，使得中低收入家庭能够负担得起。</p>
+<p><strong>建设标准不高</strong>：<br>经济适用房的建设标准相对普通商品房较低，主要体现在以下几个方面：</p>
+<ul>
+<li><strong>户型设计</strong>：经济适用房一般以小户型为主，面积较小，以满足基本居住需求。例如，一般经济适用房的建筑面积在60-90平方米左右。</li>
+<li><strong>建筑材料和装修</strong>：经济适用房的建筑材料和装修标准较为普通，不追求豪华和高档。通常采用经济实惠的材料，内部装修也较为简洁，满足基本生活需求即可。</li>
+<li><strong>配套设施</strong>：经济适用房的社区配套设施相对简单，可能不如普通商品房那样齐全，如高档小区的会所、游泳池等设施较少。</li>
+</ul>
+<p><strong>主要满足基本居住需求</strong>：<br>经济适用房的设计和建设旨在满足中低收入家庭的基本居住需求，提供一个安全、卫生、适宜居住的环境，而不追求奢华和高档配置。</p>
+<h3 id="申请条件"><a href="#申请条件" class="headerlink" title="申请条件"></a>申请条件</h3><p><strong>户籍要求</strong>：<br>申请者一般需要具备当地城镇户籍，即申请者必须是申请地的正式居民。</p>
+<p><strong>收入和资产标准</strong>：<br>家庭收入和资产需符合当地政府规定的中低收入标准。具体标准由各地政府根据当地经济发展水平和居民收入水平确定，一般要求家庭总收入在一定限额以下，家庭总资产不超过规定的上限。</p>
+<p><strong>住房情况</strong>：<br>申请者家庭无自有住房或现有住房面积低于规定的标准。例如，有些城市规定人均住房面积低于15平方米的家庭可以申请经济适用房。</p>
+<h3 id="购房方式"><a href="#购房方式" class="headerlink" title="购房方式"></a>购房方式</h3><p><strong>申请和审核</strong>：<br>符合条件的家庭需提交申请，经过相关部门的审核后，确定其购房资格。审核内容包括申请者的收入、资产、户籍、现有住房等情况。</p>
+<p><strong>购买价格</strong>：<br>通过审核的家庭可以以低于市场价的价格购买经济适用房。价格由政府根据建设成本和政策优惠确定，通常比同地段商品房市场价低20%-50%。</p>
+<p><strong>产权限制</strong>：<br>经济适用房的产权受限，一般在购买后一定年限内不能上市交易。各地的规定有所不同，通常是5年或更长时间。例如，北京市规定，经济适用房在购买满5年后，方可上市交易，但在交易时需向政府缴纳一定比例的土地收益金。</p>
+<h3 id="2-廉租房"><a href="#2-廉租房" class="headerlink" title="2. 廉租房"></a>2. 廉租房</h3><p><strong>廉租房</strong>是政府为城市低收入住房困难家庭提供的租金低廉的保障性住房。</p>
+<ul>
+<li><strong>特点</strong>：租金低廉，由政府或政府委托的单位管理和运营。</li>
+<li><strong>申请条件</strong>：主要面向城镇最低收入家庭，申请者需具备本地户籍，家庭收入和资产低于最低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
+<li><strong>租赁方式</strong>：通过申请和审核后，家庭可以以较低的租金租赁廉租房，租赁期限一般为1-3年，可续租。</li>
+</ul>
+<h3 id="3-公租房"><a href="#3-公租房" class="headerlink" title="3. 公租房"></a>3. 公租房</h3><p><strong>公租房</strong>是政府为解决中低收入家庭、新就业人员和外来务工人员住房困难问题而提供的租金较低的保障性住房。</p>
+<ul>
+<li><strong>特点</strong>：租金较低，面向更广泛的人群，包括中低收入家庭、新就业人员和外来务工人员。</li>
+<li><strong>申请条件</strong>：申请者需具备本地户籍或符合规定的外来务工人员，新就业人员需就业年限不超过一定年限（如5年），家庭收入和资产符合规定标准。</li>
+<li><strong>租赁方式</strong>：通过申请和审核后，家庭或个人可以以较低的租金租赁公租房，租赁期限一般为1-5年，可续租。</li>
+</ul>
+<h3 id="4-限价房"><a href="#4-限价房" class="headerlink" title="4. 限价房"></a>4. 限价房</h3><p><strong>限价房</strong>是政府限定销售价格、限定销售对象的普通商品住房，主要面向中低收入家庭。</p>
+<ul>
+<li><strong>特点</strong>：价格受政府限制，低于市场价，建设标准较高，接近普通商品房。</li>
+<li><strong>申请条件</strong>：申请者需具备本地户籍，家庭收入和资产符合中低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
+<li><strong>购房方式</strong>：符合条件的家庭通过申请和审核后，以低于市场价的价格购买限价房。</li>
+</ul>
+<h3 id="5-棚户区改造安置房"><a href="#5-棚户区改造安置房" class="headerlink" title="5. 棚户区改造安置房"></a>5. 棚户区改造安置房</h3><p><strong>棚户区改造安置房</strong>是政府为改善棚户区居民居住条件而建设的住房，用于安置被拆迁的棚户区居民。</p>
+<ul>
+<li><strong>特点</strong>：<br>棚户区改造安置房的建设标准较高，配套设施齐全，环境和居住条件显著优于原棚户区。<br>棚户区改造项目由政府主导，建设资金主要来源于政府财政和政策性贷款。</li>
+<li><strong>申请条件</strong>：主要面向棚户区改造中被拆迁的居民，提供的安置房面积和标准根据原有住房情况和相关政策规定。</li>
+<li><strong>安置方式</strong>：居民通过棚户区改造项目得到安置房，可以是产权安置或租赁安置。</li>
+</ul>
+<h3 id="保障性住房的意义"><a href="#保障性住房的意义" class="headerlink" title="保障性住房的意义"></a>保障性住房的意义</h3><p>保障性住房的推出和实施，对于改善中低收入家庭的住房条件，缓解城市住房供需矛盾，促进社会和谐稳定具有重要意义。具体体现在以下几个方面：</p>
+<ol>
+<li><strong>提高居住质量</strong>：通过保障性住房建设，改善中低收入家庭的居住条件，提高居民的生活质量。</li>
+<li><strong>缓解住房压力</strong>：保障性住房为中低收入家庭提供了经济负担较轻的住房选择，缓解了住房压力。</li>
+<li><strong>促进社会公平</strong>：保障性住房政策有助于缩小收入差距，促进社会公平正义。</li>
+<li><strong>推动城市发展</strong>：通过棚户区改造等项目，改善城市面貌，提升城市综合竞争力。</li>
+</ol>
+<h3 id="时间轴："><a href="#时间轴：" class="headerlink" title="时间轴："></a>时间轴：</h3><p>中国保障性住房的发展经历了从无到有、从单一到多层次的过程。以下是主要事件的时间轴：</p>
+<h3 id="1-1998年-房改启动"><a href="#1-1998年-房改启动" class="headerlink" title="1. 1998年 房改启动"></a>1. 1998年 房改启动</h3><p><strong>1998年</strong>，国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，全面停止住房实物分配，实行住房分配货币化。此时，保障性住房的概念开始萌芽，主要是通过经济适用房来解决中低收入家庭的住房问题。</p>
+<h3 id="2-2004年-廉租房制度建立"><a href="#2-2004年-廉租房制度建立" class="headerlink" title="2. 2004年 廉租房制度建立"></a>2. 2004年 廉租房制度建立</h3><p><strong>2004年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，正式建立廉租住房制度。廉租房主要面向最低收入家庭，提供低廉的租金，帮助最困难的家庭解决住房问题。</p>
+<h3 id="3-2007年-保障性住房体系逐步完善"><a href="#3-2007年-保障性住房体系逐步完善" class="headerlink" title="3. 2007年 保障性住房体系逐步完善"></a>3. 2007年 保障性住房体系逐步完善</h3><p><strong>2007年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，提出建立经济适用房、廉租房、公租房等多层次的保障性住房体系。同年，住房和城乡建设部发布《关于加快发展经济适用住房的通知》，进一步明确经济适用房的建设标准和供应方式。</p>
+<h3 id="4-2010年-公租房政策出台"><a href="#4-2010年-公租房政策出台" class="headerlink" title="4. 2010年 公租房政策出台"></a>4. 2010年 公租房政策出台</h3><p><strong>2010年</strong>，国务院发布《关于加快发展公共租赁住房的指导意见》，明确提出发展公共租赁住房，解决中低收入家庭、新就业人员和外来务工人员的住房困难。公租房租金较低，面向更广泛的人群。</p>
+<h3 id="5-2011年-限价房政策推进"><a href="#5-2011年-限价房政策推进" class="headerlink" title="5. 2011年 限价房政策推进"></a>5. 2011年 限价房政策推进</h3><p><strong>2011年</strong>，北京市等地开始推广限价商品房政策，政府限定房价和销售对象，面向中低收入家庭销售。这些限价房价格低于市场价，旨在解决中低收入家庭的购房需求。</p>
+<h3 id="6-2013年-棚户区改造大规模推进"><a href="#6-2013年-棚户区改造大规模推进" class="headerlink" title="6. 2013年 棚户区改造大规模推进"></a>6. 2013年 棚户区改造大规模推进</h3><p><strong>2013年</strong>，国务院发布《关于加快棚户区改造工作的意见》，提出在全国范围内加快棚户区改造步伐，改善棚户区居民的居住条件。棚户区改造安置房逐步成为保障性住房的重要组成部分。</p>
+<h3 id="7-2015年-保障性住房建设力度加大"><a href="#7-2015年-保障性住房建设力度加大" class="headerlink" title="7. 2015年 保障性住房建设力度加大"></a>7. 2015年 保障性住房建设力度加大</h3><p><strong>2015年</strong>，在“十三五”规划中，国家提出要大力发展保障性住房，加大棚户区改造力度，确保每个家庭住有所居。各地纷纷加大保障性住房的建设力度。</p>
+<h3 id="8-2017年-长租公寓政策出台"><a href="#8-2017年-长租公寓政策出台" class="headerlink" title="8. 2017年 长租公寓政策出台"></a>8. 2017年 长租公寓政策出台</h3><p><strong>2017年</strong>，国务院办公厅发布《关于加快培育和发展住房租赁市场的若干意见》，提出要大力发展住房租赁市场，鼓励发展长租公寓。长租公寓成为解决新市民和青年人的住房问题的重要方式。</p>
+<h3 id="9-2020年-租购并举政策深化"><a href="#9-2020年-租购并举政策深化" class="headerlink" title="9. 2020年 租购并举政策深化"></a>9. 2020年 租购并举政策深化</h3><p><strong>2020年</strong>，中央经济工作会议提出要坚持“房住不炒”，深化租购并举的住房制度，进一步加大保障性住房的供应。政府开始探索更多形式的保障性住房，如共有产权房等，以满足不同层次的住房需求。</p>
+<h3 id="10-2022年-全面推进保障性租赁住房建设"><a href="#10-2022年-全面推进保障性租赁住房建设" class="headerlink" title="10. 2022年 全面推进保障性租赁住房建设"></a>10. 2022年 全面推进保障性租赁住房建设</h3><p><strong>2022年</strong>，国务院发布《关于进一步做好保障性租赁住房工作的意见》，明确提出要加大保障性租赁住房建设力度，缓解大城市住房供需矛盾，特别是新市民和青年人的住房困难问题。</p>
+<p>这些事件体现了中国政府在不同阶段对保障性住房的重视和推进，为改善中低收入家庭的居住条件、促进社会和谐稳定作出了重要贡献。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>保障性住房是中国政府为解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的重要政策措施。通过经济适用房、廉租房、公租房、限价房和棚户区改造安置房等多种形式，保障性住房有效地改善了中低收入家庭的居住条件，促进了社会和谐稳定和城市健康发展。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>保障性住房</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>房地产市场化</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E6%88%BF%E5%9C%B0%E4%BA%A7%E5%B8%82%E5%9C%BA%E5%8C%96/</url>
     <content><![CDATA[<blockquote>
@@ -350,12 +279,8 @@
 <h3 id="3-房地产融资多样化"><a href="#3-房地产融资多样化" class="headerlink" title="3. 房地产融资多样化"></a>3. 房地产融资多样化</h3><p>以前，房地产开发和购买主要依靠政府资金。市场化之后，银行、投资公司等金融机构可以提供贷款，个人也可以通过按揭贷款购买房屋。这使得房地产开发和购买变得更加方便。</p>
 <h3 id="4-政府的角色转变"><a href="#4-政府的角色转变" class="headerlink" title="4. 政府的角色转变"></a>4. 政府的角色转变</h3><p>在计划经济体制下，政府是房地产的唯一供应者和价格制定者。市场化之后，政府主要负责制定和执行法律法规，维护市场秩序，确保公平竞争。同时，政府还通过税收、信贷等手段调控房地产市场，防止房价过高或过低。</p>
 <h3 id="5-二手房市场的发展"><a href="#5-二手房市场的发展" class="headerlink" title="5. 二手房市场的发展"></a>5. 二手房市场的发展</h3><p>市场化之前，房屋不能自由买卖。市场化之后，房主可以将房屋出售给其他人，二手房市场迅速发展。这给购房者提供了更多选择，也使得房屋资源得到了更有效的利用。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>房地产市场化使得房价由市场供需决定，私人和企业可以参与开发，融资渠道多样化，政府的角色从供应者变为监管者，二手房市场得以发展。这样一来，房地产行业变得更加灵活、多样，也更能适应社会经济的发展需求。</p>
 <h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>比如，在市场化之前，城市里的大部分住房是由政府分配的，职工住的都是单位分配的宿舍，房子的质量和数量都很有限。市场化之后，开发商建了很多商品房，市民可以自由购买、租赁，住房条件得到了极大改善，城市面貌也焕然一新。</p>
-<hr>
-<blockquote>
-<p>中国房地产从计划经济体制向市场经济体制的转变经历了一个渐进的过程，主要节点如下：</p>
-</blockquote>
+<h3 id="时间轴："><a href="#时间轴：" class="headerlink" title="时间轴："></a>时间轴：</h3><p>中国房地产从计划经济体制向市场经济体制的转变经历了一个渐进的过程，主要节点如下：</p>
 <h3 id="计划经济体制时期"><a href="#计划经济体制时期" class="headerlink" title="计划经济体制时期"></a>计划经济体制时期</h3><p><strong>1949年-1978年</strong>：在这个时期，中国的房地产完全处于计划经济体制下。住房由政府和国有单位统一建设和分配，个人没有购买和出售房产的自由，房价由政府统一制定。</p>
 <h3 id="转向市场经济体制的关键节点"><a href="#转向市场经济体制的关键节点" class="headerlink" title="转向市场经济体制的关键节点"></a>转向市场经济体制的关键节点</h3><ol>
 <li><p><strong>1978年 改革开放开始</strong>：改革开放政策启动，标志着中国经济开始从计划经济向市场经济转变。房地产市场化进程也在这时开始萌芽。</p>
@@ -387,6 +312,7 @@
 </li>
 </ol>
 <p>这些改革和政策调整为中国房地产市场的发展奠定了基础，使其逐步走向市场化。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>房地产市场化使得房价由市场供需决定，私人和企业可以参与开发，融资渠道多样化，政府的角色从供应者变为监管者，二手房市场得以发展。这样一来，房地产行业变得更加灵活、多样，也更能适应社会经济的发展需求。</p>
 ]]></content>
       <categories>
         <category>经济</category>
@@ -521,6 +447,230 @@
       </categories>
       <tags>
         <tag>通货紧缩</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客搭建与部署</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
+<h2 id="搭建环境准备"><a href="#搭建环境准备" class="headerlink" title="搭建环境准备"></a>搭建环境准备</h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><span id="more"></span>
+
+<p>Git是一个先进的分布式版本控制工具，可以有效处理不同规模的项目版本管理。这里用于管理你的Hexo文章，将本地的博客上传至Github。到Git官网选择合适的版本<a href="https://gitforwindows.org/">下载</a>，安装后会有一个Git Bash的命令行工具，之后用该工具操作Git。</p>
+<p><img src="https://s2.loli.net/2022/09/02/yERzbHxNWFDkGYj.png" alt="1"></p>
+<p>检查是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/09/02/Ig54dwxlKL7iNW2.png" alt="2"></p>
+<p>正常显示版本号，无报错即为安装成功。<br>另外，Windows环境下在Git安装完成后，可以使用Git Bash来进行后续命令行操作。</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Hexo基于Node.js，所以需要安装Node.js及npm工具。可进入Node.js中文网<a href="http://nodejs.cn/download/">下载</a>，选择LTS（长期支持版本）即可。<br>检查是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/09/02/y6HEt7ubvYxj4De.png" alt="3"></p>
+<p>正常显示版本号，无报错即为安装成功。</p>
+<h2 id="博客本地搭建"><a href="#博客本地搭建" class="headerlink" title="博客本地搭建"></a>博客本地搭建</h2><h3 id="安装Hexo框架"><a href="#安装Hexo框架" class="headerlink" title="安装Hexo框架"></a>安装Hexo框架</h3><p>右键打开Git Bash，输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/09/02/OXSGPjcFAWuTL1w.png" alt="4"></p>
+<p>正常显示版本号，无报错即为安装成功。</p>
+<h3 id="初始化博客进入文件夹，安装一下npm"><a href="#初始化博客进入文件夹，安装一下npm" class="headerlink" title="初始化博客进入文件夹，安装一下npm"></a>初始化博客进入文件夹，安装一下npm</h3><p>运行Git Bash执行以下命令：</p>
+<p>命令为在当前位置新建一个文件夹作为博客的目录，例如这里我将博客目录设置为myblog，并设置myblog为当前目录后安装npm</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="博客目录介绍"><a href="#博客目录介绍" class="headerlink" title="博客目录介绍"></a>博客目录介绍</h3><p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<p><code>_config.yml</code> 网站的配置信息，可以在此配置大部分的参数。<br><code> package.json</code> 应用程序的信息，新添加的插件内容也会显示在这里，可以不做修改。<br><code>scaffolds</code> 模板文件夹，新建文章时，Hexo会根据scaffolds来建立文件。Hexo的模板是指在新建的Markdown文件中默认填充的内容，我们可以在模板上添加自定义内容，比如categories，tags等。<br><code>source</code> 存放用户资源的地方，也就是我们的博客内容。初始设置两个文件夹，posts（文章）和drafts（草稿）。之后通过命令新建页面后，文件夹数量会增加。<br><code>themes</code> 主题文件夹，用于存放主题文件包，Hexo会根据主题内容生成静态页面，默认主题为landscape，可根据个人喜好进行更改。</p>
+<h3 id="博客本地效果"><a href="#博客本地效果" class="headerlink" title="博客本地效果"></a>博客本地效果</h3><p>Git Bash执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>启动hexo服务，访问<a href="http://localhost:4000/">http://localhost:4000</a>即可看到生成的博客页面。使用Ctrl+C可关闭本地服务。</p>
+<p><img src="https://s2.loli.net/2022/09/02/vsMUKSwT3D9B1kt.png" alt="5"></p>
+<h2 id="博客Github部署"><a href="#博客Github部署" class="headerlink" title="博客Github部署"></a>博客Github部署</h2><h3 id="创建个人仓库"><a href="#创建个人仓库" class="headerlink" title="创建个人仓库"></a>创建个人仓库</h3><p>这里需要Github账号，如果没有可以去<a href="https://github.com/join">注册</a>一个。</p>
+<p><img src="https://s2.loli.net/2022/09/02/EdzSKevZrViq3UY.png" alt="6"></p>
+<p><a href="https://github.com/login">登录</a>Github，新建一个仓库，命名格式为：用户名.github.io。比如，我的用户名是qqhsx，我的仓库名为qqhsx.github.io。注意这里必须按此格式命名，只有这样，之后部署到GitHub pages的时候，才会被识别。</p>
+<p><img src="https://s2.loli.net/2022/09/02/zVEjxBYukKmqD9e.png" alt="7"></p>
+<p><img src="https://s2.loli.net/2022/09/02/rplmdP6XA3LBuqJ.png" alt="8"></p>
+<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>打开Git Bash，输入以下命令，生成本地密钥。这里用户名和邮箱仅作演示，用户名为你Github的用户名，邮箱为你Github的邮箱。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxxxxx@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>输入以下命令，检查输入是否正确：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+
+<p>确认无误后，输入以下命令，创建SSH：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>无脑下一步即可,此时在用户文件夹下，已经生成了.ssh文件夹，在本地找到这个文件夹。</p>
+<p><img src="https://s2.loli.net/2022/09/02/ZWifwTv9LH3ohkq.png" alt="9"></p>
+<p><code>id_rsa</code>是你这台电脑的私人秘钥，<code>id_rsa.pub</code>是公共秘钥。<br>把公钥放在GitHub上，当你连接自己的Github账号时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过Git上传你的文件到GitHub上。<br>在Github的设置中，找到<code>SSH and GPG keys</code>，新建SSH Key，以文本方式打开<code>id_rsa.pub</code>文件，将内容复制到Key，标题随便起，添加Key。</p>
+<p><img src="https://s2.loli.net/2022/09/02/tyk78woW5fNjxMB.png" alt="10"></p>
+<p><img src="https://s2.loli.net/2022/09/02/yOwjdV8YcNrsCl3.png" alt="11"></p>
+<h3 id="部署代码到Github"><a href="#部署代码到Github" class="headerlink" title="部署代码到Github"></a>部署代码到Github</h3><p>打开站点配置文件<code>_config.yml</code>，拉到最底部，找到deploy字段，按如下格式修改其内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:qqhsx/qqhsx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>其中repository字段可在Github获取：</p>
+<p><img src="https://s2.loli.net/2022/09/02/HYXNjdn7GVAcDL1.png" alt="12"></p>
+<p>回到Git Bash，安装deploy-git ，用于使用命令部署到Github。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>然后执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean	//可省略</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>出现下图所示说明部署成功，此时代码已同步至Github。</p>
+<p><img src="https://s2.loli.net/2022/09/02/8WosUtrcAlgNJiI.png" alt="13"></p>
+<p>打开网址<a href="http://yourname.github.io/">http://yourname.github.io</a>就可以看到Hexo博客了。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>Hexo文档中命令很多，但你并不需要记住每一个。在博客的使用过程中，主要的命令如下：</p>
+<p><code>init</code>用于新建网站</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>new</code>用于新建文章或页面</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>generate</code>用于生成静态页面</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo g	//简写</span><br></pre></td></tr></table></figure>
+
+<p><code>deploy</code>用于将内容部署到网站</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line">hexo -g</span><br></pre></td></tr></table></figure>
+
+<p><code>publish</code>用于将内容从drafts文件夹移动到posts文件夹</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>server</code>用于启动服务器进行预览，默认情况下，访问入口为<a href="http://localhost:4000/">http://localhost:4000/</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br><span class="line">hexo s	//简写</span><br></pre></td></tr></table></figure>
+
+<div class="note info"><p>实际上，除了第一次部署时，需要用到hexo init这个命令，平时写博客的过程中，最常用的就是：</p>
+<p><code>hexo n</code> 新建文章&#x2F;页面<br><code>hexo g</code> 生成静态页面<br><code>hexo s</code> 本地查看内容<br><code>hexo d</code> 部署到Github</p>
+<p>如果需要清除之前生成的内容，可以在生成静态页面前执行hexo clean，其他情况只需要以上四条命令即可。</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo-theme-next主题安装</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
+<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<ol start="2">
+<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
+</li>
+<li><p>next theme 配置文件路径</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
+</blockquote>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
+<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
+</li>
+<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
+</li>
+</ul>
+<blockquote>
+<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>next主题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>盘古开天辟地</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E7%9B%98%E5%8F%A4%E5%BC%80%E5%A4%A9%E8%BE%9F%E5%9C%B0/</url>
+    <content><![CDATA[<p>盘古开天辟地的传说在我国流传广泛。它以浅近质朴的方式表达了华夏先民对自己民族创世历史的深邃认识。在这个传说中，盘古是开启这个世界的始祖。</p>
+<span id="more"></span>
+
+<p>在遥远的上古时期，没有所谓的天，也没有所谓的地，天地混沌一体，就像一个鸡蛋，连个窟窿都没有，谁也说不清那是什么，于是人们就暂且用帝江来称呼它。混混沌沌的帝江有两个好友：一个叫倏，一个叫忽。</p>
+<p>倏和忽见帝江如此混沌，就和它商量，想帮它凿通七窍，让它的气息可以出入，帝江欣然同意。于是，倏和忽开始了工作，他们每天为帝江凿通一窍，七天后，七窍通了，可帝江却也因此一命呜呼了。</p>
+<p>帝江死后，它的肚子里的精髓孕育成了一股气。一万八千年后，这股气幻化成人形——他就是盘古。</p>
+<p>盘古在帝江的肚子里不知睡了多久，猛然醒来，睁开眼睛，发现眼前一片黑暗。他想要走出这无处不在的黑暗，可是腿一动就被东西挡住，胳膊一伸就碰到阻碍，原来自己被这黑暗紧紧地包裹住了。难道自己必须在这黑暗的包围下蜷缩地活着？想到这些他的心中顿时燃起了怒火，他从自己的嘴中拔下一颗牙，把它变成了威力无比的神斧，他抡起神斧朝眼前的混沌用力挥去。突然传来一阵山崩一样的巨响，黑暗混沌出现了一个裂口，接着，那些轻盈清澈的气体冉冉升起，成了天，另外那些沉重污浊的东西就缓缓下沉，铺成了地。从此宇宙结束了混沌不分的状态，有了天和地。盘古站在中间只觉得身心舒畅。</p>
+<p>盘古站立起来，天就接着升高，地也继续下沉。天地还有些相连的地方，他就一手拿着凿子，一手拿着斧头，对那些东西连劈带凿，终于让天地完全分开。他怕天地会再次合拢，就头顶天，脚踏地，支撑在天地之间。他施展法力，使身体每天增高一丈，随着他的增高，天也跟着升高一丈，地也随着加厚一丈。就这样，又过了一万八千年，天已经高得遥不可及，地也厚得不能再厚了，盘古变成了一个顶天立地的巨人。这个巨人有多高呢？据说他的身长达到了九万里。这么高大的柱子支撑着天地，使它们终于无法再合并到一起。</p>
+<p>可是这位开天辟地的巨人支撑了这么久，已经筋疲力尽了。他疲惫地张开眼，欣赏着自己开辟的新天地，叹息了一声，就慢慢地倒在了地上，带着微笑永久地闭上了眼睛。</p>
+<p>他巨大的身体横亘在地上，头幻化成东岳泰山，脚幻化成西岳华山，左臂幻化成南岳衡山，右臂幻化成北岳恒山，而腹部就幻化成了中岳嵩山；他呼出的最后一口气，变成了风和空中的云雾，他的那声叹息就变成了雷鸣，他的左眼变成了普照大地的太阳，右眼变成了照亮黑夜的月亮，浓密的头发变成了点点的繁星，奔流的血液变成了江河湖海，肌肉变成孕育万物的沃土，骨骼变成了花草树木，筋脉变成了条条道路，牙齿和骨骼变成了玉石和金属；就连他身上留下的汗水都变成了甘霖雨露，滋润万物。</p>
+<p>伟大的英雄盘古，不但给人类开辟了天地，还用自己的躯体将大千世界装饰得生机勃勃。</p>
+<p>当然，这只是神话，人们不会真的认为是盘古创造了天地万物。考古学家通过科考，已经发现了元谋人、北京人、山顶洞人等史前人类的遗址，进一步揭开了人类起源进化之谜。但是，在没有文字的情况下，这些神话传说只靠口耳相传就可以流传后世，不正表明人类对生命的热爱，对美好的追求是生生不息的吗？盘古代表的是一种精神，他为人类生存的世界拼尽了全力，献出了所有，这种献身精神成为历代仁人志士追求的最高境界。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>远古时代</category>
+      </categories>
+      <tags>
+        <tag>盘古开天辟地</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>女娲传说</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E5%A5%B3%E5%A8%B2%E4%BC%A0%E8%AF%B4/</url>
+    <content><![CDATA[<p>在中国的上古神话中，女娲是继盘古之后另外一位创世之神。因为她，世间才有了人类，她是长久以来受广大的民间百姓们崇拜的创世神和始祖神。</p>
+<span id="more"></span>
+
+<p>盘古开天辟地之后，终于累倒了，身体也化作了世间万物，从此天地间有了日月星辰，有了花草树木，后来天地间残留的一股浊气吸收日月精华，化作了虫鱼鸟兽，从而使这寂静美丽的世界有了一丝生气。</p>
+<p>有一个神通广大的女神四处游历，后来来到盘古开辟的天地里，她就是女娲。女娲在草丰木茂的原野上行走着，举目四望，发现山峦连绵起伏，江河奔流不息，草木枝繁叶茂，鸟儿婉转歌唱，走兽成群结伴，鱼儿水中畅游，这个世界真是太美好了。于是，她决定留下来。</p>
+<p>日复一日，她享受着自然的美景，可是虽然有鸟兽虫鱼跟自己作伴，女娲渐渐产生了寂寞孤独的感觉。她总觉得缺少点什么，但又说不出到底是缺什么，只能任这种寂寥的感觉与日俱增。</p>
+<p>一天，她走在草木茂盛的原野上，飞鸟、走兽、游鱼再也不能让她高兴起来。她无精打采地沿着一条河流前行，觉得很累，就在河岸的一块石头上坐了下来。清澈的河水照出了她的影子，她看到了水中闷闷不乐的自己。于是她嘴角露出微笑，影子也笑了；她皱起眉头，影子也皱起眉头，这让她觉得非常有趣。突然间，她一下子明白了自己为什么会感到寂寞，因为世间没有跟她一样的生物，那些山川草木、虫鱼鸟兽怎么会可能与她心灵相通？</p>
+<p>她想，既然如此，何不按照自己的样子创造一些生物，让世界热闹起来呢？有了主意，她马上动起手来，在河边抓起一团黄泥，对着水中的影子又是捏又是揉，很快一个小泥人就做好了。女娲把小泥人托在手里，放到嘴前轻轻地吹一口气。小泥人有了气息竟活动起来，放到地面上后就到处走动，还一个劲儿地喊着：“妈妈！妈妈……”女娲真是太高兴了，赶紧动手捏第二个，并吹了一口气，第二个也活了，她又捏第三个，第四个……泥人越捏越多，后来女娲就把他们通通放在地上冲着他们吹了一口气，泥人们活了。他们有喜怒哀乐，而且能够说话，跟那些草木鸟兽完全不同。女娲再也不觉得寂寞了，她称呼这些活了的泥人为“人”。人们开始时在女娲的周围活动着，渐渐地很多都走远了，分散到各处。</p>
+<p>有了人，世界变得无比充实，女娲非常高兴，她继续一刻不停地接着捏泥人。可是大地如此辽阔，人们很快就消散于各地，女娲也感到越来越累了。她想，这样下去，世间的人还不够多时，她已经累得不行了。于是，她顺手从山崖上扯下一条藤蔓，伸进泥潭里抽打起来，溅起了很多混黄的泥点儿，泥点儿落地后也变成了活蹦乱跳的小人儿。她每抽打一下，就会产生很多人，而且和之前捏成的小人没什么两样，这样造人就快多了。于是，女娲高兴地使劲抽打起来，泥点子落得到处都是。等女娲停下来时，大地上已经有足够多的人了。</p>
+<p>一天，她想看看各处的人类，来到一个地方，发现有些人躺在地上一动不动，十分奇怪，仔细一看才发现这些小人都已经满头白发，老态龙钟了。原来他们年纪太大，已经死了。女娲就想，人们都会老去、死去，这样下去，总有一天人会死光的，难道到时候还要再重新创造吗？这也太麻烦了！女娲想，最好的办法是让人类自己繁衍生息，这样他们就可以绵延不绝了。</p>
+<p>于是，她就让这些人具有不同的身体特征，从而区分出男女，并让男人和女人结合，生出后代。为了不让这种结合使人类陷入混乱，她又建立了婚姻制度，从此人类靠自己就可以不断发展壮大了，所以女娲又被称为“婚姻女神”或“神媒”。</p>
+<p>人类可以靠自己繁衍生息了，他们一代一代地在大地上幸福地生活着。可是没过多久，他们就遇到了一次毁灭性地灾难。原来，水神共工和火神祝融争夺帝位，结果共工被打败了。共工一气之下，就用头去撞不周之山。这座擎天的大柱在一声巨响之后，便轰然倒塌，紧接着天向西北倾斜，地往东南塌陷，海水灌进了陆地，洪灾泛滥。因为剧烈的震荡，地上裂开很多大豁口，一个劲儿地往外喷火，山林里野兽也都受到触动，纷纷窜出来，见人便咬。很多人不是被水淹死，就是被火烧死，要么就是被野兽咬死。</p>
+<p>看着自己的子孙处在水深火热之中，女娲痛心不已，决定拯救人类。她周游四海走遍群山，走到东海的天台山，发现那里有可以炼石用的五色土，便决定在那里炼石补天。她在天台山顶堆起巨石当炉子，借来太阳神火，将五色土放入炉中，经过九天九夜终于炼就了五色巨石。然后她又花了九天九夜，用这些五彩的巨石把天补好。天好不容易被补好了，为了不让它再塌下来，她就斩下了一只万年神龟的四足支撑四极。终于，天地归位，洪水入渠，大火也熄灭了，人间又恢复了平静。不但如此，从此以后，每当雨过天晴，天边就会出现五色云霞，天空比以前更美了。人们摆脱了灾难，各个欢呼雀跃。</p>
+<p>女娲是中华民族伟大的母亲，她不仅按照自己的模样创造了人，建立了让人类可以繁衍的婚姻制度，使人们结成人类社会；当人类受到天灾的威胁时，还勇敢地保护我们。为了对这位伟大的母亲表示感谢，人们在天台山下建了女娲庙，世代朝拜，香火从不曾断过。</p>
+<p>关于女娲的传说，虽然是神话，但绝不是凭空捏造的，它是早期人类社会生活的写照。众所周知，早期人类缔结了以血缘为基础的母系氏族社会时期，女性在生产生活中居于主导地位，子女只识其母，不知其父，而女娲的传说正是母系社会这一历史时期的反映。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>远古时代</category>
+      </categories>
+      <tags>
+        <tag>女娲传说</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大禹治水</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E5%A4%8F%E6%9C%9D/%E5%A4%A7%E7%A6%B9%E6%B2%BB%E6%B0%B4/</url>
+    <content><![CDATA[<p>据说尧舜时代正值冰河时代后期，气候转暖，冰雪消融，致使海平面迅速升高，海水倒灌；古黄河改道从苏北平原入海，淮河淤积，汹涌的洪水淹没了淮、泗流域，沧海横流，洪水泛滥，泰山以西到沂蒙以南至苏北地区成了一片汪洋，天地万物在滔天的洪水中沉沉浮浮。对于当时的情景，《尚书·尧典》中这样描写：“汤汤洪水方割，荡荡怀山襄陵，浩浩滔天。”</p>
+<span id="more"></span>
+
+<p>农田被淹没，房子被摧毁，人民流离失所，无家可归，为了免于沦没，只能以木为舟，朝高山土丘上搬。这样一来，正常的生产生活无法进行，只能在洪荒的孤岛中望水兴叹。</p>
+<p>尧召开部落联盟会议，请各部落首领来共商治洪良策。各部落首领都推荐鲧去治理水患。鲧史称崇伯，是尧帝的臣子，禹的父亲。尧觉得鲧脾气暴躁，并不适合去治水，可是当时也没有别的更合适的人选，治理水患又是当务之急，于是尧决定姑且让鲧去试试。</p>
+<p>鲧治理水患主要采用的是堵塞的方法，他用土筑起高高的堤坝，把水围起来，不让它到处流。可是洪水来势凶猛，不管那堤坝多高，都被汹涌的洪水冲垮，洪水还是会泛滥，鲧就东堵西补，疲于奔命。因此，鲧治水九年，用去不少人力物力，可是洪水并没止歇。鲧一气之下就盗取了天帝的宝物“息壤”，这是一块可以自生自长，要多少有多少的宝土。鲧把息壤投入洪水，想让生长不息的土掩埋洪水，没想到洪水泛滥得更加厉害了。</p>
+<p>鲧犯下滔天大罪，天帝震怒，命令火神将他处死在了羽山之野。</p>
+<p>当时的人类在治理洪灾方面，还处于摸索阶段，经验不足，总会有些曲折。鲧虽然未能取得治水的成功，但其在治水方法上的失误，为后继者提供了宝贵的经验教训，指明了方向。后来尧让位于舜，舜亲自去视察水患。此时，鲧的儿子禹已长大成人，舜见他器宇轩昂，认为他必会有一番作为，于是命禹继续他父亲没完成的事业，去治理水患，并把后稷、伯益、皋陶等人派去给他当助手。</p>
+<p>禹感伤于父亲“功之不成受诛”，因此殚精竭虑，发誓一定要把水患治好。他非常聪明，还能吃苦耐劳，领命之后，就带着伯益、皋陶和其他众人去勘察地势水情，寻找以前治水失败的原因。他带着众人跋山涉水，朝上去追溯黄河的源头，对黄河的上游、下游做了一次整体的考察。在这次考察中，他发现黄河除了主干河道，还有很多分支流向了别处。在值得注意的地方，他把石头堆积起来，或是砍倒树木作为记号，以便治水时可以参考。当时，气候恶劣，他们随身携带的工具也非常落后，这次考察非常艰辛而惊险。据说，有一次，他们正在勘察一条河道，突然间电闪雷鸣，狂风暴雨顷刻而至，山洪爆发，咆哮的洪水淹没、卷走了他们很多同伴。</p>
+<p>考察完毕，大禹对水情作了认真的研究，认为父亲“堵”的方法是行不通的，洪水凶猛，无路可走势必会冲垮堤坝，因此他决定弃“堵”用“疏”的方法：把黄河的主干河道加深加宽，可以让更多的水畅通无阻，然后将支流流向主流的河道疏通，让水可以顺畅地和主流汇合；然后，还要加高原来的堤岸，并清除低地里的淤积，这样陆地和湖泊就可以清楚地分开了。同时，还要将这些大小湖泽和各个支流的河道疏通，这样一来，一旦水位上升，就会顺着各个河道汇入主流，流向大海了。</p>
+<p>想好了治水的方法，禹便亲自率领助手和众百姓，带着简陋的石斧、石刀、石铲、木耒等工具，开始他们治水的征途。禹事事身先士卒，在他的领导下，众百姓一心一意，决心不降服水患誓不罢休。他们风餐露宿，粗衣淡饭，风雨无阻地在群山间穿越跋涉，尽管每天辛苦地劳作，直不起腰来，腿也肿了，可是从来不敢懈怠。</p>
+<p>一次，他们来到了河南洛阳南郊的一座高山，那是秦岭山脉的余脉，从东向西一直延续到中岳嵩山，它巍峨陡峭，就好像天成的一道高大屏风。这座山的中段有一条九曲回环，又很狭窄的天然水路，水量小的时候，就会从山间形成涓涓细流，轻轻流过。但是，山洪暴发时，水就会咆哮着冲刷着狭窄的水道，拍打石岸，时刻可能溢出，危害着周围百姓的安全。大禹便决定集中将这条水道拓宽、凿深、打直。坚硬的山石磨坏了他们的工具，而且山上地势险恶，人们不是被掉下来的石头砸伤，就是跌落山下，还有的被洪水冲走。可是他们仍旧毫不退缩，坚持在大山中开道。在他们不懈的努力下，终于在大山中间凿出了一条宽阔的水道，形成两壁对峙之势，山洪可以顺畅地向下游奔涌而去，再也不会对周围百姓构成威胁。</p>
+<p>《庄子》以极其虔敬的心情记述了禹的丰功伟绩，颂扬了他坚忍不拔的意志，记述禹亲自操橐耜而“九杂天下之川，腓无胈，胫无毛，沐甚雨，栉疾风，置万国。禹，大圣也，而形劳天下也如此”。意思是说禹为了制服水患，不辞劳苦，亲自拿着工具，带领众人兴利除害，同人民一起风里来雨里去，奋斗在治水的最前面。艰辛的劳作使得他形容憔悴，大腿瘦得没什么肉了，小腿上的汗毛也都磨光了。禹就是这样一位含辛茹苦，解救苍生的圣人。因为长期在外治水，禹无暇顾及妻子和家庭。据说，他才刚刚新婚第四天，就出发去治水了，这一去就是十年，中间曾三过家门而不入，他这种舍家为国，公而忘私的精神至今被人传颂。</p>
+<p>十年间，他们翻越了一座又一座大山，疏通了一条又一条河渠，足迹踏遍了九州。在他艰苦卓绝的努力下，治水进展神速，“淮沂其治，蒙羽其艺”（《史记·夏本纪》）之地，也就是淮河和沂水流过的蒙山和羽山之间，古黄淮容易泛滥的河道得到疏通，拥堵在山间的洪水被引入大海。同时，低洼的地方留下了微山、东平、钜野、骆马等“四渎”，为百姓种田提供了有利的水源。地面上现出了许多良田和桑土，百姓又可以种庄稼，重新过上了安居乐业的生活。</p>
+<p>面对滔滔洪水，大禹率领民众，顽强地与之斗争，最终运用聪明才智，通过坚忍不拔的努力，制服了水患。这个传说体现了中华民族勤劳勇敢、坚毅不屈、公而忘私、万众一心战胜困难的民族精神。</p>
+<p>禹在治理水患的过程中，对中原各地的土地物产也有了了解，水患平息后，就划分了青、兖、徐、扬、梁、豫、冀、荆、雍等行政区域，规定了各地的贡品赋税。这样一来，就真正形成了天下归一的大好局面。</p>
+<p>后代称颂禹治水的功绩，尊称他为“大禹”。舜年老以后，也像尧一样开部落联盟会议，物色继承人。禹治水有功，深得民心，大家都推选禹，于是舜就把联盟首领之职禅让给了禹。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>夏朝</category>
+      </categories>
+      <tags>
+        <tag>大禹治</tag>
       </tags>
   </entry>
   <entry>
@@ -814,35 +964,6 @@
       </tags>
   </entry>
   <entry>
-    <title>大禹治水</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E5%A4%8F%E6%9C%9D/%E5%A4%A7%E7%A6%B9%E6%B2%BB%E6%B0%B4/</url>
-    <content><![CDATA[<p>据说尧舜时代正值冰河时代后期，气候转暖，冰雪消融，致使海平面迅速升高，海水倒灌；古黄河改道从苏北平原入海，淮河淤积，汹涌的洪水淹没了淮、泗流域，沧海横流，洪水泛滥，泰山以西到沂蒙以南至苏北地区成了一片汪洋，天地万物在滔天的洪水中沉沉浮浮。对于当时的情景，《尚书·尧典》中这样描写：“汤汤洪水方割，荡荡怀山襄陵，浩浩滔天。”</p>
-<span id="more"></span>
-
-<p>农田被淹没，房子被摧毁，人民流离失所，无家可归，为了免于沦没，只能以木为舟，朝高山土丘上搬。这样一来，正常的生产生活无法进行，只能在洪荒的孤岛中望水兴叹。</p>
-<p>尧召开部落联盟会议，请各部落首领来共商治洪良策。各部落首领都推荐鲧去治理水患。鲧史称崇伯，是尧帝的臣子，禹的父亲。尧觉得鲧脾气暴躁，并不适合去治水，可是当时也没有别的更合适的人选，治理水患又是当务之急，于是尧决定姑且让鲧去试试。</p>
-<p>鲧治理水患主要采用的是堵塞的方法，他用土筑起高高的堤坝，把水围起来，不让它到处流。可是洪水来势凶猛，不管那堤坝多高，都被汹涌的洪水冲垮，洪水还是会泛滥，鲧就东堵西补，疲于奔命。因此，鲧治水九年，用去不少人力物力，可是洪水并没止歇。鲧一气之下就盗取了天帝的宝物“息壤”，这是一块可以自生自长，要多少有多少的宝土。鲧把息壤投入洪水，想让生长不息的土掩埋洪水，没想到洪水泛滥得更加厉害了。</p>
-<p>鲧犯下滔天大罪，天帝震怒，命令火神将他处死在了羽山之野。</p>
-<p>当时的人类在治理洪灾方面，还处于摸索阶段，经验不足，总会有些曲折。鲧虽然未能取得治水的成功，但其在治水方法上的失误，为后继者提供了宝贵的经验教训，指明了方向。后来尧让位于舜，舜亲自去视察水患。此时，鲧的儿子禹已长大成人，舜见他器宇轩昂，认为他必会有一番作为，于是命禹继续他父亲没完成的事业，去治理水患，并把后稷、伯益、皋陶等人派去给他当助手。</p>
-<p>禹感伤于父亲“功之不成受诛”，因此殚精竭虑，发誓一定要把水患治好。他非常聪明，还能吃苦耐劳，领命之后，就带着伯益、皋陶和其他众人去勘察地势水情，寻找以前治水失败的原因。他带着众人跋山涉水，朝上去追溯黄河的源头，对黄河的上游、下游做了一次整体的考察。在这次考察中，他发现黄河除了主干河道，还有很多分支流向了别处。在值得注意的地方，他把石头堆积起来，或是砍倒树木作为记号，以便治水时可以参考。当时，气候恶劣，他们随身携带的工具也非常落后，这次考察非常艰辛而惊险。据说，有一次，他们正在勘察一条河道，突然间电闪雷鸣，狂风暴雨顷刻而至，山洪爆发，咆哮的洪水淹没、卷走了他们很多同伴。</p>
-<p>考察完毕，大禹对水情作了认真的研究，认为父亲“堵”的方法是行不通的，洪水凶猛，无路可走势必会冲垮堤坝，因此他决定弃“堵”用“疏”的方法：把黄河的主干河道加深加宽，可以让更多的水畅通无阻，然后将支流流向主流的河道疏通，让水可以顺畅地和主流汇合；然后，还要加高原来的堤岸，并清除低地里的淤积，这样陆地和湖泊就可以清楚地分开了。同时，还要将这些大小湖泽和各个支流的河道疏通，这样一来，一旦水位上升，就会顺着各个河道汇入主流，流向大海了。</p>
-<p>想好了治水的方法，禹便亲自率领助手和众百姓，带着简陋的石斧、石刀、石铲、木耒等工具，开始他们治水的征途。禹事事身先士卒，在他的领导下，众百姓一心一意，决心不降服水患誓不罢休。他们风餐露宿，粗衣淡饭，风雨无阻地在群山间穿越跋涉，尽管每天辛苦地劳作，直不起腰来，腿也肿了，可是从来不敢懈怠。</p>
-<p>一次，他们来到了河南洛阳南郊的一座高山，那是秦岭山脉的余脉，从东向西一直延续到中岳嵩山，它巍峨陡峭，就好像天成的一道高大屏风。这座山的中段有一条九曲回环，又很狭窄的天然水路，水量小的时候，就会从山间形成涓涓细流，轻轻流过。但是，山洪暴发时，水就会咆哮着冲刷着狭窄的水道，拍打石岸，时刻可能溢出，危害着周围百姓的安全。大禹便决定集中将这条水道拓宽、凿深、打直。坚硬的山石磨坏了他们的工具，而且山上地势险恶，人们不是被掉下来的石头砸伤，就是跌落山下，还有的被洪水冲走。可是他们仍旧毫不退缩，坚持在大山中开道。在他们不懈的努力下，终于在大山中间凿出了一条宽阔的水道，形成两壁对峙之势，山洪可以顺畅地向下游奔涌而去，再也不会对周围百姓构成威胁。</p>
-<p>《庄子》以极其虔敬的心情记述了禹的丰功伟绩，颂扬了他坚忍不拔的意志，记述禹亲自操橐耜而“九杂天下之川，腓无胈，胫无毛，沐甚雨，栉疾风，置万国。禹，大圣也，而形劳天下也如此”。意思是说禹为了制服水患，不辞劳苦，亲自拿着工具，带领众人兴利除害，同人民一起风里来雨里去，奋斗在治水的最前面。艰辛的劳作使得他形容憔悴，大腿瘦得没什么肉了，小腿上的汗毛也都磨光了。禹就是这样一位含辛茹苦，解救苍生的圣人。因为长期在外治水，禹无暇顾及妻子和家庭。据说，他才刚刚新婚第四天，就出发去治水了，这一去就是十年，中间曾三过家门而不入，他这种舍家为国，公而忘私的精神至今被人传颂。</p>
-<p>十年间，他们翻越了一座又一座大山，疏通了一条又一条河渠，足迹踏遍了九州。在他艰苦卓绝的努力下，治水进展神速，“淮沂其治，蒙羽其艺”（《史记·夏本纪》）之地，也就是淮河和沂水流过的蒙山和羽山之间，古黄淮容易泛滥的河道得到疏通，拥堵在山间的洪水被引入大海。同时，低洼的地方留下了微山、东平、钜野、骆马等“四渎”，为百姓种田提供了有利的水源。地面上现出了许多良田和桑土，百姓又可以种庄稼，重新过上了安居乐业的生活。</p>
-<p>面对滔滔洪水，大禹率领民众，顽强地与之斗争，最终运用聪明才智，通过坚忍不拔的努力，制服了水患。这个传说体现了中华民族勤劳勇敢、坚毅不屈、公而忘私、万众一心战胜困难的民族精神。</p>
-<p>禹在治理水患的过程中，对中原各地的土地物产也有了了解，水患平息后，就划分了青、兖、徐、扬、梁、豫、冀、荆、雍等行政区域，规定了各地的贡品赋税。这样一来，就真正形成了天下归一的大好局面。</p>
-<p>后代称颂禹治水的功绩，尊称他为“大禹”。舜年老以后，也像尧一样开部落联盟会议，物色继承人。禹治水有功，深得民心，大家都推选禹，于是舜就把联盟首领之职禅让给了禹。</p>
-]]></content>
-      <categories>
-        <category>历史</category>
-        <category>夏朝</category>
-      </categories>
-      <tags>
-        <tag>大禹治</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>伊尹放太甲</title>
     <url>/%E5%8E%86%E5%8F%B2/%E5%95%86%E6%9C%9D/%E4%BC%8A%E5%B0%B9%E6%94%BE%E5%A4%AA%E7%94%B2/</url>
     <content><![CDATA[<p>在伊尹的协助下，汤成功推翻了夏朝的统治，建立了商朝。商朝建立之初，百废待兴，汤又在伊尹的帮助下完善了各项典章制度，使商迅速恢复了社会秩序，走上正轨。商汤在位三十年，临终时，因为特别信任伊尹，把辅佐继任帝王的重任嘱托于他。</p>
@@ -867,33 +988,6 @@
       </categories>
       <tags>
         <tag>伊尹放太甲</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>女娲传说</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E5%A5%B3%E5%A8%B2%E4%BC%A0%E8%AF%B4/</url>
-    <content><![CDATA[<p>在中国的上古神话中，女娲是继盘古之后另外一位创世之神。因为她，世间才有了人类，她是长久以来受广大的民间百姓们崇拜的创世神和始祖神。</p>
-<span id="more"></span>
-
-<p>盘古开天辟地之后，终于累倒了，身体也化作了世间万物，从此天地间有了日月星辰，有了花草树木，后来天地间残留的一股浊气吸收日月精华，化作了虫鱼鸟兽，从而使这寂静美丽的世界有了一丝生气。</p>
-<p>有一个神通广大的女神四处游历，后来来到盘古开辟的天地里，她就是女娲。女娲在草丰木茂的原野上行走着，举目四望，发现山峦连绵起伏，江河奔流不息，草木枝繁叶茂，鸟儿婉转歌唱，走兽成群结伴，鱼儿水中畅游，这个世界真是太美好了。于是，她决定留下来。</p>
-<p>日复一日，她享受着自然的美景，可是虽然有鸟兽虫鱼跟自己作伴，女娲渐渐产生了寂寞孤独的感觉。她总觉得缺少点什么，但又说不出到底是缺什么，只能任这种寂寥的感觉与日俱增。</p>
-<p>一天，她走在草木茂盛的原野上，飞鸟、走兽、游鱼再也不能让她高兴起来。她无精打采地沿着一条河流前行，觉得很累，就在河岸的一块石头上坐了下来。清澈的河水照出了她的影子，她看到了水中闷闷不乐的自己。于是她嘴角露出微笑，影子也笑了；她皱起眉头，影子也皱起眉头，这让她觉得非常有趣。突然间，她一下子明白了自己为什么会感到寂寞，因为世间没有跟她一样的生物，那些山川草木、虫鱼鸟兽怎么会可能与她心灵相通？</p>
-<p>她想，既然如此，何不按照自己的样子创造一些生物，让世界热闹起来呢？有了主意，她马上动起手来，在河边抓起一团黄泥，对着水中的影子又是捏又是揉，很快一个小泥人就做好了。女娲把小泥人托在手里，放到嘴前轻轻地吹一口气。小泥人有了气息竟活动起来，放到地面上后就到处走动，还一个劲儿地喊着：“妈妈！妈妈……”女娲真是太高兴了，赶紧动手捏第二个，并吹了一口气，第二个也活了，她又捏第三个，第四个……泥人越捏越多，后来女娲就把他们通通放在地上冲着他们吹了一口气，泥人们活了。他们有喜怒哀乐，而且能够说话，跟那些草木鸟兽完全不同。女娲再也不觉得寂寞了，她称呼这些活了的泥人为“人”。人们开始时在女娲的周围活动着，渐渐地很多都走远了，分散到各处。</p>
-<p>有了人，世界变得无比充实，女娲非常高兴，她继续一刻不停地接着捏泥人。可是大地如此辽阔，人们很快就消散于各地，女娲也感到越来越累了。她想，这样下去，世间的人还不够多时，她已经累得不行了。于是，她顺手从山崖上扯下一条藤蔓，伸进泥潭里抽打起来，溅起了很多混黄的泥点儿，泥点儿落地后也变成了活蹦乱跳的小人儿。她每抽打一下，就会产生很多人，而且和之前捏成的小人没什么两样，这样造人就快多了。于是，女娲高兴地使劲抽打起来，泥点子落得到处都是。等女娲停下来时，大地上已经有足够多的人了。</p>
-<p>一天，她想看看各处的人类，来到一个地方，发现有些人躺在地上一动不动，十分奇怪，仔细一看才发现这些小人都已经满头白发，老态龙钟了。原来他们年纪太大，已经死了。女娲就想，人们都会老去、死去，这样下去，总有一天人会死光的，难道到时候还要再重新创造吗？这也太麻烦了！女娲想，最好的办法是让人类自己繁衍生息，这样他们就可以绵延不绝了。</p>
-<p>于是，她就让这些人具有不同的身体特征，从而区分出男女，并让男人和女人结合，生出后代。为了不让这种结合使人类陷入混乱，她又建立了婚姻制度，从此人类靠自己就可以不断发展壮大了，所以女娲又被称为“婚姻女神”或“神媒”。</p>
-<p>人类可以靠自己繁衍生息了，他们一代一代地在大地上幸福地生活着。可是没过多久，他们就遇到了一次毁灭性地灾难。原来，水神共工和火神祝融争夺帝位，结果共工被打败了。共工一气之下，就用头去撞不周之山。这座擎天的大柱在一声巨响之后，便轰然倒塌，紧接着天向西北倾斜，地往东南塌陷，海水灌进了陆地，洪灾泛滥。因为剧烈的震荡，地上裂开很多大豁口，一个劲儿地往外喷火，山林里野兽也都受到触动，纷纷窜出来，见人便咬。很多人不是被水淹死，就是被火烧死，要么就是被野兽咬死。</p>
-<p>看着自己的子孙处在水深火热之中，女娲痛心不已，决定拯救人类。她周游四海走遍群山，走到东海的天台山，发现那里有可以炼石用的五色土，便决定在那里炼石补天。她在天台山顶堆起巨石当炉子，借来太阳神火，将五色土放入炉中，经过九天九夜终于炼就了五色巨石。然后她又花了九天九夜，用这些五彩的巨石把天补好。天好不容易被补好了，为了不让它再塌下来，她就斩下了一只万年神龟的四足支撑四极。终于，天地归位，洪水入渠，大火也熄灭了，人间又恢复了平静。不但如此，从此以后，每当雨过天晴，天边就会出现五色云霞，天空比以前更美了。人们摆脱了灾难，各个欢呼雀跃。</p>
-<p>女娲是中华民族伟大的母亲，她不仅按照自己的模样创造了人，建立了让人类可以繁衍的婚姻制度，使人们结成人类社会；当人类受到天灾的威胁时，还勇敢地保护我们。为了对这位伟大的母亲表示感谢，人们在天台山下建了女娲庙，世代朝拜，香火从不曾断过。</p>
-<p>关于女娲的传说，虽然是神话，但绝不是凭空捏造的，它是早期人类社会生活的写照。众所周知，早期人类缔结了以血缘为基础的母系氏族社会时期，女性在生产生活中居于主导地位，子女只识其母，不知其父，而女娲的传说正是母系社会这一历史时期的反映。</p>
-]]></content>
-      <categories>
-        <category>历史</category>
-        <category>远古时代</category>
-      </categories>
-      <tags>
-        <tag>女娲传说</tag>
       </tags>
   </entry>
   <entry>
@@ -2029,28 +2123,192 @@
       </tags>
   </entry>
   <entry>
-    <title>盘古开天辟地</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E7%9B%98%E5%8F%A4%E5%BC%80%E5%A4%A9%E8%BE%9F%E5%9C%B0/</url>
-    <content><![CDATA[<p>盘古开天辟地的传说在我国流传广泛。它以浅近质朴的方式表达了华夏先民对自己民族创世历史的深邃认识。在这个传说中，盘古是开启这个世界的始祖。</p>
-<span id="more"></span>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>economy</title>
+    <url>/economy/index.html</url>
+    <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华人民共和国经济自改革开放以来实现了快速增长和深刻转型，从一个贫穷落后的国家发展成为全球第二大经济体，具有强大的制造业基础、蓬勃发展的服务业和不断深化的市场改革。</strong></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2023年</p>
+</div></div><div class="timeline-item-content"><p>私募投资基金监管：国务院总理李强签署了《私募投资基金监督管理条例》，于2023年9月1日起施行，此举为包括房地产投资基金在内的私募基金提供了更为明确的法律依据。<br>数字人民币推广：数字人民币（e-CNY）的推广将推动数字经济的发展，也将对房地产交易中的支付方式和金融服务产生深远影响。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2022年</p>
+</div></div><div class="timeline-item-content"><p>房地产市场调整：多个房地产开发商陷入债务危机，对房地产市场的信用环境和经济稳定产生影响，政府出台稳地产政策，稳定市场预期，维持房地产市场健康发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2021年</p>
+</div></div><div class="timeline-item-content"><p>实现全面建成小康社会，启动“十四五”规划，强调创新驱动和绿色发展。<br>住房保障制度：进一步明确“租购并举”的住房制度，通过增加租赁住房供给和保障性住房供给，提高居住水平和住房保障程度。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2020年</p>
+</div></div><div class="timeline-item-content"><p>数字人民币试点启动，探索数字货币的发展和应用。<br>新冠疫情爆发，全球经济因疫情受到冲击，中国实施严格的防控措施，并推出大规模经济刺激政策，迅速控制疫情并恢复经济。成为全球首个实现正增长的主要经济体。<br>房地产税立法：全国人大常委会将房地产税法列入立法工作计划，标志着房地产税法制定工作正式启动。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2019年</p>
+</div></div><div class="timeline-item-content"><p>粤港澳大湾区发展规划发布，推动区域经济一体化。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2018年</p>
+</div></div><div class="timeline-item-content"><p>中美贸易摩擦开始，对全球贸易格局产生深远影响。<br>5G技术研发进入应用阶段，推动信息通信技术的进一步发展。<br>国家启动“双一流”建设，提升高等教育质量和国际竞争力。<br>共享经济、电子商务和移动支付等新兴服务业态迅速发展，改变了传统服务业的格局。<br>中国保险监督管理委员会与中国银监会合并，成立中国银行保险监督管理委员会（CBIRC）。负责监督管理银行业和保险业。<br>长租公寓政策：政府鼓励长租公寓发展，出台了一系列政策支持租赁住房市场，改善住房供应结构。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2017年</p>
+</div></div><div class="timeline-item-content"><p>党的十九大召开，提出“中国特色社会主义进入新时代”的战略目标，强调高质量发展。<br>实施“房住不炒”政策，稳定房地产市场，防止房地产泡沫。<br>国家电网公司成立，推动全国电网一体化，改善能源分配和管理。<br>国家能源局发布《关于推进电力体制改革的实施意见》，进一步深化电力体制改革。<br>加强调控：各地出台更为严格的限购、限贷、限售政策，进一步强化房地产市场调控，防止房地产市场过热。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2016年</p>
+</div></div><div class="timeline-item-content"><p>中国启动供给侧结构性改革，重点解决产能过剩、库存过高和债务问题。<br>人民币正式加入国际货币基金组织（IMF）的特别提款权（SDR）货币篮子，标志着人民币国际化取得重要进展。<br>京津冀协同发展战略实施，推动区域基础设施互联互通。<br>发布《“健康中国2030”规划纲要》，提出健康中国战略目标。<br>“房住不炒”政策：中央经济工作会议提出“房子是用来住的，不是用来炒的”定位，强调住房的居住属性，明确房地产调控方向。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2015年</p>
+</div></div><div class="timeline-item-content"><p>中国制造2025计划发布，旨在推动中国从制造大国向制造强国转型。<br>国家创新驱动发展战略提出，进一步推动科技创新和产业升级。<br>启动“互联网+”行动计划，推动互联网金融快速发展。<br>国家实施“互联网+”战略，推动互联网与传统行业的深度融合。<br>国务院发布《关于积极推进“互联网+”行动的指导意见》，推动餐饮、零售等传统服务业的互联网化。<br>股市异常波动，沪深股市经历了大幅度的上涨和下跌，引发金融市场关注。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2013年</p>
+</div></div><div class="timeline-item-content"><p>习近平总书记提出“一带一路”倡议，推动跨国基础设施建设和经济合作，促进了中国对外贸易的发展。<br>自由贸易试验区（上海自贸区）成立，探索金融服务、投资管理等方面的改革开放。<br>国务院发布《关于促进旅游业改革发展的若干意见》，进一步推动旅游业改革和发展。<br>国五条出台：国务院发布《关于继续做好房地产市场调控工作的通知》（即“国五条”），进一步加强房地产市场调控，抑制投机投资性购房需求，稳定住房价格。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2012年</p>
+</div></div><div class="timeline-item-content"><p>高速铁路网逐步成形，“四横四纵”高铁网络基本完成。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2011年</p>
+</div></div><div class="timeline-item-content"><p>房产税试点：在上海和重庆两地首次试点征收房产税，旨在调控房地产市场，同时探索和完善该税种的征收方式。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2010年</p>
+</div></div><div class="timeline-item-content"><p>上海成为国际金融中心，金融服务业迅猛发展。<br>中国—东盟自由贸易区正式启动，促进区域经济合作。<br>出台《可再生能源法》，推动风能、太阳能等新能源的开发和利用。<br>全国铁路营业里程达到9.1万公里，高铁运营里程达到8358公里。<br>《国家中长期教育改革和发展规划纲要（2010-2020年）》发布，明确了教育改革和发展的目标和任务。<br>中国农业银行在上海和香港同步上市。<br>限购令：国务院发布《关于促进房地产市场平稳健康发展的通知》，实施限购政策，逐步在全国主要城市推广，限制住宅购买数量，以抑制投机行为。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2009年</p>
+</div></div><div class="timeline-item-content"><p>出台《装备制造业调整和振兴规划》，推动装备制造业向高端化发展。<br>启动新一轮医改，提出基本药物制度和公立医院改革等措施。<br>中国农业银行启动股份制改造。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2008年</p>
+</div></div><div class="timeline-item-content"><p>全球金融危机爆发，中国实施了一系列经济刺激计划，如四万亿投资计划，以稳定经济增长。<br>京津城际高速铁路开通，标志着中国高速铁路进入快速发展期。<br>应对全球金融危机：全球金融危机背景下，中国政府推出“四万亿”投资计划，部分资金用于基础设施建设和房地产市场，稳定房地产市场。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2007年</p>
+</div></div><div class="timeline-item-content"><p>中国建设银行在上海上市。<br>交通银行在上海上市。<br>防止房地产泡沫政策：政府出台一系列措施，意在控制房地产市场过热，防止房地产泡沫，包括提高首付比例、提高第二套房贷利率等。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2006年</p>
+</div></div><div class="timeline-item-content"><p>全面取消农业税，减轻农民经济负担，促进农村经济发展。<br>神华集团成立，成为中国最大的煤炭企业。<br>国家中长期科学和技术发展规划纲要发布，提出创新型国家战略目标。<br>中国银行在香港和上海同步上市。<br>中国工商银行在上海和香港同步上市，成为当时全球最大的IPO。<br>严格住房贷款政策：人民银行发布《关于加强房地产信贷管理的通知》，要求银行对房地产贷款进行更加严格的管理，特别是对投机性购房行为进行限制。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2005年</p>
+</div></div><div class="timeline-item-content"><p>废止《中华人民共和国农业税条例》，减轻了农民的负担，进一步推动了农村经济的发展。<br>中国工商银行完成股份制改造，更名为“中国工商银行股份有限公司”。<br>中国建设银行在香港上市，成为首家在海外上市的大型国有商业银行。<br>交通银行在香港上市。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2004年</p>
+</div></div><div class="timeline-item-content"><p>保险法修订，促进保险行业的规范化发展，增强金融服务业。<br>国务院出台《关于深化经济体制改革的决定》，推动房地产市场化改革。<br>中央一号文件首次聚焦“三农”问题，明确了农业和农村工作的优先地位。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2003年</p>
+</div></div><div class="timeline-item-content"><p>银监会（中国银行业监督管理委员会）成立，进一步规范和发展中国的银行业。<br>房地产开发企业资质管理规定：住房和城乡建设部发布该规定，进一步规范房地产开发企业的准入和管理。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2001年</p>
+</div></div><div class="timeline-item-content"><p>中国加入世界贸易组织（WTO），显著提升对外贸易的规模和水平。<br>中国加入WTO，金融服务业对外开放步伐加快，外资银行进入中国市场。<br>中国加入WTO，批发零售和餐饮业对外开放，外资企业进入市场。<br>中国证监会发布基金管理新规，促进基金市场的健康发展。<br>中关村被批准为国家自主创新示范区，成为中国高新技术产业发展的标志性区域。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2000年</p>
+</div></div><div class="timeline-item-content"><p>中关村科技园区成立，成为中国科技创新和创业的摇篮。<br>发布了《开放式证券投资基金试点办法》，这标志着我国开放式基金发展的序幕正式拉开。<br>互联网泡沫破裂后，中国的互联网企业开始重新发展，腾讯、阿里巴巴等公司逐渐崛起。<br>提出建设旅游强国的目标，旅游基础设施和服务水平显著提高。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1999年</p>
+</div></div><div class="timeline-item-content"><p>提出西部大开发战略，促进西部地区经济发展。<br>中国工商银行启动股份制改造。<br>城市房地产管理法实施：该法的实施规范了房地产市场，确保市场健康发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1998年</p>
+</div></div><div class="timeline-item-content"><p>中国首批按照《证券投资基金管理暂行办法》设立的两只封闭式基金——基金开元和基金金泰成功发行，标志着中国基金市场进入规范化、法制化的发展阶段。<br>中国保险监督管理委员会成立，负责监督管理保险市场。<br>住房制度改革：国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，全面停止福利分房，推动房地产业快速发展，开启了中国房地产市场化的进程。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1997年</p>
+</div></div><div class="timeline-item-content"><p>中国证监会发布了《证券投资基金管理暂行办法》，为基金市场的规范发展提供了法律依据。<br>京九铁路全线通车，改善了南北交通运输网络。<br>启动城镇职工基本医疗保险制度改革，覆盖面不断扩大。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1995年</p>
+</div></div><div class="timeline-item-content"><p>颁布《商业银行法》，进一步规范银行业的发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1994年</p>
+</div></div><div class="timeline-item-content"><p>中国开始实施外汇体制改革，人民币官方汇率与市场汇率并轨，标志着中国外汇市场走向成熟。<br>中国正式接入国际互联网，信息技术行业开始起步。<br>中国银行改组为国家独资商业银行。<br>中国人民建设银行改组为国家独资商业银行，更名为“中国建设银行”。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1993年</p>
+</div></div><div class="timeline-item-content"><p>中国在部分国有企业里试行养老保险制度，开始由单位和个人共同缴纳养老保险金，即开始实施社保制度。<br>实施《中国教育改革和发展纲要》，提出教育优先发展战略。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1992年</p>
+</div></div><div class="timeline-item-content"><p>中国进一步扩大开放，引入外资和推行国企改革，为市场经济的建立和发展奠定了基础。<br>邓小平南巡讲话，推动了批发零售业和餐饮娱乐业的快速发展。<br>中国证券监督管理委员会成立，负责监督管理证券市场。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1991年</p>
+</div></div><div class="timeline-item-content"><p>设立深圳证券交易所，进一步推动证券市场的发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1990年</p>
+</div></div><div class="timeline-item-content"><p>上海浦东新区开发开放，开始大规模发展第三产业。<br>京九铁路开工建设，改善南北交通运输能力。<br>上海证券交易所成立，开启中国现代证券市场的历程。<br>中国证券投资基金的雏形：在1990年代初，中国开始试点发行封闭式证券投资基金，这是基金市场在中国发展的初步尝试。<br>上海证券交易所和深圳证券交易所相继成立，标志着中国资本市场的开始。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1988年</p>
+</div></div><div class="timeline-item-content"><p>房地产市场化改革启动，实施住房商品化政策，促进商品房市场发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1987年</p>
+</div></div><div class="timeline-item-content"><p>交通银行重新组建后，成为全国性股份制商业银行。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1986年</p>
+</div></div><div class="timeline-item-content"><p>《中华人民共和国义务教育法》颁布，确立了九年义务教育制度。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1985年</p>
+</div></div><div class="timeline-item-content"><p>中国开始设立沿海开放城市，开放对外贸易，加强国际经贸合作。<br>国家863计划（高技术研究发展计划）启动，推动高科技产业发展。<br>国务院批准设立国家旅游局，开始规范和促进旅游业的发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1984年</p>
+</div></div><div class="timeline-item-content"><p>城市经济体制改革开始，重点改革国有企业，提高经济效益和活力。<br>中国人民银行专职行使中央银行职能，国家专业银行的分工进一步明确。<br>中国工商银行成立，主要负责城市工商企业的信贷业务。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1980年</p>
+</div></div><div class="timeline-item-content"><p>改革开放后，中国开始大规模引进外资，兴建合资企业，制造业迅速发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1979年</p>
+</div></div><div class="timeline-item-content"><p>国家经济体制改革委员会成立，统筹经济体制改革工作。<br>小岗村家庭联产承包责任制的实施，这是农村经济体制改革的重要试点，为全国推广提供了示范。<br>中国农业银行恢复成立后，继续支持农村经济发展。<br>国家外汇管理局成立，负责外汇管理和政策制定。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1978年</p>
+</div></div><div class="timeline-item-content"><p>家庭联产承包责任制在农村逐步推广，极大地提高了农民的生产积极性。<br>改革开放政策开始实施，中国开始从计划经济向市场经济过渡，引入外资和市场经济机制。<br>改革开放政策实施，旅游业开始恢复和发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1973年</p>
+</div></div><div class="timeline-item-content"><p>大庆油田取得重大突破，中国石油生产进入自给自足阶段。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1971年</p>
+</div></div><div class="timeline-item-content"><p>中国恢复在联合国的合法席位，为后来的对外开放和国际经济合作创造了条件。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1964年</p>
+</div></div><div class="timeline-item-content"><p>中国成功试爆第一颗原子弹，标志着中国国防科技和工业的重要进步。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1958年</p>
+</div></div><div class="timeline-item-content"><p>国家科委成立，为中国科技创新提供制度保障。<br>“大跃进”运动开始，虽然初衷是为了加速经济发展，但导致了一系列经济问题和社会问题。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1957年</p>
+</div></div><div class="timeline-item-content"><p>武钢（武汉钢铁公司）投产，成为中国基础设施建设的重要支撑。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1956年</p>
+</div></div><div class="timeline-item-content"><p>基本完成了对农业、手工业和资本主义工商业的社会主义改造，社会主义制度在中国基本建立。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1954年</p>
+</div></div><div class="timeline-item-content"><p>第一届全国人民代表大会第一次会议召开，通过了《中华人民共和国宪法》，为社会主义法治建设奠定了基础。<br>中国建设银行成立，最初名为中国人民建设银行，主要为国家基本建设服务。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1953年</p>
+</div></div><div class="timeline-item-content"><p>过渡时期总路线提出，中国开始从新民主主义向社会主义过渡。<br>第一个五年计划开始实施，重点发展重工业，逐步进行对农业、手工业和资本主义工商业的社会主义改造。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1952年</p>
+</div></div><div class="timeline-item-content"><p>中国进行第一次经济恢复时期，重点发展重工业，特别是钢铁和机械制造业。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1951年</p>
+</div></div><div class="timeline-item-content"><p>中国农业银行成立，主要为农业和农村经济服务。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1950年</p>
+</div></div><div class="timeline-item-content"><p>土地改革运动，废除地主阶级的土地所有制，实现土地公有化，重新分配土地给农民。<br>开始实行农村合作医疗制度，提高了农村医疗保障水平。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1949年</p>
+</div></div><div class="timeline-item-content"><p>除了新中国成立外，同年还进行了土地改革前的准备工作，如土地法大纲的公布等。</p>
+</div></div></div>
 
-<p>在遥远的上古时期，没有所谓的天，也没有所谓的地，天地混沌一体，就像一个鸡蛋，连个窟窿都没有，谁也说不清那是什么，于是人们就暂且用帝江来称呼它。混混沌沌的帝江有两个好友：一个叫倏，一个叫忽。</p>
-<p>倏和忽见帝江如此混沌，就和它商量，想帮它凿通七窍，让它的气息可以出入，帝江欣然同意。于是，倏和忽开始了工作，他们每天为帝江凿通一窍，七天后，七窍通了，可帝江却也因此一命呜呼了。</p>
-<p>帝江死后，它的肚子里的精髓孕育成了一股气。一万八千年后，这股气幻化成人形——他就是盘古。</p>
-<p>盘古在帝江的肚子里不知睡了多久，猛然醒来，睁开眼睛，发现眼前一片黑暗。他想要走出这无处不在的黑暗，可是腿一动就被东西挡住，胳膊一伸就碰到阻碍，原来自己被这黑暗紧紧地包裹住了。难道自己必须在这黑暗的包围下蜷缩地活着？想到这些他的心中顿时燃起了怒火，他从自己的嘴中拔下一颗牙，把它变成了威力无比的神斧，他抡起神斧朝眼前的混沌用力挥去。突然传来一阵山崩一样的巨响，黑暗混沌出现了一个裂口，接着，那些轻盈清澈的气体冉冉升起，成了天，另外那些沉重污浊的东西就缓缓下沉，铺成了地。从此宇宙结束了混沌不分的状态，有了天和地。盘古站在中间只觉得身心舒畅。</p>
-<p>盘古站立起来，天就接着升高，地也继续下沉。天地还有些相连的地方，他就一手拿着凿子，一手拿着斧头，对那些东西连劈带凿，终于让天地完全分开。他怕天地会再次合拢，就头顶天，脚踏地，支撑在天地之间。他施展法力，使身体每天增高一丈，随着他的增高，天也跟着升高一丈，地也随着加厚一丈。就这样，又过了一万八千年，天已经高得遥不可及，地也厚得不能再厚了，盘古变成了一个顶天立地的巨人。这个巨人有多高呢？据说他的身长达到了九万里。这么高大的柱子支撑着天地，使它们终于无法再合并到一起。</p>
-<p>可是这位开天辟地的巨人支撑了这么久，已经筋疲力尽了。他疲惫地张开眼，欣赏着自己开辟的新天地，叹息了一声，就慢慢地倒在了地上，带着微笑永久地闭上了眼睛。</p>
-<p>他巨大的身体横亘在地上，头幻化成东岳泰山，脚幻化成西岳华山，左臂幻化成南岳衡山，右臂幻化成北岳恒山，而腹部就幻化成了中岳嵩山；他呼出的最后一口气，变成了风和空中的云雾，他的那声叹息就变成了雷鸣，他的左眼变成了普照大地的太阳，右眼变成了照亮黑夜的月亮，浓密的头发变成了点点的繁星，奔流的血液变成了江河湖海，肌肉变成孕育万物的沃土，骨骼变成了花草树木，筋脉变成了条条道路，牙齿和骨骼变成了玉石和金属；就连他身上留下的汗水都变成了甘霖雨露，滋润万物。</p>
-<p>伟大的英雄盘古，不但给人类开辟了天地，还用自己的躯体将大千世界装饰得生机勃勃。</p>
-<p>当然，这只是神话，人们不会真的认为是盘古创造了天地万物。考古学家通过科考，已经发现了元谋人、北京人、山顶洞人等史前人类的遗址，进一步揭开了人类起源进化之谜。但是，在没有文字的情况下，这些神话传说只靠口耳相传就可以流传后世，不正表明人类对生命的热爱，对美好的追求是生生不息的吗？盘古代表的是一种精神，他为人类生存的世界拼尽了全力，献出了所有，这种献身精神成为历代仁人志士追求的最高境界。</p>
+
+
+
+
+
+<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华民国（1912年—1949年）</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华民国时期，尽管经历了现代化的尝试和一定的经济发展，但长期的战乱和政治不稳定极大地限制了经济的持续发展。抗日战争和国共内战的破坏，使得经济状况进一步恶化，最终在1949年中华人民共和国成立后开始新的经济重建和发展。</strong></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1949年</p>
+</div></div><div class="timeline-item-content"><p>中华人民共和国成立，中华民国政府迁往台湾，经济体制发生根本性转变。<br>中华人民共和国成立后，中国银行成为外汇外贸专业银行。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1948年</p>
+</div></div><div class="timeline-item-content"><p>成立中国人民银行，作为中央银行，负责全国的金融管理和货币政策。<br>经济崩溃，金圆券迅速贬值，物价飞涨，民生困苦。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1947年</p>
+</div></div><div class="timeline-item-content"><p>国民政府实施金圆券改革，试图遏制通货膨胀，但效果有限。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1946年</p>
+</div></div><div class="timeline-item-content"><p>国共内战全面爆发，经济再次陷入混乱，通货膨胀严重。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
+</div></div><div class="timeline-item-content"><p>抗日战争胜利，经济面临恢复和重建的巨大挑战。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1941年</p>
+</div></div><div class="timeline-item-content"><p>太平洋战争爆发，美国等盟国开始对华援助，但中国经济依然困难重重。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1938年</p>
+</div></div><div class="timeline-item-content"><p>国民政府实施战时经济政策，进行物资统制和战争物资生产。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1937年</p>
+</div></div><div class="timeline-item-content"><p>七七事变，日本全面侵华，抗日战争爆发，经济陷入长期战时状态，工业和基础设施遭受重大破坏。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1935年</p>
+</div></div><div class="timeline-item-content"><p>进一步实施货币改革，推行法币本位制，统一货币制度，抑制通货膨胀。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1933年</p>
+</div></div><div class="timeline-item-content"><p>国民政府实施货币改革，发行法币，试图稳定经济。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1932年</p>
+</div></div><div class="timeline-item-content"><p>淞沪抗战爆发，中国经济再度陷入困境。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1931年</p>
+</div></div><div class="timeline-item-content"><p>九一八事变，日本侵占东北，东北的工业和资源被掠夺，中国经济受到重大打击。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1928年</p>
+</div></div><div class="timeline-item-content"><p>国民政府北伐成功，统一全国，开始着手建设现代经济体系。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1927年</p>
+</div></div><div class="timeline-item-content"><p>国共合作破裂，蒋介石领导的国民政府开始“宁汉合流”，统一中国部分地区，经济政策逐渐稳定。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1925年</p>
+</div></div><div class="timeline-item-content"><p>五卅运动促进了民族工业的发展和对外经济斗争。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1923年</p>
+</div></div><div class="timeline-item-content"><p>直奉战争后，张作霖控制北京政府，财政更加混乱。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1921年</p>
+</div></div><div class="timeline-item-content"><p>中国共产党成立，提出一系列经济主张，促进工人运动和工厂罢工。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1919年</p>
+</div></div><div class="timeline-item-content"><p>五四运动爆发，推动了中国现代化和工业化的思想变革。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1916年</p>
+</div></div><div class="timeline-item-content"><p>袁世凯去世，北洋军阀混战，导致经济秩序混乱。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1915年</p>
+</div></div><div class="timeline-item-content"><p>日本提出“二十一条”，企图进一步控制中国经济资源，引发强烈反对。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1914年</p>
+</div></div><div class="timeline-item-content"><p>第一次世界大战爆发，中国对欧洲的商品出口增加，经济获得短暂繁荣。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1913年</p>
+</div></div><div class="timeline-item-content"><p>袁世凯政府开始向外借款，主要是为了巩固政权，但也导致了财政困难。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1912年</p>
+</div></div><div class="timeline-item-content"><p>中华民国成立，开始进行初步的经济建设和改革。<br>中国银行成立，是中国历史最悠久的银行之一。</p>
+</div></div></div>
+
+
+
+<div class="timeline gray"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>清朝（1636年—1912年）</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>清朝经济总体上以农业为基础，手工业和商业逐步发展，对外贸易带来经济繁荣，但也因鸦片战争和内部腐败等问题导致经济困境。近代化改革的尝试虽然有所进展，但未能彻底改变封建经济体制，最终在内忧外患中走向衰落。</strong></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1908年</p>
+</div></div><div class="timeline-item-content"><p>交通银行成立，是中国历史悠久的银行之一。</p>
+</div></div></div>
 ]]></content>
-      <categories>
-        <category>历史</category>
-        <category>远古时代</category>
-      </categories>
-      <tags>
-        <tag>盘古开天辟地</tag>
-      </tags>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>关于</title>
@@ -2059,11 +2317,6 @@
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>history</title>
@@ -2298,188 +2551,5 @@
 </div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
 </div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
 </div></div></div>]]></content>
-  </entry>
-  <entry>
-    <title>economy</title>
-    <url>/economy/index.html</url>
-    <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华人民共和国经济自改革开放以来实现了快速增长和深刻转型，从一个贫穷落后的国家发展成为全球第二大经济体，具有强大的制造业基础、蓬勃发展的服务业和不断深化的市场改革。</strong></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2023年</p>
-</div></div><div class="timeline-item-content"><p>私募投资基金监管：国务院总理李强签署了《私募投资基金监督管理条例》，于2023年9月1日起施行，此举为包括房地产投资基金在内的私募基金提供了更为明确的法律依据。<br>数字人民币推广：数字人民币（e-CNY）的推广将推动数字经济的发展，也将对房地产交易中的支付方式和金融服务产生深远影响。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2022年</p>
-</div></div><div class="timeline-item-content"><p>房地产市场调整：多个房地产开发商陷入债务危机，对房地产市场的信用环境和经济稳定产生影响，政府出台稳地产政策，稳定市场预期，维持房地产市场健康发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2021年</p>
-</div></div><div class="timeline-item-content"><p>实现全面建成小康社会，启动“十四五”规划，强调创新驱动和绿色发展。<br>住房保障制度：进一步明确“租购并举”的住房制度，通过增加租赁住房供给和保障性住房供给，提高居住水平和住房保障程度。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2020年</p>
-</div></div><div class="timeline-item-content"><p>数字人民币试点启动，探索数字货币的发展和应用。<br>新冠疫情爆发，全球经济因疫情受到冲击，中国实施严格的防控措施，并推出大规模经济刺激政策，迅速控制疫情并恢复经济。成为全球首个实现正增长的主要经济体。<br>房地产税立法：全国人大常委会将房地产税法列入立法工作计划，标志着房地产税法制定工作正式启动。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2019年</p>
-</div></div><div class="timeline-item-content"><p>粤港澳大湾区发展规划发布，推动区域经济一体化。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2018年</p>
-</div></div><div class="timeline-item-content"><p>中美贸易摩擦开始，对全球贸易格局产生深远影响。<br>5G技术研发进入应用阶段，推动信息通信技术的进一步发展。<br>国家启动“双一流”建设，提升高等教育质量和国际竞争力。<br>共享经济、电子商务和移动支付等新兴服务业态迅速发展，改变了传统服务业的格局。<br>中国保险监督管理委员会与中国银监会合并，成立中国银行保险监督管理委员会（CBIRC）。负责监督管理银行业和保险业。<br>长租公寓政策：政府鼓励长租公寓发展，出台了一系列政策支持租赁住房市场，改善住房供应结构。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2017年</p>
-</div></div><div class="timeline-item-content"><p>党的十九大召开，提出“中国特色社会主义进入新时代”的战略目标，强调高质量发展。<br>实施“房住不炒”政策，稳定房地产市场，防止房地产泡沫。<br>国家电网公司成立，推动全国电网一体化，改善能源分配和管理。<br>国家能源局发布《关于推进电力体制改革的实施意见》，进一步深化电力体制改革。<br>加强调控：各地出台更为严格的限购、限贷、限售政策，进一步强化房地产市场调控，防止房地产市场过热。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2016年</p>
-</div></div><div class="timeline-item-content"><p>中国启动供给侧结构性改革，重点解决产能过剩、库存过高和债务问题。<br>人民币正式加入国际货币基金组织（IMF）的特别提款权（SDR）货币篮子，标志着人民币国际化取得重要进展。<br>京津冀协同发展战略实施，推动区域基础设施互联互通。<br>发布《“健康中国2030”规划纲要》，提出健康中国战略目标。<br>“房住不炒”政策：中央经济工作会议提出“房子是用来住的，不是用来炒的”定位，强调住房的居住属性，明确房地产调控方向。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2015年</p>
-</div></div><div class="timeline-item-content"><p>中国制造2025计划发布，旨在推动中国从制造大国向制造强国转型。<br>国家创新驱动发展战略提出，进一步推动科技创新和产业升级。<br>启动“互联网+”行动计划，推动互联网金融快速发展。<br>国家实施“互联网+”战略，推动互联网与传统行业的深度融合。<br>国务院发布《关于积极推进“互联网+”行动的指导意见》，推动餐饮、零售等传统服务业的互联网化。<br>股市异常波动，沪深股市经历了大幅度的上涨和下跌，引发金融市场关注。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2013年</p>
-</div></div><div class="timeline-item-content"><p>习近平总书记提出“一带一路”倡议，推动跨国基础设施建设和经济合作，促进了中国对外贸易的发展。<br>自由贸易试验区（上海自贸区）成立，探索金融服务、投资管理等方面的改革开放。<br>国务院发布《关于促进旅游业改革发展的若干意见》，进一步推动旅游业改革和发展。<br>国五条出台：国务院发布《关于继续做好房地产市场调控工作的通知》（即“国五条”），进一步加强房地产市场调控，抑制投机投资性购房需求，稳定住房价格。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2012年</p>
-</div></div><div class="timeline-item-content"><p>高速铁路网逐步成形，“四横四纵”高铁网络基本完成。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2011年</p>
-</div></div><div class="timeline-item-content"><p>房产税试点：在上海和重庆两地首次试点征收房产税，旨在调控房地产市场，同时探索和完善该税种的征收方式。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2010年</p>
-</div></div><div class="timeline-item-content"><p>上海成为国际金融中心，金融服务业迅猛发展。<br>中国—东盟自由贸易区正式启动，促进区域经济合作。<br>出台《可再生能源法》，推动风能、太阳能等新能源的开发和利用。<br>全国铁路营业里程达到9.1万公里，高铁运营里程达到8358公里。<br>《国家中长期教育改革和发展规划纲要（2010-2020年）》发布，明确了教育改革和发展的目标和任务。<br>中国农业银行在上海和香港同步上市。<br>限购令：国务院发布《关于促进房地产市场平稳健康发展的通知》，实施限购政策，逐步在全国主要城市推广，限制住宅购买数量，以抑制投机行为。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2009年</p>
-</div></div><div class="timeline-item-content"><p>出台《装备制造业调整和振兴规划》，推动装备制造业向高端化发展。<br>启动新一轮医改，提出基本药物制度和公立医院改革等措施。<br>中国农业银行启动股份制改造。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2008年</p>
-</div></div><div class="timeline-item-content"><p>全球金融危机爆发，中国实施了一系列经济刺激计划，如四万亿投资计划，以稳定经济增长。<br>京津城际高速铁路开通，标志着中国高速铁路进入快速发展期。<br>应对全球金融危机：全球金融危机背景下，中国政府推出“四万亿”投资计划，部分资金用于基础设施建设和房地产市场，稳定房地产市场。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2007年</p>
-</div></div><div class="timeline-item-content"><p>中国建设银行在上海上市。<br>交通银行在上海上市。<br>防止房地产泡沫政策：政府出台一系列措施，意在控制房地产市场过热，防止房地产泡沫，包括提高首付比例、提高第二套房贷利率等。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2006年</p>
-</div></div><div class="timeline-item-content"><p>全面取消农业税，减轻农民经济负担，促进农村经济发展。<br>神华集团成立，成为中国最大的煤炭企业。<br>国家中长期科学和技术发展规划纲要发布，提出创新型国家战略目标。<br>中国银行在香港和上海同步上市。<br>中国工商银行在上海和香港同步上市，成为当时全球最大的IPO。<br>严格住房贷款政策：人民银行发布《关于加强房地产信贷管理的通知》，要求银行对房地产贷款进行更加严格的管理，特别是对投机性购房行为进行限制。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2005年</p>
-</div></div><div class="timeline-item-content"><p>废止《中华人民共和国农业税条例》，减轻了农民的负担，进一步推动了农村经济的发展。<br>中国工商银行完成股份制改造，更名为“中国工商银行股份有限公司”。<br>中国建设银行在香港上市，成为首家在海外上市的大型国有商业银行。<br>交通银行在香港上市。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2004年</p>
-</div></div><div class="timeline-item-content"><p>保险法修订，促进保险行业的规范化发展，增强金融服务业。<br>国务院出台《关于深化经济体制改革的决定》，推动房地产市场化改革。<br>中央一号文件首次聚焦“三农”问题，明确了农业和农村工作的优先地位。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2003年</p>
-</div></div><div class="timeline-item-content"><p>银监会（中国银行业监督管理委员会）成立，进一步规范和发展中国的银行业。<br>房地产开发企业资质管理规定：住房和城乡建设部发布该规定，进一步规范房地产开发企业的准入和管理。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2001年</p>
-</div></div><div class="timeline-item-content"><p>中国加入世界贸易组织（WTO），显著提升对外贸易的规模和水平。<br>中国加入WTO，金融服务业对外开放步伐加快，外资银行进入中国市场。<br>中国加入WTO，批发零售和餐饮业对外开放，外资企业进入市场。<br>中国证监会发布基金管理新规，促进基金市场的健康发展。<br>中关村被批准为国家自主创新示范区，成为中国高新技术产业发展的标志性区域。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2000年</p>
-</div></div><div class="timeline-item-content"><p>中关村科技园区成立，成为中国科技创新和创业的摇篮。<br>发布了《开放式证券投资基金试点办法》，这标志着我国开放式基金发展的序幕正式拉开。<br>互联网泡沫破裂后，中国的互联网企业开始重新发展，腾讯、阿里巴巴等公司逐渐崛起。<br>提出建设旅游强国的目标，旅游基础设施和服务水平显著提高。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1999年</p>
-</div></div><div class="timeline-item-content"><p>提出西部大开发战略，促进西部地区经济发展。<br>中国工商银行启动股份制改造。<br>城市房地产管理法实施：该法的实施规范了房地产市场，确保市场健康发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1998年</p>
-</div></div><div class="timeline-item-content"><p>中国首批按照《证券投资基金管理暂行办法》设立的两只封闭式基金——基金开元和基金金泰成功发行，标志着中国基金市场进入规范化、法制化的发展阶段。<br>中国保险监督管理委员会成立，负责监督管理保险市场。<br>住房制度改革：国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，全面停止福利分房，推动房地产业快速发展，开启了中国房地产市场化的进程。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1997年</p>
-</div></div><div class="timeline-item-content"><p>中国证监会发布了《证券投资基金管理暂行办法》，为基金市场的规范发展提供了法律依据。<br>京九铁路全线通车，改善了南北交通运输网络。<br>启动城镇职工基本医疗保险制度改革，覆盖面不断扩大。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1995年</p>
-</div></div><div class="timeline-item-content"><p>颁布《商业银行法》，进一步规范银行业的发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1994年</p>
-</div></div><div class="timeline-item-content"><p>中国开始实施外汇体制改革，人民币官方汇率与市场汇率并轨，标志着中国外汇市场走向成熟。<br>中国正式接入国际互联网，信息技术行业开始起步。<br>中国银行改组为国家独资商业银行。<br>中国人民建设银行改组为国家独资商业银行，更名为“中国建设银行”。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1993年</p>
-</div></div><div class="timeline-item-content"><p>中国在部分国有企业里试行养老保险制度，开始由单位和个人共同缴纳养老保险金，即开始实施社保制度。<br>实施《中国教育改革和发展纲要》，提出教育优先发展战略。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1992年</p>
-</div></div><div class="timeline-item-content"><p>中国进一步扩大开放，引入外资和推行国企改革，为市场经济的建立和发展奠定了基础。<br>邓小平南巡讲话，推动了批发零售业和餐饮娱乐业的快速发展。<br>中国证券监督管理委员会成立，负责监督管理证券市场。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1991年</p>
-</div></div><div class="timeline-item-content"><p>设立深圳证券交易所，进一步推动证券市场的发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1990年</p>
-</div></div><div class="timeline-item-content"><p>上海浦东新区开发开放，开始大规模发展第三产业。<br>京九铁路开工建设，改善南北交通运输能力。<br>上海证券交易所成立，开启中国现代证券市场的历程。<br>中国证券投资基金的雏形：在1990年代初，中国开始试点发行封闭式证券投资基金，这是基金市场在中国发展的初步尝试。<br>上海证券交易所和深圳证券交易所相继成立，标志着中国资本市场的开始。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1988年</p>
-</div></div><div class="timeline-item-content"><p>房地产市场化改革启动，实施住房商品化政策，促进商品房市场发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1987年</p>
-</div></div><div class="timeline-item-content"><p>交通银行重新组建后，成为全国性股份制商业银行。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1986年</p>
-</div></div><div class="timeline-item-content"><p>《中华人民共和国义务教育法》颁布，确立了九年义务教育制度。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1985年</p>
-</div></div><div class="timeline-item-content"><p>中国开始设立沿海开放城市，开放对外贸易，加强国际经贸合作。<br>国家863计划（高技术研究发展计划）启动，推动高科技产业发展。<br>国务院批准设立国家旅游局，开始规范和促进旅游业的发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1984年</p>
-</div></div><div class="timeline-item-content"><p>城市经济体制改革开始，重点改革国有企业，提高经济效益和活力。<br>中国人民银行专职行使中央银行职能，国家专业银行的分工进一步明确。<br>中国工商银行成立，主要负责城市工商企业的信贷业务。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1980年</p>
-</div></div><div class="timeline-item-content"><p>改革开放后，中国开始大规模引进外资，兴建合资企业，制造业迅速发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1979年</p>
-</div></div><div class="timeline-item-content"><p>国家经济体制改革委员会成立，统筹经济体制改革工作。<br>小岗村家庭联产承包责任制的实施，这是农村经济体制改革的重要试点，为全国推广提供了示范。<br>中国农业银行恢复成立后，继续支持农村经济发展。<br>国家外汇管理局成立，负责外汇管理和政策制定。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1978年</p>
-</div></div><div class="timeline-item-content"><p>家庭联产承包责任制在农村逐步推广，极大地提高了农民的生产积极性。<br>改革开放政策开始实施，中国开始从计划经济向市场经济过渡，引入外资和市场经济机制。<br>改革开放政策实施，旅游业开始恢复和发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1973年</p>
-</div></div><div class="timeline-item-content"><p>大庆油田取得重大突破，中国石油生产进入自给自足阶段。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1971年</p>
-</div></div><div class="timeline-item-content"><p>中国恢复在联合国的合法席位，为后来的对外开放和国际经济合作创造了条件。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1964年</p>
-</div></div><div class="timeline-item-content"><p>中国成功试爆第一颗原子弹，标志着中国国防科技和工业的重要进步。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1958年</p>
-</div></div><div class="timeline-item-content"><p>国家科委成立，为中国科技创新提供制度保障。<br>“大跃进”运动开始，虽然初衷是为了加速经济发展，但导致了一系列经济问题和社会问题。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1957年</p>
-</div></div><div class="timeline-item-content"><p>武钢（武汉钢铁公司）投产，成为中国基础设施建设的重要支撑。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1956年</p>
-</div></div><div class="timeline-item-content"><p>基本完成了对农业、手工业和资本主义工商业的社会主义改造，社会主义制度在中国基本建立。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1954年</p>
-</div></div><div class="timeline-item-content"><p>第一届全国人民代表大会第一次会议召开，通过了《中华人民共和国宪法》，为社会主义法治建设奠定了基础。<br>中国建设银行成立，最初名为中国人民建设银行，主要为国家基本建设服务。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1953年</p>
-</div></div><div class="timeline-item-content"><p>过渡时期总路线提出，中国开始从新民主主义向社会主义过渡。<br>第一个五年计划开始实施，重点发展重工业，逐步进行对农业、手工业和资本主义工商业的社会主义改造。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1952年</p>
-</div></div><div class="timeline-item-content"><p>中国进行第一次经济恢复时期，重点发展重工业，特别是钢铁和机械制造业。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1951年</p>
-</div></div><div class="timeline-item-content"><p>中国农业银行成立，主要为农业和农村经济服务。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1950年</p>
-</div></div><div class="timeline-item-content"><p>土地改革运动，废除地主阶级的土地所有制，实现土地公有化，重新分配土地给农民。<br>开始实行农村合作医疗制度，提高了农村医疗保障水平。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1949年</p>
-</div></div><div class="timeline-item-content"><p>除了新中国成立外，同年还进行了土地改革前的准备工作，如土地法大纲的公布等。</p>
-</div></div></div>
-
-
-
-
-
-
-<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华民国（1912年—1949年）</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华民国时期，尽管经历了现代化的尝试和一定的经济发展，但长期的战乱和政治不稳定极大地限制了经济的持续发展。抗日战争和国共内战的破坏，使得经济状况进一步恶化，最终在1949年中华人民共和国成立后开始新的经济重建和发展。</strong></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1949年</p>
-</div></div><div class="timeline-item-content"><p>中华人民共和国成立，中华民国政府迁往台湾，经济体制发生根本性转变。<br>中华人民共和国成立后，中国银行成为外汇外贸专业银行。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1948年</p>
-</div></div><div class="timeline-item-content"><p>成立中国人民银行，作为中央银行，负责全国的金融管理和货币政策。<br>经济崩溃，金圆券迅速贬值，物价飞涨，民生困苦。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1947年</p>
-</div></div><div class="timeline-item-content"><p>国民政府实施金圆券改革，试图遏制通货膨胀，但效果有限。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1946年</p>
-</div></div><div class="timeline-item-content"><p>国共内战全面爆发，经济再次陷入混乱，通货膨胀严重。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
-</div></div><div class="timeline-item-content"><p>抗日战争胜利，经济面临恢复和重建的巨大挑战。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1941年</p>
-</div></div><div class="timeline-item-content"><p>太平洋战争爆发，美国等盟国开始对华援助，但中国经济依然困难重重。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1938年</p>
-</div></div><div class="timeline-item-content"><p>国民政府实施战时经济政策，进行物资统制和战争物资生产。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1937年</p>
-</div></div><div class="timeline-item-content"><p>七七事变，日本全面侵华，抗日战争爆发，经济陷入长期战时状态，工业和基础设施遭受重大破坏。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1935年</p>
-</div></div><div class="timeline-item-content"><p>进一步实施货币改革，推行法币本位制，统一货币制度，抑制通货膨胀。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1933年</p>
-</div></div><div class="timeline-item-content"><p>国民政府实施货币改革，发行法币，试图稳定经济。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1932年</p>
-</div></div><div class="timeline-item-content"><p>淞沪抗战爆发，中国经济再度陷入困境。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1931年</p>
-</div></div><div class="timeline-item-content"><p>九一八事变，日本侵占东北，东北的工业和资源被掠夺，中国经济受到重大打击。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1928年</p>
-</div></div><div class="timeline-item-content"><p>国民政府北伐成功，统一全国，开始着手建设现代经济体系。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1927年</p>
-</div></div><div class="timeline-item-content"><p>国共合作破裂，蒋介石领导的国民政府开始“宁汉合流”，统一中国部分地区，经济政策逐渐稳定。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1925年</p>
-</div></div><div class="timeline-item-content"><p>五卅运动促进了民族工业的发展和对外经济斗争。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1923年</p>
-</div></div><div class="timeline-item-content"><p>直奉战争后，张作霖控制北京政府，财政更加混乱。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1921年</p>
-</div></div><div class="timeline-item-content"><p>中国共产党成立，提出一系列经济主张，促进工人运动和工厂罢工。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1919年</p>
-</div></div><div class="timeline-item-content"><p>五四运动爆发，推动了中国现代化和工业化的思想变革。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1916年</p>
-</div></div><div class="timeline-item-content"><p>袁世凯去世，北洋军阀混战，导致经济秩序混乱。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1915年</p>
-</div></div><div class="timeline-item-content"><p>日本提出“二十一条”，企图进一步控制中国经济资源，引发强烈反对。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1914年</p>
-</div></div><div class="timeline-item-content"><p>第一次世界大战爆发，中国对欧洲的商品出口增加，经济获得短暂繁荣。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1913年</p>
-</div></div><div class="timeline-item-content"><p>袁世凯政府开始向外借款，主要是为了巩固政权，但也导致了财政困难。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1912年</p>
-</div></div><div class="timeline-item-content"><p>中华民国成立，开始进行初步的经济建设和改革。<br>中国银行成立，是中国历史最悠久的银行之一。</p>
-</div></div></div>
-
-
-
-<div class="timeline gray"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>清朝（1636年—1912年）</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>清朝经济总体上以农业为基础，手工业和商业逐步发展，对外贸易带来经济繁荣，但也因鸦片战争和内部腐败等问题导致经济困境。近代化改革的尝试虽然有所进展，但未能彻底改变封建经济体制，最终在内忧外患中走向衰落。</strong></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1908年</p>
-</div></div><div class="timeline-item-content"><p>交通银行成立，是中国历史悠久的银行之一。</p>
-</div></div></div>
-]]></content>
-  </entry>
-  <entry>
-    <title>schedule</title>
-    <url>/schedule/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>标签</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
