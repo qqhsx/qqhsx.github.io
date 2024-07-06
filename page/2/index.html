@@ -869,9 +869,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-06-21 10:40:17 / Modified: 11:05:03" itemprop="dateCreated datePublished" datetime="2024-06-21T10:40:17+08:00">2024-06-21</time>
+      <time title="Created: 2024-06-21 10:40:17" itemprop="dateCreated datePublished" datetime="2024-06-21T10:40:17+08:00">2024-06-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-06 11:30:37" itemprop="dateModified" datetime="2024-07-06T11:30:37+08:00">2024-07-06</time>
     </span>
 
   
@@ -884,22 +890,165 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p><a href="https://qqhsx.github.io/">2023</a></p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
-</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
-</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
-</div></div></div>
+          <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>今日诗词</title>
+  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+    .poem-container {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .poem-content {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .poem-info {
+      font-style: italic;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="poem-container" id="poemContainer">
+    <div class="poem-content" id="poemContent">正在加载今日诗词...</div>
+    <div class="poem-info" id="poemInfo"></div>
+  </div>
+
+  <script type="text/javascript">
+    // 异步加载并显示今日诗词
+    function loadPoem() {
+      var poemContent = document.getElementById('poemContent');
+      var poemInfo = document.getElementById('poemInfo');
+      
+      jinrishici.load(function(result) {
+        if (result.status === 'success') {
+          var poemData = result.data;
+          var content = poemData.content;
+          var dynasty = poemData.origin.dynasty;
+          var author = poemData.origin.author;
+          var title = poemData.origin.title;
+          
+          poemContent.innerHTML = '<p>' + content + '</p>';
+          poemInfo.innerHTML = '<p><em>【' + dynasty + '】</em>' + author + '《' + title + '》</p>';
+        } else {
+          poemContent.innerHTML = '抱歉，未能加载到今日诗词。';
+        }
+      });
+    }
+
+    // 页面加载完成后加载诗词
+    window.onload = loadPoem;
+  </script>
+</body>
+</html>
+
+
+<input type="text" id="cocktail-search" placeholder="输入鸡尾酒名称">
+<button onclick="searchCocktail()">搜索</button>
+<div id="cocktail-details"></div>
+
+<script>
+function searchCocktail() {
+    const searchInput = document.querySelector('#cocktail-search').value.trim();
+    if (!searchInput) {
+        alert('请输入鸡尾酒名称');
+        return;
+    }
+
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.drinks) {
+                displayCocktail(data.drinks[0]);
+            } else {
+                alert('未找到符合条件的鸡尾酒');
+            }
+        })
+        .catch(error => console.error('Error searching cocktail:', error));
+}
+</script>
+
+
+<select id="filter-by">
+    <option value>选择过滤条件</option>
+    <option value="a=Alcoholic">酒精鸡尾酒</option>
+    <option value="a=Non_Alcoholic">无酒精鸡尾酒</option>
+    <option value="c=Cocktail">经典鸡尾酒</option>
+    <option value="c=Ordinary_Drink">普通饮料</option>
+    <!-- 其他过滤条件 -->
+</select>
+<button onclick="filterCocktails()">应用过滤</button>
+<div id="filtered-cocktails"></div>
+
+<script>
+function filterCocktails() {
+    const filterBy = document.querySelector('#filter-by').value;
+    if (!filterBy) {
+        alert('请选择过滤条件');
+        return;
+    }
+
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?${filterBy}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.drinks) {
+                displayFilteredCocktails(data.drinks);
+            } else {
+                alert('未找到符合条件的鸡尾酒');
+            }
+        })
+        .catch(error => console.error('Error filtering cocktails:', error));
+}
+
+function displayFilteredCocktails(cocktails) {
+    const filteredList = document.querySelector('#filtered-cocktails');
+    let html = '';
+    cocktails.forEach(cocktail => {
+        html += `
+            <div>
+                <h3>${cocktail.strDrink}</h3>
+                <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}" style="max-width: 200px;">
+                <p><strong>Category:</strong> ${cocktail.strCategory}</p>
+                <p><strong>Instructions:</strong> ${cocktail.strInstructions}</p>
+            </div>
+        `;
+    });
+    filteredList.innerHTML = html;
+}
+</script>
 
 
 
-<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2022</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
-</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
-</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
-</div></div></div>
 
+<p><button onclick="fetchRandomCocktail()">随机鸡尾酒</button><br><button onclick="fetchPopularCocktails()">流行鸡尾酒</button></p>
+<div id="random-cocktail"></div>
+
+<script>
+function fetchRandomCocktail() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+        .then(response => response.json())
+        .then(data => displayCocktail(data.drinks[0]))
+        .catch(error => console.error('Error fetching random cocktail:', error));
+}
+
+function fetchPopularCocktails() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/popular.php')
+        .then(response => response.json())
+        .then(data => displayFilteredCocktails(data.drinks))
+        .catch(error => console.error('Error fetching popular cocktails:', error));
+}
+</script>
 
       
     </div>
@@ -1018,7 +1167,28 @@
     <span class="author" itemprop="copyrightHolder">John Doe</span>
   </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
+  </div><footer>
+    <div id="bitcoin-price">
+        Loading Bitcoin price...
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+                .then(response => response.json())
+                .then(data => {
+                    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
+                    bitcoinPriceDiv.innerHTML = `Current Bitcoin Price: $${data.bpi.USD.rate}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching Bitcoin price:', error);
+                    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
+                    bitcoinPriceDiv.innerHTML = 'Failed to fetch Bitcoin price.';
+                });
+        });
+    </script>
+</footer>
+
 
     </div>
   </footer>

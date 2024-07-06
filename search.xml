@@ -19,6 +19,170 @@
 ]]></content>
   </entry>
   <entry>
+    <title>newpost</title>
+    <url>/newpost/</url>
+    <content><![CDATA[<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>今日诗词</title>
+  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+    .poem-container {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .poem-content {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .poem-info {
+      font-style: italic;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="poem-container" id="poemContainer">
+    <div class="poem-content" id="poemContent">正在加载今日诗词...</div>
+    <div class="poem-info" id="poemInfo"></div>
+  </div>
+
+  <script type="text/javascript">
+    // 异步加载并显示今日诗词
+    function loadPoem() {
+      var poemContent = document.getElementById('poemContent');
+      var poemInfo = document.getElementById('poemInfo');
+      
+      jinrishici.load(function(result) {
+        if (result.status === 'success') {
+          var poemData = result.data;
+          var content = poemData.content;
+          var dynasty = poemData.origin.dynasty;
+          var author = poemData.origin.author;
+          var title = poemData.origin.title;
+          
+          poemContent.innerHTML = '<p>' + content + '</p>';
+          poemInfo.innerHTML = '<p><em>【' + dynasty + '】</em>' + author + '《' + title + '》</p>';
+        } else {
+          poemContent.innerHTML = '抱歉，未能加载到今日诗词。';
+        }
+      });
+    }
+
+    // 页面加载完成后加载诗词
+    window.onload = loadPoem;
+  </script>
+</body>
+</html>
+
+
+<input type="text" id="cocktail-search" placeholder="输入鸡尾酒名称">
+<button onclick="searchCocktail()">搜索</button>
+<div id="cocktail-details"></div>
+
+<script>
+function searchCocktail() {
+    const searchInput = document.querySelector('#cocktail-search').value.trim();
+    if (!searchInput) {
+        alert('请输入鸡尾酒名称');
+        return;
+    }
+
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.drinks) {
+                displayCocktail(data.drinks[0]);
+            } else {
+                alert('未找到符合条件的鸡尾酒');
+            }
+        })
+        .catch(error => console.error('Error searching cocktail:', error));
+}
+</script>
+
+
+<select id="filter-by">
+    <option value>选择过滤条件</option>
+    <option value="a=Alcoholic">酒精鸡尾酒</option>
+    <option value="a=Non_Alcoholic">无酒精鸡尾酒</option>
+    <option value="c=Cocktail">经典鸡尾酒</option>
+    <option value="c=Ordinary_Drink">普通饮料</option>
+    <!-- 其他过滤条件 -->
+</select>
+<button onclick="filterCocktails()">应用过滤</button>
+<div id="filtered-cocktails"></div>
+
+<script>
+function filterCocktails() {
+    const filterBy = document.querySelector('#filter-by').value;
+    if (!filterBy) {
+        alert('请选择过滤条件');
+        return;
+    }
+
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?${filterBy}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.drinks) {
+                displayFilteredCocktails(data.drinks);
+            } else {
+                alert('未找到符合条件的鸡尾酒');
+            }
+        })
+        .catch(error => console.error('Error filtering cocktails:', error));
+}
+
+function displayFilteredCocktails(cocktails) {
+    const filteredList = document.querySelector('#filtered-cocktails');
+    let html = '';
+    cocktails.forEach(cocktail => {
+        html += `
+            <div>
+                <h3>${cocktail.strDrink}</h3>
+                <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}" style="max-width: 200px;">
+                <p><strong>Category:</strong> ${cocktail.strCategory}</p>
+                <p><strong>Instructions:</strong> ${cocktail.strInstructions}</p>
+            </div>
+        `;
+    });
+    filteredList.innerHTML = html;
+}
+</script>
+
+
+
+
+<p><button onclick="fetchRandomCocktail()">随机鸡尾酒</button><br><button onclick="fetchPopularCocktails()">流行鸡尾酒</button></p>
+<div id="random-cocktail"></div>
+
+<script>
+function fetchRandomCocktail() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+        .then(response => response.json())
+        .then(data => displayCocktail(data.drinks[0]))
+        .catch(error => console.error('Error fetching random cocktail:', error));
+}
+
+function fetchPopularCocktails() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/popular.php')
+        .then(response => response.json())
+        .then(data => displayFilteredCocktails(data.drinks))
+        .catch(error => console.error('Error fetching popular cocktails:', error));
+}
+</script>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo博客搭建与部署</title>
     <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
@@ -119,27 +283,6 @@
         <tag>Hexo</tag>
         <tag>博客搭建</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>newpost</title>
-    <url>/newpost/</url>
-    <content><![CDATA[<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p><a href="https://qqhsx.github.io/">2023</a></p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
-</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
-</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
-</div></div></div>
-
-
-
-<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2022</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-02</p>
-</div></div><div class="timeline-item-content"><p><a href="https://qqhsx.github.io/">12月2日 xxxx</a></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
-</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
-</div></div></div>
-
-]]></content>
   </entry>
   <entry>
     <title>Test Image Insert</title>
@@ -612,33 +755,6 @@
       </tags>
   </entry>
   <entry>
-    <title>伊尹放太甲</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E5%95%86%E6%9C%9D/%E4%BC%8A%E5%B0%B9%E6%94%BE%E5%A4%AA%E7%94%B2/</url>
-    <content><![CDATA[<p>在伊尹的协助下，汤成功推翻了夏朝的统治，建立了商朝。商朝建立之初，百废待兴，汤又在伊尹的帮助下完善了各项典章制度，使商迅速恢复了社会秩序，走上正轨。商汤在位三十年，临终时，因为特别信任伊尹，把辅佐继任帝王的重任嘱托于他。</p>
-<span id="more"></span>
-
-<p>商朝时，继承的法则是兄死弟及，没有弟弟，才轮到儿子继承。商汤没有弟弟，因此应该是长子太丁继位。可是汤还在世时，太丁就死了，因此按照礼法，应该由太丁的弟弟外丙继位。于是伊尹便扶持外丙继承了王位。外丙在位三年就去世了，他的弟弟仲壬继位，仲壬体弱多病，注定也是个短命君王，在位四年就病亡了。这时能继承王位的只有商汤的孙子、太丁的儿子——太甲了。此时的太甲只有十岁，但伊尹还是毫不犹豫地扶持年幼的太甲登上了商朝君主的宝座。他自己则掌握大权，尽心尽职地从旁辅佐，教给太甲如何区分是非对错和治理国家的方法，希望把太甲调教成一代贤君。</p>
-<p>太甲年幼少不更事，开始还能听伊尹的教导，谨言慎行，恪守祖辈的礼法，认真对待政事。可是，他小小年纪就登上权力的顶峰，众星捧月般地长大，而且自幼丧父，没有受过严格的管教。没几年，他顽劣的性情就开始滋长，自认是一国之君，万人之上，没人能管得了自己，渐渐变得忘乎所以，对伊尹的教导也开始不耐烦起来。他觉得伊尹虽为宰相，却是奴隶出身，自己凭什么要听他的教训。因此，当伊尹给他讲祖宗的规矩，向他传授汤立下的法度，用历史上贤君的故事教育他时，根本听不进去，而且表现得很敌对。渐渐地，他变得恣意妄为，喜声乐，醉酒宴，一再地破坏礼法。更可怕的是，他竟越来越像夏桀，喜欢滥用民力，暴虐嗜杀，百姓苦不堪言，对他的不满越积越深。</p>
-<p>对于太甲的无心长进，暴虐成性，伊尹和群臣都忧心忡忡，一再规劝，提醒太甲作为一代君王，要有所为有所不为。然而，太甲根本听不进伊尹的规劝，不但一意孤行，甚至还变本加厉。伊尹非常忧虑，担心如果继续放纵太甲这样胡闹下去，汤好不容易打下来的天下，就会被他葬送。</p>
-<p>为了商朝的天下，为了能把太甲调教成一代明君，伊尹决定对太甲下一剂猛药。正好快要到汤的忌日了，按规矩，君主要带领朝廷上下举行盛大的祭祀活动。太甲贪玩，根本不想主持这种规规矩矩、枯燥乏味的仪式，可是伊尹一再强调身为汤的子孙，继承了汤打下的天下，这件事他责无旁贷，除非他不想做这个君主了。太甲无奈，勉为其难主持祭奠，带领群臣来到了汤的墓地——桐宫。祭奠一开始，伊尹宣读祭文，向汤的亡灵宣告，为了商朝能千秋万代，要将幼主留在桐宫，让他反思自己的言行，帮他领悟治国的道理。太甲听完祭文，才知道自己要被囚于桐宫，接受训导，一下就慌了神，可是群臣百官都在场，显然大家都支持伊尹的决定，他已经骑虎难下，只能听从了。</p>
-<p>太甲住进了桐宫，但国家大事不能无人管理，伊尹便摄政当国，代行天子职责。为了教导太甲上进，伊尹给他写了《伊训》、《肆命》、《祖后》三篇训词：《伊训》中说，腐败、淫荡、逆乱之风是丧家乱国的根本，身为君主要想让国家长治久安，就要修身养性，多听贤臣的意见；《肆命》是讲分辨是非的方法，清楚地说明应做什么样的事情，不应做什么样的事情；《祖后》则专门讲商汤时候的典法制度，教育太甲祖先的规矩不可破，不能为了贪一时之快，而背弃祖训，为所欲为。</p>
-<p>桐宫远在商都郊外，虽是商朝开国之君汤的陵墓，却非常简陋，跟普通人的墓没什么两样，只有一座又低又矮的宫室，以便每年到此祭奠。太甲是享乐惯了的人，怎能甘心呆在这里受苦。为了能让太甲安心悔过，伊尹语重心长地对他说：“我年事已高，本没有争权夺位的野心，可是先王临终托孤，辅佐幼主，自己重任在身。为了不辜负先王的嘱托，不能对你放任不管。你还是商朝的国君，但是在执政之前要多学习、走正道，修身养性，提高治国安邦的能力。所以要趁着这次机会，在这里好好学习如何做一个英明的君王。”</p>
-<p>太甲知道此事已经无可挽回，再加上伊尹的一番话也让他有些感触，便不再反抗，表示会老实地呆在桐宫学习。太甲在此，没有高床软卧，没有锦衣玉食，远离前呼后拥，远离奢华的享受，也远离各种诱惑，每天他早晚守候着祖父商汤的陵墓，读着伊尹写给他的训词，过着简朴的生活，心竟真的渐渐平静下来。</p>
-<p>太甲逐渐了解到祖父历尽艰辛，打下商朝天下，还能俭以修身，仁以立德，由衷地崇拜起祖父来，再想想自己对国家没什么贡献，就登上王位，却不思治国，只贪图玩乐，还暴虐地对待百姓，真羞愧难当。同时，他想到伊尹对自己苦心教诲，自己却不能理解，懊悔不及。于是，太甲下定决定要好好读书，做一个不负祖父亡灵的明君，学习为君为政所必需的德行与知识，掌握国家法度，以及如何应对国家的困境。</p>
-<p>就这样，在不断地学习与悔过自新中，太甲在桐宫一住就是三年。这三年间，太甲真的脱胎换骨了，他认真学习，以祖父为榜样，严格要求自己，尤其注重修炼自己的德行。伊尹也经常派德才兼备的人给他授课，同时了解他在桐宫的情况。经过一番了解，伊尹确定太甲已经改过向善，也具备了一定才识，可以回来当君主了。于是，伊尹带领文武大臣来到桐宫，用隆重的仪式把太甲接回了亳都，让太甲归位主政，自己只从旁辅佐。</p>
-<p>经过三年的蜕变，太甲归位后，果然完全改掉了过去的顽劣性情。他虽然年纪轻轻，却成熟沉稳，对待国家大事从不懈怠，还发扬商汤的德政，勤俭爱民，凡是为大局着想，从不做违反祖制和朝廷法律的事。在他和伊尹的统治下，商朝社会稳定，百姓安康，诸侯臣服，进入了一个稳定发展鼎盛时期。《史记·殷本纪》中说太甲复位后，“诸侯咸归殷，百姓以宁”。太甲因此赢得了群臣和百姓的尊敬，被称为“太宗”。伊尹又作《太甲训》三篇，褒扬太甲的德政。</p>
-<p>不过，太甲当政期间，对国家大事起决定性作用的还是伊尹，直到太甲的儿子沃丁继承王位八年后，伊尹才去世。据说，他去世的时候，天降大雾，三日不散。沃丁感念他对商朝鞠躬尽瘁的功德，亲自主持丧事，用天子之礼厚葬了他，将他安葬在亳都的郊区。</p>
-<p>伊尹不仅是辅佐汤夺取天下的开国元勋，而且是名副其实的“五朝元老”，他以其卓越的才能和忠诚，为商王朝延续六百年的统治奠定了坚实的基础，是我国历史上最早的贤能相国圣人，史称“元圣”。在甲骨卜辞的记载中，伊尹不但被列为“旧老臣”之首，受到隆重祭祀，而且还与汤同祭，单独享祀。</p>
-]]></content>
-      <categories>
-        <category>历史</category>
-        <category>商朝</category>
-      </categories>
-      <tags>
-        <tag>伊尹放太甲</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>通货紧缩</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E9%80%9A%E8%B4%A7%E7%B4%A7%E7%BC%A9/</url>
     <content><![CDATA[<h4 id="小镇的故事"><a href="#小镇的故事" class="headerlink" title="小镇的故事"></a>小镇的故事</h4><p>在一个宁静的小镇上，居民们的生活就是买东西和卖东西。</p>
@@ -721,6 +837,33 @@
       </categories>
       <tags>
         <tag>通货紧缩</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>伊尹放太甲</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E5%95%86%E6%9C%9D/%E4%BC%8A%E5%B0%B9%E6%94%BE%E5%A4%AA%E7%94%B2/</url>
+    <content><![CDATA[<p>在伊尹的协助下，汤成功推翻了夏朝的统治，建立了商朝。商朝建立之初，百废待兴，汤又在伊尹的帮助下完善了各项典章制度，使商迅速恢复了社会秩序，走上正轨。商汤在位三十年，临终时，因为特别信任伊尹，把辅佐继任帝王的重任嘱托于他。</p>
+<span id="more"></span>
+
+<p>商朝时，继承的法则是兄死弟及，没有弟弟，才轮到儿子继承。商汤没有弟弟，因此应该是长子太丁继位。可是汤还在世时，太丁就死了，因此按照礼法，应该由太丁的弟弟外丙继位。于是伊尹便扶持外丙继承了王位。外丙在位三年就去世了，他的弟弟仲壬继位，仲壬体弱多病，注定也是个短命君王，在位四年就病亡了。这时能继承王位的只有商汤的孙子、太丁的儿子——太甲了。此时的太甲只有十岁，但伊尹还是毫不犹豫地扶持年幼的太甲登上了商朝君主的宝座。他自己则掌握大权，尽心尽职地从旁辅佐，教给太甲如何区分是非对错和治理国家的方法，希望把太甲调教成一代贤君。</p>
+<p>太甲年幼少不更事，开始还能听伊尹的教导，谨言慎行，恪守祖辈的礼法，认真对待政事。可是，他小小年纪就登上权力的顶峰，众星捧月般地长大，而且自幼丧父，没有受过严格的管教。没几年，他顽劣的性情就开始滋长，自认是一国之君，万人之上，没人能管得了自己，渐渐变得忘乎所以，对伊尹的教导也开始不耐烦起来。他觉得伊尹虽为宰相，却是奴隶出身，自己凭什么要听他的教训。因此，当伊尹给他讲祖宗的规矩，向他传授汤立下的法度，用历史上贤君的故事教育他时，根本听不进去，而且表现得很敌对。渐渐地，他变得恣意妄为，喜声乐，醉酒宴，一再地破坏礼法。更可怕的是，他竟越来越像夏桀，喜欢滥用民力，暴虐嗜杀，百姓苦不堪言，对他的不满越积越深。</p>
+<p>对于太甲的无心长进，暴虐成性，伊尹和群臣都忧心忡忡，一再规劝，提醒太甲作为一代君王，要有所为有所不为。然而，太甲根本听不进伊尹的规劝，不但一意孤行，甚至还变本加厉。伊尹非常忧虑，担心如果继续放纵太甲这样胡闹下去，汤好不容易打下来的天下，就会被他葬送。</p>
+<p>为了商朝的天下，为了能把太甲调教成一代明君，伊尹决定对太甲下一剂猛药。正好快要到汤的忌日了，按规矩，君主要带领朝廷上下举行盛大的祭祀活动。太甲贪玩，根本不想主持这种规规矩矩、枯燥乏味的仪式，可是伊尹一再强调身为汤的子孙，继承了汤打下的天下，这件事他责无旁贷，除非他不想做这个君主了。太甲无奈，勉为其难主持祭奠，带领群臣来到了汤的墓地——桐宫。祭奠一开始，伊尹宣读祭文，向汤的亡灵宣告，为了商朝能千秋万代，要将幼主留在桐宫，让他反思自己的言行，帮他领悟治国的道理。太甲听完祭文，才知道自己要被囚于桐宫，接受训导，一下就慌了神，可是群臣百官都在场，显然大家都支持伊尹的决定，他已经骑虎难下，只能听从了。</p>
+<p>太甲住进了桐宫，但国家大事不能无人管理，伊尹便摄政当国，代行天子职责。为了教导太甲上进，伊尹给他写了《伊训》、《肆命》、《祖后》三篇训词：《伊训》中说，腐败、淫荡、逆乱之风是丧家乱国的根本，身为君主要想让国家长治久安，就要修身养性，多听贤臣的意见；《肆命》是讲分辨是非的方法，清楚地说明应做什么样的事情，不应做什么样的事情；《祖后》则专门讲商汤时候的典法制度，教育太甲祖先的规矩不可破，不能为了贪一时之快，而背弃祖训，为所欲为。</p>
+<p>桐宫远在商都郊外，虽是商朝开国之君汤的陵墓，却非常简陋，跟普通人的墓没什么两样，只有一座又低又矮的宫室，以便每年到此祭奠。太甲是享乐惯了的人，怎能甘心呆在这里受苦。为了能让太甲安心悔过，伊尹语重心长地对他说：“我年事已高，本没有争权夺位的野心，可是先王临终托孤，辅佐幼主，自己重任在身。为了不辜负先王的嘱托，不能对你放任不管。你还是商朝的国君，但是在执政之前要多学习、走正道，修身养性，提高治国安邦的能力。所以要趁着这次机会，在这里好好学习如何做一个英明的君王。”</p>
+<p>太甲知道此事已经无可挽回，再加上伊尹的一番话也让他有些感触，便不再反抗，表示会老实地呆在桐宫学习。太甲在此，没有高床软卧，没有锦衣玉食，远离前呼后拥，远离奢华的享受，也远离各种诱惑，每天他早晚守候着祖父商汤的陵墓，读着伊尹写给他的训词，过着简朴的生活，心竟真的渐渐平静下来。</p>
+<p>太甲逐渐了解到祖父历尽艰辛，打下商朝天下，还能俭以修身，仁以立德，由衷地崇拜起祖父来，再想想自己对国家没什么贡献，就登上王位，却不思治国，只贪图玩乐，还暴虐地对待百姓，真羞愧难当。同时，他想到伊尹对自己苦心教诲，自己却不能理解，懊悔不及。于是，太甲下定决定要好好读书，做一个不负祖父亡灵的明君，学习为君为政所必需的德行与知识，掌握国家法度，以及如何应对国家的困境。</p>
+<p>就这样，在不断地学习与悔过自新中，太甲在桐宫一住就是三年。这三年间，太甲真的脱胎换骨了，他认真学习，以祖父为榜样，严格要求自己，尤其注重修炼自己的德行。伊尹也经常派德才兼备的人给他授课，同时了解他在桐宫的情况。经过一番了解，伊尹确定太甲已经改过向善，也具备了一定才识，可以回来当君主了。于是，伊尹带领文武大臣来到桐宫，用隆重的仪式把太甲接回了亳都，让太甲归位主政，自己只从旁辅佐。</p>
+<p>经过三年的蜕变，太甲归位后，果然完全改掉了过去的顽劣性情。他虽然年纪轻轻，却成熟沉稳，对待国家大事从不懈怠，还发扬商汤的德政，勤俭爱民，凡是为大局着想，从不做违反祖制和朝廷法律的事。在他和伊尹的统治下，商朝社会稳定，百姓安康，诸侯臣服，进入了一个稳定发展鼎盛时期。《史记·殷本纪》中说太甲复位后，“诸侯咸归殷，百姓以宁”。太甲因此赢得了群臣和百姓的尊敬，被称为“太宗”。伊尹又作《太甲训》三篇，褒扬太甲的德政。</p>
+<p>不过，太甲当政期间，对国家大事起决定性作用的还是伊尹，直到太甲的儿子沃丁继承王位八年后，伊尹才去世。据说，他去世的时候，天降大雾，三日不散。沃丁感念他对商朝鞠躬尽瘁的功德，亲自主持丧事，用天子之礼厚葬了他，将他安葬在亳都的郊区。</p>
+<p>伊尹不仅是辅佐汤夺取天下的开国元勋，而且是名副其实的“五朝元老”，他以其卓越的才能和忠诚，为商王朝延续六百年的统治奠定了坚实的基础，是我国历史上最早的贤能相国圣人，史称“元圣”。在甲骨卜辞的记载中，伊尹不但被列为“旧老臣”之首，受到隆重祭祀，而且还与汤同祭，单独享祀。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>商朝</category>
+      </categories>
+      <tags>
+        <tag>伊尹放太甲</tag>
       </tags>
   </entry>
   <entry>
@@ -2226,17 +2369,190 @@
       </tags>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>关于</title>
     <url>/about/index.html</url>
     <content><![CDATA[<blockquote>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>economy</title>
+    <url>/economy/index.html</url>
+    <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华人民共和国经济自改革开放以来实现了快速增长和深刻转型，从一个贫穷落后的国家发展成为全球第二大经济体，具有强大的制造业基础、蓬勃发展的服务业和不断深化的市场改革。</strong></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2023年</p>
+</div></div><div class="timeline-item-content"><p>私募投资基金监管：国务院总理李强签署了《私募投资基金监督管理条例》，于2023年9月1日起施行，此举为包括房地产投资基金在内的私募基金提供了更为明确的法律依据。<br>数字人民币推广：数字人民币（e-CNY）的推广将推动数字经济的发展，也将对房地产交易中的支付方式和金融服务产生深远影响。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2022年</p>
+</div></div><div class="timeline-item-content"><p>房地产市场调整：多个房地产开发商陷入债务危机，对房地产市场的信用环境和经济稳定产生影响，政府出台稳地产政策，稳定市场预期，维持房地产市场健康发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2021年</p>
+</div></div><div class="timeline-item-content"><p>实现全面建成小康社会，启动“十四五”规划，强调创新驱动和绿色发展。<br>住房保障制度：进一步明确“租购并举”的住房制度，通过增加租赁住房供给和保障性住房供给，提高居住水平和住房保障程度。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2020年</p>
+</div></div><div class="timeline-item-content"><p>数字人民币试点启动，探索数字货币的发展和应用。<br>新冠疫情爆发，全球经济因疫情受到冲击，中国实施严格的防控措施，并推出大规模经济刺激政策，迅速控制疫情并恢复经济。成为全球首个实现正增长的主要经济体。<br>房地产税立法：全国人大常委会将房地产税法列入立法工作计划，标志着房地产税法制定工作正式启动。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2019年</p>
+</div></div><div class="timeline-item-content"><p>粤港澳大湾区发展规划发布，推动区域经济一体化。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2018年</p>
+</div></div><div class="timeline-item-content"><p>中美贸易摩擦开始，对全球贸易格局产生深远影响。<br>5G技术研发进入应用阶段，推动信息通信技术的进一步发展。<br>国家启动“双一流”建设，提升高等教育质量和国际竞争力。<br>共享经济、电子商务和移动支付等新兴服务业态迅速发展，改变了传统服务业的格局。<br>中国保险监督管理委员会与中国银监会合并，成立中国银行保险监督管理委员会（CBIRC）。负责监督管理银行业和保险业。<br>长租公寓政策：政府鼓励长租公寓发展，出台了一系列政策支持租赁住房市场，改善住房供应结构。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2017年</p>
+</div></div><div class="timeline-item-content"><p>党的十九大召开，提出“中国特色社会主义进入新时代”的战略目标，强调高质量发展。<br>实施“房住不炒”政策，稳定房地产市场，防止房地产泡沫。<br>国家电网公司成立，推动全国电网一体化，改善能源分配和管理。<br>国家能源局发布《关于推进电力体制改革的实施意见》，进一步深化电力体制改革。<br>加强调控：各地出台更为严格的限购、限贷、限售政策，进一步强化房地产市场调控，防止房地产市场过热。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2016年</p>
+</div></div><div class="timeline-item-content"><p>中国启动供给侧结构性改革，重点解决产能过剩、库存过高和债务问题。<br>人民币正式加入国际货币基金组织（IMF）的特别提款权（SDR）货币篮子，标志着人民币国际化取得重要进展。<br>京津冀协同发展战略实施，推动区域基础设施互联互通。<br>发布《“健康中国2030”规划纲要》，提出健康中国战略目标。<br>“房住不炒”政策：中央经济工作会议提出“房子是用来住的，不是用来炒的”定位，强调住房的居住属性，明确房地产调控方向。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2015年</p>
+</div></div><div class="timeline-item-content"><p>中国制造2025计划发布，旨在推动中国从制造大国向制造强国转型。<br>国家创新驱动发展战略提出，进一步推动科技创新和产业升级。<br>启动“互联网+”行动计划，推动互联网金融快速发展。<br>国家实施“互联网+”战略，推动互联网与传统行业的深度融合。<br>国务院发布《关于积极推进“互联网+”行动的指导意见》，推动餐饮、零售等传统服务业的互联网化。<br>股市异常波动，沪深股市经历了大幅度的上涨和下跌，引发金融市场关注。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2013年</p>
+</div></div><div class="timeline-item-content"><p>习近平总书记提出“一带一路”倡议，推动跨国基础设施建设和经济合作，促进了中国对外贸易的发展。<br>自由贸易试验区（上海自贸区）成立，探索金融服务、投资管理等方面的改革开放。<br>国务院发布《关于促进旅游业改革发展的若干意见》，进一步推动旅游业改革和发展。<br>国五条出台：国务院发布《关于继续做好房地产市场调控工作的通知》（即“国五条”），进一步加强房地产市场调控，抑制投机投资性购房需求，稳定住房价格。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2012年</p>
+</div></div><div class="timeline-item-content"><p>高速铁路网逐步成形，“四横四纵”高铁网络基本完成。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2011年</p>
+</div></div><div class="timeline-item-content"><p>房产税试点：在上海和重庆两地首次试点征收房产税，旨在调控房地产市场，同时探索和完善该税种的征收方式。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2010年</p>
+</div></div><div class="timeline-item-content"><p>上海成为国际金融中心，金融服务业迅猛发展。<br>中国—东盟自由贸易区正式启动，促进区域经济合作。<br>出台《可再生能源法》，推动风能、太阳能等新能源的开发和利用。<br>全国铁路营业里程达到9.1万公里，高铁运营里程达到8358公里。<br>《国家中长期教育改革和发展规划纲要（2010-2020年）》发布，明确了教育改革和发展的目标和任务。<br>中国农业银行在上海和香港同步上市。<br>限购令：国务院发布《关于促进房地产市场平稳健康发展的通知》，实施限购政策，逐步在全国主要城市推广，限制住宅购买数量，以抑制投机行为。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2009年</p>
+</div></div><div class="timeline-item-content"><p>出台《装备制造业调整和振兴规划》，推动装备制造业向高端化发展。<br>启动新一轮医改，提出基本药物制度和公立医院改革等措施。<br>中国农业银行启动股份制改造。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2008年</p>
+</div></div><div class="timeline-item-content"><p>全球金融危机爆发，中国实施了一系列经济刺激计划，如四万亿投资计划，以稳定经济增长。<br>京津城际高速铁路开通，标志着中国高速铁路进入快速发展期。<br>应对全球金融危机：全球金融危机背景下，中国政府推出“四万亿”投资计划，部分资金用于基础设施建设和房地产市场，稳定房地产市场。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2007年</p>
+</div></div><div class="timeline-item-content"><p>中国建设银行在上海上市。<br>交通银行在上海上市。<br>防止房地产泡沫政策：政府出台一系列措施，意在控制房地产市场过热，防止房地产泡沫，包括提高首付比例、提高第二套房贷利率等。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2006年</p>
+</div></div><div class="timeline-item-content"><p>全面取消农业税，减轻农民经济负担，促进农村经济发展。<br>神华集团成立，成为中国最大的煤炭企业。<br>国家中长期科学和技术发展规划纲要发布，提出创新型国家战略目标。<br>中国银行在香港和上海同步上市。<br>中国工商银行在上海和香港同步上市，成为当时全球最大的IPO。<br>严格住房贷款政策：人民银行发布《关于加强房地产信贷管理的通知》，要求银行对房地产贷款进行更加严格的管理，特别是对投机性购房行为进行限制。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2005年</p>
+</div></div><div class="timeline-item-content"><p>废止《中华人民共和国农业税条例》，减轻了农民的负担，进一步推动了农村经济的发展。<br>中国工商银行完成股份制改造，更名为“中国工商银行股份有限公司”。<br>中国建设银行在香港上市，成为首家在海外上市的大型国有商业银行。<br>交通银行在香港上市。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2004年</p>
+</div></div><div class="timeline-item-content"><p>保险法修订，促进保险行业的规范化发展，增强金融服务业。<br>国务院出台《关于深化经济体制改革的决定》，推动房地产市场化改革。<br>中央一号文件首次聚焦“三农”问题，明确了农业和农村工作的优先地位。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2003年</p>
+</div></div><div class="timeline-item-content"><p>银监会（中国银行业监督管理委员会）成立，进一步规范和发展中国的银行业。<br>房地产开发企业资质管理规定：住房和城乡建设部发布该规定，进一步规范房地产开发企业的准入和管理。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2001年</p>
+</div></div><div class="timeline-item-content"><p>中国加入世界贸易组织（WTO），显著提升对外贸易的规模和水平。<br>中国加入WTO，金融服务业对外开放步伐加快，外资银行进入中国市场。<br>中国加入WTO，批发零售和餐饮业对外开放，外资企业进入市场。<br>中国证监会发布基金管理新规，促进基金市场的健康发展。<br>中关村被批准为国家自主创新示范区，成为中国高新技术产业发展的标志性区域。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2000年</p>
+</div></div><div class="timeline-item-content"><p>中关村科技园区成立，成为中国科技创新和创业的摇篮。<br>发布了《开放式证券投资基金试点办法》，这标志着我国开放式基金发展的序幕正式拉开。<br>互联网泡沫破裂后，中国的互联网企业开始重新发展，腾讯、阿里巴巴等公司逐渐崛起。<br>提出建设旅游强国的目标，旅游基础设施和服务水平显著提高。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1999年</p>
+</div></div><div class="timeline-item-content"><p>提出西部大开发战略，促进西部地区经济发展。<br>中国工商银行启动股份制改造。<br>城市房地产管理法实施：该法的实施规范了房地产市场，确保市场健康发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1998年</p>
+</div></div><div class="timeline-item-content"><p>中国首批按照《证券投资基金管理暂行办法》设立的两只封闭式基金——基金开元和基金金泰成功发行，标志着中国基金市场进入规范化、法制化的发展阶段。<br>中国保险监督管理委员会成立，负责监督管理保险市场。<br>住房制度改革：国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，全面停止福利分房，推动房地产业快速发展，开启了中国房地产市场化的进程。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1997年</p>
+</div></div><div class="timeline-item-content"><p>中国证监会发布了《证券投资基金管理暂行办法》，为基金市场的规范发展提供了法律依据。<br>京九铁路全线通车，改善了南北交通运输网络。<br>启动城镇职工基本医疗保险制度改革，覆盖面不断扩大。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1995年</p>
+</div></div><div class="timeline-item-content"><p>颁布《商业银行法》，进一步规范银行业的发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1994年</p>
+</div></div><div class="timeline-item-content"><p>中国开始实施外汇体制改革，人民币官方汇率与市场汇率并轨，标志着中国外汇市场走向成熟。<br>中国正式接入国际互联网，信息技术行业开始起步。<br>中国银行改组为国家独资商业银行。<br>中国人民建设银行改组为国家独资商业银行，更名为“中国建设银行”。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1993年</p>
+</div></div><div class="timeline-item-content"><p>中国在部分国有企业里试行养老保险制度，开始由单位和个人共同缴纳养老保险金，即开始实施社保制度。<br>实施《中国教育改革和发展纲要》，提出教育优先发展战略。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1992年</p>
+</div></div><div class="timeline-item-content"><p>中国进一步扩大开放，引入外资和推行国企改革，为市场经济的建立和发展奠定了基础。<br>邓小平南巡讲话，推动了批发零售业和餐饮娱乐业的快速发展。<br>中国证券监督管理委员会成立，负责监督管理证券市场。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1991年</p>
+</div></div><div class="timeline-item-content"><p>设立深圳证券交易所，进一步推动证券市场的发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1990年</p>
+</div></div><div class="timeline-item-content"><p>上海浦东新区开发开放，开始大规模发展第三产业。<br>京九铁路开工建设，改善南北交通运输能力。<br>上海证券交易所成立，开启中国现代证券市场的历程。<br>中国证券投资基金的雏形：在1990年代初，中国开始试点发行封闭式证券投资基金，这是基金市场在中国发展的初步尝试。<br>上海证券交易所和深圳证券交易所相继成立，标志着中国资本市场的开始。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1988年</p>
+</div></div><div class="timeline-item-content"><p>房地产市场化改革启动，实施住房商品化政策，促进商品房市场发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1987年</p>
+</div></div><div class="timeline-item-content"><p>交通银行重新组建后，成为全国性股份制商业银行。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1986年</p>
+</div></div><div class="timeline-item-content"><p>《中华人民共和国义务教育法》颁布，确立了九年义务教育制度。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1985年</p>
+</div></div><div class="timeline-item-content"><p>中国开始设立沿海开放城市，开放对外贸易，加强国际经贸合作。<br>国家863计划（高技术研究发展计划）启动，推动高科技产业发展。<br>国务院批准设立国家旅游局，开始规范和促进旅游业的发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1984年</p>
+</div></div><div class="timeline-item-content"><p>城市经济体制改革开始，重点改革国有企业，提高经济效益和活力。<br>中国人民银行专职行使中央银行职能，国家专业银行的分工进一步明确。<br>中国工商银行成立，主要负责城市工商企业的信贷业务。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1980年</p>
+</div></div><div class="timeline-item-content"><p>改革开放后，中国开始大规模引进外资，兴建合资企业，制造业迅速发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1979年</p>
+</div></div><div class="timeline-item-content"><p>国家经济体制改革委员会成立，统筹经济体制改革工作。<br>小岗村家庭联产承包责任制的实施，这是农村经济体制改革的重要试点，为全国推广提供了示范。<br>中国农业银行恢复成立后，继续支持农村经济发展。<br>国家外汇管理局成立，负责外汇管理和政策制定。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1978年</p>
+</div></div><div class="timeline-item-content"><p>家庭联产承包责任制在农村逐步推广，极大地提高了农民的生产积极性。<br>改革开放政策开始实施，中国开始从计划经济向市场经济过渡，引入外资和市场经济机制。<br>改革开放政策实施，旅游业开始恢复和发展。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1973年</p>
+</div></div><div class="timeline-item-content"><p>大庆油田取得重大突破，中国石油生产进入自给自足阶段。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1971年</p>
+</div></div><div class="timeline-item-content"><p>中国恢复在联合国的合法席位，为后来的对外开放和国际经济合作创造了条件。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1964年</p>
+</div></div><div class="timeline-item-content"><p>中国成功试爆第一颗原子弹，标志着中国国防科技和工业的重要进步。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1958年</p>
+</div></div><div class="timeline-item-content"><p>国家科委成立，为中国科技创新提供制度保障。<br>“大跃进”运动开始，虽然初衷是为了加速经济发展，但导致了一系列经济问题和社会问题。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1957年</p>
+</div></div><div class="timeline-item-content"><p>武钢（武汉钢铁公司）投产，成为中国基础设施建设的重要支撑。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1956年</p>
+</div></div><div class="timeline-item-content"><p>基本完成了对农业、手工业和资本主义工商业的社会主义改造，社会主义制度在中国基本建立。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1954年</p>
+</div></div><div class="timeline-item-content"><p>第一届全国人民代表大会第一次会议召开，通过了《中华人民共和国宪法》，为社会主义法治建设奠定了基础。<br>中国建设银行成立，最初名为中国人民建设银行，主要为国家基本建设服务。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1953年</p>
+</div></div><div class="timeline-item-content"><p>过渡时期总路线提出，中国开始从新民主主义向社会主义过渡。<br>第一个五年计划开始实施，重点发展重工业，逐步进行对农业、手工业和资本主义工商业的社会主义改造。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1952年</p>
+</div></div><div class="timeline-item-content"><p>中国进行第一次经济恢复时期，重点发展重工业，特别是钢铁和机械制造业。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1951年</p>
+</div></div><div class="timeline-item-content"><p>中国农业银行成立，主要为农业和农村经济服务。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1950年</p>
+</div></div><div class="timeline-item-content"><p>土地改革运动，废除地主阶级的土地所有制，实现土地公有化，重新分配土地给农民。<br>开始实行农村合作医疗制度，提高了农村医疗保障水平。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1949年</p>
+</div></div><div class="timeline-item-content"><p>除了新中国成立外，同年还进行了土地改革前的准备工作，如土地法大纲的公布等。</p>
+</div></div></div>
+
+
+
+
+
+
+<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华民国（1912年—1949年）</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华民国时期，尽管经历了现代化的尝试和一定的经济发展，但长期的战乱和政治不稳定极大地限制了经济的持续发展。抗日战争和国共内战的破坏，使得经济状况进一步恶化，最终在1949年中华人民共和国成立后开始新的经济重建和发展。</strong></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1949年</p>
+</div></div><div class="timeline-item-content"><p>中华人民共和国成立，中华民国政府迁往台湾，经济体制发生根本性转变。<br>中华人民共和国成立后，中国银行成为外汇外贸专业银行。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1948年</p>
+</div></div><div class="timeline-item-content"><p>成立中国人民银行，作为中央银行，负责全国的金融管理和货币政策。<br>经济崩溃，金圆券迅速贬值，物价飞涨，民生困苦。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1947年</p>
+</div></div><div class="timeline-item-content"><p>国民政府实施金圆券改革，试图遏制通货膨胀，但效果有限。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1946年</p>
+</div></div><div class="timeline-item-content"><p>国共内战全面爆发，经济再次陷入混乱，通货膨胀严重。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
+</div></div><div class="timeline-item-content"><p>抗日战争胜利，经济面临恢复和重建的巨大挑战。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1941年</p>
+</div></div><div class="timeline-item-content"><p>太平洋战争爆发，美国等盟国开始对华援助，但中国经济依然困难重重。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1938年</p>
+</div></div><div class="timeline-item-content"><p>国民政府实施战时经济政策，进行物资统制和战争物资生产。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1937年</p>
+</div></div><div class="timeline-item-content"><p>七七事变，日本全面侵华，抗日战争爆发，经济陷入长期战时状态，工业和基础设施遭受重大破坏。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1935年</p>
+</div></div><div class="timeline-item-content"><p>进一步实施货币改革，推行法币本位制，统一货币制度，抑制通货膨胀。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1933年</p>
+</div></div><div class="timeline-item-content"><p>国民政府实施货币改革，发行法币，试图稳定经济。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1932年</p>
+</div></div><div class="timeline-item-content"><p>淞沪抗战爆发，中国经济再度陷入困境。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1931年</p>
+</div></div><div class="timeline-item-content"><p>九一八事变，日本侵占东北，东北的工业和资源被掠夺，中国经济受到重大打击。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1928年</p>
+</div></div><div class="timeline-item-content"><p>国民政府北伐成功，统一全国，开始着手建设现代经济体系。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1927年</p>
+</div></div><div class="timeline-item-content"><p>国共合作破裂，蒋介石领导的国民政府开始“宁汉合流”，统一中国部分地区，经济政策逐渐稳定。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1925年</p>
+</div></div><div class="timeline-item-content"><p>五卅运动促进了民族工业的发展和对外经济斗争。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1923年</p>
+</div></div><div class="timeline-item-content"><p>直奉战争后，张作霖控制北京政府，财政更加混乱。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1921年</p>
+</div></div><div class="timeline-item-content"><p>中国共产党成立，提出一系列经济主张，促进工人运动和工厂罢工。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1919年</p>
+</div></div><div class="timeline-item-content"><p>五四运动爆发，推动了中国现代化和工业化的思想变革。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1916年</p>
+</div></div><div class="timeline-item-content"><p>袁世凯去世，北洋军阀混战，导致经济秩序混乱。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1915年</p>
+</div></div><div class="timeline-item-content"><p>日本提出“二十一条”，企图进一步控制中国经济资源，引发强烈反对。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1914年</p>
+</div></div><div class="timeline-item-content"><p>第一次世界大战爆发，中国对欧洲的商品出口增加，经济获得短暂繁荣。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1913年</p>
+</div></div><div class="timeline-item-content"><p>袁世凯政府开始向外借款，主要是为了巩固政权，但也导致了财政困难。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1912年</p>
+</div></div><div class="timeline-item-content"><p>中华民国成立，开始进行初步的经济建设和改革。<br>中国银行成立，是中国历史最悠久的银行之一。</p>
+</div></div></div>
+
+
+
+<div class="timeline gray"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>清朝（1636年—1912年）</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>清朝经济总体上以农业为基础，手工业和商业逐步发展，对外贸易带来经济繁荣，但也因鸦片战争和内部腐败等问题导致经济困境。近代化改革的尝试虽然有所进展，但未能彻底改变封建经济体制，最终在内忧外患中走向衰落。</strong></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1908年</p>
+</div></div><div class="timeline-item-content"><p>交通银行成立，是中国历史悠久的银行之一。</p>
+</div></div></div>
+]]></content>
   </entry>
   <entry>
     <title>history</title>
@@ -2471,179 +2787,6 @@
 </div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
 </div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
 </div></div></div>]]></content>
-  </entry>
-  <entry>
-    <title>economy</title>
-    <url>/economy/index.html</url>
-    <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华人民共和国经济自改革开放以来实现了快速增长和深刻转型，从一个贫穷落后的国家发展成为全球第二大经济体，具有强大的制造业基础、蓬勃发展的服务业和不断深化的市场改革。</strong></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2023年</p>
-</div></div><div class="timeline-item-content"><p>私募投资基金监管：国务院总理李强签署了《私募投资基金监督管理条例》，于2023年9月1日起施行，此举为包括房地产投资基金在内的私募基金提供了更为明确的法律依据。<br>数字人民币推广：数字人民币（e-CNY）的推广将推动数字经济的发展，也将对房地产交易中的支付方式和金融服务产生深远影响。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2022年</p>
-</div></div><div class="timeline-item-content"><p>房地产市场调整：多个房地产开发商陷入债务危机，对房地产市场的信用环境和经济稳定产生影响，政府出台稳地产政策，稳定市场预期，维持房地产市场健康发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2021年</p>
-</div></div><div class="timeline-item-content"><p>实现全面建成小康社会，启动“十四五”规划，强调创新驱动和绿色发展。<br>住房保障制度：进一步明确“租购并举”的住房制度，通过增加租赁住房供给和保障性住房供给，提高居住水平和住房保障程度。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2020年</p>
-</div></div><div class="timeline-item-content"><p>数字人民币试点启动，探索数字货币的发展和应用。<br>新冠疫情爆发，全球经济因疫情受到冲击，中国实施严格的防控措施，并推出大规模经济刺激政策，迅速控制疫情并恢复经济。成为全球首个实现正增长的主要经济体。<br>房地产税立法：全国人大常委会将房地产税法列入立法工作计划，标志着房地产税法制定工作正式启动。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2019年</p>
-</div></div><div class="timeline-item-content"><p>粤港澳大湾区发展规划发布，推动区域经济一体化。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2018年</p>
-</div></div><div class="timeline-item-content"><p>中美贸易摩擦开始，对全球贸易格局产生深远影响。<br>5G技术研发进入应用阶段，推动信息通信技术的进一步发展。<br>国家启动“双一流”建设，提升高等教育质量和国际竞争力。<br>共享经济、电子商务和移动支付等新兴服务业态迅速发展，改变了传统服务业的格局。<br>中国保险监督管理委员会与中国银监会合并，成立中国银行保险监督管理委员会（CBIRC）。负责监督管理银行业和保险业。<br>长租公寓政策：政府鼓励长租公寓发展，出台了一系列政策支持租赁住房市场，改善住房供应结构。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2017年</p>
-</div></div><div class="timeline-item-content"><p>党的十九大召开，提出“中国特色社会主义进入新时代”的战略目标，强调高质量发展。<br>实施“房住不炒”政策，稳定房地产市场，防止房地产泡沫。<br>国家电网公司成立，推动全国电网一体化，改善能源分配和管理。<br>国家能源局发布《关于推进电力体制改革的实施意见》，进一步深化电力体制改革。<br>加强调控：各地出台更为严格的限购、限贷、限售政策，进一步强化房地产市场调控，防止房地产市场过热。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2016年</p>
-</div></div><div class="timeline-item-content"><p>中国启动供给侧结构性改革，重点解决产能过剩、库存过高和债务问题。<br>人民币正式加入国际货币基金组织（IMF）的特别提款权（SDR）货币篮子，标志着人民币国际化取得重要进展。<br>京津冀协同发展战略实施，推动区域基础设施互联互通。<br>发布《“健康中国2030”规划纲要》，提出健康中国战略目标。<br>“房住不炒”政策：中央经济工作会议提出“房子是用来住的，不是用来炒的”定位，强调住房的居住属性，明确房地产调控方向。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2015年</p>
-</div></div><div class="timeline-item-content"><p>中国制造2025计划发布，旨在推动中国从制造大国向制造强国转型。<br>国家创新驱动发展战略提出，进一步推动科技创新和产业升级。<br>启动“互联网+”行动计划，推动互联网金融快速发展。<br>国家实施“互联网+”战略，推动互联网与传统行业的深度融合。<br>国务院发布《关于积极推进“互联网+”行动的指导意见》，推动餐饮、零售等传统服务业的互联网化。<br>股市异常波动，沪深股市经历了大幅度的上涨和下跌，引发金融市场关注。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2013年</p>
-</div></div><div class="timeline-item-content"><p>习近平总书记提出“一带一路”倡议，推动跨国基础设施建设和经济合作，促进了中国对外贸易的发展。<br>自由贸易试验区（上海自贸区）成立，探索金融服务、投资管理等方面的改革开放。<br>国务院发布《关于促进旅游业改革发展的若干意见》，进一步推动旅游业改革和发展。<br>国五条出台：国务院发布《关于继续做好房地产市场调控工作的通知》（即“国五条”），进一步加强房地产市场调控，抑制投机投资性购房需求，稳定住房价格。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2012年</p>
-</div></div><div class="timeline-item-content"><p>高速铁路网逐步成形，“四横四纵”高铁网络基本完成。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2011年</p>
-</div></div><div class="timeline-item-content"><p>房产税试点：在上海和重庆两地首次试点征收房产税，旨在调控房地产市场，同时探索和完善该税种的征收方式。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2010年</p>
-</div></div><div class="timeline-item-content"><p>上海成为国际金融中心，金融服务业迅猛发展。<br>中国—东盟自由贸易区正式启动，促进区域经济合作。<br>出台《可再生能源法》，推动风能、太阳能等新能源的开发和利用。<br>全国铁路营业里程达到9.1万公里，高铁运营里程达到8358公里。<br>《国家中长期教育改革和发展规划纲要（2010-2020年）》发布，明确了教育改革和发展的目标和任务。<br>中国农业银行在上海和香港同步上市。<br>限购令：国务院发布《关于促进房地产市场平稳健康发展的通知》，实施限购政策，逐步在全国主要城市推广，限制住宅购买数量，以抑制投机行为。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2009年</p>
-</div></div><div class="timeline-item-content"><p>出台《装备制造业调整和振兴规划》，推动装备制造业向高端化发展。<br>启动新一轮医改，提出基本药物制度和公立医院改革等措施。<br>中国农业银行启动股份制改造。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2008年</p>
-</div></div><div class="timeline-item-content"><p>全球金融危机爆发，中国实施了一系列经济刺激计划，如四万亿投资计划，以稳定经济增长。<br>京津城际高速铁路开通，标志着中国高速铁路进入快速发展期。<br>应对全球金融危机：全球金融危机背景下，中国政府推出“四万亿”投资计划，部分资金用于基础设施建设和房地产市场，稳定房地产市场。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2007年</p>
-</div></div><div class="timeline-item-content"><p>中国建设银行在上海上市。<br>交通银行在上海上市。<br>防止房地产泡沫政策：政府出台一系列措施，意在控制房地产市场过热，防止房地产泡沫，包括提高首付比例、提高第二套房贷利率等。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2006年</p>
-</div></div><div class="timeline-item-content"><p>全面取消农业税，减轻农民经济负担，促进农村经济发展。<br>神华集团成立，成为中国最大的煤炭企业。<br>国家中长期科学和技术发展规划纲要发布，提出创新型国家战略目标。<br>中国银行在香港和上海同步上市。<br>中国工商银行在上海和香港同步上市，成为当时全球最大的IPO。<br>严格住房贷款政策：人民银行发布《关于加强房地产信贷管理的通知》，要求银行对房地产贷款进行更加严格的管理，特别是对投机性购房行为进行限制。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2005年</p>
-</div></div><div class="timeline-item-content"><p>废止《中华人民共和国农业税条例》，减轻了农民的负担，进一步推动了农村经济的发展。<br>中国工商银行完成股份制改造，更名为“中国工商银行股份有限公司”。<br>中国建设银行在香港上市，成为首家在海外上市的大型国有商业银行。<br>交通银行在香港上市。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2004年</p>
-</div></div><div class="timeline-item-content"><p>保险法修订，促进保险行业的规范化发展，增强金融服务业。<br>国务院出台《关于深化经济体制改革的决定》，推动房地产市场化改革。<br>中央一号文件首次聚焦“三农”问题，明确了农业和农村工作的优先地位。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2003年</p>
-</div></div><div class="timeline-item-content"><p>银监会（中国银行业监督管理委员会）成立，进一步规范和发展中国的银行业。<br>房地产开发企业资质管理规定：住房和城乡建设部发布该规定，进一步规范房地产开发企业的准入和管理。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2001年</p>
-</div></div><div class="timeline-item-content"><p>中国加入世界贸易组织（WTO），显著提升对外贸易的规模和水平。<br>中国加入WTO，金融服务业对外开放步伐加快，外资银行进入中国市场。<br>中国加入WTO，批发零售和餐饮业对外开放，外资企业进入市场。<br>中国证监会发布基金管理新规，促进基金市场的健康发展。<br>中关村被批准为国家自主创新示范区，成为中国高新技术产业发展的标志性区域。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2000年</p>
-</div></div><div class="timeline-item-content"><p>中关村科技园区成立，成为中国科技创新和创业的摇篮。<br>发布了《开放式证券投资基金试点办法》，这标志着我国开放式基金发展的序幕正式拉开。<br>互联网泡沫破裂后，中国的互联网企业开始重新发展，腾讯、阿里巴巴等公司逐渐崛起。<br>提出建设旅游强国的目标，旅游基础设施和服务水平显著提高。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1999年</p>
-</div></div><div class="timeline-item-content"><p>提出西部大开发战略，促进西部地区经济发展。<br>中国工商银行启动股份制改造。<br>城市房地产管理法实施：该法的实施规范了房地产市场，确保市场健康发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1998年</p>
-</div></div><div class="timeline-item-content"><p>中国首批按照《证券投资基金管理暂行办法》设立的两只封闭式基金——基金开元和基金金泰成功发行，标志着中国基金市场进入规范化、法制化的发展阶段。<br>中国保险监督管理委员会成立，负责监督管理保险市场。<br>住房制度改革：国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，全面停止福利分房，推动房地产业快速发展，开启了中国房地产市场化的进程。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1997年</p>
-</div></div><div class="timeline-item-content"><p>中国证监会发布了《证券投资基金管理暂行办法》，为基金市场的规范发展提供了法律依据。<br>京九铁路全线通车，改善了南北交通运输网络。<br>启动城镇职工基本医疗保险制度改革，覆盖面不断扩大。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1995年</p>
-</div></div><div class="timeline-item-content"><p>颁布《商业银行法》，进一步规范银行业的发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1994年</p>
-</div></div><div class="timeline-item-content"><p>中国开始实施外汇体制改革，人民币官方汇率与市场汇率并轨，标志着中国外汇市场走向成熟。<br>中国正式接入国际互联网，信息技术行业开始起步。<br>中国银行改组为国家独资商业银行。<br>中国人民建设银行改组为国家独资商业银行，更名为“中国建设银行”。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1993年</p>
-</div></div><div class="timeline-item-content"><p>中国在部分国有企业里试行养老保险制度，开始由单位和个人共同缴纳养老保险金，即开始实施社保制度。<br>实施《中国教育改革和发展纲要》，提出教育优先发展战略。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1992年</p>
-</div></div><div class="timeline-item-content"><p>中国进一步扩大开放，引入外资和推行国企改革，为市场经济的建立和发展奠定了基础。<br>邓小平南巡讲话，推动了批发零售业和餐饮娱乐业的快速发展。<br>中国证券监督管理委员会成立，负责监督管理证券市场。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1991年</p>
-</div></div><div class="timeline-item-content"><p>设立深圳证券交易所，进一步推动证券市场的发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1990年</p>
-</div></div><div class="timeline-item-content"><p>上海浦东新区开发开放，开始大规模发展第三产业。<br>京九铁路开工建设，改善南北交通运输能力。<br>上海证券交易所成立，开启中国现代证券市场的历程。<br>中国证券投资基金的雏形：在1990年代初，中国开始试点发行封闭式证券投资基金，这是基金市场在中国发展的初步尝试。<br>上海证券交易所和深圳证券交易所相继成立，标志着中国资本市场的开始。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1988年</p>
-</div></div><div class="timeline-item-content"><p>房地产市场化改革启动，实施住房商品化政策，促进商品房市场发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1987年</p>
-</div></div><div class="timeline-item-content"><p>交通银行重新组建后，成为全国性股份制商业银行。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1986年</p>
-</div></div><div class="timeline-item-content"><p>《中华人民共和国义务教育法》颁布，确立了九年义务教育制度。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1985年</p>
-</div></div><div class="timeline-item-content"><p>中国开始设立沿海开放城市，开放对外贸易，加强国际经贸合作。<br>国家863计划（高技术研究发展计划）启动，推动高科技产业发展。<br>国务院批准设立国家旅游局，开始规范和促进旅游业的发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1984年</p>
-</div></div><div class="timeline-item-content"><p>城市经济体制改革开始，重点改革国有企业，提高经济效益和活力。<br>中国人民银行专职行使中央银行职能，国家专业银行的分工进一步明确。<br>中国工商银行成立，主要负责城市工商企业的信贷业务。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1980年</p>
-</div></div><div class="timeline-item-content"><p>改革开放后，中国开始大规模引进外资，兴建合资企业，制造业迅速发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1979年</p>
-</div></div><div class="timeline-item-content"><p>国家经济体制改革委员会成立，统筹经济体制改革工作。<br>小岗村家庭联产承包责任制的实施，这是农村经济体制改革的重要试点，为全国推广提供了示范。<br>中国农业银行恢复成立后，继续支持农村经济发展。<br>国家外汇管理局成立，负责外汇管理和政策制定。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1978年</p>
-</div></div><div class="timeline-item-content"><p>家庭联产承包责任制在农村逐步推广，极大地提高了农民的生产积极性。<br>改革开放政策开始实施，中国开始从计划经济向市场经济过渡，引入外资和市场经济机制。<br>改革开放政策实施，旅游业开始恢复和发展。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1973年</p>
-</div></div><div class="timeline-item-content"><p>大庆油田取得重大突破，中国石油生产进入自给自足阶段。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1971年</p>
-</div></div><div class="timeline-item-content"><p>中国恢复在联合国的合法席位，为后来的对外开放和国际经济合作创造了条件。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1964年</p>
-</div></div><div class="timeline-item-content"><p>中国成功试爆第一颗原子弹，标志着中国国防科技和工业的重要进步。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1958年</p>
-</div></div><div class="timeline-item-content"><p>国家科委成立，为中国科技创新提供制度保障。<br>“大跃进”运动开始，虽然初衷是为了加速经济发展，但导致了一系列经济问题和社会问题。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1957年</p>
-</div></div><div class="timeline-item-content"><p>武钢（武汉钢铁公司）投产，成为中国基础设施建设的重要支撑。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1956年</p>
-</div></div><div class="timeline-item-content"><p>基本完成了对农业、手工业和资本主义工商业的社会主义改造，社会主义制度在中国基本建立。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1954年</p>
-</div></div><div class="timeline-item-content"><p>第一届全国人民代表大会第一次会议召开，通过了《中华人民共和国宪法》，为社会主义法治建设奠定了基础。<br>中国建设银行成立，最初名为中国人民建设银行，主要为国家基本建设服务。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1953年</p>
-</div></div><div class="timeline-item-content"><p>过渡时期总路线提出，中国开始从新民主主义向社会主义过渡。<br>第一个五年计划开始实施，重点发展重工业，逐步进行对农业、手工业和资本主义工商业的社会主义改造。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1952年</p>
-</div></div><div class="timeline-item-content"><p>中国进行第一次经济恢复时期，重点发展重工业，特别是钢铁和机械制造业。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1951年</p>
-</div></div><div class="timeline-item-content"><p>中国农业银行成立，主要为农业和农村经济服务。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1950年</p>
-</div></div><div class="timeline-item-content"><p>土地改革运动，废除地主阶级的土地所有制，实现土地公有化，重新分配土地给农民。<br>开始实行农村合作医疗制度，提高了农村医疗保障水平。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1949年</p>
-</div></div><div class="timeline-item-content"><p>除了新中国成立外，同年还进行了土地改革前的准备工作，如土地法大纲的公布等。</p>
-</div></div></div>
-
-
-
-
-
-
-<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华民国（1912年—1949年）</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华民国时期，尽管经历了现代化的尝试和一定的经济发展，但长期的战乱和政治不稳定极大地限制了经济的持续发展。抗日战争和国共内战的破坏，使得经济状况进一步恶化，最终在1949年中华人民共和国成立后开始新的经济重建和发展。</strong></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1949年</p>
-</div></div><div class="timeline-item-content"><p>中华人民共和国成立，中华民国政府迁往台湾，经济体制发生根本性转变。<br>中华人民共和国成立后，中国银行成为外汇外贸专业银行。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1948年</p>
-</div></div><div class="timeline-item-content"><p>成立中国人民银行，作为中央银行，负责全国的金融管理和货币政策。<br>经济崩溃，金圆券迅速贬值，物价飞涨，民生困苦。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1947年</p>
-</div></div><div class="timeline-item-content"><p>国民政府实施金圆券改革，试图遏制通货膨胀，但效果有限。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1946年</p>
-</div></div><div class="timeline-item-content"><p>国共内战全面爆发，经济再次陷入混乱，通货膨胀严重。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
-</div></div><div class="timeline-item-content"><p>抗日战争胜利，经济面临恢复和重建的巨大挑战。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1941年</p>
-</div></div><div class="timeline-item-content"><p>太平洋战争爆发，美国等盟国开始对华援助，但中国经济依然困难重重。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1938年</p>
-</div></div><div class="timeline-item-content"><p>国民政府实施战时经济政策，进行物资统制和战争物资生产。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1937年</p>
-</div></div><div class="timeline-item-content"><p>七七事变，日本全面侵华，抗日战争爆发，经济陷入长期战时状态，工业和基础设施遭受重大破坏。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1935年</p>
-</div></div><div class="timeline-item-content"><p>进一步实施货币改革，推行法币本位制，统一货币制度，抑制通货膨胀。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1933年</p>
-</div></div><div class="timeline-item-content"><p>国民政府实施货币改革，发行法币，试图稳定经济。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1932年</p>
-</div></div><div class="timeline-item-content"><p>淞沪抗战爆发，中国经济再度陷入困境。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1931年</p>
-</div></div><div class="timeline-item-content"><p>九一八事变，日本侵占东北，东北的工业和资源被掠夺，中国经济受到重大打击。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1928年</p>
-</div></div><div class="timeline-item-content"><p>国民政府北伐成功，统一全国，开始着手建设现代经济体系。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1927年</p>
-</div></div><div class="timeline-item-content"><p>国共合作破裂，蒋介石领导的国民政府开始“宁汉合流”，统一中国部分地区，经济政策逐渐稳定。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1925年</p>
-</div></div><div class="timeline-item-content"><p>五卅运动促进了民族工业的发展和对外经济斗争。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1923年</p>
-</div></div><div class="timeline-item-content"><p>直奉战争后，张作霖控制北京政府，财政更加混乱。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1921年</p>
-</div></div><div class="timeline-item-content"><p>中国共产党成立，提出一系列经济主张，促进工人运动和工厂罢工。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1919年</p>
-</div></div><div class="timeline-item-content"><p>五四运动爆发，推动了中国现代化和工业化的思想变革。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1916年</p>
-</div></div><div class="timeline-item-content"><p>袁世凯去世，北洋军阀混战，导致经济秩序混乱。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1915年</p>
-</div></div><div class="timeline-item-content"><p>日本提出“二十一条”，企图进一步控制中国经济资源，引发强烈反对。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1914年</p>
-</div></div><div class="timeline-item-content"><p>第一次世界大战爆发，中国对欧洲的商品出口增加，经济获得短暂繁荣。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1913年</p>
-</div></div><div class="timeline-item-content"><p>袁世凯政府开始向外借款，主要是为了巩固政权，但也导致了财政困难。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1912年</p>
-</div></div><div class="timeline-item-content"><p>中华民国成立，开始进行初步的经济建设和改革。<br>中国银行成立，是中国历史最悠久的银行之一。</p>
-</div></div></div>
-
-
-
-<div class="timeline gray"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>清朝（1636年—1912年）</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>清朝经济总体上以农业为基础，手工业和商业逐步发展，对外贸易带来经济繁荣，但也因鸦片战争和内部腐败等问题导致经济困境。近代化改革的尝试虽然有所进展，但未能彻底改变封建经济体制，最终在内忧外患中走向衰落。</strong></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1908年</p>
-</div></div><div class="timeline-item-content"><p>交通银行成立，是中国历史悠久的银行之一。</p>
-</div></div></div>
-]]></content>
   </entry>
   <entry>
     <title>schedule</title>
