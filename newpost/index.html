@@ -278,27 +278,7 @@
     <span class="author" itemprop="copyrightHolder">John Doe</span>
   </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div><footer>
-    <div id="bitcoin-price">
-        Loading Bitcoin price...
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-                .then(response => response.json())
-                .then(data => {
-                    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-                    bitcoinPriceDiv.innerHTML = `Current Bitcoin Price: $${data.bpi.USD.rate}`;
-                })
-                .catch(error => {
-                    console.error('Error fetching Bitcoin price:', error);
-                    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-                    bitcoinPriceDiv.innerHTML = 'Failed to fetch Bitcoin price.';
-                });
-        });
-    </script>
-</footer>
+  </div>
 
 
     </div>
