@@ -205,7 +205,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p><i class="fa fa-bullhorn "></i> 公告</p>
-<p>This is my article content. Below is the current Bitcoin price:</p>
 <div id="bitcoin-price">
     加载中...
 </div>
@@ -245,10 +244,7 @@
             })
             .then(data => {
                 const holidayMessage = data.tts;
-    
-                let html = `<h2></h2>`;
-                html += `<p>${holidayMessage}</p>`;
-    
+                html = `<p>${holidayMessage}</p>`;
                 dailyNewsDiv.innerHTML = html;
             })
             .catch(error => {
