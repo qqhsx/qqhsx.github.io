@@ -212,11 +212,11 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+        fetch('http://timor.tech/api/holiday/tts')
             .then(response => response.json())
             .then(data => {
                 const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-                const usdRate = data.bpi.USD.rate;
+                const usdRate = data.tts;
                 bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
             })
             .catch(error => {
@@ -242,11 +242,8 @@
             })
             .then(data => {
                 const holidayMessage = data.tts;
-    
 
-                html = `${holidayMessage}`;
-    
-                dailyNewsDiv.innerHTML = html;
+                dailyNewsDiv.innerHTML = `${holidayMessage}`;
             })
     });
 </script>
