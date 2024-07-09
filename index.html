@@ -236,7 +236,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         const dailyNewsDiv = document.getElementById('daily-news');
 
-        fetch('http://timor.tech/api/holiday/tts')
+        fetch('https://timor.tech/api/holiday/tts')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('网络响应失败');
