@@ -74,9 +74,7 @@
             });
     });
 </script>
-
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1475596788&auto=1&height=66"></iframe>]]></content>
+]]></content>
   </entry>
   <entry>
     <title>Hexo博客搭建与部署</title>
@@ -181,6 +179,48 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo-theme-next主题安装</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
+<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<ol start="2">
+<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
+</li>
+<li><p>next theme 配置文件路径</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
+</blockquote>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
+<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
+</li>
+<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
+</li>
+</ul>
+<blockquote>
+<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>next主题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Test Image Insert</title>
     <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
     <content><![CDATA[<blockquote>
@@ -234,48 +274,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo-theme-next主题安装</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
-<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<ol start="2">
-<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
-</li>
-<li><p>next theme 配置文件路径</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
-</blockquote>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
-<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
-</li>
-<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
-</li>
-</ul>
-<blockquote>
-<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>next主题</tag>
       </tags>
   </entry>
   <entry>
@@ -2265,17 +2263,17 @@
       </tags>
   </entry>
   <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>关于</title>
     <url>/about/index.html</url>
     <content><![CDATA[<blockquote>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>经济时间轴</title>
@@ -2448,43 +2446,6 @@
 </div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1908年</p>
 </div></div><div class="timeline-item-content"><p>交通银行成立，是中国历史悠久的银行之一。</p>
 </div></div></div>
-]]></content>
-  </entry>
-  <entry>
-    <title>每日60秒读懂世界新闻</title>
-    <url>/news/index.html</url>
-    <content><![CDATA[<div id="daily-news">
-    加载中...
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('https://api.oioweb.cn/api/common/today')
-            .then(response => response.json())
-            .then(data => {
-                const dailyNewsDiv = document.getElementById('daily-news');
-                const newsDate = data.result.date;
-                const newsList = data.result.news;
-
-                let html = `<h2>每日新闻 (${newsDate})</h2>`;
-                html += '<ul>';
-                newsList.forEach((item, index) => {
-                    // 去掉多余的序号，直接使用 `${item}`
-                    html += `<li>${item}</li>`;
-                });
-                html += '</ul>';
-    
-                dailyNewsDiv.innerHTML = html;
-            })
-            .catch(error => {
-                console.error('获取每日新闻失败:', error);
-                const dailyNewsDiv = document.getElementById('daily-news');
-                dailyNewsDiv.innerHTML = '获取每日新闻失败';
-            });
-    });
-</script>
-
-
 ]]></content>
   </entry>
   <entry>
@@ -2720,6 +2681,43 @@
 </div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
 </div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
 </div></div></div>]]></content>
+  </entry>
+  <entry>
+    <title>每日60秒读懂世界新闻</title>
+    <url>/news/index.html</url>
+    <content><![CDATA[<div id="daily-news">
+    加载中...
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('https://api.oioweb.cn/api/common/today')
+            .then(response => response.json())
+            .then(data => {
+                const dailyNewsDiv = document.getElementById('daily-news');
+                const newsDate = data.result.date;
+                const newsList = data.result.news;
+
+                let html = `<h2>每日新闻 (${newsDate})</h2>`;
+                html += '<ul>';
+                newsList.forEach((item, index) => {
+                    // 去掉多余的序号，直接使用 `${item}`
+                    html += `<li>${item}</li>`;
+                });
+                html += '</ul>';
+    
+                dailyNewsDiv.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('获取每日新闻失败:', error);
+                const dailyNewsDiv = document.getElementById('daily-news');
+                dailyNewsDiv.innerHTML = '获取每日新闻失败';
+            });
+    });
+</script>
+
+
+]]></content>
   </entry>
   <entry>
     <title>schedule</title>
