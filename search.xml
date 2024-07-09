@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>newpost</title>
     <url>/newpost/</url>
     <content><![CDATA[<p><i class="fa fa-bullhorn "></i> 公告</p>
@@ -11,11 +29,11 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        fetch('http://timor.tech/api/holiday/tts')
+        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
             .then(response => response.json())
             .then(data => {
                 const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-                const usdRate = data.tts;
+                const usdRate = data.bpi.USD.rate;
                 bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
             })
             .catch(error => {
@@ -37,36 +55,28 @@
 
         fetch('http://timor.tech/api/holiday/tts')
             .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
                 return response.json();
             })
             .then(data => {
                 const holidayMessage = data.tts;
-
-                dailyNewsDiv.innerHTML = `${holidayMessage}`;
+    
+                let html = `<h2></h2>`;
+                html += `<p>${holidayMessage}</p>`;
+    
+                dailyNewsDiv.innerHTML = html;
             })
+            .catch(error => {
+                console.error('获取节假日信息失败:', error);
+                dailyNewsDiv.innerHTML = '获取节假日信息失败';
+            });
     });
 </script>
 
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1475596788&auto=1&height=66"></iframe>]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>Hexo博客搭建与部署</title>
@@ -2255,17 +2265,17 @@
       </tags>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>关于</title>
     <url>/about/index.html</url>
     <content><![CDATA[<blockquote>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>经济时间轴</title>
@@ -2438,6 +2448,43 @@
 </div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1908年</p>
 </div></div><div class="timeline-item-content"><p>交通银行成立，是中国历史悠久的银行之一。</p>
 </div></div></div>
+]]></content>
+  </entry>
+  <entry>
+    <title>每日60秒读懂世界新闻</title>
+    <url>/news/index.html</url>
+    <content><![CDATA[<div id="daily-news">
+    加载中...
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('https://api.oioweb.cn/api/common/today')
+            .then(response => response.json())
+            .then(data => {
+                const dailyNewsDiv = document.getElementById('daily-news');
+                const newsDate = data.result.date;
+                const newsList = data.result.news;
+
+                let html = `<h2>每日新闻 (${newsDate})</h2>`;
+                html += '<ul>';
+                newsList.forEach((item, index) => {
+                    // 去掉多余的序号，直接使用 `${item}`
+                    html += `<li>${item}</li>`;
+                });
+                html += '</ul>';
+    
+                dailyNewsDiv.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('获取每日新闻失败:', error);
+                const dailyNewsDiv = document.getElementById('daily-news');
+                dailyNewsDiv.innerHTML = '获取每日新闻失败';
+            });
+    });
+</script>
+
+
 ]]></content>
   </entry>
   <entry>
@@ -2673,43 +2720,6 @@
 </div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
 </div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
 </div></div></div>]]></content>
-  </entry>
-  <entry>
-    <title>每日60秒读懂世界新闻</title>
-    <url>/news/index.html</url>
-    <content><![CDATA[<div id="daily-news">
-    加载中...
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('https://api.oioweb.cn/api/common/today')
-            .then(response => response.json())
-            .then(data => {
-                const dailyNewsDiv = document.getElementById('daily-news');
-                const newsDate = data.result.date;
-                const newsList = data.result.news;
-
-                let html = `<h2>每日新闻 (${newsDate})</h2>`;
-                html += '<ul>';
-                newsList.forEach((item, index) => {
-                    // 去掉多余的序号，直接使用 `${item}`
-                    html += `<li>${item}</li>`;
-                });
-                html += '</ul>';
-    
-                dailyNewsDiv.innerHTML = html;
-            })
-            .catch(error => {
-                console.error('获取每日新闻失败:', error);
-                const dailyNewsDiv = document.getElementById('daily-news');
-                dailyNewsDiv.innerHTML = '获取每日新闻失败';
-            });
-    });
-</script>
-
-
-]]></content>
   </entry>
   <entry>
     <title>schedule</title>

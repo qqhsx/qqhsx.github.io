@@ -212,11 +212,11 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        fetch('http://timor.tech/api/holiday/tts')
+        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
             .then(response => response.json())
             .then(data => {
                 const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-                const usdRate = data.tts;
+                const usdRate = data.bpi.USD.rate;
                 bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
             })
             .catch(error => {
@@ -238,13 +238,23 @@
 
         fetch('http://timor.tech/api/holiday/tts')
             .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
                 return response.json();
             })
             .then(data => {
                 const holidayMessage = data.tts;
-
-                dailyNewsDiv.innerHTML = `${holidayMessage}`;
+    
+                let html = `<h2></h2>`;
+                html += `<p>${holidayMessage}</p>`;
+    
+                dailyNewsDiv.innerHTML = html;
             })
+            .catch(error => {
+                console.error('获取节假日信息失败:', error);
+                dailyNewsDiv.innerHTML = '获取节假日信息失败';
+            });
     });
 </script>
 
