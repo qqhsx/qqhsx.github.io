@@ -243,8 +243,8 @@
             .then(data => {
                 const holidayMessage = data.tts;
     
-                let html = `<h2></h2>`;
-                html += `<p>${holidayMessage}</p>`;
+
+                html = `<p>${holidayMessage}</p>`;
     
                 dailyNewsDiv.innerHTML = html;
             })
