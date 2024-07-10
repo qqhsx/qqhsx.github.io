@@ -21,19 +21,11 @@ function showCurrentTime() {
     var seconds = now.getSeconds().toString().padStart(2, '0');
     var milliseconds = now.getMilliseconds().toString().padStart(3, '0');
 
-    // 获取农历日期
-    var lunar = Lunar.fromDate(now);
-    var lunarYear = lunar.getYearInChinese();
-    var lunarMonth = lunar.getMonthInChinese();
-    var lunarDay = lunar.getDayInChinese();
-
     var dateString = `${year}年${month}月${day}日 星期${weekday}`;
     var timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
-    var lunarString = `农历 ${lunarYear}年${lunarMonth}月${lunarDay}`;
 
     document.getElementById('current-date').innerHTML = dateString;
     document.getElementById('current-time').innerHTML = timeString;
-    document.getElementById('lunar-date').innerHTML = lunarString;
 
     // 显示场景消息
     showScenarioMessage(now);
