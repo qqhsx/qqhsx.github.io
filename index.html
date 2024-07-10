@@ -209,51 +209,61 @@
     加载中...
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then(response => response.json())
-            .then(data => {
-                const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-                const usdRate = data.bpi.USD.rate;
-                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
-            })
-            .catch(error => {
-                console.error('获取比特币价格失败:', error);
-                const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
-            });
-    });
-</script>
-
-
 <div id="daily-news">
     加载中...
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        const bitcoinPriceDiv = document.getElementById('bitcoin-price');
         const dailyNewsDiv = document.getElementById('daily-news');
 
-        fetch('https://timor.tech/api/holiday/tts')
+        const bitcoinPriceRequest = fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => response.json());
+    
+        const holidayInfoRequest = fetch('https://timor.tech/api/holiday/tts')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('网络响应失败');
                 }
                 return response.json();
-            })
-            .then(data => {
-                const holidayMessage = data.tts;
-                html = `<p>${holidayMessage}</p>`;
-                dailyNewsDiv.innerHTML = html;
+            });
+    
+        Promise.all([bitcoinPriceRequest, holidayInfoRequest])
+            .then(([bitcoinData, holidayData]) => {
+                // 处理比特币价格数据
+                const usdRate = bitcoinData.bpi.USD.rate;
+                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
+    
+                // 处理节假日信息数据
+                const holidayMessage = holidayData.tts;
+                dailyNewsDiv.innerHTML = `<p>${holidayMessage}</p>`;
             })
             .catch(error => {
-                console.error('获取节假日信息失败:', error);
+                console.error('获取数据失败:', error);
+                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
                 dailyNewsDiv.innerHTML = '获取节假日信息失败';
             });
     });
 </script>
 
+
+
+
+
+
+<p>这是一个引入自定义 JS 文件的示例，显示当前时间、公历日期、农历日期和场景消息，并自动刷新。</p>
+<div id="current-date"></div>
+<div id="current-time"></div>
+<div id="lunar-date"></div>
+<div id="scenario-message" style="margin-top: 20px; font-weight: bold;"></div>
+
+<script type="text/javascript" src="/js/lunar.js"></script>
+<script type="text/javascript" src="/js/custom.js"></script>
+<script>
+    // 页面加载完成后开始自动刷新时间
+    window.onload = startClock;
+</script>
       
     </div>
 
