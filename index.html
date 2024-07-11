@@ -207,18 +207,16 @@
           <p><i class="fa fa-bullhorn fa-shake " style="font-size: 22px;"></i> <span class="announcement-title" style="font-size: 22px; ">公告</span></p>
 <div id="info-container" style="border: 1px solid #ccc; padding: 10px">  
     <div id="bitcoin-price">加载中...</div>  
-    <div id="current-date"></div>  
-    <div id="current-time"></div>  
-    <div id="scenario-message" style="margin-top: 20px; font-weight: bold;"></div>  
+    <div id="scenario-message"></div>  
 </div>  
-  
+
 <script type="text/javascript" src="/js/fetch-data.js"></script>  
 <script type="text/javascript" src="/js/custom.js"></script>  
 <script>  
     // 页面加载完成后开始自动刷新时间  
     window.onload = function() {  
         startClock(); // 确保startClock函数在全局作用域中定义或在此作用域内可访问  
-  
+
         // 如果需要，您还可以在这里添加其他初始化代码  
         // 比如，使用JavaScript来填充#current-date和#current-time  
     };  
