@@ -24,8 +24,8 @@ function showCurrentTime() {
     var dateString = `${year}年${month}月${day}日 星期${weekday}`;
     var timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
 
-    document.getElementById('current-date').innerHTML = dateString;
-    document.getElementById('current-time').innerHTML = timeString;
+    //document.getElementById('current-date').innerHTML = dateString;
+    //document.getElementById('current-time').innerHTML = timeString;
 
     // 显示场景消息
     showScenarioMessage(now);
