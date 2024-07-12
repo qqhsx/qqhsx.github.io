@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #77304f;
+    background: #ff9fab;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2845,7 +2845,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   background-color: #fff;
-  padding: 15px; /* 缩小内边距 */
+  padding: 10px; /* 缩小内边距 */
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -2863,7 +2863,7 @@ body {
 .news-item .publish-time {
   font-size: 0.9em;
   color: #888;
-  margin-top: 5px; /* 缩小发布时间与描述之间的间距 */
+  margin-top: 40px; /* 缩小发布时间与描述之间的间距 */
 }
 .news-item img {
   max-width: 200px;
@@ -2882,6 +2882,7 @@ body {
   background-color: rgba(0,0,0,0.5);
   justify-content: center;
   align-items: center;
+  overflow-y: auto; /* 确保模态弹窗支持滚动 */
 }
 #news-details-modal .modal-content {
   background-color: #fff;

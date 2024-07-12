@@ -73,10 +73,6 @@ async function showNewsDetails(newsId) {
             newsDetailsContainer.innerHTML += content;
         });
 
-        // 重置滚动位置到顶部
-        newsDetailsModal.scrollTop = 0; // 重置模态弹窗容器的滚动位置
-        newsDetailsContainer.scrollTop = 0; // 重置内容容器的滚动位置
-
         // 显示模态弹窗
         newsDetailsModal.style.display = 'flex';
     } catch (error) {
