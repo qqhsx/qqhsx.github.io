@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #eb9f82;
+    background: #cfff03;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2837,38 +2837,44 @@ body {
 #news-list {
   display: flex;
   flex-direction: column;
-  gap: 5px; /* 适当缩小间距 */
-  padding: 5px; /* 适当缩小内边距 */
+  gap: 10px; /* 缩小间距 */
+  padding: 10px; /* 缩小内边距 */
 }
 .news-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   background-color: #fff;
-  padding: 10px;
+  padding: 10px; /* 缩小内边距 */
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+.news-item .content {
+  flex: 1;
+}
 .news-item h3 {
-  margin: 0 0 5px 0;
-  font-size: 1.2em;
+  margin: 0 0 5px 0; /* 缩小标题和描述之间的间距 */
+  font-size: 1.5em;
 }
 .news-item p {
   margin: 0;
   color: #555;
 }
 .news-item .publish-time {
-  font-size: 0.8em;
+  font-size: 0.9em;
   color: #888;
-  margin-top: 5px;
+  margin-top: 10px; /* 缩小发布时间与描述之间的间距 */
 }
 .news-item img {
-  max-width: 100%; /* 图片宽度最大化 */
+  max-width: 200px;
+  max-height: 150px;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-left: 15px; /* 缩小图片与文字之间的间距 */
 }
 /* 模态弹窗样式 */
 #news-details-modal {
-  display: none;
+  display: none; /* 默认隐藏 */
   position: fixed;
   top: 0;
   left: 0;
@@ -2877,29 +2883,28 @@ body {
   background-color: rgba(0,0,0,0.5);
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
+  overflow-y: auto; /* 确保模态弹窗支持滚动 */
 }
 #news-details-modal .modal-content {
   background-color: #fff;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
-  width: 90%;
-  max-height: 90%;
+  width: 80%;
+  max-height: 80%;
   overflow-y: auto;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 #news-details-modal .close {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 1.2em;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5em;
   cursor: pointer;
 }
 #news-details p {
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 1.2em;
+  line-height: 1.6;
   color: #333;
-  padding: 5px 0;
 }
 #news-details img {
   max-width: 100%;
@@ -2910,6 +2915,22 @@ body {
   width: 100%;
   border-radius: 10px;
   margin: 10px 0;
+}
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .news-item {
+    flex-direction: column;
+  }
+  .news-item img {
+    margin-left: 0;
+    margin-top: 10px;
+    max-width: 100%;
+    max-height: none;
+  }
+  #news-details-modal .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
 }
 .timeline {
   margin: 0 0 20px 10px;
