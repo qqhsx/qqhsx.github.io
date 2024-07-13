@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ff49ff;
+    background: #ff75de;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2864,7 +2864,7 @@ body {
 .news-item .text-content {
   flex: 1;
 }
-.news-item h3 {
+.news-item h4 {
   margin: 0 0 5px 0;
   font-size: 1.2em;
   color: #000;

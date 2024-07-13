@@ -41,7 +41,7 @@ async function renderNewsList(typeId, page) {
                 <div class="publish-time">${formatTime(news.postTime)}</div>
                 <div class="content">
                     <div class="text-content">
-                        <h3>${news.title}</h3>
+                        <h4>${news.title}</h4>
                         <p>${news.digest}</p>
                     </div>
                     <img src="${news.imgList[0] || ''}" alt="${news.title}">
