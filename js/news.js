@@ -40,8 +40,10 @@ async function renderNewsList(typeId, page) {
             newsElement.innerHTML = `
                 <div class="publish-time">${formatTime(news.postTime)}</div>
                 <div class="content">
-                    <h3>${news.title}</h3>
-                    <p>${news.digest}</p>
+                    <div class="text-content">
+                        <h3>${news.title}</h3>
+                        <p>${news.digest}</p>
+                    </div>
                     <img src="${news.imgList[0] || ''}" alt="${news.title}">
                 </div>
             `;
