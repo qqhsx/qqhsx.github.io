@@ -16,25 +16,34 @@ async function fetchNewsDetails(newsId) {
     return data.data;
 }
 
+function formatTime(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
 async function renderNewsList(typeId, page) {
     try {
         const newsList = await fetchNewsList(typeId, page);
         const newsListContainer = document.getElementById('news-list');
+        const timelineDate = document.getElementById('timeline-date');
         if (!newsListContainer) {
             console.error("news-list element not found");
             return;
         }
         newsListContainer.innerHTML = '';
+        if (newsList.length > 0) {
+            timelineDate.innerText = new Date(newsList[0].postTime).toLocaleDateString();
+        }
         newsList.forEach(news => {
             const newsElement = document.createElement('div');
             newsElement.className = 'news-item';
             newsElement.innerHTML = `
+                <div class="publish-time">${formatTime(news.postTime)}</div>
                 <div class="content">
                     <h3>${news.title}</h3>
                     <p>${news.digest}</p>
-                    <p class="publish-time">${new Date(news.postTime).toLocaleString()}</p>
+                    <img src="${news.imgList[0] || ''}" alt="${news.title}">
                 </div>
-                <img src="${news.imgList[0] || ''}" alt="${news.title}">
             `;
             
             // 添加点击事件以进入新闻详情
