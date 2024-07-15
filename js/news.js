@@ -60,13 +60,8 @@ async function renderNewsList(typeId, page) {
 
 async function showNewsDetails(newsId) {
     try {
-        console.log('正在获取新闻详情，newsId:', newsId);
         const newsDetails = await fetchNewsDetails(newsId);
         const newsDetailsContainer = document.getElementById('news-details');
-        if (!newsDetailsContainer) {
-            console.error("未找到 news-details 元素");
-            return;
-        }
         newsDetailsContainer.innerHTML = '';
 
         newsDetails.items.forEach(item => {
@@ -89,26 +84,24 @@ async function showNewsDetails(newsId) {
 
         const backToTopButton = document.getElementById('back-to-top');
         backToTopButton.onclick = () => {
-            //console.log('正在滚动到顶部');
             newsDetailsContainer.scrollTop = 0;
         };
 
         backToTopButton.addEventListener('touchstart', () => {
-            //console.log('正在滚动到顶部');
             newsDetailsContainer.scrollTop = 0;
+        });
+
+        window.addEventListener('popstate', () => {
+            if (newsDetailsModal.style.display === 'flex') {
+                closeNewsDetailsModal();
+            }
         });
 
     } catch (error) {
         console.error("渲染新闻详情失败", error);
     }
-	
-	window.addEventListener('popstate', () => {
-    if (newsDetailsModal.style.display === 'flex') {
-        closeNewsDetailsModal();
-    }
-});
-
 }
+
 
 
 function closeNewsDetailsModal() {
