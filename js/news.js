@@ -94,8 +94,8 @@ function closeNewsDetailsModal() {
     const newsDetailsModal = document.getElementById('news-details-modal');
     newsDetailsModal.style.display = 'none';
 
-    // 返回历史记录
-    history.back();
+    // 更新历史记录
+    history.replaceState({}, document.title);
 }
 
 window.addEventListener('popstate', (event) => {
@@ -116,4 +116,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             closeNewsDetailsModal();
         }
     });
+
+    const backToTopButton = document.getElementById('back-to-top');
+    backToTopButton.onclick = () => {
+        newsDetailsContainer.scrollTop = 0;
+    };
 });

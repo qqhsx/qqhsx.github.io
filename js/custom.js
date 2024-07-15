@@ -6,8 +6,8 @@ const scenarios = [
     { days: 2, weekend: false, message: "还有2天就是周末了，坚持住！" },
     { days: 3, weekend: false, message: "还有3天就是周末了，先好好工作吧！" },
     { days: 4, weekend: false, message: "工作周才刚开始，保持干劲哦！" },
-    { days: 5, weekend: false, message: "又快到周末了，再加把劲！" },
-    { days: 0, weekend: false, message: "新的一周开始了，迎接新的挑战吧！" },
+    { days: 5, weekend: false, message: "新的一周开始了，迎接新的挑战吧！" },
+    { days: 0, weekend: false, message: "又快到周末了，再加把劲！" },
 ];
 
 function showCurrentTime() {
@@ -40,7 +40,7 @@ function showScenarioMessage(date) {
         (s.weekend === isWeekend && s.days === daysUntilWeekend) ||
         (s.weekend === isWeekend && s.days === 0)
     );
-
+ 
     if (!scenario) {
         scenario = { message: "祝你今天工作顺利！" };
     }
