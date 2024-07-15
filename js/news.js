@@ -1,4 +1,7 @@
+// news.js
+
 let newsDetailsContainer = document.getElementById('news-details');
+let currentPage = 1;
 
 async function fetchNewsTypes() {
     const response = await fetch('https://www.mxnzp.com/api/news/types/v2?app_id=msfurfjfuqfoiruh&app_secret=VW9ZbmlXVzZ1WkR3cDdaaEpDSG1FZz09');
@@ -23,20 +26,35 @@ function formatTime(dateString) {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
 
+let lastDisplayedDate = '';
+
 async function renderNewsList(typeId, page) {
     try {
         const newsList = await fetchNewsList(typeId, page);
         const newsListContainer = document.getElementById('news-list');
-        const timelineDate = document.getElementById('timeline-date');
+
         if (!newsListContainer) {
             console.error("news-list element not found");
             return;
         }
-        newsListContainer.innerHTML = '';
-        if (newsList.length > 0) {
-            timelineDate.innerText = new Date(newsList[0].postTime).toLocaleDateString();
+
+        // 只在第一页清空内容
+        if (page === 1) {
+            newsListContainer.innerHTML = '';
         }
-        newsList.forEach(news => {
+
+        newsList.forEach((news) => {
+            const currentDate = new Date(news.postTime).toLocaleDateString();
+
+            // 检查是否是新日期
+            if (currentDate !== lastDisplayedDate) {
+                // 添加日期标题
+                const dateHeader = document.createElement('h3');
+                dateHeader.innerText = currentDate;
+                newsListContainer.appendChild(dateHeader);
+                lastDisplayedDate = currentDate; // 更新最后显示的日期
+            }
+
             const newsElement = document.createElement('div');
             newsElement.className = 'news-item';
             newsElement.innerHTML = `
@@ -58,10 +76,14 @@ async function renderNewsList(typeId, page) {
     }
 }
 
+
+
+
+
+
 async function showNewsDetails(newsId) {
     try {
         const newsDetails = await fetchNewsDetails(newsId);
-        const newsDetailsContainer = document.getElementById('news-details');
         newsDetailsContainer.innerHTML = '';
 
         newsDetails.items.forEach(item => {
@@ -106,10 +128,12 @@ window.addEventListener('popstate', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
-    await renderNewsList(532, 1);
+    await renderNewsList(532, currentPage);
 
     const closeModalButton = document.getElementById('close-modal');
-    closeModalButton.onclick = closeNewsDetailsModal;
+    if (closeModalButton) {
+        closeModalButton.onclick = closeNewsDetailsModal;
+    }
 
     window.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
@@ -118,7 +142,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     const backToTopButton = document.getElementById('back-to-top');
-    backToTopButton.onclick = () => {
-        newsDetailsContainer.scrollTop = 0;
-    };
+    if (backToTopButton) {
+        backToTopButton.onclick = () => {
+            newsDetailsContainer.scrollTop = 0;
+        };
+    }
+
+    const loadMoreButton = document.getElementById('load-more-button');
+    if (loadMoreButton) {
+        loadMoreButton.onclick = async () => {
+            currentPage++;
+            await renderNewsList(532, currentPage);
+        };
+    }
 });
