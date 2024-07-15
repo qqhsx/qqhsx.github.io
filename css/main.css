@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffba5b;
+    background: #c9afa4;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2936,7 +2936,7 @@ body {
   margin: 10px 0;
 }
 #news-details {
-  height: 600px; /* 保持原高度 */
+  height: 400px; /* 保持原高度 */
   overflow: auto; /* 使容器能够滚动 */
   padding: 20px; /* 增加内边距 */
 }
