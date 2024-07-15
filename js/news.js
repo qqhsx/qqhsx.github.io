@@ -79,35 +79,31 @@ async function showNewsDetails(newsId) {
         const newsDetailsModal = document.getElementById('news-details-modal');
         newsDetailsModal.style.display = 'flex';
 
+        // 添加历史状态
+        history.pushState({ modalOpen: true }, '');
+
         // 自动滚动到顶部
         newsDetailsContainer.scrollTop = 0;
-
-        const backToTopButton = document.getElementById('back-to-top');
-        backToTopButton.onclick = () => {
-            newsDetailsContainer.scrollTop = 0;
-        };
-
-        backToTopButton.addEventListener('touchstart', () => {
-            newsDetailsContainer.scrollTop = 0;
-        });
-
-        window.addEventListener('popstate', () => {
-            if (newsDetailsModal.style.display === 'flex') {
-                closeNewsDetailsModal();
-            }
-        });
 
     } catch (error) {
         console.error("渲染新闻详情失败", error);
     }
 }
 
-
-
 function closeNewsDetailsModal() {
     const newsDetailsModal = document.getElementById('news-details-modal');
     newsDetailsModal.style.display = 'none';
+
+    // 返回历史记录
+    history.back();
 }
+
+window.addEventListener('popstate', (event) => {
+    const newsDetailsModal = document.getElementById('news-details-modal');
+    if (newsDetailsModal.style.display === 'flex') {
+        closeNewsDetailsModal();
+    }
+});
 
 document.addEventListener('DOMContentLoaded', async () => {
     await renderNewsList(532, 1);
