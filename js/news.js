@@ -1,7 +1,9 @@
+let newsDetailsContainer = document.getElementById('news-details');
+
 async function fetchNewsTypes() {
     const response = await fetch('https://www.mxnzp.com/api/news/types/v2?app_id=msfurfjfuqfoiruh&app_secret=VW9ZbmlXVzZ1WkR3cDdaaEpDSG1FZz09');
     const data = await response.json();
-    return data.data.filter(type => type.typeId === 532); // Filter to get only typeId 532
+    return data.data.filter(type => type.typeId === 532);
 }
 
 async function fetchNewsList(typeId, page) {
@@ -48,9 +50,7 @@ async function renderNewsList(typeId, page) {
                 </div>
             `;
             
-            // 添加点击事件以进入新闻详情
             newsElement.onclick = () => showNewsDetails(news.newsId);
-            
             newsListContainer.appendChild(newsElement);
         });
     } catch (error) {
@@ -60,36 +60,44 @@ async function renderNewsList(typeId, page) {
 
 async function showNewsDetails(newsId) {
     try {
+        console.log('正在获取新闻详情，newsId:', newsId);
         const newsDetails = await fetchNewsDetails(newsId);
-        const newsDetailsModal = document.getElementById('news-details-modal');
-        if (!newsDetailsModal) {
-            console.error("news-details-modal element not found");
-            return;
-        }
         const newsDetailsContainer = document.getElementById('news-details');
         if (!newsDetailsContainer) {
-            console.error("news-details element not found");
+            console.error("未找到 news-details 元素");
             return;
         }
-        newsDetailsContainer.innerHTML = ''; // 清空详情内容
+        newsDetailsContainer.innerHTML = '';
+
         newsDetails.items.forEach(item => {
             let content;
             if (item.type === 'text') {
                 content = `<p>${item.content}</p>`;
             } else if (item.type === 'img') {
-                content = `<img src="${item.imageUrl}" alt="Image">`;
+                content = `<img src="${item.imageUrl}" alt="图片">`;
             } else if (item.type === 'video') {
                 content = `<video src="${item.videoUrl[0]}" controls></video>`;
             }
             newsDetailsContainer.innerHTML += content;
         });
 
-        // 显示模态弹窗
+        const newsDetailsModal = document.getElementById('news-details-modal');
         newsDetailsModal.style.display = 'flex';
+
+        // 自动滚动到顶部
+        newsDetailsContainer.scrollTop = 0;
+
+        const backToTopButton = document.getElementById('back-to-top');
+        backToTopButton.onclick = () => {
+            console.log('正在滚动到顶部');
+            newsDetailsContainer.scrollTop = 0;
+        };
+
     } catch (error) {
-        console.error("Failed to render news details", error);
+        console.error("渲染新闻详情失败", error);
     }
 }
+
 
 function closeNewsDetailsModal() {
     const newsDetailsModal = document.getElementById('news-details-modal');
@@ -97,13 +105,11 @@ function closeNewsDetailsModal() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    await renderNewsList(532, 1); // Render news list for typeId 532 on page load
+    await renderNewsList(532, 1);
 
-    // 添加关闭模态弹窗的事件
     const closeModalButton = document.getElementById('close-modal');
     closeModalButton.onclick = closeNewsDetailsModal;
 
-    // 添加按下ESC键关闭模态弹窗的事件
     window.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
             closeNewsDetailsModal();

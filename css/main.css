@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ff75de;
+    background: #596ac8;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2958,6 +2958,10 @@ body {
     max-width: 100%;
     max-height: none;
   }
+}
+#news-details {
+  height: 400px; /* 设置合适的高度 */
+  overflow: auto; /* 使容器能够滚动 */
 }
 .timeline {
   margin: 0 0 20px 10px;
