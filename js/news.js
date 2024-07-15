@@ -93,6 +93,11 @@ async function showNewsDetails(newsId) {
             newsDetailsContainer.scrollTop = 0;
         };
 
+        backToTopButton.addEventListener('touchstart', () => {
+            console.log('正在滚动到顶部');
+            newsDetailsContainer.scrollTop = 0;
+        });
+
     } catch (error) {
         console.error("渲染新闻详情失败", error);
     }
