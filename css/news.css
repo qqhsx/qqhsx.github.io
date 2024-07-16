@@ -160,4 +160,7 @@ body {
     max-width: 100%;
     max-height: none;
   }
+  #timeline-header {
+    padding: 10px 0; /* 调整顶部空白的内边距 */
+  }
 }
