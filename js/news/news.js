@@ -1,24 +1,37 @@
-// news.js
-
 let newsDetailsContainer = document.getElementById('news-details');
 let currentPage = 1;
 
 async function fetchNewsTypes() {
-    const response = await fetch('https://www.mxnzp.com/api/news/types/v2?app_id=msfurfjfuqfoiruh&app_secret=VW9ZbmlXVzZ1WkR3cDdaaEpDSG1FZz09');
-    const data = await response.json();
-    return data.data.filter(type => type.typeId === 532);
+    try {
+        const response = await fetch('https://www.mxnzp.com/api/news/types/v2?app_id=msfurfjfuqfoiruh&app_secret=VW9ZbmlXVzZ1WkR3cDdaaEpDSG1FZz09');
+        const data = await response.json();
+        return data.data.filter(type => type.typeId === 532);
+    } catch (error) {
+        console.error("Failed to fetch news types", error);
+        return [];
+    }
 }
 
 async function fetchNewsList(typeId, page) {
-    const response = await fetch(`https://www.mxnzp.com/api/news/list/v2?typeId=${typeId}&page=${page}&app_id=msfurfjfuqfoiruh&app_secret=VW9ZbmlXVzZ1WkR3cDdaaEpDSG1FZz09`);
-    const data = await response.json();
-    return data.data;
+    try {
+        const response = await fetch(`https://www.mxnzp.com/api/news/list/v2?typeId=${typeId}&page=${page}&app_id=msfurfjfuqfoiruh&app_secret=VW9ZbmlXVzZ1WkR3cDdaaEpDSG1FZz09`);
+        const data = await response.json();
+        return data.data;
+    } catch (error) {
+        console.error("Failed to fetch news list", error);
+        return [];
+    }
 }
 
 async function fetchNewsDetails(newsId) {
-    const response = await fetch(`https://www.mxnzp.com/api/news/details/v2?newsId=${newsId}&app_id=msfurfjfuqfoiruh&app_secret=VW9ZbmlXVzZ1WkR3cDdaaEpDSG1FZz09`);
-    const data = await response.json();
-    return data.data;
+    try {
+        const response = await fetch(`https://www.mxnzp.com/api/news/details/v2?newsId=${newsId}&app_id=msfurfjfuqfoiruh&app_secret=VW9ZbmlXVzZ1WkR3cDdaaEpDSG1FZz09`);
+        const data = await response.json();
+        return data.data;
+    } catch (error) {
+        console.error("Failed to fetch news details", error);
+        return null;
+    }
 }
 
 function formatTime(dateString) {
@@ -61,10 +74,10 @@ async function renderNewsList(typeId, page) {
                 <div class="publish-time">${formatTime(news.postTime)}</div>
                 <div class="content">
                     <div class="text-content">
-                        <h4>${news.title}</h4>
-                        <p>${news.digest}</p>
+                        <h4>${sanitizeHTML(news.title)}</h4>
+                        <p>${sanitizeHTML(news.digest)}</p>
                     </div>
-                    <img src="${news.imgList[0] || ''}" alt="${news.title}">
+                    <img src="${news.imgList[0] || ''}" alt="${sanitizeHTML(news.title)}">
                 </div>
             `;
             
@@ -76,10 +89,11 @@ async function renderNewsList(typeId, page) {
     }
 }
 
-
-
-
-
+function sanitizeHTML(str) {
+    let temp = document.createElement('div');
+    temp.textContent = str;
+    return temp.innerHTML;
+}
 
 async function showNewsDetails(newsId) {
     try {
@@ -89,7 +103,7 @@ async function showNewsDetails(newsId) {
         newsDetails.items.forEach(item => {
             let content;
             if (item.type === 'text') {
-                content = `<p>${item.content}</p>`;
+                content = `<p>${sanitizeHTML(item.content)}</p>`;
             } else if (item.type === 'img') {
                 content = `<img src="${item.imageUrl}" alt="图片">`;
             } else if (item.type === 'video') {
