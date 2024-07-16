@@ -158,7 +158,7 @@ body {
     max-width: 100%;
     max-height: none;
   }
-  #timeline-header {
-    padding: 0; /* 调整顶部空白的内边距 */
+  #news-details {
+    height: 400px; /* 手机端高度 */
   }
 }

@@ -144,6 +144,48 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo-theme-next主题安装</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
+<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<ol start="2">
+<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
+</li>
+<li><p>next theme 配置文件路径</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
+</blockquote>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
+<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
+</li>
+<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
+</li>
+</ul>
+<blockquote>
+<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>next主题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Test Image Insert</title>
     <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
     <content><![CDATA[<blockquote>
@@ -197,48 +239,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo-theme-next主题安装</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
-<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<ol start="2">
-<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
-</li>
-<li><p>next theme 配置文件路径</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
-</blockquote>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
-<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
-</li>
-<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
-</li>
-</ul>
-<blockquote>
-<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>next主题</tag>
       </tags>
   </entry>
   <entry>
@@ -340,6 +340,50 @@
       </tags>
   </entry>
   <entry>
+    <title>债券</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E5%80%BA%E5%88%B8/</url>
+    <content><![CDATA[<h3 id="债券：理解债务的投资方式"><a href="#债券：理解债务的投资方式" class="headerlink" title="债券：理解债务的投资方式"></a>债券：理解债务的投资方式</h3><p>在金融世界中，债券是一种常见的投资工具，它为投资者提供了一种安全稳定的投资选择。让我们一起来了解一下什么是债券，以及如何购买债券以及它如何运作。</p>
+<span id="more"></span>
+
+<h4 id="什么是债券？"><a href="#什么是债券？" class="headerlink" title="什么是债券？"></a>什么是债券？</h4><p><strong>债券</strong>就像是一张借据或者是一种借出资金的“债务证明书”。简单来说，当你购买债券时，你其实就是在借钱给某个实体，比如政府、公司或者其他组织。这个实体承诺在未来某个时候偿还你的投资本金，并且在此期间向你支付利息作为回报。</p>
+<h4 id="如何购买债券？"><a href="#如何购买债券？" class="headerlink" title="如何购买债券？"></a>如何购买债券？</h4><p>购买债券通常有几种方式：</p>
+<ol>
+<li><p><strong>一级市场：</strong> 在债券发行的初期购买。这意味着你直接从发行者（比如政府或公司）那里购买债券。一级市场购买通常通过银行、证券公司或者经纪人进行。</p>
+</li>
+<li><p><strong>二级市场：</strong> 在债券已经发行并流通后购买。这时你是从其他投资者手中购买债券。二级市场的交易通常在证券交易所（如股票市场）进行，你可以通过证券账户和经纪人进行交易。</p>
+</li>
+<li><p><strong>债券基金：</strong> 如果你不想直接购买单个债券，可以考虑投资债券基金。债券基金由专业基金经理管理，他们会购买和管理多种债券，你可以通过购买基金份额来间接投资债券市场。</p>
+</li>
+</ol>
+<h4 id="不同类型的债券"><a href="#不同类型的债券" class="headerlink" title="不同类型的债券"></a>不同类型的债券</h4><p>债券有很多种类，其中包括：</p>
+<ul>
+<li><p><strong>政府债券（国债）：</strong> 由国家政府发行，用于筹集资金以支持政府项目和运作。政府债券通常被认为是最安全的债券形式，因为政府具有征税权和印钞权。</p>
+</li>
+<li><p><strong>公司债券：</strong> 由公司发行，用于扩展业务、投资新项目或偿还旧债务。公司债券的风险和收益取决于公司的信用评级和经营状况。</p>
+</li>
+<li><p><strong>地方政府债券：</strong> 由地方政府或政治实体发行，用于建设基础设施或提供公共服务。地方政府债券的偿还能力与该地区经济和治理能力相关。</p>
+</li>
+</ul>
+<h4 id="债券的优缺点"><a href="#债券的优缺点" class="headerlink" title="债券的优缺点"></a>债券的优缺点</h4><p><strong>优点：</strong></p>
+<ul>
+<li><strong>稳定收益：</strong> 债券通常提供稳定的利息收入，适合追求稳定收益的投资者。</li>
+<li><strong>资本保护：</strong> 如果投资的实体能够履行支付义务，债券投资的本金一般是有保护的。</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li><strong>利息风险：</strong><br>市场利率上升可能导致债券市场价值下降。<br>当你购买债券时，它通常有一个固定的利息率。假设你购买了一张5%利息率的债券，然后市场上的利率开始上升，比如其他新债券的利率变成了6%。在这种情况下，新债券提供了更高的利息回报，而你手里的旧债券因为它的利息率较低，因此它的市场价值可能会下降。<br>为什么会这样呢？因为投资者在市场上购买债券时，会希望获得与市场利率相符合的回报。如果市场上的新债券提供了更高的利息率，那么人们就更愿意购买新债券，而不是旧的低利息债券。为了吸引买家，旧债券的市场价格可能会下降，从而与新债券的利率相匹配。<br>这就是为什么当市场利率上升时，现有债券的市场价值可能会下降的原因。</li>
+<li><strong>违约风险：</strong> 如果债务人无法按时偿还债务，投资者可能会面临损失。</li>
+</ul>
+<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>总而言之，债券是一种可靠的投资选择，适合那些希望获得稳定收益并愿意承担一定风险的投资者。通过购买债券，你不仅可以帮助政府和企业筹集资金，还能为自己的投资组合增加多样性和稳定性。当然，在投资任何金融产品之前，了解你的投资目标和风险承受能力是非常重要的。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>债券</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>保障性住房</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E4%BF%9D%E9%9A%9C%E6%80%A7%E4%BD%8F%E6%88%BF/</url>
     <content><![CDATA[<p>保障性住房是中国政府为了解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的一系列住房政策和项目。保障性住房主要包括以下几种类型：</p>
@@ -410,50 +454,6 @@
       </categories>
       <tags>
         <tag>保障性住房</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>债券</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E5%80%BA%E5%88%B8/</url>
-    <content><![CDATA[<h3 id="债券：理解债务的投资方式"><a href="#债券：理解债务的投资方式" class="headerlink" title="债券：理解债务的投资方式"></a>债券：理解债务的投资方式</h3><p>在金融世界中，债券是一种常见的投资工具，它为投资者提供了一种安全稳定的投资选择。让我们一起来了解一下什么是债券，以及如何购买债券以及它如何运作。</p>
-<span id="more"></span>
-
-<h4 id="什么是债券？"><a href="#什么是债券？" class="headerlink" title="什么是债券？"></a>什么是债券？</h4><p><strong>债券</strong>就像是一张借据或者是一种借出资金的“债务证明书”。简单来说，当你购买债券时，你其实就是在借钱给某个实体，比如政府、公司或者其他组织。这个实体承诺在未来某个时候偿还你的投资本金，并且在此期间向你支付利息作为回报。</p>
-<h4 id="如何购买债券？"><a href="#如何购买债券？" class="headerlink" title="如何购买债券？"></a>如何购买债券？</h4><p>购买债券通常有几种方式：</p>
-<ol>
-<li><p><strong>一级市场：</strong> 在债券发行的初期购买。这意味着你直接从发行者（比如政府或公司）那里购买债券。一级市场购买通常通过银行、证券公司或者经纪人进行。</p>
-</li>
-<li><p><strong>二级市场：</strong> 在债券已经发行并流通后购买。这时你是从其他投资者手中购买债券。二级市场的交易通常在证券交易所（如股票市场）进行，你可以通过证券账户和经纪人进行交易。</p>
-</li>
-<li><p><strong>债券基金：</strong> 如果你不想直接购买单个债券，可以考虑投资债券基金。债券基金由专业基金经理管理，他们会购买和管理多种债券，你可以通过购买基金份额来间接投资债券市场。</p>
-</li>
-</ol>
-<h4 id="不同类型的债券"><a href="#不同类型的债券" class="headerlink" title="不同类型的债券"></a>不同类型的债券</h4><p>债券有很多种类，其中包括：</p>
-<ul>
-<li><p><strong>政府债券（国债）：</strong> 由国家政府发行，用于筹集资金以支持政府项目和运作。政府债券通常被认为是最安全的债券形式，因为政府具有征税权和印钞权。</p>
-</li>
-<li><p><strong>公司债券：</strong> 由公司发行，用于扩展业务、投资新项目或偿还旧债务。公司债券的风险和收益取决于公司的信用评级和经营状况。</p>
-</li>
-<li><p><strong>地方政府债券：</strong> 由地方政府或政治实体发行，用于建设基础设施或提供公共服务。地方政府债券的偿还能力与该地区经济和治理能力相关。</p>
-</li>
-</ul>
-<h4 id="债券的优缺点"><a href="#债券的优缺点" class="headerlink" title="债券的优缺点"></a>债券的优缺点</h4><p><strong>优点：</strong></p>
-<ul>
-<li><strong>稳定收益：</strong> 债券通常提供稳定的利息收入，适合追求稳定收益的投资者。</li>
-<li><strong>资本保护：</strong> 如果投资的实体能够履行支付义务，债券投资的本金一般是有保护的。</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li><strong>利息风险：</strong><br>市场利率上升可能导致债券市场价值下降。<br>当你购买债券时，它通常有一个固定的利息率。假设你购买了一张5%利息率的债券，然后市场上的利率开始上升，比如其他新债券的利率变成了6%。在这种情况下，新债券提供了更高的利息回报，而你手里的旧债券因为它的利息率较低，因此它的市场价值可能会下降。<br>为什么会这样呢？因为投资者在市场上购买债券时，会希望获得与市场利率相符合的回报。如果市场上的新债券提供了更高的利息率，那么人们就更愿意购买新债券，而不是旧的低利息债券。为了吸引买家，旧债券的市场价格可能会下降，从而与新债券的利率相匹配。<br>这就是为什么当市场利率上升时，现有债券的市场价值可能会下降的原因。</li>
-<li><strong>违约风险：</strong> 如果债务人无法按时偿还债务，投资者可能会面临损失。</li>
-</ul>
-<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>总而言之，债券是一种可靠的投资选择，适合那些希望获得稳定收益并愿意承担一定风险的投资者。通过购买债券，你不仅可以帮助政府和企业筹集资金，还能为自己的投资组合增加多样性和稳定性。当然，在投资任何金融产品之前，了解你的投资目标和风险承受能力是非常重要的。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>债券</tag>
       </tags>
   </entry>
   <entry>
