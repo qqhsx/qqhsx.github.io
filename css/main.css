@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ba1704;
+    background: #ad2945;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3030,7 +3030,7 @@ body {
   margin: 10px 0;
 }
 #news-details {
-  height: 400px;
+  height: 600px;
   overflow: auto;
   padding: 20px;
 }

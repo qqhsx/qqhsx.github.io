@@ -42,104 +42,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Test Image Insert</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
-    <content><![CDATA[<blockquote>
-<p>以下是在hexo配置文件_config.yml中 <code>post_asset_folder</code> 已启用的情况下用Typora编写测试的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li><h3 id="这是一个测试如何在-Hexo-文章中插入图片的示例。"><a href="#这是一个测试如何在-Hexo-文章中插入图片的示例。" class="headerlink" title="这是一个测试如何在 Hexo 文章中插入图片的示例。"></a>这是一个测试如何在 Hexo 文章中插入图片的示例。</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
-<ul>
-<li><h3 id="尝试使用相对路径指定图片的位置"><a href="#尝试使用相对路径指定图片的位置" class="headerlink" title="尝试使用相对路径指定图片的位置"></a>尝试使用相对路径指定图片的位置</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-
-<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
-<ul>
-<li><h3 id="试试在-Markdown-文件中使用绝对路径"><a href="#试试在-Markdown-文件中使用绝对路径" class="headerlink" title="试试在 Markdown 文件中使用绝对路径"></a>试试在 Markdown 文件中使用绝对路径</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](/uncategorized/Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>这样写在Typora中不显示，在<a href="http://localhost:4000/%E4%B8%AD%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA">http://localhost:4000/中正常显示</a></p>
-<p>！！！！！！！！！</p>
-<p>！！！！！！！！！</p>
-<p>！！！！！！！！！</p>
-<ul>
-<li><h3 id="接着接找到hexo-asset-img这个插件安装"><a href="#接着接找到hexo-asset-img这个插件安装" class="headerlink" title="接着接找到hexo-asset-img这个插件安装"></a>接着接找到<a href="https://github.com/yiyungent/hexo-asset-img">hexo-asset-img</a>这个插件安装</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
-
-<p>最终测试后这个插件起到了作用，Typora中使用如下相对路径插入图片可以在Typora中与<a href="http://localhost:4000/">http://localhost:4000/</a> 中都能正常显示。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>使用起来发现这格式还是有些不方便，在用Тypora编写时一般会在<code>文件-偏好设置-图像</code>页面中设置图片插入时的的动作参数。如果选择<code>复制到指定路径./$&#123;filename&#125;</code>会发现在插入图片时是以下的格式，同时会在文章的同目录中生成一个与文件名相同的目录，所插入的图片会自动放在这里面。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h3 id="接着换回到hexo-asset-image这个插件安装"><a href="#接着换回到hexo-asset-image这个插件安装" class="headerlink" title="接着换回到hexo-asset-image这个插件安装"></a>接着换回到<a href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a>这个插件安装</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-
-<p>都说这个插件失效了所以开始就没去安装它，但最终还是用上它了。它能处理下面这种图片格式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo-theme-next主题安装</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
-<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<ol start="2">
-<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
-</li>
-<li><p>next theme 配置文件路径</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
-</blockquote>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
-<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
-</li>
-<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
-</li>
-</ul>
-<blockquote>
-<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>next主题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo博客搭建与部署</title>
     <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
@@ -239,6 +141,104 @@
       <tags>
         <tag>Hexo</tag>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Test Image Insert</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
+    <content><![CDATA[<blockquote>
+<p>以下是在hexo配置文件_config.yml中 <code>post_asset_folder</code> 已启用的情况下用Typora编写测试的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li><h3 id="这是一个测试如何在-Hexo-文章中插入图片的示例。"><a href="#这是一个测试如何在-Hexo-文章中插入图片的示例。" class="headerlink" title="这是一个测试如何在 Hexo 文章中插入图片的示例。"></a>这是一个测试如何在 Hexo 文章中插入图片的示例。</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
+<ul>
+<li><h3 id="尝试使用相对路径指定图片的位置"><a href="#尝试使用相对路径指定图片的位置" class="headerlink" title="尝试使用相对路径指定图片的位置"></a>尝试使用相对路径指定图片的位置</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+
+<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
+<ul>
+<li><h3 id="试试在-Markdown-文件中使用绝对路径"><a href="#试试在-Markdown-文件中使用绝对路径" class="headerlink" title="试试在 Markdown 文件中使用绝对路径"></a>试试在 Markdown 文件中使用绝对路径</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](/uncategorized/Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>这样写在Typora中不显示，在<a href="http://localhost:4000/%E4%B8%AD%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA">http://localhost:4000/中正常显示</a></p>
+<p>！！！！！！！！！</p>
+<p>！！！！！！！！！</p>
+<p>！！！！！！！！！</p>
+<ul>
+<li><h3 id="接着接找到hexo-asset-img这个插件安装"><a href="#接着接找到hexo-asset-img这个插件安装" class="headerlink" title="接着接找到hexo-asset-img这个插件安装"></a>接着接找到<a href="https://github.com/yiyungent/hexo-asset-img">hexo-asset-img</a>这个插件安装</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
+
+<p>最终测试后这个插件起到了作用，Typora中使用如下相对路径插入图片可以在Typora中与<a href="http://localhost:4000/">http://localhost:4000/</a> 中都能正常显示。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>使用起来发现这格式还是有些不方便，在用Тypora编写时一般会在<code>文件-偏好设置-图像</code>页面中设置图片插入时的的动作参数。如果选择<code>复制到指定路径./$&#123;filename&#125;</code>会发现在插入图片时是以下的格式，同时会在文章的同目录中生成一个与文件名相同的目录，所插入的图片会自动放在这里面。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="接着换回到hexo-asset-image这个插件安装"><a href="#接着换回到hexo-asset-image这个插件安装" class="headerlink" title="接着换回到hexo-asset-image这个插件安装"></a>接着换回到<a href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a>这个插件安装</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>都说这个插件失效了所以开始就没去安装它，但最终还是用上它了。它能处理下面这种图片格式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo-theme-next主题安装</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
+<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<ol start="2">
+<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
+</li>
+<li><p>next theme 配置文件路径</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
+</blockquote>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
+<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
+</li>
+<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
+</li>
+</ul>
+<blockquote>
+<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>next主题</tag>
       </tags>
   </entry>
   <entry>
@@ -2228,14 +2228,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
-  </entry>
-  <entry>
     <title>每日60秒读懂世界新闻</title>
     <url>/60s_news/index.html</url>
     <content><![CDATA[<div id="daily-news">
@@ -2271,6 +2263,14 @@
 
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>关于</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
   </entry>
   <entry>
     <title>分类</title>
@@ -2448,138 +2448,6 @@
 </div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1908年</p>
 </div></div><div class="timeline-item-content"><p>交通银行成立，是中国历史悠久的银行之一。</p>
 </div></div></div>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/custom.js</url>
-    <content><![CDATA[// custom.js
-const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
-const scenarios = [
-    { days: 0, weekend: true, message: "今天是周末，好好放松一下吧！" },
-    { days: 1, weekend: false, message: "明天就是周末了，今天努力工作哦！" },
-    { days: 2, weekend: false, message: "还有2天就是周末了，坚持住！" },
-    { days: 3, weekend: false, message: "还有3天就是周末了，先好好工作吧！" },
-    { days: 4, weekend: false, message: "工作周才刚开始，保持干劲哦！" },
-    { days: 5, weekend: false, message: "新的一周开始了，迎接新的挑战吧！" },
-    { days: 0, weekend: false, message: "又快到周末了，再加把劲！" },
-];
-
-function showCurrentTime() {
-    var now = new Date();
-    var year = now.getFullYear();
-    var month = (now.getMonth() + 1).toString().padStart(2, '0');
-    var day = now.getDate().toString().padStart(2, '0');
-    var weekday = weekdays[now.getDay()];
-    var hours = now.getHours().toString().padStart(2, '0');
-    var minutes = now.getMinutes().toString().padStart(2, '0');
-    var seconds = now.getSeconds().toString().padStart(2, '0');
-    var milliseconds = now.getMilliseconds().toString().padStart(3, '0');
-
-    var dateString = `${year}年${month}月${day}日 星期${weekday}`;
-    var timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
-
-    //document.getElementById('current-date').innerHTML = dateString;
-    //document.getElementById('current-time').innerHTML = timeString;
-
-    // 显示场景消息
-    showScenarioMessage(now);
-}
-
-function showScenarioMessage(date) {
-    const dayOfWeek = date.getDay();
-    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
-    const daysUntilWeekend = dayOfWeek <= 5 ? 6 - dayOfWeek : 0;
-
-    let scenario = scenarios.find(s => 
-        (s.weekend === isWeekend && s.days === daysUntilWeekend) ||
-        (s.weekend === isWeekend && s.days === 0)
-    );
- 
-    if (!scenario) {
-        scenario = { message: "祝你今天工作顺利！" };
-    }
-
-    document.getElementById('scenario-message').innerHTML = scenario.message;
-}
-
-// 自动刷新时间，每100毫秒更新一次
-function startClock() {
-    setInterval(showCurrentTime, 100);
-}]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/fetch-data.js</url>
-    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
-    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-    const dailyNewsDiv = document.getElementById('daily-news');
-
-    function fetchBitcoinPrice() {
-        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应失败');
-                }
-                return response.json();
-            })
-            .then(bitcoinData => {
-                const usdRate = bitcoinData.bpi.USD.rate;
-                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
-            })
-            .catch(error => {
-                console.error('获取比特币价格失败:', error);
-                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
-            });
-    }
-
-    function fetchHolidayInfo() {
-        fetch('https://timor.tech/api/holiday/tts')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应失败');
-                }
-                return response.json();
-            })
-            .then(holidayData => {
-                const holidayMessage = holidayData.tts;
-                dailyNewsDiv.innerHTML = `<p>${holidayMessage}</p>`;
-            })
-            .catch(error => {
-                console.error('获取节假日信息失败:', error);
-                dailyNewsDiv.innerHTML = '获取节假日信息失败';
-            });
-    }
-
-    // 初次加载数据
-    fetchBitcoinPrice();
-    fetchHolidayInfo();
-
-    // 设置自动刷新，每毫秒刷新一次
-    setInterval(fetchBitcoinPrice, 100);
-    setInterval(fetchHolidayInfo, 100);
-});]]></content>
-  </entry>
-  <entry>
-    <title>新闻</title>
-    <url>/news/index.html</url>
-    <content><![CDATA[<body>
-    <div id="timeline-header">
-        <h2 id="timeline-date"></h2>
-    </div>
-    <div id="news-list"></div>
-    <button id="load-more-button">加载更多</button>
-    <div id="news-details-modal" class="modal">
-        <div class="modal-content">
-            <span id="close-modal" class="close">&times;</span>
-            <div id="news-details"></div>
-            <button id="back-to-top">回到顶部</button>
-        </div>
-    </div>
-</body>
-<script type="text/javascript" src="/js/news/news.js"></script>
-
-
 ]]></content>
   </entry>
   <entry>
@@ -2817,8 +2685,145 @@ function startClock() {
 </div></div></div>]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>/js/custom.js</url>
+    <content><![CDATA[// custom.js
+const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
+const scenarios = [
+    { days: 0, weekend: true, message: "今天是周末，好好放松一下吧！" },
+    { days: 1, weekend: false, message: "明天就是周末了，今天努力工作哦！" },
+    { days: 2, weekend: false, message: "还有2天就是周末了，坚持住！" },
+    { days: 3, weekend: false, message: "还有3天就是周末了，先好好工作吧！" },
+    { days: 4, weekend: false, message: "工作周才刚开始，保持干劲哦！" },
+    { days: 5, weekend: false, message: "新的一周开始了，迎接新的挑战吧！" },
+    { days: 0, weekend: false, message: "又快到周末了，再加把劲！" },
+];
+
+function showCurrentTime() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = (now.getMonth() + 1).toString().padStart(2, '0');
+    var day = now.getDate().toString().padStart(2, '0');
+    var weekday = weekdays[now.getDay()];
+    var hours = now.getHours().toString().padStart(2, '0');
+    var minutes = now.getMinutes().toString().padStart(2, '0');
+    var seconds = now.getSeconds().toString().padStart(2, '0');
+    var milliseconds = now.getMilliseconds().toString().padStart(3, '0');
+
+    var dateString = `${year}年${month}月${day}日 星期${weekday}`;
+    var timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+
+    //document.getElementById('current-date').innerHTML = dateString;
+    //document.getElementById('current-time').innerHTML = timeString;
+
+    // 显示场景消息
+    showScenarioMessage(now);
+}
+
+function showScenarioMessage(date) {
+    const dayOfWeek = date.getDay();
+    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+    const daysUntilWeekend = dayOfWeek <= 5 ? 6 - dayOfWeek : 0;
+
+    let scenario = scenarios.find(s => 
+        (s.weekend === isWeekend && s.days === daysUntilWeekend) ||
+        (s.weekend === isWeekend && s.days === 0)
+    );
+ 
+    if (!scenario) {
+        scenario = { message: "祝你今天工作顺利！" };
+    }
+
+    document.getElementById('scenario-message').innerHTML = scenario.message;
+}
+
+// 自动刷新时间，每100毫秒更新一次
+function startClock() {
+    setInterval(showCurrentTime, 100);
+}]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/js/fetch-data.js</url>
+    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
+    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
+    const dailyNewsDiv = document.getElementById('daily-news');
+
+    function fetchBitcoinPrice() {
+        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                return response.json();
+            })
+            .then(bitcoinData => {
+                const usdRate = bitcoinData.bpi.USD.rate;
+                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
+            })
+            .catch(error => {
+                console.error('获取比特币价格失败:', error);
+                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
+            });
+    }
+
+    function fetchHolidayInfo() {
+        fetch('https://timor.tech/api/holiday/tts')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                return response.json();
+            })
+            .then(holidayData => {
+                const holidayMessage = holidayData.tts;
+                dailyNewsDiv.innerHTML = `<p>${holidayMessage}</p>`;
+            })
+            .catch(error => {
+                console.error('获取节假日信息失败:', error);
+                dailyNewsDiv.innerHTML = '获取节假日信息失败';
+            });
+    }
+
+    // 初次加载数据
+    fetchBitcoinPrice();
+    fetchHolidayInfo();
+
+    // 设置自动刷新，每毫秒刷新一次
+    setInterval(fetchBitcoinPrice, 100);
+    setInterval(fetchHolidayInfo, 100);
+});]]></content>
+  </entry>
+  <entry>
+    <title>新闻</title>
+    <url>/news/index.html</url>
+    <content><![CDATA[<body>
+    <div id="timeline-header">
+        <h2 id="timeline-date"></h2>
+    </div>
+    <div id="news-list"></div>
+    <button id="load-more-button">加载更多</button>
+    <div id="news-details-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <div id="news-details"></div>
+            <button id="back-to-top">回到顶部</button>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="/js/news/news.js"></script>
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>schedule</title>
     <url>/schedule/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -2842,10 +2847,5 @@ function startClock() {
 
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>标签</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
