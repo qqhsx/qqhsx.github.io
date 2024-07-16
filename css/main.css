@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #4aa394;
+    background: #3e8ee3;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3038,7 +3038,7 @@ body {
 }
 #news-list h3 {
   font-size: 1.5em; /* 调整字体大小 */
-  margin: 0 0 10px 10px; /* 设置上下边距和左边距 */
+  margin: 0 0 10px 0px; /* 设置上下边距和左边距 */
   padding: 0; /* 设置内边距 */
   font-weight: bold; /* 设置字体加粗 */
 }
