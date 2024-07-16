@@ -33,6 +33,7 @@ body {
   padding: 10px 0;
   border-left: 3px solid #007bff;
   margin-left: 20px;
+  cursor: pointer; /* 添加鼠标指针样式 */
 }
 .news-item .content {
   display: flex;
@@ -70,6 +71,11 @@ body {
   max-height: 75px;
   border-radius: 5px;
   margin-left: 10px;
+}
+/* 悬停样式 */
+.news-item:hover {
+  background-color: #f1f1f1;
+  border-left-color: #0056b3;
 }
 /* 模态弹窗样式 */
 #news-details-modal {
@@ -126,24 +132,27 @@ body {
 /* 响应式设计 */
 @media (max-width: 768px) {
   .news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-left: 0;
     padding-left: 0;
-    border-left: none;
-    border-top: 3px solid #007bff;
     padding-top: 10px;
     padding-bottom: 10px;
+    border-left: none;
+    border-top: 3px solid #007bff;
   }
   .news-item .publish-time {
-    left: 0;
-    top: -20px;
-    width: 100%;
-    text-align: left;
     position: relative;
+    left: 0;
+    width: auto;
+    text-align: left;
     margin-bottom: 10px;
   }
   .news-item .content {
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 0;
   }
   .news-item img {
     margin-left: 0;
