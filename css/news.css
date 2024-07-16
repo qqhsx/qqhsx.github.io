@@ -137,7 +137,6 @@ body {
   margin: 0 0 10px 10px; /* 设置上下边距和左边距 */
   padding: 0; /* 设置内边距 */
   font-weight: bold; /* 设置字体加粗 */
-  padding-left: 10px; /* 设置左侧边框和文字之间的距离 */
 }
 /* 响应式设计 */
 @media (max-width: 768px) {
