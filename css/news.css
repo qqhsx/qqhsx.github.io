@@ -67,12 +67,14 @@ body {
   color: #999;
 }
 .news-item img {
-  max-width: 100px;
-  max-height: 75px;
-  border-radius: 5px;
+  max-width: 100px; /* 图片最大宽度 */
+  max-height: 75px; /* 图片最大高度 */
+  width: 100%;
+  height: auto; /* 自动根据宽度调整高度，保持长宽比 */
+  border-radius: 5px; /* 图片圆角 */
+  margin-left: 10px; /* 图片左边距 */
   margin-top: 0; /* 设置图片上边距 */
   margin-bottom: 0; /* 设置图片下边距 */
-  margin-left: 10px;
 }
 /* 悬停样式 */
 .news-item:hover {
@@ -93,6 +95,7 @@ body {
   overflow-y: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9999; /* 设置一个较大的 z-index 值 */
 }
 #news-details-modal .modal-content {
   background-color: #fff;
