@@ -137,6 +137,8 @@ body {
     align-items: flex-start;
     margin-left: 0;
     padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 10;
     border-left: none;
     border-top: 3px solid #007bff;
   }
