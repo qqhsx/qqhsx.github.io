@@ -30,7 +30,7 @@ body {
 /* 时间线样式 */
 .news-item {
   position: relative;
-  padding: 10px 0;
+  padding: 10px 0; /* 调整上下边距 */
   border-left: 3px solid #007bff;
   margin-left: 20px;
   cursor: pointer; /* 添加鼠标指针样式 */
@@ -49,7 +49,7 @@ body {
   flex: 1;
 }
 .news-item h4 {
-  margin: 0 0 5px 0;
+  margin: 0 0 0 0;
   font-size: 1.2em;
   color: #000;
 }
@@ -70,6 +70,8 @@ body {
   max-width: 100px;
   max-height: 75px;
   border-radius: 5px;
+  margin-top: 0; /* 设置图片上边距 */
+  margin-bottom: 0; /* 设置图片下边距 */
   margin-left: 10px;
 }
 /* 悬停样式 */
