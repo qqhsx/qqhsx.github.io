@@ -2273,11 +2273,6 @@
 <h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>经济时间轴</title>
     <url>/economy/index.html</url>
     <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
@@ -2449,6 +2444,11 @@
 </div></div><div class="timeline-item-content"><p>交通银行成立，是中国历史悠久的银行之一。</p>
 </div></div></div>
 ]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>精选新闻</title>
@@ -2704,6 +2704,58 @@
   </entry>
   <entry>
     <title></title>
+    <url>/js/fetch-data.js</url>
+    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
+    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
+    const dailyNewsDiv = document.getElementById('daily-news');
+
+    function fetchBitcoinPrice() {
+        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                return response.json();
+            })
+            .then(bitcoinData => {
+                const usdRate = bitcoinData.bpi.USD.rate;
+                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
+            })
+            .catch(error => {
+                console.error('获取比特币价格失败:', error);
+                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
+            });
+    }
+
+    function fetchHolidayInfo() {
+        fetch('https://timor.tech/api/holiday/tts')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                return response.json();
+            })
+            .then(holidayData => {
+                const holidayMessage = holidayData.tts;
+                dailyNewsDiv.innerHTML = `<p>${holidayMessage}</p>`;
+            })
+            .catch(error => {
+                console.error('获取节假日信息失败:', error);
+                dailyNewsDiv.innerHTML = '获取节假日信息失败';
+            });
+    }
+
+    // 初次加载数据
+    fetchBitcoinPrice();
+    fetchHolidayInfo();
+
+    // 设置自动刷新，每毫秒刷新一次
+    setInterval(fetchBitcoinPrice, 100);
+    setInterval(fetchHolidayInfo, 100);
+});]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>/js/custom.js</url>
     <content><![CDATA[// custom.js
 const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
@@ -2759,58 +2811,6 @@ function showScenarioMessage(date) {
 function startClock() {
     setInterval(showCurrentTime, 100);
 }]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/fetch-data.js</url>
-    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
-    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-    const dailyNewsDiv = document.getElementById('daily-news');
-
-    function fetchBitcoinPrice() {
-        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应失败');
-                }
-                return response.json();
-            })
-            .then(bitcoinData => {
-                const usdRate = bitcoinData.bpi.USD.rate;
-                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
-            })
-            .catch(error => {
-                console.error('获取比特币价格失败:', error);
-                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
-            });
-    }
-
-    function fetchHolidayInfo() {
-        fetch('https://timor.tech/api/holiday/tts')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应失败');
-                }
-                return response.json();
-            })
-            .then(holidayData => {
-                const holidayMessage = holidayData.tts;
-                dailyNewsDiv.innerHTML = `<p>${holidayMessage}</p>`;
-            })
-            .catch(error => {
-                console.error('获取节假日信息失败:', error);
-                dailyNewsDiv.innerHTML = '获取节假日信息失败';
-            });
-    }
-
-    // 初次加载数据
-    fetchBitcoinPrice();
-    fetchHolidayInfo();
-
-    // 设置自动刷新，每毫秒刷新一次
-    setInterval(fetchBitcoinPrice, 100);
-    setInterval(fetchHolidayInfo, 100);
-});]]></content>
   </entry>
   <entry>
     <title>schedule</title>
