@@ -5,7 +5,7 @@ async function fetchNewsTypes() {
     try {
         const response = await fetch('https://www.mxnzp.com/api/news/types/v2?app_id=msfurfjfuqfoiruh&app_secret=VW9ZbmlXVzZ1WkR3cDdaaEpDSG1FZz09');
         const data = await response.json();
-        return data.data.filter(type => type.typeId === 535);
+        return data.data.filter(type => type.typeId === 532);
     } catch (error) {
         console.error("Failed to fetch news types", error);
         return [];
@@ -142,7 +142,7 @@ window.addEventListener('popstate', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
-    await renderNewsList(535, currentPage);
+    await renderNewsList(532, currentPage);
 
     const closeModalButton = document.getElementById('close-modal');
     if (closeModalButton) {
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (loadMoreButton) {
         loadMoreButton.onclick = async () => {
             currentPage++;
-            await renderNewsList(535, currentPage);
+            await renderNewsList(532, currentPage);
         };
     }
 });
