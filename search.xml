@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>newpost</title>
     <url>/newpost/</url>
     <content><![CDATA[<p><i class="fa fa-bullhorn fa-shake " style="font-size: 22px;"></i> <span class="announcement-title" style="font-size: 22px; ">公告</span></p>
@@ -39,6 +21,24 @@
     };  
 </script>
 
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -291,55 +291,6 @@
       </tags>
   </entry>
   <entry>
-    <title>什么是年增率？</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/</url>
-    <content><![CDATA[<h3 id="什么是年增率？"><a href="#什么是年增率？" class="headerlink" title="什么是年增率？"></a>什么是年增率？</h3><p>年增率（Year-over-Year Growth Rate）是用来衡量一个指标（如收入、利润、房价等）在一年的时间跨度内增长（或减少）的百分比。用简洁的公式表示：</p>
-<span id="more"></span>
-
-<p><img src="/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/image-20240701161122258.png" alt="image-20240701161122258"></p>
-<p>比如，如果某公司在2023年的收入为5000万元，而在2024年增至5500万元，那么其年增率为：</p>
-<p><img src="/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/image-20240701161221319.png" alt="image-20240701161221319"></p>
-<h3 id="年增率的应用"><a href="#年增率的应用" class="headerlink" title="年增率的应用"></a>年增率的应用</h3><p>年增率的计算和分析在多个领域都有广泛应用，以下是一些主要应用场景：</p>
-<h4 id="1-经济分析"><a href="#1-经济分析" class="headerlink" title="1. 经济分析"></a>1. <strong>经济分析</strong></h4><ul>
-<li><strong>国内生产总值（GDP）</strong>：经济学家和政府通过年增率来衡量一个国家或地区经济增长的速度。</li>
-<li><strong>物价指数</strong>：如消费者物价指数（CPI）的年增率，用于衡量通货膨胀水平。</li>
-<li><strong>失业率</strong>：用年增率来衡量失业人口的变化情况。</li>
-</ul>
-<h4 id="2-企业财务分析"><a href="#2-企业财务分析" class="headerlink" title="2. 企业财务分析"></a>2. <strong>企业财务分析</strong></h4><ul>
-<li><strong>收入和利润</strong>：公司用年增率来衡量销售收入、净利润等财务指标的增长情况，从而评估经营业绩。</li>
-<li><strong>成本和开支</strong>：跟踪各项成本和开支的年增率，发现并控制上升过快的费用。</li>
-</ul>
-<h4 id="3-金融分析"><a href="#3-金融分析" class="headerlink" title="3. 金融分析"></a>3. <strong>金融分析</strong></h4><ul>
-<li><strong>股价和市场指数</strong>：投资者会用年增率来分析股票和市场指数的涨跌幅度，以评估投资组合的表现。</li>
-<li><strong>贷款利率</strong>：银行和金融机构通过年增率分析利率的变化以调整利率策略。</li>
-</ul>
-<h4 id="4-房地产市场"><a href="#4-房地产市场" class="headerlink" title="4. 房地产市场"></a>4. <strong>房地产市场</strong></h4><ul>
-<li><strong>房价</strong>：用房价的年增率来分析地产市场的热度和健康状况，辅助购房和投资决策。</li>
-<li><strong>租金</strong>：租金水平的年增率分析可以用于衡量租赁市场的变化。</li>
-</ul>
-<h4 id="5-社会发展"><a href="#5-社会发展" class="headerlink" title="5. 社会发展"></a>5. <strong>社会发展</strong></h4><ul>
-<li><strong>人口增长率</strong>：用年增率分析人口的自然增长或减少情况，为制定公共政策提供依据。</li>
-<li><strong>教育和健康指标</strong>：用年增率分析入学率、毕业率、医疗覆盖率等社会发展指标。</li>
-</ul>
-<h3 id="年增率的优点"><a href="#年增率的优点" class="headerlink" title="年增率的优点"></a>年增率的优点</h3><ul>
-<li><strong>直观对比</strong>：年增率提供了一个简单、直接的指标，可以方便地进行不同年份之间的对比。</li>
-<li><strong>趋势分析</strong>：通过连续几年的年增率，可以观察长期趋势，发现周期性或者结构性的变化。</li>
-<li><strong>宏观经济及企业表现评估</strong>：帮助政策制定者、投资者、企业管理者了解经济和行业状况，进行了更为科学的决策。</li>
-</ul>
-<h3 id="年增率的局限性"><a href="#年增率的局限性" class="headerlink" title="年增率的局限性"></a>年增率的局限性</h3><ul>
-<li><strong>忽略季节性</strong>：年增率通常无法反映季节性变化及其他周期性波动，需要与其他分析指标配合使用。</li>
-<li><strong>可能被短期波动影响</strong>：短期波动或异常值可能导致年增率出现偏差，需谨慎解读。</li>
-</ul>
-<p>总体而言，年增率是一个非常有用的指标。无论是在经济分析、企业管理还是金融投资领域，理解和应用年增率都有助于更好地掌握发展动态和趋势。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>年增率</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>保障性住房</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E4%BF%9D%E9%9A%9C%E6%80%A7%E4%BD%8F%E6%88%BF/</url>
     <content><![CDATA[<p>保障性住房是中国政府为了解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的一系列住房政策和项目。保障性住房主要包括以下几种类型：</p>
@@ -410,6 +361,55 @@
       </categories>
       <tags>
         <tag>保障性住房</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是年增率？</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/</url>
+    <content><![CDATA[<h3 id="什么是年增率？"><a href="#什么是年增率？" class="headerlink" title="什么是年增率？"></a>什么是年增率？</h3><p>年增率（Year-over-Year Growth Rate）是用来衡量一个指标（如收入、利润、房价等）在一年的时间跨度内增长（或减少）的百分比。用简洁的公式表示：</p>
+<span id="more"></span>
+
+<p><img src="/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/image-20240701161122258.png" alt="image-20240701161122258"></p>
+<p>比如，如果某公司在2023年的收入为5000万元，而在2024年增至5500万元，那么其年增率为：</p>
+<p><img src="/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/image-20240701161221319.png" alt="image-20240701161221319"></p>
+<h3 id="年增率的应用"><a href="#年增率的应用" class="headerlink" title="年增率的应用"></a>年增率的应用</h3><p>年增率的计算和分析在多个领域都有广泛应用，以下是一些主要应用场景：</p>
+<h4 id="1-经济分析"><a href="#1-经济分析" class="headerlink" title="1. 经济分析"></a>1. <strong>经济分析</strong></h4><ul>
+<li><strong>国内生产总值（GDP）</strong>：经济学家和政府通过年增率来衡量一个国家或地区经济增长的速度。</li>
+<li><strong>物价指数</strong>：如消费者物价指数（CPI）的年增率，用于衡量通货膨胀水平。</li>
+<li><strong>失业率</strong>：用年增率来衡量失业人口的变化情况。</li>
+</ul>
+<h4 id="2-企业财务分析"><a href="#2-企业财务分析" class="headerlink" title="2. 企业财务分析"></a>2. <strong>企业财务分析</strong></h4><ul>
+<li><strong>收入和利润</strong>：公司用年增率来衡量销售收入、净利润等财务指标的增长情况，从而评估经营业绩。</li>
+<li><strong>成本和开支</strong>：跟踪各项成本和开支的年增率，发现并控制上升过快的费用。</li>
+</ul>
+<h4 id="3-金融分析"><a href="#3-金融分析" class="headerlink" title="3. 金融分析"></a>3. <strong>金融分析</strong></h4><ul>
+<li><strong>股价和市场指数</strong>：投资者会用年增率来分析股票和市场指数的涨跌幅度，以评估投资组合的表现。</li>
+<li><strong>贷款利率</strong>：银行和金融机构通过年增率分析利率的变化以调整利率策略。</li>
+</ul>
+<h4 id="4-房地产市场"><a href="#4-房地产市场" class="headerlink" title="4. 房地产市场"></a>4. <strong>房地产市场</strong></h4><ul>
+<li><strong>房价</strong>：用房价的年增率来分析地产市场的热度和健康状况，辅助购房和投资决策。</li>
+<li><strong>租金</strong>：租金水平的年增率分析可以用于衡量租赁市场的变化。</li>
+</ul>
+<h4 id="5-社会发展"><a href="#5-社会发展" class="headerlink" title="5. 社会发展"></a>5. <strong>社会发展</strong></h4><ul>
+<li><strong>人口增长率</strong>：用年增率分析人口的自然增长或减少情况，为制定公共政策提供依据。</li>
+<li><strong>教育和健康指标</strong>：用年增率分析入学率、毕业率、医疗覆盖率等社会发展指标。</li>
+</ul>
+<h3 id="年增率的优点"><a href="#年增率的优点" class="headerlink" title="年增率的优点"></a>年增率的优点</h3><ul>
+<li><strong>直观对比</strong>：年增率提供了一个简单、直接的指标，可以方便地进行不同年份之间的对比。</li>
+<li><strong>趋势分析</strong>：通过连续几年的年增率，可以观察长期趋势，发现周期性或者结构性的变化。</li>
+<li><strong>宏观经济及企业表现评估</strong>：帮助政策制定者、投资者、企业管理者了解经济和行业状况，进行了更为科学的决策。</li>
+</ul>
+<h3 id="年增率的局限性"><a href="#年增率的局限性" class="headerlink" title="年增率的局限性"></a>年增率的局限性</h3><ul>
+<li><strong>忽略季节性</strong>：年增率通常无法反映季节性变化及其他周期性波动，需要与其他分析指标配合使用。</li>
+<li><strong>可能被短期波动影响</strong>：短期波动或异常值可能导致年增率出现偏差，需谨慎解读。</li>
+</ul>
+<p>总体而言，年增率是一个非常有用的指标。无论是在经济分析、企业管理还是金融投资领域，理解和应用年增率都有助于更好地掌握发展动态和趋势。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>年增率</tag>
       </tags>
   </entry>
   <entry>
@@ -571,49 +571,6 @@
       </tags>
   </entry>
   <entry>
-    <title>目前中国经济包含哪些方面</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E7%9B%AE%E5%89%8D%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E6%96%B9%E9%9D%A2/</url>
-    <content><![CDATA[<p>要准确地知道各个方面在中国经济中的占比，可以参考中国的国内生产总值（GDP）数据及其构成。根据最新的统计数据，大致可以分为三大产业：第一产业（农业），第二产业（工业），第三产业（服务业）。以下是根据最近几年数据的一个大致比例：</p>
-<h3 id="第一产业（农业）总占比：约7"><a href="#第一产业（农业）总占比：约7" class="headerlink" title="第一产业（农业）总占比：约7%"></a>第一产业（农业）总占比：约7%</h3><ul>
-<li><strong>农业（约为4-5%）</strong>：包括粮食、经济作物、蔬菜、水果等种植。</li>
-<li><strong>林业、牧业、渔业（合计约为2-3%）</strong>：包括林木种植、森林保护、木材生产、牲畜和家禽养殖、海洋渔业和淡水渔业。</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="第二产业（工业）总占比：约37"><a href="#第二产业（工业）总占比：约37" class="headerlink" title="第二产业（工业）总占比：约37%"></a>第二产业（工业）总占比：约37%</h3><ul>
-<li><strong>采矿业（约为3-4%）</strong>：包括煤炭、石油、天然气、金属矿产等的开采。</li>
-<li><strong>制造业（约为30%）</strong>：<ul>
-<li>轻工业（约为10-12%）：如纺织、服装、食品、饮料、家电等。</li>
-<li>重工业（约为12-14%）：如钢铁、机械设备、化工、建材等。</li>
-<li>高科技制造（约为6-8%）：电子产品、计算机硬件、半导体、通信设备等。</li>
-</ul>
-</li>
-<li><strong>电力、热力、燃气及水生产和供应业（约为2-3%）</strong>：包括电力、热力的生产和供应，天然气和水的供应等。</li>
-<li><strong>建筑业（约为4-5%）</strong>：包括基础设施建设、房地产开发等。</li>
-</ul>
-<h3 id="第三产业（服务业）总占比：约56"><a href="#第三产业（服务业）总占比：约56" class="headerlink" title="第三产业（服务业）总占比：约56%"></a>第三产业（服务业）总占比：约56%</h3><ul>
-<li><strong>金融业（约为7-8%）</strong>：包括银行、保险、证券、基金、信托等。</li>
-<li><strong>交通运输、仓储和邮政业（约为6-7%）</strong>：包括航空、铁路、公路、水运、仓储和邮政服务等。</li>
-<li><strong>信息传输、软件和信息技术服务业（约为6-7%）</strong>：包括互联网服务、软件开发、信息咨询等。</li>
-<li><strong>批发和零售业（约为10-12%）</strong>：包括各类商品的批发和零售。</li>
-<li><strong>住宿和餐饮业（约为3-4%）</strong>：包括酒店、餐馆等。</li>
-<li><strong>房地产业（约为6-8%）</strong>：包括住宅地产、商业地产等的开发和经营。</li>
-<li><strong>教育和培训（约为4-5%）</strong>：包括各级教育机构、培训中心等。</li>
-<li><strong>医疗健康（约为4-5%）</strong>：包括医院、诊所、药品生产和销售等。</li>
-<li><strong>公共管理、社会保障和社会组织（约为4-5%）</strong>：包括政府机关、社会保障机构和各类社会组织等。</li>
-<li><strong>文化、体育和娱乐业（约为2-3%）</strong>：包括文化创意、体育赛事和娱乐活动等。</li>
-</ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>上述细分数据提供了一个大致的框架，具体的年度数据可能会有所不同。为获得最准确和最新的数据，请参考<a href="http://www.stats.gov.cn/">国家统计局</a>发布的年度统计报告和相关经济分析报告。</p>
-<p>目前，服务业是中国经济中的最大组成部分，占据了 GDP 的半壁江山，其次是工业，特别是制造业，这两个领域共同构成了中国经济的主体。农业虽然占比相对较小，但仍然是基础性行业，对农村经济和食品安全具有重要意义。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>中国经济</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>通货紧缩</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E9%80%9A%E8%B4%A7%E7%B4%A7%E7%BC%A9/</url>
     <content><![CDATA[<h4 id="小镇的故事"><a href="#小镇的故事" class="headerlink" title="小镇的故事"></a>小镇的故事</h4><p>在一个宁静的小镇上，居民们的生活就是买东西和卖东西。</p>
@@ -696,6 +653,49 @@
       </categories>
       <tags>
         <tag>通货紧缩</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目前中国经济包含哪些方面</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E7%9B%AE%E5%89%8D%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E6%96%B9%E9%9D%A2/</url>
+    <content><![CDATA[<p>要准确地知道各个方面在中国经济中的占比，可以参考中国的国内生产总值（GDP）数据及其构成。根据最新的统计数据，大致可以分为三大产业：第一产业（农业），第二产业（工业），第三产业（服务业）。以下是根据最近几年数据的一个大致比例：</p>
+<h3 id="第一产业（农业）总占比：约7"><a href="#第一产业（农业）总占比：约7" class="headerlink" title="第一产业（农业）总占比：约7%"></a>第一产业（农业）总占比：约7%</h3><ul>
+<li><strong>农业（约为4-5%）</strong>：包括粮食、经济作物、蔬菜、水果等种植。</li>
+<li><strong>林业、牧业、渔业（合计约为2-3%）</strong>：包括林木种植、森林保护、木材生产、牲畜和家禽养殖、海洋渔业和淡水渔业。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="第二产业（工业）总占比：约37"><a href="#第二产业（工业）总占比：约37" class="headerlink" title="第二产业（工业）总占比：约37%"></a>第二产业（工业）总占比：约37%</h3><ul>
+<li><strong>采矿业（约为3-4%）</strong>：包括煤炭、石油、天然气、金属矿产等的开采。</li>
+<li><strong>制造业（约为30%）</strong>：<ul>
+<li>轻工业（约为10-12%）：如纺织、服装、食品、饮料、家电等。</li>
+<li>重工业（约为12-14%）：如钢铁、机械设备、化工、建材等。</li>
+<li>高科技制造（约为6-8%）：电子产品、计算机硬件、半导体、通信设备等。</li>
+</ul>
+</li>
+<li><strong>电力、热力、燃气及水生产和供应业（约为2-3%）</strong>：包括电力、热力的生产和供应，天然气和水的供应等。</li>
+<li><strong>建筑业（约为4-5%）</strong>：包括基础设施建设、房地产开发等。</li>
+</ul>
+<h3 id="第三产业（服务业）总占比：约56"><a href="#第三产业（服务业）总占比：约56" class="headerlink" title="第三产业（服务业）总占比：约56%"></a>第三产业（服务业）总占比：约56%</h3><ul>
+<li><strong>金融业（约为7-8%）</strong>：包括银行、保险、证券、基金、信托等。</li>
+<li><strong>交通运输、仓储和邮政业（约为6-7%）</strong>：包括航空、铁路、公路、水运、仓储和邮政服务等。</li>
+<li><strong>信息传输、软件和信息技术服务业（约为6-7%）</strong>：包括互联网服务、软件开发、信息咨询等。</li>
+<li><strong>批发和零售业（约为10-12%）</strong>：包括各类商品的批发和零售。</li>
+<li><strong>住宿和餐饮业（约为3-4%）</strong>：包括酒店、餐馆等。</li>
+<li><strong>房地产业（约为6-8%）</strong>：包括住宅地产、商业地产等的开发和经营。</li>
+<li><strong>教育和培训（约为4-5%）</strong>：包括各级教育机构、培训中心等。</li>
+<li><strong>医疗健康（约为4-5%）</strong>：包括医院、诊所、药品生产和销售等。</li>
+<li><strong>公共管理、社会保障和社会组织（约为4-5%）</strong>：包括政府机关、社会保障机构和各类社会组织等。</li>
+<li><strong>文化、体育和娱乐业（约为2-3%）</strong>：包括文化创意、体育赛事和娱乐活动等。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>上述细分数据提供了一个大致的框架，具体的年度数据可能会有所不同。为获得最准确和最新的数据，请参考<a href="http://www.stats.gov.cn/">国家统计局</a>发布的年度统计报告和相关经济分析报告。</p>
+<p>目前，服务业是中国经济中的最大组成部分，占据了 GDP 的半壁江山，其次是工业，特别是制造业，这两个领域共同构成了中国经济的主体。农业虽然占比相对较小，但仍然是基础性行业，对农村经济和食品安全具有重要意义。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>中国经济</tag>
       </tags>
   </entry>
   <entry>
@@ -2451,58 +2451,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/js/fetch-data.js</url>
-    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
-    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-    const dailyNewsDiv = document.getElementById('daily-news');
-
-    function fetchBitcoinPrice() {
-        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应失败');
-                }
-                return response.json();
-            })
-            .then(bitcoinData => {
-                const usdRate = bitcoinData.bpi.USD.rate;
-                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
-            })
-            .catch(error => {
-                console.error('获取比特币价格失败:', error);
-                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
-            });
-    }
-
-    function fetchHolidayInfo() {
-        fetch('https://timor.tech/api/holiday/tts')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应失败');
-                }
-                return response.json();
-            })
-            .then(holidayData => {
-                const holidayMessage = holidayData.tts;
-                dailyNewsDiv.innerHTML = `<p>${holidayMessage}</p>`;
-            })
-            .catch(error => {
-                console.error('获取节假日信息失败:', error);
-                dailyNewsDiv.innerHTML = '获取节假日信息失败';
-            });
-    }
-
-    // 初次加载数据
-    fetchBitcoinPrice();
-    fetchHolidayInfo();
-
-    // 设置自动刷新，每毫秒刷新一次
-    setInterval(fetchBitcoinPrice, 100);
-    setInterval(fetchHolidayInfo, 100);
-});]]></content>
-  </entry>
-  <entry>
     <title>历史时间轴</title>
     <url>/history/index.html</url>
     <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
@@ -2795,6 +2743,58 @@ function startClock() {
 }]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>/js/fetch-data.js</url>
+    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
+    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
+    const dailyNewsDiv = document.getElementById('daily-news');
+
+    function fetchBitcoinPrice() {
+        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                return response.json();
+            })
+            .then(bitcoinData => {
+                const usdRate = bitcoinData.bpi.USD.rate;
+                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
+            })
+            .catch(error => {
+                console.error('获取比特币价格失败:', error);
+                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
+            });
+    }
+
+    function fetchHolidayInfo() {
+        fetch('https://timor.tech/api/holiday/tts')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                return response.json();
+            })
+            .then(holidayData => {
+                const holidayMessage = holidayData.tts;
+                dailyNewsDiv.innerHTML = `<p>${holidayMessage}</p>`;
+            })
+            .catch(error => {
+                console.error('获取节假日信息失败:', error);
+                dailyNewsDiv.innerHTML = '获取节假日信息失败';
+            });
+    }
+
+    // 初次加载数据
+    fetchBitcoinPrice();
+    fetchHolidayInfo();
+
+    // 设置自动刷新，每毫秒刷新一次
+    setInterval(fetchBitcoinPrice, 100);
+    setInterval(fetchHolidayInfo, 100);
+});]]></content>
+  </entry>
+  <entry>
     <title>新闻</title>
     <url>/news/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2817,11 +2817,6 @@ function startClock() {
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>标签</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>数码</title>
     <url>/news/digital/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2835,6 +2830,11 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>财经</title>
@@ -2867,21 +2867,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/fashion.js"></script>]]></content>
   </entry>
   <entry>
-    <title>游戏</title>
-    <url>/news/game/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>头条</title>
     <url>/news/front/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2895,6 +2880,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/front.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>游戏</title>
+    <url>/news/game/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
   </entry>
   <entry>
     <title>健康</title>
@@ -2927,21 +2927,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/military.js"></script>]]></content>
   </entry>
   <entry>
-    <title>手机</title>
-    <url>/news/phone/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>体育</title>
     <url>/news/physical/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2955,6 +2940,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>手机</title>
+    <url>/news/phone/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
   </entry>
   <entry>
     <title>科技</title>
