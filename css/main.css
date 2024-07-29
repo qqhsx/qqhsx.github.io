@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #49ffff;
+    background: #ff2863;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3101,9 +3101,11 @@ body {
     margin-left: 0; /* 去除左外边距 */
   }
   .news-item img {
-    margin-left: 0; /* 去除左外边距 */
-    margin-top: 10px; /* 上边距设为 10 像素 */
-    max-width: 100%; /* 图片最大宽度为其父容器的 100% */
-    max-height: none; /* 图片最大高度不受限制 */
+    max-width: 100%; /* 图片最大宽度为父容器的100% */
+    max-height: 200px; /* 最大高度设置为200px，适应手机屏幕 */
+    width: auto; /* 图片宽度根据内容自适应 */
+    height: auto; /* 高度自动调整，保持长宽比 */
+    margin-left: 0; /* 去除左边距 */
+    margin-top: 10px; /* 上边距设置为10px */
   }
 }
