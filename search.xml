@@ -2451,133 +2451,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/js/custom.js</url>
-    <content><![CDATA[// custom.js
-const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
-const scenarios = [
-    { days: 0, weekend: true, message: "今天是周末，好好放松一下吧！" },
-    { days: 1, weekend: false, message: "明天就是周末了，今天努力工作哦！" },
-    { days: 2, weekend: false, message: "还有2天就是周末了，坚持住！" },
-    { days: 3, weekend: false, message: "还有3天就是周末了，先好好工作吧！" },
-    { days: 4, weekend: false, message: "工作周才刚开始，保持干劲哦！" },
-    { days: 5, weekend: false, message: "新的一周开始了，迎接新的挑战吧！" },
-    { days: 0, weekend: false, message: "又快到周末了，再加把劲！" },
-];
-
-function showCurrentTime() {
-    var now = new Date();
-    var year = now.getFullYear();
-    var month = (now.getMonth() + 1).toString().padStart(2, '0');
-    var day = now.getDate().toString().padStart(2, '0');
-    var weekday = weekdays[now.getDay()];
-    var hours = now.getHours().toString().padStart(2, '0');
-    var minutes = now.getMinutes().toString().padStart(2, '0');
-    var seconds = now.getSeconds().toString().padStart(2, '0');
-    var milliseconds = now.getMilliseconds().toString().padStart(3, '0');
-
-    var dateString = `${year}年${month}月${day}日 星期${weekday}`;
-    var timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
-
-    //document.getElementById('current-date').innerHTML = dateString;
-    //document.getElementById('current-time').innerHTML = timeString;
-
-    // 显示场景消息
-    showScenarioMessage(now);
-}
-
-function showScenarioMessage(date) {
-    const dayOfWeek = date.getDay();
-    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
-    const daysUntilWeekend = dayOfWeek <= 5 ? 6 - dayOfWeek : 0;
-
-    let scenario = scenarios.find(s => 
-        (s.weekend === isWeekend && s.days === daysUntilWeekend) ||
-        (s.weekend === isWeekend && s.days === 0)
-    );
- 
-    if (!scenario) {
-        scenario = { message: "祝你今天工作顺利！" };
-    }
-
-    document.getElementById('scenario-message').innerHTML = scenario.message;
-}
-
-// 自动刷新时间，每100毫秒更新一次
-function startClock() {
-    setInterval(showCurrentTime, 100);
-}]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/fetch-data.js</url>
-    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
-    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-    const dailyNewsDiv = document.getElementById('daily-news');
-
-    function fetchBitcoinPrice() {
-        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应失败');
-                }
-                return response.json();
-            })
-            .then(bitcoinData => {
-                const usdRate = bitcoinData.bpi.USD.rate;
-                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
-            })
-            .catch(error => {
-                console.error('获取比特币价格失败:', error);
-                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
-            });
-    }
-
-    function fetchHolidayInfo() {
-        fetch('https://timor.tech/api/holiday/tts')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应失败');
-                }
-                return response.json();
-            })
-            .then(holidayData => {
-                const holidayMessage = holidayData.tts;
-                dailyNewsDiv.innerHTML = `<p>${holidayMessage}</p>`;
-            })
-            .catch(error => {
-                console.error('获取节假日信息失败:', error);
-                dailyNewsDiv.innerHTML = '获取节假日信息失败';
-            });
-    }
-
-    // 初次加载数据
-    fetchBitcoinPrice();
-    fetchHolidayInfo();
-
-    // 设置自动刷新，每毫秒刷新一次
-    setInterval(fetchBitcoinPrice, 100);
-    setInterval(fetchHolidayInfo, 100);
-});]]></content>
-  </entry>
-  <entry>
-    <title>新闻</title>
-    <url>/news/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-
-<script type="text/javascript" src="/js/news/news.js"></script>
-]]></content>
-  </entry>
-  <entry>
     <title>历史时间轴</title>
     <url>/history/index.html</url>
     <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
@@ -2812,6 +2685,133 @@ function startClock() {
 </div></div></div>]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>/js/custom.js</url>
+    <content><![CDATA[// custom.js
+const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
+const scenarios = [
+    { days: 0, weekend: true, message: "今天是周末，好好放松一下吧！" },
+    { days: 1, weekend: false, message: "明天就是周末了，今天努力工作哦！" },
+    { days: 2, weekend: false, message: "还有2天就是周末了，坚持住！" },
+    { days: 3, weekend: false, message: "还有3天就是周末了，先好好工作吧！" },
+    { days: 4, weekend: false, message: "工作周才刚开始，保持干劲哦！" },
+    { days: 5, weekend: false, message: "新的一周开始了，迎接新的挑战吧！" },
+    { days: 0, weekend: false, message: "又快到周末了，再加把劲！" },
+];
+
+function showCurrentTime() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = (now.getMonth() + 1).toString().padStart(2, '0');
+    var day = now.getDate().toString().padStart(2, '0');
+    var weekday = weekdays[now.getDay()];
+    var hours = now.getHours().toString().padStart(2, '0');
+    var minutes = now.getMinutes().toString().padStart(2, '0');
+    var seconds = now.getSeconds().toString().padStart(2, '0');
+    var milliseconds = now.getMilliseconds().toString().padStart(3, '0');
+
+    var dateString = `${year}年${month}月${day}日 星期${weekday}`;
+    var timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+
+    //document.getElementById('current-date').innerHTML = dateString;
+    //document.getElementById('current-time').innerHTML = timeString;
+
+    // 显示场景消息
+    showScenarioMessage(now);
+}
+
+function showScenarioMessage(date) {
+    const dayOfWeek = date.getDay();
+    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+    const daysUntilWeekend = dayOfWeek <= 5 ? 6 - dayOfWeek : 0;
+
+    let scenario = scenarios.find(s => 
+        (s.weekend === isWeekend && s.days === daysUntilWeekend) ||
+        (s.weekend === isWeekend && s.days === 0)
+    );
+ 
+    if (!scenario) {
+        scenario = { message: "祝你今天工作顺利！" };
+    }
+
+    document.getElementById('scenario-message').innerHTML = scenario.message;
+}
+
+// 自动刷新时间，每100毫秒更新一次
+function startClock() {
+    setInterval(showCurrentTime, 100);
+}]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/js/fetch-data.js</url>
+    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
+    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
+    const dailyNewsDiv = document.getElementById('daily-news');
+
+    function fetchBitcoinPrice() {
+        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                return response.json();
+            })
+            .then(bitcoinData => {
+                const usdRate = bitcoinData.bpi.USD.rate;
+                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
+            })
+            .catch(error => {
+                console.error('获取比特币价格失败:', error);
+                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
+            });
+    }
+
+    function fetchHolidayInfo() {
+        fetch('https://timor.tech/api/holiday/tts')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                return response.json();
+            })
+            .then(holidayData => {
+                const holidayMessage = holidayData.tts;
+                dailyNewsDiv.innerHTML = `<p>${holidayMessage}</p>`;
+            })
+            .catch(error => {
+                console.error('获取节假日信息失败:', error);
+                dailyNewsDiv.innerHTML = '获取节假日信息失败';
+            });
+    }
+
+    // 初次加载数据
+    fetchBitcoinPrice();
+    fetchHolidayInfo();
+
+    // 设置自动刷新，每毫秒刷新一次
+    setInterval(fetchBitcoinPrice, 100);
+    setInterval(fetchHolidayInfo, 100);
+});]]></content>
+  </entry>
+  <entry>
+    <title>新闻</title>
+    <url>/news/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/news/news.js"></script>
+]]></content>
+  </entry>
+  <entry>
     <title>schedule</title>
     <url>/schedule/index.html</url>
     <content><![CDATA[]]></content>
@@ -2897,21 +2897,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/game.js"></script>]]></content>
   </entry>
   <entry>
-    <title>健康</title>
-    <url>/news/health/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/health.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>军事</title>
     <url>/news/military/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2925,6 +2910,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/military.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>健康</title>
+    <url>/news/health/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/health.js"></script>]]></content>
   </entry>
   <entry>
     <title>手机</title>
@@ -2942,21 +2942,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
   </entry>
   <entry>
-    <title>娱乐</title>
-    <url>/news/recreation/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>体育</title>
     <url>/news/physical/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2972,21 +2957,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
   </entry>
   <entry>
-    <title>旅游</title>
-    <url>/news/travel/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/travel.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>科技</title>
     <url>/news/science/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3000,6 +2970,36 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/science.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>娱乐</title>
+    <url>/news/recreation/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>旅游</title>
+    <url>/news/travel/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/travel.js"></script>]]></content>
   </entry>
   <entry>
     <title>视频</title>

@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #2bff9a;
+    background: #fef291;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3074,5 +3074,37 @@ body {
     font-size: 1.2em; /* 调整字体大小 */
     top: 5px; /* 减少距离顶部 */
     right: 5px; /* 减少距离右边 */
+  }
+  .news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 10;
+    border-left: none;
+    border-top: 3px solid #007bff;
+  }
+  .news-item .publish-time {
+    position: relative;
+    left: 0;
+    width: auto;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  .news-item .content {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+  }
+  .news-item img {
+    margin-left: 0;
+    margin-top: 10px;
+    max-width: 100%;
+    max-height: none;
+  }
+  #news-details {
+    height: 400px; /* 手机端高度 */
   }
 }
