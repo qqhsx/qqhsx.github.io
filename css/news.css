@@ -81,58 +81,67 @@ body {
   background-color: #f1f1f1;
   border-left-color: #0056b3;
 }
-/* 模态弹窗样式 */
+/* 模态弹窗背景样式 */
 #news-details-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 9999; /* 设置一个较大的 z-index 值 */
+  display: none; /* 默认隐藏模态框 */
+  position: fixed; /* 固定位置，使其在页面上保持不变 */
+  top: 0; /* 定位到视口的顶部 */
+  left: 0; /* 定位到视口的左侧 */
+  width: 100%; /* 宽度为视口的100% */
+  height: 100%; /* 高度为视口的100% */
+  background-color: rgba(0,0,0,0.5); /* 半透明背景遮罩 */
+  justify-content: center; /* 垂直和水平居中对齐 */
+  align-items: center; /* 垂直和水平居中对齐 */
+  overflow-y: auto; /* 当内容超出时，显示垂直滚动条 */
+  border-radius: 8px; /* 圆角边框 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 盒子阴影 */
+  z-index: 9999; /* 确保模态框位于其他内容之上 */
 }
+/* 模态弹窗内容的样式 */
 #news-details-modal .modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  width: 90%;
-  max-width: 500px;
-  max-height: 80%;
-  overflow-y: auto;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #fff; /* 白色背景 */
+  padding: 20px; /* 内边距 */
+  border-radius: 5px; /* 圆角边框 */
+  width: 40%; /* 宽度为视口的40% */
+  max-height: 80%; /* 最大高度为视口的80% */
+  overflow-y: auto; /* 当内容超出时，显示垂直滚动条 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 盒子阴影 */
+  position: relative; /* 使子元素的绝对定位以相对于这个容器 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  box-sizing: border-box; /* 确保内边距包含在总宽度和高度中 */
 }
+/* 关闭按钮样式 */
 #news-details-modal .close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 1.5em;
-  cursor: pointer;
+  position: absolute; /* 绝对定位在模态框的右上角 */
+  top: 10px; /* 距离顶部10px */
+  right: 10px; /* 距离右边20px */
+  font-size: 1.5em; /* 字体大小 */
+  cursor: pointer; /* 鼠标指针样式 */
+  z-index: 10000; /* 确保按钮在顶部 */
 }
+/* 模态框内容中的段落样式 */
 #news-details p {
-  font-size: 1em;
-  line-height: 1.6;
-  color: #333;
+  font-size: 1em; /* 字体大小 */
+  line-height: 1.6; /* 行高 */
+  color: #333; /* 字体颜色 */
 }
+/* 模态框内容中的图片样式 */
 #news-details img {
-  max-width: 100%;
-  border-radius: 5px;
-  margin: 10px 0;
+  max-width: 100%; /* 最大宽度为容器宽度 */
+  border-radius: 5px; /* 圆角边框 */
+  margin: 10px 0; /* 上下边距 */
 }
+/* 模态框内容中的视频样式 */
 #news-details video {
-  width: 100%;
-  border-radius: 5px;
-  margin: 10px 0;
+  width: 100%; /* 宽度为容器宽度 */
+  border-radius: 5px; /* 圆角边框 */
+  margin: 10px 0; /* 上下边距 */
 }
+/* 模态框中显示新闻详情样式 */
 #news-details {
-  height: 600px;
-  overflow: auto;
-  padding: 20px;
+  max-height: calc(100vh - 60px); /* 设置内容区域最大高度，减去按钮和内边距的高度 */
+  overflow: auto; /* 内容溢出时显示滚动条 */
+  padding: 20px; /* 内边距 */
 }
 /* 日期标题样式 */
 #news-list h3 {
@@ -140,6 +149,19 @@ body {
   margin: 0 0 10px 0px; /* 设置上下边距和左边距 */
   padding: 0; /* 设置内边距 */
   font-weight: bold; /* 设置字体加粗 */
+}
+/* 回到顶部按钮的样式 */
+#back-to-top {
+  position: fixed; /* 固定在视口位置 */
+  bottom: 20px; /* 距离底部20px */
+  right: 20px; /* 距离右边20px */
+  background-color: #007bff; /* 背景色 */
+  color: #fff; /* 文字颜色 */
+  border: none; /* 去掉边框 */
+  border-radius: 5px; /* 圆角 */
+  padding: 10px 20px; /* 内边距 */
+  cursor: pointer; /* 鼠标指针样式 */
+  z-index: 1000; /* 确保按钮在顶部 */
 }
 /* 响应式设计 */
 @media (max-width: 768px) {
