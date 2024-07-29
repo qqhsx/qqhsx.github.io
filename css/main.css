@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #6963e7;
+    background: #49ffff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3010,7 +3010,7 @@ body {
   max-height: 80%; /* 最大高度为视口的80% */
   overflow-y: auto; /* 当内容超出时，显示垂直滚动条 */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 盒子阴影 */
-  position: relative; /* 使子元素的绝对定位以相对于这个容器 */
+  position: relative; /* 使子元素的绝对定位相对于这个容器 */
   overflow: hidden; /* 隐藏溢出内容 */
   box-sizing: border-box; /* 确保内边距包含在总宽度和高度中 */
 }
@@ -3038,9 +3038,11 @@ body {
   margin: 10px 0; /* 上下边距 */
 }
 #news-details {
-  max-height: calc(100vh - 60px); /* 设置内容区域最大高度，减去按钮和内边距的高度 */
-  overflow: auto; /* 内容溢出时显示滚动条 */
+  height: 80vh; /* 高度设置为视口高度的80% */
+  max-height: 80vh; /* 最大高度设置为视口高度的80% */
+  overflow-y: auto; /* 当内容溢出时显示垂直滚动条 */
   padding: 20px; /* 内边距 */
+  box-sizing: border-box; /* 确保内边距包含在总高度中 */
 }
 #news-list h3 {
   font-size: 1.5em; /* 调整字体大小 */
@@ -3102,6 +3104,6 @@ body {
     margin-left: 0; /* 去除左外边距 */
     margin-top: 10px; /* 上边距设为 10 像素 */
     max-width: 100%; /* 图片最大宽度为其父容器的 100% */
-    max-height: 100%; /* 图片最大高度不受限制 */
+    max-height: none; /* 图片最大高度不受限制 */
   }
 }
