@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>newpost</title>
     <url>/newpost/</url>
     <content><![CDATA[<p><i class="fa fa-bullhorn fa-shake " style="font-size: 22px;"></i> <span class="announcement-title" style="font-size: 22px; ">公告</span></p>
@@ -39,6 +21,24 @@
     };  
 </script>
 
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -340,6 +340,65 @@
       </tags>
   </entry>
   <entry>
+    <title>全面了解投资产品：从风险到收益的比较分析</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E6%8A%95%E8%B5%84%E4%BA%A7%E5%93%81%EF%BC%9A%E4%BB%8E%E9%A3%8E%E9%99%A9%E5%88%B0%E6%94%B6%E7%9B%8A%E7%9A%84%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p>在投资世界中，有多种类型的投资产品可供选择，每种产品都有其独特的特点和风险回报特征。以下是对常见投资产品的全面比较和分析，帮助投资者理解并选择适合自己的投资工具。</p>
+<span id="more"></span>
+
+<h4 id="1-存款（银行存款）"><a href="#1-存款（银行存款）" class="headerlink" title="1. 存款（银行存款）"></a>1. 存款（银行存款）</h4><ul>
+<li><strong>投资对象：</strong> 存款是将资金存放在银行中，以获取固定的利息收益。</li>
+<li><strong>风险：</strong> 最低。由于受到国家存款保险机构保护，存款的本金通常是安全的。</li>
+<li><strong>收益：</strong> 低。存款利率通常略高于通货膨胀率，但相对于其他投资产品，收益较低。</li>
+</ul>
+<h4 id="2-债券"><a href="#2-债券" class="headerlink" title="2. 债券"></a>2. 债券</h4><ul>
+<li><strong>投资对象：</strong> 债券是借款人向投资者发行的债务工具，承诺在未来支付利息和偿还本金。</li>
+<li><strong>风险：</strong> 中等。政府债券的风险较低，而公司债券的风险取决于发行公司的信用评级和偿债能力。</li>
+<li><strong>收益：</strong> 中等。债券通常提供稳定的利息收益，收益略高于存款，但较股票等其他投资产品为低。</li>
+</ul>
+<h4 id="3-股票"><a href="#3-股票" class="headerlink" title="3. 股票"></a>3. 股票</h4><ul>
+<li><strong>投资对象：</strong> 股票代表投资者对公司所有权的一部分，股东通过股票分享公司的盈利和增长。</li>
+<li><strong>风险：</strong> 高。股票市场价格波动大，受市场供需和公司业绩等多种因素影响。</li>
+<li><strong>收益：</strong> 高。股票的长期回报可能高于债券和存款，但也伴随较大的市场风险和波动性。</li>
+</ul>
+<h4 id="4-基金"><a href="#4-基金" class="headerlink" title="4. 基金"></a>4. 基金</h4><ul>
+<li><strong>投资对象：</strong> 基金是由多个投资者共同投资，由专业基金经理管理，并投资于多种资产类别。</li>
+<li><strong>风险：</strong> 根据基金类型不同而异，可以是低、中等或高风险。</li>
+<li><strong>收益：</strong> 中等。基金通过多样化投资来平衡风险和回报，适合追求稳定增长的投资者。</li>
+</ul>
+<h4 id="5-房地产投资"><a href="#5-房地产投资" class="headerlink" title="5. 房地产投资"></a>5. 房地产投资</h4><ul>
+<li><strong>投资对象：</strong> 投资于不动产市场，包括商业地产、住宅物业和房地产基金。</li>
+<li><strong>风险：</strong> 中等。房地产市场波动性较大，但相对于股票市场通常更为稳定。</li>
+<li><strong>收益：</strong> 中等到高。房地产投资的长期回报可能与股票市场相媲美，但需考虑到管理和市场风险。</li>
+</ul>
+<h4 id="6-大宗商品"><a href="#6-大宗商品" class="headerlink" title="6. 大宗商品"></a>6. 大宗商品</h4><ul>
+<li><strong>投资对象：</strong> 包括黄金、原油等大宗商品，通过期货市场进行交易。</li>
+<li><strong>风险：</strong> 高。大宗商品价格波动大，受全球经济和政治因素影响较大。</li>
+<li><strong>收益：</strong> 中等到高。某些情况下，大宗商品的价格波动可以带来较高的投资回报，但伴随较高的市场风险。</li>
+</ul>
+<h4 id="7-其他投资产品"><a href="#7-其他投资产品" class="headerlink" title="7. 其他投资产品"></a>7. 其他投资产品</h4><ul>
+<li><strong>期权（Options）：</strong> 允许投资者在未来某一特定时间内以预定价格买入或卖出标的资产，风险和回报均高。</li>
+<li><strong>外汇市场（Forex）：</strong> 全球货币交易市场，具有高风险和潜在高回报。</li>
+<li><strong>衍生品（Derivatives）：</strong> 包括期货、期权等，其价值来源于底层资产的变动，风险和回报较高。</li>
+<li><strong>证券化产品（Securitized Products）：</strong> 将资产转化为可交易的证券，风险和回报各异。</li>
+<li><strong>其他特定投资（如艺术品投资、天使投资等）：</strong> 风险和收益因具体投资对象和市场条件而异。</li>
+</ul>
+<h3 id="如何选择适合自己的投资产品？"><a href="#如何选择适合自己的投资产品？" class="headerlink" title="如何选择适合自己的投资产品？"></a>如何选择适合自己的投资产品？</h3><p>在选择投资产品时，投资者需要综合考虑以下因素：</p>
+<ul>
+<li><strong>风险偏好：</strong> 确定自己愿意承担的投资风险程度。</li>
+<li><strong>投资目标：</strong> 明确投资的目的和时间，是追求长期增值还是短期收益。</li>
+<li><strong>多样化投资：</strong> 分散投资于不同类型和资产类别，以降低整体投资组合的风险。</li>
+<li><strong>了解投资产品：</strong> 在选择之前，充分了解每种投资产品的特点、风险和预期收益。</li>
+</ul>
+<p>通过理解和比较不同的投资产品类型，投资者可以根据自身的投资目标和风险承受能力，构建一个多样化且符合长期财务规划的投资组合。在进行任何投资之前，确保进行充分的调查和风险评估，以做出明智的投资决策。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>投资产品</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>保障性住房</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E4%BF%9D%E9%9A%9C%E6%80%A7%E4%BD%8F%E6%88%BF/</url>
     <content><![CDATA[<p>保障性住房是中国政府为了解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的一系列住房政策和项目。保障性住房主要包括以下几种类型：</p>
@@ -454,65 +513,6 @@
       </categories>
       <tags>
         <tag>债券</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>全面了解投资产品：从风险到收益的比较分析</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E6%8A%95%E8%B5%84%E4%BA%A7%E5%93%81%EF%BC%9A%E4%BB%8E%E9%A3%8E%E9%99%A9%E5%88%B0%E6%94%B6%E7%9B%8A%E7%9A%84%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<p>在投资世界中，有多种类型的投资产品可供选择，每种产品都有其独特的特点和风险回报特征。以下是对常见投资产品的全面比较和分析，帮助投资者理解并选择适合自己的投资工具。</p>
-<span id="more"></span>
-
-<h4 id="1-存款（银行存款）"><a href="#1-存款（银行存款）" class="headerlink" title="1. 存款（银行存款）"></a>1. 存款（银行存款）</h4><ul>
-<li><strong>投资对象：</strong> 存款是将资金存放在银行中，以获取固定的利息收益。</li>
-<li><strong>风险：</strong> 最低。由于受到国家存款保险机构保护，存款的本金通常是安全的。</li>
-<li><strong>收益：</strong> 低。存款利率通常略高于通货膨胀率，但相对于其他投资产品，收益较低。</li>
-</ul>
-<h4 id="2-债券"><a href="#2-债券" class="headerlink" title="2. 债券"></a>2. 债券</h4><ul>
-<li><strong>投资对象：</strong> 债券是借款人向投资者发行的债务工具，承诺在未来支付利息和偿还本金。</li>
-<li><strong>风险：</strong> 中等。政府债券的风险较低，而公司债券的风险取决于发行公司的信用评级和偿债能力。</li>
-<li><strong>收益：</strong> 中等。债券通常提供稳定的利息收益，收益略高于存款，但较股票等其他投资产品为低。</li>
-</ul>
-<h4 id="3-股票"><a href="#3-股票" class="headerlink" title="3. 股票"></a>3. 股票</h4><ul>
-<li><strong>投资对象：</strong> 股票代表投资者对公司所有权的一部分，股东通过股票分享公司的盈利和增长。</li>
-<li><strong>风险：</strong> 高。股票市场价格波动大，受市场供需和公司业绩等多种因素影响。</li>
-<li><strong>收益：</strong> 高。股票的长期回报可能高于债券和存款，但也伴随较大的市场风险和波动性。</li>
-</ul>
-<h4 id="4-基金"><a href="#4-基金" class="headerlink" title="4. 基金"></a>4. 基金</h4><ul>
-<li><strong>投资对象：</strong> 基金是由多个投资者共同投资，由专业基金经理管理，并投资于多种资产类别。</li>
-<li><strong>风险：</strong> 根据基金类型不同而异，可以是低、中等或高风险。</li>
-<li><strong>收益：</strong> 中等。基金通过多样化投资来平衡风险和回报，适合追求稳定增长的投资者。</li>
-</ul>
-<h4 id="5-房地产投资"><a href="#5-房地产投资" class="headerlink" title="5. 房地产投资"></a>5. 房地产投资</h4><ul>
-<li><strong>投资对象：</strong> 投资于不动产市场，包括商业地产、住宅物业和房地产基金。</li>
-<li><strong>风险：</strong> 中等。房地产市场波动性较大，但相对于股票市场通常更为稳定。</li>
-<li><strong>收益：</strong> 中等到高。房地产投资的长期回报可能与股票市场相媲美，但需考虑到管理和市场风险。</li>
-</ul>
-<h4 id="6-大宗商品"><a href="#6-大宗商品" class="headerlink" title="6. 大宗商品"></a>6. 大宗商品</h4><ul>
-<li><strong>投资对象：</strong> 包括黄金、原油等大宗商品，通过期货市场进行交易。</li>
-<li><strong>风险：</strong> 高。大宗商品价格波动大，受全球经济和政治因素影响较大。</li>
-<li><strong>收益：</strong> 中等到高。某些情况下，大宗商品的价格波动可以带来较高的投资回报，但伴随较高的市场风险。</li>
-</ul>
-<h4 id="7-其他投资产品"><a href="#7-其他投资产品" class="headerlink" title="7. 其他投资产品"></a>7. 其他投资产品</h4><ul>
-<li><strong>期权（Options）：</strong> 允许投资者在未来某一特定时间内以预定价格买入或卖出标的资产，风险和回报均高。</li>
-<li><strong>外汇市场（Forex）：</strong> 全球货币交易市场，具有高风险和潜在高回报。</li>
-<li><strong>衍生品（Derivatives）：</strong> 包括期货、期权等，其价值来源于底层资产的变动，风险和回报较高。</li>
-<li><strong>证券化产品（Securitized Products）：</strong> 将资产转化为可交易的证券，风险和回报各异。</li>
-<li><strong>其他特定投资（如艺术品投资、天使投资等）：</strong> 风险和收益因具体投资对象和市场条件而异。</li>
-</ul>
-<h3 id="如何选择适合自己的投资产品？"><a href="#如何选择适合自己的投资产品？" class="headerlink" title="如何选择适合自己的投资产品？"></a>如何选择适合自己的投资产品？</h3><p>在选择投资产品时，投资者需要综合考虑以下因素：</p>
-<ul>
-<li><strong>风险偏好：</strong> 确定自己愿意承担的投资风险程度。</li>
-<li><strong>投资目标：</strong> 明确投资的目的和时间，是追求长期增值还是短期收益。</li>
-<li><strong>多样化投资：</strong> 分散投资于不同类型和资产类别，以降低整体投资组合的风险。</li>
-<li><strong>了解投资产品：</strong> 在选择之前，充分了解每种投资产品的特点、风险和预期收益。</li>
-</ul>
-<p>通过理解和比较不同的投资产品类型，投资者可以根据自身的投资目标和风险承受能力，构建一个多样化且符合长期财务规划的投资组合。在进行任何投资之前，确保进行充分的调查和风险评估，以做出明智的投资决策。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>投资产品</tag>
       </tags>
   </entry>
   <entry>
@@ -2451,6 +2451,64 @@
 ]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>/js/custom.js</url>
+    <content><![CDATA[// custom.js
+const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
+const scenarios = [
+    { days: 0, weekend: true, message: "今天是周末，好好放松一下吧！" },
+    { days: 1, weekend: false, message: "明天就是周末了，今天努力工作哦！" },
+    { days: 2, weekend: false, message: "还有2天就是周末了，坚持住！" },
+    { days: 3, weekend: false, message: "还有3天就是周末了，先好好工作吧！" },
+    { days: 4, weekend: false, message: "工作周才刚开始，保持干劲哦！" },
+    { days: 5, weekend: false, message: "新的一周开始了，迎接新的挑战吧！" },
+    { days: 0, weekend: false, message: "又快到周末了，再加把劲！" },
+];
+
+function showCurrentTime() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = (now.getMonth() + 1).toString().padStart(2, '0');
+    var day = now.getDate().toString().padStart(2, '0');
+    var weekday = weekdays[now.getDay()];
+    var hours = now.getHours().toString().padStart(2, '0');
+    var minutes = now.getMinutes().toString().padStart(2, '0');
+    var seconds = now.getSeconds().toString().padStart(2, '0');
+    var milliseconds = now.getMilliseconds().toString().padStart(3, '0');
+
+    var dateString = `${year}年${month}月${day}日 星期${weekday}`;
+    var timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+
+    //document.getElementById('current-date').innerHTML = dateString;
+    //document.getElementById('current-time').innerHTML = timeString;
+
+    // 显示场景消息
+    showScenarioMessage(now);
+}
+
+function showScenarioMessage(date) {
+    const dayOfWeek = date.getDay();
+    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+    const daysUntilWeekend = dayOfWeek <= 5 ? 6 - dayOfWeek : 0;
+
+    let scenario = scenarios.find(s => 
+        (s.weekend === isWeekend && s.days === daysUntilWeekend) ||
+        (s.weekend === isWeekend && s.days === 0)
+    );
+ 
+    if (!scenario) {
+        scenario = { message: "祝你今天工作顺利！" };
+    }
+
+    document.getElementById('scenario-message').innerHTML = scenario.message;
+}
+
+// 自动刷新时间，每100毫秒更新一次
+function startClock() {
+    setInterval(showCurrentTime, 100);
+}]]></content>
+  </entry>
+  <entry>
     <title>历史时间轴</title>
     <url>/history/index.html</url>
     <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
@@ -2686,64 +2744,6 @@
   </entry>
   <entry>
     <title></title>
-    <url>/js/custom.js</url>
-    <content><![CDATA[// custom.js
-const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
-const scenarios = [
-    { days: 0, weekend: true, message: "今天是周末，好好放松一下吧！" },
-    { days: 1, weekend: false, message: "明天就是周末了，今天努力工作哦！" },
-    { days: 2, weekend: false, message: "还有2天就是周末了，坚持住！" },
-    { days: 3, weekend: false, message: "还有3天就是周末了，先好好工作吧！" },
-    { days: 4, weekend: false, message: "工作周才刚开始，保持干劲哦！" },
-    { days: 5, weekend: false, message: "新的一周开始了，迎接新的挑战吧！" },
-    { days: 0, weekend: false, message: "又快到周末了，再加把劲！" },
-];
-
-function showCurrentTime() {
-    var now = new Date();
-    var year = now.getFullYear();
-    var month = (now.getMonth() + 1).toString().padStart(2, '0');
-    var day = now.getDate().toString().padStart(2, '0');
-    var weekday = weekdays[now.getDay()];
-    var hours = now.getHours().toString().padStart(2, '0');
-    var minutes = now.getMinutes().toString().padStart(2, '0');
-    var seconds = now.getSeconds().toString().padStart(2, '0');
-    var milliseconds = now.getMilliseconds().toString().padStart(3, '0');
-
-    var dateString = `${year}年${month}月${day}日 星期${weekday}`;
-    var timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
-
-    //document.getElementById('current-date').innerHTML = dateString;
-    //document.getElementById('current-time').innerHTML = timeString;
-
-    // 显示场景消息
-    showScenarioMessage(now);
-}
-
-function showScenarioMessage(date) {
-    const dayOfWeek = date.getDay();
-    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
-    const daysUntilWeekend = dayOfWeek <= 5 ? 6 - dayOfWeek : 0;
-
-    let scenario = scenarios.find(s => 
-        (s.weekend === isWeekend && s.days === daysUntilWeekend) ||
-        (s.weekend === isWeekend && s.days === 0)
-    );
- 
-    if (!scenario) {
-        scenario = { message: "祝你今天工作顺利！" };
-    }
-
-    document.getElementById('scenario-message').innerHTML = scenario.message;
-}
-
-// 自动刷新时间，每100毫秒更新一次
-function startClock() {
-    setInterval(showCurrentTime, 100);
-}]]></content>
-  </entry>
-  <entry>
-    <title></title>
     <url>/js/fetch-data.js</url>
     <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
     const bitcoinPriceDiv = document.getElementById('bitcoin-price');
@@ -2822,21 +2822,6 @@ function startClock() {
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>数码</title>
-    <url>/news/digital/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>时尚</title>
     <url>/news/fashion/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2867,6 +2852,21 @@ function startClock() {
 <script type="text/javascript" src="/js/news/finance.js"></script>]]></content>
   </entry>
   <entry>
+    <title>数码</title>
+    <url>/news/digital/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
+  </entry>
+  <entry>
     <title>头条</title>
     <url>/news/front/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2880,36 +2880,6 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/front.js"></script>]]></content>
-  </entry>
-  <entry>
-    <title>游戏</title>
-    <url>/news/game/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
-  </entry>
-  <entry>
-    <title>军事</title>
-    <url>/news/military/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/military.js"></script>]]></content>
   </entry>
   <entry>
     <title>健康</title>
@@ -2927,6 +2897,21 @@ function startClock() {
 <script type="text/javascript" src="/js/news/health.js"></script>]]></content>
   </entry>
   <entry>
+    <title>游戏</title>
+    <url>/news/game/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
+  </entry>
+  <entry>
     <title>手机</title>
     <url>/news/phone/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2940,6 +2925,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>军事</title>
+    <url>/news/military/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/military.js"></script>]]></content>
   </entry>
   <entry>
     <title>体育</title>
@@ -2957,21 +2957,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
   </entry>
   <entry>
-    <title>科技</title>
-    <url>/news/science/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/science.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>娱乐</title>
     <url>/news/recreation/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2985,6 +2970,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>科技</title>
+    <url>/news/science/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/science.js"></script>]]></content>
   </entry>
   <entry>
     <title>旅游</title>
