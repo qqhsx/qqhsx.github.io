@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>newpost</title>
     <url>/newpost/</url>
     <content><![CDATA[<p><i class="fa fa-bullhorn fa-shake " style="font-size: 22px;"></i> <span class="announcement-title" style="font-size: 22px; ">公告</span></p>
@@ -22,80 +40,6 @@
 </script>
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Test Image Insert</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
-    <content><![CDATA[<blockquote>
-<p>以下是在hexo配置文件_config.yml中 <code>post_asset_folder</code> 已启用的情况下用Typora编写测试的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li><h3 id="这是一个测试如何在-Hexo-文章中插入图片的示例。"><a href="#这是一个测试如何在-Hexo-文章中插入图片的示例。" class="headerlink" title="这是一个测试如何在 Hexo 文章中插入图片的示例。"></a>这是一个测试如何在 Hexo 文章中插入图片的示例。</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
-<ul>
-<li><h3 id="尝试使用相对路径指定图片的位置"><a href="#尝试使用相对路径指定图片的位置" class="headerlink" title="尝试使用相对路径指定图片的位置"></a>尝试使用相对路径指定图片的位置</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-
-<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
-<ul>
-<li><h3 id="试试在-Markdown-文件中使用绝对路径"><a href="#试试在-Markdown-文件中使用绝对路径" class="headerlink" title="试试在 Markdown 文件中使用绝对路径"></a>试试在 Markdown 文件中使用绝对路径</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](/uncategorized/Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>这样写在Typora中不显示，在<a href="http://localhost:4000/%E4%B8%AD%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA">http://localhost:4000/中正常显示</a></p>
-<p>！！！！！！！！！</p>
-<p>！！！！！！！！！</p>
-<p>！！！！！！！！！</p>
-<ul>
-<li><h3 id="接着接找到hexo-asset-img这个插件安装"><a href="#接着接找到hexo-asset-img这个插件安装" class="headerlink" title="接着接找到hexo-asset-img这个插件安装"></a>接着接找到<a href="https://github.com/yiyungent/hexo-asset-img">hexo-asset-img</a>这个插件安装</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
-
-<p>最终测试后这个插件起到了作用，Typora中使用如下相对路径插入图片可以在Typora中与<a href="http://localhost:4000/">http://localhost:4000/</a> 中都能正常显示。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>使用起来发现这格式还是有些不方便，在用Тypora编写时一般会在<code>文件-偏好设置-图像</code>页面中设置图片插入时的的动作参数。如果选择<code>复制到指定路径./$&#123;filename&#125;</code>会发现在插入图片时是以下的格式，同时会在文章的同目录中生成一个与文件名相同的目录，所插入的图片会自动放在这里面。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h3 id="接着换回到hexo-asset-image这个插件安装"><a href="#接着换回到hexo-asset-image这个插件安装" class="headerlink" title="接着换回到hexo-asset-image这个插件安装"></a>接着换回到<a href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a>这个插件安装</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-
-<p>都说这个插件失效了所以开始就没去安装它，但最终还是用上它了。它能处理下面这种图片格式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title>Hexo博客搭建与部署</title>
@@ -197,6 +141,62 @@
       <tags>
         <tag>Hexo</tag>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Test Image Insert</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
+    <content><![CDATA[<blockquote>
+<p>以下是在hexo配置文件_config.yml中 <code>post_asset_folder</code> 已启用的情况下用Typora编写测试的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li><h3 id="这是一个测试如何在-Hexo-文章中插入图片的示例。"><a href="#这是一个测试如何在-Hexo-文章中插入图片的示例。" class="headerlink" title="这是一个测试如何在 Hexo 文章中插入图片的示例。"></a>这是一个测试如何在 Hexo 文章中插入图片的示例。</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
+<ul>
+<li><h3 id="尝试使用相对路径指定图片的位置"><a href="#尝试使用相对路径指定图片的位置" class="headerlink" title="尝试使用相对路径指定图片的位置"></a>尝试使用相对路径指定图片的位置</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+
+<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
+<ul>
+<li><h3 id="试试在-Markdown-文件中使用绝对路径"><a href="#试试在-Markdown-文件中使用绝对路径" class="headerlink" title="试试在 Markdown 文件中使用绝对路径"></a>试试在 Markdown 文件中使用绝对路径</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](/uncategorized/Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>这样写在Typora中不显示，在<a href="http://localhost:4000/%E4%B8%AD%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA">http://localhost:4000/中正常显示</a></p>
+<p>！！！！！！！！！</p>
+<p>！！！！！！！！！</p>
+<p>！！！！！！！！！</p>
+<ul>
+<li><h3 id="接着接找到hexo-asset-img这个插件安装"><a href="#接着接找到hexo-asset-img这个插件安装" class="headerlink" title="接着接找到hexo-asset-img这个插件安装"></a>接着接找到<a href="https://github.com/yiyungent/hexo-asset-img">hexo-asset-img</a>这个插件安装</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
+
+<p>最终测试后这个插件起到了作用，Typora中使用如下相对路径插入图片可以在Typora中与<a href="http://localhost:4000/">http://localhost:4000/</a> 中都能正常显示。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>使用起来发现这格式还是有些不方便，在用Тypora编写时一般会在<code>文件-偏好设置-图像</code>页面中设置图片插入时的的动作参数。如果选择<code>复制到指定路径./$&#123;filename&#125;</code>会发现在插入图片时是以下的格式，同时会在文章的同目录中生成一个与文件名相同的目录，所插入的图片会自动放在这里面。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="接着换回到hexo-asset-image这个插件安装"><a href="#接着换回到hexo-asset-image这个插件安装" class="headerlink" title="接着换回到hexo-asset-image这个插件安装"></a>接着换回到<a href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a>这个插件安装</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>都说这个插件失效了所以开始就没去安装它，但最终还是用上它了。它能处理下面这种图片格式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -2451,6 +2451,133 @@
 ]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>/js/custom.js</url>
+    <content><![CDATA[// custom.js
+const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
+const scenarios = [
+    { days: 0, weekend: true, message: "今天是周末，好好放松一下吧！" },
+    { days: 1, weekend: false, message: "明天就是周末了，今天努力工作哦！" },
+    { days: 2, weekend: false, message: "还有2天就是周末了，坚持住！" },
+    { days: 3, weekend: false, message: "还有3天就是周末了，先好好工作吧！" },
+    { days: 4, weekend: false, message: "工作周才刚开始，保持干劲哦！" },
+    { days: 5, weekend: false, message: "新的一周开始了，迎接新的挑战吧！" },
+    { days: 0, weekend: false, message: "又快到周末了，再加把劲！" },
+];
+
+function showCurrentTime() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = (now.getMonth() + 1).toString().padStart(2, '0');
+    var day = now.getDate().toString().padStart(2, '0');
+    var weekday = weekdays[now.getDay()];
+    var hours = now.getHours().toString().padStart(2, '0');
+    var minutes = now.getMinutes().toString().padStart(2, '0');
+    var seconds = now.getSeconds().toString().padStart(2, '0');
+    var milliseconds = now.getMilliseconds().toString().padStart(3, '0');
+
+    var dateString = `${year}年${month}月${day}日 星期${weekday}`;
+    var timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+
+    //document.getElementById('current-date').innerHTML = dateString;
+    //document.getElementById('current-time').innerHTML = timeString;
+
+    // 显示场景消息
+    showScenarioMessage(now);
+}
+
+function showScenarioMessage(date) {
+    const dayOfWeek = date.getDay();
+    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+    const daysUntilWeekend = dayOfWeek <= 5 ? 6 - dayOfWeek : 0;
+
+    let scenario = scenarios.find(s => 
+        (s.weekend === isWeekend && s.days === daysUntilWeekend) ||
+        (s.weekend === isWeekend && s.days === 0)
+    );
+ 
+    if (!scenario) {
+        scenario = { message: "祝你今天工作顺利！" };
+    }
+
+    document.getElementById('scenario-message').innerHTML = scenario.message;
+}
+
+// 自动刷新时间，每100毫秒更新一次
+function startClock() {
+    setInterval(showCurrentTime, 100);
+}]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/js/fetch-data.js</url>
+    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
+    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
+    const dailyNewsDiv = document.getElementById('daily-news');
+
+    function fetchBitcoinPrice() {
+        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                return response.json();
+            })
+            .then(bitcoinData => {
+                const usdRate = bitcoinData.bpi.USD.rate;
+                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
+            })
+            .catch(error => {
+                console.error('获取比特币价格失败:', error);
+                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
+            });
+    }
+
+    function fetchHolidayInfo() {
+        fetch('https://timor.tech/api/holiday/tts')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                return response.json();
+            })
+            .then(holidayData => {
+                const holidayMessage = holidayData.tts;
+                dailyNewsDiv.innerHTML = `<p>${holidayMessage}</p>`;
+            })
+            .catch(error => {
+                console.error('获取节假日信息失败:', error);
+                dailyNewsDiv.innerHTML = '获取节假日信息失败';
+            });
+    }
+
+    // 初次加载数据
+    fetchBitcoinPrice();
+    fetchHolidayInfo();
+
+    // 设置自动刷新，每毫秒刷新一次
+    setInterval(fetchBitcoinPrice, 100);
+    setInterval(fetchHolidayInfo, 100);
+});]]></content>
+  </entry>
+  <entry>
+    <title>新闻</title>
+    <url>/news/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/news/news.js"></script>
+]]></content>
+  </entry>
+  <entry>
     <title>历史时间轴</title>
     <url>/history/index.html</url>
     <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
@@ -2685,133 +2812,6 @@
 </div></div></div>]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/js/custom.js</url>
-    <content><![CDATA[// custom.js
-const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
-const scenarios = [
-    { days: 0, weekend: true, message: "今天是周末，好好放松一下吧！" },
-    { days: 1, weekend: false, message: "明天就是周末了，今天努力工作哦！" },
-    { days: 2, weekend: false, message: "还有2天就是周末了，坚持住！" },
-    { days: 3, weekend: false, message: "还有3天就是周末了，先好好工作吧！" },
-    { days: 4, weekend: false, message: "工作周才刚开始，保持干劲哦！" },
-    { days: 5, weekend: false, message: "新的一周开始了，迎接新的挑战吧！" },
-    { days: 0, weekend: false, message: "又快到周末了，再加把劲！" },
-];
-
-function showCurrentTime() {
-    var now = new Date();
-    var year = now.getFullYear();
-    var month = (now.getMonth() + 1).toString().padStart(2, '0');
-    var day = now.getDate().toString().padStart(2, '0');
-    var weekday = weekdays[now.getDay()];
-    var hours = now.getHours().toString().padStart(2, '0');
-    var minutes = now.getMinutes().toString().padStart(2, '0');
-    var seconds = now.getSeconds().toString().padStart(2, '0');
-    var milliseconds = now.getMilliseconds().toString().padStart(3, '0');
-
-    var dateString = `${year}年${month}月${day}日 星期${weekday}`;
-    var timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
-
-    //document.getElementById('current-date').innerHTML = dateString;
-    //document.getElementById('current-time').innerHTML = timeString;
-
-    // 显示场景消息
-    showScenarioMessage(now);
-}
-
-function showScenarioMessage(date) {
-    const dayOfWeek = date.getDay();
-    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
-    const daysUntilWeekend = dayOfWeek <= 5 ? 6 - dayOfWeek : 0;
-
-    let scenario = scenarios.find(s => 
-        (s.weekend === isWeekend && s.days === daysUntilWeekend) ||
-        (s.weekend === isWeekend && s.days === 0)
-    );
- 
-    if (!scenario) {
-        scenario = { message: "祝你今天工作顺利！" };
-    }
-
-    document.getElementById('scenario-message').innerHTML = scenario.message;
-}
-
-// 自动刷新时间，每100毫秒更新一次
-function startClock() {
-    setInterval(showCurrentTime, 100);
-}]]></content>
-  </entry>
-  <entry>
-    <title>新闻</title>
-    <url>/news/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-
-<script type="text/javascript" src="/js/news/news.js"></script>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/fetch-data.js</url>
-    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
-    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-    const dailyNewsDiv = document.getElementById('daily-news');
-
-    function fetchBitcoinPrice() {
-        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应失败');
-                }
-                return response.json();
-            })
-            .then(bitcoinData => {
-                const usdRate = bitcoinData.bpi.USD.rate;
-                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
-            })
-            .catch(error => {
-                console.error('获取比特币价格失败:', error);
-                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
-            });
-    }
-
-    function fetchHolidayInfo() {
-        fetch('https://timor.tech/api/holiday/tts')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应失败');
-                }
-                return response.json();
-            })
-            .then(holidayData => {
-                const holidayMessage = holidayData.tts;
-                dailyNewsDiv.innerHTML = `<p>${holidayMessage}</p>`;
-            })
-            .catch(error => {
-                console.error('获取节假日信息失败:', error);
-                dailyNewsDiv.innerHTML = '获取节假日信息失败';
-            });
-    }
-
-    // 初次加载数据
-    fetchBitcoinPrice();
-    fetchHolidayInfo();
-
-    // 设置自动刷新，每毫秒刷新一次
-    setInterval(fetchBitcoinPrice, 100);
-    setInterval(fetchHolidayInfo, 100);
-});]]></content>
-  </entry>
-  <entry>
     <title>schedule</title>
     <url>/schedule/index.html</url>
     <content><![CDATA[]]></content>
@@ -2942,21 +2942,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
   </entry>
   <entry>
-    <title>体育</title>
-    <url>/news/physical/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>娱乐</title>
     <url>/news/recreation/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2972,8 +2957,8 @@ function startClock() {
 <script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
   </entry>
   <entry>
-    <title>科技</title>
-    <url>/news/science/index.html</url>
+    <title>体育</title>
+    <url>/news/physical/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
 <button id="load-more-button">加载更多</button>
 <div id="error-container" style="display:none; color:red;"></div>
@@ -2984,7 +2969,7 @@ function startClock() {
         <button id="back-to-top">回到顶部</button>
     </div>
 </div>
-<script type="text/javascript" src="/js/news/science.js"></script>]]></content>
+<script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
   </entry>
   <entry>
     <title>旅游</title>
@@ -3000,6 +2985,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/travel.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>科技</title>
+    <url>/news/science/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/science.js"></script>]]></content>
   </entry>
   <entry>
     <title>视频</title>
