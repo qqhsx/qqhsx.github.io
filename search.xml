@@ -144,48 +144,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo-theme-next主题安装</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
-<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<ol start="2">
-<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
-</li>
-<li><p>next theme 配置文件路径</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
-</blockquote>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
-<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
-</li>
-<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
-</li>
-</ul>
-<blockquote>
-<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>next主题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Test Image Insert</title>
     <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
     <content><![CDATA[<blockquote>
@@ -239,6 +197,48 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo-theme-next主题安装</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
+<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<ol start="2">
+<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
+</li>
+<li><p>next theme 配置文件路径</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
+</blockquote>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
+<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
+</li>
+<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
+</li>
+</ul>
+<blockquote>
+<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>next主题</tag>
       </tags>
   </entry>
   <entry>
@@ -2837,21 +2837,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/fashion.js"></script>]]></content>
   </entry>
   <entry>
-    <title>财经</title>
-    <url>/news/finance/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/finance.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>数码</title>
     <url>/news/digital/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2865,6 +2850,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>财经</title>
+    <url>/news/finance/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/finance.js"></script>]]></content>
   </entry>
   <entry>
     <title>头条</title>
@@ -2882,21 +2882,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/front.js"></script>]]></content>
   </entry>
   <entry>
-    <title>游戏</title>
-    <url>/news/game/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>健康</title>
     <url>/news/health/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2912,8 +2897,8 @@ function startClock() {
 <script type="text/javascript" src="/js/news/health.js"></script>]]></content>
   </entry>
   <entry>
-    <title>体育</title>
-    <url>/news/physical/index.html</url>
+    <title>游戏</title>
+    <url>/news/game/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
 <button id="load-more-button">加载更多</button>
 <div id="error-container" style="display:none; color:red;"></div>
@@ -2924,7 +2909,7 @@ function startClock() {
         <button id="back-to-top">回到顶部</button>
     </div>
 </div>
-<script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
+<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
   </entry>
   <entry>
     <title>军事</title>
@@ -2955,6 +2940,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>体育</title>
+    <url>/news/physical/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
   </entry>
   <entry>
     <title>科技</title>
@@ -3002,22 +3002,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/travel.js"></script>]]></content>
   </entry>
   <entry>
-    <title>精选</title>
-    <url>/news/winnow/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-
-<script type="text/javascript" src="/js/news/winnow.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>视频</title>
     <url>/news/video/index.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
@@ -3033,5 +3017,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/video.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>精选</title>
+    <url>/news/winnow/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/news/winnow.js"></script>]]></content>
   </entry>
 </search>
