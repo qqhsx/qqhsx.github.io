@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>newpost</title>
     <url>/newpost/</url>
     <content><![CDATA[<p><i class="fa fa-bullhorn fa-shake " style="font-size: 22px;"></i> <span class="announcement-title" style="font-size: 22px; ">公告</span></p>
@@ -39,6 +21,24 @@
     };  
 </script>
 
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -699,6 +699,33 @@
       </tags>
   </entry>
   <entry>
+    <title>伊尹放太甲</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E5%95%86%E6%9C%9D/%E4%BC%8A%E5%B0%B9%E6%94%BE%E5%A4%AA%E7%94%B2/</url>
+    <content><![CDATA[<p>在伊尹的协助下，汤成功推翻了夏朝的统治，建立了商朝。商朝建立之初，百废待兴，汤又在伊尹的帮助下完善了各项典章制度，使商迅速恢复了社会秩序，走上正轨。商汤在位三十年，临终时，因为特别信任伊尹，把辅佐继任帝王的重任嘱托于他。</p>
+<span id="more"></span>
+
+<p>商朝时，继承的法则是兄死弟及，没有弟弟，才轮到儿子继承。商汤没有弟弟，因此应该是长子太丁继位。可是汤还在世时，太丁就死了，因此按照礼法，应该由太丁的弟弟外丙继位。于是伊尹便扶持外丙继承了王位。外丙在位三年就去世了，他的弟弟仲壬继位，仲壬体弱多病，注定也是个短命君王，在位四年就病亡了。这时能继承王位的只有商汤的孙子、太丁的儿子——太甲了。此时的太甲只有十岁，但伊尹还是毫不犹豫地扶持年幼的太甲登上了商朝君主的宝座。他自己则掌握大权，尽心尽职地从旁辅佐，教给太甲如何区分是非对错和治理国家的方法，希望把太甲调教成一代贤君。</p>
+<p>太甲年幼少不更事，开始还能听伊尹的教导，谨言慎行，恪守祖辈的礼法，认真对待政事。可是，他小小年纪就登上权力的顶峰，众星捧月般地长大，而且自幼丧父，没有受过严格的管教。没几年，他顽劣的性情就开始滋长，自认是一国之君，万人之上，没人能管得了自己，渐渐变得忘乎所以，对伊尹的教导也开始不耐烦起来。他觉得伊尹虽为宰相，却是奴隶出身，自己凭什么要听他的教训。因此，当伊尹给他讲祖宗的规矩，向他传授汤立下的法度，用历史上贤君的故事教育他时，根本听不进去，而且表现得很敌对。渐渐地，他变得恣意妄为，喜声乐，醉酒宴，一再地破坏礼法。更可怕的是，他竟越来越像夏桀，喜欢滥用民力，暴虐嗜杀，百姓苦不堪言，对他的不满越积越深。</p>
+<p>对于太甲的无心长进，暴虐成性，伊尹和群臣都忧心忡忡，一再规劝，提醒太甲作为一代君王，要有所为有所不为。然而，太甲根本听不进伊尹的规劝，不但一意孤行，甚至还变本加厉。伊尹非常忧虑，担心如果继续放纵太甲这样胡闹下去，汤好不容易打下来的天下，就会被他葬送。</p>
+<p>为了商朝的天下，为了能把太甲调教成一代明君，伊尹决定对太甲下一剂猛药。正好快要到汤的忌日了，按规矩，君主要带领朝廷上下举行盛大的祭祀活动。太甲贪玩，根本不想主持这种规规矩矩、枯燥乏味的仪式，可是伊尹一再强调身为汤的子孙，继承了汤打下的天下，这件事他责无旁贷，除非他不想做这个君主了。太甲无奈，勉为其难主持祭奠，带领群臣来到了汤的墓地——桐宫。祭奠一开始，伊尹宣读祭文，向汤的亡灵宣告，为了商朝能千秋万代，要将幼主留在桐宫，让他反思自己的言行，帮他领悟治国的道理。太甲听完祭文，才知道自己要被囚于桐宫，接受训导，一下就慌了神，可是群臣百官都在场，显然大家都支持伊尹的决定，他已经骑虎难下，只能听从了。</p>
+<p>太甲住进了桐宫，但国家大事不能无人管理，伊尹便摄政当国，代行天子职责。为了教导太甲上进，伊尹给他写了《伊训》、《肆命》、《祖后》三篇训词：《伊训》中说，腐败、淫荡、逆乱之风是丧家乱国的根本，身为君主要想让国家长治久安，就要修身养性，多听贤臣的意见；《肆命》是讲分辨是非的方法，清楚地说明应做什么样的事情，不应做什么样的事情；《祖后》则专门讲商汤时候的典法制度，教育太甲祖先的规矩不可破，不能为了贪一时之快，而背弃祖训，为所欲为。</p>
+<p>桐宫远在商都郊外，虽是商朝开国之君汤的陵墓，却非常简陋，跟普通人的墓没什么两样，只有一座又低又矮的宫室，以便每年到此祭奠。太甲是享乐惯了的人，怎能甘心呆在这里受苦。为了能让太甲安心悔过，伊尹语重心长地对他说：“我年事已高，本没有争权夺位的野心，可是先王临终托孤，辅佐幼主，自己重任在身。为了不辜负先王的嘱托，不能对你放任不管。你还是商朝的国君，但是在执政之前要多学习、走正道，修身养性，提高治国安邦的能力。所以要趁着这次机会，在这里好好学习如何做一个英明的君王。”</p>
+<p>太甲知道此事已经无可挽回，再加上伊尹的一番话也让他有些感触，便不再反抗，表示会老实地呆在桐宫学习。太甲在此，没有高床软卧，没有锦衣玉食，远离前呼后拥，远离奢华的享受，也远离各种诱惑，每天他早晚守候着祖父商汤的陵墓，读着伊尹写给他的训词，过着简朴的生活，心竟真的渐渐平静下来。</p>
+<p>太甲逐渐了解到祖父历尽艰辛，打下商朝天下，还能俭以修身，仁以立德，由衷地崇拜起祖父来，再想想自己对国家没什么贡献，就登上王位，却不思治国，只贪图玩乐，还暴虐地对待百姓，真羞愧难当。同时，他想到伊尹对自己苦心教诲，自己却不能理解，懊悔不及。于是，太甲下定决定要好好读书，做一个不负祖父亡灵的明君，学习为君为政所必需的德行与知识，掌握国家法度，以及如何应对国家的困境。</p>
+<p>就这样，在不断地学习与悔过自新中，太甲在桐宫一住就是三年。这三年间，太甲真的脱胎换骨了，他认真学习，以祖父为榜样，严格要求自己，尤其注重修炼自己的德行。伊尹也经常派德才兼备的人给他授课，同时了解他在桐宫的情况。经过一番了解，伊尹确定太甲已经改过向善，也具备了一定才识，可以回来当君主了。于是，伊尹带领文武大臣来到桐宫，用隆重的仪式把太甲接回了亳都，让太甲归位主政，自己只从旁辅佐。</p>
+<p>经过三年的蜕变，太甲归位后，果然完全改掉了过去的顽劣性情。他虽然年纪轻轻，却成熟沉稳，对待国家大事从不懈怠，还发扬商汤的德政，勤俭爱民，凡是为大局着想，从不做违反祖制和朝廷法律的事。在他和伊尹的统治下，商朝社会稳定，百姓安康，诸侯臣服，进入了一个稳定发展鼎盛时期。《史记·殷本纪》中说太甲复位后，“诸侯咸归殷，百姓以宁”。太甲因此赢得了群臣和百姓的尊敬，被称为“太宗”。伊尹又作《太甲训》三篇，褒扬太甲的德政。</p>
+<p>不过，太甲当政期间，对国家大事起决定性作用的还是伊尹，直到太甲的儿子沃丁继承王位八年后，伊尹才去世。据说，他去世的时候，天降大雾，三日不散。沃丁感念他对商朝鞠躬尽瘁的功德，亲自主持丧事，用天子之礼厚葬了他，将他安葬在亳都的郊区。</p>
+<p>伊尹不仅是辅佐汤夺取天下的开国元勋，而且是名副其实的“五朝元老”，他以其卓越的才能和忠诚，为商王朝延续六百年的统治奠定了坚实的基础，是我国历史上最早的贤能相国圣人，史称“元圣”。在甲骨卜辞的记载中，伊尹不但被列为“旧老臣”之首，受到隆重祭祀，而且还与汤同祭，单独享祀。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>商朝</category>
+      </categories>
+      <tags>
+        <tag>伊尹放太甲</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>大禹治水</title>
     <url>/%E5%8E%86%E5%8F%B2/%E5%A4%8F%E6%9C%9D/%E5%A4%A7%E7%A6%B9%E6%B2%BB%E6%B0%B4/</url>
     <content><![CDATA[<p>据说尧舜时代正值冰河时代后期，气候转暖，冰雪消融，致使海平面迅速升高，海水倒灌；古黄河改道从苏北平原入海，淮河淤积，汹涌的洪水淹没了淮、泗流域，沧海横流，洪水泛滥，泰山以西到沂蒙以南至苏北地区成了一片汪洋，天地万物在滔天的洪水中沉沉浮浮。对于当时的情景，《尚书·尧典》中这样描写：“汤汤洪水方割，荡荡怀山襄陵，浩浩滔天。”</p>
@@ -725,33 +752,6 @@
       </categories>
       <tags>
         <tag>大禹治</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>伊尹放太甲</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E5%95%86%E6%9C%9D/%E4%BC%8A%E5%B0%B9%E6%94%BE%E5%A4%AA%E7%94%B2/</url>
-    <content><![CDATA[<p>在伊尹的协助下，汤成功推翻了夏朝的统治，建立了商朝。商朝建立之初，百废待兴，汤又在伊尹的帮助下完善了各项典章制度，使商迅速恢复了社会秩序，走上正轨。商汤在位三十年，临终时，因为特别信任伊尹，把辅佐继任帝王的重任嘱托于他。</p>
-<span id="more"></span>
-
-<p>商朝时，继承的法则是兄死弟及，没有弟弟，才轮到儿子继承。商汤没有弟弟，因此应该是长子太丁继位。可是汤还在世时，太丁就死了，因此按照礼法，应该由太丁的弟弟外丙继位。于是伊尹便扶持外丙继承了王位。外丙在位三年就去世了，他的弟弟仲壬继位，仲壬体弱多病，注定也是个短命君王，在位四年就病亡了。这时能继承王位的只有商汤的孙子、太丁的儿子——太甲了。此时的太甲只有十岁，但伊尹还是毫不犹豫地扶持年幼的太甲登上了商朝君主的宝座。他自己则掌握大权，尽心尽职地从旁辅佐，教给太甲如何区分是非对错和治理国家的方法，希望把太甲调教成一代贤君。</p>
-<p>太甲年幼少不更事，开始还能听伊尹的教导，谨言慎行，恪守祖辈的礼法，认真对待政事。可是，他小小年纪就登上权力的顶峰，众星捧月般地长大，而且自幼丧父，没有受过严格的管教。没几年，他顽劣的性情就开始滋长，自认是一国之君，万人之上，没人能管得了自己，渐渐变得忘乎所以，对伊尹的教导也开始不耐烦起来。他觉得伊尹虽为宰相，却是奴隶出身，自己凭什么要听他的教训。因此，当伊尹给他讲祖宗的规矩，向他传授汤立下的法度，用历史上贤君的故事教育他时，根本听不进去，而且表现得很敌对。渐渐地，他变得恣意妄为，喜声乐，醉酒宴，一再地破坏礼法。更可怕的是，他竟越来越像夏桀，喜欢滥用民力，暴虐嗜杀，百姓苦不堪言，对他的不满越积越深。</p>
-<p>对于太甲的无心长进，暴虐成性，伊尹和群臣都忧心忡忡，一再规劝，提醒太甲作为一代君王，要有所为有所不为。然而，太甲根本听不进伊尹的规劝，不但一意孤行，甚至还变本加厉。伊尹非常忧虑，担心如果继续放纵太甲这样胡闹下去，汤好不容易打下来的天下，就会被他葬送。</p>
-<p>为了商朝的天下，为了能把太甲调教成一代明君，伊尹决定对太甲下一剂猛药。正好快要到汤的忌日了，按规矩，君主要带领朝廷上下举行盛大的祭祀活动。太甲贪玩，根本不想主持这种规规矩矩、枯燥乏味的仪式，可是伊尹一再强调身为汤的子孙，继承了汤打下的天下，这件事他责无旁贷，除非他不想做这个君主了。太甲无奈，勉为其难主持祭奠，带领群臣来到了汤的墓地——桐宫。祭奠一开始，伊尹宣读祭文，向汤的亡灵宣告，为了商朝能千秋万代，要将幼主留在桐宫，让他反思自己的言行，帮他领悟治国的道理。太甲听完祭文，才知道自己要被囚于桐宫，接受训导，一下就慌了神，可是群臣百官都在场，显然大家都支持伊尹的决定，他已经骑虎难下，只能听从了。</p>
-<p>太甲住进了桐宫，但国家大事不能无人管理，伊尹便摄政当国，代行天子职责。为了教导太甲上进，伊尹给他写了《伊训》、《肆命》、《祖后》三篇训词：《伊训》中说，腐败、淫荡、逆乱之风是丧家乱国的根本，身为君主要想让国家长治久安，就要修身养性，多听贤臣的意见；《肆命》是讲分辨是非的方法，清楚地说明应做什么样的事情，不应做什么样的事情；《祖后》则专门讲商汤时候的典法制度，教育太甲祖先的规矩不可破，不能为了贪一时之快，而背弃祖训，为所欲为。</p>
-<p>桐宫远在商都郊外，虽是商朝开国之君汤的陵墓，却非常简陋，跟普通人的墓没什么两样，只有一座又低又矮的宫室，以便每年到此祭奠。太甲是享乐惯了的人，怎能甘心呆在这里受苦。为了能让太甲安心悔过，伊尹语重心长地对他说：“我年事已高，本没有争权夺位的野心，可是先王临终托孤，辅佐幼主，自己重任在身。为了不辜负先王的嘱托，不能对你放任不管。你还是商朝的国君，但是在执政之前要多学习、走正道，修身养性，提高治国安邦的能力。所以要趁着这次机会，在这里好好学习如何做一个英明的君王。”</p>
-<p>太甲知道此事已经无可挽回，再加上伊尹的一番话也让他有些感触，便不再反抗，表示会老实地呆在桐宫学习。太甲在此，没有高床软卧，没有锦衣玉食，远离前呼后拥，远离奢华的享受，也远离各种诱惑，每天他早晚守候着祖父商汤的陵墓，读着伊尹写给他的训词，过着简朴的生活，心竟真的渐渐平静下来。</p>
-<p>太甲逐渐了解到祖父历尽艰辛，打下商朝天下，还能俭以修身，仁以立德，由衷地崇拜起祖父来，再想想自己对国家没什么贡献，就登上王位，却不思治国，只贪图玩乐，还暴虐地对待百姓，真羞愧难当。同时，他想到伊尹对自己苦心教诲，自己却不能理解，懊悔不及。于是，太甲下定决定要好好读书，做一个不负祖父亡灵的明君，学习为君为政所必需的德行与知识，掌握国家法度，以及如何应对国家的困境。</p>
-<p>就这样，在不断地学习与悔过自新中，太甲在桐宫一住就是三年。这三年间，太甲真的脱胎换骨了，他认真学习，以祖父为榜样，严格要求自己，尤其注重修炼自己的德行。伊尹也经常派德才兼备的人给他授课，同时了解他在桐宫的情况。经过一番了解，伊尹确定太甲已经改过向善，也具备了一定才识，可以回来当君主了。于是，伊尹带领文武大臣来到桐宫，用隆重的仪式把太甲接回了亳都，让太甲归位主政，自己只从旁辅佐。</p>
-<p>经过三年的蜕变，太甲归位后，果然完全改掉了过去的顽劣性情。他虽然年纪轻轻，却成熟沉稳，对待国家大事从不懈怠，还发扬商汤的德政，勤俭爱民，凡是为大局着想，从不做违反祖制和朝廷法律的事。在他和伊尹的统治下，商朝社会稳定，百姓安康，诸侯臣服，进入了一个稳定发展鼎盛时期。《史记·殷本纪》中说太甲复位后，“诸侯咸归殷，百姓以宁”。太甲因此赢得了群臣和百姓的尊敬，被称为“太宗”。伊尹又作《太甲训》三篇，褒扬太甲的德政。</p>
-<p>不过，太甲当政期间，对国家大事起决定性作用的还是伊尹，直到太甲的儿子沃丁继承王位八年后，伊尹才去世。据说，他去世的时候，天降大雾，三日不散。沃丁感念他对商朝鞠躬尽瘁的功德，亲自主持丧事，用天子之礼厚葬了他，将他安葬在亳都的郊区。</p>
-<p>伊尹不仅是辅佐汤夺取天下的开国元勋，而且是名副其实的“五朝元老”，他以其卓越的才能和忠诚，为商王朝延续六百年的统治奠定了坚实的基础，是我国历史上最早的贤能相国圣人，史称“元圣”。在甲骨卜辞的记载中，伊尹不但被列为“旧老臣”之首，受到隆重祭祀，而且还与汤同祭，单独享祀。</p>
-]]></content>
-      <categories>
-        <category>历史</category>
-        <category>商朝</category>
-      </categories>
-      <tags>
-        <tag>伊尹放太甲</tag>
       </tags>
   </entry>
   <entry>
@@ -2228,14 +2228,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
-  </entry>
-  <entry>
     <title>每日60秒读懂世界新闻</title>
     <url>/60s_news/index.html</url>
     <content><![CDATA[<div id="daily-news">
@@ -2276,6 +2268,248 @@
     <title>分类</title>
     <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>关于</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
+  </entry>
+  <entry>
+    <title>历史时间轴</title>
+    <url>/history/index.html</url>
+    <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华人民共和国是工人阶级领导的、以工农联盟为基础的人民民主专政的社会主义国家。简称“中国”。</strong></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2008年</p>
+</div></div><div class="timeline-item-content"><p>8月，北京成功举办第29届奥运会。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1999年</p>
+</div></div><div class="timeline-item-content"><p>12月20日，中国政府对澳门恢复行使主权。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1997年</p>
+</div></div><div class="timeline-item-content"><p>7月1日，中国政府对香港恢复行使主权。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1990年</p>
+</div></div><div class="timeline-item-content"><p>第11届亚洲运动会在北京举行，这是中国第一次承办综合性国际体育大赛。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1988年</p>
+</div></div><div class="timeline-item-content"><p>北京正负电子对撞机首次对撞成功。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1987年</p>
+</div></div><div class="timeline-item-content"><p>中葡两国政府在北京签署关于澳门问题的联合声明，确认中国政府于1999年12月20日对澳门恢复行使主权。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1984年</p>
+</div></div><div class="timeline-item-content"><p>中国体育代表团在美国洛杉矶举行的第23届奥运会上获得15枚金牌，实现了中国在奥运会金牌榜上零的突破。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1980年</p>
+</div></div><div class="timeline-item-content"><p>中国向太平洋预定海域发射的第一枚运载火箭获得圆满成功。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1965年</p>
+</div></div><div class="timeline-item-content"><p>中国人工合成结晶牛胰岛素，是世界上首次人工合成蛋白质。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1957年</p>
+</div></div><div class="timeline-item-content"><p>第一届中国出口商品交易会在广州举行（简称“广交会”）。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1955年</p>
+</div></div><div class="timeline-item-content"><p>成（都）——阿（坝）公路全线通车，全长507千米。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1954年</p>
+</div></div><div class="timeline-item-content"><p>第一届全国人民代表大会第一次会议通过了《中华人民共和国宪法》，为社会主义法治建设奠定了基础。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1953年</p>
+</div></div><div class="timeline-item-content"><p>开始执行发展国民经济的第一个五年计划。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1949年</p>
+</div></div><div class="timeline-item-content"><p>国民党与共产党之间爆发内战，最终共产党取得胜利。<br>10月1日，中华人民共和国成立。</p>
+</div></div></div>
+
+
+
+<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华民国（1912年—1949年）</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华民国是辛亥革命以后建立的亚洲第一个民主共和国，“简称民国”。是中国历史上大动荡大转变的时期，半殖民地半封建社会的终结阶段。</strong></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1947年</p>
+</div></div><div class="timeline-item-content"><p>土地改革运动在解放区全面展开。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1946年</p>
+</div></div><div class="timeline-item-content"><p>巴金写成中篇小说《寒夜》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
+</div></div><div class="timeline-item-content"><p>孙犁创作短篇小说《荷花淀》</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
+</div></div><div class="timeline-item-content"><p>抗日战争胜利。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
+</div></div><div class="timeline-item-content"><p>中印公路全线贯通。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
+</div></div><div class="timeline-item-content"><p>中、美、英三国发表《波茨坦公告》，促令日本无条件投降。<br>中国进行了艰苦卓绝的抗日战争，最终取得胜利。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1941年</p>
+</div></div><div class="timeline-item-content"><p>陈纳德飞虎队来中国协助抗战。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1940年</p>
+</div></div><div class="timeline-item-content"><p>八路军发动百团大战。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1937年</p>
+</div></div><div class="timeline-item-content"><p>12月，南京陷落，日军入城大肆杀戮。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1937年</p>
+</div></div><div class="timeline-item-content"><p>卢沟桥事变发生，全面抗日战争开始。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1936年</p>
+</div></div><div class="timeline-item-content"><p>12月12日，张学良、杨虎城发动西安事变。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1935年</p>
+</div></div><div class="timeline-item-content"><p>“一二·九”运动爆发。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1935年</p>
+</div></div><div class="timeline-item-content"><p>曾朴于本年去世，著有长篇小说《孽海花》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1935年</p>
+</div></div><div class="timeline-item-content"><p>聂耳为电影《风云儿女》主题歌谱曲《义勇军进行曲》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1931年</p>
+</div></div><div class="timeline-item-content"><p>日本帝国主义在沈阳制造“九一八”事变。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1930年</p>
+</div></div><div class="timeline-item-content"><p>蒋阎冯中原大战。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1928年</p>
+</div></div><div class="timeline-item-content"><p>皇姑屯事件，张作霖死。<br>国民革命军进行北伐，推翻了北洋军阀的统治。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1927年</p>
+</div></div><div class="timeline-item-content"><p>汉口、九江民众收回英租界。<br>《现代评论》创刊于北京，形成现代评论派。<br>蒋介石发动四一二反革命政变后，在南京建立国民政府。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1925年</p>
+</div></div><div class="timeline-item-content"><p>3月12日，孙中山在北京逝世。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1924年</p>
+</div></div><div class="timeline-item-content"><p>黄埔军校建立。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1923年</p>
+</div></div><div class="timeline-item-content"><p>京汉铁路工人大罢工。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1922年</p>
+</div></div><div class="timeline-item-content"><p>第一次直奉战争爆发。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1921年</p>
+</div></div><div class="timeline-item-content"><p>中国共产党成立。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1919年</p>
+</div></div><div class="timeline-item-content"><p>中华革命党改组为中国国民党。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1919年</p>
+</div></div><div class="timeline-item-content"><p>“五四”运动爆发。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1917年</p>
+</div></div><div class="timeline-item-content"><p>张勋复辟，旋即失败。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1916年</p>
+</div></div><div class="timeline-item-content"><p>袁世凯死后，北洋军阀分裂，形成多个派系。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1915年</p>
+</div></div><div class="timeline-item-content"><p>日本提出灭亡中国的“二十一条”。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1914年</p>
+</div></div><div class="timeline-item-content"><p>袁世凯废除《中华民国临时约法》，公布《中华民国约法》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1913年</p>
+</div></div><div class="timeline-item-content"><p>“二次革命”爆发，以失败告终。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1912年</p>
+</div></div><div class="timeline-item-content"><p>南京临时政府成立，溥仪退位，清亡。孙中山就任临时大总统，定国号为中华民国。</p>
+</div></div></div>
+
+
+
+
+<div class="timeline gray"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>清朝（1636年—1912年）</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中国历史上最后一个封建王朝，共传十二帝，从皇太极改国号为清开始，国祚276年。从努尔哈赤建立后金政权起，总计296年。从清兵入关，建立全国性政权算起为268年。</strong></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1911年</p>
+</div></div><div class="timeline-item-content"><p>辛亥革命。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1911年</p>
+</div></div><div class="timeline-item-content"><p>四川保路运动爆发。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1905年</p>
+</div></div><div class="timeline-item-content"><p>清廷废除科举考试制度。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1901年</p>
+</div></div><div class="timeline-item-content"><p>清廷与俄、英、美、日、德、法、意、奥、比、西、荷等十一国签订《辛丑条约》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1900年</p>
+</div></div><div class="timeline-item-content"><p>由英国海军上将西摩尔统率的八国联军进犯北京。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1898年</p>
+</div></div><div class="timeline-item-content"><p>光绪帝下“明定国是”诏书，戊戌变法开始。八月初六（9月21日），慈禧幽禁光绪帝于瀛台，百日维新失败。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1894年</p>
+</div></div><div class="timeline-item-content"><p>中日甲午战争爆发。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1888年</p>
+</div></div><div class="timeline-item-content"><p>北洋海军建成，以丁汝昌为提督，林泰曾、刘步蟾为左、右翼总兵。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1885年</p>
+</div></div><div class="timeline-item-content"><p>清军取得谅山大捷，此后李鸿章和法国公使巴德诺在天津签订《中法新约》，中法战争结束。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1875年</p>
+</div></div><div class="timeline-item-content"><p>清廷以兵部侍郎郭嵩焘任出使英国钦差大臣，为中国正式派遣驻外使节的开始。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1872年</p>
+</div></div><div class="timeline-item-content"><p>李鸿章在上海创办轮船招商局，侨商陈启源在广东南海创办继昌隆缫丝局，中国民族资本主义近代工业开始出现。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1864年</p>
+</div></div><div class="timeline-item-content"><p>天京为清军攻陷，太平天国起义失败。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1861年</p>
+</div></div><div class="timeline-item-content"><p>咸丰卒，慈禧发动政变，慈禧、慈安两太后垂帘听政，史称“辛酉政变”。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1860年</p>
+</div></div><div class="timeline-item-content"><p>英法联军攻陷北京，恭亲王与英、法、俄分别签订《北京条约》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1860年</p>
+</div></div><div class="timeline-item-content"><p>美国人华尔组成“洋枪队”，协助清廷镇压太平军。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1859年</p>
+</div></div><div class="timeline-item-content"><p>太平天国颁布《资政新篇》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1858年</p>
+</div></div><div class="timeline-item-content"><p>俄、美、英、法逼迫清廷相继签订《天津条约》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1857年</p>
+</div></div><div class="timeline-item-content"><p>石达开受洪秀全猜忌，率众自天京出走。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1856年</p>
+</div></div><div class="timeline-item-content"><p>英国借口“亚罗号事件”，挑起第二次鸦片战争。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1856年</p>
+</div></div><div class="timeline-item-content"><p>太平天国发生天京事变。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1855年</p>
+</div></div><div class="timeline-item-content"><p>太平军北伐失败，主将林凤祥、李开芳牺牲。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1853年</p>
+</div></div><div class="timeline-item-content"><p>太平天国颁布《天朝田亩制度》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1853年</p>
+</div></div><div class="timeline-item-content"><p>太平军沿长江东下，占领南京，定为首都，改称天京。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1851年</p>
+</div></div><div class="timeline-item-content"><p>太平天国起义爆发。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1845年</p>
+</div></div><div class="timeline-item-content"><p>英国驻沪领事与上海道台订立《上海租地章程》，是为外国侵略者在中国设立租界的开始。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1844年</p>
+</div></div><div class="timeline-item-content"><p>清廷被迫先后签订中美《望厦条约》、中法《黄埔条约》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1842年</p>
+</div></div><div class="timeline-item-content"><p>清廷被迫与英国签订《南京条约》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1840年</p>
+</div></div><div class="timeline-item-content"><p>鸦片战争爆发。清廷命琦善为钦差大臣，赴广州与英谈判，林则徐被革职。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1839年</p>
+</div></div><div class="timeline-item-content"><p>林则徐在虎门海滩销毁收缴的鸦片。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1833年</p>
+</div></div><div class="timeline-item-content"><p>清廷定洋银与纹银使用条例。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1830年</p>
+</div></div><div class="timeline-item-content"><p>小说家李汝珍约于此年去世，著有长篇小说《镜花缘》。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1829年</p>
+</div></div><div class="timeline-item-content"><p>洋钱、鸦片为害日甚，道光帝命严行查禁。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1826年</p>
+</div></div><div class="timeline-item-content"><p>贺长龄、魏源等编《皇朝经世文编》成书，120卷，搜录重要史料。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1825年</p>
+</div></div><div class="timeline-item-content"><p>《西夏书事》刊行，吴广成辑唐以来诸史、文集和野史有关西夏史事，以编年体成书。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1824年</p>
+</div></div><div class="timeline-item-content"><p>林则徐综办江浙水利。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1823年</p>
+</div></div><div class="timeline-item-content"><p>医学家陈念祖去世，著作颇丰，以《医学三字经》广为流传。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1822年</p>
+</div></div><div class="timeline-item-content"><p>清廷定例禁止银两出洋。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1821年</p>
+</div></div><div class="timeline-item-content"><p>清廷重申禁烟令，严禁在澳门、黄埔囤放和售卖鸦片。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1814年</p>
+</div></div><div class="timeline-item-content"><p>史学家赵翼去世，著有《廿二史札记》《皇朝武功纪盛》等。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1814年</p>
+</div></div><div class="timeline-item-content"><p>纂辑《全唐文》告成，全书1000卷，收入作家3000多人，作品18000多篇。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1813年</p>
+</div></div><div class="timeline-item-content"><p>林清率领的起义军攻入紫禁城，旋即失败。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1795年</p>
+</div></div><div class="timeline-item-content"><p>乾隆帝立皇十五子颙琰为皇太子，定明年继承皇位，改元嘉庆。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1793年</p>
+</div></div><div class="timeline-item-content"><p>乾隆帝在热河行宫接见英国马戛尔尼使团。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1785年</p>
+</div></div><div class="timeline-item-content"><p>乾隆帝于乾清宫设“千叟宴”，60岁以上老人入宴者达3000人。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1784年</p>
+</div></div><div class="timeline-item-content"><p>美国商船“中国皇后”号从纽约出发，绕道非洲好望角，驶抵广州。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1782年</p>
+</div></div><div class="timeline-item-content"><p>第一部《四库全书》修成。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1776年</p>
+</div></div><div class="timeline-item-content"><p>大金川索诺木出降，大小金川之役结束。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1771年</p>
+</div></div><div class="timeline-item-content"><p>土尔扈特部在首领渥巴锡率领下，长途跋涉，从沙俄重返祖国。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1762年</p>
+</div></div><div class="timeline-item-content"><p>清廷设伊犁将军，总统新疆南北两路事务。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1747年</p>
+</div></div><div class="timeline-item-content"><p>大金川土司沙罗奔举兵反，清廷派重兵平叛，两年后平定。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1735年</p>
+</div></div><div class="timeline-item-content"><p>清世宗雍正帝去世，子弘历继位，是为清高宗，改元乾隆。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1729年</p>
+</div></div><div class="timeline-item-content"><p>因西北用兵，设军机房，后改为军机处。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1661年</p>
+</div></div><div class="timeline-item-content"><p>郑成功率军驱逐荷兰殖民者，收复台湾。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1655年</p>
+</div></div><div class="timeline-item-content"><p>清世祖顺治帝于内十三衙门立铁牌，严禁太监干政。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1644年</p>
+</div></div><div class="timeline-item-content"><p>李自成率大顺军攻占北京，明崇祯帝自缢，明亡。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1641年</p>
+</div></div><div class="timeline-item-content"><p>李自成起义军攻入洛阳，杀明福王朱常洵。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1637年</p>
+</div></div><div class="timeline-item-content"><p>宋应星所著《天工开物》刊行。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1636年</p>
+</div></div><div class="timeline-item-content"><p>皇太极即帝位，改国号为清。</p>
+</div></div></div>
+
+
+
+<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>明朝（1368年―1644年）</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>是一个由汉族建立的大一统王朝，共传十六帝，享国二百七十六年。</strong></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
+</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
+</div></div></div>]]></content>
   </entry>
   <entry>
     <title>经济时间轴</title>
@@ -2561,240 +2795,6 @@ function startClock() {
 });]]></content>
   </entry>
   <entry>
-    <title>历史时间轴</title>
-    <url>/history/index.html</url>
-    <content><![CDATA[<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华人民共和国（1949年―今）</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华人民共和国是工人阶级领导的、以工农联盟为基础的人民民主专政的社会主义国家。简称“中国”。</strong></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2008年</p>
-</div></div><div class="timeline-item-content"><p>8月，北京成功举办第29届奥运会。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1999年</p>
-</div></div><div class="timeline-item-content"><p>12月20日，中国政府对澳门恢复行使主权。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1997年</p>
-</div></div><div class="timeline-item-content"><p>7月1日，中国政府对香港恢复行使主权。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1990年</p>
-</div></div><div class="timeline-item-content"><p>第11届亚洲运动会在北京举行，这是中国第一次承办综合性国际体育大赛。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1988年</p>
-</div></div><div class="timeline-item-content"><p>北京正负电子对撞机首次对撞成功。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1987年</p>
-</div></div><div class="timeline-item-content"><p>中葡两国政府在北京签署关于澳门问题的联合声明，确认中国政府于1999年12月20日对澳门恢复行使主权。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1984年</p>
-</div></div><div class="timeline-item-content"><p>中国体育代表团在美国洛杉矶举行的第23届奥运会上获得15枚金牌，实现了中国在奥运会金牌榜上零的突破。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1980年</p>
-</div></div><div class="timeline-item-content"><p>中国向太平洋预定海域发射的第一枚运载火箭获得圆满成功。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1965年</p>
-</div></div><div class="timeline-item-content"><p>中国人工合成结晶牛胰岛素，是世界上首次人工合成蛋白质。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1957年</p>
-</div></div><div class="timeline-item-content"><p>第一届中国出口商品交易会在广州举行（简称“广交会”）。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1955年</p>
-</div></div><div class="timeline-item-content"><p>成（都）——阿（坝）公路全线通车，全长507千米。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1954年</p>
-</div></div><div class="timeline-item-content"><p>第一届全国人民代表大会第一次会议通过了《中华人民共和国宪法》，为社会主义法治建设奠定了基础。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1953年</p>
-</div></div><div class="timeline-item-content"><p>开始执行发展国民经济的第一个五年计划。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1949年</p>
-</div></div><div class="timeline-item-content"><p>国民党与共产党之间爆发内战，最终共产党取得胜利。<br>10月1日，中华人民共和国成立。</p>
-</div></div></div>
-
-
-
-<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>中华民国（1912年—1949年）</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中华民国是辛亥革命以后建立的亚洲第一个民主共和国，“简称民国”。是中国历史上大动荡大转变的时期，半殖民地半封建社会的终结阶段。</strong></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1947年</p>
-</div></div><div class="timeline-item-content"><p>土地改革运动在解放区全面展开。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1946年</p>
-</div></div><div class="timeline-item-content"><p>巴金写成中篇小说《寒夜》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
-</div></div><div class="timeline-item-content"><p>孙犁创作短篇小说《荷花淀》</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
-</div></div><div class="timeline-item-content"><p>抗日战争胜利。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
-</div></div><div class="timeline-item-content"><p>中印公路全线贯通。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1945年</p>
-</div></div><div class="timeline-item-content"><p>中、美、英三国发表《波茨坦公告》，促令日本无条件投降。<br>中国进行了艰苦卓绝的抗日战争，最终取得胜利。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1941年</p>
-</div></div><div class="timeline-item-content"><p>陈纳德飞虎队来中国协助抗战。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1940年</p>
-</div></div><div class="timeline-item-content"><p>八路军发动百团大战。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1937年</p>
-</div></div><div class="timeline-item-content"><p>12月，南京陷落，日军入城大肆杀戮。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1937年</p>
-</div></div><div class="timeline-item-content"><p>卢沟桥事变发生，全面抗日战争开始。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1936年</p>
-</div></div><div class="timeline-item-content"><p>12月12日，张学良、杨虎城发动西安事变。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1935年</p>
-</div></div><div class="timeline-item-content"><p>“一二·九”运动爆发。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1935年</p>
-</div></div><div class="timeline-item-content"><p>曾朴于本年去世，著有长篇小说《孽海花》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1935年</p>
-</div></div><div class="timeline-item-content"><p>聂耳为电影《风云儿女》主题歌谱曲《义勇军进行曲》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1931年</p>
-</div></div><div class="timeline-item-content"><p>日本帝国主义在沈阳制造“九一八”事变。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1930年</p>
-</div></div><div class="timeline-item-content"><p>蒋阎冯中原大战。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1928年</p>
-</div></div><div class="timeline-item-content"><p>皇姑屯事件，张作霖死。<br>国民革命军进行北伐，推翻了北洋军阀的统治。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1927年</p>
-</div></div><div class="timeline-item-content"><p>汉口、九江民众收回英租界。<br>《现代评论》创刊于北京，形成现代评论派。<br>蒋介石发动四一二反革命政变后，在南京建立国民政府。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1925年</p>
-</div></div><div class="timeline-item-content"><p>3月12日，孙中山在北京逝世。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1924年</p>
-</div></div><div class="timeline-item-content"><p>黄埔军校建立。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1923年</p>
-</div></div><div class="timeline-item-content"><p>京汉铁路工人大罢工。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1922年</p>
-</div></div><div class="timeline-item-content"><p>第一次直奉战争爆发。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1921年</p>
-</div></div><div class="timeline-item-content"><p>中国共产党成立。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1919年</p>
-</div></div><div class="timeline-item-content"><p>中华革命党改组为中国国民党。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1919年</p>
-</div></div><div class="timeline-item-content"><p>“五四”运动爆发。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1917年</p>
-</div></div><div class="timeline-item-content"><p>张勋复辟，旋即失败。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1916年</p>
-</div></div><div class="timeline-item-content"><p>袁世凯死后，北洋军阀分裂，形成多个派系。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1915年</p>
-</div></div><div class="timeline-item-content"><p>日本提出灭亡中国的“二十一条”。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1914年</p>
-</div></div><div class="timeline-item-content"><p>袁世凯废除《中华民国临时约法》，公布《中华民国约法》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1913年</p>
-</div></div><div class="timeline-item-content"><p>“二次革命”爆发，以失败告终。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1912年</p>
-</div></div><div class="timeline-item-content"><p>南京临时政府成立，溥仪退位，清亡。孙中山就任临时大总统，定国号为中华民国。</p>
-</div></div></div>
-
-
-
-
-<div class="timeline gray"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>清朝（1636年—1912年）</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>中国历史上最后一个封建王朝，共传十二帝，从皇太极改国号为清开始，国祚276年。从努尔哈赤建立后金政权起，总计296年。从清兵入关，建立全国性政权算起为268年。</strong></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1911年</p>
-</div></div><div class="timeline-item-content"><p>辛亥革命。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1911年</p>
-</div></div><div class="timeline-item-content"><p>四川保路运动爆发。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1905年</p>
-</div></div><div class="timeline-item-content"><p>清廷废除科举考试制度。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1901年</p>
-</div></div><div class="timeline-item-content"><p>清廷与俄、英、美、日、德、法、意、奥、比、西、荷等十一国签订《辛丑条约》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1900年</p>
-</div></div><div class="timeline-item-content"><p>由英国海军上将西摩尔统率的八国联军进犯北京。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1898年</p>
-</div></div><div class="timeline-item-content"><p>光绪帝下“明定国是”诏书，戊戌变法开始。八月初六（9月21日），慈禧幽禁光绪帝于瀛台，百日维新失败。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1894年</p>
-</div></div><div class="timeline-item-content"><p>中日甲午战争爆发。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1888年</p>
-</div></div><div class="timeline-item-content"><p>北洋海军建成，以丁汝昌为提督，林泰曾、刘步蟾为左、右翼总兵。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1885年</p>
-</div></div><div class="timeline-item-content"><p>清军取得谅山大捷，此后李鸿章和法国公使巴德诺在天津签订《中法新约》，中法战争结束。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1875年</p>
-</div></div><div class="timeline-item-content"><p>清廷以兵部侍郎郭嵩焘任出使英国钦差大臣，为中国正式派遣驻外使节的开始。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1872年</p>
-</div></div><div class="timeline-item-content"><p>李鸿章在上海创办轮船招商局，侨商陈启源在广东南海创办继昌隆缫丝局，中国民族资本主义近代工业开始出现。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1864年</p>
-</div></div><div class="timeline-item-content"><p>天京为清军攻陷，太平天国起义失败。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1861年</p>
-</div></div><div class="timeline-item-content"><p>咸丰卒，慈禧发动政变，慈禧、慈安两太后垂帘听政，史称“辛酉政变”。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1860年</p>
-</div></div><div class="timeline-item-content"><p>英法联军攻陷北京，恭亲王与英、法、俄分别签订《北京条约》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1860年</p>
-</div></div><div class="timeline-item-content"><p>美国人华尔组成“洋枪队”，协助清廷镇压太平军。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1859年</p>
-</div></div><div class="timeline-item-content"><p>太平天国颁布《资政新篇》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1858年</p>
-</div></div><div class="timeline-item-content"><p>俄、美、英、法逼迫清廷相继签订《天津条约》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1857年</p>
-</div></div><div class="timeline-item-content"><p>石达开受洪秀全猜忌，率众自天京出走。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1856年</p>
-</div></div><div class="timeline-item-content"><p>英国借口“亚罗号事件”，挑起第二次鸦片战争。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1856年</p>
-</div></div><div class="timeline-item-content"><p>太平天国发生天京事变。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1855年</p>
-</div></div><div class="timeline-item-content"><p>太平军北伐失败，主将林凤祥、李开芳牺牲。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1853年</p>
-</div></div><div class="timeline-item-content"><p>太平天国颁布《天朝田亩制度》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1853年</p>
-</div></div><div class="timeline-item-content"><p>太平军沿长江东下，占领南京，定为首都，改称天京。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1851年</p>
-</div></div><div class="timeline-item-content"><p>太平天国起义爆发。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1845年</p>
-</div></div><div class="timeline-item-content"><p>英国驻沪领事与上海道台订立《上海租地章程》，是为外国侵略者在中国设立租界的开始。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1844年</p>
-</div></div><div class="timeline-item-content"><p>清廷被迫先后签订中美《望厦条约》、中法《黄埔条约》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1842年</p>
-</div></div><div class="timeline-item-content"><p>清廷被迫与英国签订《南京条约》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1840年</p>
-</div></div><div class="timeline-item-content"><p>鸦片战争爆发。清廷命琦善为钦差大臣，赴广州与英谈判，林则徐被革职。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1839年</p>
-</div></div><div class="timeline-item-content"><p>林则徐在虎门海滩销毁收缴的鸦片。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1833年</p>
-</div></div><div class="timeline-item-content"><p>清廷定洋银与纹银使用条例。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1830年</p>
-</div></div><div class="timeline-item-content"><p>小说家李汝珍约于此年去世，著有长篇小说《镜花缘》。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1829年</p>
-</div></div><div class="timeline-item-content"><p>洋钱、鸦片为害日甚，道光帝命严行查禁。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1826年</p>
-</div></div><div class="timeline-item-content"><p>贺长龄、魏源等编《皇朝经世文编》成书，120卷，搜录重要史料。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1825年</p>
-</div></div><div class="timeline-item-content"><p>《西夏书事》刊行，吴广成辑唐以来诸史、文集和野史有关西夏史事，以编年体成书。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1824年</p>
-</div></div><div class="timeline-item-content"><p>林则徐综办江浙水利。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1823年</p>
-</div></div><div class="timeline-item-content"><p>医学家陈念祖去世，著作颇丰，以《医学三字经》广为流传。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1822年</p>
-</div></div><div class="timeline-item-content"><p>清廷定例禁止银两出洋。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1821年</p>
-</div></div><div class="timeline-item-content"><p>清廷重申禁烟令，严禁在澳门、黄埔囤放和售卖鸦片。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1814年</p>
-</div></div><div class="timeline-item-content"><p>史学家赵翼去世，著有《廿二史札记》《皇朝武功纪盛》等。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1814年</p>
-</div></div><div class="timeline-item-content"><p>纂辑《全唐文》告成，全书1000卷，收入作家3000多人，作品18000多篇。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1813年</p>
-</div></div><div class="timeline-item-content"><p>林清率领的起义军攻入紫禁城，旋即失败。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1795年</p>
-</div></div><div class="timeline-item-content"><p>乾隆帝立皇十五子颙琰为皇太子，定明年继承皇位，改元嘉庆。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1793年</p>
-</div></div><div class="timeline-item-content"><p>乾隆帝在热河行宫接见英国马戛尔尼使团。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1785年</p>
-</div></div><div class="timeline-item-content"><p>乾隆帝于乾清宫设“千叟宴”，60岁以上老人入宴者达3000人。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1784年</p>
-</div></div><div class="timeline-item-content"><p>美国商船“中国皇后”号从纽约出发，绕道非洲好望角，驶抵广州。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1782年</p>
-</div></div><div class="timeline-item-content"><p>第一部《四库全书》修成。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1776年</p>
-</div></div><div class="timeline-item-content"><p>大金川索诺木出降，大小金川之役结束。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1771年</p>
-</div></div><div class="timeline-item-content"><p>土尔扈特部在首领渥巴锡率领下，长途跋涉，从沙俄重返祖国。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1762年</p>
-</div></div><div class="timeline-item-content"><p>清廷设伊犁将军，总统新疆南北两路事务。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1747年</p>
-</div></div><div class="timeline-item-content"><p>大金川土司沙罗奔举兵反，清廷派重兵平叛，两年后平定。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1735年</p>
-</div></div><div class="timeline-item-content"><p>清世宗雍正帝去世，子弘历继位，是为清高宗，改元乾隆。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1729年</p>
-</div></div><div class="timeline-item-content"><p>因西北用兵，设军机房，后改为军机处。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1661年</p>
-</div></div><div class="timeline-item-content"><p>郑成功率军驱逐荷兰殖民者，收复台湾。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1655年</p>
-</div></div><div class="timeline-item-content"><p>清世祖顺治帝于内十三衙门立铁牌，严禁太监干政。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1644年</p>
-</div></div><div class="timeline-item-content"><p>李自成率大顺军攻占北京，明崇祯帝自缢，明亡。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1641年</p>
-</div></div><div class="timeline-item-content"><p>李自成起义军攻入洛阳，杀明福王朱常洵。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1637年</p>
-</div></div><div class="timeline-item-content"><p>宋应星所著《天工开物》刊行。</p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>1636年</p>
-</div></div><div class="timeline-item-content"><p>皇太极即帝位，改国号为清。</p>
-</div></div></div>
-
-
-
-<div class="timeline purple"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>明朝（1368年―1644年）</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"></div></div><div class="timeline-item-content"><p><strong>是一个由汉族建立的大一统王朝，共传十六帝，享国二百七十六年。</strong></p>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-01</p>
-</div></div><div class="timeline-item-content"><p>12月1日 xxxx</p>
-</div></div></div>]]></content>
-  </entry>
-  <entry>
     <title>新闻</title>
     <url>/news/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2822,21 +2822,6 @@ function startClock() {
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>数码</title>
-    <url>/news/digital/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>时尚</title>
     <url>/news/fashion/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2852,8 +2837,8 @@ function startClock() {
 <script type="text/javascript" src="/js/news/fashion.js"></script>]]></content>
   </entry>
   <entry>
-    <title>头条</title>
-    <url>/news/front/index.html</url>
+    <title>数码</title>
+    <url>/news/digital/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
 <button id="load-more-button">加载更多</button>
 <div id="error-container" style="display:none; color:red;"></div>
@@ -2864,7 +2849,7 @@ function startClock() {
         <button id="back-to-top">回到顶部</button>
     </div>
 </div>
-<script type="text/javascript" src="/js/news/front.js"></script>]]></content>
+<script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
   </entry>
   <entry>
     <title>财经</title>
@@ -2895,6 +2880,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/game.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>头条</title>
+    <url>/news/front/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/front.js"></script>]]></content>
   </entry>
   <entry>
     <title>健康</title>
@@ -2942,6 +2942,21 @@ function startClock() {
 <script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
   </entry>
   <entry>
+    <title>体育</title>
+    <url>/news/physical/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
+  </entry>
+  <entry>
     <title>娱乐</title>
     <url>/news/recreation/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2970,21 +2985,6 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/science.js"></script>]]></content>
-  </entry>
-  <entry>
-    <title>体育</title>
-    <url>/news/physical/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
   </entry>
   <entry>
     <title>旅游</title>
