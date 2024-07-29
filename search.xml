@@ -2685,23 +2685,6 @@
 </div></div></div>]]></content>
   </entry>
   <entry>
-    <title>新闻</title>
-    <url>/news/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-
-<script type="text/javascript" src="/js/news/news.js"></script>
-]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/js/custom.js</url>
     <content><![CDATA[// custom.js
@@ -2812,6 +2795,23 @@ function startClock() {
 });]]></content>
   </entry>
   <entry>
+    <title>新闻</title>
+    <url>/news/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/news/news.js"></script>
+]]></content>
+  </entry>
+  <entry>
     <title>schedule</title>
     <url>/schedule/index.html</url>
     <content><![CDATA[]]></content>
@@ -2852,21 +2852,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/fashion.js"></script>]]></content>
   </entry>
   <entry>
-    <title>财经</title>
-    <url>/news/finance/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/finance.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>头条</title>
     <url>/news/front/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2880,6 +2865,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/front.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>财经</title>
+    <url>/news/finance/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/finance.js"></script>]]></content>
   </entry>
   <entry>
     <title>游戏</title>
@@ -2897,6 +2897,21 @@ function startClock() {
 <script type="text/javascript" src="/js/news/game.js"></script>]]></content>
   </entry>
   <entry>
+    <title>军事</title>
+    <url>/news/military/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/military.js"></script>]]></content>
+  </entry>
+  <entry>
     <title>健康</title>
     <url>/news/health/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2912,8 +2927,8 @@ function startClock() {
 <script type="text/javascript" src="/js/news/health.js"></script>]]></content>
   </entry>
   <entry>
-    <title>军事</title>
-    <url>/news/military/index.html</url>
+    <title>娱乐</title>
+    <url>/news/recreation/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
 <button id="load-more-button">加载更多</button>
 <div id="error-container" style="display:none; color:red;"></div>
@@ -2924,7 +2939,7 @@ function startClock() {
         <button id="back-to-top">回到顶部</button>
     </div>
 </div>
-<script type="text/javascript" src="/js/news/military.js"></script>]]></content>
+<script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
   </entry>
   <entry>
     <title>体育</title>
@@ -2957,21 +2972,6 @@ function startClock() {
 <script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
   </entry>
   <entry>
-    <title>娱乐</title>
-    <url>/news/recreation/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>科技</title>
     <url>/news/science/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2985,6 +2985,21 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/science.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>旅游</title>
+    <url>/news/travel/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/travel.js"></script>]]></content>
   </entry>
   <entry>
     <title>视频</title>
@@ -3002,21 +3017,6 @@ function startClock() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/video.js"></script>]]></content>
-  </entry>
-  <entry>
-    <title>旅游</title>
-    <url>/news/travel/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/travel.js"></script>]]></content>
   </entry>
   <entry>
     <title>精选</title>
