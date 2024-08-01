@@ -268,7 +268,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-08-01 11:18:32 / 修改时间：15:12:51" itemprop="dateCreated datePublished" datetime="2024-08-01T11:18:32+08:00">2024-08-01</time>
+      <time title="创建时间：2024-08-01 11:18:32 / 修改时间：15:21:53" itemprop="dateCreated datePublished" datetime="2024-08-01T11:18:32+08:00">2024-08-01</time>
     </span>
 
   
@@ -291,6 +291,7 @@
         width: 100%; /* 使图表宽度自适应容器 */
         height: 400px; /* 固定高度或使用其他适合的值 */
         max-width: 100%; /* 最大宽度为 100% */
+        max-height: 100vh; /* 最大高度为视口高度 */
     }
 
 <pre><code>/* 控制下拉框的宽度 */
@@ -389,7 +390,7 @@
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: true, // 确保保持纵横比
+                maintainAspectRatio: false, // 允许图表适应容器大小
                 plugins: {
                     legend: {
                         position: 'top',
