@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #c9060e;
+    background: #ffff6c;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2827,6 +2827,24 @@ header.header {
   font-size: 0.9em;
   color: inherit;
   vertical-align: middle;
+}
+/* 确保 Canvas 元素可以自适应大小 */
+#stock-chart {
+  width: 100%; /* 使图表宽度自适应容器 */
+  height: 400px; /* 固定高度或使用其他适合的值 */
+  max-width: 100%; /* 最大宽度为 100% */
+}
+/* 控制下拉框的宽度 */
+#controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#chart-type {
+  width: 100%;
+  max-width: 300px; /* 最大宽度，适应不同设备 */
+  margin-top: 10px;
 }
 .timeline {
   margin: 0 0 20px 10px;

@@ -268,7 +268,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-08-01 11:18:32 / 修改时间：15:21:53" itemprop="dateCreated datePublished" datetime="2024-08-01T11:18:32+08:00">2024-08-01</time>
+      <time title="创建时间：2024-08-01 11:18:32 / 修改时间：15:28:24" itemprop="dateCreated datePublished" datetime="2024-08-01T11:18:32+08:00">2024-08-01</time>
     </span>
 
   
@@ -285,30 +285,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stock Chart</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-    /* 确保 Canvas 元素可以自适应大小 */
-    #stock-chart {
-        width: 100%; /* 使图表宽度自适应容器 */
-        height: 400px; /* 固定高度或使用其他适合的值 */
-        max-width: 100%; /* 最大宽度为 100% */
-        max-height: 100vh; /* 最大高度为视口高度 */
-    }
 
-<pre><code>/* 控制下拉框的宽度 */
-#controls &#123;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-&#125;
 
-#chart-type &#123;
-    width: 100%;
-    max-width: 300px; /* 最大宽度，适应不同设备 */
-    margin-top: 10px;
-&#125;
-</code></pre>
-<p></style><p></p>
+
 <div id="controls">
     <label for="chart-type">Select Chart Type:</label>
     <select id="chart-type">
@@ -390,7 +369,7 @@
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false, // 允许图表适应容器大小
+                maintainAspectRatio: true, // 确保保持纵横比
                 plugins: {
                     legend: {
                         position: 'top',
