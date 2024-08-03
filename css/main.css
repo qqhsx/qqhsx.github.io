@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffffc7;
+    background: #ffffed;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2827,6 +2827,62 @@ header.header {
   font-size: 0.9em;
   color: inherit;
   vertical-align: middle;
+}
+/* 默认样式，适用于大屏幕（桌面设备） */
+#selected-data-box {
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 10px 10px; /* 上下为 0px，左右为 5px */
+  width: 200px; /* 调整宽度 */
+  line-height: 1; /* 设置行距，1.5 倍字体大小 */
+}
+#selected-data-box strong {
+  display: block;
+  font-size: 24px;
+  color: #333;
+}
+#selected-data-box .stock-name {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6; /* 设置股票名称行距 */
+}
+#selected-data-box .price-change-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+#selected-data-box .price {
+  font-size: 20px;
+  color: #28a745;
+  font-weight: bold;
+}
+#selected-data-box .change-rate {
+  font-size: 20px;
+  color: #dc3545;
+  font-weight: bold;
+}
+/* 媒体查询：调整手机屏幕上的样式 */
+@media (max-width: 600px) {
+  #selected-data-box {
+    width: 100%; /* 方盒宽度调整为100% */
+    min-height: 150px; /* 适当减小最小高度 */
+    padding: 15px; /* 调整内边距 */
+    font-size: 16px; /* 调整字体大小以适应小屏幕 */
+  }
+  #selected-data-box strong {
+    font-size: 20px; /* 调整字体大小 */
+  }
+  #selected-data-box .stock-name {
+    font-size: 16px; /* 调整字体大小 */
+  }
+  #selected-data-box .price-change-container {
+    flex-direction: column; /* 在手机屏幕上垂直布局 */
+    align-items: flex-start; /* 左对齐 */
+  }
+  #selected-data-box .price,
+  #selected-data-box .change-rate {
+    font-size: 18px; /* 调整字体大小 */
+  }
 }
 .timeline {
   margin: 0 0 20px 10px;
