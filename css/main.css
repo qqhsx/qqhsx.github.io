@@ -1255,7 +1255,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffffed;
+    background: #12421f;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2830,59 +2830,57 @@ header.header {
 }
 /* 默认样式，适用于大屏幕（桌面设备） */
 #selected-data-box {
-  border: 2px solid #007bff;
+  border: 1px solid #d3d3d3; /* 修改边框颜色 */
   border-radius: 10px;
-  padding: 10px 10px; /* 上下为 0px，左右为 5px */
-  width: 200px; /* 调整宽度 */
-  line-height: 1; /* 设置行距，1.5 倍字体大小 */
+  padding: 10px; /* 上下左右均设置相同 */
+  width: 200px;
+  min-height: 100px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直居中内容 */
+  align-items: flex-start; /* 水平对齐开始 */
 }
+/* 标题样式 */
 #selected-data-box strong {
   display: block;
-  font-size: 24px;
+  font-size: 20px;
   color: #333;
+  margin: 0 0 5px 0; /* 下边距 */
+  line-height: 1.2; /* 设置行高 */
 }
+/* 股票名称样式 */
 #selected-data-box .stock-name {
   font-size: 16px;
   color: #555;
-  line-height: 1.6; /* 设置股票名称行距 */
+  line-height: 1.2;
+  margin-bottom: 10px;
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏超出部分 */
+  text-overflow: ellipsis; /* 超出部分显示省略号 */
+  width: 100%; /* 确保宽度为父容器宽度 */
 }
+/* 价格和涨跌幅的容器样式 */
 #selected-data-box .price-change-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  width: 100%; /* 使容器宽度适应方盒宽度 */
+  line-height: 1.2; /* 设置价格和涨跌幅行距 */
 }
+/* 价格样式 */
 #selected-data-box .price {
   font-size: 20px;
   color: #28a745;
   font-weight: bold;
 }
+/* 涨跌幅样式 */
 #selected-data-box .change-rate {
   font-size: 20px;
   color: #dc3545;
   font-weight: bold;
-}
-/* 媒体查询：调整手机屏幕上的样式 */
-@media (max-width: 600px) {
-  #selected-data-box {
-    width: 100%; /* 方盒宽度调整为100% */
-    min-height: 150px; /* 适当减小最小高度 */
-    padding: 15px; /* 调整内边距 */
-    font-size: 16px; /* 调整字体大小以适应小屏幕 */
-  }
-  #selected-data-box strong {
-    font-size: 20px; /* 调整字体大小 */
-  }
-  #selected-data-box .stock-name {
-    font-size: 16px; /* 调整字体大小 */
-  }
-  #selected-data-box .price-change-container {
-    flex-direction: column; /* 在手机屏幕上垂直布局 */
-    align-items: flex-start; /* 左对齐 */
-  }
-  #selected-data-box .price,
-  #selected-data-box .change-rate {
-    font-size: 18px; /* 调整字体大小 */
-  }
 }
 .timeline {
   margin: 0 0 20px 10px;
