@@ -1,18 +1,38 @@
-/* 容器样式，确保所有框在一行内排列 */
+/* 外层滚动容器样式 */
+#scroll-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* 隐藏默认滚动条 */
+  padding: 10px; /* 可选的内边距 */
+  box-sizing: border-box;
+}
+/* 股票数据容器样式 */
 #stock-data {
   display: flex;
   flex-wrap: nowrap; /* 不允许换行 */
-  gap: 10px; /* 框之间的间距，可以调整为适合的值 */
-  justify-content: flex-start; /* 从左向右排列，并尽量靠近左侧 */
-  padding: 10px; /* 可选的内边距，根据需要调整 */
+  gap: 10px; /* 框之间的间距 */
+  justify-content: flex-start; /* 从左向右排列 */
+  overflow-x: scroll; /* 允许横向滚动 */
+  white-space: nowrap; /* 确保子元素在一行内排列 */
+  padding: 0; /* 移除内边距 */
+  margin: 0; /* 移除外边距 */
   box-sizing: border-box;
+}
+/* 隐藏滚动条 */
+#stock-data::-webkit-scrollbar {
+  display: none; /* Chrome, Safari 和 Opera */
+}
+#stock-data {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 和 Edge */
 }
 /* 每个框的样式 */
 .selected-data-box {
   border: 1px solid #d3d3d3; /* 修改边框颜色 */
   border-radius: 10px;
   padding: 10px; /* 上下左右均设置相同 */
-  width: 200px; /* 可以调整宽度，根据需要 */
+  width: 200px; /* 可以调整宽度 */
   min-height: 100px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -60,4 +80,26 @@
   font-size: 20px;
   color: #dc3545;
   font-weight: bold;
+}
+/* 箭头按钮样式 */
+.scroll-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; /* 确保按钮在内容之上 */
+}
+/* 左右箭头位置 */
+#scroll-left {
+  left: 10px;
+}
+#scroll-right {
+  right: 10px;
 }

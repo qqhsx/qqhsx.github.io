@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     const stockName = {
                         'zs_000001': '上证综合指数',
                         'zs_000016': '上证50',
-                        'zs_399300': '沪深300'
+                        'zs_399300': '沪深300',
+                        'zs_399106': '深证综指',
+                        'zs_399005': '中小100',
+						'zs_399006': '创业板',
+                        'zs_399001': '深证成指' // 新增的股票名称
                     }[stockCode] || '未知股票'; // 根据股票代码设置名称
 
                     // 选择需要显示的数据
@@ -42,8 +46,25 @@ document.addEventListener('DOMContentLoaded', function() {
         stockDataContainer.innerHTML = selectedDataHtml;
     };
 
-    // 使用有效的接口进行测试
+    // 使用有效的接口进行测试，包含新股票代码
     const script = document.createElement('script');
-    script.src = 'https://q.stock.sohu.com/hisHq?code=zs_000016,zs_000001,zs_399300&stat=1&order=D&period=d&callback=historySearchHandler&rt=jsonp';
+    script.src = 'https://q.stock.sohu.com/hisHq?code=zs_000016,zs_000001,zs_399300,zs_399001,zs_399106,zs_399005,zs_399006&stat=1&order=D&period=d&callback=historySearchHandler&rt=jsonp';
     document.body.appendChild(script);
+
+    // 获取按钮和容器
+    const scrollLeftButton = document.getElementById('scroll-left');
+    const scrollRightButton = document.getElementById('scroll-right');
+    const stockDataContainer = document.getElementById('stock-data');
+
+    // 设置滚动距离
+    const scrollAmount = 200;
+
+    // 绑定箭头按钮点击事件
+    scrollLeftButton.addEventListener('click', () => {
+        stockDataContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    scrollRightButton.addEventListener('click', () => {
+        stockDataContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
 });
