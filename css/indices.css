@@ -83,18 +83,33 @@
 }
 /* 箭头按钮样式 */
 .scroll-button {
-  background-color: #007bff;
-  color: #fff;
+  background: none; /* 去掉背景 */
+  color: #007bff; /* 箭头颜色 */
   border: none;
-  border-radius: 5px;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
+  font-size: 24px; /* 箭头大小 */
   cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1; /* 确保按钮在内容之上 */
+  transition: color 0.3s, outline 0.3s; /* 动画过渡效果 */
+}
+/* 鼠标悬停时的圆圈效果 */
+.scroll-button::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  background: rgba(0,123,255,0.2); /* 圆圈背景颜色 */
+  top: -10%;
+  left: -10%;
+  opacity: 0;
+  transition: opacity 0.3s; /* 动画过渡效果 */
+  z-index: -1; /* 确保圆圈在按钮后面 */
+}
+.scroll-button:hover::before {
+  opacity: 1;
 }
 /* 左右箭头位置 */
 #scroll-left {
