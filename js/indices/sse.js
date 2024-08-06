@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let selectedDataHtml = `
             <div id="selected-data-box">
                 <strong>000001</strong>
-                <div class="stock-name">上证综合指数数数数数数数数数数数数数数数数数数数</div>
+                <div class="stock-name">上证综合指数</div>
                 <div class="price-change-container">
         `;
 
