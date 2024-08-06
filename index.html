@@ -204,14 +204,76 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <div style="display: flex; align-items: center;">
-    <i class="fa fa-bullhorn fa-shake" style="font-size: 22px; margin-right: 10px;"></i>
-    <span class="announcement-title" style="font-size: 22px; margin-right: 10px;">公告</span>
-    <div style="border: 2px solid #d3d3d3; border-radius: 8px; padding: 0 12px;  color: #000; font-weight: bold; line-height: 22px; display: flex; align-items: center;">
-        -
-        <div id="holiday-info">加载中...</div>
+          <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .scroll-container {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1; /* 使滚动容器占据剩余空间 */
+        border: 2px solid #d3d3d3;
+        border-radius: 8px;
+        padding: 0 12px;
+        background-color: #f9f9f9; /* 背景色 */
+        box-sizing: border-box;
+    }
+
+    .scroll-content {
+        display: inline-block;
+        padding: 0 12px;
+        white-space: nowrap;
+        animation: scroll-left 20s linear infinite;
+    }
+
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .fa {
+        font-size: 22px;
+        margin-right: 10px;
+    }
+
+    .announcement-title {
+        font-size: 22px;
+        margin-right: 10px;
+    }
+</style>
+
+<div class="container">
+    <i class="fa fa-bullhorn fa-shake"></i>
+    <span class="announcement-title">公告</span>
+    <div class="scroll-container">
+        <div class="scroll-content">
+            ----------------------------------------- <span id="holiday-info">加载中...</span>
+        </div>
     </div>
 </div>
+
+
+
+
+
+
 
 
 <div id="info-container" style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">  
