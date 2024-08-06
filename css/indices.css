@@ -1,9 +1,18 @@
-/* 默认样式，适用于大屏幕（桌面设备） */
-#selected-data-box {
+/* 容器样式，确保所有框在一行内排列 */
+#stock-data {
+  display: flex;
+  flex-wrap: nowrap; /* 不允许换行 */
+  gap: 10px; /* 框之间的间距，可以调整为适合的值 */
+  justify-content: flex-start; /* 从左向右排列，并尽量靠近左侧 */
+  padding: 10px; /* 可选的内边距，根据需要调整 */
+  box-sizing: border-box;
+}
+/* 每个框的样式 */
+.selected-data-box {
   border: 1px solid #d3d3d3; /* 修改边框颜色 */
   border-radius: 10px;
   padding: 10px; /* 上下左右均设置相同 */
-  width: 200px;
+  width: 200px; /* 可以调整宽度，根据需要 */
   min-height: 100px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -15,7 +24,7 @@
   align-items: flex-start; /* 水平对齐开始 */
 }
 /* 标题样式 */
-#selected-data-box strong {
+.selected-data-box strong {
   display: block;
   font-size: 20px;
   color: #333;
@@ -23,7 +32,7 @@
   line-height: 1.2; /* 设置行高 */
 }
 /* 股票名称样式 */
-#selected-data-box .stock-name {
+.selected-data-box .stock-name {
   font-size: 16px;
   color: #555;
   line-height: 1.2;
@@ -34,20 +43,20 @@
   width: 100%; /* 确保宽度为父容器宽度 */
 }
 /* 价格和涨跌幅的容器样式 */
-#selected-data-box .price-change-container {
+.selected-data-box .price-change-container {
   display: flex;
   justify-content: space-between;
   width: 100%; /* 使容器宽度适应方盒宽度 */
   line-height: 1.2; /* 设置价格和涨跌幅行距 */
 }
 /* 价格样式 */
-#selected-data-box .price {
+.selected-data-box .price {
   font-size: 20px;
   color: #28a745;
   font-weight: bold;
 }
 /* 涨跌幅样式 */
-#selected-data-box .change-rate {
+.selected-data-box .change-rate {
   font-size: 20px;
   color: #dc3545;
   font-weight: bold;
