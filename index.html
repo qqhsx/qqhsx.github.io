@@ -218,7 +218,7 @@
         width: 100%;
         box-sizing: border-box;
     }
-
+    
     .scroll-container {
         display: flex;
         align-items: center;
@@ -229,14 +229,14 @@
         border-radius: 8px;
         padding: 0 12px;
     }
-
+    
     .scroll-content {
         display: inline-block;
         padding: 0 12px;
         white-space: nowrap;
         animation: scroll-left 20s linear infinite;
     }
-
+    
     @keyframes scroll-left {
         0% {
             transform: translateX(100%);
@@ -245,12 +245,12 @@
             transform: translateX(-100%);
         }
     }
-
+    
     .fa {
-
+    
         margin-right: 10px;
     }
-
+    
     .announcement-title {
         font-size: 22px;
         margin-right: 10px;
@@ -277,11 +277,10 @@
 <link rel="stylesheet" href="styles.css">
 
 <div id="scroll-container">
-    <button id="scroll-left" class="scroll-button">&#9664;</button>
+    <button id="scroll-left" class="scroll-button">≪</button>
     <div id="stock-data">
-        <!-- 股票数据框内容 -->
     </div>
-    <button id="scroll-right" class="scroll-button">&#9654;</button>
+    <button id="scroll-right" class="scroll-button">≫</button>
 </div>
 
 

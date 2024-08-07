@@ -17,14 +17,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     // 获取股票代码和名称
                     const stockCode = stock.code; // 股票代码
                     const stockName = {
-                        'zs_000001': '上证综合指数',
+                        'zs_000001': '上证指数',
                         'zs_000016': '上证50',
                         'zs_399300': '沪深300',
                         'zs_399106': '深证综指',
                         'zs_399005': '中小100',
-						'zs_399006': '创业板',
+                        'zs_399006': '创业板指',
+						'zs_899050': '北证50',
                         'zs_399001': '深证成指' // 新增的股票名称
                     }[stockCode] || '未知股票'; // 根据股票代码设置名称
+
+                    // 确定涨跌幅的颜色
+                    const changeRateClass = 涨跌幅.startsWith('-') ? 'down' : 'up';
 
                     // 选择需要显示的数据
                     const currentPrice = 当前价;
@@ -36,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="stock-name">${stockName}</div>
                             <div class="price-change-container">
                                 <div class="price">${currentPrice}</div>
-                                <div class="change-rate">${changeRate}</div>
+                                <div class="change-rate ${changeRateClass}">${changeRate}</div>
                             </div>
                         </div>
                     `;
@@ -48,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 使用有效的接口进行测试，包含新股票代码
     const script = document.createElement('script');
-    script.src = 'https://q.stock.sohu.com/hisHq?code=zs_000016,zs_000001,zs_399300,zs_399001,zs_399106,zs_399005,zs_399006&stat=1&order=D&period=d&callback=historySearchHandler&rt=jsonp';
+    script.src = 'https://q.stock.sohu.com/hisHq?code=zs_000001,zs_399001,zs_899050,zs_399006,zs_399300,zs_000016,zs_399106,zs_399005&stat=1&order=D&period=d&callback=historySearchHandler&rt=jsonp';
     document.body.appendChild(script);
 
     // 获取按钮和容器

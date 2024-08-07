@@ -32,7 +32,7 @@
   border: 1px solid #d3d3d3; /* 修改边框颜色 */
   border-radius: 10px;
   padding: 10px; /* 上下左右均设置相同 */
-  width: 200px; /* 可以调整宽度 */
+  flex: 0 0 16%; /* 设置固定宽度并防止缩放 */
   min-height: 100px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -72,21 +72,27 @@
 /* 价格样式 */
 .selected-data-box .price {
   font-size: 20px;
-  color: #28a745;
   font-weight: bold;
 }
 /* 涨跌幅样式 */
 .selected-data-box .change-rate {
   font-size: 20px;
-  color: #dc3545;
   font-weight: bold;
+}
+/* 当涨跌幅为正值时（上涨） */
+.selected-data-box .change-rate.up {
+  color: #28a745; /* 绿色 */
+}
+/* 当涨跌幅为负值时（下跌） */
+.selected-data-box .change-rate.down {
+  color: #dc3545; /* 红色 */
 }
 /* 箭头按钮样式 */
 .scroll-button {
   background: none; /* 去掉背景 */
-  color: #007bff; /* 箭头颜色 */
+  color: #333; /* 箭头颜色 */
   border: none;
-  font-size: 24px; /* 箭头大小 */
+  font-size: 34px; /* 箭头大小 */
   cursor: pointer;
   position: absolute;
   top: 50%;
