@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<div class="pdf-container" data-target="./1.pdf" data-height="500px"></div>
+
+
+<object data="./1.pdf" type="application/pdf" width="600" height="500">
+  <p>您的浏览器不支持 PDF 嵌入。您可以 <a href="./1.pdf">点击这里</a> 下载 PDF 文件。</p>
+</object>
+
+<embed src="./1.pdf" type="application/pdf" width="600" height="500">
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>newpost</title>
     <url>/newpost/</url>
     <content><![CDATA[<style>
@@ -97,34 +125,6 @@
 
 
 
-
-
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<div class="pdf-container" data-target="./1.pdf" data-height="500px"></div>
-
-
-<object data="./1.pdf" type="application/pdf" width="600" height="500">
-  <p>您的浏览器不支持 PDF 嵌入。您可以 <a href="./1.pdf">点击这里</a> 下载 PDF 文件。</p>
-</object>
-
-<embed src="./1.pdf" type="application/pdf" width="600" height="500">
 
 
 ]]></content>
@@ -428,182 +428,6 @@
       </tags>
   </entry>
   <entry>
-    <title>保障性住房</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E4%BF%9D%E9%9A%9C%E6%80%A7%E4%BD%8F%E6%88%BF/</url>
-    <content><![CDATA[<p>保障性住房是中国政府为了解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的一系列住房政策和项目。保障性住房主要包括以下几种类型：</p>
-<span id="more"></span>
-
-<h3 id="1-经济适用房"><a href="#1-经济适用房" class="headerlink" title="1. 经济适用房"></a>1. 经济适用房</h3><p>经济适用房是指政府提供政策支持、限定建设标准和销售价格，面向城镇中低收入家庭销售的普通商品住房。其主要目的是为了帮助中低收入家庭解决住房问题。以下是对经济适用房的详细描述：</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p><strong>价格相对较低</strong>：<br>经济适用房的售价通常低于同地段的商品房市场价格，因为政府对土地出让金、税费等方面给予了一定的优惠和减免。因此，经济适用房的价格相对较低，使得中低收入家庭能够负担得起。</p>
-<p><strong>建设标准不高</strong>：<br>经济适用房的建设标准相对普通商品房较低，主要体现在以下几个方面：</p>
-<ul>
-<li><strong>户型设计</strong>：经济适用房一般以小户型为主，面积较小，以满足基本居住需求。例如，一般经济适用房的建筑面积在60-90平方米左右。</li>
-<li><strong>建筑材料和装修</strong>：经济适用房的建筑材料和装修标准较为普通，不追求豪华和高档。通常采用经济实惠的材料，内部装修也较为简洁，满足基本生活需求即可。</li>
-<li><strong>配套设施</strong>：经济适用房的社区配套设施相对简单，可能不如普通商品房那样齐全，如高档小区的会所、游泳池等设施较少。</li>
-</ul>
-<p><strong>主要满足基本居住需求</strong>：<br>经济适用房的设计和建设旨在满足中低收入家庭的基本居住需求，提供一个安全、卫生、适宜居住的环境，而不追求奢华和高档配置。</p>
-<h3 id="申请条件"><a href="#申请条件" class="headerlink" title="申请条件"></a>申请条件</h3><p><strong>户籍要求</strong>：<br>申请者一般需要具备当地城镇户籍，即申请者必须是申请地的正式居民。</p>
-<p><strong>收入和资产标准</strong>：<br>家庭收入和资产需符合当地政府规定的中低收入标准。具体标准由各地政府根据当地经济发展水平和居民收入水平确定，一般要求家庭总收入在一定限额以下，家庭总资产不超过规定的上限。</p>
-<p><strong>住房情况</strong>：<br>申请者家庭无自有住房或现有住房面积低于规定的标准。例如，有些城市规定人均住房面积低于15平方米的家庭可以申请经济适用房。</p>
-<h3 id="购房方式"><a href="#购房方式" class="headerlink" title="购房方式"></a>购房方式</h3><p><strong>申请和审核</strong>：<br>符合条件的家庭需提交申请，经过相关部门的审核后，确定其购房资格。审核内容包括申请者的收入、资产、户籍、现有住房等情况。</p>
-<p><strong>购买价格</strong>：<br>通过审核的家庭可以以低于市场价的价格购买经济适用房。价格由政府根据建设成本和政策优惠确定，通常比同地段商品房市场价低20%-50%。</p>
-<p><strong>产权限制</strong>：<br>经济适用房的产权受限，一般在购买后一定年限内不能上市交易。各地的规定有所不同，通常是5年或更长时间。例如，北京市规定，经济适用房在购买满5年后，方可上市交易，但在交易时需向政府缴纳一定比例的土地收益金。</p>
-<h3 id="2-廉租房"><a href="#2-廉租房" class="headerlink" title="2. 廉租房"></a>2. 廉租房</h3><p><strong>廉租房</strong>是政府为城市低收入住房困难家庭提供的租金低廉的保障性住房。</p>
-<ul>
-<li><strong>特点</strong>：租金低廉，由政府或政府委托的单位管理和运营。</li>
-<li><strong>申请条件</strong>：主要面向城镇最低收入家庭，申请者需具备本地户籍，家庭收入和资产低于最低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
-<li><strong>租赁方式</strong>：通过申请和审核后，家庭可以以较低的租金租赁廉租房，租赁期限一般为1-3年，可续租。</li>
-</ul>
-<h3 id="3-公租房"><a href="#3-公租房" class="headerlink" title="3. 公租房"></a>3. 公租房</h3><p><strong>公租房</strong>是政府为解决中低收入家庭、新就业人员和外来务工人员住房困难问题而提供的租金较低的保障性住房。</p>
-<ul>
-<li><strong>特点</strong>：租金较低，面向更广泛的人群，包括中低收入家庭、新就业人员和外来务工人员。</li>
-<li><strong>申请条件</strong>：申请者需具备本地户籍或符合规定的外来务工人员，新就业人员需就业年限不超过一定年限（如5年），家庭收入和资产符合规定标准。</li>
-<li><strong>租赁方式</strong>：通过申请和审核后，家庭或个人可以以较低的租金租赁公租房，租赁期限一般为1-5年，可续租。</li>
-</ul>
-<h3 id="4-限价房"><a href="#4-限价房" class="headerlink" title="4. 限价房"></a>4. 限价房</h3><p><strong>限价房</strong>是政府限定销售价格、限定销售对象的普通商品住房，主要面向中低收入家庭。</p>
-<ul>
-<li><strong>特点</strong>：价格受政府限制，低于市场价，建设标准较高，接近普通商品房。</li>
-<li><strong>申请条件</strong>：申请者需具备本地户籍，家庭收入和资产符合中低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
-<li><strong>购房方式</strong>：符合条件的家庭通过申请和审核后，以低于市场价的价格购买限价房。</li>
-</ul>
-<h3 id="5-棚户区改造安置房"><a href="#5-棚户区改造安置房" class="headerlink" title="5. 棚户区改造安置房"></a>5. 棚户区改造安置房</h3><p><strong>棚户区改造安置房</strong>是政府为改善棚户区居民居住条件而建设的住房，用于安置被拆迁的棚户区居民。</p>
-<ul>
-<li><strong>特点</strong>：<br>棚户区改造安置房的建设标准较高，配套设施齐全，环境和居住条件显著优于原棚户区。<br>棚户区改造项目由政府主导，建设资金主要来源于政府财政和政策性贷款。</li>
-<li><strong>申请条件</strong>：主要面向棚户区改造中被拆迁的居民，提供的安置房面积和标准根据原有住房情况和相关政策规定。</li>
-<li><strong>安置方式</strong>：居民通过棚户区改造项目得到安置房，可以是产权安置或租赁安置。</li>
-</ul>
-<h3 id="保障性住房的意义"><a href="#保障性住房的意义" class="headerlink" title="保障性住房的意义"></a>保障性住房的意义</h3><p>保障性住房的推出和实施，对于改善中低收入家庭的住房条件，缓解城市住房供需矛盾，促进社会和谐稳定具有重要意义。具体体现在以下几个方面：</p>
-<ol>
-<li><strong>提高居住质量</strong>：通过保障性住房建设，改善中低收入家庭的居住条件，提高居民的生活质量。</li>
-<li><strong>缓解住房压力</strong>：保障性住房为中低收入家庭提供了经济负担较轻的住房选择，缓解了住房压力。</li>
-<li><strong>促进社会公平</strong>：保障性住房政策有助于缩小收入差距，促进社会公平正义。</li>
-<li><strong>推动城市发展</strong>：通过棚户区改造等项目，改善城市面貌，提升城市综合竞争力。</li>
-</ol>
-<h3 id="时间轴："><a href="#时间轴：" class="headerlink" title="时间轴："></a>时间轴：</h3><p>中国保障性住房的发展经历了从无到有、从单一到多层次的过程。以下是主要事件的时间轴：</p>
-<h3 id="1-1998年-房改启动"><a href="#1-1998年-房改启动" class="headerlink" title="1. 1998年 房改启动"></a>1. 1998年 房改启动</h3><p><strong>1998年</strong>，国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，全面停止住房实物分配，实行住房分配货币化。此时，保障性住房的概念开始萌芽，主要是通过经济适用房来解决中低收入家庭的住房问题。</p>
-<h3 id="2-2004年-廉租房制度建立"><a href="#2-2004年-廉租房制度建立" class="headerlink" title="2. 2004年 廉租房制度建立"></a>2. 2004年 廉租房制度建立</h3><p><strong>2004年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，正式建立廉租住房制度。廉租房主要面向最低收入家庭，提供低廉的租金，帮助最困难的家庭解决住房问题。</p>
-<h3 id="3-2007年-保障性住房体系逐步完善"><a href="#3-2007年-保障性住房体系逐步完善" class="headerlink" title="3. 2007年 保障性住房体系逐步完善"></a>3. 2007年 保障性住房体系逐步完善</h3><p><strong>2007年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，提出建立经济适用房、廉租房、公租房等多层次的保障性住房体系。同年，住房和城乡建设部发布《关于加快发展经济适用住房的通知》，进一步明确经济适用房的建设标准和供应方式。</p>
-<h3 id="4-2010年-公租房政策出台"><a href="#4-2010年-公租房政策出台" class="headerlink" title="4. 2010年 公租房政策出台"></a>4. 2010年 公租房政策出台</h3><p><strong>2010年</strong>，国务院发布《关于加快发展公共租赁住房的指导意见》，明确提出发展公共租赁住房，解决中低收入家庭、新就业人员和外来务工人员的住房困难。公租房租金较低，面向更广泛的人群。</p>
-<h3 id="5-2011年-限价房政策推进"><a href="#5-2011年-限价房政策推进" class="headerlink" title="5. 2011年 限价房政策推进"></a>5. 2011年 限价房政策推进</h3><p><strong>2011年</strong>，北京市等地开始推广限价商品房政策，政府限定房价和销售对象，面向中低收入家庭销售。这些限价房价格低于市场价，旨在解决中低收入家庭的购房需求。</p>
-<h3 id="6-2013年-棚户区改造大规模推进"><a href="#6-2013年-棚户区改造大规模推进" class="headerlink" title="6. 2013年 棚户区改造大规模推进"></a>6. 2013年 棚户区改造大规模推进</h3><p><strong>2013年</strong>，国务院发布《关于加快棚户区改造工作的意见》，提出在全国范围内加快棚户区改造步伐，改善棚户区居民的居住条件。棚户区改造安置房逐步成为保障性住房的重要组成部分。</p>
-<h3 id="7-2015年-保障性住房建设力度加大"><a href="#7-2015年-保障性住房建设力度加大" class="headerlink" title="7. 2015年 保障性住房建设力度加大"></a>7. 2015年 保障性住房建设力度加大</h3><p><strong>2015年</strong>，在“十三五”规划中，国家提出要大力发展保障性住房，加大棚户区改造力度，确保每个家庭住有所居。各地纷纷加大保障性住房的建设力度。</p>
-<h3 id="8-2017年-长租公寓政策出台"><a href="#8-2017年-长租公寓政策出台" class="headerlink" title="8. 2017年 长租公寓政策出台"></a>8. 2017年 长租公寓政策出台</h3><p><strong>2017年</strong>，国务院办公厅发布《关于加快培育和发展住房租赁市场的若干意见》，提出要大力发展住房租赁市场，鼓励发展长租公寓。长租公寓成为解决新市民和青年人的住房问题的重要方式。</p>
-<h3 id="9-2020年-租购并举政策深化"><a href="#9-2020年-租购并举政策深化" class="headerlink" title="9. 2020年 租购并举政策深化"></a>9. 2020年 租购并举政策深化</h3><p><strong>2020年</strong>，中央经济工作会议提出要坚持“房住不炒”，深化租购并举的住房制度，进一步加大保障性住房的供应。政府开始探索更多形式的保障性住房，如共有产权房等，以满足不同层次的住房需求。</p>
-<h3 id="10-2022年-全面推进保障性租赁住房建设"><a href="#10-2022年-全面推进保障性租赁住房建设" class="headerlink" title="10. 2022年 全面推进保障性租赁住房建设"></a>10. 2022年 全面推进保障性租赁住房建设</h3><p><strong>2022年</strong>，国务院发布《关于进一步做好保障性租赁住房工作的意见》，明确提出要加大保障性租赁住房建设力度，缓解大城市住房供需矛盾，特别是新市民和青年人的住房困难问题。</p>
-<p>这些事件体现了中国政府在不同阶段对保障性住房的重视和推进，为改善中低收入家庭的居住条件、促进社会和谐稳定作出了重要贡献。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>保障性住房是中国政府为解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的重要政策措施。通过经济适用房、廉租房、公租房、限价房和棚户区改造安置房等多种形式，保障性住房有效地改善了中低收入家庭的居住条件，促进了社会和谐稳定和城市健康发展。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>保障性住房</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>债券</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E5%80%BA%E5%88%B8/</url>
-    <content><![CDATA[<h3 id="债券：理解债务的投资方式"><a href="#债券：理解债务的投资方式" class="headerlink" title="债券：理解债务的投资方式"></a>债券：理解债务的投资方式</h3><p>在金融世界中，债券是一种常见的投资工具，它为投资者提供了一种安全稳定的投资选择。让我们一起来了解一下什么是债券，以及如何购买债券以及它如何运作。</p>
-<span id="more"></span>
-
-<h4 id="什么是债券？"><a href="#什么是债券？" class="headerlink" title="什么是债券？"></a>什么是债券？</h4><p><strong>债券</strong>就像是一张借据或者是一种借出资金的“债务证明书”。简单来说，当你购买债券时，你其实就是在借钱给某个实体，比如政府、公司或者其他组织。这个实体承诺在未来某个时候偿还你的投资本金，并且在此期间向你支付利息作为回报。</p>
-<h4 id="如何购买债券？"><a href="#如何购买债券？" class="headerlink" title="如何购买债券？"></a>如何购买债券？</h4><p>购买债券通常有几种方式：</p>
-<ol>
-<li><p><strong>一级市场：</strong> 在债券发行的初期购买。这意味着你直接从发行者（比如政府或公司）那里购买债券。一级市场购买通常通过银行、证券公司或者经纪人进行。</p>
-</li>
-<li><p><strong>二级市场：</strong> 在债券已经发行并流通后购买。这时你是从其他投资者手中购买债券。二级市场的交易通常在证券交易所（如股票市场）进行，你可以通过证券账户和经纪人进行交易。</p>
-</li>
-<li><p><strong>债券基金：</strong> 如果你不想直接购买单个债券，可以考虑投资债券基金。债券基金由专业基金经理管理，他们会购买和管理多种债券，你可以通过购买基金份额来间接投资债券市场。</p>
-</li>
-</ol>
-<h4 id="不同类型的债券"><a href="#不同类型的债券" class="headerlink" title="不同类型的债券"></a>不同类型的债券</h4><p>债券有很多种类，其中包括：</p>
-<ul>
-<li><p><strong>政府债券（国债）：</strong> 由国家政府发行，用于筹集资金以支持政府项目和运作。政府债券通常被认为是最安全的债券形式，因为政府具有征税权和印钞权。</p>
-</li>
-<li><p><strong>公司债券：</strong> 由公司发行，用于扩展业务、投资新项目或偿还旧债务。公司债券的风险和收益取决于公司的信用评级和经营状况。</p>
-</li>
-<li><p><strong>地方政府债券：</strong> 由地方政府或政治实体发行，用于建设基础设施或提供公共服务。地方政府债券的偿还能力与该地区经济和治理能力相关。</p>
-</li>
-</ul>
-<h4 id="债券的优缺点"><a href="#债券的优缺点" class="headerlink" title="债券的优缺点"></a>债券的优缺点</h4><p><strong>优点：</strong></p>
-<ul>
-<li><strong>稳定收益：</strong> 债券通常提供稳定的利息收入，适合追求稳定收益的投资者。</li>
-<li><strong>资本保护：</strong> 如果投资的实体能够履行支付义务，债券投资的本金一般是有保护的。</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li><strong>利息风险：</strong><br>市场利率上升可能导致债券市场价值下降。<br>当你购买债券时，它通常有一个固定的利息率。假设你购买了一张5%利息率的债券，然后市场上的利率开始上升，比如其他新债券的利率变成了6%。在这种情况下，新债券提供了更高的利息回报，而你手里的旧债券因为它的利息率较低，因此它的市场价值可能会下降。<br>为什么会这样呢？因为投资者在市场上购买债券时，会希望获得与市场利率相符合的回报。如果市场上的新债券提供了更高的利息率，那么人们就更愿意购买新债券，而不是旧的低利息债券。为了吸引买家，旧债券的市场价格可能会下降，从而与新债券的利率相匹配。<br>这就是为什么当市场利率上升时，现有债券的市场价值可能会下降的原因。</li>
-<li><strong>违约风险：</strong> 如果债务人无法按时偿还债务，投资者可能会面临损失。</li>
-</ul>
-<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>总而言之，债券是一种可靠的投资选择，适合那些希望获得稳定收益并愿意承担一定风险的投资者。通过购买债券，你不仅可以帮助政府和企业筹集资金，还能为自己的投资组合增加多样性和稳定性。当然，在投资任何金融产品之前，了解你的投资目标和风险承受能力是非常重要的。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>债券</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>全面了解投资产品：从风险到收益的比较分析</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E6%8A%95%E8%B5%84%E4%BA%A7%E5%93%81%EF%BC%9A%E4%BB%8E%E9%A3%8E%E9%99%A9%E5%88%B0%E6%94%B6%E7%9B%8A%E7%9A%84%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<p>在投资世界中，有多种类型的投资产品可供选择，每种产品都有其独特的特点和风险回报特征。以下是对常见投资产品的全面比较和分析，帮助投资者理解并选择适合自己的投资工具。</p>
-<span id="more"></span>
-
-<h4 id="1-存款（银行存款）"><a href="#1-存款（银行存款）" class="headerlink" title="1. 存款（银行存款）"></a>1. 存款（银行存款）</h4><ul>
-<li><strong>投资对象：</strong> 存款是将资金存放在银行中，以获取固定的利息收益。</li>
-<li><strong>风险：</strong> 最低。由于受到国家存款保险机构保护，存款的本金通常是安全的。</li>
-<li><strong>收益：</strong> 低。存款利率通常略高于通货膨胀率，但相对于其他投资产品，收益较低。</li>
-</ul>
-<h4 id="2-债券"><a href="#2-债券" class="headerlink" title="2. 债券"></a>2. 债券</h4><ul>
-<li><strong>投资对象：</strong> 债券是借款人向投资者发行的债务工具，承诺在未来支付利息和偿还本金。</li>
-<li><strong>风险：</strong> 中等。政府债券的风险较低，而公司债券的风险取决于发行公司的信用评级和偿债能力。</li>
-<li><strong>收益：</strong> 中等。债券通常提供稳定的利息收益，收益略高于存款，但较股票等其他投资产品为低。</li>
-</ul>
-<h4 id="3-股票"><a href="#3-股票" class="headerlink" title="3. 股票"></a>3. 股票</h4><ul>
-<li><strong>投资对象：</strong> 股票代表投资者对公司所有权的一部分，股东通过股票分享公司的盈利和增长。</li>
-<li><strong>风险：</strong> 高。股票市场价格波动大，受市场供需和公司业绩等多种因素影响。</li>
-<li><strong>收益：</strong> 高。股票的长期回报可能高于债券和存款，但也伴随较大的市场风险和波动性。</li>
-</ul>
-<h4 id="4-基金"><a href="#4-基金" class="headerlink" title="4. 基金"></a>4. 基金</h4><ul>
-<li><strong>投资对象：</strong> 基金是由多个投资者共同投资，由专业基金经理管理，并投资于多种资产类别。</li>
-<li><strong>风险：</strong> 根据基金类型不同而异，可以是低、中等或高风险。</li>
-<li><strong>收益：</strong> 中等。基金通过多样化投资来平衡风险和回报，适合追求稳定增长的投资者。</li>
-</ul>
-<h4 id="5-房地产投资"><a href="#5-房地产投资" class="headerlink" title="5. 房地产投资"></a>5. 房地产投资</h4><ul>
-<li><strong>投资对象：</strong> 投资于不动产市场，包括商业地产、住宅物业和房地产基金。</li>
-<li><strong>风险：</strong> 中等。房地产市场波动性较大，但相对于股票市场通常更为稳定。</li>
-<li><strong>收益：</strong> 中等到高。房地产投资的长期回报可能与股票市场相媲美，但需考虑到管理和市场风险。</li>
-</ul>
-<h4 id="6-大宗商品"><a href="#6-大宗商品" class="headerlink" title="6. 大宗商品"></a>6. 大宗商品</h4><ul>
-<li><strong>投资对象：</strong> 包括黄金、原油等大宗商品，通过期货市场进行交易。</li>
-<li><strong>风险：</strong> 高。大宗商品价格波动大，受全球经济和政治因素影响较大。</li>
-<li><strong>收益：</strong> 中等到高。某些情况下，大宗商品的价格波动可以带来较高的投资回报，但伴随较高的市场风险。</li>
-</ul>
-<h4 id="7-其他投资产品"><a href="#7-其他投资产品" class="headerlink" title="7. 其他投资产品"></a>7. 其他投资产品</h4><ul>
-<li><strong>期权（Options）：</strong> 允许投资者在未来某一特定时间内以预定价格买入或卖出标的资产，风险和回报均高。</li>
-<li><strong>外汇市场（Forex）：</strong> 全球货币交易市场，具有高风险和潜在高回报。</li>
-<li><strong>衍生品（Derivatives）：</strong> 包括期货、期权等，其价值来源于底层资产的变动，风险和回报较高。</li>
-<li><strong>证券化产品（Securitized Products）：</strong> 将资产转化为可交易的证券，风险和回报各异。</li>
-<li><strong>其他特定投资（如艺术品投资、天使投资等）：</strong> 风险和收益因具体投资对象和市场条件而异。</li>
-</ul>
-<h3 id="如何选择适合自己的投资产品？"><a href="#如何选择适合自己的投资产品？" class="headerlink" title="如何选择适合自己的投资产品？"></a>如何选择适合自己的投资产品？</h3><p>在选择投资产品时，投资者需要综合考虑以下因素：</p>
-<ul>
-<li><strong>风险偏好：</strong> 确定自己愿意承担的投资风险程度。</li>
-<li><strong>投资目标：</strong> 明确投资的目的和时间，是追求长期增值还是短期收益。</li>
-<li><strong>多样化投资：</strong> 分散投资于不同类型和资产类别，以降低整体投资组合的风险。</li>
-<li><strong>了解投资产品：</strong> 在选择之前，充分了解每种投资产品的特点、风险和预期收益。</li>
-</ul>
-<p>通过理解和比较不同的投资产品类型，投资者可以根据自身的投资目标和风险承受能力，构建一个多样化且符合长期财务规划的投资组合。在进行任何投资之前，确保进行充分的调查和风险评估，以做出明智的投资决策。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>投资产品</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>俄罗斯对乌克兰战争的经济影响 ：欧洲理事会的回应</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E4%BF%84%E7%BD%97%E6%96%AF%E5%AF%B9%E4%B9%8C%E5%85%8B%E5%85%B0%E6%88%98%E4%BA%89%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%BD%B1%E5%93%8D/</url>
     <content><![CDATA[<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>2022 年 2 月 24 日星期四是欧洲历史上的转折点。一夜之间，俄罗斯对乌克兰这个独立的欧洲国家发动了一场残酷的侵略战争。战争开始两年后，其负面影响是深远的。除了战争造成的惨痛人力成本外，乌克兰本身的经济影响也是毁灭性的，但对欧盟和更广泛的世界来说也是巨大的。</p>
@@ -835,6 +659,182 @@
       </tags>
   </entry>
   <entry>
+    <title>全面了解投资产品：从风险到收益的比较分析</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E6%8A%95%E8%B5%84%E4%BA%A7%E5%93%81%EF%BC%9A%E4%BB%8E%E9%A3%8E%E9%99%A9%E5%88%B0%E6%94%B6%E7%9B%8A%E7%9A%84%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p>在投资世界中，有多种类型的投资产品可供选择，每种产品都有其独特的特点和风险回报特征。以下是对常见投资产品的全面比较和分析，帮助投资者理解并选择适合自己的投资工具。</p>
+<span id="more"></span>
+
+<h4 id="1-存款（银行存款）"><a href="#1-存款（银行存款）" class="headerlink" title="1. 存款（银行存款）"></a>1. 存款（银行存款）</h4><ul>
+<li><strong>投资对象：</strong> 存款是将资金存放在银行中，以获取固定的利息收益。</li>
+<li><strong>风险：</strong> 最低。由于受到国家存款保险机构保护，存款的本金通常是安全的。</li>
+<li><strong>收益：</strong> 低。存款利率通常略高于通货膨胀率，但相对于其他投资产品，收益较低。</li>
+</ul>
+<h4 id="2-债券"><a href="#2-债券" class="headerlink" title="2. 债券"></a>2. 债券</h4><ul>
+<li><strong>投资对象：</strong> 债券是借款人向投资者发行的债务工具，承诺在未来支付利息和偿还本金。</li>
+<li><strong>风险：</strong> 中等。政府债券的风险较低，而公司债券的风险取决于发行公司的信用评级和偿债能力。</li>
+<li><strong>收益：</strong> 中等。债券通常提供稳定的利息收益，收益略高于存款，但较股票等其他投资产品为低。</li>
+</ul>
+<h4 id="3-股票"><a href="#3-股票" class="headerlink" title="3. 股票"></a>3. 股票</h4><ul>
+<li><strong>投资对象：</strong> 股票代表投资者对公司所有权的一部分，股东通过股票分享公司的盈利和增长。</li>
+<li><strong>风险：</strong> 高。股票市场价格波动大，受市场供需和公司业绩等多种因素影响。</li>
+<li><strong>收益：</strong> 高。股票的长期回报可能高于债券和存款，但也伴随较大的市场风险和波动性。</li>
+</ul>
+<h4 id="4-基金"><a href="#4-基金" class="headerlink" title="4. 基金"></a>4. 基金</h4><ul>
+<li><strong>投资对象：</strong> 基金是由多个投资者共同投资，由专业基金经理管理，并投资于多种资产类别。</li>
+<li><strong>风险：</strong> 根据基金类型不同而异，可以是低、中等或高风险。</li>
+<li><strong>收益：</strong> 中等。基金通过多样化投资来平衡风险和回报，适合追求稳定增长的投资者。</li>
+</ul>
+<h4 id="5-房地产投资"><a href="#5-房地产投资" class="headerlink" title="5. 房地产投资"></a>5. 房地产投资</h4><ul>
+<li><strong>投资对象：</strong> 投资于不动产市场，包括商业地产、住宅物业和房地产基金。</li>
+<li><strong>风险：</strong> 中等。房地产市场波动性较大，但相对于股票市场通常更为稳定。</li>
+<li><strong>收益：</strong> 中等到高。房地产投资的长期回报可能与股票市场相媲美，但需考虑到管理和市场风险。</li>
+</ul>
+<h4 id="6-大宗商品"><a href="#6-大宗商品" class="headerlink" title="6. 大宗商品"></a>6. 大宗商品</h4><ul>
+<li><strong>投资对象：</strong> 包括黄金、原油等大宗商品，通过期货市场进行交易。</li>
+<li><strong>风险：</strong> 高。大宗商品价格波动大，受全球经济和政治因素影响较大。</li>
+<li><strong>收益：</strong> 中等到高。某些情况下，大宗商品的价格波动可以带来较高的投资回报，但伴随较高的市场风险。</li>
+</ul>
+<h4 id="7-其他投资产品"><a href="#7-其他投资产品" class="headerlink" title="7. 其他投资产品"></a>7. 其他投资产品</h4><ul>
+<li><strong>期权（Options）：</strong> 允许投资者在未来某一特定时间内以预定价格买入或卖出标的资产，风险和回报均高。</li>
+<li><strong>外汇市场（Forex）：</strong> 全球货币交易市场，具有高风险和潜在高回报。</li>
+<li><strong>衍生品（Derivatives）：</strong> 包括期货、期权等，其价值来源于底层资产的变动，风险和回报较高。</li>
+<li><strong>证券化产品（Securitized Products）：</strong> 将资产转化为可交易的证券，风险和回报各异。</li>
+<li><strong>其他特定投资（如艺术品投资、天使投资等）：</strong> 风险和收益因具体投资对象和市场条件而异。</li>
+</ul>
+<h3 id="如何选择适合自己的投资产品？"><a href="#如何选择适合自己的投资产品？" class="headerlink" title="如何选择适合自己的投资产品？"></a>如何选择适合自己的投资产品？</h3><p>在选择投资产品时，投资者需要综合考虑以下因素：</p>
+<ul>
+<li><strong>风险偏好：</strong> 确定自己愿意承担的投资风险程度。</li>
+<li><strong>投资目标：</strong> 明确投资的目的和时间，是追求长期增值还是短期收益。</li>
+<li><strong>多样化投资：</strong> 分散投资于不同类型和资产类别，以降低整体投资组合的风险。</li>
+<li><strong>了解投资产品：</strong> 在选择之前，充分了解每种投资产品的特点、风险和预期收益。</li>
+</ul>
+<p>通过理解和比较不同的投资产品类型，投资者可以根据自身的投资目标和风险承受能力，构建一个多样化且符合长期财务规划的投资组合。在进行任何投资之前，确保进行充分的调查和风险评估，以做出明智的投资决策。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>投资产品</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>保障性住房</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E4%BF%9D%E9%9A%9C%E6%80%A7%E4%BD%8F%E6%88%BF/</url>
+    <content><![CDATA[<p>保障性住房是中国政府为了解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的一系列住房政策和项目。保障性住房主要包括以下几种类型：</p>
+<span id="more"></span>
+
+<h3 id="1-经济适用房"><a href="#1-经济适用房" class="headerlink" title="1. 经济适用房"></a>1. 经济适用房</h3><p>经济适用房是指政府提供政策支持、限定建设标准和销售价格，面向城镇中低收入家庭销售的普通商品住房。其主要目的是为了帮助中低收入家庭解决住房问题。以下是对经济适用房的详细描述：</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p><strong>价格相对较低</strong>：<br>经济适用房的售价通常低于同地段的商品房市场价格，因为政府对土地出让金、税费等方面给予了一定的优惠和减免。因此，经济适用房的价格相对较低，使得中低收入家庭能够负担得起。</p>
+<p><strong>建设标准不高</strong>：<br>经济适用房的建设标准相对普通商品房较低，主要体现在以下几个方面：</p>
+<ul>
+<li><strong>户型设计</strong>：经济适用房一般以小户型为主，面积较小，以满足基本居住需求。例如，一般经济适用房的建筑面积在60-90平方米左右。</li>
+<li><strong>建筑材料和装修</strong>：经济适用房的建筑材料和装修标准较为普通，不追求豪华和高档。通常采用经济实惠的材料，内部装修也较为简洁，满足基本生活需求即可。</li>
+<li><strong>配套设施</strong>：经济适用房的社区配套设施相对简单，可能不如普通商品房那样齐全，如高档小区的会所、游泳池等设施较少。</li>
+</ul>
+<p><strong>主要满足基本居住需求</strong>：<br>经济适用房的设计和建设旨在满足中低收入家庭的基本居住需求，提供一个安全、卫生、适宜居住的环境，而不追求奢华和高档配置。</p>
+<h3 id="申请条件"><a href="#申请条件" class="headerlink" title="申请条件"></a>申请条件</h3><p><strong>户籍要求</strong>：<br>申请者一般需要具备当地城镇户籍，即申请者必须是申请地的正式居民。</p>
+<p><strong>收入和资产标准</strong>：<br>家庭收入和资产需符合当地政府规定的中低收入标准。具体标准由各地政府根据当地经济发展水平和居民收入水平确定，一般要求家庭总收入在一定限额以下，家庭总资产不超过规定的上限。</p>
+<p><strong>住房情况</strong>：<br>申请者家庭无自有住房或现有住房面积低于规定的标准。例如，有些城市规定人均住房面积低于15平方米的家庭可以申请经济适用房。</p>
+<h3 id="购房方式"><a href="#购房方式" class="headerlink" title="购房方式"></a>购房方式</h3><p><strong>申请和审核</strong>：<br>符合条件的家庭需提交申请，经过相关部门的审核后，确定其购房资格。审核内容包括申请者的收入、资产、户籍、现有住房等情况。</p>
+<p><strong>购买价格</strong>：<br>通过审核的家庭可以以低于市场价的价格购买经济适用房。价格由政府根据建设成本和政策优惠确定，通常比同地段商品房市场价低20%-50%。</p>
+<p><strong>产权限制</strong>：<br>经济适用房的产权受限，一般在购买后一定年限内不能上市交易。各地的规定有所不同，通常是5年或更长时间。例如，北京市规定，经济适用房在购买满5年后，方可上市交易，但在交易时需向政府缴纳一定比例的土地收益金。</p>
+<h3 id="2-廉租房"><a href="#2-廉租房" class="headerlink" title="2. 廉租房"></a>2. 廉租房</h3><p><strong>廉租房</strong>是政府为城市低收入住房困难家庭提供的租金低廉的保障性住房。</p>
+<ul>
+<li><strong>特点</strong>：租金低廉，由政府或政府委托的单位管理和运营。</li>
+<li><strong>申请条件</strong>：主要面向城镇最低收入家庭，申请者需具备本地户籍，家庭收入和资产低于最低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
+<li><strong>租赁方式</strong>：通过申请和审核后，家庭可以以较低的租金租赁廉租房，租赁期限一般为1-3年，可续租。</li>
+</ul>
+<h3 id="3-公租房"><a href="#3-公租房" class="headerlink" title="3. 公租房"></a>3. 公租房</h3><p><strong>公租房</strong>是政府为解决中低收入家庭、新就业人员和外来务工人员住房困难问题而提供的租金较低的保障性住房。</p>
+<ul>
+<li><strong>特点</strong>：租金较低，面向更广泛的人群，包括中低收入家庭、新就业人员和外来务工人员。</li>
+<li><strong>申请条件</strong>：申请者需具备本地户籍或符合规定的外来务工人员，新就业人员需就业年限不超过一定年限（如5年），家庭收入和资产符合规定标准。</li>
+<li><strong>租赁方式</strong>：通过申请和审核后，家庭或个人可以以较低的租金租赁公租房，租赁期限一般为1-5年，可续租。</li>
+</ul>
+<h3 id="4-限价房"><a href="#4-限价房" class="headerlink" title="4. 限价房"></a>4. 限价房</h3><p><strong>限价房</strong>是政府限定销售价格、限定销售对象的普通商品住房，主要面向中低收入家庭。</p>
+<ul>
+<li><strong>特点</strong>：价格受政府限制，低于市场价，建设标准较高，接近普通商品房。</li>
+<li><strong>申请条件</strong>：申请者需具备本地户籍，家庭收入和资产符合中低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
+<li><strong>购房方式</strong>：符合条件的家庭通过申请和审核后，以低于市场价的价格购买限价房。</li>
+</ul>
+<h3 id="5-棚户区改造安置房"><a href="#5-棚户区改造安置房" class="headerlink" title="5. 棚户区改造安置房"></a>5. 棚户区改造安置房</h3><p><strong>棚户区改造安置房</strong>是政府为改善棚户区居民居住条件而建设的住房，用于安置被拆迁的棚户区居民。</p>
+<ul>
+<li><strong>特点</strong>：<br>棚户区改造安置房的建设标准较高，配套设施齐全，环境和居住条件显著优于原棚户区。<br>棚户区改造项目由政府主导，建设资金主要来源于政府财政和政策性贷款。</li>
+<li><strong>申请条件</strong>：主要面向棚户区改造中被拆迁的居民，提供的安置房面积和标准根据原有住房情况和相关政策规定。</li>
+<li><strong>安置方式</strong>：居民通过棚户区改造项目得到安置房，可以是产权安置或租赁安置。</li>
+</ul>
+<h3 id="保障性住房的意义"><a href="#保障性住房的意义" class="headerlink" title="保障性住房的意义"></a>保障性住房的意义</h3><p>保障性住房的推出和实施，对于改善中低收入家庭的住房条件，缓解城市住房供需矛盾，促进社会和谐稳定具有重要意义。具体体现在以下几个方面：</p>
+<ol>
+<li><strong>提高居住质量</strong>：通过保障性住房建设，改善中低收入家庭的居住条件，提高居民的生活质量。</li>
+<li><strong>缓解住房压力</strong>：保障性住房为中低收入家庭提供了经济负担较轻的住房选择，缓解了住房压力。</li>
+<li><strong>促进社会公平</strong>：保障性住房政策有助于缩小收入差距，促进社会公平正义。</li>
+<li><strong>推动城市发展</strong>：通过棚户区改造等项目，改善城市面貌，提升城市综合竞争力。</li>
+</ol>
+<h3 id="时间轴："><a href="#时间轴：" class="headerlink" title="时间轴："></a>时间轴：</h3><p>中国保障性住房的发展经历了从无到有、从单一到多层次的过程。以下是主要事件的时间轴：</p>
+<h3 id="1-1998年-房改启动"><a href="#1-1998年-房改启动" class="headerlink" title="1. 1998年 房改启动"></a>1. 1998年 房改启动</h3><p><strong>1998年</strong>，国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，全面停止住房实物分配，实行住房分配货币化。此时，保障性住房的概念开始萌芽，主要是通过经济适用房来解决中低收入家庭的住房问题。</p>
+<h3 id="2-2004年-廉租房制度建立"><a href="#2-2004年-廉租房制度建立" class="headerlink" title="2. 2004年 廉租房制度建立"></a>2. 2004年 廉租房制度建立</h3><p><strong>2004年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，正式建立廉租住房制度。廉租房主要面向最低收入家庭，提供低廉的租金，帮助最困难的家庭解决住房问题。</p>
+<h3 id="3-2007年-保障性住房体系逐步完善"><a href="#3-2007年-保障性住房体系逐步完善" class="headerlink" title="3. 2007年 保障性住房体系逐步完善"></a>3. 2007年 保障性住房体系逐步完善</h3><p><strong>2007年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，提出建立经济适用房、廉租房、公租房等多层次的保障性住房体系。同年，住房和城乡建设部发布《关于加快发展经济适用住房的通知》，进一步明确经济适用房的建设标准和供应方式。</p>
+<h3 id="4-2010年-公租房政策出台"><a href="#4-2010年-公租房政策出台" class="headerlink" title="4. 2010年 公租房政策出台"></a>4. 2010年 公租房政策出台</h3><p><strong>2010年</strong>，国务院发布《关于加快发展公共租赁住房的指导意见》，明确提出发展公共租赁住房，解决中低收入家庭、新就业人员和外来务工人员的住房困难。公租房租金较低，面向更广泛的人群。</p>
+<h3 id="5-2011年-限价房政策推进"><a href="#5-2011年-限价房政策推进" class="headerlink" title="5. 2011年 限价房政策推进"></a>5. 2011年 限价房政策推进</h3><p><strong>2011年</strong>，北京市等地开始推广限价商品房政策，政府限定房价和销售对象，面向中低收入家庭销售。这些限价房价格低于市场价，旨在解决中低收入家庭的购房需求。</p>
+<h3 id="6-2013年-棚户区改造大规模推进"><a href="#6-2013年-棚户区改造大规模推进" class="headerlink" title="6. 2013年 棚户区改造大规模推进"></a>6. 2013年 棚户区改造大规模推进</h3><p><strong>2013年</strong>，国务院发布《关于加快棚户区改造工作的意见》，提出在全国范围内加快棚户区改造步伐，改善棚户区居民的居住条件。棚户区改造安置房逐步成为保障性住房的重要组成部分。</p>
+<h3 id="7-2015年-保障性住房建设力度加大"><a href="#7-2015年-保障性住房建设力度加大" class="headerlink" title="7. 2015年 保障性住房建设力度加大"></a>7. 2015年 保障性住房建设力度加大</h3><p><strong>2015年</strong>，在“十三五”规划中，国家提出要大力发展保障性住房，加大棚户区改造力度，确保每个家庭住有所居。各地纷纷加大保障性住房的建设力度。</p>
+<h3 id="8-2017年-长租公寓政策出台"><a href="#8-2017年-长租公寓政策出台" class="headerlink" title="8. 2017年 长租公寓政策出台"></a>8. 2017年 长租公寓政策出台</h3><p><strong>2017年</strong>，国务院办公厅发布《关于加快培育和发展住房租赁市场的若干意见》，提出要大力发展住房租赁市场，鼓励发展长租公寓。长租公寓成为解决新市民和青年人的住房问题的重要方式。</p>
+<h3 id="9-2020年-租购并举政策深化"><a href="#9-2020年-租购并举政策深化" class="headerlink" title="9. 2020年 租购并举政策深化"></a>9. 2020年 租购并举政策深化</h3><p><strong>2020年</strong>，中央经济工作会议提出要坚持“房住不炒”，深化租购并举的住房制度，进一步加大保障性住房的供应。政府开始探索更多形式的保障性住房，如共有产权房等，以满足不同层次的住房需求。</p>
+<h3 id="10-2022年-全面推进保障性租赁住房建设"><a href="#10-2022年-全面推进保障性租赁住房建设" class="headerlink" title="10. 2022年 全面推进保障性租赁住房建设"></a>10. 2022年 全面推进保障性租赁住房建设</h3><p><strong>2022年</strong>，国务院发布《关于进一步做好保障性租赁住房工作的意见》，明确提出要加大保障性租赁住房建设力度，缓解大城市住房供需矛盾，特别是新市民和青年人的住房困难问题。</p>
+<p>这些事件体现了中国政府在不同阶段对保障性住房的重视和推进，为改善中低收入家庭的居住条件、促进社会和谐稳定作出了重要贡献。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>保障性住房是中国政府为解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的重要政策措施。通过经济适用房、廉租房、公租房、限价房和棚户区改造安置房等多种形式，保障性住房有效地改善了中低收入家庭的居住条件，促进了社会和谐稳定和城市健康发展。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>保障性住房</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>债券</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E5%80%BA%E5%88%B8/</url>
+    <content><![CDATA[<h3 id="债券：理解债务的投资方式"><a href="#债券：理解债务的投资方式" class="headerlink" title="债券：理解债务的投资方式"></a>债券：理解债务的投资方式</h3><p>在金融世界中，债券是一种常见的投资工具，它为投资者提供了一种安全稳定的投资选择。让我们一起来了解一下什么是债券，以及如何购买债券以及它如何运作。</p>
+<span id="more"></span>
+
+<h4 id="什么是债券？"><a href="#什么是债券？" class="headerlink" title="什么是债券？"></a>什么是债券？</h4><p><strong>债券</strong>就像是一张借据或者是一种借出资金的“债务证明书”。简单来说，当你购买债券时，你其实就是在借钱给某个实体，比如政府、公司或者其他组织。这个实体承诺在未来某个时候偿还你的投资本金，并且在此期间向你支付利息作为回报。</p>
+<h4 id="如何购买债券？"><a href="#如何购买债券？" class="headerlink" title="如何购买债券？"></a>如何购买债券？</h4><p>购买债券通常有几种方式：</p>
+<ol>
+<li><p><strong>一级市场：</strong> 在债券发行的初期购买。这意味着你直接从发行者（比如政府或公司）那里购买债券。一级市场购买通常通过银行、证券公司或者经纪人进行。</p>
+</li>
+<li><p><strong>二级市场：</strong> 在债券已经发行并流通后购买。这时你是从其他投资者手中购买债券。二级市场的交易通常在证券交易所（如股票市场）进行，你可以通过证券账户和经纪人进行交易。</p>
+</li>
+<li><p><strong>债券基金：</strong> 如果你不想直接购买单个债券，可以考虑投资债券基金。债券基金由专业基金经理管理，他们会购买和管理多种债券，你可以通过购买基金份额来间接投资债券市场。</p>
+</li>
+</ol>
+<h4 id="不同类型的债券"><a href="#不同类型的债券" class="headerlink" title="不同类型的债券"></a>不同类型的债券</h4><p>债券有很多种类，其中包括：</p>
+<ul>
+<li><p><strong>政府债券（国债）：</strong> 由国家政府发行，用于筹集资金以支持政府项目和运作。政府债券通常被认为是最安全的债券形式，因为政府具有征税权和印钞权。</p>
+</li>
+<li><p><strong>公司债券：</strong> 由公司发行，用于扩展业务、投资新项目或偿还旧债务。公司债券的风险和收益取决于公司的信用评级和经营状况。</p>
+</li>
+<li><p><strong>地方政府债券：</strong> 由地方政府或政治实体发行，用于建设基础设施或提供公共服务。地方政府债券的偿还能力与该地区经济和治理能力相关。</p>
+</li>
+</ul>
+<h4 id="债券的优缺点"><a href="#债券的优缺点" class="headerlink" title="债券的优缺点"></a>债券的优缺点</h4><p><strong>优点：</strong></p>
+<ul>
+<li><strong>稳定收益：</strong> 债券通常提供稳定的利息收入，适合追求稳定收益的投资者。</li>
+<li><strong>资本保护：</strong> 如果投资的实体能够履行支付义务，债券投资的本金一般是有保护的。</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li><strong>利息风险：</strong><br>市场利率上升可能导致债券市场价值下降。<br>当你购买债券时，它通常有一个固定的利息率。假设你购买了一张5%利息率的债券，然后市场上的利率开始上升，比如其他新债券的利率变成了6%。在这种情况下，新债券提供了更高的利息回报，而你手里的旧债券因为它的利息率较低，因此它的市场价值可能会下降。<br>为什么会这样呢？因为投资者在市场上购买债券时，会希望获得与市场利率相符合的回报。如果市场上的新债券提供了更高的利息率，那么人们就更愿意购买新债券，而不是旧的低利息债券。为了吸引买家，旧债券的市场价格可能会下降，从而与新债券的利率相匹配。<br>这就是为什么当市场利率上升时，现有债券的市场价值可能会下降的原因。</li>
+<li><strong>违约风险：</strong> 如果债务人无法按时偿还债务，投资者可能会面临损失。</li>
+</ul>
+<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>总而言之，债券是一种可靠的投资选择，适合那些希望获得稳定收益并愿意承担一定风险的投资者。通过购买债券，你不仅可以帮助政府和企业筹集资金，还能为自己的投资组合增加多样性和稳定性。当然，在投资任何金融产品之前，了解你的投资目标和风险承受能力是非常重要的。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>债券</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>房地产市场化</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E6%88%BF%E5%9C%B0%E4%BA%A7%E5%B8%82%E5%9C%BA%E5%8C%96/</url>
     <content><![CDATA[<blockquote>
@@ -930,6 +930,35 @@
       </categories>
       <tags>
         <tag>中国经济</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大禹治水</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E5%A4%8F%E6%9C%9D/%E5%A4%A7%E7%A6%B9%E6%B2%BB%E6%B0%B4/</url>
+    <content><![CDATA[<p>据说尧舜时代正值冰河时代后期，气候转暖，冰雪消融，致使海平面迅速升高，海水倒灌；古黄河改道从苏北平原入海，淮河淤积，汹涌的洪水淹没了淮、泗流域，沧海横流，洪水泛滥，泰山以西到沂蒙以南至苏北地区成了一片汪洋，天地万物在滔天的洪水中沉沉浮浮。对于当时的情景，《尚书·尧典》中这样描写：“汤汤洪水方割，荡荡怀山襄陵，浩浩滔天。”</p>
+<span id="more"></span>
+
+<p>农田被淹没，房子被摧毁，人民流离失所，无家可归，为了免于沦没，只能以木为舟，朝高山土丘上搬。这样一来，正常的生产生活无法进行，只能在洪荒的孤岛中望水兴叹。</p>
+<p>尧召开部落联盟会议，请各部落首领来共商治洪良策。各部落首领都推荐鲧去治理水患。鲧史称崇伯，是尧帝的臣子，禹的父亲。尧觉得鲧脾气暴躁，并不适合去治水，可是当时也没有别的更合适的人选，治理水患又是当务之急，于是尧决定姑且让鲧去试试。</p>
+<p>鲧治理水患主要采用的是堵塞的方法，他用土筑起高高的堤坝，把水围起来，不让它到处流。可是洪水来势凶猛，不管那堤坝多高，都被汹涌的洪水冲垮，洪水还是会泛滥，鲧就东堵西补，疲于奔命。因此，鲧治水九年，用去不少人力物力，可是洪水并没止歇。鲧一气之下就盗取了天帝的宝物“息壤”，这是一块可以自生自长，要多少有多少的宝土。鲧把息壤投入洪水，想让生长不息的土掩埋洪水，没想到洪水泛滥得更加厉害了。</p>
+<p>鲧犯下滔天大罪，天帝震怒，命令火神将他处死在了羽山之野。</p>
+<p>当时的人类在治理洪灾方面，还处于摸索阶段，经验不足，总会有些曲折。鲧虽然未能取得治水的成功，但其在治水方法上的失误，为后继者提供了宝贵的经验教训，指明了方向。后来尧让位于舜，舜亲自去视察水患。此时，鲧的儿子禹已长大成人，舜见他器宇轩昂，认为他必会有一番作为，于是命禹继续他父亲没完成的事业，去治理水患，并把后稷、伯益、皋陶等人派去给他当助手。</p>
+<p>禹感伤于父亲“功之不成受诛”，因此殚精竭虑，发誓一定要把水患治好。他非常聪明，还能吃苦耐劳，领命之后，就带着伯益、皋陶和其他众人去勘察地势水情，寻找以前治水失败的原因。他带着众人跋山涉水，朝上去追溯黄河的源头，对黄河的上游、下游做了一次整体的考察。在这次考察中，他发现黄河除了主干河道，还有很多分支流向了别处。在值得注意的地方，他把石头堆积起来，或是砍倒树木作为记号，以便治水时可以参考。当时，气候恶劣，他们随身携带的工具也非常落后，这次考察非常艰辛而惊险。据说，有一次，他们正在勘察一条河道，突然间电闪雷鸣，狂风暴雨顷刻而至，山洪爆发，咆哮的洪水淹没、卷走了他们很多同伴。</p>
+<p>考察完毕，大禹对水情作了认真的研究，认为父亲“堵”的方法是行不通的，洪水凶猛，无路可走势必会冲垮堤坝，因此他决定弃“堵”用“疏”的方法：把黄河的主干河道加深加宽，可以让更多的水畅通无阻，然后将支流流向主流的河道疏通，让水可以顺畅地和主流汇合；然后，还要加高原来的堤岸，并清除低地里的淤积，这样陆地和湖泊就可以清楚地分开了。同时，还要将这些大小湖泽和各个支流的河道疏通，这样一来，一旦水位上升，就会顺着各个河道汇入主流，流向大海了。</p>
+<p>想好了治水的方法，禹便亲自率领助手和众百姓，带着简陋的石斧、石刀、石铲、木耒等工具，开始他们治水的征途。禹事事身先士卒，在他的领导下，众百姓一心一意，决心不降服水患誓不罢休。他们风餐露宿，粗衣淡饭，风雨无阻地在群山间穿越跋涉，尽管每天辛苦地劳作，直不起腰来，腿也肿了，可是从来不敢懈怠。</p>
+<p>一次，他们来到了河南洛阳南郊的一座高山，那是秦岭山脉的余脉，从东向西一直延续到中岳嵩山，它巍峨陡峭，就好像天成的一道高大屏风。这座山的中段有一条九曲回环，又很狭窄的天然水路，水量小的时候，就会从山间形成涓涓细流，轻轻流过。但是，山洪暴发时，水就会咆哮着冲刷着狭窄的水道，拍打石岸，时刻可能溢出，危害着周围百姓的安全。大禹便决定集中将这条水道拓宽、凿深、打直。坚硬的山石磨坏了他们的工具，而且山上地势险恶，人们不是被掉下来的石头砸伤，就是跌落山下，还有的被洪水冲走。可是他们仍旧毫不退缩，坚持在大山中开道。在他们不懈的努力下，终于在大山中间凿出了一条宽阔的水道，形成两壁对峙之势，山洪可以顺畅地向下游奔涌而去，再也不会对周围百姓构成威胁。</p>
+<p>《庄子》以极其虔敬的心情记述了禹的丰功伟绩，颂扬了他坚忍不拔的意志，记述禹亲自操橐耜而“九杂天下之川，腓无胈，胫无毛，沐甚雨，栉疾风，置万国。禹，大圣也，而形劳天下也如此”。意思是说禹为了制服水患，不辞劳苦，亲自拿着工具，带领众人兴利除害，同人民一起风里来雨里去，奋斗在治水的最前面。艰辛的劳作使得他形容憔悴，大腿瘦得没什么肉了，小腿上的汗毛也都磨光了。禹就是这样一位含辛茹苦，解救苍生的圣人。因为长期在外治水，禹无暇顾及妻子和家庭。据说，他才刚刚新婚第四天，就出发去治水了，这一去就是十年，中间曾三过家门而不入，他这种舍家为国，公而忘私的精神至今被人传颂。</p>
+<p>十年间，他们翻越了一座又一座大山，疏通了一条又一条河渠，足迹踏遍了九州。在他艰苦卓绝的努力下，治水进展神速，“淮沂其治，蒙羽其艺”（《史记·夏本纪》）之地，也就是淮河和沂水流过的蒙山和羽山之间，古黄淮容易泛滥的河道得到疏通，拥堵在山间的洪水被引入大海。同时，低洼的地方留下了微山、东平、钜野、骆马等“四渎”，为百姓种田提供了有利的水源。地面上现出了许多良田和桑土，百姓又可以种庄稼，重新过上了安居乐业的生活。</p>
+<p>面对滔滔洪水，大禹率领民众，顽强地与之斗争，最终运用聪明才智，通过坚忍不拔的努力，制服了水患。这个传说体现了中华民族勤劳勇敢、坚毅不屈、公而忘私、万众一心战胜困难的民族精神。</p>
+<p>禹在治理水患的过程中，对中原各地的土地物产也有了了解，水患平息后，就划分了青、兖、徐、扬、梁、豫、冀、荆、雍等行政区域，规定了各地的贡品赋税。这样一来，就真正形成了天下归一的大好局面。</p>
+<p>后代称颂禹治水的功绩，尊称他为“大禹”。舜年老以后，也像尧一样开部落联盟会议，物色继承人。禹治水有功，深得民心，大家都推选禹，于是舜就把联盟首领之职禅让给了禹。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>夏朝</category>
+      </categories>
+      <tags>
+        <tag>大禹治</tag>
       </tags>
   </entry>
   <entry>
@@ -1042,35 +1071,6 @@
       </categories>
       <tags>
         <tag>伊尹放太甲</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大禹治水</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E5%A4%8F%E6%9C%9D/%E5%A4%A7%E7%A6%B9%E6%B2%BB%E6%B0%B4/</url>
-    <content><![CDATA[<p>据说尧舜时代正值冰河时代后期，气候转暖，冰雪消融，致使海平面迅速升高，海水倒灌；古黄河改道从苏北平原入海，淮河淤积，汹涌的洪水淹没了淮、泗流域，沧海横流，洪水泛滥，泰山以西到沂蒙以南至苏北地区成了一片汪洋，天地万物在滔天的洪水中沉沉浮浮。对于当时的情景，《尚书·尧典》中这样描写：“汤汤洪水方割，荡荡怀山襄陵，浩浩滔天。”</p>
-<span id="more"></span>
-
-<p>农田被淹没，房子被摧毁，人民流离失所，无家可归，为了免于沦没，只能以木为舟，朝高山土丘上搬。这样一来，正常的生产生活无法进行，只能在洪荒的孤岛中望水兴叹。</p>
-<p>尧召开部落联盟会议，请各部落首领来共商治洪良策。各部落首领都推荐鲧去治理水患。鲧史称崇伯，是尧帝的臣子，禹的父亲。尧觉得鲧脾气暴躁，并不适合去治水，可是当时也没有别的更合适的人选，治理水患又是当务之急，于是尧决定姑且让鲧去试试。</p>
-<p>鲧治理水患主要采用的是堵塞的方法，他用土筑起高高的堤坝，把水围起来，不让它到处流。可是洪水来势凶猛，不管那堤坝多高，都被汹涌的洪水冲垮，洪水还是会泛滥，鲧就东堵西补，疲于奔命。因此，鲧治水九年，用去不少人力物力，可是洪水并没止歇。鲧一气之下就盗取了天帝的宝物“息壤”，这是一块可以自生自长，要多少有多少的宝土。鲧把息壤投入洪水，想让生长不息的土掩埋洪水，没想到洪水泛滥得更加厉害了。</p>
-<p>鲧犯下滔天大罪，天帝震怒，命令火神将他处死在了羽山之野。</p>
-<p>当时的人类在治理洪灾方面，还处于摸索阶段，经验不足，总会有些曲折。鲧虽然未能取得治水的成功，但其在治水方法上的失误，为后继者提供了宝贵的经验教训，指明了方向。后来尧让位于舜，舜亲自去视察水患。此时，鲧的儿子禹已长大成人，舜见他器宇轩昂，认为他必会有一番作为，于是命禹继续他父亲没完成的事业，去治理水患，并把后稷、伯益、皋陶等人派去给他当助手。</p>
-<p>禹感伤于父亲“功之不成受诛”，因此殚精竭虑，发誓一定要把水患治好。他非常聪明，还能吃苦耐劳，领命之后，就带着伯益、皋陶和其他众人去勘察地势水情，寻找以前治水失败的原因。他带着众人跋山涉水，朝上去追溯黄河的源头，对黄河的上游、下游做了一次整体的考察。在这次考察中，他发现黄河除了主干河道，还有很多分支流向了别处。在值得注意的地方，他把石头堆积起来，或是砍倒树木作为记号，以便治水时可以参考。当时，气候恶劣，他们随身携带的工具也非常落后，这次考察非常艰辛而惊险。据说，有一次，他们正在勘察一条河道，突然间电闪雷鸣，狂风暴雨顷刻而至，山洪爆发，咆哮的洪水淹没、卷走了他们很多同伴。</p>
-<p>考察完毕，大禹对水情作了认真的研究，认为父亲“堵”的方法是行不通的，洪水凶猛，无路可走势必会冲垮堤坝，因此他决定弃“堵”用“疏”的方法：把黄河的主干河道加深加宽，可以让更多的水畅通无阻，然后将支流流向主流的河道疏通，让水可以顺畅地和主流汇合；然后，还要加高原来的堤岸，并清除低地里的淤积，这样陆地和湖泊就可以清楚地分开了。同时，还要将这些大小湖泽和各个支流的河道疏通，这样一来，一旦水位上升，就会顺着各个河道汇入主流，流向大海了。</p>
-<p>想好了治水的方法，禹便亲自率领助手和众百姓，带着简陋的石斧、石刀、石铲、木耒等工具，开始他们治水的征途。禹事事身先士卒，在他的领导下，众百姓一心一意，决心不降服水患誓不罢休。他们风餐露宿，粗衣淡饭，风雨无阻地在群山间穿越跋涉，尽管每天辛苦地劳作，直不起腰来，腿也肿了，可是从来不敢懈怠。</p>
-<p>一次，他们来到了河南洛阳南郊的一座高山，那是秦岭山脉的余脉，从东向西一直延续到中岳嵩山，它巍峨陡峭，就好像天成的一道高大屏风。这座山的中段有一条九曲回环，又很狭窄的天然水路，水量小的时候，就会从山间形成涓涓细流，轻轻流过。但是，山洪暴发时，水就会咆哮着冲刷着狭窄的水道，拍打石岸，时刻可能溢出，危害着周围百姓的安全。大禹便决定集中将这条水道拓宽、凿深、打直。坚硬的山石磨坏了他们的工具，而且山上地势险恶，人们不是被掉下来的石头砸伤，就是跌落山下，还有的被洪水冲走。可是他们仍旧毫不退缩，坚持在大山中开道。在他们不懈的努力下，终于在大山中间凿出了一条宽阔的水道，形成两壁对峙之势，山洪可以顺畅地向下游奔涌而去，再也不会对周围百姓构成威胁。</p>
-<p>《庄子》以极其虔敬的心情记述了禹的丰功伟绩，颂扬了他坚忍不拔的意志，记述禹亲自操橐耜而“九杂天下之川，腓无胈，胫无毛，沐甚雨，栉疾风，置万国。禹，大圣也，而形劳天下也如此”。意思是说禹为了制服水患，不辞劳苦，亲自拿着工具，带领众人兴利除害，同人民一起风里来雨里去，奋斗在治水的最前面。艰辛的劳作使得他形容憔悴，大腿瘦得没什么肉了，小腿上的汗毛也都磨光了。禹就是这样一位含辛茹苦，解救苍生的圣人。因为长期在外治水，禹无暇顾及妻子和家庭。据说，他才刚刚新婚第四天，就出发去治水了，这一去就是十年，中间曾三过家门而不入，他这种舍家为国，公而忘私的精神至今被人传颂。</p>
-<p>十年间，他们翻越了一座又一座大山，疏通了一条又一条河渠，足迹踏遍了九州。在他艰苦卓绝的努力下，治水进展神速，“淮沂其治，蒙羽其艺”（《史记·夏本纪》）之地，也就是淮河和沂水流过的蒙山和羽山之间，古黄淮容易泛滥的河道得到疏通，拥堵在山间的洪水被引入大海。同时，低洼的地方留下了微山、东平、钜野、骆马等“四渎”，为百姓种田提供了有利的水源。地面上现出了许多良田和桑土，百姓又可以种庄稼，重新过上了安居乐业的生活。</p>
-<p>面对滔滔洪水，大禹率领民众，顽强地与之斗争，最终运用聪明才智，通过坚忍不拔的努力，制服了水患。这个传说体现了中华民族勤劳勇敢、坚毅不屈、公而忘私、万众一心战胜困难的民族精神。</p>
-<p>禹在治理水患的过程中，对中原各地的土地物产也有了了解，水患平息后，就划分了青、兖、徐、扬、梁、豫、冀、荆、雍等行政区域，规定了各地的贡品赋税。这样一来，就真正形成了天下归一的大好局面。</p>
-<p>后代称颂禹治水的功绩，尊称他为“大禹”。舜年老以后，也像尧一样开部落联盟会议，物色继承人。禹治水有功，深得民心，大家都推选禹，于是舜就把联盟首领之职禅让给了禹。</p>
-]]></content>
-      <categories>
-        <category>历史</category>
-        <category>夏朝</category>
-      </categories>
-      <tags>
-        <tag>大禹治</tag>
       </tags>
   </entry>
   <entry>
@@ -3004,19 +3004,6 @@
 </div></div></div>]]></content>
   </entry>
   <entry>
-    <title>trending indices</title>
-    <url>/indices/index.html</url>
-    <content><![CDATA[<link rel="stylesheet" href="/css/indices.css">
-
-
-<div id="stock-data">
-    加载中...
-</div>
-
-<script type="text/javascript" src="/js/indices/sse.js"></script>
-]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/js/bitcoin.js</url>
     <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
@@ -3052,6 +3039,19 @@
 ]]></content>
   </entry>
   <entry>
+    <title>trending indices</title>
+    <url>/indices/index.html</url>
+    <content><![CDATA[<link rel="stylesheet" href="/css/indices.css">
+
+
+<div id="stock-data">
+    加载中...
+</div>
+
+<script type="text/javascript" src="/js/indices/sse.js"></script>
+]]></content>
+  </entry>
+  <entry>
     <title></title>
     <url>/js/holiday.js</url>
     <content><![CDATA[
@@ -3076,11 +3076,6 @@ document.addEventListener('DOMContentLoaded', function() {
 ]]></content>
   </entry>
   <entry>
-    <title>schedule</title>
-    <url>/schedule/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>新闻</title>
     <url>/news/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3098,34 +3093,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <link rel="stylesheet" href="/css/news.css">]]></content>
   </entry>
   <entry>
-    <title>时尚</title>
-    <url>/news/fashion/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/fashion.js"></script>]]></content>
-  </entry>
-  <entry>
-    <title>数码</title>
-    <url>/news/digital/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
+    <title>schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>标签</title>
@@ -3173,6 +3143,21 @@ document.addEventListener('DOMContentLoaded', function() {
 ]]></content>
   </entry>
   <entry>
+    <title>数码</title>
+    <url>/news/digital/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
+  </entry>
+  <entry>
     <title>财经</title>
     <url>/news/finance/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3186,6 +3171,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/finance.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>时尚</title>
+    <url>/news/fashion/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/fashion.js"></script>]]></content>
   </entry>
   <entry>
     <title>头条</title>
@@ -3203,36 +3203,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/front.js"></script>]]></content>
   </entry>
   <entry>
-    <title>游戏</title>
-    <url>/news/game/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
-  </entry>
-  <entry>
-    <title>手机</title>
-    <url>/news/phone/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>健康</title>
     <url>/news/health/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3246,6 +3216,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/health.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>游戏</title>
+    <url>/news/game/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
   </entry>
   <entry>
     <title>军事</title>
@@ -3263,21 +3248,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/military.js"></script>]]></content>
   </entry>
   <entry>
-    <title>娱乐</title>
-    <url>/news/recreation/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>体育</title>
     <url>/news/physical/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3293,8 +3263,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
   </entry>
   <entry>
-    <title>科技</title>
-    <url>/news/science/index.html</url>
+    <title>手机</title>
+    <url>/news/phone/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
 <button id="load-more-button">加载更多</button>
 <div id="error-container" style="display:none; color:red;"></div>
@@ -3305,7 +3275,22 @@ document.addEventListener('DOMContentLoaded', function() {
         <button id="back-to-top">回到顶部</button>
     </div>
 </div>
-<script type="text/javascript" src="/js/news/science.js"></script>]]></content>
+<script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>娱乐</title>
+    <url>/news/recreation/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
   </entry>
   <entry>
     <title>旅游</title>
@@ -3321,6 +3306,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/travel.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>科技</title>
+    <url>/news/science/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/science.js"></script>]]></content>
   </entry>
   <entry>
     <title>视频</title>
