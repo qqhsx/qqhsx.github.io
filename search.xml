@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo博客搭建与部署</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
+<h2 id="搭建环境准备"><a href="#搭建环境准备" class="headerlink" title="搭建环境准备"></a>搭建环境准备</h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><span id="more"></span>
+
+<p>Git是一个先进的分布式版本控制工具，可以有效处理不同规模的项目版本管理。这里用于管理你的Hexo文章，将本地的博客上传至Github。到Git官网选择合适的版本<a href="https://gitforwindows.org/">下载</a>，安装后会有一个Git Bash的命令行工具，之后用该工具操作Git。</p>
+<p><img src="https://s2.loli.net/2022/09/02/yERzbHxNWFDkGYj.png" alt="1"></p>
+<p>检查是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/09/02/Ig54dwxlKL7iNW2.png" alt="2"></p>
+<p>正常显示版本号，无报错即为安装成功。<br>另外，Windows环境下在Git安装完成后，可以使用Git Bash来进行后续命令行操作。</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Hexo基于Node.js，所以需要安装Node.js及npm工具。可进入Node.js中文网<a href="http://nodejs.cn/download/">下载</a>，选择LTS（长期支持版本）即可。<br>检查是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/09/02/y6HEt7ubvYxj4De.png" alt="3"></p>
+<p>正常显示版本号，无报错即为安装成功。</p>
+<h2 id="博客本地搭建"><a href="#博客本地搭建" class="headerlink" title="博客本地搭建"></a>博客本地搭建</h2><h3 id="安装Hexo框架"><a href="#安装Hexo框架" class="headerlink" title="安装Hexo框架"></a>安装Hexo框架</h3><p>右键打开Git Bash，输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/09/02/OXSGPjcFAWuTL1w.png" alt="4"></p>
+<p>正常显示版本号，无报错即为安装成功。</p>
+<h3 id="初始化博客进入文件夹，安装一下npm"><a href="#初始化博客进入文件夹，安装一下npm" class="headerlink" title="初始化博客进入文件夹，安装一下npm"></a>初始化博客进入文件夹，安装一下npm</h3><p>运行Git Bash执行以下命令：</p>
+<p>命令为在当前位置新建一个文件夹作为博客的目录，例如这里我将博客目录设置为myblog，并设置myblog为当前目录后安装npm</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="博客目录介绍"><a href="#博客目录介绍" class="headerlink" title="博客目录介绍"></a>博客目录介绍</h3><p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<p><code>_config.yml</code> 网站的配置信息，可以在此配置大部分的参数。<br><code> package.json</code> 应用程序的信息，新添加的插件内容也会显示在这里，可以不做修改。<br><code>scaffolds</code> 模板文件夹，新建文章时，Hexo会根据scaffolds来建立文件。Hexo的模板是指在新建的Markdown文件中默认填充的内容，我们可以在模板上添加自定义内容，比如categories，tags等。<br><code>source</code> 存放用户资源的地方，也就是我们的博客内容。初始设置两个文件夹，posts（文章）和drafts（草稿）。之后通过命令新建页面后，文件夹数量会增加。<br><code>themes</code> 主题文件夹，用于存放主题文件包，Hexo会根据主题内容生成静态页面，默认主题为landscape，可根据个人喜好进行更改。</p>
+<h3 id="博客本地效果"><a href="#博客本地效果" class="headerlink" title="博客本地效果"></a>博客本地效果</h3><p>Git Bash执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>启动hexo服务，访问<a href="http://localhost:4000/">http://localhost:4000</a>即可看到生成的博客页面。使用Ctrl+C可关闭本地服务。</p>
+<p><img src="https://s2.loli.net/2022/09/02/vsMUKSwT3D9B1kt.png" alt="5"></p>
+<h2 id="博客Github部署"><a href="#博客Github部署" class="headerlink" title="博客Github部署"></a>博客Github部署</h2><h3 id="创建个人仓库"><a href="#创建个人仓库" class="headerlink" title="创建个人仓库"></a>创建个人仓库</h3><p>这里需要Github账号，如果没有可以去<a href="https://github.com/join">注册</a>一个。</p>
+<p><img src="https://s2.loli.net/2022/09/02/EdzSKevZrViq3UY.png" alt="6"></p>
+<p><a href="https://github.com/login">登录</a>Github，新建一个仓库，命名格式为：用户名.github.io。比如，我的用户名是qqhsx，我的仓库名为qqhsx.github.io。注意这里必须按此格式命名，只有这样，之后部署到GitHub pages的时候，才会被识别。</p>
+<p><img src="https://s2.loli.net/2022/09/02/zVEjxBYukKmqD9e.png" alt="7"></p>
+<p><img src="https://s2.loli.net/2022/09/02/rplmdP6XA3LBuqJ.png" alt="8"></p>
+<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>打开Git Bash，输入以下命令，生成本地密钥。这里用户名和邮箱仅作演示，用户名为你Github的用户名，邮箱为你Github的邮箱。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxxxxx@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>输入以下命令，检查输入是否正确：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+
+<p>确认无误后，输入以下命令，创建SSH：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>无脑下一步即可,此时在用户文件夹下，已经生成了.ssh文件夹，在本地找到这个文件夹。</p>
+<p><img src="https://s2.loli.net/2022/09/02/ZWifwTv9LH3ohkq.png" alt="9"></p>
+<p><code>id_rsa</code>是你这台电脑的私人秘钥，<code>id_rsa.pub</code>是公共秘钥。<br>把公钥放在GitHub上，当你连接自己的Github账号时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过Git上传你的文件到GitHub上。<br>在Github的设置中，找到<code>SSH and GPG keys</code>，新建SSH Key，以文本方式打开<code>id_rsa.pub</code>文件，将内容复制到Key，标题随便起，添加Key。</p>
+<p><img src="https://s2.loli.net/2022/09/02/tyk78woW5fNjxMB.png" alt="10"></p>
+<p><img src="https://s2.loli.net/2022/09/02/yOwjdV8YcNrsCl3.png" alt="11"></p>
+<h3 id="部署代码到Github"><a href="#部署代码到Github" class="headerlink" title="部署代码到Github"></a>部署代码到Github</h3><p>打开站点配置文件<code>_config.yml</code>，拉到最底部，找到deploy字段，按如下格式修改其内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:qqhsx/qqhsx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>其中repository字段可在Github获取：</p>
+<p><img src="https://s2.loli.net/2022/09/02/HYXNjdn7GVAcDL1.png" alt="12"></p>
+<p>回到Git Bash，安装deploy-git ，用于使用命令部署到Github。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>然后执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean	//可省略</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>出现下图所示说明部署成功，此时代码已同步至Github。</p>
+<p><img src="https://s2.loli.net/2022/09/02/8WosUtrcAlgNJiI.png" alt="13"></p>
+<p>打开网址<a href="http://yourname.github.io/">http://yourname.github.io</a>就可以看到Hexo博客了。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>Hexo文档中命令很多，但你并不需要记住每一个。在博客的使用过程中，主要的命令如下：</p>
+<p><code>init</code>用于新建网站</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>new</code>用于新建文章或页面</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>generate</code>用于生成静态页面</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo g	//简写</span><br></pre></td></tr></table></figure>
+
+<p><code>deploy</code>用于将内容部署到网站</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line">hexo -g</span><br></pre></td></tr></table></figure>
+
+<p><code>publish</code>用于将内容从drafts文件夹移动到posts文件夹</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>server</code>用于启动服务器进行预览，默认情况下，访问入口为<a href="http://localhost:4000/">http://localhost:4000/</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br><span class="line">hexo s	//简写</span><br></pre></td></tr></table></figure>
+
+<div class="note info"><p>实际上，除了第一次部署时，需要用到hexo init这个命令，平时写博客的过程中，最常用的就是：</p>
+<p><code>hexo n</code> 新建文章&#x2F;页面<br><code>hexo g</code> 生成静态页面<br><code>hexo s</code> 本地查看内容<br><code>hexo d</code> 部署到Github</p>
+<p>如果需要清除之前生成的内容，可以在生成静态页面前执行hexo clean，其他情况只需要以上四条命令即可。</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>newpost</title>
     <url>/newpost/</url>
     <content><![CDATA[<style>
@@ -106,115 +208,52 @@
     <url>/pdf%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<iframe src="/lib/pdf/web/viewer.html?file=/pdf测试/22.pdf" style="width:100%;height:800px"></iframe>
 
-<iframe src="https://github.com/qqhsx/Clash/raw/31f537a359f9dc8ce30514fae822c615a4ac2724/EMX%E5%BA%94%E7%94%A8%E6%95%99%E7%A8%8B%EF%BC%88%E9%AB%98%E6%89%8B%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%89.pdf" style="width:100%; height:800px;"></iframe>
 
 
 <iframe src="/lib/pdf/web/viewer.html?url=https://github.com/qqhsx/Clash/raw/31f537a359f9dc8ce30514fae822c615a4ac2724/EMX%E5%BA%94%E7%94%A8%E6%95%99%E7%A8%8B%EF%BC%88%E9%AB%98%E6%89%8B%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%89.pdf" style="width:100%; height:800px;"></iframe>
 
-
-<iframe src="/lib/pdf/web/viewer.html?url=https://www.orimi.com/pdf-test.pdf" style="width:100%; height:800px;"></iframe>
 ]]></content>
   </entry>
   <entry>
-    <title>Hexo博客搭建与部署</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
-<h2 id="搭建环境准备"><a href="#搭建环境准备" class="headerlink" title="搭建环境准备"></a>搭建环境准备</h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><span id="more"></span>
+    <title>hexo-theme-next主题安装</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
+<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
-<p>Git是一个先进的分布式版本控制工具，可以有效处理不同规模的项目版本管理。这里用于管理你的Hexo文章，将本地的博客上传至Github。到Git官网选择合适的版本<a href="https://gitforwindows.org/">下载</a>，安装后会有一个Git Bash的命令行工具，之后用该工具操作Git。</p>
-<p><img src="https://s2.loli.net/2022/09/02/yERzbHxNWFDkGYj.png" alt="1"></p>
-<p>检查是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/09/02/Ig54dwxlKL7iNW2.png" alt="2"></p>
-<p>正常显示版本号，无报错即为安装成功。<br>另外，Windows环境下在Git安装完成后，可以使用Git Bash来进行后续命令行操作。</p>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Hexo基于Node.js，所以需要安装Node.js及npm工具。可进入Node.js中文网<a href="http://nodejs.cn/download/">下载</a>，选择LTS（长期支持版本）即可。<br>检查是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://s2.loli.net/2022/09/02/y6HEt7ubvYxj4De.png" alt="3"></p>
-<p>正常显示版本号，无报错即为安装成功。</p>
-<h2 id="博客本地搭建"><a href="#博客本地搭建" class="headerlink" title="博客本地搭建"></a>博客本地搭建</h2><h3 id="安装Hexo框架"><a href="#安装Hexo框架" class="headerlink" title="安装Hexo框架"></a>安装Hexo框架</h3><p>右键打开Git Bash，输入命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
+</li>
+<li><p>next theme 配置文件路径</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
 
-<p>检查是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s2.loli.net/2022/09/02/OXSGPjcFAWuTL1w.png" alt="4"></p>
-<p>正常显示版本号，无报错即为安装成功。</p>
-<h3 id="初始化博客进入文件夹，安装一下npm"><a href="#初始化博客进入文件夹，安装一下npm" class="headerlink" title="初始化博客进入文件夹，安装一下npm"></a>初始化博客进入文件夹，安装一下npm</h3><p>运行Git Bash执行以下命令：</p>
-<p>命令为在当前位置新建一个文件夹作为博客的目录，例如这里我将博客目录设置为myblog，并设置myblog为当前目录后安装npm</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<h3 id="博客目录介绍"><a href="#博客目录介绍" class="headerlink" title="博客目录介绍"></a>博客目录介绍</h3><p>新建完成后，指定文件夹的目录如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-
-<p><code>_config.yml</code> 网站的配置信息，可以在此配置大部分的参数。<br><code> package.json</code> 应用程序的信息，新添加的插件内容也会显示在这里，可以不做修改。<br><code>scaffolds</code> 模板文件夹，新建文章时，Hexo会根据scaffolds来建立文件。Hexo的模板是指在新建的Markdown文件中默认填充的内容，我们可以在模板上添加自定义内容，比如categories，tags等。<br><code>source</code> 存放用户资源的地方，也就是我们的博客内容。初始设置两个文件夹，posts（文章）和drafts（草稿）。之后通过命令新建页面后，文件夹数量会增加。<br><code>themes</code> 主题文件夹，用于存放主题文件包，Hexo会根据主题内容生成静态页面，默认主题为landscape，可根据个人喜好进行更改。</p>
-<h3 id="博客本地效果"><a href="#博客本地效果" class="headerlink" title="博客本地效果"></a>博客本地效果</h3><p>Git Bash执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>启动hexo服务，访问<a href="http://localhost:4000/">http://localhost:4000</a>即可看到生成的博客页面。使用Ctrl+C可关闭本地服务。</p>
-<p><img src="https://s2.loli.net/2022/09/02/vsMUKSwT3D9B1kt.png" alt="5"></p>
-<h2 id="博客Github部署"><a href="#博客Github部署" class="headerlink" title="博客Github部署"></a>博客Github部署</h2><h3 id="创建个人仓库"><a href="#创建个人仓库" class="headerlink" title="创建个人仓库"></a>创建个人仓库</h3><p>这里需要Github账号，如果没有可以去<a href="https://github.com/join">注册</a>一个。</p>
-<p><img src="https://s2.loli.net/2022/09/02/EdzSKevZrViq3UY.png" alt="6"></p>
-<p><a href="https://github.com/login">登录</a>Github，新建一个仓库，命名格式为：用户名.github.io。比如，我的用户名是qqhsx，我的仓库名为qqhsx.github.io。注意这里必须按此格式命名，只有这样，之后部署到GitHub pages的时候，才会被识别。</p>
-<p><img src="https://s2.loli.net/2022/09/02/zVEjxBYukKmqD9e.png" alt="7"></p>
-<p><img src="https://s2.loli.net/2022/09/02/rplmdP6XA3LBuqJ.png" alt="8"></p>
-<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>打开Git Bash，输入以下命令，生成本地密钥。这里用户名和邮箱仅作演示，用户名为你Github的用户名，邮箱为你Github的邮箱。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxxxxx@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>输入以下命令，检查输入是否正确：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
-
-<p>确认无误后，输入以下命令，创建SSH：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>无脑下一步即可,此时在用户文件夹下，已经生成了.ssh文件夹，在本地找到这个文件夹。</p>
-<p><img src="https://s2.loli.net/2022/09/02/ZWifwTv9LH3ohkq.png" alt="9"></p>
-<p><code>id_rsa</code>是你这台电脑的私人秘钥，<code>id_rsa.pub</code>是公共秘钥。<br>把公钥放在GitHub上，当你连接自己的Github账号时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过Git上传你的文件到GitHub上。<br>在Github的设置中，找到<code>SSH and GPG keys</code>，新建SSH Key，以文本方式打开<code>id_rsa.pub</code>文件，将内容复制到Key，标题随便起，添加Key。</p>
-<p><img src="https://s2.loli.net/2022/09/02/tyk78woW5fNjxMB.png" alt="10"></p>
-<p><img src="https://s2.loli.net/2022/09/02/yOwjdV8YcNrsCl3.png" alt="11"></p>
-<h3 id="部署代码到Github"><a href="#部署代码到Github" class="headerlink" title="部署代码到Github"></a>部署代码到Github</h3><p>打开站点配置文件<code>_config.yml</code>，拉到最底部，找到deploy字段，按如下格式修改其内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:qqhsx/qqhsx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>其中repository字段可在Github获取：</p>
-<p><img src="https://s2.loli.net/2022/09/02/HYXNjdn7GVAcDL1.png" alt="12"></p>
-<p>回到Git Bash，安装deploy-git ，用于使用命令部署到Github。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>然后执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean	//可省略</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>出现下图所示说明部署成功，此时代码已同步至Github。</p>
-<p><img src="https://s2.loli.net/2022/09/02/8WosUtrcAlgNJiI.png" alt="13"></p>
-<p>打开网址<a href="http://yourname.github.io/">http://yourname.github.io</a>就可以看到Hexo博客了。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>Hexo文档中命令很多，但你并不需要记住每一个。在博客的使用过程中，主要的命令如下：</p>
-<p><code>init</code>用于新建网站</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>new</code>用于新建文章或页面</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>generate</code>用于生成静态页面</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo g	//简写</span><br></pre></td></tr></table></figure>
-
-<p><code>deploy</code>用于将内容部署到网站</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line">hexo -g</span><br></pre></td></tr></table></figure>
-
-<p><code>publish</code>用于将内容从drafts文件夹移动到posts文件夹</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>server</code>用于启动服务器进行预览，默认情况下，访问入口为<a href="http://localhost:4000/">http://localhost:4000/</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br><span class="line">hexo s	//简写</span><br></pre></td></tr></table></figure>
-
-<div class="note info"><p>实际上，除了第一次部署时，需要用到hexo init这个命令，平时写博客的过程中，最常用的就是：</p>
-<p><code>hexo n</code> 新建文章&#x2F;页面<br><code>hexo g</code> 生成静态页面<br><code>hexo s</code> 本地查看内容<br><code>hexo d</code> 部署到Github</p>
-<p>如果需要清除之前生成的内容，可以在生成静态页面前执行hexo clean，其他情况只需要以上四条命令即可。</p>
-</div>]]></content>
+<blockquote>
+<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
+</blockquote>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
+<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
+</li>
+<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
+</li>
+</ul>
+<blockquote>
+<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
+</blockquote>
+]]></content>
       <categories>
         <category>Hexo博客相关</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>博客搭建</tag>
+        <tag>next主题</tag>
       </tags>
   </entry>
   <entry>
@@ -274,45 +313,52 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo-theme-next主题安装</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
-<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+    <title>中国房价高歌猛涨时期</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E4%B8%AD%E5%9B%BD%E6%88%BF%E4%BB%B7%E9%AB%98%E6%AD%8C%E7%8C%9B%E6%B6%A8%E6%97%B6%E6%9C%9F/</url>
+    <content><![CDATA[<p>中国房价的高歌猛涨主要集中在以下几个时间段：</p>
+<h3 id="1998年-房改启动"><a href="#1998年-房改启动" class="headerlink" title="1998年 房改启动"></a>1998年 房改启动</h3><p><strong>1998年</strong>，国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，决定全面停止住房实物分配，实行住房分配货币化。这一政策使得商品房市场快速发展，住房成为商品，房价开始逐步上涨。</p>
+<ul>
+<li><strong>1998年房价</strong>：一线城市如北京和上海的平均房价约为2000-3000元&#x2F;平方米。</li>
+</ul>
 <span id="more"></span>
 
-<ol start="2">
-<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
-</li>
-<li><p>next theme 配置文件路径</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
-</blockquote>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
-<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
-</li>
-<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
-</li>
+<h3 id="2003-2007年-房地产市场快速发展"><a href="#2003-2007年-房地产市场快速发展" class="headerlink" title="2003-2007年 房地产市场快速发展"></a>2003-2007年 房地产市场快速发展</h3><p><strong>2003年</strong>，国务院发布《关于促进房地产市场持续健康发展的通知》，明确房地产是国民经济的重要支柱产业，鼓励房地产市场发展。这一时期，房价开始快速上涨，尤其在大中城市。</p>
+<ul>
+<li><strong>2003年房价</strong>：北京和上海的房价约为4000-6000元&#x2F;平方米。</li>
+<li><strong>2005-2007年房价</strong>：一线城市房价突破万元大关，达到10000-15000元&#x2F;平方米，部分热门地段更高。</li>
 </ul>
-<blockquote>
-<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
-</blockquote>
+<h3 id="2008年-金融危机后的刺激政策"><a href="#2008年-金融危机后的刺激政策" class="headerlink" title="2008年 金融危机后的刺激政策"></a>2008年 金融危机后的刺激政策</h3><p><strong>2008年</strong>全球金融危机爆发，为了应对经济下行压力，中国政府推出了一系列刺激经济的政策，包括“四万亿”投资计划。这些政策也推高了房地产市场，房价在2009年和2010年再次出现快速上涨。</p>
+<ul>
+<li><strong>2009年房价</strong>：北京、上海等城市的房价上涨至15000-20000元&#x2F;平方米。</li>
+<li><strong>2010年房价</strong>：继续上涨，一线城市部分区域房价达到20000-30000元&#x2F;平方米。</li>
+</ul>
+<h3 id="2015年后-新一轮上涨"><a href="#2015年后-新一轮上涨" class="headerlink" title="2015年后 新一轮上涨"></a>2015年后 新一轮上涨</h3><p><strong>2015年</strong>以后，随着中国经济增速放缓，政府开始放松对房地产市场的调控政策，房价再次快速上涨。</p>
+<ul>
+<li><strong>2016年房价</strong>：一线城市如北京、上海的房价突破50000元&#x2F;平方米，部分热点二线城市也达到20000-30000元&#x2F;平方米。</li>
+<li><strong>2017-2018年房价</strong>：一线城市继续上涨，北京、上海的房价在50000-60000元&#x2F;平方米，部分热门二线城市房价达到30000元&#x2F;平方米以上。</li>
+</ul>
+<h3 id="2019年至今-稳定与调整"><a href="#2019年至今-稳定与调整" class="headerlink" title="2019年至今 稳定与调整"></a>2019年至今 稳定与调整</h3><p><strong>2019年</strong>以后，房地产市场进入相对稳定和调整期，政府持续实施“房住不炒”的政策，强调房地产市场平稳健康发展。</p>
+<ul>
+<li><strong>2019年房价</strong>：一线城市基本保持在50000-60000元&#x2F;平方米，二线城市在20000-30000元&#x2F;平方米之间。</li>
+<li><strong>2021年房价</strong>：尽管调控政策严厉，但一线城市房价仍在高位，北京和上海等地房价稳定在50000-60000元&#x2F;平方米，部分二线城市有所回落，但整体仍较高。</li>
+</ul>
+<h3 id="主要原因"><a href="#主要原因" class="headerlink" title="主要原因"></a>主要原因</h3><p>房价高歌猛涨的主要原因包括：</p>
+<ul>
+<li><strong>城市化进程</strong>：随着中国快速的城市化进程，大量人口从农村涌入城市，尤其是一线和二线城市，导致住房需求大幅增加。这种人口迁移增加了对住房的需求，使得房价上涨。</li>
+<li><strong>投资需求</strong>：房地产不仅被视为一种居住需求，同时也被视为一种重要的投资手段。由于中国的金融市场相对不成熟，股市波动较大，房地产被认为是更为稳定和保值的投资渠道。许多家庭和投资者购房不仅是为了自住，更是为了投资和保值增值。</li>
+<li><strong>土地供应有限</strong>：大城市尤其是一线城市的土地资源有限，土地供应紧张。在这些城市，政府对土地的严格管控和供应节奏的控制，使得新房供应相对不足，导致供需矛盾加剧，房价上涨。</li>
+<li><strong>政策影响</strong>：政府的房地产政策对市场有着重要影响。尽管政府多次推出限购、限贷、限售等调控措施，但这些政策往往在抑制投机性需求的同时也刺激了市场的预期，使得房价在政策松绑时再次上涨。</li>
+<li><strong>货币政策和金融环境</strong>：宽松的货币政策和低利率环境为房地产市场提供了充足的流动性。银行贷款利率低，使得购房成本降低，促进了购房需求。此外，金融机构对房地产开发商的融资支持也推动了房地产市场的扩张。</li>
+<li><strong>市场预期</strong>：市场预期对房价影响巨大。许多人认为房价会持续上涨，因此在政策松绑或经济环境改善时加快购房步伐，进一步推高房价。</li>
+<li><strong>开发商行为</strong>：房地产开发商在土地竞拍和房屋定价上也起到推波助澜的作用。高地价往往会传导至高房价，开发商通过捂盘惜售等手段维持高房价水平。</li>
+</ul>
+<p>总结起来，中国房价的快速上涨主要集中在1998年房改启动后，2003-2007年，2008年金融危机后的刺激政策期间，以及2015年后的新一轮上涨期。政府通过多次调控试图稳定市场，但房价整体仍呈上升趋势。</p>
 ]]></content>
       <categories>
-        <category>Hexo博客相关</category>
+        <category>经济</category>
       </categories>
       <tags>
-        <tag>next主题</tag>
+        <tag>房价</tag>
       </tags>
   </entry>
   <entry>
@@ -362,55 +408,6 @@
       </categories>
       <tags>
         <tag>年增率</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>中国房价高歌猛涨时期</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E4%B8%AD%E5%9B%BD%E6%88%BF%E4%BB%B7%E9%AB%98%E6%AD%8C%E7%8C%9B%E6%B6%A8%E6%97%B6%E6%9C%9F/</url>
-    <content><![CDATA[<p>中国房价的高歌猛涨主要集中在以下几个时间段：</p>
-<h3 id="1998年-房改启动"><a href="#1998年-房改启动" class="headerlink" title="1998年 房改启动"></a>1998年 房改启动</h3><p><strong>1998年</strong>，国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，决定全面停止住房实物分配，实行住房分配货币化。这一政策使得商品房市场快速发展，住房成为商品，房价开始逐步上涨。</p>
-<ul>
-<li><strong>1998年房价</strong>：一线城市如北京和上海的平均房价约为2000-3000元&#x2F;平方米。</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="2003-2007年-房地产市场快速发展"><a href="#2003-2007年-房地产市场快速发展" class="headerlink" title="2003-2007年 房地产市场快速发展"></a>2003-2007年 房地产市场快速发展</h3><p><strong>2003年</strong>，国务院发布《关于促进房地产市场持续健康发展的通知》，明确房地产是国民经济的重要支柱产业，鼓励房地产市场发展。这一时期，房价开始快速上涨，尤其在大中城市。</p>
-<ul>
-<li><strong>2003年房价</strong>：北京和上海的房价约为4000-6000元&#x2F;平方米。</li>
-<li><strong>2005-2007年房价</strong>：一线城市房价突破万元大关，达到10000-15000元&#x2F;平方米，部分热门地段更高。</li>
-</ul>
-<h3 id="2008年-金融危机后的刺激政策"><a href="#2008年-金融危机后的刺激政策" class="headerlink" title="2008年 金融危机后的刺激政策"></a>2008年 金融危机后的刺激政策</h3><p><strong>2008年</strong>全球金融危机爆发，为了应对经济下行压力，中国政府推出了一系列刺激经济的政策，包括“四万亿”投资计划。这些政策也推高了房地产市场，房价在2009年和2010年再次出现快速上涨。</p>
-<ul>
-<li><strong>2009年房价</strong>：北京、上海等城市的房价上涨至15000-20000元&#x2F;平方米。</li>
-<li><strong>2010年房价</strong>：继续上涨，一线城市部分区域房价达到20000-30000元&#x2F;平方米。</li>
-</ul>
-<h3 id="2015年后-新一轮上涨"><a href="#2015年后-新一轮上涨" class="headerlink" title="2015年后 新一轮上涨"></a>2015年后 新一轮上涨</h3><p><strong>2015年</strong>以后，随着中国经济增速放缓，政府开始放松对房地产市场的调控政策，房价再次快速上涨。</p>
-<ul>
-<li><strong>2016年房价</strong>：一线城市如北京、上海的房价突破50000元&#x2F;平方米，部分热点二线城市也达到20000-30000元&#x2F;平方米。</li>
-<li><strong>2017-2018年房价</strong>：一线城市继续上涨，北京、上海的房价在50000-60000元&#x2F;平方米，部分热门二线城市房价达到30000元&#x2F;平方米以上。</li>
-</ul>
-<h3 id="2019年至今-稳定与调整"><a href="#2019年至今-稳定与调整" class="headerlink" title="2019年至今 稳定与调整"></a>2019年至今 稳定与调整</h3><p><strong>2019年</strong>以后，房地产市场进入相对稳定和调整期，政府持续实施“房住不炒”的政策，强调房地产市场平稳健康发展。</p>
-<ul>
-<li><strong>2019年房价</strong>：一线城市基本保持在50000-60000元&#x2F;平方米，二线城市在20000-30000元&#x2F;平方米之间。</li>
-<li><strong>2021年房价</strong>：尽管调控政策严厉，但一线城市房价仍在高位，北京和上海等地房价稳定在50000-60000元&#x2F;平方米，部分二线城市有所回落，但整体仍较高。</li>
-</ul>
-<h3 id="主要原因"><a href="#主要原因" class="headerlink" title="主要原因"></a>主要原因</h3><p>房价高歌猛涨的主要原因包括：</p>
-<ul>
-<li><strong>城市化进程</strong>：随着中国快速的城市化进程，大量人口从农村涌入城市，尤其是一线和二线城市，导致住房需求大幅增加。这种人口迁移增加了对住房的需求，使得房价上涨。</li>
-<li><strong>投资需求</strong>：房地产不仅被视为一种居住需求，同时也被视为一种重要的投资手段。由于中国的金融市场相对不成熟，股市波动较大，房地产被认为是更为稳定和保值的投资渠道。许多家庭和投资者购房不仅是为了自住，更是为了投资和保值增值。</li>
-<li><strong>土地供应有限</strong>：大城市尤其是一线城市的土地资源有限，土地供应紧张。在这些城市，政府对土地的严格管控和供应节奏的控制，使得新房供应相对不足，导致供需矛盾加剧，房价上涨。</li>
-<li><strong>政策影响</strong>：政府的房地产政策对市场有着重要影响。尽管政府多次推出限购、限贷、限售等调控措施，但这些政策往往在抑制投机性需求的同时也刺激了市场的预期，使得房价在政策松绑时再次上涨。</li>
-<li><strong>货币政策和金融环境</strong>：宽松的货币政策和低利率环境为房地产市场提供了充足的流动性。银行贷款利率低，使得购房成本降低，促进了购房需求。此外，金融机构对房地产开发商的融资支持也推动了房地产市场的扩张。</li>
-<li><strong>市场预期</strong>：市场预期对房价影响巨大。许多人认为房价会持续上涨，因此在政策松绑或经济环境改善时加快购房步伐，进一步推高房价。</li>
-<li><strong>开发商行为</strong>：房地产开发商在土地竞拍和房屋定价上也起到推波助澜的作用。高地价往往会传导至高房价，开发商通过捂盘惜售等手段维持高房价水平。</li>
-</ul>
-<p>总结起来，中国房价的快速上涨主要集中在1998年房改启动后，2003-2007年，2008年金融危机后的刺激政策期间，以及2015年后的新一轮上涨期。政府通过多次调控试图稳定市场，但房价整体仍呈上升趋势。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>房价</tag>
       </tags>
   </entry>
   <entry>
@@ -484,6 +481,109 @@
       </categories>
       <tags>
         <tag>保障性住房</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>全面了解投资产品：从风险到收益的比较分析</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E6%8A%95%E8%B5%84%E4%BA%A7%E5%93%81%EF%BC%9A%E4%BB%8E%E9%A3%8E%E9%99%A9%E5%88%B0%E6%94%B6%E7%9B%8A%E7%9A%84%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p>在投资世界中，有多种类型的投资产品可供选择，每种产品都有其独特的特点和风险回报特征。以下是对常见投资产品的全面比较和分析，帮助投资者理解并选择适合自己的投资工具。</p>
+<span id="more"></span>
+
+<h4 id="1-存款（银行存款）"><a href="#1-存款（银行存款）" class="headerlink" title="1. 存款（银行存款）"></a>1. 存款（银行存款）</h4><ul>
+<li><strong>投资对象：</strong> 存款是将资金存放在银行中，以获取固定的利息收益。</li>
+<li><strong>风险：</strong> 最低。由于受到国家存款保险机构保护，存款的本金通常是安全的。</li>
+<li><strong>收益：</strong> 低。存款利率通常略高于通货膨胀率，但相对于其他投资产品，收益较低。</li>
+</ul>
+<h4 id="2-债券"><a href="#2-债券" class="headerlink" title="2. 债券"></a>2. 债券</h4><ul>
+<li><strong>投资对象：</strong> 债券是借款人向投资者发行的债务工具，承诺在未来支付利息和偿还本金。</li>
+<li><strong>风险：</strong> 中等。政府债券的风险较低，而公司债券的风险取决于发行公司的信用评级和偿债能力。</li>
+<li><strong>收益：</strong> 中等。债券通常提供稳定的利息收益，收益略高于存款，但较股票等其他投资产品为低。</li>
+</ul>
+<h4 id="3-股票"><a href="#3-股票" class="headerlink" title="3. 股票"></a>3. 股票</h4><ul>
+<li><strong>投资对象：</strong> 股票代表投资者对公司所有权的一部分，股东通过股票分享公司的盈利和增长。</li>
+<li><strong>风险：</strong> 高。股票市场价格波动大，受市场供需和公司业绩等多种因素影响。</li>
+<li><strong>收益：</strong> 高。股票的长期回报可能高于债券和存款，但也伴随较大的市场风险和波动性。</li>
+</ul>
+<h4 id="4-基金"><a href="#4-基金" class="headerlink" title="4. 基金"></a>4. 基金</h4><ul>
+<li><strong>投资对象：</strong> 基金是由多个投资者共同投资，由专业基金经理管理，并投资于多种资产类别。</li>
+<li><strong>风险：</strong> 根据基金类型不同而异，可以是低、中等或高风险。</li>
+<li><strong>收益：</strong> 中等。基金通过多样化投资来平衡风险和回报，适合追求稳定增长的投资者。</li>
+</ul>
+<h4 id="5-房地产投资"><a href="#5-房地产投资" class="headerlink" title="5. 房地产投资"></a>5. 房地产投资</h4><ul>
+<li><strong>投资对象：</strong> 投资于不动产市场，包括商业地产、住宅物业和房地产基金。</li>
+<li><strong>风险：</strong> 中等。房地产市场波动性较大，但相对于股票市场通常更为稳定。</li>
+<li><strong>收益：</strong> 中等到高。房地产投资的长期回报可能与股票市场相媲美，但需考虑到管理和市场风险。</li>
+</ul>
+<h4 id="6-大宗商品"><a href="#6-大宗商品" class="headerlink" title="6. 大宗商品"></a>6. 大宗商品</h4><ul>
+<li><strong>投资对象：</strong> 包括黄金、原油等大宗商品，通过期货市场进行交易。</li>
+<li><strong>风险：</strong> 高。大宗商品价格波动大，受全球经济和政治因素影响较大。</li>
+<li><strong>收益：</strong> 中等到高。某些情况下，大宗商品的价格波动可以带来较高的投资回报，但伴随较高的市场风险。</li>
+</ul>
+<h4 id="7-其他投资产品"><a href="#7-其他投资产品" class="headerlink" title="7. 其他投资产品"></a>7. 其他投资产品</h4><ul>
+<li><strong>期权（Options）：</strong> 允许投资者在未来某一特定时间内以预定价格买入或卖出标的资产，风险和回报均高。</li>
+<li><strong>外汇市场（Forex）：</strong> 全球货币交易市场，具有高风险和潜在高回报。</li>
+<li><strong>衍生品（Derivatives）：</strong> 包括期货、期权等，其价值来源于底层资产的变动，风险和回报较高。</li>
+<li><strong>证券化产品（Securitized Products）：</strong> 将资产转化为可交易的证券，风险和回报各异。</li>
+<li><strong>其他特定投资（如艺术品投资、天使投资等）：</strong> 风险和收益因具体投资对象和市场条件而异。</li>
+</ul>
+<h3 id="如何选择适合自己的投资产品？"><a href="#如何选择适合自己的投资产品？" class="headerlink" title="如何选择适合自己的投资产品？"></a>如何选择适合自己的投资产品？</h3><p>在选择投资产品时，投资者需要综合考虑以下因素：</p>
+<ul>
+<li><strong>风险偏好：</strong> 确定自己愿意承担的投资风险程度。</li>
+<li><strong>投资目标：</strong> 明确投资的目的和时间，是追求长期增值还是短期收益。</li>
+<li><strong>多样化投资：</strong> 分散投资于不同类型和资产类别，以降低整体投资组合的风险。</li>
+<li><strong>了解投资产品：</strong> 在选择之前，充分了解每种投资产品的特点、风险和预期收益。</li>
+</ul>
+<p>通过理解和比较不同的投资产品类型，投资者可以根据自身的投资目标和风险承受能力，构建一个多样化且符合长期财务规划的投资组合。在进行任何投资之前，确保进行充分的调查和风险评估，以做出明智的投资决策。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>投资产品</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>债券</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E5%80%BA%E5%88%B8/</url>
+    <content><![CDATA[<h3 id="债券：理解债务的投资方式"><a href="#债券：理解债务的投资方式" class="headerlink" title="债券：理解债务的投资方式"></a>债券：理解债务的投资方式</h3><p>在金融世界中，债券是一种常见的投资工具，它为投资者提供了一种安全稳定的投资选择。让我们一起来了解一下什么是债券，以及如何购买债券以及它如何运作。</p>
+<span id="more"></span>
+
+<h4 id="什么是债券？"><a href="#什么是债券？" class="headerlink" title="什么是债券？"></a>什么是债券？</h4><p><strong>债券</strong>就像是一张借据或者是一种借出资金的“债务证明书”。简单来说，当你购买债券时，你其实就是在借钱给某个实体，比如政府、公司或者其他组织。这个实体承诺在未来某个时候偿还你的投资本金，并且在此期间向你支付利息作为回报。</p>
+<h4 id="如何购买债券？"><a href="#如何购买债券？" class="headerlink" title="如何购买债券？"></a>如何购买债券？</h4><p>购买债券通常有几种方式：</p>
+<ol>
+<li><p><strong>一级市场：</strong> 在债券发行的初期购买。这意味着你直接从发行者（比如政府或公司）那里购买债券。一级市场购买通常通过银行、证券公司或者经纪人进行。</p>
+</li>
+<li><p><strong>二级市场：</strong> 在债券已经发行并流通后购买。这时你是从其他投资者手中购买债券。二级市场的交易通常在证券交易所（如股票市场）进行，你可以通过证券账户和经纪人进行交易。</p>
+</li>
+<li><p><strong>债券基金：</strong> 如果你不想直接购买单个债券，可以考虑投资债券基金。债券基金由专业基金经理管理，他们会购买和管理多种债券，你可以通过购买基金份额来间接投资债券市场。</p>
+</li>
+</ol>
+<h4 id="不同类型的债券"><a href="#不同类型的债券" class="headerlink" title="不同类型的债券"></a>不同类型的债券</h4><p>债券有很多种类，其中包括：</p>
+<ul>
+<li><p><strong>政府债券（国债）：</strong> 由国家政府发行，用于筹集资金以支持政府项目和运作。政府债券通常被认为是最安全的债券形式，因为政府具有征税权和印钞权。</p>
+</li>
+<li><p><strong>公司债券：</strong> 由公司发行，用于扩展业务、投资新项目或偿还旧债务。公司债券的风险和收益取决于公司的信用评级和经营状况。</p>
+</li>
+<li><p><strong>地方政府债券：</strong> 由地方政府或政治实体发行，用于建设基础设施或提供公共服务。地方政府债券的偿还能力与该地区经济和治理能力相关。</p>
+</li>
+</ul>
+<h4 id="债券的优缺点"><a href="#债券的优缺点" class="headerlink" title="债券的优缺点"></a>债券的优缺点</h4><p><strong>优点：</strong></p>
+<ul>
+<li><strong>稳定收益：</strong> 债券通常提供稳定的利息收入，适合追求稳定收益的投资者。</li>
+<li><strong>资本保护：</strong> 如果投资的实体能够履行支付义务，债券投资的本金一般是有保护的。</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li><strong>利息风险：</strong><br>市场利率上升可能导致债券市场价值下降。<br>当你购买债券时，它通常有一个固定的利息率。假设你购买了一张5%利息率的债券，然后市场上的利率开始上升，比如其他新债券的利率变成了6%。在这种情况下，新债券提供了更高的利息回报，而你手里的旧债券因为它的利息率较低，因此它的市场价值可能会下降。<br>为什么会这样呢？因为投资者在市场上购买债券时，会希望获得与市场利率相符合的回报。如果市场上的新债券提供了更高的利息率，那么人们就更愿意购买新债券，而不是旧的低利息债券。为了吸引买家，旧债券的市场价格可能会下降，从而与新债券的利率相匹配。<br>这就是为什么当市场利率上升时，现有债券的市场价值可能会下降的原因。</li>
+<li><strong>违约风险：</strong> 如果债务人无法按时偿还债务，投资者可能会面临损失。</li>
+</ul>
+<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>总而言之，债券是一种可靠的投资选择，适合那些希望获得稳定收益并愿意承担一定风险的投资者。通过购买债券，你不仅可以帮助政府和企业筹集资金，还能为自己的投资组合增加多样性和稳定性。当然，在投资任何金融产品之前，了解你的投资目标和风险承受能力是非常重要的。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>债券</tag>
       </tags>
   </entry>
   <entry>
@@ -718,109 +818,6 @@
       </tags>
   </entry>
   <entry>
-    <title>债券</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E5%80%BA%E5%88%B8/</url>
-    <content><![CDATA[<h3 id="债券：理解债务的投资方式"><a href="#债券：理解债务的投资方式" class="headerlink" title="债券：理解债务的投资方式"></a>债券：理解债务的投资方式</h3><p>在金融世界中，债券是一种常见的投资工具，它为投资者提供了一种安全稳定的投资选择。让我们一起来了解一下什么是债券，以及如何购买债券以及它如何运作。</p>
-<span id="more"></span>
-
-<h4 id="什么是债券？"><a href="#什么是债券？" class="headerlink" title="什么是债券？"></a>什么是债券？</h4><p><strong>债券</strong>就像是一张借据或者是一种借出资金的“债务证明书”。简单来说，当你购买债券时，你其实就是在借钱给某个实体，比如政府、公司或者其他组织。这个实体承诺在未来某个时候偿还你的投资本金，并且在此期间向你支付利息作为回报。</p>
-<h4 id="如何购买债券？"><a href="#如何购买债券？" class="headerlink" title="如何购买债券？"></a>如何购买债券？</h4><p>购买债券通常有几种方式：</p>
-<ol>
-<li><p><strong>一级市场：</strong> 在债券发行的初期购买。这意味着你直接从发行者（比如政府或公司）那里购买债券。一级市场购买通常通过银行、证券公司或者经纪人进行。</p>
-</li>
-<li><p><strong>二级市场：</strong> 在债券已经发行并流通后购买。这时你是从其他投资者手中购买债券。二级市场的交易通常在证券交易所（如股票市场）进行，你可以通过证券账户和经纪人进行交易。</p>
-</li>
-<li><p><strong>债券基金：</strong> 如果你不想直接购买单个债券，可以考虑投资债券基金。债券基金由专业基金经理管理，他们会购买和管理多种债券，你可以通过购买基金份额来间接投资债券市场。</p>
-</li>
-</ol>
-<h4 id="不同类型的债券"><a href="#不同类型的债券" class="headerlink" title="不同类型的债券"></a>不同类型的债券</h4><p>债券有很多种类，其中包括：</p>
-<ul>
-<li><p><strong>政府债券（国债）：</strong> 由国家政府发行，用于筹集资金以支持政府项目和运作。政府债券通常被认为是最安全的债券形式，因为政府具有征税权和印钞权。</p>
-</li>
-<li><p><strong>公司债券：</strong> 由公司发行，用于扩展业务、投资新项目或偿还旧债务。公司债券的风险和收益取决于公司的信用评级和经营状况。</p>
-</li>
-<li><p><strong>地方政府债券：</strong> 由地方政府或政治实体发行，用于建设基础设施或提供公共服务。地方政府债券的偿还能力与该地区经济和治理能力相关。</p>
-</li>
-</ul>
-<h4 id="债券的优缺点"><a href="#债券的优缺点" class="headerlink" title="债券的优缺点"></a>债券的优缺点</h4><p><strong>优点：</strong></p>
-<ul>
-<li><strong>稳定收益：</strong> 债券通常提供稳定的利息收入，适合追求稳定收益的投资者。</li>
-<li><strong>资本保护：</strong> 如果投资的实体能够履行支付义务，债券投资的本金一般是有保护的。</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li><strong>利息风险：</strong><br>市场利率上升可能导致债券市场价值下降。<br>当你购买债券时，它通常有一个固定的利息率。假设你购买了一张5%利息率的债券，然后市场上的利率开始上升，比如其他新债券的利率变成了6%。在这种情况下，新债券提供了更高的利息回报，而你手里的旧债券因为它的利息率较低，因此它的市场价值可能会下降。<br>为什么会这样呢？因为投资者在市场上购买债券时，会希望获得与市场利率相符合的回报。如果市场上的新债券提供了更高的利息率，那么人们就更愿意购买新债券，而不是旧的低利息债券。为了吸引买家，旧债券的市场价格可能会下降，从而与新债券的利率相匹配。<br>这就是为什么当市场利率上升时，现有债券的市场价值可能会下降的原因。</li>
-<li><strong>违约风险：</strong> 如果债务人无法按时偿还债务，投资者可能会面临损失。</li>
-</ul>
-<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>总而言之，债券是一种可靠的投资选择，适合那些希望获得稳定收益并愿意承担一定风险的投资者。通过购买债券，你不仅可以帮助政府和企业筹集资金，还能为自己的投资组合增加多样性和稳定性。当然，在投资任何金融产品之前，了解你的投资目标和风险承受能力是非常重要的。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>债券</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>全面了解投资产品：从风险到收益的比较分析</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E6%8A%95%E8%B5%84%E4%BA%A7%E5%93%81%EF%BC%9A%E4%BB%8E%E9%A3%8E%E9%99%A9%E5%88%B0%E6%94%B6%E7%9B%8A%E7%9A%84%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<p>在投资世界中，有多种类型的投资产品可供选择，每种产品都有其独特的特点和风险回报特征。以下是对常见投资产品的全面比较和分析，帮助投资者理解并选择适合自己的投资工具。</p>
-<span id="more"></span>
-
-<h4 id="1-存款（银行存款）"><a href="#1-存款（银行存款）" class="headerlink" title="1. 存款（银行存款）"></a>1. 存款（银行存款）</h4><ul>
-<li><strong>投资对象：</strong> 存款是将资金存放在银行中，以获取固定的利息收益。</li>
-<li><strong>风险：</strong> 最低。由于受到国家存款保险机构保护，存款的本金通常是安全的。</li>
-<li><strong>收益：</strong> 低。存款利率通常略高于通货膨胀率，但相对于其他投资产品，收益较低。</li>
-</ul>
-<h4 id="2-债券"><a href="#2-债券" class="headerlink" title="2. 债券"></a>2. 债券</h4><ul>
-<li><strong>投资对象：</strong> 债券是借款人向投资者发行的债务工具，承诺在未来支付利息和偿还本金。</li>
-<li><strong>风险：</strong> 中等。政府债券的风险较低，而公司债券的风险取决于发行公司的信用评级和偿债能力。</li>
-<li><strong>收益：</strong> 中等。债券通常提供稳定的利息收益，收益略高于存款，但较股票等其他投资产品为低。</li>
-</ul>
-<h4 id="3-股票"><a href="#3-股票" class="headerlink" title="3. 股票"></a>3. 股票</h4><ul>
-<li><strong>投资对象：</strong> 股票代表投资者对公司所有权的一部分，股东通过股票分享公司的盈利和增长。</li>
-<li><strong>风险：</strong> 高。股票市场价格波动大，受市场供需和公司业绩等多种因素影响。</li>
-<li><strong>收益：</strong> 高。股票的长期回报可能高于债券和存款，但也伴随较大的市场风险和波动性。</li>
-</ul>
-<h4 id="4-基金"><a href="#4-基金" class="headerlink" title="4. 基金"></a>4. 基金</h4><ul>
-<li><strong>投资对象：</strong> 基金是由多个投资者共同投资，由专业基金经理管理，并投资于多种资产类别。</li>
-<li><strong>风险：</strong> 根据基金类型不同而异，可以是低、中等或高风险。</li>
-<li><strong>收益：</strong> 中等。基金通过多样化投资来平衡风险和回报，适合追求稳定增长的投资者。</li>
-</ul>
-<h4 id="5-房地产投资"><a href="#5-房地产投资" class="headerlink" title="5. 房地产投资"></a>5. 房地产投资</h4><ul>
-<li><strong>投资对象：</strong> 投资于不动产市场，包括商业地产、住宅物业和房地产基金。</li>
-<li><strong>风险：</strong> 中等。房地产市场波动性较大，但相对于股票市场通常更为稳定。</li>
-<li><strong>收益：</strong> 中等到高。房地产投资的长期回报可能与股票市场相媲美，但需考虑到管理和市场风险。</li>
-</ul>
-<h4 id="6-大宗商品"><a href="#6-大宗商品" class="headerlink" title="6. 大宗商品"></a>6. 大宗商品</h4><ul>
-<li><strong>投资对象：</strong> 包括黄金、原油等大宗商品，通过期货市场进行交易。</li>
-<li><strong>风险：</strong> 高。大宗商品价格波动大，受全球经济和政治因素影响较大。</li>
-<li><strong>收益：</strong> 中等到高。某些情况下，大宗商品的价格波动可以带来较高的投资回报，但伴随较高的市场风险。</li>
-</ul>
-<h4 id="7-其他投资产品"><a href="#7-其他投资产品" class="headerlink" title="7. 其他投资产品"></a>7. 其他投资产品</h4><ul>
-<li><strong>期权（Options）：</strong> 允许投资者在未来某一特定时间内以预定价格买入或卖出标的资产，风险和回报均高。</li>
-<li><strong>外汇市场（Forex）：</strong> 全球货币交易市场，具有高风险和潜在高回报。</li>
-<li><strong>衍生品（Derivatives）：</strong> 包括期货、期权等，其价值来源于底层资产的变动，风险和回报较高。</li>
-<li><strong>证券化产品（Securitized Products）：</strong> 将资产转化为可交易的证券，风险和回报各异。</li>
-<li><strong>其他特定投资（如艺术品投资、天使投资等）：</strong> 风险和收益因具体投资对象和市场条件而异。</li>
-</ul>
-<h3 id="如何选择适合自己的投资产品？"><a href="#如何选择适合自己的投资产品？" class="headerlink" title="如何选择适合自己的投资产品？"></a>如何选择适合自己的投资产品？</h3><p>在选择投资产品时，投资者需要综合考虑以下因素：</p>
-<ul>
-<li><strong>风险偏好：</strong> 确定自己愿意承担的投资风险程度。</li>
-<li><strong>投资目标：</strong> 明确投资的目的和时间，是追求长期增值还是短期收益。</li>
-<li><strong>多样化投资：</strong> 分散投资于不同类型和资产类别，以降低整体投资组合的风险。</li>
-<li><strong>了解投资产品：</strong> 在选择之前，充分了解每种投资产品的特点、风险和预期收益。</li>
-</ul>
-<p>通过理解和比较不同的投资产品类型，投资者可以根据自身的投资目标和风险承受能力，构建一个多样化且符合长期财务规划的投资组合。在进行任何投资之前，确保进行充分的调查和风险评估，以做出明智的投资决策。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>投资产品</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>房地产市场化</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E6%88%BF%E5%9C%B0%E4%BA%A7%E5%B8%82%E5%9C%BA%E5%8C%96/</url>
     <content><![CDATA[<blockquote>
@@ -1004,35 +1001,6 @@
       </tags>
   </entry>
   <entry>
-    <title>大禹治水</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E5%A4%8F%E6%9C%9D/%E5%A4%A7%E7%A6%B9%E6%B2%BB%E6%B0%B4/</url>
-    <content><![CDATA[<p>据说尧舜时代正值冰河时代后期，气候转暖，冰雪消融，致使海平面迅速升高，海水倒灌；古黄河改道从苏北平原入海，淮河淤积，汹涌的洪水淹没了淮、泗流域，沧海横流，洪水泛滥，泰山以西到沂蒙以南至苏北地区成了一片汪洋，天地万物在滔天的洪水中沉沉浮浮。对于当时的情景，《尚书·尧典》中这样描写：“汤汤洪水方割，荡荡怀山襄陵，浩浩滔天。”</p>
-<span id="more"></span>
-
-<p>农田被淹没，房子被摧毁，人民流离失所，无家可归，为了免于沦没，只能以木为舟，朝高山土丘上搬。这样一来，正常的生产生活无法进行，只能在洪荒的孤岛中望水兴叹。</p>
-<p>尧召开部落联盟会议，请各部落首领来共商治洪良策。各部落首领都推荐鲧去治理水患。鲧史称崇伯，是尧帝的臣子，禹的父亲。尧觉得鲧脾气暴躁，并不适合去治水，可是当时也没有别的更合适的人选，治理水患又是当务之急，于是尧决定姑且让鲧去试试。</p>
-<p>鲧治理水患主要采用的是堵塞的方法，他用土筑起高高的堤坝，把水围起来，不让它到处流。可是洪水来势凶猛，不管那堤坝多高，都被汹涌的洪水冲垮，洪水还是会泛滥，鲧就东堵西补，疲于奔命。因此，鲧治水九年，用去不少人力物力，可是洪水并没止歇。鲧一气之下就盗取了天帝的宝物“息壤”，这是一块可以自生自长，要多少有多少的宝土。鲧把息壤投入洪水，想让生长不息的土掩埋洪水，没想到洪水泛滥得更加厉害了。</p>
-<p>鲧犯下滔天大罪，天帝震怒，命令火神将他处死在了羽山之野。</p>
-<p>当时的人类在治理洪灾方面，还处于摸索阶段，经验不足，总会有些曲折。鲧虽然未能取得治水的成功，但其在治水方法上的失误，为后继者提供了宝贵的经验教训，指明了方向。后来尧让位于舜，舜亲自去视察水患。此时，鲧的儿子禹已长大成人，舜见他器宇轩昂，认为他必会有一番作为，于是命禹继续他父亲没完成的事业，去治理水患，并把后稷、伯益、皋陶等人派去给他当助手。</p>
-<p>禹感伤于父亲“功之不成受诛”，因此殚精竭虑，发誓一定要把水患治好。他非常聪明，还能吃苦耐劳，领命之后，就带着伯益、皋陶和其他众人去勘察地势水情，寻找以前治水失败的原因。他带着众人跋山涉水，朝上去追溯黄河的源头，对黄河的上游、下游做了一次整体的考察。在这次考察中，他发现黄河除了主干河道，还有很多分支流向了别处。在值得注意的地方，他把石头堆积起来，或是砍倒树木作为记号，以便治水时可以参考。当时，气候恶劣，他们随身携带的工具也非常落后，这次考察非常艰辛而惊险。据说，有一次，他们正在勘察一条河道，突然间电闪雷鸣，狂风暴雨顷刻而至，山洪爆发，咆哮的洪水淹没、卷走了他们很多同伴。</p>
-<p>考察完毕，大禹对水情作了认真的研究，认为父亲“堵”的方法是行不通的，洪水凶猛，无路可走势必会冲垮堤坝，因此他决定弃“堵”用“疏”的方法：把黄河的主干河道加深加宽，可以让更多的水畅通无阻，然后将支流流向主流的河道疏通，让水可以顺畅地和主流汇合；然后，还要加高原来的堤岸，并清除低地里的淤积，这样陆地和湖泊就可以清楚地分开了。同时，还要将这些大小湖泽和各个支流的河道疏通，这样一来，一旦水位上升，就会顺着各个河道汇入主流，流向大海了。</p>
-<p>想好了治水的方法，禹便亲自率领助手和众百姓，带着简陋的石斧、石刀、石铲、木耒等工具，开始他们治水的征途。禹事事身先士卒，在他的领导下，众百姓一心一意，决心不降服水患誓不罢休。他们风餐露宿，粗衣淡饭，风雨无阻地在群山间穿越跋涉，尽管每天辛苦地劳作，直不起腰来，腿也肿了，可是从来不敢懈怠。</p>
-<p>一次，他们来到了河南洛阳南郊的一座高山，那是秦岭山脉的余脉，从东向西一直延续到中岳嵩山，它巍峨陡峭，就好像天成的一道高大屏风。这座山的中段有一条九曲回环，又很狭窄的天然水路，水量小的时候，就会从山间形成涓涓细流，轻轻流过。但是，山洪暴发时，水就会咆哮着冲刷着狭窄的水道，拍打石岸，时刻可能溢出，危害着周围百姓的安全。大禹便决定集中将这条水道拓宽、凿深、打直。坚硬的山石磨坏了他们的工具，而且山上地势险恶，人们不是被掉下来的石头砸伤，就是跌落山下，还有的被洪水冲走。可是他们仍旧毫不退缩，坚持在大山中开道。在他们不懈的努力下，终于在大山中间凿出了一条宽阔的水道，形成两壁对峙之势，山洪可以顺畅地向下游奔涌而去，再也不会对周围百姓构成威胁。</p>
-<p>《庄子》以极其虔敬的心情记述了禹的丰功伟绩，颂扬了他坚忍不拔的意志，记述禹亲自操橐耜而“九杂天下之川，腓无胈，胫无毛，沐甚雨，栉疾风，置万国。禹，大圣也，而形劳天下也如此”。意思是说禹为了制服水患，不辞劳苦，亲自拿着工具，带领众人兴利除害，同人民一起风里来雨里去，奋斗在治水的最前面。艰辛的劳作使得他形容憔悴，大腿瘦得没什么肉了，小腿上的汗毛也都磨光了。禹就是这样一位含辛茹苦，解救苍生的圣人。因为长期在外治水，禹无暇顾及妻子和家庭。据说，他才刚刚新婚第四天，就出发去治水了，这一去就是十年，中间曾三过家门而不入，他这种舍家为国，公而忘私的精神至今被人传颂。</p>
-<p>十年间，他们翻越了一座又一座大山，疏通了一条又一条河渠，足迹踏遍了九州。在他艰苦卓绝的努力下，治水进展神速，“淮沂其治，蒙羽其艺”（《史记·夏本纪》）之地，也就是淮河和沂水流过的蒙山和羽山之间，古黄淮容易泛滥的河道得到疏通，拥堵在山间的洪水被引入大海。同时，低洼的地方留下了微山、东平、钜野、骆马等“四渎”，为百姓种田提供了有利的水源。地面上现出了许多良田和桑土，百姓又可以种庄稼，重新过上了安居乐业的生活。</p>
-<p>面对滔滔洪水，大禹率领民众，顽强地与之斗争，最终运用聪明才智，通过坚忍不拔的努力，制服了水患。这个传说体现了中华民族勤劳勇敢、坚毅不屈、公而忘私、万众一心战胜困难的民族精神。</p>
-<p>禹在治理水患的过程中，对中原各地的土地物产也有了了解，水患平息后，就划分了青、兖、徐、扬、梁、豫、冀、荆、雍等行政区域，规定了各地的贡品赋税。这样一来，就真正形成了天下归一的大好局面。</p>
-<p>后代称颂禹治水的功绩，尊称他为“大禹”。舜年老以后，也像尧一样开部落联盟会议，物色继承人。禹治水有功，深得民心，大家都推选禹，于是舜就把联盟首领之职禅让给了禹。</p>
-]]></content>
-      <categories>
-        <category>历史</category>
-        <category>夏朝</category>
-      </categories>
-      <tags>
-        <tag>大禹治</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>伊尹放太甲</title>
     <url>/%E5%8E%86%E5%8F%B2/%E5%95%86%E6%9C%9D/%E4%BC%8A%E5%B0%B9%E6%94%BE%E5%A4%AA%E7%94%B2/</url>
     <content><![CDATA[<p>在伊尹的协助下，汤成功推翻了夏朝的统治，建立了商朝。商朝建立之初，百废待兴，汤又在伊尹的帮助下完善了各项典章制度，使商迅速恢复了社会秩序，走上正轨。商汤在位三十年，临终时，因为特别信任伊尹，把辅佐继任帝王的重任嘱托于他。</p>
@@ -1084,6 +1052,35 @@
       </categories>
       <tags>
         <tag>女娲传说</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大禹治水</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E5%A4%8F%E6%9C%9D/%E5%A4%A7%E7%A6%B9%E6%B2%BB%E6%B0%B4/</url>
+    <content><![CDATA[<p>据说尧舜时代正值冰河时代后期，气候转暖，冰雪消融，致使海平面迅速升高，海水倒灌；古黄河改道从苏北平原入海，淮河淤积，汹涌的洪水淹没了淮、泗流域，沧海横流，洪水泛滥，泰山以西到沂蒙以南至苏北地区成了一片汪洋，天地万物在滔天的洪水中沉沉浮浮。对于当时的情景，《尚书·尧典》中这样描写：“汤汤洪水方割，荡荡怀山襄陵，浩浩滔天。”</p>
+<span id="more"></span>
+
+<p>农田被淹没，房子被摧毁，人民流离失所，无家可归，为了免于沦没，只能以木为舟，朝高山土丘上搬。这样一来，正常的生产生活无法进行，只能在洪荒的孤岛中望水兴叹。</p>
+<p>尧召开部落联盟会议，请各部落首领来共商治洪良策。各部落首领都推荐鲧去治理水患。鲧史称崇伯，是尧帝的臣子，禹的父亲。尧觉得鲧脾气暴躁，并不适合去治水，可是当时也没有别的更合适的人选，治理水患又是当务之急，于是尧决定姑且让鲧去试试。</p>
+<p>鲧治理水患主要采用的是堵塞的方法，他用土筑起高高的堤坝，把水围起来，不让它到处流。可是洪水来势凶猛，不管那堤坝多高，都被汹涌的洪水冲垮，洪水还是会泛滥，鲧就东堵西补，疲于奔命。因此，鲧治水九年，用去不少人力物力，可是洪水并没止歇。鲧一气之下就盗取了天帝的宝物“息壤”，这是一块可以自生自长，要多少有多少的宝土。鲧把息壤投入洪水，想让生长不息的土掩埋洪水，没想到洪水泛滥得更加厉害了。</p>
+<p>鲧犯下滔天大罪，天帝震怒，命令火神将他处死在了羽山之野。</p>
+<p>当时的人类在治理洪灾方面，还处于摸索阶段，经验不足，总会有些曲折。鲧虽然未能取得治水的成功，但其在治水方法上的失误，为后继者提供了宝贵的经验教训，指明了方向。后来尧让位于舜，舜亲自去视察水患。此时，鲧的儿子禹已长大成人，舜见他器宇轩昂，认为他必会有一番作为，于是命禹继续他父亲没完成的事业，去治理水患，并把后稷、伯益、皋陶等人派去给他当助手。</p>
+<p>禹感伤于父亲“功之不成受诛”，因此殚精竭虑，发誓一定要把水患治好。他非常聪明，还能吃苦耐劳，领命之后，就带着伯益、皋陶和其他众人去勘察地势水情，寻找以前治水失败的原因。他带着众人跋山涉水，朝上去追溯黄河的源头，对黄河的上游、下游做了一次整体的考察。在这次考察中，他发现黄河除了主干河道，还有很多分支流向了别处。在值得注意的地方，他把石头堆积起来，或是砍倒树木作为记号，以便治水时可以参考。当时，气候恶劣，他们随身携带的工具也非常落后，这次考察非常艰辛而惊险。据说，有一次，他们正在勘察一条河道，突然间电闪雷鸣，狂风暴雨顷刻而至，山洪爆发，咆哮的洪水淹没、卷走了他们很多同伴。</p>
+<p>考察完毕，大禹对水情作了认真的研究，认为父亲“堵”的方法是行不通的，洪水凶猛，无路可走势必会冲垮堤坝，因此他决定弃“堵”用“疏”的方法：把黄河的主干河道加深加宽，可以让更多的水畅通无阻，然后将支流流向主流的河道疏通，让水可以顺畅地和主流汇合；然后，还要加高原来的堤岸，并清除低地里的淤积，这样陆地和湖泊就可以清楚地分开了。同时，还要将这些大小湖泽和各个支流的河道疏通，这样一来，一旦水位上升，就会顺着各个河道汇入主流，流向大海了。</p>
+<p>想好了治水的方法，禹便亲自率领助手和众百姓，带着简陋的石斧、石刀、石铲、木耒等工具，开始他们治水的征途。禹事事身先士卒，在他的领导下，众百姓一心一意，决心不降服水患誓不罢休。他们风餐露宿，粗衣淡饭，风雨无阻地在群山间穿越跋涉，尽管每天辛苦地劳作，直不起腰来，腿也肿了，可是从来不敢懈怠。</p>
+<p>一次，他们来到了河南洛阳南郊的一座高山，那是秦岭山脉的余脉，从东向西一直延续到中岳嵩山，它巍峨陡峭，就好像天成的一道高大屏风。这座山的中段有一条九曲回环，又很狭窄的天然水路，水量小的时候，就会从山间形成涓涓细流，轻轻流过。但是，山洪暴发时，水就会咆哮着冲刷着狭窄的水道，拍打石岸，时刻可能溢出，危害着周围百姓的安全。大禹便决定集中将这条水道拓宽、凿深、打直。坚硬的山石磨坏了他们的工具，而且山上地势险恶，人们不是被掉下来的石头砸伤，就是跌落山下，还有的被洪水冲走。可是他们仍旧毫不退缩，坚持在大山中开道。在他们不懈的努力下，终于在大山中间凿出了一条宽阔的水道，形成两壁对峙之势，山洪可以顺畅地向下游奔涌而去，再也不会对周围百姓构成威胁。</p>
+<p>《庄子》以极其虔敬的心情记述了禹的丰功伟绩，颂扬了他坚忍不拔的意志，记述禹亲自操橐耜而“九杂天下之川，腓无胈，胫无毛，沐甚雨，栉疾风，置万国。禹，大圣也，而形劳天下也如此”。意思是说禹为了制服水患，不辞劳苦，亲自拿着工具，带领众人兴利除害，同人民一起风里来雨里去，奋斗在治水的最前面。艰辛的劳作使得他形容憔悴，大腿瘦得没什么肉了，小腿上的汗毛也都磨光了。禹就是这样一位含辛茹苦，解救苍生的圣人。因为长期在外治水，禹无暇顾及妻子和家庭。据说，他才刚刚新婚第四天，就出发去治水了，这一去就是十年，中间曾三过家门而不入，他这种舍家为国，公而忘私的精神至今被人传颂。</p>
+<p>十年间，他们翻越了一座又一座大山，疏通了一条又一条河渠，足迹踏遍了九州。在他艰苦卓绝的努力下，治水进展神速，“淮沂其治，蒙羽其艺”（《史记·夏本纪》）之地，也就是淮河和沂水流过的蒙山和羽山之间，古黄淮容易泛滥的河道得到疏通，拥堵在山间的洪水被引入大海。同时，低洼的地方留下了微山、东平、钜野、骆马等“四渎”，为百姓种田提供了有利的水源。地面上现出了许多良田和桑土，百姓又可以种庄稼，重新过上了安居乐业的生活。</p>
+<p>面对滔滔洪水，大禹率领民众，顽强地与之斗争，最终运用聪明才智，通过坚忍不拔的努力，制服了水患。这个传说体现了中华民族勤劳勇敢、坚毅不屈、公而忘私、万众一心战胜困难的民族精神。</p>
+<p>禹在治理水患的过程中，对中原各地的土地物产也有了了解，水患平息后，就划分了青、兖、徐、扬、梁、豫、冀、荆、雍等行政区域，规定了各地的贡品赋税。这样一来，就真正形成了天下归一的大好局面。</p>
+<p>后代称颂禹治水的功绩，尊称他为“大禹”。舜年老以后，也像尧一样开部落联盟会议，物色继承人。禹治水有功，深得民心，大家都推选禹，于是舜就把联盟首领之职禅让给了禹。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>夏朝</category>
+      </categories>
+      <tags>
+        <tag>大禹治</tag>
       </tags>
   </entry>
   <entry>
@@ -2533,6 +2530,14 @@
       </tags>
   </entry>
   <entry>
+    <title>关于</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
+  </entry>
+  <entry>
     <title>每日60秒读懂世界新闻</title>
     <url>/60s_news/index.html</url>
     <content><![CDATA[<div id="daily-news">
@@ -2568,6 +2573,11 @@
 
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>经济时间轴</title>
@@ -2741,19 +2751,6 @@
 </div></div><div class="timeline-item-content"><p>交通银行成立，是中国历史悠久的银行之一。</p>
 </div></div></div>
 ]]></content>
-  </entry>
-  <entry>
-    <title>关于</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>历史时间轴</title>
@@ -3144,21 +3141,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
   </entry>
   <entry>
-    <title>财经</title>
-    <url>/news/finance/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/finance.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>时尚</title>
     <url>/news/fashion/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3172,6 +3154,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/fashion.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>财经</title>
+    <url>/news/finance/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/finance.js"></script>]]></content>
   </entry>
   <entry>
     <title>头条</title>
@@ -3234,21 +3231,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/military.js"></script>]]></content>
   </entry>
   <entry>
-    <title>娱乐</title>
-    <url>/news/recreation/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>手机</title>
     <url>/news/phone/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3264,21 +3246,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
   </entry>
   <entry>
-    <title>科技</title>
-    <url>/news/science/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/science.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>体育</title>
     <url>/news/physical/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3292,6 +3259,36 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>娱乐</title>
+    <url>/news/recreation/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>科技</title>
+    <url>/news/science/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/science.js"></script>]]></content>
   </entry>
   <entry>
     <title>旅游</title>
