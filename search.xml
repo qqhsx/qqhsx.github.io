@@ -133,62 +133,6 @@
 <iframe src="/lib/pdf/web/viewer.html?file=/_posts/hello-world/1.pdf" style="width:100%;height:800px"></iframe>]]></content>
   </entry>
   <entry>
-    <title>Test Image Insert</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
-    <content><![CDATA[<blockquote>
-<p>以下是在hexo配置文件_config.yml中 <code>post_asset_folder</code> 已启用的情况下用Typora编写测试的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li><h3 id="这是一个测试如何在-Hexo-文章中插入图片的示例。"><a href="#这是一个测试如何在-Hexo-文章中插入图片的示例。" class="headerlink" title="这是一个测试如何在 Hexo 文章中插入图片的示例。"></a>这是一个测试如何在 Hexo 文章中插入图片的示例。</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
-<ul>
-<li><h3 id="尝试使用相对路径指定图片的位置"><a href="#尝试使用相对路径指定图片的位置" class="headerlink" title="尝试使用相对路径指定图片的位置"></a>尝试使用相对路径指定图片的位置</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-
-<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
-<ul>
-<li><h3 id="试试在-Markdown-文件中使用绝对路径"><a href="#试试在-Markdown-文件中使用绝对路径" class="headerlink" title="试试在 Markdown 文件中使用绝对路径"></a>试试在 Markdown 文件中使用绝对路径</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](/uncategorized/Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>这样写在Typora中不显示，在<a href="http://localhost:4000/%E4%B8%AD%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA">http://localhost:4000/中正常显示</a></p>
-<p>！！！！！！！！！</p>
-<p>！！！！！！！！！</p>
-<p>！！！！！！！！！</p>
-<ul>
-<li><h3 id="接着接找到hexo-asset-img这个插件安装"><a href="#接着接找到hexo-asset-img这个插件安装" class="headerlink" title="接着接找到hexo-asset-img这个插件安装"></a>接着接找到<a href="https://github.com/yiyungent/hexo-asset-img">hexo-asset-img</a>这个插件安装</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
-
-<p>最终测试后这个插件起到了作用，Typora中使用如下相对路径插入图片可以在Typora中与<a href="http://localhost:4000/">http://localhost:4000/</a> 中都能正常显示。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>使用起来发现这格式还是有些不方便，在用Тypora编写时一般会在<code>文件-偏好设置-图像</code>页面中设置图片插入时的的动作参数。如果选择<code>复制到指定路径./$&#123;filename&#125;</code>会发现在插入图片时是以下的格式，同时会在文章的同目录中生成一个与文件名相同的目录，所插入的图片会自动放在这里面。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h3 id="接着换回到hexo-asset-image这个插件安装"><a href="#接着换回到hexo-asset-image这个插件安装" class="headerlink" title="接着换回到hexo-asset-image这个插件安装"></a>接着换回到<a href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a>这个插件安装</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-
-<p>都说这个插件失效了所以开始就没去安装它，但最终还是用上它了。它能处理下面这种图片格式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo博客搭建与部署</title>
     <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
@@ -291,6 +235,62 @@
       </tags>
   </entry>
   <entry>
+    <title>Test Image Insert</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
+    <content><![CDATA[<blockquote>
+<p>以下是在hexo配置文件_config.yml中 <code>post_asset_folder</code> 已启用的情况下用Typora编写测试的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li><h3 id="这是一个测试如何在-Hexo-文章中插入图片的示例。"><a href="#这是一个测试如何在-Hexo-文章中插入图片的示例。" class="headerlink" title="这是一个测试如何在 Hexo 文章中插入图片的示例。"></a>这是一个测试如何在 Hexo 文章中插入图片的示例。</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
+<ul>
+<li><h3 id="尝试使用相对路径指定图片的位置"><a href="#尝试使用相对路径指定图片的位置" class="headerlink" title="尝试使用相对路径指定图片的位置"></a>尝试使用相对路径指定图片的位置</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+
+<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
+<ul>
+<li><h3 id="试试在-Markdown-文件中使用绝对路径"><a href="#试试在-Markdown-文件中使用绝对路径" class="headerlink" title="试试在 Markdown 文件中使用绝对路径"></a>试试在 Markdown 文件中使用绝对路径</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](/uncategorized/Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>这样写在Typora中不显示，在<a href="http://localhost:4000/%E4%B8%AD%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA">http://localhost:4000/中正常显示</a></p>
+<p>！！！！！！！！！</p>
+<p>！！！！！！！！！</p>
+<p>！！！！！！！！！</p>
+<ul>
+<li><h3 id="接着接找到hexo-asset-img这个插件安装"><a href="#接着接找到hexo-asset-img这个插件安装" class="headerlink" title="接着接找到hexo-asset-img这个插件安装"></a>接着接找到<a href="https://github.com/yiyungent/hexo-asset-img">hexo-asset-img</a>这个插件安装</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
+
+<p>最终测试后这个插件起到了作用，Typora中使用如下相对路径插入图片可以在Typora中与<a href="http://localhost:4000/">http://localhost:4000/</a> 中都能正常显示。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>使用起来发现这格式还是有些不方便，在用Тypora编写时一般会在<code>文件-偏好设置-图像</code>页面中设置图片插入时的的动作参数。如果选择<code>复制到指定路径./$&#123;filename&#125;</code>会发现在插入图片时是以下的格式，同时会在文章的同目录中生成一个与文件名相同的目录，所插入的图片会自动放在这里面。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="接着换回到hexo-asset-image这个插件安装"><a href="#接着换回到hexo-asset-image这个插件安装" class="headerlink" title="接着换回到hexo-asset-image这个插件安装"></a>接着换回到<a href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a>这个插件安装</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>都说这个插件失效了所以开始就没去安装它，但最终还是用上它了。它能处理下面这种图片格式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo-theme-next主题安装</title>
     <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
@@ -379,172 +379,6 @@
       </categories>
       <tags>
         <tag>房价</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么是年增率？</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/</url>
-    <content><![CDATA[<h3 id="什么是年增率？"><a href="#什么是年增率？" class="headerlink" title="什么是年增率？"></a>什么是年增率？</h3><p>年增率（Year-over-Year Growth Rate）是用来衡量一个指标（如收入、利润、房价等）在一年的时间跨度内增长（或减少）的百分比。用简洁的公式表示：</p>
-<span id="more"></span>
-
-<p><img src="/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/image-20240701161122258.png" alt="image-20240701161122258"></p>
-<p>比如，如果某公司在2023年的收入为5000万元，而在2024年增至5500万元，那么其年增率为：</p>
-<p><img src="/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/image-20240701161221319.png" alt="image-20240701161221319"></p>
-<h3 id="年增率的应用"><a href="#年增率的应用" class="headerlink" title="年增率的应用"></a>年增率的应用</h3><p>年增率的计算和分析在多个领域都有广泛应用，以下是一些主要应用场景：</p>
-<h4 id="1-经济分析"><a href="#1-经济分析" class="headerlink" title="1. 经济分析"></a>1. <strong>经济分析</strong></h4><ul>
-<li><strong>国内生产总值（GDP）</strong>：经济学家和政府通过年增率来衡量一个国家或地区经济增长的速度。</li>
-<li><strong>物价指数</strong>：如消费者物价指数（CPI）的年增率，用于衡量通货膨胀水平。</li>
-<li><strong>失业率</strong>：用年增率来衡量失业人口的变化情况。</li>
-</ul>
-<h4 id="2-企业财务分析"><a href="#2-企业财务分析" class="headerlink" title="2. 企业财务分析"></a>2. <strong>企业财务分析</strong></h4><ul>
-<li><strong>收入和利润</strong>：公司用年增率来衡量销售收入、净利润等财务指标的增长情况，从而评估经营业绩。</li>
-<li><strong>成本和开支</strong>：跟踪各项成本和开支的年增率，发现并控制上升过快的费用。</li>
-</ul>
-<h4 id="3-金融分析"><a href="#3-金融分析" class="headerlink" title="3. 金融分析"></a>3. <strong>金融分析</strong></h4><ul>
-<li><strong>股价和市场指数</strong>：投资者会用年增率来分析股票和市场指数的涨跌幅度，以评估投资组合的表现。</li>
-<li><strong>贷款利率</strong>：银行和金融机构通过年增率分析利率的变化以调整利率策略。</li>
-</ul>
-<h4 id="4-房地产市场"><a href="#4-房地产市场" class="headerlink" title="4. 房地产市场"></a>4. <strong>房地产市场</strong></h4><ul>
-<li><strong>房价</strong>：用房价的年增率来分析地产市场的热度和健康状况，辅助购房和投资决策。</li>
-<li><strong>租金</strong>：租金水平的年增率分析可以用于衡量租赁市场的变化。</li>
-</ul>
-<h4 id="5-社会发展"><a href="#5-社会发展" class="headerlink" title="5. 社会发展"></a>5. <strong>社会发展</strong></h4><ul>
-<li><strong>人口增长率</strong>：用年增率分析人口的自然增长或减少情况，为制定公共政策提供依据。</li>
-<li><strong>教育和健康指标</strong>：用年增率分析入学率、毕业率、医疗覆盖率等社会发展指标。</li>
-</ul>
-<h3 id="年增率的优点"><a href="#年增率的优点" class="headerlink" title="年增率的优点"></a>年增率的优点</h3><ul>
-<li><strong>直观对比</strong>：年增率提供了一个简单、直接的指标，可以方便地进行不同年份之间的对比。</li>
-<li><strong>趋势分析</strong>：通过连续几年的年增率，可以观察长期趋势，发现周期性或者结构性的变化。</li>
-<li><strong>宏观经济及企业表现评估</strong>：帮助政策制定者、投资者、企业管理者了解经济和行业状况，进行了更为科学的决策。</li>
-</ul>
-<h3 id="年增率的局限性"><a href="#年增率的局限性" class="headerlink" title="年增率的局限性"></a>年增率的局限性</h3><ul>
-<li><strong>忽略季节性</strong>：年增率通常无法反映季节性变化及其他周期性波动，需要与其他分析指标配合使用。</li>
-<li><strong>可能被短期波动影响</strong>：短期波动或异常值可能导致年增率出现偏差，需谨慎解读。</li>
-</ul>
-<p>总体而言，年增率是一个非常有用的指标。无论是在经济分析、企业管理还是金融投资领域，理解和应用年增率都有助于更好地掌握发展动态和趋势。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>年增率</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>保障性住房</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E4%BF%9D%E9%9A%9C%E6%80%A7%E4%BD%8F%E6%88%BF/</url>
-    <content><![CDATA[<p>保障性住房是中国政府为了解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的一系列住房政策和项目。保障性住房主要包括以下几种类型：</p>
-<span id="more"></span>
-
-<h3 id="1-经济适用房"><a href="#1-经济适用房" class="headerlink" title="1. 经济适用房"></a>1. 经济适用房</h3><p>经济适用房是指政府提供政策支持、限定建设标准和销售价格，面向城镇中低收入家庭销售的普通商品住房。其主要目的是为了帮助中低收入家庭解决住房问题。以下是对经济适用房的详细描述：</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p><strong>价格相对较低</strong>：<br>经济适用房的售价通常低于同地段的商品房市场价格，因为政府对土地出让金、税费等方面给予了一定的优惠和减免。因此，经济适用房的价格相对较低，使得中低收入家庭能够负担得起。</p>
-<p><strong>建设标准不高</strong>：<br>经济适用房的建设标准相对普通商品房较低，主要体现在以下几个方面：</p>
-<ul>
-<li><strong>户型设计</strong>：经济适用房一般以小户型为主，面积较小，以满足基本居住需求。例如，一般经济适用房的建筑面积在60-90平方米左右。</li>
-<li><strong>建筑材料和装修</strong>：经济适用房的建筑材料和装修标准较为普通，不追求豪华和高档。通常采用经济实惠的材料，内部装修也较为简洁，满足基本生活需求即可。</li>
-<li><strong>配套设施</strong>：经济适用房的社区配套设施相对简单，可能不如普通商品房那样齐全，如高档小区的会所、游泳池等设施较少。</li>
-</ul>
-<p><strong>主要满足基本居住需求</strong>：<br>经济适用房的设计和建设旨在满足中低收入家庭的基本居住需求，提供一个安全、卫生、适宜居住的环境，而不追求奢华和高档配置。</p>
-<h3 id="申请条件"><a href="#申请条件" class="headerlink" title="申请条件"></a>申请条件</h3><p><strong>户籍要求</strong>：<br>申请者一般需要具备当地城镇户籍，即申请者必须是申请地的正式居民。</p>
-<p><strong>收入和资产标准</strong>：<br>家庭收入和资产需符合当地政府规定的中低收入标准。具体标准由各地政府根据当地经济发展水平和居民收入水平确定，一般要求家庭总收入在一定限额以下，家庭总资产不超过规定的上限。</p>
-<p><strong>住房情况</strong>：<br>申请者家庭无自有住房或现有住房面积低于规定的标准。例如，有些城市规定人均住房面积低于15平方米的家庭可以申请经济适用房。</p>
-<h3 id="购房方式"><a href="#购房方式" class="headerlink" title="购房方式"></a>购房方式</h3><p><strong>申请和审核</strong>：<br>符合条件的家庭需提交申请，经过相关部门的审核后，确定其购房资格。审核内容包括申请者的收入、资产、户籍、现有住房等情况。</p>
-<p><strong>购买价格</strong>：<br>通过审核的家庭可以以低于市场价的价格购买经济适用房。价格由政府根据建设成本和政策优惠确定，通常比同地段商品房市场价低20%-50%。</p>
-<p><strong>产权限制</strong>：<br>经济适用房的产权受限，一般在购买后一定年限内不能上市交易。各地的规定有所不同，通常是5年或更长时间。例如，北京市规定，经济适用房在购买满5年后，方可上市交易，但在交易时需向政府缴纳一定比例的土地收益金。</p>
-<h3 id="2-廉租房"><a href="#2-廉租房" class="headerlink" title="2. 廉租房"></a>2. 廉租房</h3><p><strong>廉租房</strong>是政府为城市低收入住房困难家庭提供的租金低廉的保障性住房。</p>
-<ul>
-<li><strong>特点</strong>：租金低廉，由政府或政府委托的单位管理和运营。</li>
-<li><strong>申请条件</strong>：主要面向城镇最低收入家庭，申请者需具备本地户籍，家庭收入和资产低于最低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
-<li><strong>租赁方式</strong>：通过申请和审核后，家庭可以以较低的租金租赁廉租房，租赁期限一般为1-3年，可续租。</li>
-</ul>
-<h3 id="3-公租房"><a href="#3-公租房" class="headerlink" title="3. 公租房"></a>3. 公租房</h3><p><strong>公租房</strong>是政府为解决中低收入家庭、新就业人员和外来务工人员住房困难问题而提供的租金较低的保障性住房。</p>
-<ul>
-<li><strong>特点</strong>：租金较低，面向更广泛的人群，包括中低收入家庭、新就业人员和外来务工人员。</li>
-<li><strong>申请条件</strong>：申请者需具备本地户籍或符合规定的外来务工人员，新就业人员需就业年限不超过一定年限（如5年），家庭收入和资产符合规定标准。</li>
-<li><strong>租赁方式</strong>：通过申请和审核后，家庭或个人可以以较低的租金租赁公租房，租赁期限一般为1-5年，可续租。</li>
-</ul>
-<h3 id="4-限价房"><a href="#4-限价房" class="headerlink" title="4. 限价房"></a>4. 限价房</h3><p><strong>限价房</strong>是政府限定销售价格、限定销售对象的普通商品住房，主要面向中低收入家庭。</p>
-<ul>
-<li><strong>特点</strong>：价格受政府限制，低于市场价，建设标准较高，接近普通商品房。</li>
-<li><strong>申请条件</strong>：申请者需具备本地户籍，家庭收入和资产符合中低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
-<li><strong>购房方式</strong>：符合条件的家庭通过申请和审核后，以低于市场价的价格购买限价房。</li>
-</ul>
-<h3 id="5-棚户区改造安置房"><a href="#5-棚户区改造安置房" class="headerlink" title="5. 棚户区改造安置房"></a>5. 棚户区改造安置房</h3><p><strong>棚户区改造安置房</strong>是政府为改善棚户区居民居住条件而建设的住房，用于安置被拆迁的棚户区居民。</p>
-<ul>
-<li><strong>特点</strong>：<br>棚户区改造安置房的建设标准较高，配套设施齐全，环境和居住条件显著优于原棚户区。<br>棚户区改造项目由政府主导，建设资金主要来源于政府财政和政策性贷款。</li>
-<li><strong>申请条件</strong>：主要面向棚户区改造中被拆迁的居民，提供的安置房面积和标准根据原有住房情况和相关政策规定。</li>
-<li><strong>安置方式</strong>：居民通过棚户区改造项目得到安置房，可以是产权安置或租赁安置。</li>
-</ul>
-<h3 id="保障性住房的意义"><a href="#保障性住房的意义" class="headerlink" title="保障性住房的意义"></a>保障性住房的意义</h3><p>保障性住房的推出和实施，对于改善中低收入家庭的住房条件，缓解城市住房供需矛盾，促进社会和谐稳定具有重要意义。具体体现在以下几个方面：</p>
-<ol>
-<li><strong>提高居住质量</strong>：通过保障性住房建设，改善中低收入家庭的居住条件，提高居民的生活质量。</li>
-<li><strong>缓解住房压力</strong>：保障性住房为中低收入家庭提供了经济负担较轻的住房选择，缓解了住房压力。</li>
-<li><strong>促进社会公平</strong>：保障性住房政策有助于缩小收入差距，促进社会公平正义。</li>
-<li><strong>推动城市发展</strong>：通过棚户区改造等项目，改善城市面貌，提升城市综合竞争力。</li>
-</ol>
-<h3 id="时间轴："><a href="#时间轴：" class="headerlink" title="时间轴："></a>时间轴：</h3><p>中国保障性住房的发展经历了从无到有、从单一到多层次的过程。以下是主要事件的时间轴：</p>
-<h3 id="1-1998年-房改启动"><a href="#1-1998年-房改启动" class="headerlink" title="1. 1998年 房改启动"></a>1. 1998年 房改启动</h3><p><strong>1998年</strong>，国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，全面停止住房实物分配，实行住房分配货币化。此时，保障性住房的概念开始萌芽，主要是通过经济适用房来解决中低收入家庭的住房问题。</p>
-<h3 id="2-2004年-廉租房制度建立"><a href="#2-2004年-廉租房制度建立" class="headerlink" title="2. 2004年 廉租房制度建立"></a>2. 2004年 廉租房制度建立</h3><p><strong>2004年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，正式建立廉租住房制度。廉租房主要面向最低收入家庭，提供低廉的租金，帮助最困难的家庭解决住房问题。</p>
-<h3 id="3-2007年-保障性住房体系逐步完善"><a href="#3-2007年-保障性住房体系逐步完善" class="headerlink" title="3. 2007年 保障性住房体系逐步完善"></a>3. 2007年 保障性住房体系逐步完善</h3><p><strong>2007年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，提出建立经济适用房、廉租房、公租房等多层次的保障性住房体系。同年，住房和城乡建设部发布《关于加快发展经济适用住房的通知》，进一步明确经济适用房的建设标准和供应方式。</p>
-<h3 id="4-2010年-公租房政策出台"><a href="#4-2010年-公租房政策出台" class="headerlink" title="4. 2010年 公租房政策出台"></a>4. 2010年 公租房政策出台</h3><p><strong>2010年</strong>，国务院发布《关于加快发展公共租赁住房的指导意见》，明确提出发展公共租赁住房，解决中低收入家庭、新就业人员和外来务工人员的住房困难。公租房租金较低，面向更广泛的人群。</p>
-<h3 id="5-2011年-限价房政策推进"><a href="#5-2011年-限价房政策推进" class="headerlink" title="5. 2011年 限价房政策推进"></a>5. 2011年 限价房政策推进</h3><p><strong>2011年</strong>，北京市等地开始推广限价商品房政策，政府限定房价和销售对象，面向中低收入家庭销售。这些限价房价格低于市场价，旨在解决中低收入家庭的购房需求。</p>
-<h3 id="6-2013年-棚户区改造大规模推进"><a href="#6-2013年-棚户区改造大规模推进" class="headerlink" title="6. 2013年 棚户区改造大规模推进"></a>6. 2013年 棚户区改造大规模推进</h3><p><strong>2013年</strong>，国务院发布《关于加快棚户区改造工作的意见》，提出在全国范围内加快棚户区改造步伐，改善棚户区居民的居住条件。棚户区改造安置房逐步成为保障性住房的重要组成部分。</p>
-<h3 id="7-2015年-保障性住房建设力度加大"><a href="#7-2015年-保障性住房建设力度加大" class="headerlink" title="7. 2015年 保障性住房建设力度加大"></a>7. 2015年 保障性住房建设力度加大</h3><p><strong>2015年</strong>，在“十三五”规划中，国家提出要大力发展保障性住房，加大棚户区改造力度，确保每个家庭住有所居。各地纷纷加大保障性住房的建设力度。</p>
-<h3 id="8-2017年-长租公寓政策出台"><a href="#8-2017年-长租公寓政策出台" class="headerlink" title="8. 2017年 长租公寓政策出台"></a>8. 2017年 长租公寓政策出台</h3><p><strong>2017年</strong>，国务院办公厅发布《关于加快培育和发展住房租赁市场的若干意见》，提出要大力发展住房租赁市场，鼓励发展长租公寓。长租公寓成为解决新市民和青年人的住房问题的重要方式。</p>
-<h3 id="9-2020年-租购并举政策深化"><a href="#9-2020年-租购并举政策深化" class="headerlink" title="9. 2020年 租购并举政策深化"></a>9. 2020年 租购并举政策深化</h3><p><strong>2020年</strong>，中央经济工作会议提出要坚持“房住不炒”，深化租购并举的住房制度，进一步加大保障性住房的供应。政府开始探索更多形式的保障性住房，如共有产权房等，以满足不同层次的住房需求。</p>
-<h3 id="10-2022年-全面推进保障性租赁住房建设"><a href="#10-2022年-全面推进保障性租赁住房建设" class="headerlink" title="10. 2022年 全面推进保障性租赁住房建设"></a>10. 2022年 全面推进保障性租赁住房建设</h3><p><strong>2022年</strong>，国务院发布《关于进一步做好保障性租赁住房工作的意见》，明确提出要加大保障性租赁住房建设力度，缓解大城市住房供需矛盾，特别是新市民和青年人的住房困难问题。</p>
-<p>这些事件体现了中国政府在不同阶段对保障性住房的重视和推进，为改善中低收入家庭的居住条件、促进社会和谐稳定作出了重要贡献。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>保障性住房是中国政府为解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的重要政策措施。通过经济适用房、廉租房、公租房、限价房和棚户区改造安置房等多种形式，保障性住房有效地改善了中低收入家庭的居住条件，促进了社会和谐稳定和城市健康发展。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>保障性住房</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>债券</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E5%80%BA%E5%88%B8/</url>
-    <content><![CDATA[<h3 id="债券：理解债务的投资方式"><a href="#债券：理解债务的投资方式" class="headerlink" title="债券：理解债务的投资方式"></a>债券：理解债务的投资方式</h3><p>在金融世界中，债券是一种常见的投资工具，它为投资者提供了一种安全稳定的投资选择。让我们一起来了解一下什么是债券，以及如何购买债券以及它如何运作。</p>
-<span id="more"></span>
-
-<h4 id="什么是债券？"><a href="#什么是债券？" class="headerlink" title="什么是债券？"></a>什么是债券？</h4><p><strong>债券</strong>就像是一张借据或者是一种借出资金的“债务证明书”。简单来说，当你购买债券时，你其实就是在借钱给某个实体，比如政府、公司或者其他组织。这个实体承诺在未来某个时候偿还你的投资本金，并且在此期间向你支付利息作为回报。</p>
-<h4 id="如何购买债券？"><a href="#如何购买债券？" class="headerlink" title="如何购买债券？"></a>如何购买债券？</h4><p>购买债券通常有几种方式：</p>
-<ol>
-<li><p><strong>一级市场：</strong> 在债券发行的初期购买。这意味着你直接从发行者（比如政府或公司）那里购买债券。一级市场购买通常通过银行、证券公司或者经纪人进行。</p>
-</li>
-<li><p><strong>二级市场：</strong> 在债券已经发行并流通后购买。这时你是从其他投资者手中购买债券。二级市场的交易通常在证券交易所（如股票市场）进行，你可以通过证券账户和经纪人进行交易。</p>
-</li>
-<li><p><strong>债券基金：</strong> 如果你不想直接购买单个债券，可以考虑投资债券基金。债券基金由专业基金经理管理，他们会购买和管理多种债券，你可以通过购买基金份额来间接投资债券市场。</p>
-</li>
-</ol>
-<h4 id="不同类型的债券"><a href="#不同类型的债券" class="headerlink" title="不同类型的债券"></a>不同类型的债券</h4><p>债券有很多种类，其中包括：</p>
-<ul>
-<li><p><strong>政府债券（国债）：</strong> 由国家政府发行，用于筹集资金以支持政府项目和运作。政府债券通常被认为是最安全的债券形式，因为政府具有征税权和印钞权。</p>
-</li>
-<li><p><strong>公司债券：</strong> 由公司发行，用于扩展业务、投资新项目或偿还旧债务。公司债券的风险和收益取决于公司的信用评级和经营状况。</p>
-</li>
-<li><p><strong>地方政府债券：</strong> 由地方政府或政治实体发行，用于建设基础设施或提供公共服务。地方政府债券的偿还能力与该地区经济和治理能力相关。</p>
-</li>
-</ul>
-<h4 id="债券的优缺点"><a href="#债券的优缺点" class="headerlink" title="债券的优缺点"></a>债券的优缺点</h4><p><strong>优点：</strong></p>
-<ul>
-<li><strong>稳定收益：</strong> 债券通常提供稳定的利息收入，适合追求稳定收益的投资者。</li>
-<li><strong>资本保护：</strong> 如果投资的实体能够履行支付义务，债券投资的本金一般是有保护的。</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li><strong>利息风险：</strong><br>市场利率上升可能导致债券市场价值下降。<br>当你购买债券时，它通常有一个固定的利息率。假设你购买了一张5%利息率的债券，然后市场上的利率开始上升，比如其他新债券的利率变成了6%。在这种情况下，新债券提供了更高的利息回报，而你手里的旧债券因为它的利息率较低，因此它的市场价值可能会下降。<br>为什么会这样呢？因为投资者在市场上购买债券时，会希望获得与市场利率相符合的回报。如果市场上的新债券提供了更高的利息率，那么人们就更愿意购买新债券，而不是旧的低利息债券。为了吸引买家，旧债券的市场价格可能会下降，从而与新债券的利率相匹配。<br>这就是为什么当市场利率上升时，现有债券的市场价值可能会下降的原因。</li>
-<li><strong>违约风险：</strong> 如果债务人无法按时偿还债务，投资者可能会面临损失。</li>
-</ul>
-<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>总而言之，债券是一种可靠的投资选择，适合那些希望获得稳定收益并愿意承担一定风险的投资者。通过购买债券，你不仅可以帮助政府和企业筹集资金，还能为自己的投资组合增加多样性和稳定性。当然，在投资任何金融产品之前，了解你的投资目标和风险承受能力是非常重要的。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>债券</tag>
       </tags>
   </entry>
   <entry>
@@ -776,6 +610,172 @@
       </categories>
       <tags>
         <tag>俄乌战争</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是年增率？</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/</url>
+    <content><![CDATA[<h3 id="什么是年增率？"><a href="#什么是年增率？" class="headerlink" title="什么是年增率？"></a>什么是年增率？</h3><p>年增率（Year-over-Year Growth Rate）是用来衡量一个指标（如收入、利润、房价等）在一年的时间跨度内增长（或减少）的百分比。用简洁的公式表示：</p>
+<span id="more"></span>
+
+<p><img src="/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/image-20240701161122258.png" alt="image-20240701161122258"></p>
+<p>比如，如果某公司在2023年的收入为5000万元，而在2024年增至5500万元，那么其年增率为：</p>
+<p><img src="/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B4%E5%A2%9E%E7%8E%87%EF%BC%9F/image-20240701161221319.png" alt="image-20240701161221319"></p>
+<h3 id="年增率的应用"><a href="#年增率的应用" class="headerlink" title="年增率的应用"></a>年增率的应用</h3><p>年增率的计算和分析在多个领域都有广泛应用，以下是一些主要应用场景：</p>
+<h4 id="1-经济分析"><a href="#1-经济分析" class="headerlink" title="1. 经济分析"></a>1. <strong>经济分析</strong></h4><ul>
+<li><strong>国内生产总值（GDP）</strong>：经济学家和政府通过年增率来衡量一个国家或地区经济增长的速度。</li>
+<li><strong>物价指数</strong>：如消费者物价指数（CPI）的年增率，用于衡量通货膨胀水平。</li>
+<li><strong>失业率</strong>：用年增率来衡量失业人口的变化情况。</li>
+</ul>
+<h4 id="2-企业财务分析"><a href="#2-企业财务分析" class="headerlink" title="2. 企业财务分析"></a>2. <strong>企业财务分析</strong></h4><ul>
+<li><strong>收入和利润</strong>：公司用年增率来衡量销售收入、净利润等财务指标的增长情况，从而评估经营业绩。</li>
+<li><strong>成本和开支</strong>：跟踪各项成本和开支的年增率，发现并控制上升过快的费用。</li>
+</ul>
+<h4 id="3-金融分析"><a href="#3-金融分析" class="headerlink" title="3. 金融分析"></a>3. <strong>金融分析</strong></h4><ul>
+<li><strong>股价和市场指数</strong>：投资者会用年增率来分析股票和市场指数的涨跌幅度，以评估投资组合的表现。</li>
+<li><strong>贷款利率</strong>：银行和金融机构通过年增率分析利率的变化以调整利率策略。</li>
+</ul>
+<h4 id="4-房地产市场"><a href="#4-房地产市场" class="headerlink" title="4. 房地产市场"></a>4. <strong>房地产市场</strong></h4><ul>
+<li><strong>房价</strong>：用房价的年增率来分析地产市场的热度和健康状况，辅助购房和投资决策。</li>
+<li><strong>租金</strong>：租金水平的年增率分析可以用于衡量租赁市场的变化。</li>
+</ul>
+<h4 id="5-社会发展"><a href="#5-社会发展" class="headerlink" title="5. 社会发展"></a>5. <strong>社会发展</strong></h4><ul>
+<li><strong>人口增长率</strong>：用年增率分析人口的自然增长或减少情况，为制定公共政策提供依据。</li>
+<li><strong>教育和健康指标</strong>：用年增率分析入学率、毕业率、医疗覆盖率等社会发展指标。</li>
+</ul>
+<h3 id="年增率的优点"><a href="#年增率的优点" class="headerlink" title="年增率的优点"></a>年增率的优点</h3><ul>
+<li><strong>直观对比</strong>：年增率提供了一个简单、直接的指标，可以方便地进行不同年份之间的对比。</li>
+<li><strong>趋势分析</strong>：通过连续几年的年增率，可以观察长期趋势，发现周期性或者结构性的变化。</li>
+<li><strong>宏观经济及企业表现评估</strong>：帮助政策制定者、投资者、企业管理者了解经济和行业状况，进行了更为科学的决策。</li>
+</ul>
+<h3 id="年增率的局限性"><a href="#年增率的局限性" class="headerlink" title="年增率的局限性"></a>年增率的局限性</h3><ul>
+<li><strong>忽略季节性</strong>：年增率通常无法反映季节性变化及其他周期性波动，需要与其他分析指标配合使用。</li>
+<li><strong>可能被短期波动影响</strong>：短期波动或异常值可能导致年增率出现偏差，需谨慎解读。</li>
+</ul>
+<p>总体而言，年增率是一个非常有用的指标。无论是在经济分析、企业管理还是金融投资领域，理解和应用年增率都有助于更好地掌握发展动态和趋势。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>年增率</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>债券</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E5%80%BA%E5%88%B8/</url>
+    <content><![CDATA[<h3 id="债券：理解债务的投资方式"><a href="#债券：理解债务的投资方式" class="headerlink" title="债券：理解债务的投资方式"></a>债券：理解债务的投资方式</h3><p>在金融世界中，债券是一种常见的投资工具，它为投资者提供了一种安全稳定的投资选择。让我们一起来了解一下什么是债券，以及如何购买债券以及它如何运作。</p>
+<span id="more"></span>
+
+<h4 id="什么是债券？"><a href="#什么是债券？" class="headerlink" title="什么是债券？"></a>什么是债券？</h4><p><strong>债券</strong>就像是一张借据或者是一种借出资金的“债务证明书”。简单来说，当你购买债券时，你其实就是在借钱给某个实体，比如政府、公司或者其他组织。这个实体承诺在未来某个时候偿还你的投资本金，并且在此期间向你支付利息作为回报。</p>
+<h4 id="如何购买债券？"><a href="#如何购买债券？" class="headerlink" title="如何购买债券？"></a>如何购买债券？</h4><p>购买债券通常有几种方式：</p>
+<ol>
+<li><p><strong>一级市场：</strong> 在债券发行的初期购买。这意味着你直接从发行者（比如政府或公司）那里购买债券。一级市场购买通常通过银行、证券公司或者经纪人进行。</p>
+</li>
+<li><p><strong>二级市场：</strong> 在债券已经发行并流通后购买。这时你是从其他投资者手中购买债券。二级市场的交易通常在证券交易所（如股票市场）进行，你可以通过证券账户和经纪人进行交易。</p>
+</li>
+<li><p><strong>债券基金：</strong> 如果你不想直接购买单个债券，可以考虑投资债券基金。债券基金由专业基金经理管理，他们会购买和管理多种债券，你可以通过购买基金份额来间接投资债券市场。</p>
+</li>
+</ol>
+<h4 id="不同类型的债券"><a href="#不同类型的债券" class="headerlink" title="不同类型的债券"></a>不同类型的债券</h4><p>债券有很多种类，其中包括：</p>
+<ul>
+<li><p><strong>政府债券（国债）：</strong> 由国家政府发行，用于筹集资金以支持政府项目和运作。政府债券通常被认为是最安全的债券形式，因为政府具有征税权和印钞权。</p>
+</li>
+<li><p><strong>公司债券：</strong> 由公司发行，用于扩展业务、投资新项目或偿还旧债务。公司债券的风险和收益取决于公司的信用评级和经营状况。</p>
+</li>
+<li><p><strong>地方政府债券：</strong> 由地方政府或政治实体发行，用于建设基础设施或提供公共服务。地方政府债券的偿还能力与该地区经济和治理能力相关。</p>
+</li>
+</ul>
+<h4 id="债券的优缺点"><a href="#债券的优缺点" class="headerlink" title="债券的优缺点"></a>债券的优缺点</h4><p><strong>优点：</strong></p>
+<ul>
+<li><strong>稳定收益：</strong> 债券通常提供稳定的利息收入，适合追求稳定收益的投资者。</li>
+<li><strong>资本保护：</strong> 如果投资的实体能够履行支付义务，债券投资的本金一般是有保护的。</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li><strong>利息风险：</strong><br>市场利率上升可能导致债券市场价值下降。<br>当你购买债券时，它通常有一个固定的利息率。假设你购买了一张5%利息率的债券，然后市场上的利率开始上升，比如其他新债券的利率变成了6%。在这种情况下，新债券提供了更高的利息回报，而你手里的旧债券因为它的利息率较低，因此它的市场价值可能会下降。<br>为什么会这样呢？因为投资者在市场上购买债券时，会希望获得与市场利率相符合的回报。如果市场上的新债券提供了更高的利息率，那么人们就更愿意购买新债券，而不是旧的低利息债券。为了吸引买家，旧债券的市场价格可能会下降，从而与新债券的利率相匹配。<br>这就是为什么当市场利率上升时，现有债券的市场价值可能会下降的原因。</li>
+<li><strong>违约风险：</strong> 如果债务人无法按时偿还债务，投资者可能会面临损失。</li>
+</ul>
+<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>总而言之，债券是一种可靠的投资选择，适合那些希望获得稳定收益并愿意承担一定风险的投资者。通过购买债券，你不仅可以帮助政府和企业筹集资金，还能为自己的投资组合增加多样性和稳定性。当然，在投资任何金融产品之前，了解你的投资目标和风险承受能力是非常重要的。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>债券</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>保障性住房</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E4%BF%9D%E9%9A%9C%E6%80%A7%E4%BD%8F%E6%88%BF/</url>
+    <content><![CDATA[<p>保障性住房是中国政府为了解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的一系列住房政策和项目。保障性住房主要包括以下几种类型：</p>
+<span id="more"></span>
+
+<h3 id="1-经济适用房"><a href="#1-经济适用房" class="headerlink" title="1. 经济适用房"></a>1. 经济适用房</h3><p>经济适用房是指政府提供政策支持、限定建设标准和销售价格，面向城镇中低收入家庭销售的普通商品住房。其主要目的是为了帮助中低收入家庭解决住房问题。以下是对经济适用房的详细描述：</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p><strong>价格相对较低</strong>：<br>经济适用房的售价通常低于同地段的商品房市场价格，因为政府对土地出让金、税费等方面给予了一定的优惠和减免。因此，经济适用房的价格相对较低，使得中低收入家庭能够负担得起。</p>
+<p><strong>建设标准不高</strong>：<br>经济适用房的建设标准相对普通商品房较低，主要体现在以下几个方面：</p>
+<ul>
+<li><strong>户型设计</strong>：经济适用房一般以小户型为主，面积较小，以满足基本居住需求。例如，一般经济适用房的建筑面积在60-90平方米左右。</li>
+<li><strong>建筑材料和装修</strong>：经济适用房的建筑材料和装修标准较为普通，不追求豪华和高档。通常采用经济实惠的材料，内部装修也较为简洁，满足基本生活需求即可。</li>
+<li><strong>配套设施</strong>：经济适用房的社区配套设施相对简单，可能不如普通商品房那样齐全，如高档小区的会所、游泳池等设施较少。</li>
+</ul>
+<p><strong>主要满足基本居住需求</strong>：<br>经济适用房的设计和建设旨在满足中低收入家庭的基本居住需求，提供一个安全、卫生、适宜居住的环境，而不追求奢华和高档配置。</p>
+<h3 id="申请条件"><a href="#申请条件" class="headerlink" title="申请条件"></a>申请条件</h3><p><strong>户籍要求</strong>：<br>申请者一般需要具备当地城镇户籍，即申请者必须是申请地的正式居民。</p>
+<p><strong>收入和资产标准</strong>：<br>家庭收入和资产需符合当地政府规定的中低收入标准。具体标准由各地政府根据当地经济发展水平和居民收入水平确定，一般要求家庭总收入在一定限额以下，家庭总资产不超过规定的上限。</p>
+<p><strong>住房情况</strong>：<br>申请者家庭无自有住房或现有住房面积低于规定的标准。例如，有些城市规定人均住房面积低于15平方米的家庭可以申请经济适用房。</p>
+<h3 id="购房方式"><a href="#购房方式" class="headerlink" title="购房方式"></a>购房方式</h3><p><strong>申请和审核</strong>：<br>符合条件的家庭需提交申请，经过相关部门的审核后，确定其购房资格。审核内容包括申请者的收入、资产、户籍、现有住房等情况。</p>
+<p><strong>购买价格</strong>：<br>通过审核的家庭可以以低于市场价的价格购买经济适用房。价格由政府根据建设成本和政策优惠确定，通常比同地段商品房市场价低20%-50%。</p>
+<p><strong>产权限制</strong>：<br>经济适用房的产权受限，一般在购买后一定年限内不能上市交易。各地的规定有所不同，通常是5年或更长时间。例如，北京市规定，经济适用房在购买满5年后，方可上市交易，但在交易时需向政府缴纳一定比例的土地收益金。</p>
+<h3 id="2-廉租房"><a href="#2-廉租房" class="headerlink" title="2. 廉租房"></a>2. 廉租房</h3><p><strong>廉租房</strong>是政府为城市低收入住房困难家庭提供的租金低廉的保障性住房。</p>
+<ul>
+<li><strong>特点</strong>：租金低廉，由政府或政府委托的单位管理和运营。</li>
+<li><strong>申请条件</strong>：主要面向城镇最低收入家庭，申请者需具备本地户籍，家庭收入和资产低于最低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
+<li><strong>租赁方式</strong>：通过申请和审核后，家庭可以以较低的租金租赁廉租房，租赁期限一般为1-3年，可续租。</li>
+</ul>
+<h3 id="3-公租房"><a href="#3-公租房" class="headerlink" title="3. 公租房"></a>3. 公租房</h3><p><strong>公租房</strong>是政府为解决中低收入家庭、新就业人员和外来务工人员住房困难问题而提供的租金较低的保障性住房。</p>
+<ul>
+<li><strong>特点</strong>：租金较低，面向更广泛的人群，包括中低收入家庭、新就业人员和外来务工人员。</li>
+<li><strong>申请条件</strong>：申请者需具备本地户籍或符合规定的外来务工人员，新就业人员需就业年限不超过一定年限（如5年），家庭收入和资产符合规定标准。</li>
+<li><strong>租赁方式</strong>：通过申请和审核后，家庭或个人可以以较低的租金租赁公租房，租赁期限一般为1-5年，可续租。</li>
+</ul>
+<h3 id="4-限价房"><a href="#4-限价房" class="headerlink" title="4. 限价房"></a>4. 限价房</h3><p><strong>限价房</strong>是政府限定销售价格、限定销售对象的普通商品住房，主要面向中低收入家庭。</p>
+<ul>
+<li><strong>特点</strong>：价格受政府限制，低于市场价，建设标准较高，接近普通商品房。</li>
+<li><strong>申请条件</strong>：申请者需具备本地户籍，家庭收入和资产符合中低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
+<li><strong>购房方式</strong>：符合条件的家庭通过申请和审核后，以低于市场价的价格购买限价房。</li>
+</ul>
+<h3 id="5-棚户区改造安置房"><a href="#5-棚户区改造安置房" class="headerlink" title="5. 棚户区改造安置房"></a>5. 棚户区改造安置房</h3><p><strong>棚户区改造安置房</strong>是政府为改善棚户区居民居住条件而建设的住房，用于安置被拆迁的棚户区居民。</p>
+<ul>
+<li><strong>特点</strong>：<br>棚户区改造安置房的建设标准较高，配套设施齐全，环境和居住条件显著优于原棚户区。<br>棚户区改造项目由政府主导，建设资金主要来源于政府财政和政策性贷款。</li>
+<li><strong>申请条件</strong>：主要面向棚户区改造中被拆迁的居民，提供的安置房面积和标准根据原有住房情况和相关政策规定。</li>
+<li><strong>安置方式</strong>：居民通过棚户区改造项目得到安置房，可以是产权安置或租赁安置。</li>
+</ul>
+<h3 id="保障性住房的意义"><a href="#保障性住房的意义" class="headerlink" title="保障性住房的意义"></a>保障性住房的意义</h3><p>保障性住房的推出和实施，对于改善中低收入家庭的住房条件，缓解城市住房供需矛盾，促进社会和谐稳定具有重要意义。具体体现在以下几个方面：</p>
+<ol>
+<li><strong>提高居住质量</strong>：通过保障性住房建设，改善中低收入家庭的居住条件，提高居民的生活质量。</li>
+<li><strong>缓解住房压力</strong>：保障性住房为中低收入家庭提供了经济负担较轻的住房选择，缓解了住房压力。</li>
+<li><strong>促进社会公平</strong>：保障性住房政策有助于缩小收入差距，促进社会公平正义。</li>
+<li><strong>推动城市发展</strong>：通过棚户区改造等项目，改善城市面貌，提升城市综合竞争力。</li>
+</ol>
+<h3 id="时间轴："><a href="#时间轴：" class="headerlink" title="时间轴："></a>时间轴：</h3><p>中国保障性住房的发展经历了从无到有、从单一到多层次的过程。以下是主要事件的时间轴：</p>
+<h3 id="1-1998年-房改启动"><a href="#1-1998年-房改启动" class="headerlink" title="1. 1998年 房改启动"></a>1. 1998年 房改启动</h3><p><strong>1998年</strong>，国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，全面停止住房实物分配，实行住房分配货币化。此时，保障性住房的概念开始萌芽，主要是通过经济适用房来解决中低收入家庭的住房问题。</p>
+<h3 id="2-2004年-廉租房制度建立"><a href="#2-2004年-廉租房制度建立" class="headerlink" title="2. 2004年 廉租房制度建立"></a>2. 2004年 廉租房制度建立</h3><p><strong>2004年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，正式建立廉租住房制度。廉租房主要面向最低收入家庭，提供低廉的租金，帮助最困难的家庭解决住房问题。</p>
+<h3 id="3-2007年-保障性住房体系逐步完善"><a href="#3-2007年-保障性住房体系逐步完善" class="headerlink" title="3. 2007年 保障性住房体系逐步完善"></a>3. 2007年 保障性住房体系逐步完善</h3><p><strong>2007年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，提出建立经济适用房、廉租房、公租房等多层次的保障性住房体系。同年，住房和城乡建设部发布《关于加快发展经济适用住房的通知》，进一步明确经济适用房的建设标准和供应方式。</p>
+<h3 id="4-2010年-公租房政策出台"><a href="#4-2010年-公租房政策出台" class="headerlink" title="4. 2010年 公租房政策出台"></a>4. 2010年 公租房政策出台</h3><p><strong>2010年</strong>，国务院发布《关于加快发展公共租赁住房的指导意见》，明确提出发展公共租赁住房，解决中低收入家庭、新就业人员和外来务工人员的住房困难。公租房租金较低，面向更广泛的人群。</p>
+<h3 id="5-2011年-限价房政策推进"><a href="#5-2011年-限价房政策推进" class="headerlink" title="5. 2011年 限价房政策推进"></a>5. 2011年 限价房政策推进</h3><p><strong>2011年</strong>，北京市等地开始推广限价商品房政策，政府限定房价和销售对象，面向中低收入家庭销售。这些限价房价格低于市场价，旨在解决中低收入家庭的购房需求。</p>
+<h3 id="6-2013年-棚户区改造大规模推进"><a href="#6-2013年-棚户区改造大规模推进" class="headerlink" title="6. 2013年 棚户区改造大规模推进"></a>6. 2013年 棚户区改造大规模推进</h3><p><strong>2013年</strong>，国务院发布《关于加快棚户区改造工作的意见》，提出在全国范围内加快棚户区改造步伐，改善棚户区居民的居住条件。棚户区改造安置房逐步成为保障性住房的重要组成部分。</p>
+<h3 id="7-2015年-保障性住房建设力度加大"><a href="#7-2015年-保障性住房建设力度加大" class="headerlink" title="7. 2015年 保障性住房建设力度加大"></a>7. 2015年 保障性住房建设力度加大</h3><p><strong>2015年</strong>，在“十三五”规划中，国家提出要大力发展保障性住房，加大棚户区改造力度，确保每个家庭住有所居。各地纷纷加大保障性住房的建设力度。</p>
+<h3 id="8-2017年-长租公寓政策出台"><a href="#8-2017年-长租公寓政策出台" class="headerlink" title="8. 2017年 长租公寓政策出台"></a>8. 2017年 长租公寓政策出台</h3><p><strong>2017年</strong>，国务院办公厅发布《关于加快培育和发展住房租赁市场的若干意见》，提出要大力发展住房租赁市场，鼓励发展长租公寓。长租公寓成为解决新市民和青年人的住房问题的重要方式。</p>
+<h3 id="9-2020年-租购并举政策深化"><a href="#9-2020年-租购并举政策深化" class="headerlink" title="9. 2020年 租购并举政策深化"></a>9. 2020年 租购并举政策深化</h3><p><strong>2020年</strong>，中央经济工作会议提出要坚持“房住不炒”，深化租购并举的住房制度，进一步加大保障性住房的供应。政府开始探索更多形式的保障性住房，如共有产权房等，以满足不同层次的住房需求。</p>
+<h3 id="10-2022年-全面推进保障性租赁住房建设"><a href="#10-2022年-全面推进保障性租赁住房建设" class="headerlink" title="10. 2022年 全面推进保障性租赁住房建设"></a>10. 2022年 全面推进保障性租赁住房建设</h3><p><strong>2022年</strong>，国务院发布《关于进一步做好保障性租赁住房工作的意见》，明确提出要加大保障性租赁住房建设力度，缓解大城市住房供需矛盾，特别是新市民和青年人的住房困难问题。</p>
+<p>这些事件体现了中国政府在不同阶段对保障性住房的重视和推进，为改善中低收入家庭的居住条件、促进社会和谐稳定作出了重要贡献。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>保障性住房是中国政府为解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的重要政策措施。通过经济适用房、廉租房、公租房、限价房和棚户区改造安置房等多种形式，保障性住房有效地改善了中低收入家庭的居住条件，促进了社会和谐稳定和城市健康发展。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>保障性住房</tag>
       </tags>
   </entry>
   <entry>
@@ -2550,14 +2550,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
-  </entry>
-  <entry>
     <title>每日60秒读懂世界新闻</title>
     <url>/60s_news/index.html</url>
     <content><![CDATA[<div id="daily-news">
@@ -2593,6 +2585,14 @@
 
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>关于</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
   </entry>
   <entry>
     <title>分类</title>
@@ -2773,19 +2773,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>trending indices</title>
-    <url>/indices/index.html</url>
-    <content><![CDATA[<link rel="stylesheet" href="/css/indices.css">
-
-
-<div id="stock-data">
-    加载中...
-</div>
-
-<script type="text/javascript" src="/js/indices/sse.js"></script>
-]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/js/bitcoin.js</url>
     <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
@@ -2819,23 +2806,6 @@
 });
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>新闻</title>
-    <url>/news/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-
-<script type="text/javascript" src="/js/news/news.js"></script>
-<link rel="stylesheet" href="/css/news.css">]]></content>
   </entry>
   <entry>
     <title>历史时间轴</title>
@@ -3072,11 +3042,6 @@
 </div></div></div>]]></content>
   </entry>
   <entry>
-    <title>标签</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/js/holiday.js</url>
     <content><![CDATA[
@@ -3099,6 +3064,41 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 });
 ]]></content>
+  </entry>
+  <entry>
+    <title>trending indices</title>
+    <url>/indices/index.html</url>
+    <content><![CDATA[<link rel="stylesheet" href="/css/indices.css">
+
+
+<div id="stock-data">
+    加载中...
+</div>
+
+<script type="text/javascript" src="/js/indices/sse.js"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title>新闻</title>
+    <url>/news/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/news/news.js"></script>
+<link rel="stylesheet" href="/css/news.css">]]></content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>schedule</title>
@@ -3161,21 +3161,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
   </entry>
   <entry>
-    <title>财经</title>
-    <url>/news/finance/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/finance.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>时尚</title>
     <url>/news/fashion/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3189,6 +3174,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/fashion.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>财经</title>
+    <url>/news/finance/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/finance.js"></script>]]></content>
   </entry>
   <entry>
     <title>头条</title>
@@ -3206,36 +3206,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/front.js"></script>]]></content>
   </entry>
   <entry>
-    <title>健康</title>
-    <url>/news/health/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/health.js"></script>]]></content>
-  </entry>
-  <entry>
-    <title>手机</title>
-    <url>/news/phone/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>游戏</title>
     <url>/news/game/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3251,6 +3221,21 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/game.js"></script>]]></content>
   </entry>
   <entry>
+    <title>健康</title>
+    <url>/news/health/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/health.js"></script>]]></content>
+  </entry>
+  <entry>
     <title>军事</title>
     <url>/news/military/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3264,6 +3249,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/military.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>手机</title>
+    <url>/news/phone/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
   </entry>
   <entry>
     <title>体育</title>
@@ -3326,22 +3326,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/travel.js"></script>]]></content>
   </entry>
   <entry>
-    <title>精选</title>
-    <url>/news/winnow/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-
-<script type="text/javascript" src="/js/news/winnow.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>视频</title>
     <url>/news/video/index.html</url>
     <content><![CDATA[<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https:;">
@@ -3358,5 +3342,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/video.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>精选</title>
+    <url>/news/winnow/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/news/winnow.js"></script>]]></content>
   </entry>
 </search>
