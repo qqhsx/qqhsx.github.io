@@ -104,7 +104,11 @@
   <entry>
     <title>pdf测试</title>
     <url>/pdf%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<iframe src="/lib/pdf/web/viewer.html?file=/pdf测试/22.pdf" style="width:100%;height:800px"></iframe>
+    <content><![CDATA[<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "http://mozilla.github.io"
+</IfModule>
+
+<iframe src="/lib/pdf/web/viewer.html?file=/pdf测试/22.pdf" style="width:100%;height:800px"></iframe>
 
 
 
@@ -112,7 +116,7 @@
 
 <iframe src="/lib/pdf/web/viewer.html?file=https://github.com/qqhsx/swf/raw/90acd61eace5782d3db734a152efc7778dd1848a/AutoCAD-Mechanical%E6%A8%A1%E7%89%88%E5%AE%9A%E5%88%B6%E8%AF%A6%E8%A7%A3.pdf" style="width:100%; height:800px;"></iframe>
 
-<iframe src="/lib/pdf/web/viewer.html?file='https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf'" style="width:100%; height:800px;"></iframe>]]></content>
+<iframe src="/lib/pdf/web/viewer.html?file=https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf" style="width:100%; height:800px;"></iframe>]]></content>
   </entry>
   <entry>
     <title>Hexo博客搭建与部署</title>
@@ -2569,17 +2573,17 @@
 ]]></content>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>关于</title>
     <url>/about/index.html</url>
     <content><![CDATA[<blockquote>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>经济时间轴</title>
@@ -3248,21 +3252,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
   </entry>
   <entry>
-    <title>体育</title>
-    <url>/news/physical/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>娱乐</title>
     <url>/news/recreation/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3276,6 +3265,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>体育</title>
+    <url>/news/physical/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
   </entry>
   <entry>
     <title>科技</title>
