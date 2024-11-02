@@ -102,206 +102,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hexo博客搭建与部署</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
-<h2 id="搭建环境准备"><a href="#搭建环境准备" class="headerlink" title="搭建环境准备"></a>搭建环境准备</h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><span id="more"></span>
-
-<p>Git是一个先进的分布式版本控制工具，可以有效处理不同规模的项目版本管理。这里用于管理你的Hexo文章，将本地的博客上传至Github。到Git官网选择合适的版本<a href="https://gitforwindows.org/">下载</a>，安装后会有一个Git Bash的命令行工具，之后用该工具操作Git。</p>
-<p><img src="https://s2.loli.net/2022/09/02/yERzbHxNWFDkGYj.png" alt="1"></p>
-<p>检查是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/09/02/Ig54dwxlKL7iNW2.png" alt="2"></p>
-<p>正常显示版本号，无报错即为安装成功。<br>另外，Windows环境下在Git安装完成后，可以使用Git Bash来进行后续命令行操作。</p>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Hexo基于Node.js，所以需要安装Node.js及npm工具。可进入Node.js中文网<a href="http://nodejs.cn/download/">下载</a>，选择LTS（长期支持版本）即可。<br>检查是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s2.loli.net/2022/09/02/y6HEt7ubvYxj4De.png" alt="3"></p>
-<p>正常显示版本号，无报错即为安装成功。</p>
-<h2 id="博客本地搭建"><a href="#博客本地搭建" class="headerlink" title="博客本地搭建"></a>博客本地搭建</h2><h3 id="安装Hexo框架"><a href="#安装Hexo框架" class="headerlink" title="安装Hexo框架"></a>安装Hexo框架</h3><p>右键打开Git Bash，输入命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>检查是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s2.loli.net/2022/09/02/OXSGPjcFAWuTL1w.png" alt="4"></p>
-<p>正常显示版本号，无报错即为安装成功。</p>
-<h3 id="初始化博客进入文件夹，安装一下npm"><a href="#初始化博客进入文件夹，安装一下npm" class="headerlink" title="初始化博客进入文件夹，安装一下npm"></a>初始化博客进入文件夹，安装一下npm</h3><p>运行Git Bash执行以下命令：</p>
-<p>命令为在当前位置新建一个文件夹作为博客的目录，例如这里我将博客目录设置为myblog，并设置myblog为当前目录后安装npm</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<h3 id="博客目录介绍"><a href="#博客目录介绍" class="headerlink" title="博客目录介绍"></a>博客目录介绍</h3><p>新建完成后，指定文件夹的目录如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-
-<p><code>_config.yml</code> 网站的配置信息，可以在此配置大部分的参数。<br><code> package.json</code> 应用程序的信息，新添加的插件内容也会显示在这里，可以不做修改。<br><code>scaffolds</code> 模板文件夹，新建文章时，Hexo会根据scaffolds来建立文件。Hexo的模板是指在新建的Markdown文件中默认填充的内容，我们可以在模板上添加自定义内容，比如categories，tags等。<br><code>source</code> 存放用户资源的地方，也就是我们的博客内容。初始设置两个文件夹，posts（文章）和drafts（草稿）。之后通过命令新建页面后，文件夹数量会增加。<br><code>themes</code> 主题文件夹，用于存放主题文件包，Hexo会根据主题内容生成静态页面，默认主题为landscape，可根据个人喜好进行更改。</p>
-<h3 id="博客本地效果"><a href="#博客本地效果" class="headerlink" title="博客本地效果"></a>博客本地效果</h3><p>Git Bash执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>启动hexo服务，访问<a href="http://localhost:4000/">http://localhost:4000</a>即可看到生成的博客页面。使用Ctrl+C可关闭本地服务。</p>
-<p><img src="https://s2.loli.net/2022/09/02/vsMUKSwT3D9B1kt.png" alt="5"></p>
-<h2 id="博客Github部署"><a href="#博客Github部署" class="headerlink" title="博客Github部署"></a>博客Github部署</h2><h3 id="创建个人仓库"><a href="#创建个人仓库" class="headerlink" title="创建个人仓库"></a>创建个人仓库</h3><p>这里需要Github账号，如果没有可以去<a href="https://github.com/join">注册</a>一个。</p>
-<p><img src="https://s2.loli.net/2022/09/02/EdzSKevZrViq3UY.png" alt="6"></p>
-<p><a href="https://github.com/login">登录</a>Github，新建一个仓库，命名格式为：用户名.github.io。比如，我的用户名是qqhsx，我的仓库名为qqhsx.github.io。注意这里必须按此格式命名，只有这样，之后部署到GitHub pages的时候，才会被识别。</p>
-<p><img src="https://s2.loli.net/2022/09/02/zVEjxBYukKmqD9e.png" alt="7"></p>
-<p><img src="https://s2.loli.net/2022/09/02/rplmdP6XA3LBuqJ.png" alt="8"></p>
-<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>打开Git Bash，输入以下命令，生成本地密钥。这里用户名和邮箱仅作演示，用户名为你Github的用户名，邮箱为你Github的邮箱。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxxxxx@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>输入以下命令，检查输入是否正确：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
-
-<p>确认无误后，输入以下命令，创建SSH：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>无脑下一步即可,此时在用户文件夹下，已经生成了.ssh文件夹，在本地找到这个文件夹。</p>
-<p><img src="https://s2.loli.net/2022/09/02/ZWifwTv9LH3ohkq.png" alt="9"></p>
-<p><code>id_rsa</code>是你这台电脑的私人秘钥，<code>id_rsa.pub</code>是公共秘钥。<br>把公钥放在GitHub上，当你连接自己的Github账号时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过Git上传你的文件到GitHub上。<br>在Github的设置中，找到<code>SSH and GPG keys</code>，新建SSH Key，以文本方式打开<code>id_rsa.pub</code>文件，将内容复制到Key，标题随便起，添加Key。</p>
-<p><img src="https://s2.loli.net/2022/09/02/tyk78woW5fNjxMB.png" alt="10"></p>
-<p><img src="https://s2.loli.net/2022/09/02/yOwjdV8YcNrsCl3.png" alt="11"></p>
-<h3 id="部署代码到Github"><a href="#部署代码到Github" class="headerlink" title="部署代码到Github"></a>部署代码到Github</h3><p>打开站点配置文件<code>_config.yml</code>，拉到最底部，找到deploy字段，按如下格式修改其内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:qqhsx/qqhsx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>其中repository字段可在Github获取：</p>
-<p><img src="https://s2.loli.net/2022/09/02/HYXNjdn7GVAcDL1.png" alt="12"></p>
-<p>回到Git Bash，安装deploy-git ，用于使用命令部署到Github。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>然后执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean	//可省略</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>出现下图所示说明部署成功，此时代码已同步至Github。</p>
-<p><img src="https://s2.loli.net/2022/09/02/8WosUtrcAlgNJiI.png" alt="13"></p>
-<p>打开网址<a href="http://yourname.github.io/">http://yourname.github.io</a>就可以看到Hexo博客了。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>Hexo文档中命令很多，但你并不需要记住每一个。在博客的使用过程中，主要的命令如下：</p>
-<p><code>init</code>用于新建网站</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>new</code>用于新建文章或页面</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>generate</code>用于生成静态页面</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo g	//简写</span><br></pre></td></tr></table></figure>
-
-<p><code>deploy</code>用于将内容部署到网站</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line">hexo -g</span><br></pre></td></tr></table></figure>
-
-<p><code>publish</code>用于将内容从drafts文件夹移动到posts文件夹</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>server</code>用于启动服务器进行预览，默认情况下，访问入口为<a href="http://localhost:4000/">http://localhost:4000/</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br><span class="line">hexo s	//简写</span><br></pre></td></tr></table></figure>
-
-<div class="note info"><p>实际上，除了第一次部署时，需要用到hexo init这个命令，平时写博客的过程中，最常用的就是：</p>
-<p><code>hexo n</code> 新建文章&#x2F;页面<br><code>hexo g</code> 生成静态页面<br><code>hexo s</code> 本地查看内容<br><code>hexo d</code> 部署到Github</p>
-<p>如果需要清除之前生成的内容，可以在生成静态页面前执行hexo clean，其他情况只需要以上四条命令即可。</p>
-</div>]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Test Image Insert</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
-    <content><![CDATA[<blockquote>
-<p>以下是在hexo配置文件_config.yml中 <code>post_asset_folder</code> 已启用的情况下用Typora编写测试的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li><h3 id="这是一个测试如何在-Hexo-文章中插入图片的示例。"><a href="#这是一个测试如何在-Hexo-文章中插入图片的示例。" class="headerlink" title="这是一个测试如何在 Hexo 文章中插入图片的示例。"></a>这是一个测试如何在 Hexo 文章中插入图片的示例。</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
-<ul>
-<li><h3 id="尝试使用相对路径指定图片的位置"><a href="#尝试使用相对路径指定图片的位置" class="headerlink" title="尝试使用相对路径指定图片的位置"></a>尝试使用相对路径指定图片的位置</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-
-<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
-<ul>
-<li><h3 id="试试在-Markdown-文件中使用绝对路径"><a href="#试试在-Markdown-文件中使用绝对路径" class="headerlink" title="试试在 Markdown 文件中使用绝对路径"></a>试试在 Markdown 文件中使用绝对路径</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](/uncategorized/Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>这样写在Typora中不显示，在<a href="http://localhost:4000/%E4%B8%AD%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA">http://localhost:4000/中正常显示</a></p>
-<p>！！！！！！！！！</p>
-<p>！！！！！！！！！</p>
-<p>！！！！！！！！！</p>
-<ul>
-<li><h3 id="接着接找到hexo-asset-img这个插件安装"><a href="#接着接找到hexo-asset-img这个插件安装" class="headerlink" title="接着接找到hexo-asset-img这个插件安装"></a>接着接找到<a href="https://github.com/yiyungent/hexo-asset-img">hexo-asset-img</a>这个插件安装</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
-
-<p>最终测试后这个插件起到了作用，Typora中使用如下相对路径插入图片可以在Typora中与<a href="http://localhost:4000/">http://localhost:4000/</a> 中都能正常显示。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<p>使用起来发现这格式还是有些不方便，在用Тypora编写时一般会在<code>文件-偏好设置-图像</code>页面中设置图片插入时的的动作参数。如果选择<code>复制到指定路径./$&#123;filename&#125;</code>会发现在插入图片时是以下的格式，同时会在文章的同目录中生成一个与文件名相同的目录，所插入的图片会自动放在这里面。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h3 id="接着换回到hexo-asset-image这个插件安装"><a href="#接着换回到hexo-asset-image这个插件安装" class="headerlink" title="接着换回到hexo-asset-image这个插件安装"></a>接着换回到<a href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a>这个插件安装</h3></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-
-<p>都说这个插件失效了所以开始就没去安装它，但最终还是用上它了。它能处理下面这种图片格式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo-theme-next主题安装</title>
-    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
-<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<ol start="2">
-<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
-</li>
-<li><p>next theme 配置文件路径</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
-</blockquote>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
-<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
-</li>
-<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
-</li>
-</ul>
-<blockquote>
-<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hexo博客相关</category>
-      </categories>
-      <tags>
-        <tag>next主题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>中国房价高歌猛涨时期</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E4%B8%AD%E5%9B%BD%E6%88%BF%E4%BB%B7%E9%AB%98%E6%AD%8C%E7%8C%9B%E6%B6%A8%E6%97%B6%E6%9C%9F/</url>
     <content><![CDATA[<p>中国房价的高歌猛涨主要集中在以下几个时间段：</p>
@@ -759,6 +559,206 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo-theme-next主题安装</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo-theme-next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h4 id="NexT主题安装"><a href="#NexT主题安装" class="headerlink" title="NexT主题安装"></a>NexT主题安装</h4><ol>
+<li>安装完 <a href="https://hexo.io/zh-cn/">hexo</a> 之后，进入blog目录，用 npm 方式安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<ol start="2">
+<li>将<code>_config.yml</code>中<code>theme</code>配置项修改为<code>next</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>使用<code>hexo clean &amp;&amp; hexo s</code>进行测试，查看主题是否应用成功。</p>
+</li>
+<li><p>next theme 配置文件路径</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ode_modules/hexo-theme-next/_config.yml</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用<code>npm install hexo-theme-next@latest</code>来安装最新的NexT主题，主题会安装到<strong>node_modules</strong>中，也可以使用<code>cp -r node_modules/hexo-theme-next/* themes/next/</code>复制主题到themes目录。</p>
+</blockquote>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ul>
+<li><p><a href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a> 5.0+，<a href="https://hexo.io/zh-cn/docs/configuration">官方推荐</a>在<code>_config.yml</code>同级目录下创建主题配置文件<code>_config.[name].yml</code>，这种方式不用去修改next主题下的<code>_config.yml</code>文件，需要什么配什么。</p>
+</li>
+<li><p>我们使用<code>cp node_modules/hexo-theme-next/_config.yml _config.next.yml</code>复制默认的next配置文件</p>
+</li>
+</ul>
+<blockquote>
+<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>next主题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客搭建与部署</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>Hexo是一款基于Node.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
+<h2 id="搭建环境准备"><a href="#搭建环境准备" class="headerlink" title="搭建环境准备"></a>搭建环境准备</h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><span id="more"></span>
+
+<p>Git是一个先进的分布式版本控制工具，可以有效处理不同规模的项目版本管理。这里用于管理你的Hexo文章，将本地的博客上传至Github。到Git官网选择合适的版本<a href="https://gitforwindows.org/">下载</a>，安装后会有一个Git Bash的命令行工具，之后用该工具操作Git。</p>
+<p><img src="https://s2.loli.net/2022/09/02/yERzbHxNWFDkGYj.png" alt="1"></p>
+<p>检查是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/09/02/Ig54dwxlKL7iNW2.png" alt="2"></p>
+<p>正常显示版本号，无报错即为安装成功。<br>另外，Windows环境下在Git安装完成后，可以使用Git Bash来进行后续命令行操作。</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Hexo基于Node.js，所以需要安装Node.js及npm工具。可进入Node.js中文网<a href="http://nodejs.cn/download/">下载</a>，选择LTS（长期支持版本）即可。<br>检查是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/09/02/y6HEt7ubvYxj4De.png" alt="3"></p>
+<p>正常显示版本号，无报错即为安装成功。</p>
+<h2 id="博客本地搭建"><a href="#博客本地搭建" class="headerlink" title="博客本地搭建"></a>博客本地搭建</h2><h3 id="安装Hexo框架"><a href="#安装Hexo框架" class="headerlink" title="安装Hexo框架"></a>安装Hexo框架</h3><p>右键打开Git Bash，输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/09/02/OXSGPjcFAWuTL1w.png" alt="4"></p>
+<p>正常显示版本号，无报错即为安装成功。</p>
+<h3 id="初始化博客进入文件夹，安装一下npm"><a href="#初始化博客进入文件夹，安装一下npm" class="headerlink" title="初始化博客进入文件夹，安装一下npm"></a>初始化博客进入文件夹，安装一下npm</h3><p>运行Git Bash执行以下命令：</p>
+<p>命令为在当前位置新建一个文件夹作为博客的目录，例如这里我将博客目录设置为myblog，并设置myblog为当前目录后安装npm</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="博客目录介绍"><a href="#博客目录介绍" class="headerlink" title="博客目录介绍"></a>博客目录介绍</h3><p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<p><code>_config.yml</code> 网站的配置信息，可以在此配置大部分的参数。<br><code> package.json</code> 应用程序的信息，新添加的插件内容也会显示在这里，可以不做修改。<br><code>scaffolds</code> 模板文件夹，新建文章时，Hexo会根据scaffolds来建立文件。Hexo的模板是指在新建的Markdown文件中默认填充的内容，我们可以在模板上添加自定义内容，比如categories，tags等。<br><code>source</code> 存放用户资源的地方，也就是我们的博客内容。初始设置两个文件夹，posts（文章）和drafts（草稿）。之后通过命令新建页面后，文件夹数量会增加。<br><code>themes</code> 主题文件夹，用于存放主题文件包，Hexo会根据主题内容生成静态页面，默认主题为landscape，可根据个人喜好进行更改。</p>
+<h3 id="博客本地效果"><a href="#博客本地效果" class="headerlink" title="博客本地效果"></a>博客本地效果</h3><p>Git Bash执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>启动hexo服务，访问<a href="http://localhost:4000/">http://localhost:4000</a>即可看到生成的博客页面。使用Ctrl+C可关闭本地服务。</p>
+<p><img src="https://s2.loli.net/2022/09/02/vsMUKSwT3D9B1kt.png" alt="5"></p>
+<h2 id="博客Github部署"><a href="#博客Github部署" class="headerlink" title="博客Github部署"></a>博客Github部署</h2><h3 id="创建个人仓库"><a href="#创建个人仓库" class="headerlink" title="创建个人仓库"></a>创建个人仓库</h3><p>这里需要Github账号，如果没有可以去<a href="https://github.com/join">注册</a>一个。</p>
+<p><img src="https://s2.loli.net/2022/09/02/EdzSKevZrViq3UY.png" alt="6"></p>
+<p><a href="https://github.com/login">登录</a>Github，新建一个仓库，命名格式为：用户名.github.io。比如，我的用户名是qqhsx，我的仓库名为qqhsx.github.io。注意这里必须按此格式命名，只有这样，之后部署到GitHub pages的时候，才会被识别。</p>
+<p><img src="https://s2.loli.net/2022/09/02/zVEjxBYukKmqD9e.png" alt="7"></p>
+<p><img src="https://s2.loli.net/2022/09/02/rplmdP6XA3LBuqJ.png" alt="8"></p>
+<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>打开Git Bash，输入以下命令，生成本地密钥。这里用户名和邮箱仅作演示，用户名为你Github的用户名，邮箱为你Github的邮箱。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxxxxx@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>输入以下命令，检查输入是否正确：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+
+<p>确认无误后，输入以下命令，创建SSH：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>无脑下一步即可,此时在用户文件夹下，已经生成了.ssh文件夹，在本地找到这个文件夹。</p>
+<p><img src="https://s2.loli.net/2022/09/02/ZWifwTv9LH3ohkq.png" alt="9"></p>
+<p><code>id_rsa</code>是你这台电脑的私人秘钥，<code>id_rsa.pub</code>是公共秘钥。<br>把公钥放在GitHub上，当你连接自己的Github账号时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过Git上传你的文件到GitHub上。<br>在Github的设置中，找到<code>SSH and GPG keys</code>，新建SSH Key，以文本方式打开<code>id_rsa.pub</code>文件，将内容复制到Key，标题随便起，添加Key。</p>
+<p><img src="https://s2.loli.net/2022/09/02/tyk78woW5fNjxMB.png" alt="10"></p>
+<p><img src="https://s2.loli.net/2022/09/02/yOwjdV8YcNrsCl3.png" alt="11"></p>
+<h3 id="部署代码到Github"><a href="#部署代码到Github" class="headerlink" title="部署代码到Github"></a>部署代码到Github</h3><p>打开站点配置文件<code>_config.yml</code>，拉到最底部，找到deploy字段，按如下格式修改其内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:qqhsx/qqhsx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>其中repository字段可在Github获取：</p>
+<p><img src="https://s2.loli.net/2022/09/02/HYXNjdn7GVAcDL1.png" alt="12"></p>
+<p>回到Git Bash，安装deploy-git ，用于使用命令部署到Github。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>然后执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean	//可省略</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>出现下图所示说明部署成功，此时代码已同步至Github。</p>
+<p><img src="https://s2.loli.net/2022/09/02/8WosUtrcAlgNJiI.png" alt="13"></p>
+<p>打开网址<a href="http://yourname.github.io/">http://yourname.github.io</a>就可以看到Hexo博客了。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>Hexo文档中命令很多，但你并不需要记住每一个。在博客的使用过程中，主要的命令如下：</p>
+<p><code>init</code>用于新建网站</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>new</code>用于新建文章或页面</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>generate</code>用于生成静态页面</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo g	//简写</span><br></pre></td></tr></table></figure>
+
+<p><code>deploy</code>用于将内容部署到网站</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line">hexo -g</span><br></pre></td></tr></table></figure>
+
+<p><code>publish</code>用于将内容从drafts文件夹移动到posts文件夹</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>server</code>用于启动服务器进行预览，默认情况下，访问入口为<a href="http://localhost:4000/">http://localhost:4000/</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br><span class="line">hexo s	//简写</span><br></pre></td></tr></table></figure>
+
+<div class="note info"><p>实际上，除了第一次部署时，需要用到hexo init这个命令，平时写博客的过程中，最常用的就是：</p>
+<p><code>hexo n</code> 新建文章&#x2F;页面<br><code>hexo g</code> 生成静态页面<br><code>hexo s</code> 本地查看内容<br><code>hexo d</code> 部署到Github</p>
+<p>如果需要清除之前生成的内容，可以在生成静态页面前执行hexo clean，其他情况只需要以上四条命令即可。</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Test Image Insert</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Image-Insert/</url>
+    <content><![CDATA[<blockquote>
+<p>以下是在hexo配置文件_config.yml中 <code>post_asset_folder</code> 已启用的情况下用Typora编写测试的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li><h3 id="这是一个测试如何在-Hexo-文章中插入图片的示例。"><a href="#这是一个测试如何在-Hexo-文章中插入图片的示例。" class="headerlink" title="这是一个测试如何在 Hexo 文章中插入图片的示例。"></a>这是一个测试如何在 Hexo 文章中插入图片的示例。</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
+<ul>
+<li><h3 id="尝试使用相对路径指定图片的位置"><a href="#尝试使用相对路径指定图片的位置" class="headerlink" title="尝试使用相对路径指定图片的位置"></a>尝试使用相对路径指定图片的位置</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+
+<p>这样写在Typora中显示正常，在<a href="http://localhost:4000/%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA">http://localhost:4000/中不显示</a></p>
+<ul>
+<li><h3 id="试试在-Markdown-文件中使用绝对路径"><a href="#试试在-Markdown-文件中使用绝对路径" class="headerlink" title="试试在 Markdown 文件中使用绝对路径"></a>试试在 Markdown 文件中使用绝对路径</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](/uncategorized/Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>这样写在Typora中不显示，在<a href="http://localhost:4000/%E4%B8%AD%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA">http://localhost:4000/中正常显示</a></p>
+<p>！！！！！！！！！</p>
+<p>！！！！！！！！！</p>
+<p>！！！！！！！！！</p>
+<ul>
+<li><h3 id="接着接找到hexo-asset-img这个插件安装"><a href="#接着接找到hexo-asset-img这个插件安装" class="headerlink" title="接着接找到hexo-asset-img这个插件安装"></a>接着接找到<a href="https://github.com/yiyungent/hexo-asset-img">hexo-asset-img</a>这个插件安装</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
+
+<p>最终测试后这个插件起到了作用，Typora中使用如下相对路径插入图片可以在Typora中与<a href="http://localhost:4000/">http://localhost:4000/</a> 中都能正常显示。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](./Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<p>使用起来发现这格式还是有些不方便，在用Тypora编写时一般会在<code>文件-偏好设置-图像</code>页面中设置图片插入时的的动作参数。如果选择<code>复制到指定路径./$&#123;filename&#125;</code>会发现在插入图片时是以下的格式，同时会在文章的同目录中生成一个与文件名相同的目录，所插入的图片会自动放在这里面。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="接着换回到hexo-asset-image这个插件安装"><a href="#接着换回到hexo-asset-image这个插件安装" class="headerlink" title="接着换回到hexo-asset-image这个插件安装"></a>接着换回到<a href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a>这个插件安装</h3></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>都说这个插件失效了所以开始就没去安装它，但最终还是用上它了。它能处理下面这种图片格式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试图片](Test-Image-Insert/your-image-file.png)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>伊尹放太甲</title>
     <url>/%E5%8E%86%E5%8F%B2/%E5%95%86%E6%9C%9D/%E4%BC%8A%E5%B0%B9%E6%94%BE%E5%A4%AA%E7%94%B2/</url>
     <content><![CDATA[<p>在伊尹的协助下，汤成功推翻了夏朝的统治，建立了商朝。商朝建立之初，百废待兴，汤又在伊尹的帮助下完善了各项典章制度，使商迅速恢复了社会秩序，走上正轨。商汤在位三十年，临终时，因为特别信任伊尹，把辅佐继任帝王的重任嘱托于他。</p>
@@ -783,86 +783,6 @@
       </categories>
       <tags>
         <tag>伊尹放太甲</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>盘古开天辟地</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E7%9B%98%E5%8F%A4%E5%BC%80%E5%A4%A9%E8%BE%9F%E5%9C%B0/</url>
-    <content><![CDATA[<p>盘古开天辟地的传说在我国流传广泛。它以浅近质朴的方式表达了华夏先民对自己民族创世历史的深邃认识。在这个传说中，盘古是开启这个世界的始祖。</p>
-<span id="more"></span>
-
-<p>在遥远的上古时期，没有所谓的天，也没有所谓的地，天地混沌一体，就像一个鸡蛋，连个窟窿都没有，谁也说不清那是什么，于是人们就暂且用帝江来称呼它。混混沌沌的帝江有两个好友：一个叫倏，一个叫忽。</p>
-<p>倏和忽见帝江如此混沌，就和它商量，想帮它凿通七窍，让它的气息可以出入，帝江欣然同意。于是，倏和忽开始了工作，他们每天为帝江凿通一窍，七天后，七窍通了，可帝江却也因此一命呜呼了。</p>
-<p>帝江死后，它的肚子里的精髓孕育成了一股气。一万八千年后，这股气幻化成人形——他就是盘古。</p>
-<p>盘古在帝江的肚子里不知睡了多久，猛然醒来，睁开眼睛，发现眼前一片黑暗。他想要走出这无处不在的黑暗，可是腿一动就被东西挡住，胳膊一伸就碰到阻碍，原来自己被这黑暗紧紧地包裹住了。难道自己必须在这黑暗的包围下蜷缩地活着？想到这些他的心中顿时燃起了怒火，他从自己的嘴中拔下一颗牙，把它变成了威力无比的神斧，他抡起神斧朝眼前的混沌用力挥去。突然传来一阵山崩一样的巨响，黑暗混沌出现了一个裂口，接着，那些轻盈清澈的气体冉冉升起，成了天，另外那些沉重污浊的东西就缓缓下沉，铺成了地。从此宇宙结束了混沌不分的状态，有了天和地。盘古站在中间只觉得身心舒畅。</p>
-<p>盘古站立起来，天就接着升高，地也继续下沉。天地还有些相连的地方，他就一手拿着凿子，一手拿着斧头，对那些东西连劈带凿，终于让天地完全分开。他怕天地会再次合拢，就头顶天，脚踏地，支撑在天地之间。他施展法力，使身体每天增高一丈，随着他的增高，天也跟着升高一丈，地也随着加厚一丈。就这样，又过了一万八千年，天已经高得遥不可及，地也厚得不能再厚了，盘古变成了一个顶天立地的巨人。这个巨人有多高呢？据说他的身长达到了九万里。这么高大的柱子支撑着天地，使它们终于无法再合并到一起。</p>
-<p>可是这位开天辟地的巨人支撑了这么久，已经筋疲力尽了。他疲惫地张开眼，欣赏着自己开辟的新天地，叹息了一声，就慢慢地倒在了地上，带着微笑永久地闭上了眼睛。</p>
-<p>他巨大的身体横亘在地上，头幻化成东岳泰山，脚幻化成西岳华山，左臂幻化成南岳衡山，右臂幻化成北岳恒山，而腹部就幻化成了中岳嵩山；他呼出的最后一口气，变成了风和空中的云雾，他的那声叹息就变成了雷鸣，他的左眼变成了普照大地的太阳，右眼变成了照亮黑夜的月亮，浓密的头发变成了点点的繁星，奔流的血液变成了江河湖海，肌肉变成孕育万物的沃土，骨骼变成了花草树木，筋脉变成了条条道路，牙齿和骨骼变成了玉石和金属；就连他身上留下的汗水都变成了甘霖雨露，滋润万物。</p>
-<p>伟大的英雄盘古，不但给人类开辟了天地，还用自己的躯体将大千世界装饰得生机勃勃。</p>
-<p>当然，这只是神话，人们不会真的认为是盘古创造了天地万物。考古学家通过科考，已经发现了元谋人、北京人、山顶洞人等史前人类的遗址，进一步揭开了人类起源进化之谜。但是，在没有文字的情况下，这些神话传说只靠口耳相传就可以流传后世，不正表明人类对生命的热爱，对美好的追求是生生不息的吗？盘古代表的是一种精神，他为人类生存的世界拼尽了全力，献出了所有，这种献身精神成为历代仁人志士追求的最高境界。</p>
-]]></content>
-      <categories>
-        <category>历史</category>
-        <category>远古时代</category>
-      </categories>
-      <tags>
-        <tag>盘古开天辟地</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大禹治水</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E5%A4%8F%E6%9C%9D/%E5%A4%A7%E7%A6%B9%E6%B2%BB%E6%B0%B4/</url>
-    <content><![CDATA[<p>据说尧舜时代正值冰河时代后期，气候转暖，冰雪消融，致使海平面迅速升高，海水倒灌；古黄河改道从苏北平原入海，淮河淤积，汹涌的洪水淹没了淮、泗流域，沧海横流，洪水泛滥，泰山以西到沂蒙以南至苏北地区成了一片汪洋，天地万物在滔天的洪水中沉沉浮浮。对于当时的情景，《尚书·尧典》中这样描写：“汤汤洪水方割，荡荡怀山襄陵，浩浩滔天。”</p>
-<span id="more"></span>
-
-<p>农田被淹没，房子被摧毁，人民流离失所，无家可归，为了免于沦没，只能以木为舟，朝高山土丘上搬。这样一来，正常的生产生活无法进行，只能在洪荒的孤岛中望水兴叹。</p>
-<p>尧召开部落联盟会议，请各部落首领来共商治洪良策。各部落首领都推荐鲧去治理水患。鲧史称崇伯，是尧帝的臣子，禹的父亲。尧觉得鲧脾气暴躁，并不适合去治水，可是当时也没有别的更合适的人选，治理水患又是当务之急，于是尧决定姑且让鲧去试试。</p>
-<p>鲧治理水患主要采用的是堵塞的方法，他用土筑起高高的堤坝，把水围起来，不让它到处流。可是洪水来势凶猛，不管那堤坝多高，都被汹涌的洪水冲垮，洪水还是会泛滥，鲧就东堵西补，疲于奔命。因此，鲧治水九年，用去不少人力物力，可是洪水并没止歇。鲧一气之下就盗取了天帝的宝物“息壤”，这是一块可以自生自长，要多少有多少的宝土。鲧把息壤投入洪水，想让生长不息的土掩埋洪水，没想到洪水泛滥得更加厉害了。</p>
-<p>鲧犯下滔天大罪，天帝震怒，命令火神将他处死在了羽山之野。</p>
-<p>当时的人类在治理洪灾方面，还处于摸索阶段，经验不足，总会有些曲折。鲧虽然未能取得治水的成功，但其在治水方法上的失误，为后继者提供了宝贵的经验教训，指明了方向。后来尧让位于舜，舜亲自去视察水患。此时，鲧的儿子禹已长大成人，舜见他器宇轩昂，认为他必会有一番作为，于是命禹继续他父亲没完成的事业，去治理水患，并把后稷、伯益、皋陶等人派去给他当助手。</p>
-<p>禹感伤于父亲“功之不成受诛”，因此殚精竭虑，发誓一定要把水患治好。他非常聪明，还能吃苦耐劳，领命之后，就带着伯益、皋陶和其他众人去勘察地势水情，寻找以前治水失败的原因。他带着众人跋山涉水，朝上去追溯黄河的源头，对黄河的上游、下游做了一次整体的考察。在这次考察中，他发现黄河除了主干河道，还有很多分支流向了别处。在值得注意的地方，他把石头堆积起来，或是砍倒树木作为记号，以便治水时可以参考。当时，气候恶劣，他们随身携带的工具也非常落后，这次考察非常艰辛而惊险。据说，有一次，他们正在勘察一条河道，突然间电闪雷鸣，狂风暴雨顷刻而至，山洪爆发，咆哮的洪水淹没、卷走了他们很多同伴。</p>
-<p>考察完毕，大禹对水情作了认真的研究，认为父亲“堵”的方法是行不通的，洪水凶猛，无路可走势必会冲垮堤坝，因此他决定弃“堵”用“疏”的方法：把黄河的主干河道加深加宽，可以让更多的水畅通无阻，然后将支流流向主流的河道疏通，让水可以顺畅地和主流汇合；然后，还要加高原来的堤岸，并清除低地里的淤积，这样陆地和湖泊就可以清楚地分开了。同时，还要将这些大小湖泽和各个支流的河道疏通，这样一来，一旦水位上升，就会顺着各个河道汇入主流，流向大海了。</p>
-<p>想好了治水的方法，禹便亲自率领助手和众百姓，带着简陋的石斧、石刀、石铲、木耒等工具，开始他们治水的征途。禹事事身先士卒，在他的领导下，众百姓一心一意，决心不降服水患誓不罢休。他们风餐露宿，粗衣淡饭，风雨无阻地在群山间穿越跋涉，尽管每天辛苦地劳作，直不起腰来，腿也肿了，可是从来不敢懈怠。</p>
-<p>一次，他们来到了河南洛阳南郊的一座高山，那是秦岭山脉的余脉，从东向西一直延续到中岳嵩山，它巍峨陡峭，就好像天成的一道高大屏风。这座山的中段有一条九曲回环，又很狭窄的天然水路，水量小的时候，就会从山间形成涓涓细流，轻轻流过。但是，山洪暴发时，水就会咆哮着冲刷着狭窄的水道，拍打石岸，时刻可能溢出，危害着周围百姓的安全。大禹便决定集中将这条水道拓宽、凿深、打直。坚硬的山石磨坏了他们的工具，而且山上地势险恶，人们不是被掉下来的石头砸伤，就是跌落山下，还有的被洪水冲走。可是他们仍旧毫不退缩，坚持在大山中开道。在他们不懈的努力下，终于在大山中间凿出了一条宽阔的水道，形成两壁对峙之势，山洪可以顺畅地向下游奔涌而去，再也不会对周围百姓构成威胁。</p>
-<p>《庄子》以极其虔敬的心情记述了禹的丰功伟绩，颂扬了他坚忍不拔的意志，记述禹亲自操橐耜而“九杂天下之川，腓无胈，胫无毛，沐甚雨，栉疾风，置万国。禹，大圣也，而形劳天下也如此”。意思是说禹为了制服水患，不辞劳苦，亲自拿着工具，带领众人兴利除害，同人民一起风里来雨里去，奋斗在治水的最前面。艰辛的劳作使得他形容憔悴，大腿瘦得没什么肉了，小腿上的汗毛也都磨光了。禹就是这样一位含辛茹苦，解救苍生的圣人。因为长期在外治水，禹无暇顾及妻子和家庭。据说，他才刚刚新婚第四天，就出发去治水了，这一去就是十年，中间曾三过家门而不入，他这种舍家为国，公而忘私的精神至今被人传颂。</p>
-<p>十年间，他们翻越了一座又一座大山，疏通了一条又一条河渠，足迹踏遍了九州。在他艰苦卓绝的努力下，治水进展神速，“淮沂其治，蒙羽其艺”（《史记·夏本纪》）之地，也就是淮河和沂水流过的蒙山和羽山之间，古黄淮容易泛滥的河道得到疏通，拥堵在山间的洪水被引入大海。同时，低洼的地方留下了微山、东平、钜野、骆马等“四渎”，为百姓种田提供了有利的水源。地面上现出了许多良田和桑土，百姓又可以种庄稼，重新过上了安居乐业的生活。</p>
-<p>面对滔滔洪水，大禹率领民众，顽强地与之斗争，最终运用聪明才智，通过坚忍不拔的努力，制服了水患。这个传说体现了中华民族勤劳勇敢、坚毅不屈、公而忘私、万众一心战胜困难的民族精神。</p>
-<p>禹在治理水患的过程中，对中原各地的土地物产也有了了解，水患平息后，就划分了青、兖、徐、扬、梁、豫、冀、荆、雍等行政区域，规定了各地的贡品赋税。这样一来，就真正形成了天下归一的大好局面。</p>
-<p>后代称颂禹治水的功绩，尊称他为“大禹”。舜年老以后，也像尧一样开部落联盟会议，物色继承人。禹治水有功，深得民心，大家都推选禹，于是舜就把联盟首领之职禅让给了禹。</p>
-]]></content>
-      <categories>
-        <category>历史</category>
-        <category>夏朝</category>
-      </categories>
-      <tags>
-        <tag>大禹治</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>女娲传说</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E5%A5%B3%E5%A8%B2%E4%BC%A0%E8%AF%B4/</url>
-    <content><![CDATA[<p>在中国的上古神话中，女娲是继盘古之后另外一位创世之神。因为她，世间才有了人类，她是长久以来受广大的民间百姓们崇拜的创世神和始祖神。</p>
-<span id="more"></span>
-
-<p>盘古开天辟地之后，终于累倒了，身体也化作了世间万物，从此天地间有了日月星辰，有了花草树木，后来天地间残留的一股浊气吸收日月精华，化作了虫鱼鸟兽，从而使这寂静美丽的世界有了一丝生气。</p>
-<p>有一个神通广大的女神四处游历，后来来到盘古开辟的天地里，她就是女娲。女娲在草丰木茂的原野上行走着，举目四望，发现山峦连绵起伏，江河奔流不息，草木枝繁叶茂，鸟儿婉转歌唱，走兽成群结伴，鱼儿水中畅游，这个世界真是太美好了。于是，她决定留下来。</p>
-<p>日复一日，她享受着自然的美景，可是虽然有鸟兽虫鱼跟自己作伴，女娲渐渐产生了寂寞孤独的感觉。她总觉得缺少点什么，但又说不出到底是缺什么，只能任这种寂寥的感觉与日俱增。</p>
-<p>一天，她走在草木茂盛的原野上，飞鸟、走兽、游鱼再也不能让她高兴起来。她无精打采地沿着一条河流前行，觉得很累，就在河岸的一块石头上坐了下来。清澈的河水照出了她的影子，她看到了水中闷闷不乐的自己。于是她嘴角露出微笑，影子也笑了；她皱起眉头，影子也皱起眉头，这让她觉得非常有趣。突然间，她一下子明白了自己为什么会感到寂寞，因为世间没有跟她一样的生物，那些山川草木、虫鱼鸟兽怎么会可能与她心灵相通？</p>
-<p>她想，既然如此，何不按照自己的样子创造一些生物，让世界热闹起来呢？有了主意，她马上动起手来，在河边抓起一团黄泥，对着水中的影子又是捏又是揉，很快一个小泥人就做好了。女娲把小泥人托在手里，放到嘴前轻轻地吹一口气。小泥人有了气息竟活动起来，放到地面上后就到处走动，还一个劲儿地喊着：“妈妈！妈妈……”女娲真是太高兴了，赶紧动手捏第二个，并吹了一口气，第二个也活了，她又捏第三个，第四个……泥人越捏越多，后来女娲就把他们通通放在地上冲着他们吹了一口气，泥人们活了。他们有喜怒哀乐，而且能够说话，跟那些草木鸟兽完全不同。女娲再也不觉得寂寞了，她称呼这些活了的泥人为“人”。人们开始时在女娲的周围活动着，渐渐地很多都走远了，分散到各处。</p>
-<p>有了人，世界变得无比充实，女娲非常高兴，她继续一刻不停地接着捏泥人。可是大地如此辽阔，人们很快就消散于各地，女娲也感到越来越累了。她想，这样下去，世间的人还不够多时，她已经累得不行了。于是，她顺手从山崖上扯下一条藤蔓，伸进泥潭里抽打起来，溅起了很多混黄的泥点儿，泥点儿落地后也变成了活蹦乱跳的小人儿。她每抽打一下，就会产生很多人，而且和之前捏成的小人没什么两样，这样造人就快多了。于是，女娲高兴地使劲抽打起来，泥点子落得到处都是。等女娲停下来时，大地上已经有足够多的人了。</p>
-<p>一天，她想看看各处的人类，来到一个地方，发现有些人躺在地上一动不动，十分奇怪，仔细一看才发现这些小人都已经满头白发，老态龙钟了。原来他们年纪太大，已经死了。女娲就想，人们都会老去、死去，这样下去，总有一天人会死光的，难道到时候还要再重新创造吗？这也太麻烦了！女娲想，最好的办法是让人类自己繁衍生息，这样他们就可以绵延不绝了。</p>
-<p>于是，她就让这些人具有不同的身体特征，从而区分出男女，并让男人和女人结合，生出后代。为了不让这种结合使人类陷入混乱，她又建立了婚姻制度，从此人类靠自己就可以不断发展壮大了，所以女娲又被称为“婚姻女神”或“神媒”。</p>
-<p>人类可以靠自己繁衍生息了，他们一代一代地在大地上幸福地生活着。可是没过多久，他们就遇到了一次毁灭性地灾难。原来，水神共工和火神祝融争夺帝位，结果共工被打败了。共工一气之下，就用头去撞不周之山。这座擎天的大柱在一声巨响之后，便轰然倒塌，紧接着天向西北倾斜，地往东南塌陷，海水灌进了陆地，洪灾泛滥。因为剧烈的震荡，地上裂开很多大豁口，一个劲儿地往外喷火，山林里野兽也都受到触动，纷纷窜出来，见人便咬。很多人不是被水淹死，就是被火烧死，要么就是被野兽咬死。</p>
-<p>看着自己的子孙处在水深火热之中，女娲痛心不已，决定拯救人类。她周游四海走遍群山，走到东海的天台山，发现那里有可以炼石用的五色土，便决定在那里炼石补天。她在天台山顶堆起巨石当炉子，借来太阳神火，将五色土放入炉中，经过九天九夜终于炼就了五色巨石。然后她又花了九天九夜，用这些五彩的巨石把天补好。天好不容易被补好了，为了不让它再塌下来，她就斩下了一只万年神龟的四足支撑四极。终于，天地归位，洪水入渠，大火也熄灭了，人间又恢复了平静。不但如此，从此以后，每当雨过天晴，天边就会出现五色云霞，天空比以前更美了。人们摆脱了灾难，各个欢呼雀跃。</p>
-<p>女娲是中华民族伟大的母亲，她不仅按照自己的模样创造了人，建立了让人类可以繁衍的婚姻制度，使人们结成人类社会；当人类受到天灾的威胁时，还勇敢地保护我们。为了对这位伟大的母亲表示感谢，人们在天台山下建了女娲庙，世代朝拜，香火从不曾断过。</p>
-<p>关于女娲的传说，虽然是神话，但绝不是凭空捏造的，它是早期人类社会生活的写照。众所周知，早期人类缔结了以血缘为基础的母系氏族社会时期，女性在生产生活中居于主导地位，子女只识其母，不知其父，而女娲的传说正是母系社会这一历史时期的反映。</p>
-]]></content>
-      <categories>
-        <category>历史</category>
-        <category>远古时代</category>
-      </categories>
-      <tags>
-        <tag>女娲传说</tag>
       </tags>
   </entry>
   <entry>
@@ -1153,6 +1073,35 @@
       <tags>
         <tag>经济</tag>
         <tag>小岛经济学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大禹治水</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E5%A4%8F%E6%9C%9D/%E5%A4%A7%E7%A6%B9%E6%B2%BB%E6%B0%B4/</url>
+    <content><![CDATA[<p>据说尧舜时代正值冰河时代后期，气候转暖，冰雪消融，致使海平面迅速升高，海水倒灌；古黄河改道从苏北平原入海，淮河淤积，汹涌的洪水淹没了淮、泗流域，沧海横流，洪水泛滥，泰山以西到沂蒙以南至苏北地区成了一片汪洋，天地万物在滔天的洪水中沉沉浮浮。对于当时的情景，《尚书·尧典》中这样描写：“汤汤洪水方割，荡荡怀山襄陵，浩浩滔天。”</p>
+<span id="more"></span>
+
+<p>农田被淹没，房子被摧毁，人民流离失所，无家可归，为了免于沦没，只能以木为舟，朝高山土丘上搬。这样一来，正常的生产生活无法进行，只能在洪荒的孤岛中望水兴叹。</p>
+<p>尧召开部落联盟会议，请各部落首领来共商治洪良策。各部落首领都推荐鲧去治理水患。鲧史称崇伯，是尧帝的臣子，禹的父亲。尧觉得鲧脾气暴躁，并不适合去治水，可是当时也没有别的更合适的人选，治理水患又是当务之急，于是尧决定姑且让鲧去试试。</p>
+<p>鲧治理水患主要采用的是堵塞的方法，他用土筑起高高的堤坝，把水围起来，不让它到处流。可是洪水来势凶猛，不管那堤坝多高，都被汹涌的洪水冲垮，洪水还是会泛滥，鲧就东堵西补，疲于奔命。因此，鲧治水九年，用去不少人力物力，可是洪水并没止歇。鲧一气之下就盗取了天帝的宝物“息壤”，这是一块可以自生自长，要多少有多少的宝土。鲧把息壤投入洪水，想让生长不息的土掩埋洪水，没想到洪水泛滥得更加厉害了。</p>
+<p>鲧犯下滔天大罪，天帝震怒，命令火神将他处死在了羽山之野。</p>
+<p>当时的人类在治理洪灾方面，还处于摸索阶段，经验不足，总会有些曲折。鲧虽然未能取得治水的成功，但其在治水方法上的失误，为后继者提供了宝贵的经验教训，指明了方向。后来尧让位于舜，舜亲自去视察水患。此时，鲧的儿子禹已长大成人，舜见他器宇轩昂，认为他必会有一番作为，于是命禹继续他父亲没完成的事业，去治理水患，并把后稷、伯益、皋陶等人派去给他当助手。</p>
+<p>禹感伤于父亲“功之不成受诛”，因此殚精竭虑，发誓一定要把水患治好。他非常聪明，还能吃苦耐劳，领命之后，就带着伯益、皋陶和其他众人去勘察地势水情，寻找以前治水失败的原因。他带着众人跋山涉水，朝上去追溯黄河的源头，对黄河的上游、下游做了一次整体的考察。在这次考察中，他发现黄河除了主干河道，还有很多分支流向了别处。在值得注意的地方，他把石头堆积起来，或是砍倒树木作为记号，以便治水时可以参考。当时，气候恶劣，他们随身携带的工具也非常落后，这次考察非常艰辛而惊险。据说，有一次，他们正在勘察一条河道，突然间电闪雷鸣，狂风暴雨顷刻而至，山洪爆发，咆哮的洪水淹没、卷走了他们很多同伴。</p>
+<p>考察完毕，大禹对水情作了认真的研究，认为父亲“堵”的方法是行不通的，洪水凶猛，无路可走势必会冲垮堤坝，因此他决定弃“堵”用“疏”的方法：把黄河的主干河道加深加宽，可以让更多的水畅通无阻，然后将支流流向主流的河道疏通，让水可以顺畅地和主流汇合；然后，还要加高原来的堤岸，并清除低地里的淤积，这样陆地和湖泊就可以清楚地分开了。同时，还要将这些大小湖泽和各个支流的河道疏通，这样一来，一旦水位上升，就会顺着各个河道汇入主流，流向大海了。</p>
+<p>想好了治水的方法，禹便亲自率领助手和众百姓，带着简陋的石斧、石刀、石铲、木耒等工具，开始他们治水的征途。禹事事身先士卒，在他的领导下，众百姓一心一意，决心不降服水患誓不罢休。他们风餐露宿，粗衣淡饭，风雨无阻地在群山间穿越跋涉，尽管每天辛苦地劳作，直不起腰来，腿也肿了，可是从来不敢懈怠。</p>
+<p>一次，他们来到了河南洛阳南郊的一座高山，那是秦岭山脉的余脉，从东向西一直延续到中岳嵩山，它巍峨陡峭，就好像天成的一道高大屏风。这座山的中段有一条九曲回环，又很狭窄的天然水路，水量小的时候，就会从山间形成涓涓细流，轻轻流过。但是，山洪暴发时，水就会咆哮着冲刷着狭窄的水道，拍打石岸，时刻可能溢出，危害着周围百姓的安全。大禹便决定集中将这条水道拓宽、凿深、打直。坚硬的山石磨坏了他们的工具，而且山上地势险恶，人们不是被掉下来的石头砸伤，就是跌落山下，还有的被洪水冲走。可是他们仍旧毫不退缩，坚持在大山中开道。在他们不懈的努力下，终于在大山中间凿出了一条宽阔的水道，形成两壁对峙之势，山洪可以顺畅地向下游奔涌而去，再也不会对周围百姓构成威胁。</p>
+<p>《庄子》以极其虔敬的心情记述了禹的丰功伟绩，颂扬了他坚忍不拔的意志，记述禹亲自操橐耜而“九杂天下之川，腓无胈，胫无毛，沐甚雨，栉疾风，置万国。禹，大圣也，而形劳天下也如此”。意思是说禹为了制服水患，不辞劳苦，亲自拿着工具，带领众人兴利除害，同人民一起风里来雨里去，奋斗在治水的最前面。艰辛的劳作使得他形容憔悴，大腿瘦得没什么肉了，小腿上的汗毛也都磨光了。禹就是这样一位含辛茹苦，解救苍生的圣人。因为长期在外治水，禹无暇顾及妻子和家庭。据说，他才刚刚新婚第四天，就出发去治水了，这一去就是十年，中间曾三过家门而不入，他这种舍家为国，公而忘私的精神至今被人传颂。</p>
+<p>十年间，他们翻越了一座又一座大山，疏通了一条又一条河渠，足迹踏遍了九州。在他艰苦卓绝的努力下，治水进展神速，“淮沂其治，蒙羽其艺”（《史记·夏本纪》）之地，也就是淮河和沂水流过的蒙山和羽山之间，古黄淮容易泛滥的河道得到疏通，拥堵在山间的洪水被引入大海。同时，低洼的地方留下了微山、东平、钜野、骆马等“四渎”，为百姓种田提供了有利的水源。地面上现出了许多良田和桑土，百姓又可以种庄稼，重新过上了安居乐业的生活。</p>
+<p>面对滔滔洪水，大禹率领民众，顽强地与之斗争，最终运用聪明才智，通过坚忍不拔的努力，制服了水患。这个传说体现了中华民族勤劳勇敢、坚毅不屈、公而忘私、万众一心战胜困难的民族精神。</p>
+<p>禹在治理水患的过程中，对中原各地的土地物产也有了了解，水患平息后，就划分了青、兖、徐、扬、梁、豫、冀、荆、雍等行政区域，规定了各地的贡品赋税。这样一来，就真正形成了天下归一的大好局面。</p>
+<p>后代称颂禹治水的功绩，尊称他为“大禹”。舜年老以后，也像尧一样开部落联盟会议，物色继承人。禹治水有功，深得民心，大家都推选禹，于是舜就把联盟首领之职禅让给了禹。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>夏朝</category>
+      </categories>
+      <tags>
+        <tag>大禹治</tag>
       </tags>
   </entry>
   <entry>
@@ -2288,6 +2237,57 @@
       </tags>
   </entry>
   <entry>
+    <title>女娲传说</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E5%A5%B3%E5%A8%B2%E4%BC%A0%E8%AF%B4/</url>
+    <content><![CDATA[<p>在中国的上古神话中，女娲是继盘古之后另外一位创世之神。因为她，世间才有了人类，她是长久以来受广大的民间百姓们崇拜的创世神和始祖神。</p>
+<span id="more"></span>
+
+<p>盘古开天辟地之后，终于累倒了，身体也化作了世间万物，从此天地间有了日月星辰，有了花草树木，后来天地间残留的一股浊气吸收日月精华，化作了虫鱼鸟兽，从而使这寂静美丽的世界有了一丝生气。</p>
+<p>有一个神通广大的女神四处游历，后来来到盘古开辟的天地里，她就是女娲。女娲在草丰木茂的原野上行走着，举目四望，发现山峦连绵起伏，江河奔流不息，草木枝繁叶茂，鸟儿婉转歌唱，走兽成群结伴，鱼儿水中畅游，这个世界真是太美好了。于是，她决定留下来。</p>
+<p>日复一日，她享受着自然的美景，可是虽然有鸟兽虫鱼跟自己作伴，女娲渐渐产生了寂寞孤独的感觉。她总觉得缺少点什么，但又说不出到底是缺什么，只能任这种寂寥的感觉与日俱增。</p>
+<p>一天，她走在草木茂盛的原野上，飞鸟、走兽、游鱼再也不能让她高兴起来。她无精打采地沿着一条河流前行，觉得很累，就在河岸的一块石头上坐了下来。清澈的河水照出了她的影子，她看到了水中闷闷不乐的自己。于是她嘴角露出微笑，影子也笑了；她皱起眉头，影子也皱起眉头，这让她觉得非常有趣。突然间，她一下子明白了自己为什么会感到寂寞，因为世间没有跟她一样的生物，那些山川草木、虫鱼鸟兽怎么会可能与她心灵相通？</p>
+<p>她想，既然如此，何不按照自己的样子创造一些生物，让世界热闹起来呢？有了主意，她马上动起手来，在河边抓起一团黄泥，对着水中的影子又是捏又是揉，很快一个小泥人就做好了。女娲把小泥人托在手里，放到嘴前轻轻地吹一口气。小泥人有了气息竟活动起来，放到地面上后就到处走动，还一个劲儿地喊着：“妈妈！妈妈……”女娲真是太高兴了，赶紧动手捏第二个，并吹了一口气，第二个也活了，她又捏第三个，第四个……泥人越捏越多，后来女娲就把他们通通放在地上冲着他们吹了一口气，泥人们活了。他们有喜怒哀乐，而且能够说话，跟那些草木鸟兽完全不同。女娲再也不觉得寂寞了，她称呼这些活了的泥人为“人”。人们开始时在女娲的周围活动着，渐渐地很多都走远了，分散到各处。</p>
+<p>有了人，世界变得无比充实，女娲非常高兴，她继续一刻不停地接着捏泥人。可是大地如此辽阔，人们很快就消散于各地，女娲也感到越来越累了。她想，这样下去，世间的人还不够多时，她已经累得不行了。于是，她顺手从山崖上扯下一条藤蔓，伸进泥潭里抽打起来，溅起了很多混黄的泥点儿，泥点儿落地后也变成了活蹦乱跳的小人儿。她每抽打一下，就会产生很多人，而且和之前捏成的小人没什么两样，这样造人就快多了。于是，女娲高兴地使劲抽打起来，泥点子落得到处都是。等女娲停下来时，大地上已经有足够多的人了。</p>
+<p>一天，她想看看各处的人类，来到一个地方，发现有些人躺在地上一动不动，十分奇怪，仔细一看才发现这些小人都已经满头白发，老态龙钟了。原来他们年纪太大，已经死了。女娲就想，人们都会老去、死去，这样下去，总有一天人会死光的，难道到时候还要再重新创造吗？这也太麻烦了！女娲想，最好的办法是让人类自己繁衍生息，这样他们就可以绵延不绝了。</p>
+<p>于是，她就让这些人具有不同的身体特征，从而区分出男女，并让男人和女人结合，生出后代。为了不让这种结合使人类陷入混乱，她又建立了婚姻制度，从此人类靠自己就可以不断发展壮大了，所以女娲又被称为“婚姻女神”或“神媒”。</p>
+<p>人类可以靠自己繁衍生息了，他们一代一代地在大地上幸福地生活着。可是没过多久，他们就遇到了一次毁灭性地灾难。原来，水神共工和火神祝融争夺帝位，结果共工被打败了。共工一气之下，就用头去撞不周之山。这座擎天的大柱在一声巨响之后，便轰然倒塌，紧接着天向西北倾斜，地往东南塌陷，海水灌进了陆地，洪灾泛滥。因为剧烈的震荡，地上裂开很多大豁口，一个劲儿地往外喷火，山林里野兽也都受到触动，纷纷窜出来，见人便咬。很多人不是被水淹死，就是被火烧死，要么就是被野兽咬死。</p>
+<p>看着自己的子孙处在水深火热之中，女娲痛心不已，决定拯救人类。她周游四海走遍群山，走到东海的天台山，发现那里有可以炼石用的五色土，便决定在那里炼石补天。她在天台山顶堆起巨石当炉子，借来太阳神火，将五色土放入炉中，经过九天九夜终于炼就了五色巨石。然后她又花了九天九夜，用这些五彩的巨石把天补好。天好不容易被补好了，为了不让它再塌下来，她就斩下了一只万年神龟的四足支撑四极。终于，天地归位，洪水入渠，大火也熄灭了，人间又恢复了平静。不但如此，从此以后，每当雨过天晴，天边就会出现五色云霞，天空比以前更美了。人们摆脱了灾难，各个欢呼雀跃。</p>
+<p>女娲是中华民族伟大的母亲，她不仅按照自己的模样创造了人，建立了让人类可以繁衍的婚姻制度，使人们结成人类社会；当人类受到天灾的威胁时，还勇敢地保护我们。为了对这位伟大的母亲表示感谢，人们在天台山下建了女娲庙，世代朝拜，香火从不曾断过。</p>
+<p>关于女娲的传说，虽然是神话，但绝不是凭空捏造的，它是早期人类社会生活的写照。众所周知，早期人类缔结了以血缘为基础的母系氏族社会时期，女性在生产生活中居于主导地位，子女只识其母，不知其父，而女娲的传说正是母系社会这一历史时期的反映。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>远古时代</category>
+      </categories>
+      <tags>
+        <tag>女娲传说</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>盘古开天辟地</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E7%9B%98%E5%8F%A4%E5%BC%80%E5%A4%A9%E8%BE%9F%E5%9C%B0/</url>
+    <content><![CDATA[<p>盘古开天辟地的传说在我国流传广泛。它以浅近质朴的方式表达了华夏先民对自己民族创世历史的深邃认识。在这个传说中，盘古是开启这个世界的始祖。</p>
+<span id="more"></span>
+
+<p>在遥远的上古时期，没有所谓的天，也没有所谓的地，天地混沌一体，就像一个鸡蛋，连个窟窿都没有，谁也说不清那是什么，于是人们就暂且用帝江来称呼它。混混沌沌的帝江有两个好友：一个叫倏，一个叫忽。</p>
+<p>倏和忽见帝江如此混沌，就和它商量，想帮它凿通七窍，让它的气息可以出入，帝江欣然同意。于是，倏和忽开始了工作，他们每天为帝江凿通一窍，七天后，七窍通了，可帝江却也因此一命呜呼了。</p>
+<p>帝江死后，它的肚子里的精髓孕育成了一股气。一万八千年后，这股气幻化成人形——他就是盘古。</p>
+<p>盘古在帝江的肚子里不知睡了多久，猛然醒来，睁开眼睛，发现眼前一片黑暗。他想要走出这无处不在的黑暗，可是腿一动就被东西挡住，胳膊一伸就碰到阻碍，原来自己被这黑暗紧紧地包裹住了。难道自己必须在这黑暗的包围下蜷缩地活着？想到这些他的心中顿时燃起了怒火，他从自己的嘴中拔下一颗牙，把它变成了威力无比的神斧，他抡起神斧朝眼前的混沌用力挥去。突然传来一阵山崩一样的巨响，黑暗混沌出现了一个裂口，接着，那些轻盈清澈的气体冉冉升起，成了天，另外那些沉重污浊的东西就缓缓下沉，铺成了地。从此宇宙结束了混沌不分的状态，有了天和地。盘古站在中间只觉得身心舒畅。</p>
+<p>盘古站立起来，天就接着升高，地也继续下沉。天地还有些相连的地方，他就一手拿着凿子，一手拿着斧头，对那些东西连劈带凿，终于让天地完全分开。他怕天地会再次合拢，就头顶天，脚踏地，支撑在天地之间。他施展法力，使身体每天增高一丈，随着他的增高，天也跟着升高一丈，地也随着加厚一丈。就这样，又过了一万八千年，天已经高得遥不可及，地也厚得不能再厚了，盘古变成了一个顶天立地的巨人。这个巨人有多高呢？据说他的身长达到了九万里。这么高大的柱子支撑着天地，使它们终于无法再合并到一起。</p>
+<p>可是这位开天辟地的巨人支撑了这么久，已经筋疲力尽了。他疲惫地张开眼，欣赏着自己开辟的新天地，叹息了一声，就慢慢地倒在了地上，带着微笑永久地闭上了眼睛。</p>
+<p>他巨大的身体横亘在地上，头幻化成东岳泰山，脚幻化成西岳华山，左臂幻化成南岳衡山，右臂幻化成北岳恒山，而腹部就幻化成了中岳嵩山；他呼出的最后一口气，变成了风和空中的云雾，他的那声叹息就变成了雷鸣，他的左眼变成了普照大地的太阳，右眼变成了照亮黑夜的月亮，浓密的头发变成了点点的繁星，奔流的血液变成了江河湖海，肌肉变成孕育万物的沃土，骨骼变成了花草树木，筋脉变成了条条道路，牙齿和骨骼变成了玉石和金属；就连他身上留下的汗水都变成了甘霖雨露，滋润万物。</p>
+<p>伟大的英雄盘古，不但给人类开辟了天地，还用自己的躯体将大千世界装饰得生机勃勃。</p>
+<p>当然，这只是神话，人们不会真的认为是盘古创造了天地万物。考古学家通过科考，已经发现了元谋人、北京人、山顶洞人等史前人类的遗址，进一步揭开了人类起源进化之谜。但是，在没有文字的情况下，这些神话传说只靠口耳相传就可以流传后世，不正表明人类对生命的热爱，对美好的追求是生生不息的吗？盘古代表的是一种精神，他为人类生存的世界拼尽了全力，献出了所有，这种献身精神成为历代仁人志士追求的最高境界。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>远古时代</category>
+      </categories>
+      <tags>
+        <tag>盘古开天辟地</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>每日60秒读懂世界新闻</title>
     <url>/60s_news/index.html</url>
     <content><![CDATA[<div id="news-profile">
@@ -2431,146 +2431,6 @@
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>书籍</title>
-    <url>/book/index.html</url>
-    <content><![CDATA[<h2 id="经济"><a href="#经济" class="headerlink" title="经济"></a>经济</h2><table>
-<thead>
-<tr>
-<th>书名</th>
-<th>作者</th>
-<th>查看链接</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>小岛经济学_鱼、美元和经济的故事</td>
-<td>[美] 彼得·D.希夫(Peter D. Schiff) 安德鲁·J.希夫(Andrew J. Schiff)</td>
-<td><a href="/lib/pdf/web/viewer.html?file=/book/小岛经济学：鱼、美元和经济的故事.pdf" target="_blank">查看</a></td>
-</tr>
-<tr>
-<td>国富论：亚当斯密</td>
-<td>[英]亚当·斯密</td>
-<td><a href="/lib/pdf/web/viewer.html?file=https://raw.githubusercontent.com/qqhsx/book/main/经济/国富论：亚当斯密.pdf" target="_blank">查看</a></td>
-</tr>
-<tr>
-<td>经济学的思维方式-托马斯·索维尔(套装共2册)</td>
-<td>托马斯·索维尔</td>
-<td><a href="/lib/epub/index.html?file=https://raw.githubusercontent.com/qqhsx/book/main/经济/经济学的思维方式（套装共2册）.epub" target="_blank">查看</a></td>
-</tr>
-<tr>
-<td>经济学的思维方式（原书第13版）</td>
-<td>（美）海恩（Heyne,P.） &amp; （美）勃特克（Boettke,P.） &amp; （美）普雷契特科（Prychitko,D.）</td>
-<td><a href="/lib/epub/index.html?file=https://raw.githubusercontent.com/qqhsx/book/main/经济/经济学的思维方式（原书第13版）.epub" target="_blank">查看</a></td>
-</tr>
-<tr>
-<td>全球经济史</td>
-<td>（英）艾伦（Allen, R. C.）</td>
-<td><a href="/lib/epub/index.html?file=https://raw.githubusercontent.com/qqhsx/book/main/经济/全球经济史.epub" target="_blank">查看</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><table>
-<thead>
-<tr>
-<th>书名</th>
-<th>作者</th>
-<th>查看链接</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>历史是个什么玩意儿</td>
-<td>袁腾飞</td>
-<td><a href="/lib/epub/index.html?file=https://raw.githubusercontent.com/qqhsx/book/main/历史/历史是个什么玩意儿（全集）.epub" target="_blank">查看</a></td>
-</tr>
-</tbody></table>
-]]></content>
-  </entry>
-  <entry>
-    <title>creo</title>
-    <url>/creo/index.html</url>
-    <content><![CDATA[<h4 id="creo下载、安装"><a href="#creo下载、安装" class="headerlink" title="creo下载、安装"></a>creo下载、安装</h4><ul>
-<li><p><a href="https://www.bilibili.com/video/BV1MJ4m1H7eW">creo11.0安装</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1Mr421E7z8">creo11.0安装</a></p>
-</li>
-</ul>
-<h4 id="creo官方教程"><a href="#creo官方教程" class="headerlink" title="creo官方教程"></a>creo官方教程</h4><ul>
-<li><a href="https://support.ptc.com/help/creo/creo_pma/r11.0/chinese_cn/">Creo11.0官方教程</a></li>
-</ul>
-<h4 id="creo配置"><a href="#creo配置" class="headerlink" title="creo配置"></a>creo配置</h4><ul>
-<li><p><a href="https://www.bilibili.com/video/BV1r142127Gm">Creo10.0公制单位的配置</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1Zz4y1G7U9">Creo9.0公制单位的配置</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1se411S7Ut">Creo10.0背景颜色的设置</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1g94y1p7Yo">Creo9.0颜色库修改方法</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1vh41147LB">Creo8.0颜色库修改方法</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1PC411s7Fp">Creo10.0旧版本删除方式</a></p>
-</li>
-</ul>
-<h4 id="Creo工程图"><a href="#Creo工程图" class="headerlink" title="Creo工程图"></a>Creo工程图</h4><ul>
-<li><a href="https://www.bilibili.com/video/BV1xb4y147xf/">CREO8.0全网最全工程图教程</a></li>
-</ul>
-<h4 id="Creo草绘"><a href="#Creo草绘" class="headerlink" title="Creo草绘"></a>Creo草绘</h4><ul>
-<li><p><a href="https://www.bilibili.com/video/BV1pJ4m1T7CT">creo11.0草绘第一课：草绘模式简介与配置</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1Px4y187u1">creo11.0草绘第二课：草绘模式环境配置与参考创建</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1hT421Y7Gq">creo11.0草绘第三课：草绘注意事项与构造模式</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1gS411w7r1">creo11.0草绘第四课：草绘点中心线坐标直线链矩形</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1Bb421n7XJ">creo11.0草绘第五课：草绘圆，圆弧与圆锥圆弧</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1m1421b7o3">creo11.0草绘第六课：草绘椭圆.倒圆角.倒角</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV17z421q7GN">creo11.0草绘第七课：草绘文本.投影偏移与加厚</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1AZ421u7Wt">creo11.0草绘第八课：草绘.样条曲线</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV13w4m1Y7zz">creo11.0草绘第九课：移动.伸缩.调整.拐角.删除段.分割.镜像与修改</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1rb421E7F1">creo11.0草绘第十课：剪切.复制.粘贴.外部导入，定义选项板.替换.转换，过滤</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1Tf421q71L">creo11.0草绘第十一课：草绘几何约束</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1px4y1x7vc">creo11.0草绘第十二课：草绘.标注上</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1ay411i7Bi">creo11.0草绘第十三课：草绘.标注下</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1QM4m127wc">creo11.0草绘第十四课：草绘.综合练习一</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1Mi421Y7U1">creo11.0草绘第十五课：草绘.综合练习二</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1US42197rP">creo11.0草绘第十六课：草绘.综合练习三</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV11Y4y1Y7jc">Creo6.0草绘练习-入门基础教程</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1YA41137aA">creo6.0基础教程-草绘教学</a></p>
-</li>
-</ul>
-<h4 id="Creo拉伸"><a href="#Creo拉伸" class="headerlink" title="Creo拉伸"></a>Creo拉伸</h4><ul>
-<li><p><a href="https://www.bilibili.com/video/BV1RCp2ezEtW">Creo11.0 拉伸命令详细介绍</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1Tt411e7YR">creo3.0拉伸指令精讲1</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/BV1ft411Y7U5">creo3.0 拉伸指令精讲2</a></p>
-</li>
-</ul>
-]]></content>
   </entry>
   <entry>
     <title>经济时间轴</title>
@@ -2746,163 +2606,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>经济大事年表</title>
-    <url>/economyTime/index.html</url>
-    <content><![CDATA[<p>资料来源：<a href="https://mp.sohu.com/profile?xpt=QUY2NUEzMUEyQzkzNEQyODU3NTBCRDAzOTQ2NTQ0ODZAcXEuc29odS5jb20=&_f=index_pagemp_2&spm=smpc.content.author.3.1730360581519rdQLisA">高连奎财经学术平台</a></p>
-<p>大约公元前387至公元前371年，雅典 色诺芬 在《经济论》一书中首次提出<strong>“经济”</strong>一词。1613年，意大利商人安东尼奥·塞拉（Antonio Serra),出版的小册子《论缺乏文献 矿产的国家金银丰裕的原因》被视为重商主义的第一份文献。</p>
-<p>1559年，英国托马斯.格雷欣公元发现“劣币驱逐良币”的经济规律，他发现市场上流通的是金属铸币，时间长了，人们发现足值与不足值的铸币可以一样使用，于是，人们就把成色好的足值货币（良币）储藏起来，而把不足值的铸币（劣币）赶紧花出去。结果，劣币把良币赶出了市场。</p>
-<p>1662年，英国经济学家威廉·配第配第写成《税赋论》，<strong>提出”公平”、”确实”、 “便利”和”节省”的税收四原则。</strong>威廉·配第是最先提出了劳动决定价值的基本原理，并在劳动价值论的基础上考察了工资、地租、利息等范畴，他把地租看作是剩余价值的基本形态，劳动价值论被亚当斯密、李嘉图、马克思产继承。</p>
-<p>1672年，威廉·配第写成《政府算术》，标志着统计学的诞生，该书认为所有的政府事务及与君主荣誉、百姓幸福和国家昌盛有关的事项都可以用算术的一般法则来证实。</p>
-<p>1690 年英国经济学家巴本最早表述效用价值观点， 认为一切物品的价值都来自它们的效用，无用之物便无价值。</p>
-<p>1729 年，美国经济学家富兰克林发表《纸币性质 和必要性初探》 , 认为商品交换不过是劳动与劳动交换， 一切商品价值都可以用劳动来衡量。</p>
-<p>1736年，法国汉学家，经济学家魁奈发表《动物经济论》，提出“自由放任”的经济主张和人的社会性的主张。</p>
-<p>1755年，爱尔兰裔法国经济学家理查德·坎蒂隆出版《商业性质概论》提出“企业家”的概念，把当时除君主和地主以外的居民分为企业家和受雇者两个阶层。</p>
-<p>1758年，法国汉学家，重农学派领袖魁奈《经济表》在经济学中第一次制定了社会总产品的再生产和流通的图解，并且在“纯产品”的概念下研究了剩余价值，并把剩余价值起源的研究从流通领域转到直接生产领域，为科学地分析资本主义经济奠定了基础。马克思称其是政治经济学一切思想中最有天才的思想。</p>
-<p>1764年，斯密受布克莱公爵之邀，英国经济学家亚当斯密离开格拉斯哥大学，到欧洲大陆旅行。旅行的经历以及在旅行过程中同许多著名大陆学者的交往，促使斯密经济理论走向成熟，尤其是重农主义的经济学家魁奈对他影响很大。</p>
-<p>1767年，法国汉学家，重农学派领袖魁奈出版论文集《重农主义，或最有利于人类的管理的自然体系》，为了表明他的思想源自中国，特意将出版地点写成北京，魁奈被马克思誉为现代政治经济学始祖。</p>
-<p>1768年，法国重农学派经济学家杜尔哥在研究农业过程中发现了边际递减定律，农业中的产量，可以随劳力投入规模的扩大而增加，但这种增长是有一个极限的，农产品产量先是递增，进而达到最大值，然后增量减少的变动规律。这就是“边际效益递减”规律。</p>
-<p>1769年，法国汉学家，重农学派领袖魁奈出版了《中华帝国的专制制度》中提出了“自然秩序”思想，认为中国是一个遵循自然法，建立在自然秩序基础上的国家，自然秩序思想后来被奥地利学派继承，1966年9月，奥地利学派经济学家哈耶克在东京作《自由主义社会秩序诸原则》的演讲时提出自然秩序就是中国老子所言的“我无为，而民自化，我好静，而民自正”。</p>
-<p>1776，法国经济学家杜尔哥出版著作《关于财富的形成和分配的考核》提出土地、资本、劳动的生产要素概念，杜尔哥认为，资本家是通过垫支资本，使用别人的劳动而取得利润。雇佣工人是在劳动者与生产资料相分离的时候产生，工人出卖劳动的代价是工资。杜尔哥还提出<strong>“主观效用”</strong>理论</p>
-<p>1776年，亚当-斯密出版《国民财富的性质和原因的研究》一书，最先提出“分工、“看不见的手”概念，亚当·斯密并不是经济学说的最早开拓者，但是他首次提出了全面系统的经济学说，《国富论》是现代政治经济学研究的起点，标志着古典自由主义经济学的正式诞生。</p>
-<p>1777 年，英国经济学家 J. 安德森在《谷物法本质的 研究》 一书中， 论述级差地租理论的基本特征，是级差地租理论的创始人。</p>
-<p>1778年，意大利经济学家孔迪亚克在出版的《谈商业与政府关系》一书中，就提出了效用价值观，他认为价值是经济学的中心问题，而效用则是价值的源泉。</p>
-<p>1789 年，英国经济学家边沁出版《道德和立法原理导 论》 一书， 阐述功利主义原理， ,功利主义的思想可以概括为最大程度的幸福原 ，认为社会应引导人们的行为使 之促进大多数人的最大幸福,而制止在追求个人幸福的过程中,损害社会的整体幸福 的行为，功利主义主张阶级调和。政府采取行动将富人的钱通过再次分配转移到穷人身上将增加社会的总效用。边沁的政府干预理论还直接为一百多年后的欧美资</p>
-<p>本主义国家实行混合经济和福利制度的大规模“和谐”建设提供了理论准备。</p>
-<p>1798 年英国 T. R. 马尔萨斯匿名发表 《人口原理》 一书， 认为人口 以几何比率增加， 生活资料以算术比率增加， 于是出现饥馑、 贫困、 疾病和战争。</p>
-<p>1803年，萨伊出版《论政治经济学，或略论则一富是怎样产生、分配和消费的》一书，该书将政治经济学的研究对象分为三部分:生产、分配和消费,形成了”三分法”， 穆勒加上了“交换”,形成了“四分 法”，成为了近代经济学体系的首创者，萨伊定律中的思想也源于此书，萨伊定律为凯恩斯命名，核心思想最早由亚当斯密的老师，苏格兰哲学之父弗朗西斯·哈其森提出。</p>
-<p>1819年，西斯蒙第发表《政治经济学新原理》，提出“消费不足”理论，指出小生产的破产和社会分配不公使广大人民收入不足，收入不足使消费不足而产生经济危机，他的“消费不足”理论对马克思和凯恩斯产生影响。</p>
-<p>1833年，英国经济学家W.F.劳埃德提出边际效用价值论，商品价值只表示人对商品的心理感受，不表示商品某种内在的性质;价值取决于人的欲望以及人对物品的估价，会随物品数量的变动而变化，并在被满足和不被满足的欲望之间的边际上表现出来，他实际上区分了总效用和边际效用这两个概念，而且暗示物品价值取决于边际效用。</p>
-<p>1836年，英国西尼尔《政治经济学大纲》提出了“纯经济理论”，西尼尔提出政治经济学脱离所有的价值判断、政策建议和增加福利的努力，应该集中精力分析财富的生产和分配，他认为经济学家的任务是阐释原理，而不是提供政策建议。另外书中还提出“节欲论”，认为资本家的利润来自资本家省吃俭用，该书为资产阶级辩护经济学的经典之作，促进了“政治经济学”向“经济学”转变，经济思想史称之为古典经济学向新古典经济学的转变，马克思成为经济学的庸俗化。</p>
-<p>1838年，法国经济学家古诺出版《财富理论数学原理的研究》，他认为某些经济范畴、需求、价格、供给可以视为互为函数关系从而有可能用一系列的函数方程表述市场中的关系，并且可以用数学语言系统地阐述某些经济规律，库尔诺最早提出需求量是价格的函数这个需求定理，并建立了分析寡头的双头模型，这书常被当做数理经济学的开端，古诺被称为数理经济学之父，并且发明了均衡概念。</p>
-<p>1839 年，英国空想社会主义者布雷发 表《对劳动的迫害及其救治方 案》 一书， 主张“等量的劳动 应该得到相等的报酬”， 最早使用“按劳分配”一词。</p>
-<p>1840年，经济学家森捏提出知识资本概念</p>
-<p>1841，李斯特在《政治经济学的国民体系》提出了完整的国家主义经济学说，影响最深远的是”幼稚工业保护论”，对于遏止“亚当·斯密学说”对德国工业的威胁起到了只手擎天的作用，另外还提出生产力理论以及发展国民生产力的观点。</p>
-<p>1843年德国经济学家威廉·罗雪尔发表的《历史学派的经济学宣言》 一文标志着德国历史学派正式形成，“历史的方法”是与“”哲学的方法”相对的，前者是哲学家尽可能抽象地去寻求概念或理论的体系，抛去了一切时间和空间的规定；历史的方法绝不轻率地赞赏或非难某一特定的制度，因为从来没有过一种制度对一切国民，在所有文化阶段都是有效的或都是有害的，应该事物本身发展的过程。</p>
-<p>1843年，英国经济学家穆勒出版《逻辑体系》一书，提出了著名的穆勒“五法”，是指判明因果联系的五种逻辑方法，即求同法、求异法、求同求异并用法、共变法和剩余法，当时逻辑学领域的扛鼎巨作。</p>
-<p>1848 年，英国经济学家穆勒出版著作《政治经济学原理》，该书指出再分配不是收入的再分配,而是财富的再分配，也就是在赞同企业家赚取利润的同时，欢迎以“利润分享”和“生产者合作”作为提高工人财富的手段，穆勒还提出了自然垄断的概念，是指由于自然资源的分布特性使得竞争无法展开的情形。该书是经济思想史上的第一次大综合</p>
-<p>1854年，德国经济学家戈森出版《人类交换规律与人类行为准则的发展》提出了“戈森定律”，即边际效用递减规律和效用最大化规律(边际效用相等规律)，为边际效用学派的产生奠定了基础，戈森被视为边际学派的直接先驱者。</p>
-<p>1863年3月，德国工人运动领袖拉萨尔发表了 《给筹备莱比锡全德工人代表大会的中央委员会的公开答复》以反讽的方式，将资产阶级政府称为“守夜人政府”，这一概念后来被奥地利学派的米塞斯继承，米塞斯在《自由与财产》中提到在市场经济体制下，个人可以自由选择任何一种他们想要整合于其中的社会合作结构的活动方式。只要存在着市场交换，就有自发的个人行为。这种体制被称作自由放任主义，正如拉萨尔所说的“守夜人政府”那样，在此体制下，有自由存在，是因为个人可以自主地计划自己。 另外米塞斯在《闭关自守及其后果》中也提到只要每个国家都坚定地坚持民主和资本主义的政策的社会–经济制度中，政权不是万能的上帝，而不过是—-正如拉萨尔轻蔑地说的—-“守夜人”。</p>
-<p>1867 年，马克思的《资本论》 第一卷在德 国汉堡出版。 书中揭示了剩余价值的来源，分析了剩余 价值生产过程和资本积累过程， 说明了资本主义的历史趋势，这部著作的出版标志着马克思 主义经济学说已经形成，是世界共产主义运动及社会主义国家建立的理论源泉。</p>
-<p>1871年，英国经济学家杰文斯出版的《政治经济学理论》中，利用导数表述边际效用概念，借助数学推理论证了两种商品之间交换的均衡价格是怎样决定的。</p>
-<p>1872年发表《信用的理论》一书，力倡信用创造的学说。</p>
-<p>1874年法国的瓦尔拉斯在出版的《纯粹政治经济学纲要》一书中，以边际效用价值论为基础，考察了市场上所有商品的供给、需求和价格相互依存、相互制约，达到均衡状态的价格决定过程，创建了一般均衡论的理论体系，瓦尔拉斯的一般均衡理论后经帕累托、希克斯、谢尔曼、萨缪尔森、阿罗、德布鲁以及麦肯齐等经济学家的改进和发展之后，形成为现代一般均衡理论。瓦尔拉斯还进行了企业家和资本家的区分，还把市场被分为产品市场和要素市场，企业家把这两个市场连接起来并通过竞争实现均衡。</p>
-<p>1898年，瑞典经济学姐威克塞尔在《利息与价格》中提出“累积过程理论”也被称为”货币价格理论”、”经济周期理论”，是第一次从货币角度解释经济周期，认为货币利率低于自然利率（资本边际收益率）造成的经济向上累积扩张，货币利率高于自然利率（资本边际收益率）造成的向下累积紧缩，这是经济波动的根本原因，解决经济波动的根本出路就在于调节货币利率与自然利率（资本边际收益率）一致，该理论成为奥地利学派经济周期理论的来源。</p>
-<p>1890年，马歇尔的《经济学原理》出版，独创运用均衡价格分析方法依次研究各个生产要素，即用上升的供给曲线和下降的需求曲线分析收入、成本的变化对价格的影响，提出了局部均衡，价格弹性，消费者剩余等经济学概念，并且把萨伊的生产三要素扩充为生产四要素，即劳动、资本、土地，组织。他提出的消费者剩余概念是指消费者在购买一定数量的某种商品时愿意支付的最高总价格和实际支付的总价格之间的差额。</p>
-<p>1897年，英国经济学家埃奇沃斯在其经典论文《赋税的纯理论》中提出累进所得税，通过累进的所得税可以实现收入再分配，可以实现整体社会福利最大化。1909年，英国财政大臣乔治在其“人民预算”中首次使用累进所得税。</p>
-<p>1901年，意大利贵族经济学家帕累托出版《精英的兴衰》，该书认为人类社会始终存在资源分配不平等，在任何社会中，总存在着被统治的广大群众与占统治地位的一小部分人之间的分离和对立，精英阶层只能循环，不可能退出统治阶层，其他人只能依附于精英而被统治，因此反对民主和平等，该书是世界法西斯主义的思想来源，帕累托晚年也归附法西斯主义，帕累托当年对意大利20%的人口拥有80%的财产的观察被美国管理学家约瑟夫·朱兰演绎成著名的“二八法则”。</p>
-<p>1906年，意大利经济学家帕累托出版《政治经济学教程》一书，在序数效用论的基础上，借助序数效用指数和”无差异曲线”等概念，论证了一般均衡理论，并且提出“帕累托最优”即在没有使任何人境况变坏的前提下，使得至少一个人变得更好。</p>
-<p>1912年，奥地利经济学家熊彼特提出破坏式创新的概念，他把创新视为不断地从内部革新经济结构，即不断破坏旧的，不断创造新的结构。他还认为创新就是企业家对生产要素的新组合，即“建立一种新的生产函数”，其目的是为了获取潜在的利润。创新就是让过去的固定资产设备和资本投资过时、无效，或者贬值，通过创新产生大量新的资本(利润)来弥补这些贬值和无效。1997年，美国哈佛大学商学院创新理论大师克莱顿·克里斯滕森教授在其名著《创新者的两难》一书又重提此理论，让此理论普及。</p>
-<p>1913年，艾伯特·阿夫塔里昂（Albert Aftalion）的《生产过剩的周期性危机》，提出加速原理，后来成为宏观经济学的重要内容，加速原理是指收入或消费增加会引起投资增加，相反在经济危机的条件下,生产和销售量下降，加速原理的作用会使得投资急剧下降。</p>
-<p>1916年，瑞典经济学家卡塞尔系统地提出：两国货币的汇率主要是由两国货币的购买力决定的，即：购买力平价说，简称PPP理论。</p>
-<p>1919 年，赫克歇尔在《对外贸易对收入分配的影响》一文中， 首先提出了要素禀赋差异是贸易基础的观点。</p>
-<p>1920年，英国庇古出版 《福利经济学》，庇古被称为”福利经济学之父”，庇古首次度系统地研究了外部性问题，认为导致市场配置资源失效的原因是经济当事人的私人成本与社会成本不相一致，在马歇尔提出的”外部经济”概念基础上扩充了”外部不经济”的主张。</p>
-<p>1921年出版的《银行信用》一书中最先使用原始存款和派生存款这一对概念。</p>
-<p>1927 年，法国学者阿夫达里昂（A.Aftalion）年提出汇兑心理说，他认为人们之所以需要外币，是为了满足某种欲望，如支付、投资、投机等等。这种主观欲望是使外国货币具有价值的基础。</p>
-<p>1928年，著名经济学家庇古在他出版的《财政学研究》一书中第一次使用转移支付这一概念，转移支付是指政府或企业无偿地支付给个人以增加其收入和购买力的费用，是一种收入再分配形式。</p>
-<p>1928年，冯·诺依曼证明了博弈论的基本原理，从而宣告了博弈论的正式诞生。</p>
-<p>1928年，费雪提出货币幻觉的概念，论述了通货膨胀给人们所带来的心理错觉效应。因为货币幻觉的存在，宽松的货币政策(通货膨胀)才能减少失业，刺激经济增长凯恩斯也指出，受货币幻觉的影响，工人不愿意接受名义工资下调的行为，从而导致工资刚性。</p>
-<p>1930年，由美国的舒尔茨、意大利的里西和荷兰的丁伯根各自提出蛛网理论，是一种引入时间因素考察价格和产量均衡状态变动过程的理论。1934年，经英国的卡尔多定名为蛛网理论。这是因为均衡变动过程反映在二维座标图上，其形如蛛网，所以称为蛛网理论。</p>
-<p>1930年，美国经济学家西蒙·库兹涅兹在《生产和价格的长期运动》一书中提出库兹涅兹周期，库兹涅兹认为经济中存在长度为15–25年不等的长期波动。这种波动在美国的许多经济活动中，尤其是建筑业中表现得特别明显，所以库兹涅茨周期也称为建筑业周期。</p>
-<p>1931年英国经济学家卡恩提出宏观经学中“乘数”的概念，乘数反应的是投资和收入之间存在倍数关系，由于各经济部门是相互关联的，所以某一部门的一笔投资不仅会增加本部门的收入，而且会在国民经济各部门中引起连锁反应，从而增加其它部门的投资和收入，最终使国民收入成倍地增长。</p>
-<p>1932 伯利和米恩斯在《现代公司与私有产权》一书中出“委托代理理论”，倡导所有权和经营权分离，企业所有者保留剩余索取权，而将经营权利让渡。“委托代理理论”早已成为现代公司治理的逻辑起点，美国哥伦比亚大学教授威廉·维克里和英国牛津大学教授詹姆斯·莫里斯，由于引入“激励相容”的概念，开创了信息不对称条件下的激励理论—委托代理理论，获得了1996年度的诺贝尔经济学奖。</p>
-<p>1932年，欧文·费雪在《繁荣与萧条》一书中，首次提出了“债务-通货紧缩”理论来解释大萧条，首先是由于新发明等产生的新投资机会，引起企业规模巨大的过度负债，接下来出现债务清偿，然后如果没有再通胀政策的反向作用，出现一般价格水平下降或者货币的购买力升值，在货币升值的速度超过名义债务偿还速度的情形下，债务清偿不但不能彻底地清偿债务，反而使得尚未偿还的名义债务的真实规模加大，并且认为经济主体的过度负债和通货紧缩这两个因素会相互作用、相互增强，从而导致经济衰退甚至引起严重的萧条。</p>
-<p>1933 年，英国 罗宾逊发表《不完全竞争经济学》， 与同年出版的美国张伯伦的《垄断竞争理论》 一并被认为奠定了西方现代价 格理论的基础。 ·</p>
-<p>1933年,挪威经济学家弗瑞希首次提出“宏观经济学”的概念。</p>
-<p>1934年，希克斯和艾伦在《价值理论的再思考》论文中提出“序数效用论”，认为效用作为一种心理现象是无法计量的，因为不可能找到效用的计量单位;他们运用埃奇沃思发明的“无差异曲线”对效用进行了重新诠释，认为消费者在市场上所做的并不是权衡商品效用的大小而只是在不同的商品之间进行排序。这就是所谓的序数效用论。</p>
-<p>1935 年，英国费希尔首次提出第三产业的概念。</p>
-<p>1936 年，英国经济学家凯恩斯的 《就业、 利息和货币通论》 一书出版， 否认“供给创造需求” 的萨伊定律， 提出有效需求决定就业量的理论以及货币学中流动性陷阱理论，也是资产市场的“股票选美”理论，行为经济学中“动物精神”理论的源头。</p>
-<p>1936年，列昂剔夫发表了《美国经济体系中的投入产出的数量关系》一文，接着在1941年又出版了《美国经济结构1919—1929》一书，1953年，又出版了《美国经济结构研究》一书。在这些著作中，列昂剔夫提出了投入产出方法。</p>
-<p>1937年，英国经济学家希克斯在《凯恩斯先生和古典学派》一文中首先使用IS—LM图形对 《通论》的部分内容作了重新表述,这个表述，美国经济学家汉森1949年在《货币理论和财政政策》一书中把财政政策变量引进到IS—LM模型,故该模型又称为“希克斯—汉森模型”，其中I代表投资，S代表储蓄，L代表货币需求，M代表货币供给。</p>
-<p>1937年科斯发表了《企业的性质》一文，提出交易成本理论，科斯首次提出”交易费用”来解释企业存在的原因以及企业扩展的边界问题，科斯认为当市场交易成本高于企业内部的管理协调成本时，企业便产生了，企业的存在正是为了节约市场交易费用当市场交易的边际成本等于企业内部的管理协调的边际成本时，就是企业规模扩张的界限，科斯开创的交易成本经济学在1975被后继者威廉姆森称为新制度经济学。</p>
-<p>1937年，库兹涅茨出版了他的专著——《国民收入和资本构成》，书中概括地说明了国民收入和国民生产总值的定义和估算方法，库兹涅茨获得1971年诺贝尔经济学奖。</p>
-<p>1938年，哈其森出版的《经济理论的定义和基本前提》，第一次将波普尔的证伪主义方法论准则引入到经济学争论中，经过以萨谬尔森为代表的麻省工学院和以弗里德 曼为代表的芝加哥学派的运用和大力阐释，逐渐成为20世纪经济学方法论的主流。</p>
-<p>1939 年，英国经济学家希克斯于出版了《价值与资本》一书，对效用的研究提出了“无差异曲线”的序数效用 分析，取代了传统的基数效用分析，无差异曲线分析将瓦尔拉斯和帕累托创立的 福利经济学大大推进了一步，并推广了一般均衡论。希克斯还在书中提出替代效应的概念，是指实际收入不变的情况下某种商品价格变化对其替代品需求量的影响。。他提出了无差异曲线的新方法和替代效应的概念，使一般均衡论获得了重要的发展。可以说，微观经济学，只是到了希克斯手中，才有了更为成熟的理论体系和方法。</p>
-<p>1939年，卡尔多发表的《经济学福利命题与个人之间的效用比较》论文，提出了“卡尔多补偿原则”作为其检验社会福利的标准。他认为，市场价格总是在变化的，价格的变动肯定会影响人们的福利状况，即很可能使一些人受损，假使使受损失的人从得益者那里得到补偿后，每个人的状况比变化前都有所改善，即可判断这一经济变化，使整个社会的福利得到了提高，也就表明总的社会福利增加了，简言之，卡尔多的福利标准是看变动以后的结果是否得大于失。</p>
-<p>1941年，哈佛大学经济学家汉森出版《财政政策与经济周期》提出补偿性财政政策，指政府以繁荣年份的财政盈余补偿萧条年份的财政赤字,以缓解经济的周期性波动，达到财政平衡。</p>
-<p>1941年，汉森在1941年发表的《财政政策和经济周期》中,还提出了“混合经济”的概念，混合经济是指既有市场调节又有政府干预。</p>
-<p>1944年，英国剑桥大学经济学家斯通和米德合写了《国民收入和支出》一书，是最早的国民收入核算的标准教科书，斯通担任主席，1953年，斯通担任主席的联合国专家委员会推出《国民经济核算体系及辅助表（1953年）》</p>
-<p>1946～1948 年，英国哈罗德和美国多马首先提出现代经济增长理论，亦称哈罗德-多马增长模型。模型认为增长率经济增长率随储蓄率增加而提高，哈罗德以凯恩斯的收入理论为为基础提出的，使凯恩斯静态的理论动态化、使短期的理论长期化，哈罗德也是凯恩斯传的作者，该模型的提出拉开了战后经济学家研究增长理论的序幕。</p>
-<p>1947年德国经济学家米勒—阿玛克提出了社会市场经济的概念，社会市场经济是一种以市场经济为主、国家调节为辅的经济政策，指国家在不妨碍企业自主经营的条件下，对经济进行某些干预和控制，会更充分地发挥市场经济的调节作用，比如政府通过发展社会福利，在一定程度上克服由于市场经济无节制发展所存在的贫富悬殊、失业、经济危机、通货膨胀等社会弊病。</p>
-<p>1950年，约翰·纳什在其博士论文中提出后来被称为“纳什均衡”的博弈理论，又为非合作博弈均衡，在一个博弈过程中，无论对方的策略选择如何，当事人一方都会选择某个确定的策略，则该策略被称作支配性策略。如果两个博弈的当事人的策略组合分别构成各自的支配性策略，那么这个组合就被定义为纳什平衡，纳什平衡理论奠定了现代主流博弈理论和经济理论的根本基础，同年年，艾伯特·塔克以以囚徒方式阐述非合作博弈， 并命名为“囚徒困境”，囚徒困境是博弈论的非零和博弈中具代表性。</p>
-<p>1950年英国经济学家约翰·理查德·希克斯在《经济周期理论》(A Contribution to the 一书中提出经济危机的四阶段理论，分别是复苏、繁荣、衰退和萧条四个阶段，该书还明确了乘数加速原理导致经济周期的规律。</p>
-<p>1951年，美国经济学家肯尼斯·约瑟夫·阿罗在他的《社会选择与个人价值》一书中提出“阿罗不可能定理”，阿罗采用数学的公理化方法对通行的投票选举进行研究，发现随着候选人和选民的增加，“程序民主”必将越来越远离“实质民主”。</p>
-<p>1952年美国经济学家哈里·马科维茨发表《资产选择》一文提出资产组合理论，该理论认为以投资资产以组合为基础，配合投资者对风险的态度，进而进行资产选择，最佳投资组合应当是具有风险厌恶特征的投资者的无差异曲线和资产的有效边界线的交点。哈里·马科维茨与威廉·夏普和默顿·米勒同时荣获1990年诺贝尔经济学奖1954年，美国经济学家萨缪尔森在《公共支出的纯理论》一文中着首次提出公共物品的概念。公共物品与“私人物品” 对称，是指不能由私营部门通过市场提供而必须由公共部门以非市场方式提供的物品或劳务。公共物品具有三个方面的特性分别是效用的不可分割性、消费的不排他性和受益的不可阻止性。</p>
-<p>1954年，欧洲经济学家莫迪利亚尼提出消费与储蓄的生命周期假说，这一假设在研究家庭和企业储蓄中得到了广泛应用，假说则强调当前消费支出与家庭整个一生的全部预期收入的相互联系。该理论认为，每个家庭都是根据一生的全部预期收入来安排自己的消费支出的，即每个家庭在每一时点上的消费和储蓄决策都反映了该家庭希望在其生命周期各个阶段达到消费的理想分布，以实现一生消费效应最大化的企图。因此，各个家庭的消费取决于他们在两个生命期内所获得的总收入和财产。这样，消费就取决于家庭所处的生命周期阶段。</p>
-<p>1955年，美国经济学家库兹涅茨所提出来的收入分配状况随经济发展过程而变化的曲线，又称作”库兹涅茨曲线”，认为收入分配的长期变动轨迹是“先恶化，后改进“。形状是倒U型，所以也叫倒U曲线，该曲线所表明的收入分配变化状况与实证研究并不完全符合，所以也常常被称作“倒U假说”。</p>
-<p>1956年，美国麻省理工学院经济学家弗朗西斯 巴托在《市场失灵的剖析》一文中提出来“市场失灵”的概念，市场失灵的原因包括垄断、外部性、公共物品和不完全信息等因素。 市场失灵和公共物品概念的提出标志着市场万能理论在经济学专业学术界不再被人认可。</p>
-<p>1958年，新西兰经济学家菲利普斯根据英国1861－1913年间失业率和货币工资变动率的经验统计资料总结出的一条失业与通货膨胀存在一种交替关系的曲线，菲利普斯曲线表明，通货膨胀率高时，失业率低；通货膨胀率低时，失业率高。</p>
-<p>1958年，科斯写了一篇名为《联邦通讯协议》的论文，他在这篇文章中明确指出，只要产权不明确，由外在性带来的公害是不可避免的，只有明确产权，才能消除或降低这种外在性所带来的伤害，这成为新制度经济学中产权理论研究的起点。</p>
-<p>1959年哈佛大学贝恩出版的《产业组织》一书为标志着现代产业组织理论的建立，产业组织一词源于马歇尔。</p>
-<p>1964年美国行为学家维克托·弗鲁姆于在《工作与激励》中提出期望理论，认为激励力的大小取决于该行动所能达成目标的全部效用与达成该目标的概率。</p>
-<p>1956年，索洛和斯旺在发表的《经济增长的一个理论》和《经济增长与资本积累》等论文中首先提出新古典增长模型，该模型认为进步是外生的，但劳动力能从技术进步中获益，最终提高生产率，促进经济增长，一方面资本驱动的增长因为资本边际收益递减所有国家长期上要增长，最终取决于外生的技术进步。</p>
-<p>1957 年 · 美国经济学家弗里德曼在《消费函数理 论》 中， 引进人力资本概念”和“恒久性收入” 概念。，恒久收入指社会成员在相当长时期内的平均收入或正常收入，或理解为一个人各年人们收入的加权平均数，主要是区别与凯恩斯的收入，凯恩斯收入支出模式中的收入，主要是指当年实际获得的收入。</p>
-<p>1958年，美国经济学家赫希曼在其著作《经济发展 战略》中提出了不平衡增长理论，主张发展中国家应集中有限资源先发展一部分产业，而后再以此带动其他产业的发展。提出了“极化效应”和“涓 滴效应” 并指出在经济发展的初级阶段极化效应占主导地位，但从长期看涓滴效应将会缩小区域经济差距。</p>
-<p>1959年，美国经济学家奥斯本(M．F．M Osborne) 以布朗运动原理作为研究视角，提出了随机漫步理论，认为股票交易中买方与卖方同样聪明机智，股票价格形成是市场对随机到来的事件信息作出的反应，现今的股价已基本反映了供求关系。</p>
-<p>1960年，科斯在发表《社会成本问题》论文，引出科斯定理，科斯认为经济的外部性或者说非效率可以通过当事人的谈判而得到纠正，从而达到社会效益最大化。也有人演绎为“只要财产权是明确的，并且交易成本为零或者很小，那么，无论在开始时将财产权赋予谁，市场均衡的最终结果都是有效率的，实现资源配置的帕累托最优”，这既不符合实际，也歪曲了科斯的意思。</p>
-<p>1960年赫维茨发表论文《资源配置中的最优化与信息效率》提出“机制设计理论”，是研究在自由选择、自愿交换、信息不完全及决策分散化的条件下，能否设计一套机制(规则或制度)来达到既定目标的理论。</p>
-<p>1961年，萨缪尔森他在《经济学》第五版中，把自己的理论体系称之为“新古典综合学派”，是将凯恩斯主义经济学进行均衡化改造形成的经济学，也被新剑桥学派称为冒牌的凯恩斯主义。</p>
-<p>1961年，约翰穆斯在一篇题 为《理性预期和价格变动理论》的文章中,最早提出了“理性预期”的概念，理性预期是在有效地利用一切信息的前提下，对经济变量作出的最为准确的合理明智的预期，70年代由芝加哥大学的R.E.卢卡斯和明尼苏达大学的T.J.萨金特和N.华莱士等人作出了进一步发展，并逐渐形成理性预期学派，理性预期学派认为消费者和企业使不仅是宏观经济政策的调节的对象，而且也以自己的理性预期的行为积极影响宏观经济政策的制定．他们对宏观政策的反应，决定着政策的效果。</p>
-<p>1961年,美国经济学家罗伯特·蒙代尔发表了《最优货币区理论》的论文，主张经济交往密切的国家和地区通过固定汇率或者统一货币的形式建立货币区,以抵消浮动汇率的不确定性，欧元区的建立就是该理论的最佳实践。</p>
-<p>1961年,美国经济学家乔治·斯蒂格勒发表于研究论文《信息经济学》提出搜寻概念，他指出某一买者要购买时，总要询问许多卖者以确定最合适的价格，这样的现象叫做搜寻，信息不对称和价格的离散性是搜寻的前提，搜寻理论后来主要用于分析劳动力市场，成为劳动经济学的主流理论。</p>
-<p>1961年，美国经济学家菲尔普斯经济增长黄金率，指出资本积累存在一个最优水平，如果一个社会储蓄率过高的话，就会导致降低人们的长期福利，经济增长的目的不是产出的不断扩张，而是人民生活水平的不断提高，是对索洛经济增长的动态最优化提出的理论。</p>
-<p>1962年，美国经济学家阿罗于提出了<strong>“干中学”模型</strong>，把从事生产的人获得知识的过程内生于模型。他从普通的劳动与资本的科布—道格拉斯常规模型收益生产函数，推导出一个规模收益递增的生产函数。阿罗认为，人们是通过学习而获得知识的，技术进步是知识的产物、学习的结果，而学习又是经验的不断总结，经验来自行动，经验的积累就体现于技术进步之上。</p>
-<p>1963年，美国斯坦福大学经济学家阿罗在《美国经济评论》上发表论文《不确定性和医疗保健的福利经济学》首次引入了“道德风险”和“逆向选择”两个重要概念，道德风险是在信息不对称条件下，不确定的经济行为主体不承担其行动的全部后果，在最大化自身效用的同时,做出不利于他人行动的现象。逆向选择，指的是这样一种情况，市场交易的一方如果能够利用多于另一方的信息使自己受益而对方受损时，信息劣势的一方便难以顺利地做出买卖决策，于是价格便随之扭曲，并失去了平衡供求、促成交易的作用，进而导致市场效率的降低。</p>
-<p>1963年，弗里德曼在出版《1867~1960年美国货币史》，提出政府应该保持定量的货币发行规模，施行单一稳定的货币政策，即单一规则。他根据美国近百年的货币资料的实证研究提出，美国的年平均经济增长率为3%，就业的年平均增长率为1%-2%，若货币供应量不增加，工资水平的增长率计算会下降1%-2%，再加上3%的年经济增长率作用，物价将下跌4%-5%，造成通货紧缩，消费减少。但若货币过多就会带来物价上涨，导致通货膨胀和经济混乱。因此，如果美国的货币供应量以每年4%-5%的速度稳定增长，就可望保持一个比较稳定的物价水平，避免经济波动。</p>
-<p>1963年，美国货币金融学家蒙代尔发表《资本流动与固定汇率和浮动汇率下的稳定政策》提出了著名的“不可能的三角定律”，又称“三元悖论”，从而全面地揭示了宏观经济的内在冲突。认为:“对于任何一个国家来说，资本账户自由化、固定汇率制以及自主的货币政策是不相容的，即三者不可兼得。如果一国已经实现资本账户自由化，那么它若要保持货币政策的自主性，就必须实行浮动汇率制;若要采用固定汇率制，就必须放弃自主的货币政策。”</p>
-<p>1963年，美国经济学家明斯基发表论文《“它”能再来吗?》开始关注金融不问题问题。1974年他首次提出“金融不稳定假说”。明斯基认为经济波动下降将允许企业和家庭获得更多贷款进行投资，过度杠杆率无法通过更加乐观的情绪来维持，会产生投机的陶醉感，于是，此后不久，当债务超过了债务人收入所能偿还的金额时，金融危机就随之产生了。金融市场的脆弱性与投机性投资泡沫内生于金融市场，是产生经济周期所不可或缺的组成部分，他将金融危机分为三个阶段，第一阶段，投资者们负担少量负债，偿还其资本与利息支出均无问题，这一阶段称为对冲性融资。第二阶段，他们扩展其金融规模，以致只能负担利息支出，这一阶段称为投机性融资。第三阶段，即庞氏骗局，他们的债务水平要求不断上涨的价格水平才能安然度日，可以称为庞氏融资，衍生名词，明斯基时刻指是市场繁荣与衰退之间的转折点。</p>
-<p>1964年，经济学家贝拉巴拉萨(Bela Balassa)与萨缪尔森同时发现一个国家经济增长越快，汇率升职越快的经济现象，在国际金融学中被命名为巴拉萨-萨缪尔森定律，核心内容是成功的经济发展会引起实际汇率的升值。</p>
-<p>1964年，威廉·夏普将马克维茨的分析方法发展为著名的“资本资产定价模型”，在模型中，夏普把马克维茨的选择理论中的资产风险进一步分为资产的“系统风险和“非系统”风险两部分。前者是由总体股价变动引起的某种资产的价格变化，后者则是由影响股价的某些特殊要素引起的资产价格变动。夏普提出一个重要理论是，投资的多样化只能消除非系统风险，而不能消除系统风险。</p>
-<p>1966年美国哈佛大学经济学家蒙德·弗农提出了产品生命周期假说，认为一种新产品从开始进入市场要经历一个引进、成长、成熟、衰退的阶段，而这个周期在不同的技术水平的国家里，发生的时间和过程是不一样的，期间存在一个较大的差距和时差。</p>
-<p>1967年，赫奇曼(Hekimmian)和琼斯(Jones)于提出的机会成本概念，机会成本是指其丧失的机会成本，人力资本的价值应该与其机会成本而不是会计成本直接相关。</p>
-<p>1967，,美国经济学家贝拉巴拉萨提出垂直专业化分工的概念，是指各国中间品贸易不断增加，跨国垂直贸易链不断延长，每个国家只在商品生产的某个或某几个生产环节进行专业化生产的分工与贸易现象，垂直分工与水平分工相对，亚当斯密的分工思想是水平分工。</p>
-<p>1967年，美国经济学家戈登·图洛克(Gordon Tullock，被称为寻租理论之父)在论文，《关于税、垄断和偷窃的福利成本》中提出“寻租”概念。他的观点是，他认为税收、关税和垄断所造成的社会福利损失大大超过了通常的估算。其原因是人们会竞相通过各种疏通活动，争取收入，即寻租，也就是为了取得额外的收益而进行的疏通活动。后来安妮·克鲁格、布坎南等公共选择学者在此基础上进行研究，形成寻租理论。</p>
-<p>1967 年，鲍莫尔提出结构性通货膨胀理论，他把经济活动分为两个部分：一是劳动生产率不断提高的先进部门（工业部门）；二是劳动生产率保持不变的保守部门（服务部门）。当前者由于劳动生产率的提高而增加货币工资时，由于攀比，后者的货币工资也以同样的比例提高。在成本加成定价的通常做法下，整个经济必然产生一种由工资成本推进的通货膨胀。因此，在经济结构的变化中，某一部门的工资上升，将引起其他部门向它看齐，从而以同一比例上升。</p>
-<p>1968年，卡尔·布伦纳于使用”货币主义”一词来表达弗里德经济学流派的基本特征，此后被广泛沿用于经济学文献之中。货币主义的代表人物在美国主要有弗里德曼、哈伯格、布伦纳和安德森等人，在英国有莱德勒和帕金等人。</p>
-<p>1968年，英国人类生态学家加勒特·哈丁教首先提出“公地悲剧”概念，公地悲剧”说明的是由于产权不明，使得企业和个人使用公共资源被过度使用，个人在利用公共资源时存有私心。如亚里斯多德所言：“那由最大人数所共享的事物，却只得到最少的照顾”，后来公地悲剧成为新制度经济学中的重要名词。</p>
-<p>1968年，弗里德曼和哥伦比亚大学教授埃德蒙·费尔普斯同时提出自然失业率概念，指在没有货币因素干扰的情况下，让劳动市场和商品市场总需求与总供给处于均衡状态下的失业率。　</p>
-<p>1970年，美国经济学家约瑟夫·斯蒂格利茨、乔治·阿克尔洛夫、迈克尔·斯彭斯提出“信息不对称”概念，指在社会政治、经济等活动中，一些成员拥有其他成员无法拥有的信息，由此造成信息的不对称。在市场经济活动中，各类人员对有关信息的了解是有差异的。</p>
-<p>1970年美国芝加哥大学金融学教授尤金·法玛并提出“有效市场假说”，提出如果在一个证券市场中，价格完全反映了所有可以获得的信息，那么就称这样的市场为有效市场，有效市场假说有一个颇受质疑的前提假设，即参与市场的投资者有足够的理性，并且能够迅速对所有市场信息作出合理反应。</p>
-<p>1970年，美国经济学家乔治·阿克尔洛夫发表了《柠檬市场:质量不确定和市场机制》的论文，成为研究信息不对称理论的最经典文献之一，开创了逆向选择理论的先河。</p>
-<p>1972年，美国经济学家托宾提出托宾税，他普林斯顿大学演讲中首次提出的，他建议”往飞速运转的国际金融市场这一车轮中掷些沙子”，该税种的提出主要是为了缓解国际资金流动尤其是短期投机性资金流动规模急剧膨胀造成的汇率不稳定，是抑制投机的税种。</p>
-<p>1973年，美国经济学家斯宾塞首先提出信号理论，信号理论是在信息不对称的前提下发展起来的，括信号传递和信号甄别两大方面，信号传递指通过可观察的行为传递商品价值或质量的确切信息，信号甄别指通过不同的合同甄别真实信息。二者的主要差别在于，前者是信息优势方先行动，后者是信息劣势方先行动，尽管存在信息不对称现象，但仍可以实现潜在的交易收益。在迈克·斯宾塞的模型教育本身并不提高一个人的能力，它纯粹是为了向雇主“示意”或“发出信号”。</p>
-<p>1974年，美国经济学家阿瑟·奥肯《平等与效率:重大的抉择》出版，将平等与效率纳入经济研究视野。</p>
-<p>1975年，美国经济学家戈登提出“核心CPI”的概念，从指CPI中扣除食品和能源价格的变化来衡量价格水平变化的方法。从1978年起，美国劳工统计局开始公布从消费价格指数和生产价格指数(PPI) 中剔除食品和能源价格之后的上涨率，此后，核心CPI逐渐成为美国宏观经济分析中较为常用的术语。</p>
-<p>1978 年，美国经济学家克鲁格曼在其博士论文《收益递增、垄断竞争与国际贸易》中首次证明了内部规模经济可以形成贸易基础，生产和需求条件完全相同的两国可以通过贸易获利。</p>
-<p>1973年，赫维奇发表论文《资源分配的机制设计理论》提出激励相容原理和显示性原理，奠定了机制设计理论的框架，激励相容是一种制度安排，使行为人追求个人利益的行为，正好与集体价值最大化的目标相吻合，显示性原理是说需要设计某种激励机制，诱导相关的人，暴露出真实信息与意图。激励相容概念的提出就把信息不对称问题转化为制度设计问题。</p>
-<p>1974年，美国经济学家拉弗年为了说服当时福特总统的白宫助理切尼, 即兴在华盛顿一家餐馆的餐巾纸上画的一条抛物线, 这就是著名的“拉弗曲线”, 所以被戏称为“餐桌曲线”。</p>
-<p>1979 年，美国普林斯顿大学心理学教授丹尼尔·卡内曼和阿莫斯·特沃斯基提出了 <strong>“展望理论”，也作 “前景理论”，</strong>是决策论的期望理论之一。人在不确定条件下的决策选择，取决于结果与展望（预期、设想）的差距而非单单结果本身。即人在决策时会在心里预设一个参考标准，然后衡量每个决定的结果，与这个参考标准的差别是多大。前景理论有两大定律，一是人们在面临获得时，往往小心翼翼，不愿冒风险；而在面对损失时，人人都变成了冒险家，二是人损失的痛苦要远远大于获得的快乐。</p>
-<p>1980年，塞勒吸收特沃斯基和卡内曼的“前景理论”，首提<strong>禀赋效应</strong>，该理论认为一定量的损失给人们带来的效用降低要多过相同的收益给人们带来的效用增加。因此人们在决策过程中对利害的权衡是不均衡的，对“避害”的考虑远大于对“趋利”的考虑。出于对损失的畏惧，人们在出卖商品时往往索要过高的价格。</p>
-<p>1981年，美国新制度经济学家发表《经济史中的结构与变迁》一书，提出“路径依赖”概念，路径依赖”类似于物理学中的惯性，事物一旦进入某一路径，就可能对这种路径产生依赖。这是因为，经济生活与物理世界一样，存在着报酬递增和自我强化的机制。这种机制使人们一旦选择走上某一路径，就会在以后的发展中得到不断的自我强化。真实经济周期理论否定了把经济分为长期与短期的说法，</p>
-<p>1982年，基德兰德和普雷斯科特提出《计量经济学》发表《建造时间和总量》波动”论文提出“真实经济周期”理论，任务经济波动主要是由一些对经济持续的实际冲击引起的。实际冲击包括大规模的随机技术进步或生产率的波动，这种波动引起相对价格波动，从而引起产出和就业的周期性波动。</p>
-<p>1985年，美国哈佛大学经济学家曼昆在《经济学季刊》上的论文《小的菜单成本与大的经济周期:一个垄断的宏观经济模型》，提出菜单成本的概念，菜单成本是指餐厅的菜单得花钱印刷，印好了就不会天天换，菜单成本指调整价格时所花费的成本，它包括：研究和确定新价格的成本、重新编印价目表的成本、通知销售点更换价格标签的成本等。菜单成本论又叫成本的价格调整论。菜单成本的存在阻碍了厂商调整价格，使得名义价格水平有了粘性。价格粘性是新凯恩斯理论的基石货币非中性一般被认为是由于价格粘性导致的。如果价格完全弹性，新凯恩斯理论预测货币政策瘵没有效果。</p>
-<p>1985年，塞勒提出<strong>“输者赢者效应”</strong>即投资者对表现较差的投资组合过分悲观，而对表现较好的投资组合过分乐观，导致股价受投资者情绪及历史表现的影响，进而价格偏离价值。</p>
-<p>1986年，美国新凯恩斯派经济学家罗默在世界顶级经济学期刊《政治经济学杂志》上发表了《规模报酬递增与长期增长》，将经济增长理论升级为“内生增长”理论，罗默则是因其将知识及技术变革引入经济增长，认为知识是一种公共品，一个人使用知识，并不妨碍别人使用知识，具有产生强大的正外部性，从而导致规模报酬递增的出现。一旦有了规模报酬递增，持续的增长也就成为了可能。</p>
-<p>1986年，美国经济学家哈特首次提出不完全契约理论，将企业看作是一个不完全契约，其中可以在事前契约中明确规定的权力称为特定权利，而无法规定的其它权利称为剩余权利或剩余控制权。双方先在事前签订一个初始契约，并投入专用性资产，然后等自然状态的不确定性出现之后再进行谈判。在再谈判时，当出现与初始契约没有规定的情况时，拥有剩余控制权的一方将负责做出决策。剩余控制权通常是财产权的所有者拥有的。</p>
-<p>1992年，日本学者小泽辉智提出动态比较优势理论，动态比较优势理论是指比较优势可以通过专业化学习、投资创新及经验积累等后天因素人为地创造出来，强调的是规模报酬递增、不完全竞争、技术创新和经验积累的理论。</p>
-<p>1993年，美国新凯恩斯经济学家泰勒发表《实践中的相机抉择和政策规则》总结出“泰勒规则”。泰勒规则主张用利率手段达成通胀目标，利率根据通胀率和产出变化调整。当产出缺口为正（负）和通胀缺口超过（低于）目标值时，应提高（降低）名义利率。</p>
-<p>1994年， 青木昌彦提出内部人控制的问题，指现代企业中的所有权与经营权相分离的前提下形成的，由于所有者与经营者利益的不一致，由此导致了经营者控制公司，即”内部人控制”的现象。</p>
-<p>2000年，希勒提出过度反应理论，该理论认为，投资者并非完全的“理性人，他们在其投资活动中会受到认识及情绪等因素影响，加强其投资心理与行为，使其投资活动程度超过理性投资程度，从而导致市场的过度反应。过度反应理论解释了在资本市场上，一些投资标的的价格与其内在价值长期存在较大差异的情况投资者对于受损失的股票会变得越来越悲观，而对于获利的股票会变得越来越乐观，他们对于利好消息和利空消息都会表现出过度反应。</p>
-<p>2004年,美国《连线》主编克里斯.安德森在一篇文章中首次提出了”长尾理论”,指出商品销售呈现出长尾形状，冷门商品的需求不会降到零点，但以前长尾商品，对于大多数企业不仅没有什么意义，反而容易使其走上破产的歧途，网络时代兴起后，何以前看似需求极低的产品，只要有卖，都会有人买。这些需求和销量不高的产品所占据的共同市场份额，可以和主流产品的市场份额相当，甚至更大。</p>
-<p>2004年，伯南克曾经发表了题为《大缓和》的演说，提出大缓和时代的概念，后来用来指1986年至2007年间长达近20年战后持续时间最长的黄金20年高增长、低波动、低通胀的经济时期。</p>
-<p>2006年，高连奎发表《平衡经济学原理》，提出平衡经济学，平衡经济学中的平衡是指高供给难度产品与低供给难度产品的平衡，这种平衡一旦被打破，就会出现经济危机，无论是治理经济危机还是发展经济，都应该加大高供给难度产品的供给，才可以让经济保持平衡。平衡经济学中最核心的概念“供给难度”由生产难度和交易难度两部分组成。平衡经济学认为经济增长主要产品的丰富度和供给效率两者决定，要想提高供给效率，就得不断的降低供给难度和培育具备供给能力的企业。</p>
-<p>2006年，美国投资家纳西姆·尼古拉斯·塔勒布出版《黑天鹅》一书，从此诞生“黑天鹅事件”一词，非常难以预测，且不寻常的事件，通常会引起市场连锁负面反应甚至颠覆，黑天鹅事件强调的是不确定的风险。</p>
-<p>2008年，美联储首次公布将购买机构债和MBS，标志着量化宽松政策的开始。量化指的是扩大一定数量的货币发行，宽松就是减少银行储备必须注资的压力是指中央银行在实行零利率或近似零利率政策后,通过购买国债等中长期债券,增加基础货币供给,向市场注入大量流动性资金的干预方式。</p>
-<p>2008年，辜朝明提出了“资产负债表衰退”理论，指出当全国性的资产价格泡沫破灭后，大量的私人部门(企业和家庭)资产负债表都会随之处于资不抵债的状况，此时私人部门由追求利益最大化，转变成追求债务最小化——企业会把收入的大部分用于还债，而不会用于再投资，当所有企业都按照这种办法实行时就形成了资产负债表衰退。这时不管央行怎么降低利率，注入流动性都无法成功，货币政策失效。全国只有采用财政政策刺激才见效。直到微观主体的资产负债表修复正常，经济运行才恢复到正常状态。资产负债变理论解释了量化宽松的失败，认同凯恩斯经济学的财政投资理论。</p>
-<p>2009年，高连奎提出低生存成本社会的概念，一个国家越发展，生存成本越高，民众不幸福主要是由于生存成本的提高，要想民众幸福就应该不断降低民众的生存成本。</p>
-<p>2010年，美国总统奥巴马采纳了“沃尔克法则”。沃克尔法则最初由美国白宫顾问保罗·沃克尔提出，内容就是要求吸收存款的银行必须剥离各自的衍生品业务。该条款不仅引来了华尔街银行家的抵制，还遭到了政府官员的批评，不过民主党领导人最终让这些条款得以保留。</p>
-<p>2011年，林毅夫提出新结构经济学，新结构经济学建立在传统的比较优势理论之上，主张一个国家应该建立适合自己阶段的产业政策，才可以最快的发展。认为当政府发挥有为作用时，产业政策是个有用的工具。新结构经济认为一个国家最好的方式就是按照每个时点的要素禀赋结构所决定的比较优势去选择产业和技术，进而快速增加资本积累。新结构经济学已经在以非洲为代表的很多发展中国家得到了广泛的认可，</p>
-<p>为推广新结构经济学，林毅夫专门成立了北京大学新结构经济学研究院，同时在一些其他二线高校也成立了其他研究新结构经济学的研究机构，并组织了多次新结构经济国际论坛。</p>
-<p>2013年，高连奎提出精准调控理论经，主张废除货币调控，主张财政调控，以政府投资的增减调控经济发展，货币利率稳定在一个相对固定的水平之上，经济过热时可以减少政府投资，经济萧条时可以增长政府投资。</p>
-<p>2013年，美国经济学家，国际政策研究所所长，米歇尔·渥克在2013年1月的达沃斯全球论坛上，首次提出了“灰犀牛”概念，即一头犀牛从远处走来，人们通常不会过多留意，一旦它向你奔来，其强大的作用力会令你猝不及防。许多危险其实是潜伏的，但也是可预见的，只是因时间距离而产生的风险错估，使得我们对其视而不见，导致风险到来时措手不及。灰犀牛对应的将高概率、特征明显、破坏力极大的潜在危机，风险事件，称之为灰犀牛风险。</p>
-<p>2014年，国际货币基金组织(IMF)总裁拉加德在采用“新平庸”一词，预言世界经济将面临长期低增长的复苏态势，受到国际经济界认同。</p>
-<p>2014年中国学者高连奎提出经济压制理论提出于</p>
-<p>2015年滕泰、贾康等提出“新供给经济学”，将新供给分为四类，分别是新产品，新商业模式，新资源要素，新制度四大方面，他认为这四个方面的创新都可以给经济带来爆发式增长，阻碍供给提示的因素称为“供给约束”“供给约束”又可以分为“直接约束”和“间接约束”,直接约束是指一些非市场因素对供给数量、供给价格或供给主体等进行限额或准入性限制，间接约束则更加隐蔽，是指由于货币政策或财政政策导致的企业融资成本或税收成本上升，进而使企业盈利能力下降并导致新供给无法形成或有效供给减少，经济要想快速发展需要将着力点放到去除供给约束上。</p>
-<p>2016年，高连奎提出新财税经济学，政府债务危机源于财税改革，财税不断升级，提出了“七增七减”的财税改革</p>
-<p>2016年，中国学者，李俊生提出“新市场财政学”，传统经济学将财政学建立在市场失灵的基础上，认为政府财政是市场失灵的补充，新市场财政学则树立了市场“平台观”和“参与型”政府的新观念，将公共部门和非公共部门都视为市场平台的参与者，公私部门皆在其中活动，创造价值。新市场财政学重新定义了政府在市场经济中的作用，为政府的经济建设等职能正名。</p>
-<p>2018年，中国学者李稻葵提出“政府与市场经济学”，认为经济发展的前提是要把政府的激励和行为搞对，理清政府在市场经济中的角色，政府应该成为市场经济发展的一个推动者，一个利益相关者，而不是阻挡者，政府与市场经济学重点研究政府在市场中的激励、行为和作用在内的相关课题。也可以<strong>称为政府激励学派。</strong></p>
-<p>2018年，中国学者郎咸平提出“马克思中观经济学”，郎咸平认为《资本论》灵魂蕴藏在第二卷中，马克思经济学中将社会各行业分为两个部门，一个生产资料部门（类似重工业），一个生活资料部门（类似轻工业），马克思的计划经济是指的生产资料部门，不包括生活资料部门，只要国家对生产资料部门进行计划，经济就会稳定发展，否则会经济危机，中国改革开放之所以成功就是因为放开了“第二部门，即生活资料部门”；苏联之所以“垮台”，就是因为“第二部门即生活资料部门”也实行了彻底的计划经济；美国之所以发生“大萧条”，就是因为“第一部门即生产资料部门”也实行了自由市场经济。</p>
-<p>2019年，中国学者金碚提出“域观经济学”，认为微观-宏观范式”所描述的那个抽象世界在真实世界中是不存在的，而域类存在才是现实经济的基本质态，所有经济体都是受到价值文化和制度形态深刻影响的域类存在体，任何现实经济现象都是域观现象。真实世界中人的行为既有相同性，也有差异性，有的差异性极大。“经济学既要承认人的行为的相同性，也必须正视人的行为的差异性。”“如果将行为相同性较强的人群活动空间定义为一个‘经济域’，并承认经济空间区分各个不同的‘经济域’，就可以为经济学的学术范式奠定更可信和坚实的逻辑基础。”，在现实世界中，不仅人的个体差异巨大，而且处于不同国家、地域、领域以及各种可以成为“域”的情景中的不同人群之间的差异也很大，也就是说，经济世界并非唯一“常态”，而是多种“常态”共存。以“域观范式”的视角来研究经济现象和商业活动，可以建立一门新的学科，即商域经济学。其中，经济理性和一定的价值文化及制度形态互动交融表现为各商域的文明型式，是商域经济学最基本的学术特性。微观经济学和宏观经济学范式主要以经济理性为支柱，而域观经济学范式则以经济理性、价值文化和制度形态三维框架为支柱。域观经济学则以刻画多元域态和发现域际机理为逻辑指向。”</p>
-]]></content>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>历史时间轴</title>
@@ -3139,6 +2845,83 @@
 </div></div></div>]]></content>
   </entry>
   <entry>
+    <title>creo</title>
+    <url>/creo/index.html</url>
+    <content><![CDATA[<h4 id="creo下载、安装"><a href="#creo下载、安装" class="headerlink" title="creo下载、安装"></a>creo下载、安装</h4><ul>
+<li><p><a href="https://www.bilibili.com/video/BV1MJ4m1H7eW">creo11.0安装</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1Mr421E7z8">creo11.0安装</a></p>
+</li>
+</ul>
+<h4 id="creo官方教程"><a href="#creo官方教程" class="headerlink" title="creo官方教程"></a>creo官方教程</h4><ul>
+<li><a href="https://support.ptc.com/help/creo/creo_pma/r11.0/chinese_cn/">Creo11.0官方教程</a></li>
+</ul>
+<h4 id="creo配置"><a href="#creo配置" class="headerlink" title="creo配置"></a>creo配置</h4><ul>
+<li><p><a href="https://www.bilibili.com/video/BV1r142127Gm">Creo10.0公制单位的配置</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1Zz4y1G7U9">Creo9.0公制单位的配置</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1se411S7Ut">Creo10.0背景颜色的设置</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1g94y1p7Yo">Creo9.0颜色库修改方法</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1vh41147LB">Creo8.0颜色库修改方法</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1PC411s7Fp">Creo10.0旧版本删除方式</a></p>
+</li>
+</ul>
+<h4 id="Creo工程图"><a href="#Creo工程图" class="headerlink" title="Creo工程图"></a>Creo工程图</h4><ul>
+<li><a href="https://www.bilibili.com/video/BV1xb4y147xf/">CREO8.0全网最全工程图教程</a></li>
+</ul>
+<h4 id="Creo草绘"><a href="#Creo草绘" class="headerlink" title="Creo草绘"></a>Creo草绘</h4><ul>
+<li><p><a href="https://www.bilibili.com/video/BV1pJ4m1T7CT">creo11.0草绘第一课：草绘模式简介与配置</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1Px4y187u1">creo11.0草绘第二课：草绘模式环境配置与参考创建</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1hT421Y7Gq">creo11.0草绘第三课：草绘注意事项与构造模式</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1gS411w7r1">creo11.0草绘第四课：草绘点中心线坐标直线链矩形</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1Bb421n7XJ">creo11.0草绘第五课：草绘圆，圆弧与圆锥圆弧</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1m1421b7o3">creo11.0草绘第六课：草绘椭圆.倒圆角.倒角</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV17z421q7GN">creo11.0草绘第七课：草绘文本.投影偏移与加厚</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1AZ421u7Wt">creo11.0草绘第八课：草绘.样条曲线</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV13w4m1Y7zz">creo11.0草绘第九课：移动.伸缩.调整.拐角.删除段.分割.镜像与修改</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1rb421E7F1">creo11.0草绘第十课：剪切.复制.粘贴.外部导入，定义选项板.替换.转换，过滤</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1Tf421q71L">creo11.0草绘第十一课：草绘几何约束</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1px4y1x7vc">creo11.0草绘第十二课：草绘.标注上</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1ay411i7Bi">creo11.0草绘第十三课：草绘.标注下</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1QM4m127wc">creo11.0草绘第十四课：草绘.综合练习一</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1Mi421Y7U1">creo11.0草绘第十五课：草绘.综合练习二</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1US42197rP">creo11.0草绘第十六课：草绘.综合练习三</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV11Y4y1Y7jc">Creo6.0草绘练习-入门基础教程</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1YA41137aA">creo6.0基础教程-草绘教学</a></p>
+</li>
+</ul>
+<h4 id="Creo拉伸"><a href="#Creo拉伸" class="headerlink" title="Creo拉伸"></a>Creo拉伸</h4><ul>
+<li><p><a href="https://www.bilibili.com/video/BV1RCp2ezEtW">Creo11.0 拉伸命令详细介绍</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1Tt411e7YR">creo3.0拉伸指令精讲1</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/BV1ft411Y7U5">creo3.0 拉伸指令精讲2</a></p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>trending indices</title>
     <url>/indices/index.html</url>
     <content><![CDATA[<link rel="stylesheet" href="/css/indices.css">
@@ -3187,26 +2970,163 @@
 ]]></content>
   </entry>
   <entry>
-    <title>新闻</title>
-    <url>/news/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-
-<script type="text/javascript" src="/js/news/news.js"></script>
-<link rel="stylesheet" href="/css/news.css">]]></content>
-  </entry>
-  <entry>
-    <title>schedule</title>
-    <url>/schedule/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>经济大事年表</title>
+    <url>/economyTime/index.html</url>
+    <content><![CDATA[<p>资料来源：<a href="https://mp.sohu.com/profile?xpt=QUY2NUEzMUEyQzkzNEQyODU3NTBCRDAzOTQ2NTQ0ODZAcXEuc29odS5jb20=&_f=index_pagemp_2&spm=smpc.content.author.3.1730360581519rdQLisA">高连奎财经学术平台</a></p>
+<p>大约公元前387至公元前371年，雅典 色诺芬 在《经济论》一书中首次提出<strong>“经济”</strong>一词。1613年，意大利商人安东尼奥·塞拉（Antonio Serra),出版的小册子《论缺乏文献 矿产的国家金银丰裕的原因》被视为重商主义的第一份文献。</p>
+<p>1559年，英国托马斯.格雷欣公元发现“劣币驱逐良币”的经济规律，他发现市场上流通的是金属铸币，时间长了，人们发现足值与不足值的铸币可以一样使用，于是，人们就把成色好的足值货币（良币）储藏起来，而把不足值的铸币（劣币）赶紧花出去。结果，劣币把良币赶出了市场。</p>
+<p>1662年，英国经济学家威廉·配第配第写成《税赋论》，<strong>提出”公平”、”确实”、 “便利”和”节省”的税收四原则。</strong>威廉·配第是最先提出了劳动决定价值的基本原理，并在劳动价值论的基础上考察了工资、地租、利息等范畴，他把地租看作是剩余价值的基本形态，劳动价值论被亚当斯密、李嘉图、马克思产继承。</p>
+<p>1672年，威廉·配第写成《政府算术》，标志着统计学的诞生，该书认为所有的政府事务及与君主荣誉、百姓幸福和国家昌盛有关的事项都可以用算术的一般法则来证实。</p>
+<p>1690 年英国经济学家巴本最早表述效用价值观点， 认为一切物品的价值都来自它们的效用，无用之物便无价值。</p>
+<p>1729 年，美国经济学家富兰克林发表《纸币性质 和必要性初探》 , 认为商品交换不过是劳动与劳动交换， 一切商品价值都可以用劳动来衡量。</p>
+<p>1736年，法国汉学家，经济学家魁奈发表《动物经济论》，提出“自由放任”的经济主张和人的社会性的主张。</p>
+<p>1755年，爱尔兰裔法国经济学家理查德·坎蒂隆出版《商业性质概论》提出“企业家”的概念，把当时除君主和地主以外的居民分为企业家和受雇者两个阶层。</p>
+<p>1758年，法国汉学家，重农学派领袖魁奈《经济表》在经济学中第一次制定了社会总产品的再生产和流通的图解，并且在“纯产品”的概念下研究了剩余价值，并把剩余价值起源的研究从流通领域转到直接生产领域，为科学地分析资本主义经济奠定了基础。马克思称其是政治经济学一切思想中最有天才的思想。</p>
+<p>1764年，斯密受布克莱公爵之邀，英国经济学家亚当斯密离开格拉斯哥大学，到欧洲大陆旅行。旅行的经历以及在旅行过程中同许多著名大陆学者的交往，促使斯密经济理论走向成熟，尤其是重农主义的经济学家魁奈对他影响很大。</p>
+<p>1767年，法国汉学家，重农学派领袖魁奈出版论文集《重农主义，或最有利于人类的管理的自然体系》，为了表明他的思想源自中国，特意将出版地点写成北京，魁奈被马克思誉为现代政治经济学始祖。</p>
+<p>1768年，法国重农学派经济学家杜尔哥在研究农业过程中发现了边际递减定律，农业中的产量，可以随劳力投入规模的扩大而增加，但这种增长是有一个极限的，农产品产量先是递增，进而达到最大值，然后增量减少的变动规律。这就是“边际效益递减”规律。</p>
+<p>1769年，法国汉学家，重农学派领袖魁奈出版了《中华帝国的专制制度》中提出了“自然秩序”思想，认为中国是一个遵循自然法，建立在自然秩序基础上的国家，自然秩序思想后来被奥地利学派继承，1966年9月，奥地利学派经济学家哈耶克在东京作《自由主义社会秩序诸原则》的演讲时提出自然秩序就是中国老子所言的“我无为，而民自化，我好静，而民自正”。</p>
+<p>1776，法国经济学家杜尔哥出版著作《关于财富的形成和分配的考核》提出土地、资本、劳动的生产要素概念，杜尔哥认为，资本家是通过垫支资本，使用别人的劳动而取得利润。雇佣工人是在劳动者与生产资料相分离的时候产生，工人出卖劳动的代价是工资。杜尔哥还提出<strong>“主观效用”</strong>理论</p>
+<p>1776年，亚当-斯密出版《国民财富的性质和原因的研究》一书，最先提出“分工、“看不见的手”概念，亚当·斯密并不是经济学说的最早开拓者，但是他首次提出了全面系统的经济学说，《国富论》是现代政治经济学研究的起点，标志着古典自由主义经济学的正式诞生。</p>
+<p>1777 年，英国经济学家 J. 安德森在《谷物法本质的 研究》 一书中， 论述级差地租理论的基本特征，是级差地租理论的创始人。</p>
+<p>1778年，意大利经济学家孔迪亚克在出版的《谈商业与政府关系》一书中，就提出了效用价值观，他认为价值是经济学的中心问题，而效用则是价值的源泉。</p>
+<p>1789 年，英国经济学家边沁出版《道德和立法原理导 论》 一书， 阐述功利主义原理， ,功利主义的思想可以概括为最大程度的幸福原 ，认为社会应引导人们的行为使 之促进大多数人的最大幸福,而制止在追求个人幸福的过程中,损害社会的整体幸福 的行为，功利主义主张阶级调和。政府采取行动将富人的钱通过再次分配转移到穷人身上将增加社会的总效用。边沁的政府干预理论还直接为一百多年后的欧美资</p>
+<p>本主义国家实行混合经济和福利制度的大规模“和谐”建设提供了理论准备。</p>
+<p>1798 年英国 T. R. 马尔萨斯匿名发表 《人口原理》 一书， 认为人口 以几何比率增加， 生活资料以算术比率增加， 于是出现饥馑、 贫困、 疾病和战争。</p>
+<p>1803年，萨伊出版《论政治经济学，或略论则一富是怎样产生、分配和消费的》一书，该书将政治经济学的研究对象分为三部分:生产、分配和消费,形成了”三分法”， 穆勒加上了“交换”,形成了“四分 法”，成为了近代经济学体系的首创者，萨伊定律中的思想也源于此书，萨伊定律为凯恩斯命名，核心思想最早由亚当斯密的老师，苏格兰哲学之父弗朗西斯·哈其森提出。</p>
+<p>1819年，西斯蒙第发表《政治经济学新原理》，提出“消费不足”理论，指出小生产的破产和社会分配不公使广大人民收入不足，收入不足使消费不足而产生经济危机，他的“消费不足”理论对马克思和凯恩斯产生影响。</p>
+<p>1833年，英国经济学家W.F.劳埃德提出边际效用价值论，商品价值只表示人对商品的心理感受，不表示商品某种内在的性质;价值取决于人的欲望以及人对物品的估价，会随物品数量的变动而变化，并在被满足和不被满足的欲望之间的边际上表现出来，他实际上区分了总效用和边际效用这两个概念，而且暗示物品价值取决于边际效用。</p>
+<p>1836年，英国西尼尔《政治经济学大纲》提出了“纯经济理论”，西尼尔提出政治经济学脱离所有的价值判断、政策建议和增加福利的努力，应该集中精力分析财富的生产和分配，他认为经济学家的任务是阐释原理，而不是提供政策建议。另外书中还提出“节欲论”，认为资本家的利润来自资本家省吃俭用，该书为资产阶级辩护经济学的经典之作，促进了“政治经济学”向“经济学”转变，经济思想史称之为古典经济学向新古典经济学的转变，马克思成为经济学的庸俗化。</p>
+<p>1838年，法国经济学家古诺出版《财富理论数学原理的研究》，他认为某些经济范畴、需求、价格、供给可以视为互为函数关系从而有可能用一系列的函数方程表述市场中的关系，并且可以用数学语言系统地阐述某些经济规律，库尔诺最早提出需求量是价格的函数这个需求定理，并建立了分析寡头的双头模型，这书常被当做数理经济学的开端，古诺被称为数理经济学之父，并且发明了均衡概念。</p>
+<p>1839 年，英国空想社会主义者布雷发 表《对劳动的迫害及其救治方 案》 一书， 主张“等量的劳动 应该得到相等的报酬”， 最早使用“按劳分配”一词。</p>
+<p>1840年，经济学家森捏提出知识资本概念</p>
+<p>1841，李斯特在《政治经济学的国民体系》提出了完整的国家主义经济学说，影响最深远的是”幼稚工业保护论”，对于遏止“亚当·斯密学说”对德国工业的威胁起到了只手擎天的作用，另外还提出生产力理论以及发展国民生产力的观点。</p>
+<p>1843年德国经济学家威廉·罗雪尔发表的《历史学派的经济学宣言》 一文标志着德国历史学派正式形成，“历史的方法”是与“”哲学的方法”相对的，前者是哲学家尽可能抽象地去寻求概念或理论的体系，抛去了一切时间和空间的规定；历史的方法绝不轻率地赞赏或非难某一特定的制度，因为从来没有过一种制度对一切国民，在所有文化阶段都是有效的或都是有害的，应该事物本身发展的过程。</p>
+<p>1843年，英国经济学家穆勒出版《逻辑体系》一书，提出了著名的穆勒“五法”，是指判明因果联系的五种逻辑方法，即求同法、求异法、求同求异并用法、共变法和剩余法，当时逻辑学领域的扛鼎巨作。</p>
+<p>1848 年，英国经济学家穆勒出版著作《政治经济学原理》，该书指出再分配不是收入的再分配,而是财富的再分配，也就是在赞同企业家赚取利润的同时，欢迎以“利润分享”和“生产者合作”作为提高工人财富的手段，穆勒还提出了自然垄断的概念，是指由于自然资源的分布特性使得竞争无法展开的情形。该书是经济思想史上的第一次大综合</p>
+<p>1854年，德国经济学家戈森出版《人类交换规律与人类行为准则的发展》提出了“戈森定律”，即边际效用递减规律和效用最大化规律(边际效用相等规律)，为边际效用学派的产生奠定了基础，戈森被视为边际学派的直接先驱者。</p>
+<p>1863年3月，德国工人运动领袖拉萨尔发表了 《给筹备莱比锡全德工人代表大会的中央委员会的公开答复》以反讽的方式，将资产阶级政府称为“守夜人政府”，这一概念后来被奥地利学派的米塞斯继承，米塞斯在《自由与财产》中提到在市场经济体制下，个人可以自由选择任何一种他们想要整合于其中的社会合作结构的活动方式。只要存在着市场交换，就有自发的个人行为。这种体制被称作自由放任主义，正如拉萨尔所说的“守夜人政府”那样，在此体制下，有自由存在，是因为个人可以自主地计划自己。 另外米塞斯在《闭关自守及其后果》中也提到只要每个国家都坚定地坚持民主和资本主义的政策的社会–经济制度中，政权不是万能的上帝，而不过是—-正如拉萨尔轻蔑地说的—-“守夜人”。</p>
+<p>1867 年，马克思的《资本论》 第一卷在德 国汉堡出版。 书中揭示了剩余价值的来源，分析了剩余 价值生产过程和资本积累过程， 说明了资本主义的历史趋势，这部著作的出版标志着马克思 主义经济学说已经形成，是世界共产主义运动及社会主义国家建立的理论源泉。</p>
+<p>1871年，英国经济学家杰文斯出版的《政治经济学理论》中，利用导数表述边际效用概念，借助数学推理论证了两种商品之间交换的均衡价格是怎样决定的。</p>
+<p>1872年发表《信用的理论》一书，力倡信用创造的学说。</p>
+<p>1874年法国的瓦尔拉斯在出版的《纯粹政治经济学纲要》一书中，以边际效用价值论为基础，考察了市场上所有商品的供给、需求和价格相互依存、相互制约，达到均衡状态的价格决定过程，创建了一般均衡论的理论体系，瓦尔拉斯的一般均衡理论后经帕累托、希克斯、谢尔曼、萨缪尔森、阿罗、德布鲁以及麦肯齐等经济学家的改进和发展之后，形成为现代一般均衡理论。瓦尔拉斯还进行了企业家和资本家的区分，还把市场被分为产品市场和要素市场，企业家把这两个市场连接起来并通过竞争实现均衡。</p>
+<p>1898年，瑞典经济学姐威克塞尔在《利息与价格》中提出“累积过程理论”也被称为”货币价格理论”、”经济周期理论”，是第一次从货币角度解释经济周期，认为货币利率低于自然利率（资本边际收益率）造成的经济向上累积扩张，货币利率高于自然利率（资本边际收益率）造成的向下累积紧缩，这是经济波动的根本原因，解决经济波动的根本出路就在于调节货币利率与自然利率（资本边际收益率）一致，该理论成为奥地利学派经济周期理论的来源。</p>
+<p>1890年，马歇尔的《经济学原理》出版，独创运用均衡价格分析方法依次研究各个生产要素，即用上升的供给曲线和下降的需求曲线分析收入、成本的变化对价格的影响，提出了局部均衡，价格弹性，消费者剩余等经济学概念，并且把萨伊的生产三要素扩充为生产四要素，即劳动、资本、土地，组织。他提出的消费者剩余概念是指消费者在购买一定数量的某种商品时愿意支付的最高总价格和实际支付的总价格之间的差额。</p>
+<p>1897年，英国经济学家埃奇沃斯在其经典论文《赋税的纯理论》中提出累进所得税，通过累进的所得税可以实现收入再分配，可以实现整体社会福利最大化。1909年，英国财政大臣乔治在其“人民预算”中首次使用累进所得税。</p>
+<p>1901年，意大利贵族经济学家帕累托出版《精英的兴衰》，该书认为人类社会始终存在资源分配不平等，在任何社会中，总存在着被统治的广大群众与占统治地位的一小部分人之间的分离和对立，精英阶层只能循环，不可能退出统治阶层，其他人只能依附于精英而被统治，因此反对民主和平等，该书是世界法西斯主义的思想来源，帕累托晚年也归附法西斯主义，帕累托当年对意大利20%的人口拥有80%的财产的观察被美国管理学家约瑟夫·朱兰演绎成著名的“二八法则”。</p>
+<p>1906年，意大利经济学家帕累托出版《政治经济学教程》一书，在序数效用论的基础上，借助序数效用指数和”无差异曲线”等概念，论证了一般均衡理论，并且提出“帕累托最优”即在没有使任何人境况变坏的前提下，使得至少一个人变得更好。</p>
+<p>1912年，奥地利经济学家熊彼特提出破坏式创新的概念，他把创新视为不断地从内部革新经济结构，即不断破坏旧的，不断创造新的结构。他还认为创新就是企业家对生产要素的新组合，即“建立一种新的生产函数”，其目的是为了获取潜在的利润。创新就是让过去的固定资产设备和资本投资过时、无效，或者贬值，通过创新产生大量新的资本(利润)来弥补这些贬值和无效。1997年，美国哈佛大学商学院创新理论大师克莱顿·克里斯滕森教授在其名著《创新者的两难》一书又重提此理论，让此理论普及。</p>
+<p>1913年，艾伯特·阿夫塔里昂（Albert Aftalion）的《生产过剩的周期性危机》，提出加速原理，后来成为宏观经济学的重要内容，加速原理是指收入或消费增加会引起投资增加，相反在经济危机的条件下,生产和销售量下降，加速原理的作用会使得投资急剧下降。</p>
+<p>1916年，瑞典经济学家卡塞尔系统地提出：两国货币的汇率主要是由两国货币的购买力决定的，即：购买力平价说，简称PPP理论。</p>
+<p>1919 年，赫克歇尔在《对外贸易对收入分配的影响》一文中， 首先提出了要素禀赋差异是贸易基础的观点。</p>
+<p>1920年，英国庇古出版 《福利经济学》，庇古被称为”福利经济学之父”，庇古首次度系统地研究了外部性问题，认为导致市场配置资源失效的原因是经济当事人的私人成本与社会成本不相一致，在马歇尔提出的”外部经济”概念基础上扩充了”外部不经济”的主张。</p>
+<p>1921年出版的《银行信用》一书中最先使用原始存款和派生存款这一对概念。</p>
+<p>1927 年，法国学者阿夫达里昂（A.Aftalion）年提出汇兑心理说，他认为人们之所以需要外币，是为了满足某种欲望，如支付、投资、投机等等。这种主观欲望是使外国货币具有价值的基础。</p>
+<p>1928年，著名经济学家庇古在他出版的《财政学研究》一书中第一次使用转移支付这一概念，转移支付是指政府或企业无偿地支付给个人以增加其收入和购买力的费用，是一种收入再分配形式。</p>
+<p>1928年，冯·诺依曼证明了博弈论的基本原理，从而宣告了博弈论的正式诞生。</p>
+<p>1928年，费雪提出货币幻觉的概念，论述了通货膨胀给人们所带来的心理错觉效应。因为货币幻觉的存在，宽松的货币政策(通货膨胀)才能减少失业，刺激经济增长凯恩斯也指出，受货币幻觉的影响，工人不愿意接受名义工资下调的行为，从而导致工资刚性。</p>
+<p>1930年，由美国的舒尔茨、意大利的里西和荷兰的丁伯根各自提出蛛网理论，是一种引入时间因素考察价格和产量均衡状态变动过程的理论。1934年，经英国的卡尔多定名为蛛网理论。这是因为均衡变动过程反映在二维座标图上，其形如蛛网，所以称为蛛网理论。</p>
+<p>1930年，美国经济学家西蒙·库兹涅兹在《生产和价格的长期运动》一书中提出库兹涅兹周期，库兹涅兹认为经济中存在长度为15–25年不等的长期波动。这种波动在美国的许多经济活动中，尤其是建筑业中表现得特别明显，所以库兹涅茨周期也称为建筑业周期。</p>
+<p>1931年英国经济学家卡恩提出宏观经学中“乘数”的概念，乘数反应的是投资和收入之间存在倍数关系，由于各经济部门是相互关联的，所以某一部门的一笔投资不仅会增加本部门的收入，而且会在国民经济各部门中引起连锁反应，从而增加其它部门的投资和收入，最终使国民收入成倍地增长。</p>
+<p>1932 伯利和米恩斯在《现代公司与私有产权》一书中出“委托代理理论”，倡导所有权和经营权分离，企业所有者保留剩余索取权，而将经营权利让渡。“委托代理理论”早已成为现代公司治理的逻辑起点，美国哥伦比亚大学教授威廉·维克里和英国牛津大学教授詹姆斯·莫里斯，由于引入“激励相容”的概念，开创了信息不对称条件下的激励理论—委托代理理论，获得了1996年度的诺贝尔经济学奖。</p>
+<p>1932年，欧文·费雪在《繁荣与萧条》一书中，首次提出了“债务-通货紧缩”理论来解释大萧条，首先是由于新发明等产生的新投资机会，引起企业规模巨大的过度负债，接下来出现债务清偿，然后如果没有再通胀政策的反向作用，出现一般价格水平下降或者货币的购买力升值，在货币升值的速度超过名义债务偿还速度的情形下，债务清偿不但不能彻底地清偿债务，反而使得尚未偿还的名义债务的真实规模加大，并且认为经济主体的过度负债和通货紧缩这两个因素会相互作用、相互增强，从而导致经济衰退甚至引起严重的萧条。</p>
+<p>1933 年，英国 罗宾逊发表《不完全竞争经济学》， 与同年出版的美国张伯伦的《垄断竞争理论》 一并被认为奠定了西方现代价 格理论的基础。 ·</p>
+<p>1933年,挪威经济学家弗瑞希首次提出“宏观经济学”的概念。</p>
+<p>1934年，希克斯和艾伦在《价值理论的再思考》论文中提出“序数效用论”，认为效用作为一种心理现象是无法计量的，因为不可能找到效用的计量单位;他们运用埃奇沃思发明的“无差异曲线”对效用进行了重新诠释，认为消费者在市场上所做的并不是权衡商品效用的大小而只是在不同的商品之间进行排序。这就是所谓的序数效用论。</p>
+<p>1935 年，英国费希尔首次提出第三产业的概念。</p>
+<p>1936 年，英国经济学家凯恩斯的 《就业、 利息和货币通论》 一书出版， 否认“供给创造需求” 的萨伊定律， 提出有效需求决定就业量的理论以及货币学中流动性陷阱理论，也是资产市场的“股票选美”理论，行为经济学中“动物精神”理论的源头。</p>
+<p>1936年，列昂剔夫发表了《美国经济体系中的投入产出的数量关系》一文，接着在1941年又出版了《美国经济结构1919—1929》一书，1953年，又出版了《美国经济结构研究》一书。在这些著作中，列昂剔夫提出了投入产出方法。</p>
+<p>1937年，英国经济学家希克斯在《凯恩斯先生和古典学派》一文中首先使用IS—LM图形对 《通论》的部分内容作了重新表述,这个表述，美国经济学家汉森1949年在《货币理论和财政政策》一书中把财政政策变量引进到IS—LM模型,故该模型又称为“希克斯—汉森模型”，其中I代表投资，S代表储蓄，L代表货币需求，M代表货币供给。</p>
+<p>1937年科斯发表了《企业的性质》一文，提出交易成本理论，科斯首次提出”交易费用”来解释企业存在的原因以及企业扩展的边界问题，科斯认为当市场交易成本高于企业内部的管理协调成本时，企业便产生了，企业的存在正是为了节约市场交易费用当市场交易的边际成本等于企业内部的管理协调的边际成本时，就是企业规模扩张的界限，科斯开创的交易成本经济学在1975被后继者威廉姆森称为新制度经济学。</p>
+<p>1937年，库兹涅茨出版了他的专著——《国民收入和资本构成》，书中概括地说明了国民收入和国民生产总值的定义和估算方法，库兹涅茨获得1971年诺贝尔经济学奖。</p>
+<p>1938年，哈其森出版的《经济理论的定义和基本前提》，第一次将波普尔的证伪主义方法论准则引入到经济学争论中，经过以萨谬尔森为代表的麻省工学院和以弗里德 曼为代表的芝加哥学派的运用和大力阐释，逐渐成为20世纪经济学方法论的主流。</p>
+<p>1939 年，英国经济学家希克斯于出版了《价值与资本》一书，对效用的研究提出了“无差异曲线”的序数效用 分析，取代了传统的基数效用分析，无差异曲线分析将瓦尔拉斯和帕累托创立的 福利经济学大大推进了一步，并推广了一般均衡论。希克斯还在书中提出替代效应的概念，是指实际收入不变的情况下某种商品价格变化对其替代品需求量的影响。。他提出了无差异曲线的新方法和替代效应的概念，使一般均衡论获得了重要的发展。可以说，微观经济学，只是到了希克斯手中，才有了更为成熟的理论体系和方法。</p>
+<p>1939年，卡尔多发表的《经济学福利命题与个人之间的效用比较》论文，提出了“卡尔多补偿原则”作为其检验社会福利的标准。他认为，市场价格总是在变化的，价格的变动肯定会影响人们的福利状况，即很可能使一些人受损，假使使受损失的人从得益者那里得到补偿后，每个人的状况比变化前都有所改善，即可判断这一经济变化，使整个社会的福利得到了提高，也就表明总的社会福利增加了，简言之，卡尔多的福利标准是看变动以后的结果是否得大于失。</p>
+<p>1941年，哈佛大学经济学家汉森出版《财政政策与经济周期》提出补偿性财政政策，指政府以繁荣年份的财政盈余补偿萧条年份的财政赤字,以缓解经济的周期性波动，达到财政平衡。</p>
+<p>1941年，汉森在1941年发表的《财政政策和经济周期》中,还提出了“混合经济”的概念，混合经济是指既有市场调节又有政府干预。</p>
+<p>1944年，英国剑桥大学经济学家斯通和米德合写了《国民收入和支出》一书，是最早的国民收入核算的标准教科书，斯通担任主席，1953年，斯通担任主席的联合国专家委员会推出《国民经济核算体系及辅助表（1953年）》</p>
+<p>1946～1948 年，英国哈罗德和美国多马首先提出现代经济增长理论，亦称哈罗德-多马增长模型。模型认为增长率经济增长率随储蓄率增加而提高，哈罗德以凯恩斯的收入理论为为基础提出的，使凯恩斯静态的理论动态化、使短期的理论长期化，哈罗德也是凯恩斯传的作者，该模型的提出拉开了战后经济学家研究增长理论的序幕。</p>
+<p>1947年德国经济学家米勒—阿玛克提出了社会市场经济的概念，社会市场经济是一种以市场经济为主、国家调节为辅的经济政策，指国家在不妨碍企业自主经营的条件下，对经济进行某些干预和控制，会更充分地发挥市场经济的调节作用，比如政府通过发展社会福利，在一定程度上克服由于市场经济无节制发展所存在的贫富悬殊、失业、经济危机、通货膨胀等社会弊病。</p>
+<p>1950年，约翰·纳什在其博士论文中提出后来被称为“纳什均衡”的博弈理论，又为非合作博弈均衡，在一个博弈过程中，无论对方的策略选择如何，当事人一方都会选择某个确定的策略，则该策略被称作支配性策略。如果两个博弈的当事人的策略组合分别构成各自的支配性策略，那么这个组合就被定义为纳什平衡，纳什平衡理论奠定了现代主流博弈理论和经济理论的根本基础，同年年，艾伯特·塔克以以囚徒方式阐述非合作博弈， 并命名为“囚徒困境”，囚徒困境是博弈论的非零和博弈中具代表性。</p>
+<p>1950年英国经济学家约翰·理查德·希克斯在《经济周期理论》(A Contribution to the 一书中提出经济危机的四阶段理论，分别是复苏、繁荣、衰退和萧条四个阶段，该书还明确了乘数加速原理导致经济周期的规律。</p>
+<p>1951年，美国经济学家肯尼斯·约瑟夫·阿罗在他的《社会选择与个人价值》一书中提出“阿罗不可能定理”，阿罗采用数学的公理化方法对通行的投票选举进行研究，发现随着候选人和选民的增加，“程序民主”必将越来越远离“实质民主”。</p>
+<p>1952年美国经济学家哈里·马科维茨发表《资产选择》一文提出资产组合理论，该理论认为以投资资产以组合为基础，配合投资者对风险的态度，进而进行资产选择，最佳投资组合应当是具有风险厌恶特征的投资者的无差异曲线和资产的有效边界线的交点。哈里·马科维茨与威廉·夏普和默顿·米勒同时荣获1990年诺贝尔经济学奖1954年，美国经济学家萨缪尔森在《公共支出的纯理论》一文中着首次提出公共物品的概念。公共物品与“私人物品” 对称，是指不能由私营部门通过市场提供而必须由公共部门以非市场方式提供的物品或劳务。公共物品具有三个方面的特性分别是效用的不可分割性、消费的不排他性和受益的不可阻止性。</p>
+<p>1954年，欧洲经济学家莫迪利亚尼提出消费与储蓄的生命周期假说，这一假设在研究家庭和企业储蓄中得到了广泛应用，假说则强调当前消费支出与家庭整个一生的全部预期收入的相互联系。该理论认为，每个家庭都是根据一生的全部预期收入来安排自己的消费支出的，即每个家庭在每一时点上的消费和储蓄决策都反映了该家庭希望在其生命周期各个阶段达到消费的理想分布，以实现一生消费效应最大化的企图。因此，各个家庭的消费取决于他们在两个生命期内所获得的总收入和财产。这样，消费就取决于家庭所处的生命周期阶段。</p>
+<p>1955年，美国经济学家库兹涅茨所提出来的收入分配状况随经济发展过程而变化的曲线，又称作”库兹涅茨曲线”，认为收入分配的长期变动轨迹是“先恶化，后改进“。形状是倒U型，所以也叫倒U曲线，该曲线所表明的收入分配变化状况与实证研究并不完全符合，所以也常常被称作“倒U假说”。</p>
+<p>1956年，美国麻省理工学院经济学家弗朗西斯 巴托在《市场失灵的剖析》一文中提出来“市场失灵”的概念，市场失灵的原因包括垄断、外部性、公共物品和不完全信息等因素。 市场失灵和公共物品概念的提出标志着市场万能理论在经济学专业学术界不再被人认可。</p>
+<p>1958年，新西兰经济学家菲利普斯根据英国1861－1913年间失业率和货币工资变动率的经验统计资料总结出的一条失业与通货膨胀存在一种交替关系的曲线，菲利普斯曲线表明，通货膨胀率高时，失业率低；通货膨胀率低时，失业率高。</p>
+<p>1958年，科斯写了一篇名为《联邦通讯协议》的论文，他在这篇文章中明确指出，只要产权不明确，由外在性带来的公害是不可避免的，只有明确产权，才能消除或降低这种外在性所带来的伤害，这成为新制度经济学中产权理论研究的起点。</p>
+<p>1959年哈佛大学贝恩出版的《产业组织》一书为标志着现代产业组织理论的建立，产业组织一词源于马歇尔。</p>
+<p>1964年美国行为学家维克托·弗鲁姆于在《工作与激励》中提出期望理论，认为激励力的大小取决于该行动所能达成目标的全部效用与达成该目标的概率。</p>
+<p>1956年，索洛和斯旺在发表的《经济增长的一个理论》和《经济增长与资本积累》等论文中首先提出新古典增长模型，该模型认为进步是外生的，但劳动力能从技术进步中获益，最终提高生产率，促进经济增长，一方面资本驱动的增长因为资本边际收益递减所有国家长期上要增长，最终取决于外生的技术进步。</p>
+<p>1957 年 · 美国经济学家弗里德曼在《消费函数理 论》 中， 引进人力资本概念”和“恒久性收入” 概念。，恒久收入指社会成员在相当长时期内的平均收入或正常收入，或理解为一个人各年人们收入的加权平均数，主要是区别与凯恩斯的收入，凯恩斯收入支出模式中的收入，主要是指当年实际获得的收入。</p>
+<p>1958年，美国经济学家赫希曼在其著作《经济发展 战略》中提出了不平衡增长理论，主张发展中国家应集中有限资源先发展一部分产业，而后再以此带动其他产业的发展。提出了“极化效应”和“涓 滴效应” 并指出在经济发展的初级阶段极化效应占主导地位，但从长期看涓滴效应将会缩小区域经济差距。</p>
+<p>1959年，美国经济学家奥斯本(M．F．M Osborne) 以布朗运动原理作为研究视角，提出了随机漫步理论，认为股票交易中买方与卖方同样聪明机智，股票价格形成是市场对随机到来的事件信息作出的反应，现今的股价已基本反映了供求关系。</p>
+<p>1960年，科斯在发表《社会成本问题》论文，引出科斯定理，科斯认为经济的外部性或者说非效率可以通过当事人的谈判而得到纠正，从而达到社会效益最大化。也有人演绎为“只要财产权是明确的，并且交易成本为零或者很小，那么，无论在开始时将财产权赋予谁，市场均衡的最终结果都是有效率的，实现资源配置的帕累托最优”，这既不符合实际，也歪曲了科斯的意思。</p>
+<p>1960年赫维茨发表论文《资源配置中的最优化与信息效率》提出“机制设计理论”，是研究在自由选择、自愿交换、信息不完全及决策分散化的条件下，能否设计一套机制(规则或制度)来达到既定目标的理论。</p>
+<p>1961年，萨缪尔森他在《经济学》第五版中，把自己的理论体系称之为“新古典综合学派”，是将凯恩斯主义经济学进行均衡化改造形成的经济学，也被新剑桥学派称为冒牌的凯恩斯主义。</p>
+<p>1961年，约翰穆斯在一篇题 为《理性预期和价格变动理论》的文章中,最早提出了“理性预期”的概念，理性预期是在有效地利用一切信息的前提下，对经济变量作出的最为准确的合理明智的预期，70年代由芝加哥大学的R.E.卢卡斯和明尼苏达大学的T.J.萨金特和N.华莱士等人作出了进一步发展，并逐渐形成理性预期学派，理性预期学派认为消费者和企业使不仅是宏观经济政策的调节的对象，而且也以自己的理性预期的行为积极影响宏观经济政策的制定．他们对宏观政策的反应，决定着政策的效果。</p>
+<p>1961年,美国经济学家罗伯特·蒙代尔发表了《最优货币区理论》的论文，主张经济交往密切的国家和地区通过固定汇率或者统一货币的形式建立货币区,以抵消浮动汇率的不确定性，欧元区的建立就是该理论的最佳实践。</p>
+<p>1961年,美国经济学家乔治·斯蒂格勒发表于研究论文《信息经济学》提出搜寻概念，他指出某一买者要购买时，总要询问许多卖者以确定最合适的价格，这样的现象叫做搜寻，信息不对称和价格的离散性是搜寻的前提，搜寻理论后来主要用于分析劳动力市场，成为劳动经济学的主流理论。</p>
+<p>1961年，美国经济学家菲尔普斯经济增长黄金率，指出资本积累存在一个最优水平，如果一个社会储蓄率过高的话，就会导致降低人们的长期福利，经济增长的目的不是产出的不断扩张，而是人民生活水平的不断提高，是对索洛经济增长的动态最优化提出的理论。</p>
+<p>1962年，美国经济学家阿罗于提出了<strong>“干中学”模型</strong>，把从事生产的人获得知识的过程内生于模型。他从普通的劳动与资本的科布—道格拉斯常规模型收益生产函数，推导出一个规模收益递增的生产函数。阿罗认为，人们是通过学习而获得知识的，技术进步是知识的产物、学习的结果，而学习又是经验的不断总结，经验来自行动，经验的积累就体现于技术进步之上。</p>
+<p>1963年，美国斯坦福大学经济学家阿罗在《美国经济评论》上发表论文《不确定性和医疗保健的福利经济学》首次引入了“道德风险”和“逆向选择”两个重要概念，道德风险是在信息不对称条件下，不确定的经济行为主体不承担其行动的全部后果，在最大化自身效用的同时,做出不利于他人行动的现象。逆向选择，指的是这样一种情况，市场交易的一方如果能够利用多于另一方的信息使自己受益而对方受损时，信息劣势的一方便难以顺利地做出买卖决策，于是价格便随之扭曲，并失去了平衡供求、促成交易的作用，进而导致市场效率的降低。</p>
+<p>1963年，弗里德曼在出版《1867~1960年美国货币史》，提出政府应该保持定量的货币发行规模，施行单一稳定的货币政策，即单一规则。他根据美国近百年的货币资料的实证研究提出，美国的年平均经济增长率为3%，就业的年平均增长率为1%-2%，若货币供应量不增加，工资水平的增长率计算会下降1%-2%，再加上3%的年经济增长率作用，物价将下跌4%-5%，造成通货紧缩，消费减少。但若货币过多就会带来物价上涨，导致通货膨胀和经济混乱。因此，如果美国的货币供应量以每年4%-5%的速度稳定增长，就可望保持一个比较稳定的物价水平，避免经济波动。</p>
+<p>1963年，美国货币金融学家蒙代尔发表《资本流动与固定汇率和浮动汇率下的稳定政策》提出了著名的“不可能的三角定律”，又称“三元悖论”，从而全面地揭示了宏观经济的内在冲突。认为:“对于任何一个国家来说，资本账户自由化、固定汇率制以及自主的货币政策是不相容的，即三者不可兼得。如果一国已经实现资本账户自由化，那么它若要保持货币政策的自主性，就必须实行浮动汇率制;若要采用固定汇率制，就必须放弃自主的货币政策。”</p>
+<p>1963年，美国经济学家明斯基发表论文《“它”能再来吗?》开始关注金融不问题问题。1974年他首次提出“金融不稳定假说”。明斯基认为经济波动下降将允许企业和家庭获得更多贷款进行投资，过度杠杆率无法通过更加乐观的情绪来维持，会产生投机的陶醉感，于是，此后不久，当债务超过了债务人收入所能偿还的金额时，金融危机就随之产生了。金融市场的脆弱性与投机性投资泡沫内生于金融市场，是产生经济周期所不可或缺的组成部分，他将金融危机分为三个阶段，第一阶段，投资者们负担少量负债，偿还其资本与利息支出均无问题，这一阶段称为对冲性融资。第二阶段，他们扩展其金融规模，以致只能负担利息支出，这一阶段称为投机性融资。第三阶段，即庞氏骗局，他们的债务水平要求不断上涨的价格水平才能安然度日，可以称为庞氏融资，衍生名词，明斯基时刻指是市场繁荣与衰退之间的转折点。</p>
+<p>1964年，经济学家贝拉巴拉萨(Bela Balassa)与萨缪尔森同时发现一个国家经济增长越快，汇率升职越快的经济现象，在国际金融学中被命名为巴拉萨-萨缪尔森定律，核心内容是成功的经济发展会引起实际汇率的升值。</p>
+<p>1964年，威廉·夏普将马克维茨的分析方法发展为著名的“资本资产定价模型”，在模型中，夏普把马克维茨的选择理论中的资产风险进一步分为资产的“系统风险和“非系统”风险两部分。前者是由总体股价变动引起的某种资产的价格变化，后者则是由影响股价的某些特殊要素引起的资产价格变动。夏普提出一个重要理论是，投资的多样化只能消除非系统风险，而不能消除系统风险。</p>
+<p>1966年美国哈佛大学经济学家蒙德·弗农提出了产品生命周期假说，认为一种新产品从开始进入市场要经历一个引进、成长、成熟、衰退的阶段，而这个周期在不同的技术水平的国家里，发生的时间和过程是不一样的，期间存在一个较大的差距和时差。</p>
+<p>1967年，赫奇曼(Hekimmian)和琼斯(Jones)于提出的机会成本概念，机会成本是指其丧失的机会成本，人力资本的价值应该与其机会成本而不是会计成本直接相关。</p>
+<p>1967，,美国经济学家贝拉巴拉萨提出垂直专业化分工的概念，是指各国中间品贸易不断增加，跨国垂直贸易链不断延长，每个国家只在商品生产的某个或某几个生产环节进行专业化生产的分工与贸易现象，垂直分工与水平分工相对，亚当斯密的分工思想是水平分工。</p>
+<p>1967年，美国经济学家戈登·图洛克(Gordon Tullock，被称为寻租理论之父)在论文，《关于税、垄断和偷窃的福利成本》中提出“寻租”概念。他的观点是，他认为税收、关税和垄断所造成的社会福利损失大大超过了通常的估算。其原因是人们会竞相通过各种疏通活动，争取收入，即寻租，也就是为了取得额外的收益而进行的疏通活动。后来安妮·克鲁格、布坎南等公共选择学者在此基础上进行研究，形成寻租理论。</p>
+<p>1967 年，鲍莫尔提出结构性通货膨胀理论，他把经济活动分为两个部分：一是劳动生产率不断提高的先进部门（工业部门）；二是劳动生产率保持不变的保守部门（服务部门）。当前者由于劳动生产率的提高而增加货币工资时，由于攀比，后者的货币工资也以同样的比例提高。在成本加成定价的通常做法下，整个经济必然产生一种由工资成本推进的通货膨胀。因此，在经济结构的变化中，某一部门的工资上升，将引起其他部门向它看齐，从而以同一比例上升。</p>
+<p>1968年，卡尔·布伦纳于使用”货币主义”一词来表达弗里德经济学流派的基本特征，此后被广泛沿用于经济学文献之中。货币主义的代表人物在美国主要有弗里德曼、哈伯格、布伦纳和安德森等人，在英国有莱德勒和帕金等人。</p>
+<p>1968年，英国人类生态学家加勒特·哈丁教首先提出“公地悲剧”概念，公地悲剧”说明的是由于产权不明，使得企业和个人使用公共资源被过度使用，个人在利用公共资源时存有私心。如亚里斯多德所言：“那由最大人数所共享的事物，却只得到最少的照顾”，后来公地悲剧成为新制度经济学中的重要名词。</p>
+<p>1968年，弗里德曼和哥伦比亚大学教授埃德蒙·费尔普斯同时提出自然失业率概念，指在没有货币因素干扰的情况下，让劳动市场和商品市场总需求与总供给处于均衡状态下的失业率。　</p>
+<p>1970年，美国经济学家约瑟夫·斯蒂格利茨、乔治·阿克尔洛夫、迈克尔·斯彭斯提出“信息不对称”概念，指在社会政治、经济等活动中，一些成员拥有其他成员无法拥有的信息，由此造成信息的不对称。在市场经济活动中，各类人员对有关信息的了解是有差异的。</p>
+<p>1970年美国芝加哥大学金融学教授尤金·法玛并提出“有效市场假说”，提出如果在一个证券市场中，价格完全反映了所有可以获得的信息，那么就称这样的市场为有效市场，有效市场假说有一个颇受质疑的前提假设，即参与市场的投资者有足够的理性，并且能够迅速对所有市场信息作出合理反应。</p>
+<p>1970年，美国经济学家乔治·阿克尔洛夫发表了《柠檬市场:质量不确定和市场机制》的论文，成为研究信息不对称理论的最经典文献之一，开创了逆向选择理论的先河。</p>
+<p>1972年，美国经济学家托宾提出托宾税，他普林斯顿大学演讲中首次提出的，他建议”往飞速运转的国际金融市场这一车轮中掷些沙子”，该税种的提出主要是为了缓解国际资金流动尤其是短期投机性资金流动规模急剧膨胀造成的汇率不稳定，是抑制投机的税种。</p>
+<p>1973年，美国经济学家斯宾塞首先提出信号理论，信号理论是在信息不对称的前提下发展起来的，括信号传递和信号甄别两大方面，信号传递指通过可观察的行为传递商品价值或质量的确切信息，信号甄别指通过不同的合同甄别真实信息。二者的主要差别在于，前者是信息优势方先行动，后者是信息劣势方先行动，尽管存在信息不对称现象，但仍可以实现潜在的交易收益。在迈克·斯宾塞的模型教育本身并不提高一个人的能力，它纯粹是为了向雇主“示意”或“发出信号”。</p>
+<p>1974年，美国经济学家阿瑟·奥肯《平等与效率:重大的抉择》出版，将平等与效率纳入经济研究视野。</p>
+<p>1975年，美国经济学家戈登提出“核心CPI”的概念，从指CPI中扣除食品和能源价格的变化来衡量价格水平变化的方法。从1978年起，美国劳工统计局开始公布从消费价格指数和生产价格指数(PPI) 中剔除食品和能源价格之后的上涨率，此后，核心CPI逐渐成为美国宏观经济分析中较为常用的术语。</p>
+<p>1978 年，美国经济学家克鲁格曼在其博士论文《收益递增、垄断竞争与国际贸易》中首次证明了内部规模经济可以形成贸易基础，生产和需求条件完全相同的两国可以通过贸易获利。</p>
+<p>1973年，赫维奇发表论文《资源分配的机制设计理论》提出激励相容原理和显示性原理，奠定了机制设计理论的框架，激励相容是一种制度安排，使行为人追求个人利益的行为，正好与集体价值最大化的目标相吻合，显示性原理是说需要设计某种激励机制，诱导相关的人，暴露出真实信息与意图。激励相容概念的提出就把信息不对称问题转化为制度设计问题。</p>
+<p>1974年，美国经济学家拉弗年为了说服当时福特总统的白宫助理切尼, 即兴在华盛顿一家餐馆的餐巾纸上画的一条抛物线, 这就是著名的“拉弗曲线”, 所以被戏称为“餐桌曲线”。</p>
+<p>1979 年，美国普林斯顿大学心理学教授丹尼尔·卡内曼和阿莫斯·特沃斯基提出了 <strong>“展望理论”，也作 “前景理论”，</strong>是决策论的期望理论之一。人在不确定条件下的决策选择，取决于结果与展望（预期、设想）的差距而非单单结果本身。即人在决策时会在心里预设一个参考标准，然后衡量每个决定的结果，与这个参考标准的差别是多大。前景理论有两大定律，一是人们在面临获得时，往往小心翼翼，不愿冒风险；而在面对损失时，人人都变成了冒险家，二是人损失的痛苦要远远大于获得的快乐。</p>
+<p>1980年，塞勒吸收特沃斯基和卡内曼的“前景理论”，首提<strong>禀赋效应</strong>，该理论认为一定量的损失给人们带来的效用降低要多过相同的收益给人们带来的效用增加。因此人们在决策过程中对利害的权衡是不均衡的，对“避害”的考虑远大于对“趋利”的考虑。出于对损失的畏惧，人们在出卖商品时往往索要过高的价格。</p>
+<p>1981年，美国新制度经济学家发表《经济史中的结构与变迁》一书，提出“路径依赖”概念，路径依赖”类似于物理学中的惯性，事物一旦进入某一路径，就可能对这种路径产生依赖。这是因为，经济生活与物理世界一样，存在着报酬递增和自我强化的机制。这种机制使人们一旦选择走上某一路径，就会在以后的发展中得到不断的自我强化。真实经济周期理论否定了把经济分为长期与短期的说法，</p>
+<p>1982年，基德兰德和普雷斯科特提出《计量经济学》发表《建造时间和总量》波动”论文提出“真实经济周期”理论，任务经济波动主要是由一些对经济持续的实际冲击引起的。实际冲击包括大规模的随机技术进步或生产率的波动，这种波动引起相对价格波动，从而引起产出和就业的周期性波动。</p>
+<p>1985年，美国哈佛大学经济学家曼昆在《经济学季刊》上的论文《小的菜单成本与大的经济周期:一个垄断的宏观经济模型》，提出菜单成本的概念，菜单成本是指餐厅的菜单得花钱印刷，印好了就不会天天换，菜单成本指调整价格时所花费的成本，它包括：研究和确定新价格的成本、重新编印价目表的成本、通知销售点更换价格标签的成本等。菜单成本论又叫成本的价格调整论。菜单成本的存在阻碍了厂商调整价格，使得名义价格水平有了粘性。价格粘性是新凯恩斯理论的基石货币非中性一般被认为是由于价格粘性导致的。如果价格完全弹性，新凯恩斯理论预测货币政策瘵没有效果。</p>
+<p>1985年，塞勒提出<strong>“输者赢者效应”</strong>即投资者对表现较差的投资组合过分悲观，而对表现较好的投资组合过分乐观，导致股价受投资者情绪及历史表现的影响，进而价格偏离价值。</p>
+<p>1986年，美国新凯恩斯派经济学家罗默在世界顶级经济学期刊《政治经济学杂志》上发表了《规模报酬递增与长期增长》，将经济增长理论升级为“内生增长”理论，罗默则是因其将知识及技术变革引入经济增长，认为知识是一种公共品，一个人使用知识，并不妨碍别人使用知识，具有产生强大的正外部性，从而导致规模报酬递增的出现。一旦有了规模报酬递增，持续的增长也就成为了可能。</p>
+<p>1986年，美国经济学家哈特首次提出不完全契约理论，将企业看作是一个不完全契约，其中可以在事前契约中明确规定的权力称为特定权利，而无法规定的其它权利称为剩余权利或剩余控制权。双方先在事前签订一个初始契约，并投入专用性资产，然后等自然状态的不确定性出现之后再进行谈判。在再谈判时，当出现与初始契约没有规定的情况时，拥有剩余控制权的一方将负责做出决策。剩余控制权通常是财产权的所有者拥有的。</p>
+<p>1992年，日本学者小泽辉智提出动态比较优势理论，动态比较优势理论是指比较优势可以通过专业化学习、投资创新及经验积累等后天因素人为地创造出来，强调的是规模报酬递增、不完全竞争、技术创新和经验积累的理论。</p>
+<p>1993年，美国新凯恩斯经济学家泰勒发表《实践中的相机抉择和政策规则》总结出“泰勒规则”。泰勒规则主张用利率手段达成通胀目标，利率根据通胀率和产出变化调整。当产出缺口为正（负）和通胀缺口超过（低于）目标值时，应提高（降低）名义利率。</p>
+<p>1994年， 青木昌彦提出内部人控制的问题，指现代企业中的所有权与经营权相分离的前提下形成的，由于所有者与经营者利益的不一致，由此导致了经营者控制公司，即”内部人控制”的现象。</p>
+<p>2000年，希勒提出过度反应理论，该理论认为，投资者并非完全的“理性人，他们在其投资活动中会受到认识及情绪等因素影响，加强其投资心理与行为，使其投资活动程度超过理性投资程度，从而导致市场的过度反应。过度反应理论解释了在资本市场上，一些投资标的的价格与其内在价值长期存在较大差异的情况投资者对于受损失的股票会变得越来越悲观，而对于获利的股票会变得越来越乐观，他们对于利好消息和利空消息都会表现出过度反应。</p>
+<p>2004年,美国《连线》主编克里斯.安德森在一篇文章中首次提出了”长尾理论”,指出商品销售呈现出长尾形状，冷门商品的需求不会降到零点，但以前长尾商品，对于大多数企业不仅没有什么意义，反而容易使其走上破产的歧途，网络时代兴起后，何以前看似需求极低的产品，只要有卖，都会有人买。这些需求和销量不高的产品所占据的共同市场份额，可以和主流产品的市场份额相当，甚至更大。</p>
+<p>2004年，伯南克曾经发表了题为《大缓和》的演说，提出大缓和时代的概念，后来用来指1986年至2007年间长达近20年战后持续时间最长的黄金20年高增长、低波动、低通胀的经济时期。</p>
+<p>2006年，高连奎发表《平衡经济学原理》，提出平衡经济学，平衡经济学中的平衡是指高供给难度产品与低供给难度产品的平衡，这种平衡一旦被打破，就会出现经济危机，无论是治理经济危机还是发展经济，都应该加大高供给难度产品的供给，才可以让经济保持平衡。平衡经济学中最核心的概念“供给难度”由生产难度和交易难度两部分组成。平衡经济学认为经济增长主要产品的丰富度和供给效率两者决定，要想提高供给效率，就得不断的降低供给难度和培育具备供给能力的企业。</p>
+<p>2006年，美国投资家纳西姆·尼古拉斯·塔勒布出版《黑天鹅》一书，从此诞生“黑天鹅事件”一词，非常难以预测，且不寻常的事件，通常会引起市场连锁负面反应甚至颠覆，黑天鹅事件强调的是不确定的风险。</p>
+<p>2008年，美联储首次公布将购买机构债和MBS，标志着量化宽松政策的开始。量化指的是扩大一定数量的货币发行，宽松就是减少银行储备必须注资的压力是指中央银行在实行零利率或近似零利率政策后,通过购买国债等中长期债券,增加基础货币供给,向市场注入大量流动性资金的干预方式。</p>
+<p>2008年，辜朝明提出了“资产负债表衰退”理论，指出当全国性的资产价格泡沫破灭后，大量的私人部门(企业和家庭)资产负债表都会随之处于资不抵债的状况，此时私人部门由追求利益最大化，转变成追求债务最小化——企业会把收入的大部分用于还债，而不会用于再投资，当所有企业都按照这种办法实行时就形成了资产负债表衰退。这时不管央行怎么降低利率，注入流动性都无法成功，货币政策失效。全国只有采用财政政策刺激才见效。直到微观主体的资产负债表修复正常，经济运行才恢复到正常状态。资产负债变理论解释了量化宽松的失败，认同凯恩斯经济学的财政投资理论。</p>
+<p>2009年，高连奎提出低生存成本社会的概念，一个国家越发展，生存成本越高，民众不幸福主要是由于生存成本的提高，要想民众幸福就应该不断降低民众的生存成本。</p>
+<p>2010年，美国总统奥巴马采纳了“沃尔克法则”。沃克尔法则最初由美国白宫顾问保罗·沃克尔提出，内容就是要求吸收存款的银行必须剥离各自的衍生品业务。该条款不仅引来了华尔街银行家的抵制，还遭到了政府官员的批评，不过民主党领导人最终让这些条款得以保留。</p>
+<p>2011年，林毅夫提出新结构经济学，新结构经济学建立在传统的比较优势理论之上，主张一个国家应该建立适合自己阶段的产业政策，才可以最快的发展。认为当政府发挥有为作用时，产业政策是个有用的工具。新结构经济认为一个国家最好的方式就是按照每个时点的要素禀赋结构所决定的比较优势去选择产业和技术，进而快速增加资本积累。新结构经济学已经在以非洲为代表的很多发展中国家得到了广泛的认可，</p>
+<p>为推广新结构经济学，林毅夫专门成立了北京大学新结构经济学研究院，同时在一些其他二线高校也成立了其他研究新结构经济学的研究机构，并组织了多次新结构经济国际论坛。</p>
+<p>2013年，高连奎提出精准调控理论经，主张废除货币调控，主张财政调控，以政府投资的增减调控经济发展，货币利率稳定在一个相对固定的水平之上，经济过热时可以减少政府投资，经济萧条时可以增长政府投资。</p>
+<p>2013年，美国经济学家，国际政策研究所所长，米歇尔·渥克在2013年1月的达沃斯全球论坛上，首次提出了“灰犀牛”概念，即一头犀牛从远处走来，人们通常不会过多留意，一旦它向你奔来，其强大的作用力会令你猝不及防。许多危险其实是潜伏的，但也是可预见的，只是因时间距离而产生的风险错估，使得我们对其视而不见，导致风险到来时措手不及。灰犀牛对应的将高概率、特征明显、破坏力极大的潜在危机，风险事件，称之为灰犀牛风险。</p>
+<p>2014年，国际货币基金组织(IMF)总裁拉加德在采用“新平庸”一词，预言世界经济将面临长期低增长的复苏态势，受到国际经济界认同。</p>
+<p>2014年中国学者高连奎提出经济压制理论提出于</p>
+<p>2015年滕泰、贾康等提出“新供给经济学”，将新供给分为四类，分别是新产品，新商业模式，新资源要素，新制度四大方面，他认为这四个方面的创新都可以给经济带来爆发式增长，阻碍供给提示的因素称为“供给约束”“供给约束”又可以分为“直接约束”和“间接约束”,直接约束是指一些非市场因素对供给数量、供给价格或供给主体等进行限额或准入性限制，间接约束则更加隐蔽，是指由于货币政策或财政政策导致的企业融资成本或税收成本上升，进而使企业盈利能力下降并导致新供给无法形成或有效供给减少，经济要想快速发展需要将着力点放到去除供给约束上。</p>
+<p>2016年，高连奎提出新财税经济学，政府债务危机源于财税改革，财税不断升级，提出了“七增七减”的财税改革</p>
+<p>2016年，中国学者，李俊生提出“新市场财政学”，传统经济学将财政学建立在市场失灵的基础上，认为政府财政是市场失灵的补充，新市场财政学则树立了市场“平台观”和“参与型”政府的新观念，将公共部门和非公共部门都视为市场平台的参与者，公私部门皆在其中活动，创造价值。新市场财政学重新定义了政府在市场经济中的作用，为政府的经济建设等职能正名。</p>
+<p>2018年，中国学者李稻葵提出“政府与市场经济学”，认为经济发展的前提是要把政府的激励和行为搞对，理清政府在市场经济中的角色，政府应该成为市场经济发展的一个推动者，一个利益相关者，而不是阻挡者，政府与市场经济学重点研究政府在市场中的激励、行为和作用在内的相关课题。也可以<strong>称为政府激励学派。</strong></p>
+<p>2018年，中国学者郎咸平提出“马克思中观经济学”，郎咸平认为《资本论》灵魂蕴藏在第二卷中，马克思经济学中将社会各行业分为两个部门，一个生产资料部门（类似重工业），一个生活资料部门（类似轻工业），马克思的计划经济是指的生产资料部门，不包括生活资料部门，只要国家对生产资料部门进行计划，经济就会稳定发展，否则会经济危机，中国改革开放之所以成功就是因为放开了“第二部门，即生活资料部门”；苏联之所以“垮台”，就是因为“第二部门即生活资料部门”也实行了彻底的计划经济；美国之所以发生“大萧条”，就是因为“第一部门即生产资料部门”也实行了自由市场经济。</p>
+<p>2019年，中国学者金碚提出“域观经济学”，认为微观-宏观范式”所描述的那个抽象世界在真实世界中是不存在的，而域类存在才是现实经济的基本质态，所有经济体都是受到价值文化和制度形态深刻影响的域类存在体，任何现实经济现象都是域观现象。真实世界中人的行为既有相同性，也有差异性，有的差异性极大。“经济学既要承认人的行为的相同性，也必须正视人的行为的差异性。”“如果将行为相同性较强的人群活动空间定义为一个‘经济域’，并承认经济空间区分各个不同的‘经济域’，就可以为经济学的学术范式奠定更可信和坚实的逻辑基础。”，在现实世界中，不仅人的个体差异巨大，而且处于不同国家、地域、领域以及各种可以成为“域”的情景中的不同人群之间的差异也很大，也就是说，经济世界并非唯一“常态”，而是多种“常态”共存。以“域观范式”的视角来研究经济现象和商业活动，可以建立一门新的学科，即商域经济学。其中，经济理性和一定的价值文化及制度形态互动交融表现为各商域的文明型式，是商域经济学最基本的学术特性。微观经济学和宏观经济学范式主要以经济理性为支柱，而域观经济学范式则以经济理性、价值文化和制度形态三维框架为支柱。域观经济学则以刻画多元域态和发现域际机理为逻辑指向。”</p>
+]]></content>
   </entry>
   <entry>
     <title></title>
@@ -3235,6 +3155,11 @@ document.addEventListener('DOMContentLoaded', function() {
   <entry>
     <title>标签</title>
     <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>schedule</title>
+    <url>/schedule/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -3278,6 +3203,81 @@ document.addEventListener('DOMContentLoaded', function() {
 ]]></content>
   </entry>
   <entry>
+    <title>新闻</title>
+    <url>/news/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/news/news.js"></script>
+<link rel="stylesheet" href="/css/news.css">]]></content>
+  </entry>
+  <entry>
+    <title>书籍</title>
+    <url>/book/index.html</url>
+    <content><![CDATA[<h2 id="经济"><a href="#经济" class="headerlink" title="经济"></a>经济</h2><table>
+<thead>
+<tr>
+<th>书名</th>
+<th>作者</th>
+<th>查看链接</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>小岛经济学_鱼、美元和经济的故事</td>
+<td>[美] 彼得·D.希夫(Peter D. Schiff) 安德鲁·J.希夫(Andrew J. Schiff)</td>
+<td><a href="/lib/pdf/web/viewer.html?file=/book/小岛经济学：鱼、美元和经济的故事.pdf" target="_blank">查看</a></td>
+</tr>
+<tr>
+<td>国富论：亚当斯密</td>
+<td>[英]亚当·斯密</td>
+<td><a href="/lib/pdf/web/viewer.html?file=https://raw.githubusercontent.com/qqhsx/book/main/经济/国富论：亚当斯密.pdf" target="_blank">查看</a></td>
+</tr>
+<tr>
+<td>经济学的思维方式-托马斯·索维尔(套装共2册)</td>
+<td>托马斯·索维尔</td>
+<td><a href="/lib/epub/index.html?file=https://raw.githubusercontent.com/qqhsx/book/main/经济/经济学的思维方式（套装共2册）.epub" target="_blank">查看</a></td>
+</tr>
+<tr>
+<td>经济学的思维方式（原书第13版）</td>
+<td>（美）海恩（Heyne,P.） &amp; （美）勃特克（Boettke,P.） &amp; （美）普雷契特科（Prychitko,D.）</td>
+<td><a href="/lib/epub/index.html?file=https://raw.githubusercontent.com/qqhsx/book/main/经济/经济学的思维方式（原书第13版）.epub" target="_blank">查看</a></td>
+</tr>
+<tr>
+<td>全球经济史</td>
+<td>（英）艾伦（Allen, R. C.）</td>
+<td><a href="/lib/epub/index.html?file=https://raw.githubusercontent.com/qqhsx/book/main/经济/全球经济史.epub" target="_blank">查看</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><table>
+<thead>
+<tr>
+<th>书名</th>
+<th>作者</th>
+<th>查看链接</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>历史是个什么玩意儿</td>
+<td>袁腾飞</td>
+<td><a href="/lib/epub/index.html?file=https://raw.githubusercontent.com/qqhsx/book/main/历史/历史是个什么玩意儿（全集）.epub" target="_blank">查看</a></td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
     <title>数码</title>
     <url>/news/digital/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3291,21 +3291,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
-  </entry>
-  <entry>
-    <title>时尚</title>
-    <url>/news/fashion/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/fashion.js"></script>]]></content>
   </entry>
   <entry>
     <title>财经</title>
@@ -3338,21 +3323,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/front.js"></script>]]></content>
   </entry>
   <entry>
-    <title>游戏</title>
-    <url>/news/game/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>健康</title>
     <url>/news/health/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3368,8 +3338,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/health.js"></script>]]></content>
   </entry>
   <entry>
-    <title>军事</title>
-    <url>/news/military/index.html</url>
+    <title>游戏</title>
+    <url>/news/game/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
 <button id="load-more-button">加载更多</button>
 <div id="error-container" style="display:none; color:red;"></div>
@@ -3380,7 +3350,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <button id="back-to-top">回到顶部</button>
     </div>
 </div>
-<script type="text/javascript" src="/js/news/military.js"></script>]]></content>
+<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
   </entry>
   <entry>
     <title>手机</title>
@@ -3398,21 +3368,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
   </entry>
   <entry>
-    <title>体育</title>
-    <url>/news/physical/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>娱乐</title>
     <url>/news/recreation/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3428,6 +3383,21 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
   </entry>
   <entry>
+    <title>军事</title>
+    <url>/news/military/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/military.js"></script>]]></content>
+  </entry>
+  <entry>
     <title>科技</title>
     <url>/news/science/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -3441,6 +3411,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/science.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>时尚</title>
+    <url>/news/fashion/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/fashion.js"></script>]]></content>
   </entry>
   <entry>
     <title>旅游</title>
@@ -3474,6 +3459,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/video.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>体育</title>
+    <url>/news/physical/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
   </entry>
   <entry>
     <title>精选</title>
