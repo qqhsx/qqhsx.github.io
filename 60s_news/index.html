@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qqhsx.github.io/60s_news/$%7Bdata.title_image%7D">
 <meta property="article:published_time" content="2024-07-08T06:11:11.000Z">
-<meta property="article:modified_time" content="2024-11-01T00:31:11.261Z">
+<meta property="article:modified_time" content="2024-11-07T06:10:51.271Z">
 <meta property="article:author" content="H1985">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://qqhsx.github.io/60s_news/$%7Bdata.title_image%7D">
@@ -271,7 +271,7 @@
     
     function displayContent(data) {
         const profileDiv = document.getElementById('news-profile');
-        profileDiv.innerHTML = `<h2>${data.date}</h2><a href="${data.url}">来源链接</a>`;
+        profileDiv.innerHTML = `<h2>${data.date}</h2><a href="${data.url}" target="_blank">来源链接</a>`;
         profileDiv.innerHTML += `<img src="${data.title_image}" alt="Title Image" />`;
         data.result.forEach(item => {
             profileDiv.innerHTML += `<p>${item}</p>`;
