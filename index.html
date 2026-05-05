@@ -221,8 +221,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <div class="custom-stock-wrapper" style="width: 100%; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 10px 0;">
-  <div class="tradingview-widget-container" style="display: inline-block; min-width: 800px;">
+          <div id="js-stock-container" class="stock-scroll-container" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; cursor: grab; user-select: none;">
+  
+  <div class="tradingview-widget-container" style="min-width: 1200px; pointer-events: none;">
     <div class="tradingview-widget-container__widget"></div>
     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
     {
@@ -231,7 +232,9 @@
         { "proName": "FOREXCOM:SPXUSD", "title": "标普 500" },
         { "proName": "BITSTAMP:BTCUSD", "title": "比特币" },
         { "proName": "FX_IDC:USDCNY", "title": "美元/人民币" },
-        { "proName": "BITSTAMP:ETHUSD", "title": "以太坊" }
+        { "proName": "BITSTAMP:ETHUSD", "title": "以太坊" },
+        { "proName": "NASDAQ:AAPL", "title": "苹果股票" },
+        { "proName": "NASDAQ:TSLA", "title": "特斯拉" }
       ],
       "colorTheme": "light",
       "isTransparent": true,
@@ -243,14 +246,42 @@
 </div>
 
 <style>
-  /* 隐藏丑陋的滚动条，但保持滚动功能 */
-  .custom-stock-wrapper::-webkit-scrollbar {
-    display: none;
-  }
-  .custom-stock-wrapper {
-    scrollbar-width: none; /* Firefox */
-  }
+  /* 隐藏滚动条 */
+  .stock-scroll-container::-webkit-scrollbar { display: none; }
+  .stock-scroll-container { scrollbar-width: none; }
+  /* 抓取时的手势 */
+  .stock-scroll-container:active { cursor: grabbing; }
 </style>
+
+<script>
+const slider = document.getElementById('js-stock-container');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+});
+
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+});
+
+slider.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 2; // 数字 2 是滑动速度倍率
+  slider.scrollLeft = scrollLeft - walk;
+});
+</script>
       
     </div>
 
