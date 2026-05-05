@@ -221,103 +221,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+          <div class="tradingview-widget-container" style="margin: 10px 0;">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "OANDA:XAUUSD",
+      "title": "黄金/美元"
+    },
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "标普 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "纳斯达克 100"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "比特币"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "以太坊"
     }
-
-    .container {
-        display: flex;
-        align-items: center;
-        padding: 1px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .scroll-container {
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        white-space: nowrap;
-        flex: 1; /* 使滚动容器占据剩余空间 */
-        border: 1px solid #d3d3d3;
-        border-radius: 8px;
-        padding: 0 12px;
-    }
-    
-    .scroll-content {
-        display: inline-block;
-        padding: 0 12px;
-        white-space: nowrap;
-        animation: scroll-left 20s linear infinite;
-    }
-    
-    @keyframes scroll-left {
-        0% {
-            transform: translateX(100%);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
-    }
-    
-    .fa {
-    
-        margin-right: 10px;
-    }
-    
-    .announcement-title {
-        font-size: 22px;
-        margin-right: 10px;
-    }
-</style>
-
-<div class="container">
-    <i class="fa fa-bullhorn fa-shake" style="font-size: 22px;"></i>
-    <span class="announcement-title">公告</span>
-    <div class="scroll-container">
-        <div class="scroll-content">
-            - <span id="holiday-info">加载中...</span>
-        </div>
-    </div>
+  ],
+  "colorTheme": "light",
+  "isTransparent": true,
+  "showSymbolLogo": true,
+  "locale": "zh_CN"
+}
+  </script>
 </div>
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="styles.css">
-
-<div id="scroll-container">
-    <button id="scroll-left" class="scroll-button">≪</button>
-    <div id="stock-data">
-    </div>
-    <button id="scroll-right" class="scroll-button">≫</button>
-</div>
-
-
-
-
-<script type="text/javascript" src="/js/holiday.js"></script>
-<script type="text/javascript" src="/js/indices/sse.js"></script>
-
-<link rel="stylesheet" href="/css/indices.css">
-
-
-
-
-
-
-
-
-
-
-
       
     </div>
 
