@@ -266,6 +266,21 @@ slider.addEventListener('mousemove', (e) => {
       </tags>
   </entry>
   <entry>
+    <title>创建Hexo博客书籍页面</title>
+    <url>/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/%E5%88%9B%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%E4%B9%A6%E7%B1%8D%E9%A1%B5%E9%9D%A2/</url>
+    <content><![CDATA[<p>在你的 Hexo 博客 <code>source/book/index.md</code> 中，直接清空原来的表格，写入下面这段精美的 <strong>HTML + CSS</strong> 代码。它会自动去读取你的 <code>data.json</code> 并按分类渲染：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;bn-dynamic-bookshelf&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;loading-text&quot;&gt;正在从云端加载高颜值书架...&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.addEventListener(&quot;DOMContentLoaded&quot;, function() &#123;</span><br><span class="line">  // 建议使用加速镜像地址，确保国内秒开</span><br><span class="line">  // const jsonUrl = &quot;https://jsd.onmicrosoft.cn/gh/qqhsx/book@main/data.json&quot;;</span><br><span class="line">  const jsonUrl = &quot;https://raw.githubusercontent.com/qqhsx/book/main/data.json&quot;;</span><br><span class="line">  const shelfContainer = document.getElementById(&quot;bn-dynamic-bookshelf&quot;);</span><br><span class="line"></span><br><span class="line">  fetch(jsonUrl)</span><br><span class="line">    .then(response =&gt; &#123;</span><br><span class="line">      if (!response.ok) throw new Error(&quot;无法获取书籍数据&quot;);</span><br><span class="line">      return response.json();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(books =&gt; &#123;</span><br><span class="line">      // 清空加载提示</span><br><span class="line">      shelfContainer.innerHTML = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">      // 1. 按分类将书籍归档</span><br><span class="line">      const categorizedBooks = &#123;&#125;;</span><br><span class="line">      books.forEach(book =&gt; &#123;</span><br><span class="line">        let genre = book.genre || &quot;未分类&quot;;</span><br><span class="line">        // 兼容归一化：把老数据的“经济”合并到“经济理财”</span><br><span class="line">        if (genre === &quot;经济&quot;) genre = &quot;经济理财&quot;;</span><br><span class="line">        </span><br><span class="line">        if (!categorizedBooks[genre]) &#123;</span><br><span class="line">          categorizedBooks[genre] = [];</span><br><span class="line">        &#125;</span><br><span class="line">        categorizedBooks[genre].push(book);</span><br><span class="line">      &#125;);</span><br><span class="line">    </span><br><span class="line">      // 2. 动态循环生成每个分类的书架</span><br><span class="line">      // 为了让分类有固定顺序，你可以定义一个偏好顺序，不在列表里的自动排在后面</span><br><span class="line">      const genreOrder = [&quot;经济理财&quot;, &quot;历史&quot;, &quot;科学技术&quot;, &quot;文学&quot;];</span><br><span class="line">      const sortedGenres = Object.keys(categorizedBooks).sort((a, b) =&gt; &#123;</span><br><span class="line">        let indexA = genreOrder.indexOf(a);</span><br><span class="line">        let indexB = genreOrder.indexOf(b);</span><br><span class="line">        if (indexA === -1) indexA = 99;</span><br><span class="line">        if (indexB === -1) indexB = 99;</span><br><span class="line">        return indexA - indexB;</span><br><span class="line">      &#125;);</span><br><span class="line">    </span><br><span class="line">      sortedGenres.forEach(genre =&gt; &#123;</span><br><span class="line">        // 创建书架大标题和网格</span><br><span class="line">        const shelfId = `shelf-$&#123;Math.random().toString(36).substr(2, 9)&#125;`;</span><br><span class="line">        const shelfHtml = `</span><br><span class="line">          &lt;div class=&quot;bn-genre-section&quot;&gt;</span><br><span class="line">            &lt;h2 class=&quot;shelf-title&quot;&gt;$&#123;getGenreIcon(genre)&#125; $&#123;genre&#125;&lt;/h2&gt;</span><br><span class="line">            &lt;div class=&quot;bn-book-grid&quot; id=&quot;$&#123;shelfId&#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        `;</span><br><span class="line">        shelfContainer.insertAdjacentHTML(&#x27;beforeend&#x27;, shelfHtml);</span><br><span class="line">        const gridContainer = document.getElementById(shelfId);</span><br><span class="line">    </span><br><span class="line">        // 渲染该分类下的所有书籍</span><br><span class="line">        categorizedBooks[genre].forEach(book =&gt; &#123;</span><br><span class="line">          // 默认先尝试加载 .jpg 格式</span><br><span class="line">          const primaryCover = `https://raw.githubusercontent.com/qqhsx/book/main/covers/[$&#123;book.genre&#125;]$&#123;book.title&#125;-$&#123;book.author&#125;.jpg`;</span><br><span class="line">          // 备用地址换成 .jpeg 格式</span><br><span class="line">          const backupCover = `https://raw.githubusercontent.com/qqhsx/book/main/covers/[$&#123;book.genre&#125;]$&#123;book.title&#125;-$&#123;book.author&#125;.jpeg`;</span><br><span class="line">          const defaultPlaceholder = &quot;https://via.placeholder.com/150x220?text=No+Cover&quot;;</span><br><span class="line">    </span><br><span class="line">          const cardHtml = `</span><br><span class="line">            &lt;div class=&quot;bn-book-card&quot;&gt;</span><br><span class="line">              &lt;div class=&quot;cover-wrapper&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;$&#123;primaryCover&#125;&quot; </span><br><span class="line">                     class=&quot;bn-book-cover&quot; </span><br><span class="line">                     onerror=&quot;handleCoverError(this, &#x27;$&#123;backupCover&#125;&#x27;, &#x27;$&#123;defaultPlaceholder&#125;&#x27;)&quot;&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">              &lt;div class=&quot;bn-book-title&quot; title=&quot;$&#123;book.title&#125;&quot;&gt;$&#123;book.title&#125;&lt;/div&gt;</span><br><span class="line">              &lt;div class=&quot;bn-book-author&quot; title=&quot;$&#123;book.author&#125;&quot;&gt;$&#123;book.author&#125;&lt;/div&gt;</span><br><span class="line">              &lt;a href=&quot;$&#123;book.file_path&#125;&quot; class=&quot;bn-read-btn&quot; target=&quot;_blank&quot;&gt;立即阅读&lt;/a&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">          `;</span><br><span class="line">          gridContainer.insertAdjacentHTML(&#x27;beforeend&#x27;, cardHtml);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(error =&gt; &#123;</span><br><span class="line">      shelfContainer.innerHTML = `&lt;div class=&quot;error-text&quot;&gt;书架加载失败，请刷新重试。错误信息: $&#123;error.message&#125;&lt;/div&gt;`;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 核心：封面多格式兼容错误处理函数</span><br><span class="line"> */</span><br><span class="line">function handleCoverError(imgElement, backupUrl, placeholderUrl) &#123;</span><br><span class="line">    // 如果当前尝试的是第一顺位的 .jpg 并且失败了，切换到 .jpeg</span><br><span class="line">    if (!imgElement.getAttribute(&#x27;data-tried-backup&#x27;)) &#123;</span><br><span class="line">    imgElement.setAttribute(&#x27;data-tried-backup&#x27;, &#x27;true&#x27;);</span><br><span class="line">    imgElement.src = backupUrl;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">    // 如果 .jpeg 也失败了，展示兜底图，并断开死循环</span><br><span class="line">    imgElement.onerror = null;</span><br><span class="line">    imgElement.src = placeholderUrl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 辅助：根据分类名自动匹配精美的小图标（可自行在下方增删）</span><br><span class="line"> */</span><br><span class="line">function getGenreIcon(genre) &#123;</span><br><span class="line">    const icons = &#123;</span><br><span class="line">    &quot;经济理财&quot;: &quot;🪙&quot;,</span><br><span class="line">    &quot;历史&quot;: &quot;⏳&quot;,</span><br><span class="line">    &quot;科学技术&quot;: &quot;🔬&quot;,</span><br><span class="line">    &quot;文学&quot;: &quot;📚&quot;,</span><br><span class="line">    &quot;未分类&quot;: &quot;📖&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">    return icons[genre] || &quot;🔖&quot;; // 没匹配到时默认用书签图标</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.bn-genre-section &#123;</span><br><span class="line">  margin-bottom: 40px;</span><br><span class="line">&#125;</span><br><span class="line">.loading-text, .error-text &#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">  padding: 40px;</span><br><span class="line">  color: #767676;</span><br><span class="line">  font-size: 15px;</span><br><span class="line">&#125;</span><br><span class="line">.error-text &#123; color: #cc0000; &#125;</span><br><span class="line"></span><br><span class="line">.shelf-title &#123;</span><br><span class="line">  font-size: 20px !important;</span><br><span class="line">  font-weight: 700;</span><br><span class="line">  color: #1a1a1a;</span><br><span class="line">  border-bottom: 2px solid #006644 !important; /* B&amp;N 经典绿下划线 */</span><br><span class="line">  padding-bottom: 8px;</span><br><span class="line">  margin-top: 30px !important;</span><br><span class="line">  margin-bottom: 20px !important;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.bn-book-grid &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));</span><br><span class="line">  gap: 25px;</span><br><span class="line">  padding: 10px 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.bn-book-card &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: column;</span><br><span class="line">  align-items: center;</span><br><span class="line">  text-align: center;</span><br><span class="line">  background: #fff;</span><br><span class="line">  padding: 10px;</span><br><span class="line">  border-radius: 6px;</span><br><span class="line">  transition: all 0.3s ease;</span><br><span class="line">&#125;</span><br><span class="line">.bn-book-card:hover &#123; transform: translateY(-6px); &#125;</span><br><span class="line"></span><br><span class="line">.cover-wrapper &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  aspect-ratio: 2 / 3; </span><br><span class="line">  overflow: hidden;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  box-shadow: 0 8px 16px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06);</span><br><span class="line">  margin-bottom: 12px;</span><br><span class="line">  background: #f5f5f5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.bn-book-cover &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">  object-fit: cover;</span><br><span class="line">  transition: transform 0.3s ease;</span><br><span class="line">&#125;</span><br><span class="line">.bn-book-card:hover .bn-book-cover &#123; transform: scale(1.05); &#125;</span><br><span class="line"></span><br><span class="line">.bn-book-title &#123;</span><br><span class="line">  font-size: 14px;</span><br><span class="line">  font-weight: 600;</span><br><span class="line">  color: #2b2b2b;</span><br><span class="line">  margin: 4px 0;</span><br><span class="line">  line-height: 1.3;</span><br><span class="line">  width: 100%;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.bn-book-author &#123;</span><br><span class="line">  font-size: 12px;</span><br><span class="line">  color: #767676;</span><br><span class="line">  margin-bottom: 10px;</span><br><span class="line">  width: 100%;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.bn-read-btn &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: 85%;</span><br><span class="line">  padding: 6px 0;</span><br><span class="line">  background-color: #006644 !important;</span><br><span class="line">  color: #ffffff !important;</span><br><span class="line">  font-size: 12px;</span><br><span class="line">  font-weight: 500;</span><br><span class="line">  text-decoration: none !important;</span><br><span class="line">  border-radius: 20px;</span><br><span class="line">  transition: background-color 0.2s ease;</span><br><span class="line">  margin-top: auto;</span><br><span class="line">&#125;</span><br><span class="line">.bn-read-btn:hover &#123;</span><br><span class="line">  background-color: #004d33 !important;</span><br><span class="line">  box-shadow: 0 4px 8px rgba(0,102,68,0.2);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo博客相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Hexo书籍页面</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>中国房价高歌猛涨时期</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E4%B8%AD%E5%9B%BD%E6%88%BF%E4%BB%B7%E9%AB%98%E6%AD%8C%E7%8C%9B%E6%B6%A8%E6%97%B6%E6%9C%9F/</url>
     <content><![CDATA[<p>中国房价的高歌猛涨主要集中在以下几个时间段：</p>
@@ -366,79 +381,6 @@ slider.addEventListener('mousemove', (e) => {
       </tags>
   </entry>
   <entry>
-    <title>保障性住房</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E4%BF%9D%E9%9A%9C%E6%80%A7%E4%BD%8F%E6%88%BF/</url>
-    <content><![CDATA[<p>保障性住房是中国政府为了解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的一系列住房政策和项目。保障性住房主要包括以下几种类型：</p>
-<span id="more"></span>
-
-<h3 id="1-经济适用房"><a href="#1-经济适用房" class="headerlink" title="1. 经济适用房"></a>1. 经济适用房</h3><p>经济适用房是指政府提供政策支持、限定建设标准和销售价格，面向城镇中低收入家庭销售的普通商品住房。其主要目的是为了帮助中低收入家庭解决住房问题。以下是对经济适用房的详细描述：</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p><strong>价格相对较低</strong>：<br>经济适用房的售价通常低于同地段的商品房市场价格，因为政府对土地出让金、税费等方面给予了一定的优惠和减免。因此，经济适用房的价格相对较低，使得中低收入家庭能够负担得起。</p>
-<p><strong>建设标准不高</strong>：<br>经济适用房的建设标准相对普通商品房较低，主要体现在以下几个方面：</p>
-<ul>
-<li><strong>户型设计</strong>：经济适用房一般以小户型为主，面积较小，以满足基本居住需求。例如，一般经济适用房的建筑面积在60-90平方米左右。</li>
-<li><strong>建筑材料和装修</strong>：经济适用房的建筑材料和装修标准较为普通，不追求豪华和高档。通常采用经济实惠的材料，内部装修也较为简洁，满足基本生活需求即可。</li>
-<li><strong>配套设施</strong>：经济适用房的社区配套设施相对简单，可能不如普通商品房那样齐全，如高档小区的会所、游泳池等设施较少。</li>
-</ul>
-<p><strong>主要满足基本居住需求</strong>：<br>经济适用房的设计和建设旨在满足中低收入家庭的基本居住需求，提供一个安全、卫生、适宜居住的环境，而不追求奢华和高档配置。</p>
-<h3 id="申请条件"><a href="#申请条件" class="headerlink" title="申请条件"></a>申请条件</h3><p><strong>户籍要求</strong>：<br>申请者一般需要具备当地城镇户籍，即申请者必须是申请地的正式居民。</p>
-<p><strong>收入和资产标准</strong>：<br>家庭收入和资产需符合当地政府规定的中低收入标准。具体标准由各地政府根据当地经济发展水平和居民收入水平确定，一般要求家庭总收入在一定限额以下，家庭总资产不超过规定的上限。</p>
-<p><strong>住房情况</strong>：<br>申请者家庭无自有住房或现有住房面积低于规定的标准。例如，有些城市规定人均住房面积低于15平方米的家庭可以申请经济适用房。</p>
-<h3 id="购房方式"><a href="#购房方式" class="headerlink" title="购房方式"></a>购房方式</h3><p><strong>申请和审核</strong>：<br>符合条件的家庭需提交申请，经过相关部门的审核后，确定其购房资格。审核内容包括申请者的收入、资产、户籍、现有住房等情况。</p>
-<p><strong>购买价格</strong>：<br>通过审核的家庭可以以低于市场价的价格购买经济适用房。价格由政府根据建设成本和政策优惠确定，通常比同地段商品房市场价低20%-50%。</p>
-<p><strong>产权限制</strong>：<br>经济适用房的产权受限，一般在购买后一定年限内不能上市交易。各地的规定有所不同，通常是5年或更长时间。例如，北京市规定，经济适用房在购买满5年后，方可上市交易，但在交易时需向政府缴纳一定比例的土地收益金。</p>
-<h3 id="2-廉租房"><a href="#2-廉租房" class="headerlink" title="2. 廉租房"></a>2. 廉租房</h3><p><strong>廉租房</strong>是政府为城市低收入住房困难家庭提供的租金低廉的保障性住房。</p>
-<ul>
-<li><strong>特点</strong>：租金低廉，由政府或政府委托的单位管理和运营。</li>
-<li><strong>申请条件</strong>：主要面向城镇最低收入家庭，申请者需具备本地户籍，家庭收入和资产低于最低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
-<li><strong>租赁方式</strong>：通过申请和审核后，家庭可以以较低的租金租赁廉租房，租赁期限一般为1-3年，可续租。</li>
-</ul>
-<h3 id="3-公租房"><a href="#3-公租房" class="headerlink" title="3. 公租房"></a>3. 公租房</h3><p><strong>公租房</strong>是政府为解决中低收入家庭、新就业人员和外来务工人员住房困难问题而提供的租金较低的保障性住房。</p>
-<ul>
-<li><strong>特点</strong>：租金较低，面向更广泛的人群，包括中低收入家庭、新就业人员和外来务工人员。</li>
-<li><strong>申请条件</strong>：申请者需具备本地户籍或符合规定的外来务工人员，新就业人员需就业年限不超过一定年限（如5年），家庭收入和资产符合规定标准。</li>
-<li><strong>租赁方式</strong>：通过申请和审核后，家庭或个人可以以较低的租金租赁公租房，租赁期限一般为1-5年，可续租。</li>
-</ul>
-<h3 id="4-限价房"><a href="#4-限价房" class="headerlink" title="4. 限价房"></a>4. 限价房</h3><p><strong>限价房</strong>是政府限定销售价格、限定销售对象的普通商品住房，主要面向中低收入家庭。</p>
-<ul>
-<li><strong>特点</strong>：价格受政府限制，低于市场价，建设标准较高，接近普通商品房。</li>
-<li><strong>申请条件</strong>：申请者需具备本地户籍，家庭收入和资产符合中低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
-<li><strong>购房方式</strong>：符合条件的家庭通过申请和审核后，以低于市场价的价格购买限价房。</li>
-</ul>
-<h3 id="5-棚户区改造安置房"><a href="#5-棚户区改造安置房" class="headerlink" title="5. 棚户区改造安置房"></a>5. 棚户区改造安置房</h3><p><strong>棚户区改造安置房</strong>是政府为改善棚户区居民居住条件而建设的住房，用于安置被拆迁的棚户区居民。</p>
-<ul>
-<li><strong>特点</strong>：<br>棚户区改造安置房的建设标准较高，配套设施齐全，环境和居住条件显著优于原棚户区。<br>棚户区改造项目由政府主导，建设资金主要来源于政府财政和政策性贷款。</li>
-<li><strong>申请条件</strong>：主要面向棚户区改造中被拆迁的居民，提供的安置房面积和标准根据原有住房情况和相关政策规定。</li>
-<li><strong>安置方式</strong>：居民通过棚户区改造项目得到安置房，可以是产权安置或租赁安置。</li>
-</ul>
-<h3 id="保障性住房的意义"><a href="#保障性住房的意义" class="headerlink" title="保障性住房的意义"></a>保障性住房的意义</h3><p>保障性住房的推出和实施，对于改善中低收入家庭的住房条件，缓解城市住房供需矛盾，促进社会和谐稳定具有重要意义。具体体现在以下几个方面：</p>
-<ol>
-<li><strong>提高居住质量</strong>：通过保障性住房建设，改善中低收入家庭的居住条件，提高居民的生活质量。</li>
-<li><strong>缓解住房压力</strong>：保障性住房为中低收入家庭提供了经济负担较轻的住房选择，缓解了住房压力。</li>
-<li><strong>促进社会公平</strong>：保障性住房政策有助于缩小收入差距，促进社会公平正义。</li>
-<li><strong>推动城市发展</strong>：通过棚户区改造等项目，改善城市面貌，提升城市综合竞争力。</li>
-</ol>
-<h3 id="时间轴："><a href="#时间轴：" class="headerlink" title="时间轴："></a>时间轴：</h3><p>中国保障性住房的发展经历了从无到有、从单一到多层次的过程。以下是主要事件的时间轴：</p>
-<h3 id="1-1998年-房改启动"><a href="#1-1998年-房改启动" class="headerlink" title="1. 1998年 房改启动"></a>1. 1998年 房改启动</h3><p><strong>1998年</strong>，国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，全面停止住房实物分配，实行住房分配货币化。此时，保障性住房的概念开始萌芽，主要是通过经济适用房来解决中低收入家庭的住房问题。</p>
-<h3 id="2-2004年-廉租房制度建立"><a href="#2-2004年-廉租房制度建立" class="headerlink" title="2. 2004年 廉租房制度建立"></a>2. 2004年 廉租房制度建立</h3><p><strong>2004年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，正式建立廉租住房制度。廉租房主要面向最低收入家庭，提供低廉的租金，帮助最困难的家庭解决住房问题。</p>
-<h3 id="3-2007年-保障性住房体系逐步完善"><a href="#3-2007年-保障性住房体系逐步完善" class="headerlink" title="3. 2007年 保障性住房体系逐步完善"></a>3. 2007年 保障性住房体系逐步完善</h3><p><strong>2007年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，提出建立经济适用房、廉租房、公租房等多层次的保障性住房体系。同年，住房和城乡建设部发布《关于加快发展经济适用住房的通知》，进一步明确经济适用房的建设标准和供应方式。</p>
-<h3 id="4-2010年-公租房政策出台"><a href="#4-2010年-公租房政策出台" class="headerlink" title="4. 2010年 公租房政策出台"></a>4. 2010年 公租房政策出台</h3><p><strong>2010年</strong>，国务院发布《关于加快发展公共租赁住房的指导意见》，明确提出发展公共租赁住房，解决中低收入家庭、新就业人员和外来务工人员的住房困难。公租房租金较低，面向更广泛的人群。</p>
-<h3 id="5-2011年-限价房政策推进"><a href="#5-2011年-限价房政策推进" class="headerlink" title="5. 2011年 限价房政策推进"></a>5. 2011年 限价房政策推进</h3><p><strong>2011年</strong>，北京市等地开始推广限价商品房政策，政府限定房价和销售对象，面向中低收入家庭销售。这些限价房价格低于市场价，旨在解决中低收入家庭的购房需求。</p>
-<h3 id="6-2013年-棚户区改造大规模推进"><a href="#6-2013年-棚户区改造大规模推进" class="headerlink" title="6. 2013年 棚户区改造大规模推进"></a>6. 2013年 棚户区改造大规模推进</h3><p><strong>2013年</strong>，国务院发布《关于加快棚户区改造工作的意见》，提出在全国范围内加快棚户区改造步伐，改善棚户区居民的居住条件。棚户区改造安置房逐步成为保障性住房的重要组成部分。</p>
-<h3 id="7-2015年-保障性住房建设力度加大"><a href="#7-2015年-保障性住房建设力度加大" class="headerlink" title="7. 2015年 保障性住房建设力度加大"></a>7. 2015年 保障性住房建设力度加大</h3><p><strong>2015年</strong>，在“十三五”规划中，国家提出要大力发展保障性住房，加大棚户区改造力度，确保每个家庭住有所居。各地纷纷加大保障性住房的建设力度。</p>
-<h3 id="8-2017年-长租公寓政策出台"><a href="#8-2017年-长租公寓政策出台" class="headerlink" title="8. 2017年 长租公寓政策出台"></a>8. 2017年 长租公寓政策出台</h3><p><strong>2017年</strong>，国务院办公厅发布《关于加快培育和发展住房租赁市场的若干意见》，提出要大力发展住房租赁市场，鼓励发展长租公寓。长租公寓成为解决新市民和青年人的住房问题的重要方式。</p>
-<h3 id="9-2020年-租购并举政策深化"><a href="#9-2020年-租购并举政策深化" class="headerlink" title="9. 2020年 租购并举政策深化"></a>9. 2020年 租购并举政策深化</h3><p><strong>2020年</strong>，中央经济工作会议提出要坚持“房住不炒”，深化租购并举的住房制度，进一步加大保障性住房的供应。政府开始探索更多形式的保障性住房，如共有产权房等，以满足不同层次的住房需求。</p>
-<h3 id="10-2022年-全面推进保障性租赁住房建设"><a href="#10-2022年-全面推进保障性租赁住房建设" class="headerlink" title="10. 2022年 全面推进保障性租赁住房建设"></a>10. 2022年 全面推进保障性租赁住房建设</h3><p><strong>2022年</strong>，国务院发布《关于进一步做好保障性租赁住房工作的意见》，明确提出要加大保障性租赁住房建设力度，缓解大城市住房供需矛盾，特别是新市民和青年人的住房困难问题。</p>
-<p>这些事件体现了中国政府在不同阶段对保障性住房的重视和推进，为改善中低收入家庭的居住条件、促进社会和谐稳定作出了重要贡献。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>保障性住房是中国政府为解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的重要政策措施。通过经济适用房、廉租房、公租房、限价房和棚户区改造安置房等多种形式，保障性住房有效地改善了中低收入家庭的居住条件，促进了社会和谐稳定和城市健康发展。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>保障性住房</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>中国经济各领域GDP占比（2025年）</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E5%90%84%E9%A2%86%E5%9F%9FGDP%E5%8D%A0%E6%AF%94%EF%BC%882025%E5%B9%B4%EF%BC%89/</url>
     <content><![CDATA[<p>本文基于国家统计局2026年最新公布的2025年国民经济统计数据，全面梳理三大产业及细分行业的GDP占比，方便快速查阅，精准反映当前中国经济结构。</p>
@@ -520,6 +462,79 @@ slider.addEventListener('mousemove', (e) => {
       </tags>
   </entry>
   <entry>
+    <title>保障性住房</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E4%BF%9D%E9%9A%9C%E6%80%A7%E4%BD%8F%E6%88%BF/</url>
+    <content><![CDATA[<p>保障性住房是中国政府为了解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的一系列住房政策和项目。保障性住房主要包括以下几种类型：</p>
+<span id="more"></span>
+
+<h3 id="1-经济适用房"><a href="#1-经济适用房" class="headerlink" title="1. 经济适用房"></a>1. 经济适用房</h3><p>经济适用房是指政府提供政策支持、限定建设标准和销售价格，面向城镇中低收入家庭销售的普通商品住房。其主要目的是为了帮助中低收入家庭解决住房问题。以下是对经济适用房的详细描述：</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p><strong>价格相对较低</strong>：<br>经济适用房的售价通常低于同地段的商品房市场价格，因为政府对土地出让金、税费等方面给予了一定的优惠和减免。因此，经济适用房的价格相对较低，使得中低收入家庭能够负担得起。</p>
+<p><strong>建设标准不高</strong>：<br>经济适用房的建设标准相对普通商品房较低，主要体现在以下几个方面：</p>
+<ul>
+<li><strong>户型设计</strong>：经济适用房一般以小户型为主，面积较小，以满足基本居住需求。例如，一般经济适用房的建筑面积在60-90平方米左右。</li>
+<li><strong>建筑材料和装修</strong>：经济适用房的建筑材料和装修标准较为普通，不追求豪华和高档。通常采用经济实惠的材料，内部装修也较为简洁，满足基本生活需求即可。</li>
+<li><strong>配套设施</strong>：经济适用房的社区配套设施相对简单，可能不如普通商品房那样齐全，如高档小区的会所、游泳池等设施较少。</li>
+</ul>
+<p><strong>主要满足基本居住需求</strong>：<br>经济适用房的设计和建设旨在满足中低收入家庭的基本居住需求，提供一个安全、卫生、适宜居住的环境，而不追求奢华和高档配置。</p>
+<h3 id="申请条件"><a href="#申请条件" class="headerlink" title="申请条件"></a>申请条件</h3><p><strong>户籍要求</strong>：<br>申请者一般需要具备当地城镇户籍，即申请者必须是申请地的正式居民。</p>
+<p><strong>收入和资产标准</strong>：<br>家庭收入和资产需符合当地政府规定的中低收入标准。具体标准由各地政府根据当地经济发展水平和居民收入水平确定，一般要求家庭总收入在一定限额以下，家庭总资产不超过规定的上限。</p>
+<p><strong>住房情况</strong>：<br>申请者家庭无自有住房或现有住房面积低于规定的标准。例如，有些城市规定人均住房面积低于15平方米的家庭可以申请经济适用房。</p>
+<h3 id="购房方式"><a href="#购房方式" class="headerlink" title="购房方式"></a>购房方式</h3><p><strong>申请和审核</strong>：<br>符合条件的家庭需提交申请，经过相关部门的审核后，确定其购房资格。审核内容包括申请者的收入、资产、户籍、现有住房等情况。</p>
+<p><strong>购买价格</strong>：<br>通过审核的家庭可以以低于市场价的价格购买经济适用房。价格由政府根据建设成本和政策优惠确定，通常比同地段商品房市场价低20%-50%。</p>
+<p><strong>产权限制</strong>：<br>经济适用房的产权受限，一般在购买后一定年限内不能上市交易。各地的规定有所不同，通常是5年或更长时间。例如，北京市规定，经济适用房在购买满5年后，方可上市交易，但在交易时需向政府缴纳一定比例的土地收益金。</p>
+<h3 id="2-廉租房"><a href="#2-廉租房" class="headerlink" title="2. 廉租房"></a>2. 廉租房</h3><p><strong>廉租房</strong>是政府为城市低收入住房困难家庭提供的租金低廉的保障性住房。</p>
+<ul>
+<li><strong>特点</strong>：租金低廉，由政府或政府委托的单位管理和运营。</li>
+<li><strong>申请条件</strong>：主要面向城镇最低收入家庭，申请者需具备本地户籍，家庭收入和资产低于最低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
+<li><strong>租赁方式</strong>：通过申请和审核后，家庭可以以较低的租金租赁廉租房，租赁期限一般为1-3年，可续租。</li>
+</ul>
+<h3 id="3-公租房"><a href="#3-公租房" class="headerlink" title="3. 公租房"></a>3. 公租房</h3><p><strong>公租房</strong>是政府为解决中低收入家庭、新就业人员和外来务工人员住房困难问题而提供的租金较低的保障性住房。</p>
+<ul>
+<li><strong>特点</strong>：租金较低，面向更广泛的人群，包括中低收入家庭、新就业人员和外来务工人员。</li>
+<li><strong>申请条件</strong>：申请者需具备本地户籍或符合规定的外来务工人员，新就业人员需就业年限不超过一定年限（如5年），家庭收入和资产符合规定标准。</li>
+<li><strong>租赁方式</strong>：通过申请和审核后，家庭或个人可以以较低的租金租赁公租房，租赁期限一般为1-5年，可续租。</li>
+</ul>
+<h3 id="4-限价房"><a href="#4-限价房" class="headerlink" title="4. 限价房"></a>4. 限价房</h3><p><strong>限价房</strong>是政府限定销售价格、限定销售对象的普通商品住房，主要面向中低收入家庭。</p>
+<ul>
+<li><strong>特点</strong>：价格受政府限制，低于市场价，建设标准较高，接近普通商品房。</li>
+<li><strong>申请条件</strong>：申请者需具备本地户籍，家庭收入和资产符合中低收入标准，且无自有住房或现有住房面积低于规定标准。</li>
+<li><strong>购房方式</strong>：符合条件的家庭通过申请和审核后，以低于市场价的价格购买限价房。</li>
+</ul>
+<h3 id="5-棚户区改造安置房"><a href="#5-棚户区改造安置房" class="headerlink" title="5. 棚户区改造安置房"></a>5. 棚户区改造安置房</h3><p><strong>棚户区改造安置房</strong>是政府为改善棚户区居民居住条件而建设的住房，用于安置被拆迁的棚户区居民。</p>
+<ul>
+<li><strong>特点</strong>：<br>棚户区改造安置房的建设标准较高，配套设施齐全，环境和居住条件显著优于原棚户区。<br>棚户区改造项目由政府主导，建设资金主要来源于政府财政和政策性贷款。</li>
+<li><strong>申请条件</strong>：主要面向棚户区改造中被拆迁的居民，提供的安置房面积和标准根据原有住房情况和相关政策规定。</li>
+<li><strong>安置方式</strong>：居民通过棚户区改造项目得到安置房，可以是产权安置或租赁安置。</li>
+</ul>
+<h3 id="保障性住房的意义"><a href="#保障性住房的意义" class="headerlink" title="保障性住房的意义"></a>保障性住房的意义</h3><p>保障性住房的推出和实施，对于改善中低收入家庭的住房条件，缓解城市住房供需矛盾，促进社会和谐稳定具有重要意义。具体体现在以下几个方面：</p>
+<ol>
+<li><strong>提高居住质量</strong>：通过保障性住房建设，改善中低收入家庭的居住条件，提高居民的生活质量。</li>
+<li><strong>缓解住房压力</strong>：保障性住房为中低收入家庭提供了经济负担较轻的住房选择，缓解了住房压力。</li>
+<li><strong>促进社会公平</strong>：保障性住房政策有助于缩小收入差距，促进社会公平正义。</li>
+<li><strong>推动城市发展</strong>：通过棚户区改造等项目，改善城市面貌，提升城市综合竞争力。</li>
+</ol>
+<h3 id="时间轴："><a href="#时间轴：" class="headerlink" title="时间轴："></a>时间轴：</h3><p>中国保障性住房的发展经历了从无到有、从单一到多层次的过程。以下是主要事件的时间轴：</p>
+<h3 id="1-1998年-房改启动"><a href="#1-1998年-房改启动" class="headerlink" title="1. 1998年 房改启动"></a>1. 1998年 房改启动</h3><p><strong>1998年</strong>，国务院发布《关于进一步深化城镇住房制度改革加快住房建设的通知》，全面停止住房实物分配，实行住房分配货币化。此时，保障性住房的概念开始萌芽，主要是通过经济适用房来解决中低收入家庭的住房问题。</p>
+<h3 id="2-2004年-廉租房制度建立"><a href="#2-2004年-廉租房制度建立" class="headerlink" title="2. 2004年 廉租房制度建立"></a>2. 2004年 廉租房制度建立</h3><p><strong>2004年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，正式建立廉租住房制度。廉租房主要面向最低收入家庭，提供低廉的租金，帮助最困难的家庭解决住房问题。</p>
+<h3 id="3-2007年-保障性住房体系逐步完善"><a href="#3-2007年-保障性住房体系逐步完善" class="headerlink" title="3. 2007年 保障性住房体系逐步完善"></a>3. 2007年 保障性住房体系逐步完善</h3><p><strong>2007年</strong>，国务院发布《关于解决城市低收入家庭住房困难的若干意见》，提出建立经济适用房、廉租房、公租房等多层次的保障性住房体系。同年，住房和城乡建设部发布《关于加快发展经济适用住房的通知》，进一步明确经济适用房的建设标准和供应方式。</p>
+<h3 id="4-2010年-公租房政策出台"><a href="#4-2010年-公租房政策出台" class="headerlink" title="4. 2010年 公租房政策出台"></a>4. 2010年 公租房政策出台</h3><p><strong>2010年</strong>，国务院发布《关于加快发展公共租赁住房的指导意见》，明确提出发展公共租赁住房，解决中低收入家庭、新就业人员和外来务工人员的住房困难。公租房租金较低，面向更广泛的人群。</p>
+<h3 id="5-2011年-限价房政策推进"><a href="#5-2011年-限价房政策推进" class="headerlink" title="5. 2011年 限价房政策推进"></a>5. 2011年 限价房政策推进</h3><p><strong>2011年</strong>，北京市等地开始推广限价商品房政策，政府限定房价和销售对象，面向中低收入家庭销售。这些限价房价格低于市场价，旨在解决中低收入家庭的购房需求。</p>
+<h3 id="6-2013年-棚户区改造大规模推进"><a href="#6-2013年-棚户区改造大规模推进" class="headerlink" title="6. 2013年 棚户区改造大规模推进"></a>6. 2013年 棚户区改造大规模推进</h3><p><strong>2013年</strong>，国务院发布《关于加快棚户区改造工作的意见》，提出在全国范围内加快棚户区改造步伐，改善棚户区居民的居住条件。棚户区改造安置房逐步成为保障性住房的重要组成部分。</p>
+<h3 id="7-2015年-保障性住房建设力度加大"><a href="#7-2015年-保障性住房建设力度加大" class="headerlink" title="7. 2015年 保障性住房建设力度加大"></a>7. 2015年 保障性住房建设力度加大</h3><p><strong>2015年</strong>，在“十三五”规划中，国家提出要大力发展保障性住房，加大棚户区改造力度，确保每个家庭住有所居。各地纷纷加大保障性住房的建设力度。</p>
+<h3 id="8-2017年-长租公寓政策出台"><a href="#8-2017年-长租公寓政策出台" class="headerlink" title="8. 2017年 长租公寓政策出台"></a>8. 2017年 长租公寓政策出台</h3><p><strong>2017年</strong>，国务院办公厅发布《关于加快培育和发展住房租赁市场的若干意见》，提出要大力发展住房租赁市场，鼓励发展长租公寓。长租公寓成为解决新市民和青年人的住房问题的重要方式。</p>
+<h3 id="9-2020年-租购并举政策深化"><a href="#9-2020年-租购并举政策深化" class="headerlink" title="9. 2020年 租购并举政策深化"></a>9. 2020年 租购并举政策深化</h3><p><strong>2020年</strong>，中央经济工作会议提出要坚持“房住不炒”，深化租购并举的住房制度，进一步加大保障性住房的供应。政府开始探索更多形式的保障性住房，如共有产权房等，以满足不同层次的住房需求。</p>
+<h3 id="10-2022年-全面推进保障性租赁住房建设"><a href="#10-2022年-全面推进保障性租赁住房建设" class="headerlink" title="10. 2022年 全面推进保障性租赁住房建设"></a>10. 2022年 全面推进保障性租赁住房建设</h3><p><strong>2022年</strong>，国务院发布《关于进一步做好保障性租赁住房工作的意见》，明确提出要加大保障性租赁住房建设力度，缓解大城市住房供需矛盾，特别是新市民和青年人的住房困难问题。</p>
+<p>这些事件体现了中国政府在不同阶段对保障性住房的重视和推进，为改善中低收入家庭的居住条件、促进社会和谐稳定作出了重要贡献。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>保障性住房是中国政府为解决中低收入家庭住房困难问题，保障居民基本居住需求而推出的重要政策措施。通过经济适用房、廉租房、公租房、限价房和棚户区改造安置房等多种形式，保障性住房有效地改善了中低收入家庭的居住条件，促进了社会和谐稳定和城市健康发展。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>保障性住房</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>债券</title>
     <url>/%E7%BB%8F%E6%B5%8E/%E5%80%BA%E5%88%B8/</url>
     <content><![CDATA[<h3 id="债券：理解债务的投资方式"><a href="#债券：理解债务的投资方式" class="headerlink" title="债券：理解债务的投资方式"></a>债券：理解债务的投资方式</h3><p>在金融世界中，债券是一种常见的投资工具，它为投资者提供了一种安全稳定的投资选择。让我们一起来了解一下什么是债券，以及如何购买债券以及它如何运作。</p>
@@ -561,91 +576,6 @@ slider.addEventListener('mousemove', (e) => {
       </categories>
       <tags>
         <tag>债券</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>通货紧缩</title>
-    <url>/%E7%BB%8F%E6%B5%8E/%E9%80%9A%E8%B4%A7%E7%B4%A7%E7%BC%A9/</url>
-    <content><![CDATA[<h4 id="小镇的故事"><a href="#小镇的故事" class="headerlink" title="小镇的故事"></a>小镇的故事</h4><p>在一个宁静的小镇上，居民们的生活就是买东西和卖东西。</p>
-<p><strong>一、一切正常的时候</strong></p>
-<ol>
-<li><strong>市场运作</strong>：小镇的商店、农场和工厂都在正常运作。居民们赚取薪水，然后用这些钱买食物、衣物和其他日常必需品。</li>
-<li><strong>价格稳定</strong>：市场上的商品和服务价格相对稳定。比如，一个面包的价格是5块钱，一杯牛奶的价格是2块钱。</li>
-</ol>
-<span id="more"></span>
-
-<p><strong>二、进入通货紧缩阶段</strong></p>
-<p>有一天，小镇上的居民储蓄变得高了，他们开始减少消费，更多的是把钱存到银行或直接留在家里。这种减少消费的行为引发了一系列连锁反应。具体来看，以下因素可以导致进入通货紧缩阶段：</p>
-<ol>
-<li><strong>对未来的不确定性增加</strong>：小镇上的居民听说镇上的大工厂要裁员，或者听到经济衰退的传言，导致他们对未来感到不安，所以更愿意储蓄以备不时之需。</li>
-<li><strong>利率上升</strong>：银行突然提高了存款利率，居民们发现把钱存到银行可以获得更多的利息收入，于是他们更倾向于把钱存起来，而不是用于消费。</li>
-<li><strong>政府政策</strong>：政府出台了新的税收政策或福利计划，鼓励居民储蓄而不是消费，导致短期内储蓄增加。</li>
-<li><strong>消费习惯改变</strong>：由于科技进步，在线购物平台推出了更多的储蓄产品和理财工具，小镇居民开始意识到储蓄和理财的重要性。</li>
-<li><strong>债务偿还压力</strong>：部分居民可能背负了较多的债务，他们需要紧缩开支以更快地偿还债务，减少额外的消费支出。</li>
-<li><strong>货币供应减少</strong>：镇长宣布，银行为了稳定财务状况，限制了贷款供应，结果居民们借不到钱，减少了支出，触发价格下跌。</li>
-<li><strong>生产过剩</strong>：面包厂技术升级，面包生产量增加，但消费需求没变，价格下跌。</li>
-<li><strong>技术发展</strong>：自动化设备降低了农产品生产成本，需求不足的情况下，价格下跌。</li>
-<li><strong>市场信心不足</strong>：居民对未来收入不确定，减少消费，存更多的钱。</li>
-</ol>
-<h3 id="危机加剧"><a href="#危机加剧" class="headerlink" title="危机加剧"></a>危机加剧</h3><p>这些因素共同作用，加剧了小镇的经济困境：</p>
-<ol>
-<li><strong>持续降价</strong>：商品价格一降再降，但即便如此，需求仍低迷。</li>
-<li><strong>恶性循环</strong>：低消费导致收入下降，更多企业倒闭或裁员，居民收入进一步减少。</li>
-</ol>
-<h3 id="连锁反应"><a href="#连锁反应" class="headerlink" title="连锁反应"></a>连锁反应</h3><p>这些因素往往不会单独发生，它们可以互相影响和推动，进一步加剧通货紧缩的局面。一个综合例子：</p>
-<ul>
-<li>银行减少货币供应 -&gt; 消费减少 -&gt; 企业销售下降 -&gt; 价格下跌 -&gt; 企业利润减少 -&gt; 更多的企业裁员或倒闭 -&gt; 失业增加 -&gt; 进一步消费减少 -&gt; 价格继续下跌。</li>
-</ul>
-<h3 id="监测市场动向的迹象"><a href="#监测市场动向的迹象" class="headerlink" title="监测市场动向的迹象"></a>监测市场动向的迹象</h3><p>你可以通过以下迹象判断市场进入了通货紧缩阶段：</p>
-<ol>
-<li><strong>消费者物价指数（CPI）下降</strong>：你注意到政府公布的CPI数据显示，整体物价水平持续下降，这表明通货紧缩正在发生。</li>
-<li><strong>商铺和服务业收入下降</strong>：你从镇上的商铺和提供服务的小商家那里了解到，他们的收入显著减少，这反映出消费需求下降。</li>
-<li><strong>失业率上升</strong>：你发现更多的居民失去工作，镇上的失业率在上升，这是消费减少的直接后果。</li>
-<li><strong>库存增加</strong>：商店和工厂的库存商品越积越多，货物卖不出去，价格只能一降再降。</li>
-</ol>
-<h3 id="解困措施"><a href="#解困措施" class="headerlink" title="解困措施"></a>解困措施</h3><p>镇长意识到问题的严重性，决定采取一些措施来应对通货紧缩：</p>
-<h4 id="货币政策"><a href="#货币政策" class="headerlink" title="货币政策"></a>货币政策</h4><ol>
-<li><strong>降低利率</strong>：央行可以降低基准利率，使得贷款更便宜，鼓励消费和投资。</li>
-<li><strong>量化宽松</strong>：央行通过购买政府债券、机构债券、甚至是企业债券，增加市场中的货币供应，降低长期利率，刺激投资和消费。具体过程如下：<ul>
-<li><strong>购买债券</strong>：央行从商业银行和其他金融机构购买政府债券或其他高质量的金融资产。</li>
-<li><strong>注入流动性</strong>：央行通过购买债券，将现金注入这些金融机构，增加其可用资本。</li>
-<li><strong>刺激放贷</strong>：金融机构拥有更多流动性后，更有能力向企业和个人发放贷款，从而促进投资和消费。</li>
-<li><strong>降低长期利率</strong>：由于央行大量购买债券，债券价格上涨，收益率（即利率）降低，这使得长期贷款的成本下降，促进投资和消费。</li>
-</ul>
-</li>
-</ol>
-<h4 id="财政政策"><a href="#财政政策" class="headerlink" title="财政政策"></a>财政政策</h4><ol start="3">
-<li><strong>政府支出增加</strong>：政府可以增加基建项目和公共服务的投资，创造更多就业机会，提高居民收入。</li>
-<li><strong>减税</strong>：政府可以通过降低个人所得税、企业税等，增加居民和企业的可支配收入，刺激消费和投资。</li>
-<li><strong>直接补贴</strong>：向居民直接发放现金补贴，提高消费能力。</li>
-</ol>
-<h4 id="信心管理"><a href="#信心管理" class="headerlink" title="信心管理"></a>信心管理</h4><ol start="6">
-<li><strong>积极宣传和沟通</strong>：政府和央行可以发布乐观的经济预期和积极的措施，稳定市场信心。</li>
-<li><strong>政策透明度</strong>：确保政策的透明度和一致性，增强市场对政府应对经济问题的信心。</li>
-</ol>
-<h4 id="结构性改革"><a href="#结构性改革" class="headerlink" title="结构性改革"></a>结构性改革</h4><ol start="8">
-<li><strong>劳动力市场改革</strong>：通过培训和职业教育，提高劳动力技能，降低失业率。</li>
-<li><strong>促进创新和技术发展</strong>：通过研发支持和补贴，鼓励企业进行创新，提高生产效率和竞争力。</li>
-</ol>
-<h4 id="国际合作"><a href="#国际合作" class="headerlink" title="国际合作"></a>国际合作</h4><ol start="10">
-<li><strong>国际协调</strong>：与其他国家的央行和政府协调货币和财政政策，防止全球性通缩。</li>
-<li><strong>外汇干预</strong>：通过外汇市场干预，防止本币过度升值，提升出口竞争力，刺激经济增长。</li>
-</ol>
-<h4 id="资本市场措施"><a href="#资本市场措施" class="headerlink" title="资本市场措施"></a>资本市场措施</h4><ol start="12">
-<li><strong>改善融资环境</strong>：通过降低市场准入门槛和减少融资壁垒，促进中小企业获得更容易的资金支持。</li>
-<li><strong>金融扶持政策</strong>：制定优惠融资政策帮助面临困境的行业和企业恢复生产，稳定经济运行。</li>
-</ol>
-<h4 id="其他措施"><a href="#其他措施" class="headerlink" title="其他措施"></a>其他措施</h4><ol start="14">
-<li><strong>社会保障和福利</strong>：加强社会保障体系，提高失业救济金和社会福利，保障居民基本消费能力。</li>
-<li><strong>价格调控措施</strong>：短期内政府可以通过调控关键商品和服务的价格，防止价格急剧下滑。</li>
-</ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通货紧缩不仅仅是由于储蓄变高和消费减少引起的。货币供应减少、生产过剩、债务压力、技术发展、市场信心不足等因素都可能导致通货紧缩。这些因素及早期迹象常常互相交织，造成复杂的经济现象。政府和央行有多种政策手段可以用来应对通货紧缩，包括货币政策、财政政策、信心管理、结构性改革、国际合作、资本市场措施以及其他措施。这些措施相辅相成，可以帮助缓解通货紧缩，促进经济复苏。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>通货紧缩</tag>
       </tags>
   </entry>
   <entry>
@@ -806,6 +736,91 @@ slider.addEventListener('mousemove', (e) => {
       </tags>
   </entry>
   <entry>
+    <title>通货紧缩</title>
+    <url>/%E7%BB%8F%E6%B5%8E/%E9%80%9A%E8%B4%A7%E7%B4%A7%E7%BC%A9/</url>
+    <content><![CDATA[<h4 id="小镇的故事"><a href="#小镇的故事" class="headerlink" title="小镇的故事"></a>小镇的故事</h4><p>在一个宁静的小镇上，居民们的生活就是买东西和卖东西。</p>
+<p><strong>一、一切正常的时候</strong></p>
+<ol>
+<li><strong>市场运作</strong>：小镇的商店、农场和工厂都在正常运作。居民们赚取薪水，然后用这些钱买食物、衣物和其他日常必需品。</li>
+<li><strong>价格稳定</strong>：市场上的商品和服务价格相对稳定。比如，一个面包的价格是5块钱，一杯牛奶的价格是2块钱。</li>
+</ol>
+<span id="more"></span>
+
+<p><strong>二、进入通货紧缩阶段</strong></p>
+<p>有一天，小镇上的居民储蓄变得高了，他们开始减少消费，更多的是把钱存到银行或直接留在家里。这种减少消费的行为引发了一系列连锁反应。具体来看，以下因素可以导致进入通货紧缩阶段：</p>
+<ol>
+<li><strong>对未来的不确定性增加</strong>：小镇上的居民听说镇上的大工厂要裁员，或者听到经济衰退的传言，导致他们对未来感到不安，所以更愿意储蓄以备不时之需。</li>
+<li><strong>利率上升</strong>：银行突然提高了存款利率，居民们发现把钱存到银行可以获得更多的利息收入，于是他们更倾向于把钱存起来，而不是用于消费。</li>
+<li><strong>政府政策</strong>：政府出台了新的税收政策或福利计划，鼓励居民储蓄而不是消费，导致短期内储蓄增加。</li>
+<li><strong>消费习惯改变</strong>：由于科技进步，在线购物平台推出了更多的储蓄产品和理财工具，小镇居民开始意识到储蓄和理财的重要性。</li>
+<li><strong>债务偿还压力</strong>：部分居民可能背负了较多的债务，他们需要紧缩开支以更快地偿还债务，减少额外的消费支出。</li>
+<li><strong>货币供应减少</strong>：镇长宣布，银行为了稳定财务状况，限制了贷款供应，结果居民们借不到钱，减少了支出，触发价格下跌。</li>
+<li><strong>生产过剩</strong>：面包厂技术升级，面包生产量增加，但消费需求没变，价格下跌。</li>
+<li><strong>技术发展</strong>：自动化设备降低了农产品生产成本，需求不足的情况下，价格下跌。</li>
+<li><strong>市场信心不足</strong>：居民对未来收入不确定，减少消费，存更多的钱。</li>
+</ol>
+<h3 id="危机加剧"><a href="#危机加剧" class="headerlink" title="危机加剧"></a>危机加剧</h3><p>这些因素共同作用，加剧了小镇的经济困境：</p>
+<ol>
+<li><strong>持续降价</strong>：商品价格一降再降，但即便如此，需求仍低迷。</li>
+<li><strong>恶性循环</strong>：低消费导致收入下降，更多企业倒闭或裁员，居民收入进一步减少。</li>
+</ol>
+<h3 id="连锁反应"><a href="#连锁反应" class="headerlink" title="连锁反应"></a>连锁反应</h3><p>这些因素往往不会单独发生，它们可以互相影响和推动，进一步加剧通货紧缩的局面。一个综合例子：</p>
+<ul>
+<li>银行减少货币供应 -&gt; 消费减少 -&gt; 企业销售下降 -&gt; 价格下跌 -&gt; 企业利润减少 -&gt; 更多的企业裁员或倒闭 -&gt; 失业增加 -&gt; 进一步消费减少 -&gt; 价格继续下跌。</li>
+</ul>
+<h3 id="监测市场动向的迹象"><a href="#监测市场动向的迹象" class="headerlink" title="监测市场动向的迹象"></a>监测市场动向的迹象</h3><p>你可以通过以下迹象判断市场进入了通货紧缩阶段：</p>
+<ol>
+<li><strong>消费者物价指数（CPI）下降</strong>：你注意到政府公布的CPI数据显示，整体物价水平持续下降，这表明通货紧缩正在发生。</li>
+<li><strong>商铺和服务业收入下降</strong>：你从镇上的商铺和提供服务的小商家那里了解到，他们的收入显著减少，这反映出消费需求下降。</li>
+<li><strong>失业率上升</strong>：你发现更多的居民失去工作，镇上的失业率在上升，这是消费减少的直接后果。</li>
+<li><strong>库存增加</strong>：商店和工厂的库存商品越积越多，货物卖不出去，价格只能一降再降。</li>
+</ol>
+<h3 id="解困措施"><a href="#解困措施" class="headerlink" title="解困措施"></a>解困措施</h3><p>镇长意识到问题的严重性，决定采取一些措施来应对通货紧缩：</p>
+<h4 id="货币政策"><a href="#货币政策" class="headerlink" title="货币政策"></a>货币政策</h4><ol>
+<li><strong>降低利率</strong>：央行可以降低基准利率，使得贷款更便宜，鼓励消费和投资。</li>
+<li><strong>量化宽松</strong>：央行通过购买政府债券、机构债券、甚至是企业债券，增加市场中的货币供应，降低长期利率，刺激投资和消费。具体过程如下：<ul>
+<li><strong>购买债券</strong>：央行从商业银行和其他金融机构购买政府债券或其他高质量的金融资产。</li>
+<li><strong>注入流动性</strong>：央行通过购买债券，将现金注入这些金融机构，增加其可用资本。</li>
+<li><strong>刺激放贷</strong>：金融机构拥有更多流动性后，更有能力向企业和个人发放贷款，从而促进投资和消费。</li>
+<li><strong>降低长期利率</strong>：由于央行大量购买债券，债券价格上涨，收益率（即利率）降低，这使得长期贷款的成本下降，促进投资和消费。</li>
+</ul>
+</li>
+</ol>
+<h4 id="财政政策"><a href="#财政政策" class="headerlink" title="财政政策"></a>财政政策</h4><ol start="3">
+<li><strong>政府支出增加</strong>：政府可以增加基建项目和公共服务的投资，创造更多就业机会，提高居民收入。</li>
+<li><strong>减税</strong>：政府可以通过降低个人所得税、企业税等，增加居民和企业的可支配收入，刺激消费和投资。</li>
+<li><strong>直接补贴</strong>：向居民直接发放现金补贴，提高消费能力。</li>
+</ol>
+<h4 id="信心管理"><a href="#信心管理" class="headerlink" title="信心管理"></a>信心管理</h4><ol start="6">
+<li><strong>积极宣传和沟通</strong>：政府和央行可以发布乐观的经济预期和积极的措施，稳定市场信心。</li>
+<li><strong>政策透明度</strong>：确保政策的透明度和一致性，增强市场对政府应对经济问题的信心。</li>
+</ol>
+<h4 id="结构性改革"><a href="#结构性改革" class="headerlink" title="结构性改革"></a>结构性改革</h4><ol start="8">
+<li><strong>劳动力市场改革</strong>：通过培训和职业教育，提高劳动力技能，降低失业率。</li>
+<li><strong>促进创新和技术发展</strong>：通过研发支持和补贴，鼓励企业进行创新，提高生产效率和竞争力。</li>
+</ol>
+<h4 id="国际合作"><a href="#国际合作" class="headerlink" title="国际合作"></a>国际合作</h4><ol start="10">
+<li><strong>国际协调</strong>：与其他国家的央行和政府协调货币和财政政策，防止全球性通缩。</li>
+<li><strong>外汇干预</strong>：通过外汇市场干预，防止本币过度升值，提升出口竞争力，刺激经济增长。</li>
+</ol>
+<h4 id="资本市场措施"><a href="#资本市场措施" class="headerlink" title="资本市场措施"></a>资本市场措施</h4><ol start="12">
+<li><strong>改善融资环境</strong>：通过降低市场准入门槛和减少融资壁垒，促进中小企业获得更容易的资金支持。</li>
+<li><strong>金融扶持政策</strong>：制定优惠融资政策帮助面临困境的行业和企业恢复生产，稳定经济运行。</li>
+</ol>
+<h4 id="其他措施"><a href="#其他措施" class="headerlink" title="其他措施"></a>其他措施</h4><ol start="14">
+<li><strong>社会保障和福利</strong>：加强社会保障体系，提高失业救济金和社会福利，保障居民基本消费能力。</li>
+<li><strong>价格调控措施</strong>：短期内政府可以通过调控关键商品和服务的价格，防止价格急剧下滑。</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通货紧缩不仅仅是由于储蓄变高和消费减少引起的。货币供应减少、生产过剩、债务压力、技术发展、市场信心不足等因素都可能导致通货紧缩。这些因素及早期迹象常常互相交织，造成复杂的经济现象。政府和央行有多种政策手段可以用来应对通货紧缩，包括货币政策、财政政策、信心管理、结构性改革、国际合作、资本市场措施以及其他措施。这些措施相辅相成，可以帮助缓解通货紧缩，促进经济复苏。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>通货紧缩</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>伊尹放太甲</title>
     <url>/%E5%8E%86%E5%8F%B2/%E5%95%86%E6%9C%9D/%E4%BC%8A%E5%B0%B9%E6%94%BE%E5%A4%AA%E7%94%B2/</url>
     <content><![CDATA[<p>在伊尹的协助下，汤成功推翻了夏朝的统治，建立了商朝。商朝建立之初，百废待兴，汤又在伊尹的帮助下完善了各项典章制度，使商迅速恢复了社会秩序，走上正轨。商汤在位三十年，临终时，因为特别信任伊尹，把辅佐继任帝王的重任嘱托于他。</p>
@@ -830,33 +845,6 @@ slider.addEventListener('mousemove', (e) => {
       </categories>
       <tags>
         <tag>伊尹放太甲</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>女娲传说</title>
-    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E5%A5%B3%E5%A8%B2%E4%BC%A0%E8%AF%B4/</url>
-    <content><![CDATA[<p>在中国的上古神话中，女娲是继盘古之后另外一位创世之神。因为她，世间才有了人类，她是长久以来受广大的民间百姓们崇拜的创世神和始祖神。</p>
-<span id="more"></span>
-
-<p>盘古开天辟地之后，终于累倒了，身体也化作了世间万物，从此天地间有了日月星辰，有了花草树木，后来天地间残留的一股浊气吸收日月精华，化作了虫鱼鸟兽，从而使这寂静美丽的世界有了一丝生气。</p>
-<p>有一个神通广大的女神四处游历，后来来到盘古开辟的天地里，她就是女娲。女娲在草丰木茂的原野上行走着，举目四望，发现山峦连绵起伏，江河奔流不息，草木枝繁叶茂，鸟儿婉转歌唱，走兽成群结伴，鱼儿水中畅游，这个世界真是太美好了。于是，她决定留下来。</p>
-<p>日复一日，她享受着自然的美景，可是虽然有鸟兽虫鱼跟自己作伴，女娲渐渐产生了寂寞孤独的感觉。她总觉得缺少点什么，但又说不出到底是缺什么，只能任这种寂寥的感觉与日俱增。</p>
-<p>一天，她走在草木茂盛的原野上，飞鸟、走兽、游鱼再也不能让她高兴起来。她无精打采地沿着一条河流前行，觉得很累，就在河岸的一块石头上坐了下来。清澈的河水照出了她的影子，她看到了水中闷闷不乐的自己。于是她嘴角露出微笑，影子也笑了；她皱起眉头，影子也皱起眉头，这让她觉得非常有趣。突然间，她一下子明白了自己为什么会感到寂寞，因为世间没有跟她一样的生物，那些山川草木、虫鱼鸟兽怎么会可能与她心灵相通？</p>
-<p>她想，既然如此，何不按照自己的样子创造一些生物，让世界热闹起来呢？有了主意，她马上动起手来，在河边抓起一团黄泥，对着水中的影子又是捏又是揉，很快一个小泥人就做好了。女娲把小泥人托在手里，放到嘴前轻轻地吹一口气。小泥人有了气息竟活动起来，放到地面上后就到处走动，还一个劲儿地喊着：“妈妈！妈妈……”女娲真是太高兴了，赶紧动手捏第二个，并吹了一口气，第二个也活了，她又捏第三个，第四个……泥人越捏越多，后来女娲就把他们通通放在地上冲着他们吹了一口气，泥人们活了。他们有喜怒哀乐，而且能够说话，跟那些草木鸟兽完全不同。女娲再也不觉得寂寞了，她称呼这些活了的泥人为“人”。人们开始时在女娲的周围活动着，渐渐地很多都走远了，分散到各处。</p>
-<p>有了人，世界变得无比充实，女娲非常高兴，她继续一刻不停地接着捏泥人。可是大地如此辽阔，人们很快就消散于各地，女娲也感到越来越累了。她想，这样下去，世间的人还不够多时，她已经累得不行了。于是，她顺手从山崖上扯下一条藤蔓，伸进泥潭里抽打起来，溅起了很多混黄的泥点儿，泥点儿落地后也变成了活蹦乱跳的小人儿。她每抽打一下，就会产生很多人，而且和之前捏成的小人没什么两样，这样造人就快多了。于是，女娲高兴地使劲抽打起来，泥点子落得到处都是。等女娲停下来时，大地上已经有足够多的人了。</p>
-<p>一天，她想看看各处的人类，来到一个地方，发现有些人躺在地上一动不动，十分奇怪，仔细一看才发现这些小人都已经满头白发，老态龙钟了。原来他们年纪太大，已经死了。女娲就想，人们都会老去、死去，这样下去，总有一天人会死光的，难道到时候还要再重新创造吗？这也太麻烦了！女娲想，最好的办法是让人类自己繁衍生息，这样他们就可以绵延不绝了。</p>
-<p>于是，她就让这些人具有不同的身体特征，从而区分出男女，并让男人和女人结合，生出后代。为了不让这种结合使人类陷入混乱，她又建立了婚姻制度，从此人类靠自己就可以不断发展壮大了，所以女娲又被称为“婚姻女神”或“神媒”。</p>
-<p>人类可以靠自己繁衍生息了，他们一代一代地在大地上幸福地生活着。可是没过多久，他们就遇到了一次毁灭性地灾难。原来，水神共工和火神祝融争夺帝位，结果共工被打败了。共工一气之下，就用头去撞不周之山。这座擎天的大柱在一声巨响之后，便轰然倒塌，紧接着天向西北倾斜，地往东南塌陷，海水灌进了陆地，洪灾泛滥。因为剧烈的震荡，地上裂开很多大豁口，一个劲儿地往外喷火，山林里野兽也都受到触动，纷纷窜出来，见人便咬。很多人不是被水淹死，就是被火烧死，要么就是被野兽咬死。</p>
-<p>看着自己的子孙处在水深火热之中，女娲痛心不已，决定拯救人类。她周游四海走遍群山，走到东海的天台山，发现那里有可以炼石用的五色土，便决定在那里炼石补天。她在天台山顶堆起巨石当炉子，借来太阳神火，将五色土放入炉中，经过九天九夜终于炼就了五色巨石。然后她又花了九天九夜，用这些五彩的巨石把天补好。天好不容易被补好了，为了不让它再塌下来，她就斩下了一只万年神龟的四足支撑四极。终于，天地归位，洪水入渠，大火也熄灭了，人间又恢复了平静。不但如此，从此以后，每当雨过天晴，天边就会出现五色云霞，天空比以前更美了。人们摆脱了灾难，各个欢呼雀跃。</p>
-<p>女娲是中华民族伟大的母亲，她不仅按照自己的模样创造了人，建立了让人类可以繁衍的婚姻制度，使人们结成人类社会；当人类受到天灾的威胁时，还勇敢地保护我们。为了对这位伟大的母亲表示感谢，人们在天台山下建了女娲庙，世代朝拜，香火从不曾断过。</p>
-<p>关于女娲的传说，虽然是神话，但绝不是凭空捏造的，它是早期人类社会生活的写照。众所周知，早期人类缔结了以血缘为基础的母系氏族社会时期，女性在生产生活中居于主导地位，子女只识其母，不知其父，而女娲的传说正是母系社会这一历史时期的反映。</p>
-]]></content>
-      <categories>
-        <category>历史</category>
-        <category>远古时代</category>
-      </categories>
-      <tags>
-        <tag>女娲传说</tag>
       </tags>
   </entry>
   <entry>
@@ -886,6 +874,33 @@ slider.addEventListener('mousemove', (e) => {
       </categories>
       <tags>
         <tag>大禹治</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>女娲传说</title>
+    <url>/%E5%8E%86%E5%8F%B2/%E8%BF%9C%E5%8F%A4%E6%97%B6%E4%BB%A3/%E5%A5%B3%E5%A8%B2%E4%BC%A0%E8%AF%B4/</url>
+    <content><![CDATA[<p>在中国的上古神话中，女娲是继盘古之后另外一位创世之神。因为她，世间才有了人类，她是长久以来受广大的民间百姓们崇拜的创世神和始祖神。</p>
+<span id="more"></span>
+
+<p>盘古开天辟地之后，终于累倒了，身体也化作了世间万物，从此天地间有了日月星辰，有了花草树木，后来天地间残留的一股浊气吸收日月精华，化作了虫鱼鸟兽，从而使这寂静美丽的世界有了一丝生气。</p>
+<p>有一个神通广大的女神四处游历，后来来到盘古开辟的天地里，她就是女娲。女娲在草丰木茂的原野上行走着，举目四望，发现山峦连绵起伏，江河奔流不息，草木枝繁叶茂，鸟儿婉转歌唱，走兽成群结伴，鱼儿水中畅游，这个世界真是太美好了。于是，她决定留下来。</p>
+<p>日复一日，她享受着自然的美景，可是虽然有鸟兽虫鱼跟自己作伴，女娲渐渐产生了寂寞孤独的感觉。她总觉得缺少点什么，但又说不出到底是缺什么，只能任这种寂寥的感觉与日俱增。</p>
+<p>一天，她走在草木茂盛的原野上，飞鸟、走兽、游鱼再也不能让她高兴起来。她无精打采地沿着一条河流前行，觉得很累，就在河岸的一块石头上坐了下来。清澈的河水照出了她的影子，她看到了水中闷闷不乐的自己。于是她嘴角露出微笑，影子也笑了；她皱起眉头，影子也皱起眉头，这让她觉得非常有趣。突然间，她一下子明白了自己为什么会感到寂寞，因为世间没有跟她一样的生物，那些山川草木、虫鱼鸟兽怎么会可能与她心灵相通？</p>
+<p>她想，既然如此，何不按照自己的样子创造一些生物，让世界热闹起来呢？有了主意，她马上动起手来，在河边抓起一团黄泥，对着水中的影子又是捏又是揉，很快一个小泥人就做好了。女娲把小泥人托在手里，放到嘴前轻轻地吹一口气。小泥人有了气息竟活动起来，放到地面上后就到处走动，还一个劲儿地喊着：“妈妈！妈妈……”女娲真是太高兴了，赶紧动手捏第二个，并吹了一口气，第二个也活了，她又捏第三个，第四个……泥人越捏越多，后来女娲就把他们通通放在地上冲着他们吹了一口气，泥人们活了。他们有喜怒哀乐，而且能够说话，跟那些草木鸟兽完全不同。女娲再也不觉得寂寞了，她称呼这些活了的泥人为“人”。人们开始时在女娲的周围活动着，渐渐地很多都走远了，分散到各处。</p>
+<p>有了人，世界变得无比充实，女娲非常高兴，她继续一刻不停地接着捏泥人。可是大地如此辽阔，人们很快就消散于各地，女娲也感到越来越累了。她想，这样下去，世间的人还不够多时，她已经累得不行了。于是，她顺手从山崖上扯下一条藤蔓，伸进泥潭里抽打起来，溅起了很多混黄的泥点儿，泥点儿落地后也变成了活蹦乱跳的小人儿。她每抽打一下，就会产生很多人，而且和之前捏成的小人没什么两样，这样造人就快多了。于是，女娲高兴地使劲抽打起来，泥点子落得到处都是。等女娲停下来时，大地上已经有足够多的人了。</p>
+<p>一天，她想看看各处的人类，来到一个地方，发现有些人躺在地上一动不动，十分奇怪，仔细一看才发现这些小人都已经满头白发，老态龙钟了。原来他们年纪太大，已经死了。女娲就想，人们都会老去、死去，这样下去，总有一天人会死光的，难道到时候还要再重新创造吗？这也太麻烦了！女娲想，最好的办法是让人类自己繁衍生息，这样他们就可以绵延不绝了。</p>
+<p>于是，她就让这些人具有不同的身体特征，从而区分出男女，并让男人和女人结合，生出后代。为了不让这种结合使人类陷入混乱，她又建立了婚姻制度，从此人类靠自己就可以不断发展壮大了，所以女娲又被称为“婚姻女神”或“神媒”。</p>
+<p>人类可以靠自己繁衍生息了，他们一代一代地在大地上幸福地生活着。可是没过多久，他们就遇到了一次毁灭性地灾难。原来，水神共工和火神祝融争夺帝位，结果共工被打败了。共工一气之下，就用头去撞不周之山。这座擎天的大柱在一声巨响之后，便轰然倒塌，紧接着天向西北倾斜，地往东南塌陷，海水灌进了陆地，洪灾泛滥。因为剧烈的震荡，地上裂开很多大豁口，一个劲儿地往外喷火，山林里野兽也都受到触动，纷纷窜出来，见人便咬。很多人不是被水淹死，就是被火烧死，要么就是被野兽咬死。</p>
+<p>看着自己的子孙处在水深火热之中，女娲痛心不已，决定拯救人类。她周游四海走遍群山，走到东海的天台山，发现那里有可以炼石用的五色土，便决定在那里炼石补天。她在天台山顶堆起巨石当炉子，借来太阳神火，将五色土放入炉中，经过九天九夜终于炼就了五色巨石。然后她又花了九天九夜，用这些五彩的巨石把天补好。天好不容易被补好了，为了不让它再塌下来，她就斩下了一只万年神龟的四足支撑四极。终于，天地归位，洪水入渠，大火也熄灭了，人间又恢复了平静。不但如此，从此以后，每当雨过天晴，天边就会出现五色云霞，天空比以前更美了。人们摆脱了灾难，各个欢呼雀跃。</p>
+<p>女娲是中华民族伟大的母亲，她不仅按照自己的模样创造了人，建立了让人类可以繁衍的婚姻制度，使人们结成人类社会；当人类受到天灾的威胁时，还勇敢地保护我们。为了对这位伟大的母亲表示感谢，人们在天台山下建了女娲庙，世代朝拜，香火从不曾断过。</p>
+<p>关于女娲的传说，虽然是神话，但绝不是凭空捏造的，它是早期人类社会生活的写照。众所周知，早期人类缔结了以血缘为基础的母系氏族社会时期，女性在生产生活中居于主导地位，子女只识其母，不知其父，而女娲的传说正是母系社会这一历史时期的反映。</p>
+]]></content>
+      <categories>
+        <category>历史</category>
+        <category>远古时代</category>
+      </categories>
+      <tags>
+        <tag>女娲传说</tag>
       </tags>
   </entry>
   <entry>
@@ -1050,6 +1065,258 @@ slider.addEventListener('mousemove', (e) => {
 ]]></content>
   </entry>
   <entry>
+    <title>关于</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
+  </entry>
+  <entry>
+    <title>书籍</title>
+    <url>/book/index.html</url>
+    <content><![CDATA[<div id="bn-dynamic-bookshelf">
+  <div class="loading-text">正在从云端加载高颜值书架...</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const jsonUrl = "https://jsd.onmicrosoft.cn/gh/qqhsx/book@main/data.json"; 
+  const shelfContainer = document.getElementById("bn-dynamic-bookshelf");
+
+  fetch(jsonUrl)
+    .then(response => {
+      if (!response.ok) throw new Error("网络响应异常");
+      return response.json();
+    })
+    .then(books => {
+      if (!books || books.length === 0) {
+        shelfContainer.innerHTML = '<div class="loading-text">书架上空空如也，快去上传书籍吧！</div>';
+        return;
+      }
+      shelfContainer.innerHTML = "";
+
+      // 1. 按分类将书籍归档
+      const categorizedBooks = {};
+      books.forEach(book => {
+        let genre = book.genre || "未分类";
+        if (genre === "经济") genre = "经济理财";
+        if (!categorizedBooks[genre]) categorizedBooks[genre] = [];
+        categorizedBooks[genre].push(book);
+      });
+    
+      // 2. 排序分类
+      const genreOrder = ["经济理财", "历史", "科学技术", "文学"];
+      const sortedGenres = Object.keys(categorizedBooks).sort((a, b) => {
+        let indexA = genreOrder.indexOf(a);
+        let indexB = genreOrder.indexOf(b);
+        if (indexA === -1) indexA = 99;
+        if (indexB === -1) indexB = 99;
+        return indexA - indexB;
+      });
+    
+      // 3. 循环渲染每个分类
+      sortedGenres.forEach(genre => {
+        const shelfId = "shelf-" + Math.random().toString(36).substr(2, 9);
+        const btnId = "btn-" + shelfId;
+        const allBooks = categorizedBooks[genre];
+        
+        let btnHtml = "";
+        if (allBooks.length > 5) {
+          btnHtml = '<button class="bn-view-all-btn" id="' + btnId + '" data-state="collapsed">查看全部 (' + allBooks.length + ') ▾</button>';
+        }
+
+        const shelfHtml = 
+          '<div class="bn-genre-section">' +
+            '<div class="shelf-header">' +
+              '<h2 class="shelf-title">' + getGenreIcon(genre) + ' ' + genre + '</h2>' +
+              btnHtml +
+            '</div>' +
+            '<div class="bn-book-grid mode-scroll" id="' + shelfId + '"></div>' +
+          '</div>';
+
+        shelfContainer.insertAdjacentHTML('beforeend', shelfHtml);
+        const gridContainer = document.getElementById(shelfId);
+    
+        // 渲染该分类下的所有书籍
+        allBooks.forEach(book => {
+          const primaryCover = 'https://raw.githubusercontent.com/qqhsx/book/main/covers/[' + book.genre + ']' + book.title + '-' + book.author + '.jpg';
+          const backupCover = 'https://raw.githubusercontent.com/qqhsx/book/main/covers/[' + book.genre + ']' + book.title + '-' + book.author + '.jpeg';
+    
+          // 💡 核心改变：不用 <img> 标签，改用具有超强强制力的背景图机制，并加入备用图片逻辑
+          const cardHtml = 
+            '<div class="bn-book-card">' +
+              '<div class="cover-wrapper" style="background-image: url(\'' + primaryCover + '\');" data-backup="' + backupCover + '" onerror="this.style.backgroundImage=\'url(https://via.placeholder.com/150x220?text=No+Cover)\'">' +
+              '</div>' +
+              '<div class="bn-book-title" title="' + book.title + '">' + book.title + '</div>' +
+              '<div class="bn-book-author" title="' + book.author + '">' + book.author + '</div>' +
+              '<a href="' + book.file_path + '" class="bn-read-btn" target="_blank">立即阅读</a>' +
+            '</div>';
+
+          gridContainer.insertAdjacentHTML('beforeend', cardHtml);
+        });
+
+        // 💡 针对背景图的自动追补 .jpeg 错误检查
+        gridContainer.querySelectorAll('.cover-wrapper').forEach(wrapper => {
+          const img = new Image();
+          const bgUrl = wrapper.style.backgroundImage.slice(5, -2);
+          img.src = bgUrl;
+          img.onerror = function() {
+            // 如果 .jpg 加载失败，换成 .jpeg
+            const backup = wrapper.getAttribute('data-backup');
+            wrapper.style.backgroundImage = "url('" + backup + "')";
+            
+            // 如果 .jpeg 也失败，换成兜底图
+            const img2 = new Image();
+            img2.src = backup;
+            img2.onerror = function() {
+              wrapper.style.backgroundImage = "url('https://via.placeholder.com/150x220?text=No+Cover')";
+            };
+          };
+        });
+    
+        // 滚轮横转
+        gridContainer.addEventListener('wheel', function(e) {
+          if (gridContainer.classList.contains('mode-scroll')) {
+            e.preventDefault(); 
+            gridContainer.scrollLeft += e.deltaY; 
+          }
+        });
+
+        // 4. 绑定双模切换事件
+        if (allBooks.length > 5) {
+          const toggleBtn = document.getElementById(btnId);
+          toggleBtn.addEventListener('click', function() {
+            const isCollapsed = this.getAttribute('data-state') === 'collapsed';
+            
+            if (isCollapsed) {
+              gridContainer.classList.remove('mode-scroll');
+              gridContainer.classList.add('mode-grid');
+              this.setAttribute('data-state', 'expanded');
+              this.innerHTML = '收起书架 ▴';
+            } else {
+              gridContainer.classList.remove('mode-grid');
+              gridContainer.classList.add('mode-scroll');
+              this.setAttribute('data-state', 'collapsed');
+              this.innerHTML = '查看全部 (' + allBooks.length + ') ▾';
+            }
+          });
+        }
+      });
+    })
+    .catch(error => {
+      shelfContainer.innerHTML = '<div class="error-text">书架加载失败: ' + error.message + '</div>';
+    });
+});
+
+function getGenreIcon(genre) {
+  const icons = { "经济理财": "🪙", "历史": "⏳", "科学技术": "🔬", "文学": "📚", "未分类": "📖" };
+  return icons[genre] || "🔖";
+}
+</script>
+
+<style>
+.bn-genre-section { margin-bottom: 40px; }
+.loading-text, .error-text { text-align: center; padding: 40px; color: #767676; font-size: 15px; }
+.error-text { color: #cc0000; line-height: 1.8; }
+
+.shelf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #006644 !important;
+  padding-bottom: 8px;
+  margin-top: 30px !important;
+  margin-bottom: 20px !important;
+}
+.shelf-title {
+  font-size: 20px !important;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.bn-view-all-btn {
+  background: none;
+  border: none;
+  color: #006644;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+.bn-view-all-btn:hover { color: #004d33; text-decoration: underline; }
+
+.bn-book-grid.mode-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 25px;
+  padding: 10px 5px 20px 5px;
+  scrollbar-width: none;
+}
+.bn-book-grid.mode-scroll::-webkit-scrollbar { display: none; }
+.bn-book-grid.mode-scroll .bn-book-card { flex: 0 0 150px; }
+
+.bn-book-grid.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 25px;
+  padding: 10px 0;
+}
+
+.bn-book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+.bn-book-card:hover { transform: translateY(-6px); }
+
+/* 💡 升级重点：固定宽高的外层框，并强制将其作为高颜值背景图片容器 */
+.cover-wrapper {
+  width: 150px !important;       /* 强制定死宽度 150px */
+  height: 220px !important;      /* 强制定死高度 220px */
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06);
+  margin-bottom: 12px;
+  background-color: #f5f5f5;
+  
+  /* 背景图裁切核心 */
+  background-position: center !important;
+  background-size: cover !important;    /* 强制填满，多余裁剪 */
+  background-repeat: no-repeat !important;
+  transition: transform 0.3s ease;
+}
+.bn-book-card:hover .cover-wrapper { transform: scale(1.05); }
+
+.bn-book-title { font-size: 14px; font-weight: 600; color: #2b2b2b; margin: 4px 0; line-height: 1.3; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bn-book-author { font-size: 12px; color: #767676; margin-bottom: 10px; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.bn-read-btn {
+  display: inline-block;
+  width: 85%;
+  padding: 6px 0;
+  background-color: #006644 !important;
+  color: #ffffff !important;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none !important;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+  margin-top: auto;
+}
+.bn-read-btn:hover { background-color: #004d33 !important; box-shadow: 0 4px 8px rgba(0,102,68,0.2); }
+</style>]]></content>
+  </entry>
+  <entry>
     <title>creo</title>
     <url>/creo/index.html</url>
     <content><![CDATA[<h4 id="creo下载、安装"><a href="#creo下载、安装" class="headerlink" title="creo下载、安装"></a>creo下载、安装</h4><ul>
@@ -1125,14 +1392,6 @@ slider.addEventListener('mousemove', (e) => {
 </li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>关于</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹  兴趣爱好"></a>⛹  兴趣爱好</h2><h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>]]></content>
   </entry>
   <entry>
     <title>分类</title>
@@ -1313,313 +1572,6 @@ slider.addEventListener('mousemove', (e) => {
 ]]></content>
   </entry>
   <entry>
-    <title>书籍</title>
-    <url>/book/index.html</url>
-    <content><![CDATA[<div id="bn-dynamic-bookshelf">
-  <div class="loading-text">正在从云端加载高颜值书架...</div>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // 建议使用加速镜像地址，确保国内秒开
-  // const jsonUrl = "https://jsd.onmicrosoft.cn/gh/qqhsx/book@main/data.json";
-  const jsonUrl = "https://raw.githubusercontent.com/qqhsx/book/main/data.json";
-  const shelfContainer = document.getElementById("bn-dynamic-bookshelf");
-
-  fetch(jsonUrl)
-    .then(response => {
-      if (!response.ok) throw new Error("无法获取书籍数据");
-      return response.json();
-    })
-    .then(books => {
-      // 清空加载提示
-      shelfContainer.innerHTML = "";
-
-      // 1. 按分类将书籍归档
-      const categorizedBooks = {};
-      books.forEach(book => {
-        let genre = book.genre || "未分类";
-        // 兼容归一化：把老数据的“经济”合并到“经济理财”
-        if (genre === "经济") genre = "经济理财";
-        
-        if (!categorizedBooks[genre]) {
-          categorizedBooks[genre] = [];
-        }
-        categorizedBooks[genre].push(book);
-      });
-
-      // 2. 动态循环生成每个分类的书架
-      // 为了让分类有固定顺序，你可以定义一个偏好顺序，不在列表里的自动排在后面
-      const genreOrder = ["经济理财", "历史", "科学技术", "文学"];
-      const sortedGenres = Object.keys(categorizedBooks).sort((a, b) => {
-        let indexA = genreOrder.indexOf(a);
-        let indexB = genreOrder.indexOf(b);
-        if (indexA === -1) indexA = 99;
-        if (indexB === -1) indexB = 99;
-        return indexA - indexB;
-      });
-
-      sortedGenres.forEach(genre => {
-        // 创建书架大标题和网格
-        const shelfId = `shelf-${Math.random().toString(36).substr(2, 9)}`;
-        const shelfHtml = `
-          <div class="bn-genre-section">
-            <h2 class="shelf-title">${getGenreIcon(genre)} ${genre}</h2>
-            <div class="bn-book-grid" id="${shelfId}"></div>
-          </div>
-        `;
-        shelfContainer.insertAdjacentHTML('beforeend', shelfHtml);
-        const gridContainer = document.getElementById(shelfId);
-
-        // 渲染该分类下的所有书籍
-        categorizedBooks[genre].forEach(book => {
-          // 默认先尝试加载 .jpg 格式
-          const primaryCover = `https://raw.githubusercontent.com/qqhsx/book/main/covers/[${book.genre}]${book.title}-${book.author}.jpg`;
-          // 备用地址换成 .jpeg 格式
-          const backupCover = `https://raw.githubusercontent.com/qqhsx/book/main/covers/[${book.genre}]${book.title}-${book.author}.jpeg`;
-          const defaultPlaceholder = "https://via.placeholder.com/150x220?text=No+Cover";
-
-          const cardHtml = `
-            <div class="bn-book-card">
-              <div class="cover-wrapper">
-                <img src="${primaryCover}" 
-                     class="bn-book-cover" 
-                     onerror="handleCoverError(this, '${backupCover}', '${defaultPlaceholder}')">
-              </div>
-              <div class="bn-book-title" title="${book.title}">${book.title}</div>
-              <div class="bn-book-author" title="${book.author}">${book.author}</div>
-              <a href="${book.file_path}" class="bn-read-btn" target="_blank">立即阅读</a>
-            </div>
-          `;
-          gridContainer.insertAdjacentHTML('beforeend', cardHtml);
-        });
-      });
-    })
-    .catch(error => {
-      shelfContainer.innerHTML = `<div class="error-text">书架加载失败，请刷新重试。错误信息: ${error.message}</div>`;
-    });
-});
-
-/**
- * 核心：封面多格式兼容错误处理函数
- */
-function handleCoverError(imgElement, backupUrl, placeholderUrl) {
-  // 如果当前尝试的是第一顺位的 .jpg 并且失败了，切换到 .jpeg
-  if (!imgElement.getAttribute('data-tried-backup')) {
-    imgElement.setAttribute('data-tried-backup', 'true');
-    imgElement.src = backupUrl;
-  } else {
-    // 如果 .jpeg 也失败了，展示兜底图，并断开死循环
-    imgElement.onerror = null;
-    imgElement.src = placeholderUrl;
-  }
-}
-
-/**
- * 辅助：根据分类名自动匹配精美的小图标（可自行在下方增删）
- */
-function getGenreIcon(genre) {
-  const icons = {
-    "经济理财": "🪙",
-    "历史": "⏳",
-    "科学技术": "🔬",
-    "文学": "📚",
-    "未分类": "📖"
-  };
-  return icons[genre] || "🔖"; // 没匹配到时默认用书签图标
-}
-</script>
-
-<style>
-.bn-genre-section {
-  margin-bottom: 40px;
-}
-.loading-text, .error-text {
-  text-align: center;
-  padding: 40px;
-  color: #767676;
-  font-size: 15px;
-}
-.error-text { color: #cc0000; }
-
-.shelf-title {
-  font-size: 20px !important;
-  font-weight: 700;
-  color: #1a1a1a;
-  border-bottom: 2px solid #006644 !important; /* B&N 经典绿下划线 */
-  padding-bottom: 8px;
-  margin-top: 30px !important;
-  margin-bottom: 20px !important;
-}
-
-.bn-book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 25px;
-  padding: 10px 0;
-}
-
-.bn-book-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background: #fff;
-  padding: 10px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-.bn-book-card:hover { transform: translateY(-6px); }
-
-.cover-wrapper {
-  width: 100%;
-  aspect-ratio: 2 / 3; 
-  overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06);
-  margin-bottom: 12px;
-  background: #f5f5f5;
-}
-
-.bn-book-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.bn-book-card:hover .bn-book-cover { transform: scale(1.05); }
-
-.bn-book-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: #2b2b2b;
-  margin: 4px 0;
-  line-height: 1.3;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.bn-book-author {
-  font-size: 12px;
-  color: #767676;
-  margin-bottom: 10px;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.bn-read-btn {
-  display: inline-block;
-  width: 85%;
-  padding: 6px 0;
-  background-color: #006644 !important;
-  color: #ffffff !important;
-  font-size: 12px;
-  font-weight: 500;
-  text-decoration: none !important;
-  border-radius: 20px;
-  transition: background-color 0.2s ease;
-  margin-top: auto;
-}
-.bn-read-btn:hover {
-  background-color: #004d33 !important;
-  box-shadow: 0 4px 8px rgba(0,102,68,0.2);
-}
-</style>]]></content>
-  </entry>
-  <entry>
-    <title>trending indices</title>
-    <url>/indices/index.html</url>
-    <content><![CDATA[<link rel="stylesheet" href="/css/indices.css">
-
-
-<div id="stock-data">
-    加载中...
-</div>
-
-<script type="text/javascript" src="/js/indices/sse.js"></script>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/bitcoin.js</url>
-    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
-    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
-	
-    function fetchBitcoinPrice() {
-        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应失败');
-                }
-                return response.json();
-            })
-            .then(bitcoinData => {
-                const usdRate = bitcoinData.bpi.USD.rate;
-                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
-            })
-            .catch(error => {
-                console.error('获取比特币价格失败:', error);
-                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
-            });
-    }
-
-    // 初次加载数据
-    fetchBitcoinPrice();
-
-
-    // 设置自动刷新，每毫秒刷新一次
-    setInterval(fetchBitcoinPrice, 100);
-
-});
-
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/js/holiday.js</url>
-    <content><![CDATA[
-document.addEventListener('DOMContentLoaded', function() {
-	fetch('https://timor.tech/api/holiday/tts?' + new Date().getTime())
-		.then(response => response.json())
-		.then(data => {
-			const holidayInfoDiv = document.getElementById('holiday-info');
-
-			if (data.code === 0) {
-				holidayInfoDiv.textContent = data.tts;
-			} else {
-				holidayInfoDiv.textContent = '无法获取节假日信息';
-			}
-		})
-		.catch(error => {
-			console.error('获取节假日信息失败:', error);
-			const holidayInfoDiv = document.getElementById('holiday-info');
-			holidayInfoDiv.textContent = '请求失败';
-		});
-});
-]]></content>
-  </entry>
-  <entry>
-    <title>新闻</title>
-    <url>/news/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-
-<script type="text/javascript" src="/js/news/news.js"></script>
-<link rel="stylesheet" href="/css/news.css">]]></content>
-  </entry>
-  <entry>
     <title>经济大事年表</title>
     <url>/economyTime/index.html</url>
     <content><![CDATA[<p>资料来源：<a href="https://mp.sohu.com/profile?xpt=QUY2NUEzMUEyQzkzNEQyODU3NTBCRDAzOTQ2NTQ0ODZAcXEuc29odS5jb20=&_f=index_pagemp_2&spm=smpc.content.author.3.1730360581519rdQLisA">高连奎财经学术平台</a></p>
@@ -1777,16 +1729,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>2018年，中国学者郎咸平提出“马克思中观经济学”，郎咸平认为《资本论》灵魂蕴藏在第二卷中，马克思经济学中将社会各行业分为两个部门，一个生产资料部门（类似重工业），一个生活资料部门（类似轻工业），马克思的计划经济是指的生产资料部门，不包括生活资料部门，只要国家对生产资料部门进行计划，经济就会稳定发展，否则会经济危机，中国改革开放之所以成功就是因为放开了“第二部门，即生活资料部门”；苏联之所以“垮台”，就是因为“第二部门即生活资料部门”也实行了彻底的计划经济；美国之所以发生“大萧条”，就是因为“第一部门即生产资料部门”也实行了自由市场经济。</p>
 <p>2019年，中国学者金碚提出“域观经济学”，认为微观-宏观范式”所描述的那个抽象世界在真实世界中是不存在的，而域类存在才是现实经济的基本质态，所有经济体都是受到价值文化和制度形态深刻影响的域类存在体，任何现实经济现象都是域观现象。真实世界中人的行为既有相同性，也有差异性，有的差异性极大。“经济学既要承认人的行为的相同性，也必须正视人的行为的差异性。”“如果将行为相同性较强的人群活动空间定义为一个‘经济域’，并承认经济空间区分各个不同的‘经济域’，就可以为经济学的学术范式奠定更可信和坚实的逻辑基础。”，在现实世界中，不仅人的个体差异巨大，而且处于不同国家、地域、领域以及各种可以成为“域”的情景中的不同人群之间的差异也很大，也就是说，经济世界并非唯一“常态”，而是多种“常态”共存。以“域观范式”的视角来研究经济现象和商业活动，可以建立一门新的学科，即商域经济学。其中，经济理性和一定的价值文化及制度形态互动交融表现为各商域的文明型式，是商域经济学最基本的学术特性。微观经济学和宏观经济学范式主要以经济理性为支柱，而域观经济学范式则以经济理性、价值文化和制度形态三维框架为支柱。域观经济学则以刻画多元域态和发现域际机理为逻辑指向。”</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>schedule</title>
-    <url>/schedule/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>标签</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>历史时间轴</title>
@@ -2023,6 +1965,120 @@ document.addEventListener('DOMContentLoaded', function() {
 </div></div></div>]]></content>
   </entry>
   <entry>
+    <title>trending indices</title>
+    <url>/indices/index.html</url>
+    <content><![CDATA[<link rel="stylesheet" href="/css/indices.css">
+
+
+<div id="stock-data">
+    加载中...
+</div>
+
+<script type="text/javascript" src="/js/indices/sse.js"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/js/bitcoin.js</url>
+    <content><![CDATA[document.addEventListener('DOMContentLoaded', function() {
+    const bitcoinPriceDiv = document.getElementById('bitcoin-price');
+	
+    function fetchBitcoinPrice() {
+        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                return response.json();
+            })
+            .then(bitcoinData => {
+                const usdRate = bitcoinData.bpi.USD.rate;
+                bitcoinPriceDiv.innerHTML = `当前比特币价格：$${usdRate}`;
+            })
+            .catch(error => {
+                console.error('获取比特币价格失败:', error);
+                bitcoinPriceDiv.innerHTML = '获取比特币价格失败';
+            });
+    }
+
+    // 初次加载数据
+    fetchBitcoinPrice();
+
+
+    // 设置自动刷新，每毫秒刷新一次
+    setInterval(fetchBitcoinPrice, 100);
+
+});
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/js/holiday.js</url>
+    <content><![CDATA[
+document.addEventListener('DOMContentLoaded', function() {
+	fetch('https://timor.tech/api/holiday/tts?' + new Date().getTime())
+		.then(response => response.json())
+		.then(data => {
+			const holidayInfoDiv = document.getElementById('holiday-info');
+
+			if (data.code === 0) {
+				holidayInfoDiv.textContent = data.tts;
+			} else {
+				holidayInfoDiv.textContent = '无法获取节假日信息';
+			}
+		})
+		.catch(error => {
+			console.error('获取节假日信息失败:', error);
+			const holidayInfoDiv = document.getElementById('holiday-info');
+			holidayInfoDiv.textContent = '请求失败';
+		});
+});
+]]></content>
+  </entry>
+  <entry>
+    <title>schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>新闻</title>
+    <url>/news/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/news/news.js"></script>
+<link rel="stylesheet" href="/css/news.css">]]></content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>数码</title>
+    <url>/news/digital/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
+  </entry>
+  <entry>
     <title>sse composite index(000001.SS)</title>
     <url>/indices/sse%20composite%20index/index.html</url>
     <content><![CDATA[<div id="stock-data">
@@ -2063,51 +2119,6 @@ document.addEventListener('DOMContentLoaded', function() {
 ]]></content>
   </entry>
   <entry>
-    <title>数码</title>
-    <url>/news/digital/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/digital.js"></script>]]></content>
-  </entry>
-  <entry>
-    <title>头条</title>
-    <url>/news/front/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/front.js"></script>]]></content>
-  </entry>
-  <entry>
-    <title>游戏</title>
-    <url>/news/game/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>时尚</title>
     <url>/news/fashion/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2138,6 +2149,21 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/finance.js"></script>]]></content>
   </entry>
   <entry>
+    <title>头条</title>
+    <url>/news/front/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/front.js"></script>]]></content>
+  </entry>
+  <entry>
     <title>健康</title>
     <url>/news/health/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2151,6 +2177,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/health.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>游戏</title>
+    <url>/news/game/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+<script type="text/javascript" src="/js/news/game.js"></script>]]></content>
   </entry>
   <entry>
     <title>军事</title>
@@ -2183,21 +2224,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/phone.js"></script>]]></content>
   </entry>
   <entry>
-    <title>娱乐</title>
-    <url>/news/recreation/index.html</url>
-    <content><![CDATA[<div id="news-list"></div>
-<button id="load-more-button">加载更多</button>
-<div id="error-container" style="display:none; color:red;"></div>
-<div id="news-details-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div id="news-details"></div>
-        <button id="back-to-top">回到顶部</button>
-    </div>
-</div>
-<script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>体育</title>
     <url>/news/physical/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
@@ -2213,8 +2239,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/physical.js"></script>]]></content>
   </entry>
   <entry>
-    <title>科技</title>
-    <url>/news/science/index.html</url>
+    <title>娱乐</title>
+    <url>/news/recreation/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
 <button id="load-more-button">加载更多</button>
 <div id="error-container" style="display:none; color:red;"></div>
@@ -2225,7 +2251,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <button id="back-to-top">回到顶部</button>
     </div>
 </div>
-<script type="text/javascript" src="/js/news/science.js"></script>]]></content>
+<script type="text/javascript" src="/js/news/recreation.js"></script>]]></content>
   </entry>
   <entry>
     <title>旅游</title>
@@ -2243,8 +2269,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="text/javascript" src="/js/news/travel.js"></script>]]></content>
   </entry>
   <entry>
-    <title>精选</title>
-    <url>/news/winnow/index.html</url>
+    <title>科技</title>
+    <url>/news/science/index.html</url>
     <content><![CDATA[<div id="news-list"></div>
 <button id="load-more-button">加载更多</button>
 <div id="error-container" style="display:none; color:red;"></div>
@@ -2255,8 +2281,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <button id="back-to-top">回到顶部</button>
     </div>
 </div>
-
-<script type="text/javascript" src="/js/news/winnow.js"></script>]]></content>
+<script type="text/javascript" src="/js/news/science.js"></script>]]></content>
   </entry>
   <entry>
     <title>视频</title>
@@ -2275,5 +2300,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script type="text/javascript" src="/js/news/video.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>精选</title>
+    <url>/news/winnow/index.html</url>
+    <content><![CDATA[<div id="news-list"></div>
+<button id="load-more-button">加载更多</button>
+<div id="error-container" style="display:none; color:red;"></div>
+<div id="news-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="news-details"></div>
+        <button id="back-to-top">回到顶部</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/news/winnow.js"></script>]]></content>
   </entry>
 </search>
