@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"qqhsx.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="正在从云端加载高颜值书架...    document.addEventListener(&quot;DOMContentLoaded&quot;, function() {   const jsonUrl &#x3D; &quot;https:&#x2F;&#x2F;jsd.onmicrosoft.cn&#x2F;gh&#x2F;qqhsx&#x2F;book@main&#x2F;data.json&quot;;    const shelfContainer &#x3D; document.getElem">
+    <meta name="description" content="正在从云端加载高颜值书架...   document.addEventListener(&quot;DOMContentLoaded&quot;, function() {   const jsonUrl &#x3D; &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;qqhsx&#x2F;book&#x2F;main&#x2F;data.json&quot;;    const shelfContainer &#x3D; document.getE">
 <meta property="og:type" content="website">
 <meta property="og:title" content="书籍">
 <meta property="og:url" content="https://qqhsx.github.io/book/index.html">
 <meta property="og:site_name" content="读懂世界">
-<meta property="og:description" content="正在从云端加载高颜值书架...    document.addEventListener(&quot;DOMContentLoaded&quot;, function() {   const jsonUrl &#x3D; &quot;https:&#x2F;&#x2F;jsd.onmicrosoft.cn&#x2F;gh&#x2F;qqhsx&#x2F;book@main&#x2F;data.json&quot;;    const shelfContainer &#x3D; document.getElem">
+<meta property="og:description" content="正在从云端加载高颜值书架...   document.addEventListener(&quot;DOMContentLoaded&quot;, function() {   const jsonUrl &#x3D; &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;qqhsx&#x2F;book&#x2F;main&#x2F;data.json&quot;;    const shelfContainer &#x3D; document.getE">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-12T00:16:13.000Z">
-<meta property="article:modified_time" content="2026-05-28T10:31:32.567Z">
+<meta property="article:modified_time" content="2026-05-29T03:07:49.554Z">
 <meta property="article:author" content="H1985">
 <meta name="twitter:card" content="summary">
 
@@ -218,143 +218,126 @@
           <div id="bn-dynamic-bookshelf">
   <div class="loading-text">正在从云端加载高颜值书架...</div>
 </div>
-
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const jsonUrl = "https://jsd.onmicrosoft.cn/gh/qqhsx/book@main/data.json"; 
+  const jsonUrl = "https://raw.githubusercontent.com/qqhsx/book/main/data.json"; 
   const shelfContainer = document.getElementById("bn-dynamic-bookshelf");
 
-  fetch(jsonUrl)
-    .then(response => {
-      if (!response.ok) throw new Error("网络响应异常");
-      return response.json();
-    })
-    .then(books => {
-      if (!books || books.length === 0) {
-        shelfContainer.innerHTML = '<div class="loading-text">书架上空空如也，快去上传书籍吧！</div>';
-        return;
-      }
-      shelfContainer.innerHTML = "";
+<p>  fetch(jsonUrl)<br>    .then(response &#x3D;&gt; {<br>      if (!response.ok) throw new Error(“网络响应异常”);<br>      return response.json();<br>    })<br>    .then(books &#x3D;&gt; {<br>      if (!books || books.length &#x3D;&#x3D;&#x3D; 0) {<br>        shelfContainer.innerHTML &#x3D; ‘<div class="loading-text">书架上空空如也，快去上传书籍吧！</div>‘;<br>        return;<br>      }<br>      shelfContainer.innerHTML &#x3D; “”;</p>
+<pre><code>  // 1. 按分类将书籍归档
+  const categorizedBooks = &#123;&#125;;
+  books.forEach(book =&gt; &#123;
+    let genre = book.genre || &quot;未分类&quot;;
+    if (genre === &quot;经济&quot;) genre = &quot;经济理财&quot;;
+    if (!categorizedBooks[genre]) categorizedBooks[genre] = [];
+    categorizedBooks[genre].push(book);
+  &#125;);
 
-      // 1. 按分类将书籍归档
-      const categorizedBooks = {};
-      books.forEach(book => {
-        let genre = book.genre || "未分类";
-        if (genre === "经济") genre = "经济理财";
-        if (!categorizedBooks[genre]) categorizedBooks[genre] = [];
-        categorizedBooks[genre].push(book);
-      });
+  // 2. 排序分类
+  const genreOrder = [&quot;经济理财&quot;, &quot;历史&quot;, &quot;科学技术&quot;, &quot;文学&quot;];
+  const sortedGenres = Object.keys(categorizedBooks).sort((a, b) =&gt; &#123;
+    let indexA = genreOrder.indexOf(a);
+    let indexB = genreOrder.indexOf(b);
+    if (indexA === -1) indexA = 99;
+    if (indexB === -1) indexB = 99;
+    return indexA - indexB;
+  &#125;);
+
+  // 3. 循环渲染每个分类
+  sortedGenres.forEach(genre =&gt; &#123;
+    const shelfId = &quot;shelf-&quot; + Math.random().toString(36).substr(2, 9);
+    const btnId = &quot;btn-&quot; + shelfId;
+    const allBooks = categorizedBooks[genre];
     
-      // 2. 排序分类
-      const genreOrder = ["经济理财", "历史", "科学技术", "文学"];
-      const sortedGenres = Object.keys(categorizedBooks).sort((a, b) => {
-        let indexA = genreOrder.indexOf(a);
-        let indexB = genreOrder.indexOf(b);
-        if (indexA === -1) indexA = 99;
-        if (indexB === -1) indexB = 99;
-        return indexA - indexB;
-      });
-    
-      // 3. 循环渲染每个分类
-      sortedGenres.forEach(genre => {
-        const shelfId = "shelf-" + Math.random().toString(36).substr(2, 9);
-        const btnId = "btn-" + shelfId;
-        const allBooks = categorizedBooks[genre];
+    let btnHtml = &quot;&quot;;
+    if (allBooks.length &gt; 5) &#123;
+      btnHtml = &#39;&lt;button class=&quot;bn-view-all-btn&quot; id=&quot;&#39; + btnId + &#39;&quot; data-state=&quot;collapsed&quot;&gt;查看全部 (&#39; + allBooks.length + &#39;) ▾&lt;/button&gt;&#39;;
+    &#125;
+
+    const shelfHtml = 
+      &#39;&lt;div class=&quot;bn-genre-section&quot;&gt;&#39; +
+        &#39;&lt;div class=&quot;shelf-header&quot;&gt;&#39; +
+          &#39;&lt;h2 class=&quot;shelf-title&quot;&gt;&#39; + getGenreIcon(genre) + &#39; &#39; + genre + &#39;&lt;/h2&gt;&#39; +
+          btnHtml +
+        &#39;&lt;/div&gt;&#39; +
+        &#39;&lt;div class=&quot;bn-book-grid mode-scroll&quot; id=&quot;&#39; + shelfId + &#39;&quot;&gt;&lt;/div&gt;&#39; +
+      &#39;&lt;/div&gt;&#39;;
+
+    shelfContainer.insertAdjacentHTML(&#39;beforeend&#39;, shelfHtml);
+    const gridContainer = document.getElementById(shelfId);
+
+    // 渲染该分类下的所有书籍
+    allBooks.forEach(book =&gt; &#123;
+      const primaryCover = &#39;https://raw.githubusercontent.com/qqhsx/book/main/covers/[&#39; + book.genre + &#39;]&#39; + book.title + &#39;-&#39; + book.author + &#39;.jpg&#39;;
+      const backupCover = &#39;https://raw.githubusercontent.com/qqhsx/book/main/covers/[&#39; + book.genre + &#39;]&#39; + book.title + &#39;-&#39; + book.author + &#39;.jpeg&#39;;
+
+      // 💡 核心改变：不用 &lt;img&gt; 标签，改用具有超强强制力的背景图机制，并加入备用图片逻辑
+      const cardHtml = 
+        &#39;&lt;div class=&quot;bn-book-card&quot;&gt;&#39; +
+          &#39;&lt;div class=&quot;cover-wrapper&quot; style=&quot;background-image: url(\&#39;&#39; + primaryCover + &#39;\&#39;);&quot; data-backup=&quot;&#39; + backupCover + &#39;&quot; onerror=&quot;this.style.backgroundImage=\&#39;url(https://via.placeholder.com/150x220?text=No+Cover)\&#39;&quot;&gt;&#39; +
+          &#39;&lt;/div&gt;&#39; +
+          &#39;&lt;div class=&quot;bn-book-title&quot; title=&quot;&#39; + book.title + &#39;&quot;&gt;&#39; + book.title + &#39;&lt;/div&gt;&#39; +
+          &#39;&lt;div class=&quot;bn-book-author&quot; title=&quot;&#39; + book.author + &#39;&quot;&gt;&#39; + book.author + &#39;&lt;/div&gt;&#39; +
+          &#39;&lt;a href=&quot;&#39; + book.file_path + &#39;&quot; class=&quot;bn-read-btn&quot; target=&quot;_blank&quot;&gt;立即阅读&lt;/a&gt;&#39; +
+        &#39;&lt;/div&gt;&#39;;
+
+      gridContainer.insertAdjacentHTML(&#39;beforeend&#39;, cardHtml);
+    &#125;);
+
+    // 💡 针对背景图的自动追补 .jpeg 错误检查
+    gridContainer.querySelectorAll(&#39;.cover-wrapper&#39;).forEach(wrapper =&gt; &#123;
+      const img = new Image();
+      const bgUrl = wrapper.style.backgroundImage.slice(5, -2);
+      img.src = bgUrl;
+      img.onerror = function() &#123;
+        // 如果 .jpg 加载失败，换成 .jpeg
+        const backup = wrapper.getAttribute(&#39;data-backup&#39;);
+        wrapper.style.backgroundImage = &quot;url(&#39;&quot; + backup + &quot;&#39;)&quot;;
         
-        let btnHtml = "";
-        if (allBooks.length > 5) {
-          btnHtml = '<button class="bn-view-all-btn" id="' + btnId + '" data-state="collapsed">查看全部 (' + allBooks.length + ') ▾</button>';
-        }
-    
-        const shelfHtml = 
-          '<div class="bn-genre-section">' +
-            '<div class="shelf-header">' +
-              '<h2 class="shelf-title">' + getGenreIcon(genre) + ' ' + genre + '</h2>' +
-              btnHtml +
-            '</div>' +
-            '<div class="bn-book-grid mode-scroll" id="' + shelfId + '"></div>' +
-          '</div>';
-    
-        shelfContainer.insertAdjacentHTML('beforeend', shelfHtml);
-        const gridContainer = document.getElementById(shelfId);
-    
-        // 渲染该分类下的所有书籍
-        allBooks.forEach(book => {
-          const primaryCover = 'https://raw.githubusercontent.com/qqhsx/book/main/covers/[' + book.genre + ']' + book.title + '-' + book.author + '.jpg';
-          const backupCover = 'https://raw.githubusercontent.com/qqhsx/book/main/covers/[' + book.genre + ']' + book.title + '-' + book.author + '.jpeg';
-    
-          // 💡 核心改变：不用 <img> 标签，改用具有超强强制力的背景图机制，并加入备用图片逻辑
-          const cardHtml = 
-            '<div class="bn-book-card">' +
-              '<div class="cover-wrapper" style="background-image: url(\'' + primaryCover + '\');" data-backup="' + backupCover + '" onerror="this.style.backgroundImage=\'url(https://via.placeholder.com/150x220?text=No+Cover)\'">' +
-              '</div>' +
-              '<div class="bn-book-title" title="' + book.title + '">' + book.title + '</div>' +
-              '<div class="bn-book-author" title="' + book.author + '">' + book.author + '</div>' +
-              '<a href="' + book.file_path + '" class="bn-read-btn" target="_blank">立即阅读</a>' +
-            '</div>';
-    
-          gridContainer.insertAdjacentHTML('beforeend', cardHtml);
-        });
-    
-        // 💡 针对背景图的自动追补 .jpeg 错误检查
-        gridContainer.querySelectorAll('.cover-wrapper').forEach(wrapper => {
-          const img = new Image();
-          const bgUrl = wrapper.style.backgroundImage.slice(5, -2);
-          img.src = bgUrl;
-          img.onerror = function() {
-            // 如果 .jpg 加载失败，换成 .jpeg
-            const backup = wrapper.getAttribute('data-backup');
-            wrapper.style.backgroundImage = "url('" + backup + "')";
-            
-            // 如果 .jpeg 也失败，换成兜底图
-            const img2 = new Image();
-            img2.src = backup;
-            img2.onerror = function() {
-              wrapper.style.backgroundImage = "url('https://via.placeholder.com/150x220?text=No+Cover')";
-            };
-          };
-        });
-    
-        // 滚轮横转
-        gridContainer.addEventListener('wheel', function(e) {
-          if (gridContainer.classList.contains('mode-scroll')) {
-            e.preventDefault(); 
-            gridContainer.scrollLeft += e.deltaY; 
-          }
-        });
-    
-        // 4. 绑定双模切换事件
-        if (allBooks.length > 5) {
-          const toggleBtn = document.getElementById(btnId);
-          toggleBtn.addEventListener('click', function() {
-            const isCollapsed = this.getAttribute('data-state') === 'collapsed';
-            
-            if (isCollapsed) {
-              gridContainer.classList.remove('mode-scroll');
-              gridContainer.classList.add('mode-grid');
-              this.setAttribute('data-state', 'expanded');
-              this.innerHTML = '收起书架 ▴';
-            } else {
-              gridContainer.classList.remove('mode-grid');
-              gridContainer.classList.add('mode-scroll');
-              this.setAttribute('data-state', 'collapsed');
-              this.innerHTML = '查看全部 (' + allBooks.length + ') ▾';
-            }
-          });
-        }
-      });
-    })
-    .catch(error => {
-      shelfContainer.innerHTML = '<div class="error-text">书架加载失败: ' + error.message + '</div>';
-    });
-});
+        // 如果 .jpeg 也失败，换成兜底图
+        const img2 = new Image();
+        img2.src = backup;
+        img2.onerror = function() &#123;
+          wrapper.style.backgroundImage = &quot;url(&#39;https://via.placeholder.com/150x220?text=No+Cover&#39;)&quot;;
+        &#125;;
+      &#125;;
+    &#125;);
 
-function getGenreIcon(genre) {
-  const icons = { "经济理财": "🤑", "历史": "⏳", "科学技术": "🔬", "文学": "📚", "未分类": "📖" };
-  return icons[genre] || "🔖";
-}
-</script>
+    // 滚轮横转
+    gridContainer.addEventListener(&#39;wheel&#39;, function(e) &#123;
+      if (gridContainer.classList.contains(&#39;mode-scroll&#39;)) &#123;
+        e.preventDefault(); 
+        gridContainer.scrollLeft += e.deltaY; 
+      &#125;
+    &#125;);
 
+    // 4. 绑定双模切换事件
+    if (allBooks.length &gt; 5) &#123;
+      const toggleBtn = document.getElementById(btnId);
+      toggleBtn.addEventListener(&#39;click&#39;, function() &#123;
+        const isCollapsed = this.getAttribute(&#39;data-state&#39;) === &#39;collapsed&#39;;
+        
+        if (isCollapsed) &#123;
+          gridContainer.classList.remove(&#39;mode-scroll&#39;);
+          gridContainer.classList.add(&#39;mode-grid&#39;);
+          this.setAttribute(&#39;data-state&#39;, &#39;expanded&#39;);
+          this.innerHTML = &#39;收起书架 ▴&#39;;
+        &#125; else &#123;
+          gridContainer.classList.remove(&#39;mode-grid&#39;);
+          gridContainer.classList.add(&#39;mode-scroll&#39;);
+          this.setAttribute(&#39;data-state&#39;, &#39;collapsed&#39;);
+          this.innerHTML = &#39;查看全部 (&#39; + allBooks.length + &#39;) ▾&#39;;
+        &#125;
+      &#125;);
+    &#125;
+  &#125;);
+&#125;)
+.catch(error =&gt; &#123;
+  shelfContainer.innerHTML = &#39;&lt;div class=&quot;error-text&quot;&gt;书架加载失败: &#39; + error.message + &#39;&lt;/div&gt;&#39;;
+&#125;);
+</code></pre>
+<p>});</p>
+<p>function getGenreIcon(genre) {<br>  const icons &#x3D; { “经济理财”: “🤑”, “历史”: “⏳”, “科学技术”: “🔬”, “文学”: “📚”, “未分类”: “📖” };<br>  return icons[genre] || “🔖”;<br>}<br></script><p></p>
 <style>
 .bn-genre-section { margin-bottom: 40px; }
 .loading-text, .error-text { text-align: center; padding: 40px; color: #767676; font-size: 15px; }
