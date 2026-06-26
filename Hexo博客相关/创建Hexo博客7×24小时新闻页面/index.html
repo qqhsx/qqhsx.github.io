@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"qqhsx.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="第一步：在 Hexo 中新建一个独立页面 1hexo new page live">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建Hexo博客7×24小时新闻页面">
+<meta property="og:url" content="https://qqhsx.github.io/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/%E5%88%9B%E5%BB%BAHexo%E5%8D%9A%E5%AE%A27%C3%9724%E5%B0%8F%E6%97%B6%E6%96%B0%E9%97%BB%E9%A1%B5%E9%9D%A2/index.html">
+<meta property="og:site_name" content="读懂世界">
+<meta property="og:description" content="第一步：在 Hexo 中新建一个独立页面 1hexo new page live">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-26T08:02:28.000Z">
+<meta property="article:modified_time" content="2026-06-26T08:07:57.154Z">
+<meta property="article:author" content="H1985">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="7×24小时新闻">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://qqhsx.github.io/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/%E5%88%9B%E5%BB%BAHexo%E5%8D%9A%E5%AE%A27%C3%9724%E5%B0%8F%E6%97%B6%E6%96%B0%E9%97%BB%E9%A1%B5%E9%9D%A2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://qqhsx.github.io/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/%E5%88%9B%E5%BB%BAHexo%E5%8D%9A%E5%AE%A27%C3%9724%E5%B0%8F%E6%97%B6%E6%96%B0%E9%97%BB%E9%A1%B5%E9%9D%A2/","path":"Hexo博客相关/创建Hexo博客7×24小时新闻页面/","title":"创建Hexo博客7×24小时新闻页面"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>创建Hexo博客7×24小时新闻页面 | 读懂世界</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">读懂世界</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">17</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">19</span></a></li><li class="menu-item menu-item-新闻"><a href="/news/" rel="section"><i class="fa fa-file-alt fa-fw"></i>新闻</a></li><li class="menu-item menu-item-书籍"><a href="/book/" rel="section"><i class="fa fa-book fa-fw"></i>书籍</a></li><li class="menu-item menu-item-7x24小时"><a href="/live/" rel="section"><i class="fa fa-clock fa-fw"></i>7x24小时</a></li><li class="menu-item menu-item-中国概况"><a href="/Chinaprofile/" rel="section"><i class="fa fa-history fa-fw"></i>中国概况</a></li><li class="menu-item menu-item-经济大事年表"><a href="/economyTime/" rel="section"><i class="fa fa-history fa-fw"></i>经济大事年表</a></li><li class="menu-item menu-item-经济时间轴"><a href="/economy/" rel="section"><i class="fa fa-pie-chart fa-fw"></i>经济时间轴</a></li><li class="menu-item menu-item-60秒读懂世界"><a href="/60s_news/" rel="section"><i class="fa fa-newspaper fa-fw"></i>60秒读懂世界</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">H1985</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="http://www.reformdata.org/records/1978.shtml" title="改革开放全纪录（1978-2018） → http:&#x2F;&#x2F;www.reformdata.org&#x2F;records&#x2F;1978.shtml" rel="noopener me" target="_blank">改革开放全纪录（1978-2018）</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.mzdbl.cn/rmrb/index.html" title="人民日报（1946-2003） → http:&#x2F;&#x2F;www.mzdbl.cn&#x2F;rmrb&#x2F;index.html" rel="noopener me" target="_blank">人民日报（1946-2003）</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://govopendata.com/" title="公共数据开放平台 → https:&#x2F;&#x2F;govopendata.com&#x2F;" rel="noopener me" target="_blank">公共数据开放平台</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://reader.jojokanbao.cn/" title="JOJO看报 → https:&#x2F;&#x2F;reader.jojokanbao.cn&#x2F;" rel="noopener me" target="_blank">JOJO看报</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://himrr.com/news" title="三花AI资讯 → https:&#x2F;&#x2F;himrr.com&#x2F;news" rel="noopener me" target="_blank">三花AI资讯</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.ludashi.com/rank/index.html" title="鲁大师天梯榜 → https:&#x2F;&#x2F;www.ludashi.com&#x2F;rank&#x2F;index.html" rel="noopener me" target="_blank">鲁大师天梯榜</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qqhsx.github.io/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/%E5%88%9B%E5%BB%BAHexo%E5%8D%9A%E5%AE%A27%C3%9724%E5%B0%8F%E6%97%B6%E6%96%B0%E9%97%BB%E9%A1%B5%E9%9D%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="H1985">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="读懂世界">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="创建Hexo博客7×24小时新闻页面 | 读懂世界">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          创建Hexo博客7×24小时新闻页面
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-06-26 16:02:28 / 修改时间：16:07:57" itemprop="dateCreated datePublished" datetime="2026-06-26T16:02:28+08:00">2026-06-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">Hexo博客相关</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>第一步：在 Hexo 中新建一个独立页面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page live</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>第二步：编辑 <code>index.md</code> 写入前端代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 顶部状态栏：显示倒计时 --&gt;</span><br><span class="line">&lt;div style=&quot;margin-bottom: 0px; padding: 10px 15px; background: #f9f9f9; border-radius: 4px 4px 0 0; font-size: 0.9em; color: #666; border-bottom: 1px solid #eee;&quot;&gt;</span><br><span class="line">  📊 实时数据源：新浪财经直播流 | &lt;span id=&quot;refresh-timer&quot; style=&quot;color: #222; font-weight: bold;&quot;&gt;正在初始化...&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 新闻流总包裹容器（设置相对定位，为整体时间轴服务） --&gt;</span><br><span class="line">&lt;div id=&quot;news-stream-wrap&quot; style=&quot;position: relative; padding: 20px 5px 20px 20px;&quot;&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;!-- 【不间断线条核心】：贯穿整条时间轴的独立纵线 --&gt;</span><br><span class="line">  &lt;div style=&quot;position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: #ccc; z-index: 1;&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 新闻列表实际放置容器（z-index 设为 2，确保圆点盖在长线上） --&gt;</span><br><span class="line">  &lt;div id=&quot;news-stream-container&quot; style=&quot;position: relative; z-index: 2;&quot;&gt;</span><br><span class="line">    &lt;p id=&quot;stream-loading&quot; style=&quot;color: #999; text-align: center; padding: 20px;&quot;&gt;正在连接全球实时财经新闻流...&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 底部加载更多状态提示 --&gt;</span><br><span class="line">&lt;div id=&quot;load-more-status&quot; style=&quot;text-align: center; color: #999; font-size: 0.9em; padding: 15px 0;&quot;&gt;</span><br><span class="line">  滚动到轴底自动加载历史消息...</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">// 基础配置</span><br><span class="line">const BASE_API_URL = &#x27;https://api.98dou.cn/api/hotlist/sina/finance?tag_id=0&#x27;; </span><br><span class="line">const REFRESH_INTERVAL = 60; </span><br><span class="line"></span><br><span class="line">let countdown = REFRESH_INTERVAL;</span><br><span class="line">let timerInterval = null;</span><br><span class="line">let currentPage = 1;       // 当前页码</span><br><span class="line">let isLoadingMore = false;  // 节流阀：防止滚动时重复请求</span><br><span class="line">let hasMoreData = true;    // 是否还有历史数据</span><br><span class="line"></span><br><span class="line">// 1. 核心函数：获取数据（支持追加模式 append）</span><br><span class="line">function fetchNewsData(page = 1, isAppend = false) &#123;</span><br><span class="line">  if (page &gt; 1) &#123;</span><br><span class="line">    document.getElementById(&#x27;load-more-status&#x27;).innerText = &#x27;正在努力加载历史快讯...&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  fetch(`$&#123;BASE_API_URL&#125;&amp;page=$&#123;page&#125;`)</span><br><span class="line">    .then(response =&gt; &#123;</span><br><span class="line">      if (!response.ok) throw new Error(&#x27;Network error&#x27;);</span><br><span class="line">      return response.json();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(res =&gt; &#123;</span><br><span class="line">      const container = document.getElementById(&#x27;news-stream-container&#x27;);</span><br><span class="line">      </span><br><span class="line">      if (res &amp;&amp; res.data &amp;&amp; res.data.length &gt; 0) &#123;</span><br><span class="line">        if (!isAppend) &#123;</span><br><span class="line">          container.innerHTML = &#x27;&#x27;; // 如果是定时刷新，清空最顶层</span><br><span class="line">          currentPage = 1;         // 重置页码</span><br><span class="line">          hasMoreData = true;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        res.data.forEach(item =&gt; &#123;</span><br><span class="line">          const rawTime = item.time || &#x27;&#x27;;</span><br><span class="line">          const displayTime = rawTime.includes(&#x27; &#x27;) ? rawTime.split(&#x27; &#x27;)[1] : rawTime;</span><br><span class="line">          const content = item.content || &#x27;无内容&#x27;;</span><br><span class="line"></span><br><span class="line">          // 创建单条快讯的外层</span><br><span class="line">          const newsItemDiv = document.createElement(&#x27;div&#x27;);</span><br><span class="line">          newsItemDiv.className = &#x27;live-news-item&#x27;;</span><br><span class="line">          // 利用 padding 和 margin 控制间距，确保不打断左侧那条独立的横线</span><br><span class="line">          newsItemDiv.style.cssText = &#x27;position: relative; padding-left: 20px; margin-bottom: 30px;&#x27;;</span><br><span class="line">          </span><br><span class="line">          newsItemDiv.innerHTML = `</span><br><span class="line">            &lt;!-- 时间轴圆点：圆心精准落在 2px 的长线上 --&gt;</span><br><span class="line">            &lt;div style=&quot;position: absolute; left: -2px; top: 5px; width: 8px; height: 8px; background: #333; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 2px #333;&quot;&gt;&lt;/div&gt;</span><br><span class="line">            &lt;!-- 时间 --&gt;</span><br><span class="line">            &lt;span style=&quot;color: #666; font-weight: bold; font-size: 0.88em; font-family: monospace; display: block; margin-bottom: 4px;&quot;&gt;$&#123;displayTime&#125;&lt;/span&gt;</span><br><span class="line">            &lt;!-- 正文内容 --&gt;</span><br><span class="line">            &lt;div style=&quot;color: #333; line-height: 1.6; font-size: 0.95em;&quot;&gt;$&#123;content&#125;&lt;/div&gt;</span><br><span class="line">          `;</span><br><span class="line">          </span><br><span class="line">          container.appendChild(newsItemDiv);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        if (!isAppend) &#123;</span><br><span class="line">          countdown = REFRESH_INTERVAL; // 只有顶层刷新时重置倒计时</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          document.getElementById(&#x27;load-more-status&#x27;).innerText = &#x27;滚动到轴底自动加载历史消息...&#x27;;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        if (isAppend) &#123;</span><br><span class="line">          hasMoreData = false;</span><br><span class="line">          document.getElementById(&#x27;load-more-status&#x27;).innerText = &#x27;已经到底啦，没有更早的新闻了。&#x27;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          container.innerHTML = &#x27;&lt;p style=&quot;text-align:center;color:#999;&quot;&gt;暂无最新消息&lt;/p&gt;&#x27;;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      isLoadingMore = false;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(err =&gt; &#123;</span><br><span class="line">      console.error(err);</span><br><span class="line">      isLoadingMore = false;</span><br><span class="line">      document.getElementById(&#x27;load-more-status&#x27;).innerText = &#x27;加载失败，请重试。&#x27;;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 2. 倒计时定时器（只负责控管首屏和顶部最新数据的更新）</span><br><span class="line">function startTimer() &#123;</span><br><span class="line">  if (timerInterval) clearInterval(timerInterval); </span><br><span class="line">  timerInterval = setInterval(() =&gt; &#123;</span><br><span class="line">    const timerSpan = document.getElementById(&#x27;refresh-timer&#x27;);</span><br><span class="line">    if (!timerSpan) return;</span><br><span class="line"></span><br><span class="line">    if (countdown &lt;= 0) &#123;</span><br><span class="line">      fetchNewsData(1, false); // 倒计时到 0，静默刷新最新数据</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      timerSpan.innerText = `$&#123;countdown&#125; 秒后自动刷新`;</span><br><span class="line">      countdown--;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 3. 【自动滚动加载核心】：监听滚动条触底事件</span><br><span class="line">window.addEventListener(&#x27;scroll&#x27;, () =&gt; &#123;</span><br><span class="line">  // 如果正在加载，或者已经没有更多数据了，直接跳过</span><br><span class="line">  if (isLoadingMore || !hasMoreData) return;</span><br><span class="line"></span><br><span class="line">  // 当滚动到距离屏幕底部小于 150 像素时，触发加载下一页</span><br><span class="line">  if ((window.innerHeight + window.scrollY) &gt;= document.documentElement.scrollHeight - 150) &#123;</span><br><span class="line">    isLoadingMore = true;</span><br><span class="line">    currentPage++;</span><br><span class="line">    fetchNewsData(currentPage, true); // 传入 true，表示以 append 追加模式加载旧数据</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 初始化启动</span><br><span class="line">fetchNewsData(1, false);</span><br><span class="line">startTimer();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/7%C3%9724%E5%B0%8F%E6%97%B6%E6%96%B0%E9%97%BB/" rel="tag"># 7×24小时新闻</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/%E5%88%9B%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%E4%B9%A6%E7%B1%8D%E9%A1%B5%E9%9D%A2/" rel="prev" title="创建Hexo博客书籍页面">
+                  <i class="fa fa-angle-left"></i> 创建Hexo博客书籍页面
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-usd"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">H1985</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"qqhsx/qqhsx.github.io","issue_term":"pathname","theme":"github-light"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>
