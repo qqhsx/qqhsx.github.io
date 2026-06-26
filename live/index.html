@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"qqhsx.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="📊 实时数据源：新浪财经直播流 | 正在初始化...                         正在连接全球实时财经新闻流...          滚动到轴底自动加载历史消息...    &#x2F;&#x2F; 基础配置 const BASE_API_URL &#x3D; &#39;https:&#x2F;&#x2F;api.98dou.cn&#x2F;api&#x2F;hotlist&#x2F;sina&#x2F;finance?tag_id&#x3D;0&#39;;  const REFR">
+    <meta name="description" content="数据源：新浪财经">
 <meta property="og:type" content="website">
 <meta property="og:title" content="7×24小时全球实时新闻">
 <meta property="og:url" content="https://qqhsx.github.io/live/index.html">
 <meta property="og:site_name" content="读懂世界">
-<meta property="og:description" content="📊 实时数据源：新浪财经直播流 | 正在初始化...                         正在连接全球实时财经新闻流...          滚动到轴底自动加载历史消息...    &#x2F;&#x2F; 基础配置 const BASE_API_URL &#x3D; &#39;https:&#x2F;&#x2F;api.98dou.cn&#x2F;api&#x2F;hotlist&#x2F;sina&#x2F;finance?tag_id&#x3D;0&#39;;  const REFR">
+<meta property="og:description" content="数据源：新浪财经">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-26T06:13:14.000Z">
-<meta property="article:modified_time" content="2026-06-26T07:41:31.917Z">
+<meta property="article:modified_time" content="2026-06-26T11:14:07.136Z">
 <meta property="article:author" content="H1985">
 <meta name="twitter:card" content="summary">
 
@@ -210,6 +210,7 @@
 </h1>
 
 <div class="post-meta-container">
+    <div class="post-description">数据源：新浪财经</div>
 </div>
 
 </header>
@@ -219,19 +220,18 @@
       
       <div class="post-body">
           <!-- 顶部状态栏：显示倒计时 -->
-<div style="margin-bottom: 0px; padding: 10px 15px; background: #f9f9f9; border-radius: 4px 4px 0 0; font-size: 0.9em; color: #666; border-bottom: 1px solid #eee;">
-  📊 实时数据源：新浪财经直播流 | <span id="refresh-timer" style="color: #222; font-weight: bold;">正在初始化...</span>
+<div style="margin-bottom: 0px; padding: 10px 15px; border-radius: 4px 4px 0 0; font-size: 0.9em; color: #666; border-bottom: 1px solid #eee;">
+  📊 新浪财经 | <span id="refresh-timer" style="color: #222; font-weight: bold;">正在初始化...</span>
 </div>
 
-<!-- 新闻流总包裹容器（设置相对定位，为整体时间轴服务） -->
+<!-- 新闻流总包裹容器 -->
 <div id="news-stream-wrap" style="position: relative; padding: 20px 5px 20px 20px;">
-  
-  <!-- 【不间断线条核心】：贯穿整条时间轴的独立纵线 -->
-  <div style="position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: #ccc; z-index: 1;"></div>
+  <!-- 贯穿整条时间轴的独立纵线 -->
+  <div style="position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: #eaeaea; z-index: 1;"></div>
 
-  <!-- 新闻列表实际放置容器（z-index 设为 2，确保圆点盖在长线上） -->
+  <!-- 新闻列表实际放置容器 -->
   <div id="news-stream-container" style="position: relative; z-index: 2;">
-    <p id="stream-loading" style="color: #999; text-align: center; padding: 20px;">正在连接全球实时财经新闻流...</p>
+    <p id="stream-loading" style="color: #999; text-align: center; padding: 20px;">正在直连新浪官方快讯流...</p>
   </div>
 </div>
 
@@ -241,83 +241,96 @@
 </div>
 
 <script>
-// 基础配置
-const BASE_API_URL = 'https://api.98dou.cn/api/hotlist/sina/finance?tag_id=0'; 
 const REFRESH_INTERVAL = 60; 
-
 let countdown = REFRESH_INTERVAL;
 let timerInterval = null;
-let currentPage = 1;       // 当前页码
-let isLoadingMore = false;  // 节流阀：防止滚动时重复请求
-let hasMoreData = true;    // 是否还有历史数据
+let currentPage = 1;       
+let isLoadingMore = false;  
+let hasMoreData = true;    
 
-// 1. 核心函数：获取数据（支持追加模式 append）
+// 通过动态创建 script 标签完美解决跨域
 function fetchNewsData(page = 1, isAppend = false) {
   if (page > 1) {
-    document.getElementById('load-more-status').innerText = '正在努力加载历史快讯...';
+    document.getElementById('load-more-status').innerText = '正在调取历史快讯...';
   }
 
-  fetch(`${BASE_API_URL}&page=${page}`)
-    .then(response => {
-      if (!response.ok) throw new Error('Network error');
-      return response.json();
-    })
-    .then(res => {
-      const container = document.getElementById('news-stream-container');
-      
-      if (res && res.data && res.data.length > 0) {
-        if (!isAppend) {
-          container.innerHTML = ''; // 如果是定时刷新，清空最顶层
-          currentPage = 1;         // 重置页码
-          hasMoreData = true;
-        }
-        
-        res.data.forEach(item => {
-          const rawTime = item.time || '';
-          const displayTime = rawTime.includes(' ') ? rawTime.split(' ')[1] : rawTime;
-          const content = item.content || '无内容';
+  const oldScript = document.getElementById('sina-jsonp-script');
+  if (oldScript) oldScript.remove();
 
-          // 创建单条快讯的外层
-          const newsItemDiv = document.createElement('div');
-          newsItemDiv.className = 'live-news-item';
-          // 利用 padding 和 margin 控制间距，确保不打断左侧那条独立的横线
-          newsItemDiv.style.cssText = 'position: relative; padding-left: 20px; margin-bottom: 30px;';
-          
-          newsItemDiv.innerHTML = `
-            <!-- 时间轴圆点：圆心精准落在 2px 的长线上 -->
-            <div style="position: absolute; left: -2px; top: 5px; width: 8px; height: 8px; background: #333; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 2px #333;"></div>
-            <!-- 时间 -->
-            <span style="color: #666; font-weight: bold; font-size: 0.88em; font-family: monospace; display: block; margin-bottom: 4px;">${displayTime}</span>
-            <!-- 正文内容 -->
-            <div style="color: #333; line-height: 1.6; font-size: 0.95em;">${content}</div>
-          `;
-          
-          container.appendChild(newsItemDiv);
-        });
-
-        if (!isAppend) {
-          countdown = REFRESH_INTERVAL; // 只有顶层刷新时重置倒计时
-        } else {
-          document.getElementById('load-more-status').innerText = '滚动到轴底自动加载历史消息...';
-        }
-      } else {
-        if (isAppend) {
-          hasMoreData = false;
-          document.getElementById('load-more-status').innerText = '已经到底啦，没有更早的新闻了。';
-        } else {
-          container.innerHTML = '<p style="text-align:center;color:#999;">暂无最新消息</p>';
-        }
+  // 挂载全局全局回调，进行极强的防御性安全解析
+  window.sinaCallback = function(res) {
+    const container = document.getElementById('news-stream-container');
+    const loadingText = document.getElementById('stream-loading');
+    
+    // 安全地层层向下寻找新闻列表数组
+    let list = [];
+    if (res && res.result && res.result.data) {
+      const data = res.result.data;
+      if (Array.isArray(data)) {
+        list = data;
+      } else if (data.feed && Array.isArray(data.feed.list)) {
+        list = data.feed.list;
       }
-      isLoadingMore = false;
-    })
-    .catch(err => {
-      console.error(err);
-      isLoadingMore = false;
-      document.getElementById('load-more-status').innerText = '加载失败，请重试。';
-    });
+    }
+    
+    if (list.length > 0) {
+      if (!isAppend) {
+        container.innerHTML = ''; // 顶层刷新，清空旧数据
+        currentPage = 1;         
+        hasMoreData = true;
+      } else if (loadingText) {
+        loadingText.remove();
+      }
+      
+      list.forEach(item => {
+        const rawTime = item.create_time || '';
+        const displayTime = rawTime.includes(' ') ? rawTime.split(' ')[1] : rawTime;
+        const content = item.rich_text || item.title || item.content || '无内容';
+    
+        const newsItemDiv = document.createElement('div');
+        newsItemDiv.className = 'live-news-item';
+        newsItemDiv.style.cssText = 'position: relative; padding-left: 20px; margin-bottom: 30px;';
+        
+        newsItemDiv.innerHTML = `
+          <div style="position: absolute; left: -2px; top: 5px; width: 8px; height: 8px; background: #222; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 2px #222;"></div>
+          <span style="color: #666; font-weight: bold; font-size: 0.88em; font-family: monospace; display: block; margin-bottom: 4px;">${displayTime}</span>
+          <div style="color: #333; line-height: 1.6; font-size: 0.95em;">${content}</div>
+        `;
+        
+        container.appendChild(newsItemDiv);
+      });
+    
+      if (!isAppend) {
+        countdown = REFRESH_INTERVAL; 
+      } else {
+        document.getElementById('load-more-status').innerText = '滚动到轴底自动加载历史消息...';
+      }
+    } else {
+      if (isAppend) {
+        hasMoreData = false;
+        document.getElementById('load-more-status').innerText = '已经到底啦，没有更早的新闻了。';
+      } else {
+        container.innerHTML = '<p style="text-align:center;color:#999;">暂无最新消息</p>';
+      }
+    }
+    isLoadingMore = false;
+  };
+
+  // 生成直连脚本
+  const script = document.createElement('script');
+  script.id = 'sina-jsonp-script';
+  // 直接请求你当前在浏览器打开的这个规范接口
+  script.src = `https://zhibo.sina.com.cn/api/zhibo/feed?page=${page}&page_size=30&zhibo_id=152&callback=sinaCallback&_=${new Date().getTime()}`;
+
+  script.onerror = function() {
+    isLoadingMore = false;
+    document.getElementById('load-more-status').innerText = '连接超时，正在自动重试...';
+  };
+
+  document.body.appendChild(script);
 }
 
-// 2. 倒计时定时器（只负责控管首屏和顶部最新数据的更新）
+// 倒计时管理器
 function startTimer() {
   if (timerInterval) clearInterval(timerInterval); 
   timerInterval = setInterval(() => {
@@ -325,24 +338,21 @@ function startTimer() {
     if (!timerSpan) return;
 
     if (countdown <= 0) {
-      fetchNewsData(1, false); // 倒计时到 0，静默刷新最新数据
+      fetchNewsData(1, false); 
     } else {
-      timerSpan.innerText = `${countdown} 秒后自动刷新`;
+      timerSpan.innerText = `${countdown} 秒后刷新`;
       countdown--;
     }
   }, 1000);
 }
 
-// 3. 【自动滚动加载核心】：监听滚动条触底事件
+// 自动触底加载更多
 window.addEventListener('scroll', () => {
-  // 如果正在加载，或者已经没有更多数据了，直接跳过
   if (isLoadingMore || !hasMoreData) return;
-
-  // 当滚动到距离屏幕底部小于 150 像素时，触发加载下一页
-  if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 150) {
+  if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 180) {
     isLoadingMore = true;
     currentPage++;
-    fetchNewsData(currentPage, true); // 传入 true，表示以 append 追加模式加载旧数据
+    fetchNewsData(currentPage, true); 
   }
 });
 
