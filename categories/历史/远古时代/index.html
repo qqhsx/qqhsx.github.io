@@ -340,6 +340,17 @@
 
 <script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"qqhsx/qqhsx.github.io","issue_term":"pathname","theme":"github-light"}</script>
 <script src="/js/third-party/comments/utterances.js"></script>
-
+<script>
+function speakArticle() {
+  const content = document.querySelector('.post-body').innerText;
+  const utterance = new SpeechSynthesisUtterance(content);
+  utterance.lang = 'zh-CN';
+  utterance.rate = 1;
+  speechSynthesis.speak(utterance);
+}
+function stopSpeak() {
+  speechSynthesis.cancel();
+}
+</script>
 </body>
 </html>

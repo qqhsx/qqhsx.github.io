@@ -1282,7 +1282,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #255cff;
+    background: #b0ddff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2858,6 +2858,13 @@ header.header {
   font-size: 0.9em;
   color: inherit;
   vertical-align: middle;
+}
+.tts-icon {
+  color: #808080;
+  transition: color 0.2s;
+}
+.tts-icon:hover {
+  color: #49b1f5; /* NexT 默认主题色，可按你的实际配色调整 */
 }
 .timeline {
   margin: 0 0 20px 10px;
