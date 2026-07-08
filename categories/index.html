@@ -318,15 +318,39 @@
 <script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"qqhsx/qqhsx.github.io","issue_term":"pathname","theme":"github-light"}</script>
 <script src="/js/third-party/comments/utterances.js"></script>
 <script>
-function speakArticle() {
-  const content = document.querySelector('.post-body').innerText;
-  const utterance = new SpeechSynthesisUtterance(content);
-  utterance.lang = 'zh-CN';
-  utterance.rate = 1;
-  speechSynthesis.speak(utterance);
-}
-function stopSpeak() {
-  speechSynthesis.cancel();
+let ttsSpeaking = false;
+
+function toggleSpeak() {
+  const btn = document.getElementById('tts-toggle-btn');
+  
+  if (ttsSpeaking) {
+    // 当前正在朗读 -> 停止
+    speechSynthesis.cancel();
+    ttsSpeaking = false;
+    btn.classList.remove('fa-stop');
+    btn.classList.add('fa-volume-up');
+    btn.title = '朗读本文';
+  } else {
+    // 当前未朗读 -> 开始
+    const content = document.querySelector('.post-body').innerText;
+    const utterance = new SpeechSynthesisUtterance(content);
+    utterance.lang = 'zh-CN';
+    utterance.rate = 1;
+
+    // 朗读自然结束时，图标自动切回播放状态
+    utterance.onend = () => {
+      ttsSpeaking = false;
+      btn.classList.remove('fa-stop');
+      btn.classList.add('fa-volume-up');
+      btn.title = '朗读本文';
+    };
+
+    speechSynthesis.speak(utterance);
+    ttsSpeaking = true;
+    btn.classList.remove('fa-volume-up');
+    btn.classList.add('fa-stop');
+    btn.title = '停止朗读';
+  }
 }
 </script>
 </body>
