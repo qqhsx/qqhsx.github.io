@@ -19,28 +19,23 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"qqhsx.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="人生必读100本书">
-<meta property="og:type" content="website">
-<meta property="og:title" content="书籍">
-<meta property="og:url" content="https://qqhsx.github.io/book/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="读懂世界">
+<meta property="og:url" content="https://qqhsx.github.io/tags/%E4%BB%8E%E7%BE%A4%E5%B1%85%E5%88%B0%E7%BB%8F%E6%B5%8E/index.html">
 <meta property="og:site_name" content="读懂世界">
-<meta property="og:description" content="人生必读100本书">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-07-12T00:16:13.000Z">
-<meta property="article:modified_time" content="2026-05-29T06:00:33.752Z">
 <meta property="article:author" content="H1985">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://qqhsx.github.io/book/">
+<link rel="canonical" href="https://qqhsx.github.io/tags/%E4%BB%8E%E7%BE%A4%E5%B1%85%E5%88%B0%E7%BB%8F%E6%B5%8E/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://qqhsx.github.io/book/index.html","path":"book/index.html","title":"书籍"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/从群居到经济/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>书籍 | 读懂世界
-</title>
+<title>标签: 从群居到经济 | 读懂世界</title>
   
 
 
@@ -201,279 +196,51 @@
 
     </div>
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner tag posts-collapse">
 
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">书籍
-</h1>
-
-<div class="post-meta-container">
-    <div class="post-description">人生必读100本书</div>
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div id="bn-dynamic-bookshelf">
-  <div class="loading-text">正在从云端加载高颜值书架...</div>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // 💡 沿用初版最稳妥的官方直连地址，确保数据实时同步、无缓存延迟
-  const jsonUrl = "https://raw.githubusercontent.com/qqhsx/book/main/data.json"; 
-  const shelfContainer = document.getElementById("bn-dynamic-bookshelf");
-
-  fetch(jsonUrl)
-    .then(response => {
-      if (!response.ok) throw new Error("网络响应异常");
-      return response.json();
-    })
-    .then(books => {
-      if (!books || books.length === 0) {
-        shelfContainer.innerHTML = '<div class="loading-text">书架上空空如也，快去上传书籍吧！</div>';
-        return;
-      }
-      shelfContainer.innerHTML = "";
-
-      // 1. 按分类将书籍归档
-      const categorizedBooks = {};
-      books.forEach(book => {
-        let genre = book.genre || "未分类";
-        if (genre === "经济") genre = "经济理财";
-        if (!categorizedBooks[genre]) categorizedBooks[genre] = [];
-        categorizedBooks[genre].push(book);
-      });
-    
-      // 2. 排序分类
-      const genreOrder = ["经济理财", "历史", "科学技术", "文学"];
-      const sortedGenres = Object.keys(categorizedBooks).sort((a, b) => {
-        let indexA = genreOrder.indexOf(a);
-        let indexB = genreOrder.indexOf(b);
-        if (indexA === -1) indexA = 99;
-        if (indexB === -1) indexB = 99;
-        return indexA - indexB;
-      });
-    
-      // 3. 循环渲染每个分类
-      sortedGenres.forEach(genre => {
-        const shelfId = "shelf-" + Math.random().toString(36).substr(2, 9);
-        const btnId = "btn-" + shelfId;
-        const allBooks = categorizedBooks[genre];
-        
-        let btnHtml = "";
-        if (allBooks.length > 5) {
-          btnHtml = '<button class="bn-view-all-btn" id="' + btnId + '" data-state="collapsed">查看全部 (' + allBooks.length + ') ▾</button>';
-        }
-
-        const shelfHtml = 
-          '<div class="bn-genre-section">' +
-            '<div class="shelf-header">' +
-              '<h2 class="shelf-title">' + getGenreIcon(genre) + ' ' + genre + '</h2>' +
-              btnHtml +
-            '</div>' +
-            '<div class="bn-book-grid mode-scroll" id="' + shelfId + '"></div>' +
-          '</div>';
-
-        shelfContainer.insertAdjacentHTML('beforeend', shelfHtml);
-        const gridContainer = document.getElementById(shelfId);
-    
-        // 渲染该分类下的所有书籍
-        allBooks.forEach(book => {
-          const primaryCover = 'https://raw.githubusercontent.com/qqhsx/book/main/covers/[' + book.genre + ']' + book.title + '-' + book.author + '.jpg';
-          const backupCover = 'https://raw.githubusercontent.com/qqhsx/book/main/covers/[' + book.genre + ']' + book.title + '-' + book.author + '.jpeg';
-    
-          // 💡 升级版核心：改用 CSS 背景图机制，避开主题对 <img> 标签的干扰，实现完全像素级对齐
-          const cardHtml = 
-            '<div class="bn-book-card">' +
-              '<div class="cover-wrapper" style="background-image: url(\'' + primaryCover + '\');" data-backup="' + backupCover + '">' +
-              '</div>' +
-              '<div class="bn-book-title" title="' + book.title + '">' + book.title + '</div>' +
-              '<div class="bn-book-author" title="' + book.author + '">' + book.author + '</div>' +
-              '<a href="' + book.file_path + '" class="bn-read-btn" target="_blank">立即阅读</a>' +
-            '</div>';
-
-          gridContainer.insertAdjacentHTML('beforeend', cardHtml);
-        });
-
-        // 💡 自动追补加载错误的 .jpeg 图片逻辑
-        gridContainer.querySelectorAll('.cover-wrapper').forEach(wrapper => {
-          const bgUrl = wrapper.style.backgroundImage.slice(5, -2);
-          const img = new Image();
-          img.src = bgUrl;
-          img.onerror = function() {
-            const backup = wrapper.getAttribute('data-backup');
-            wrapper.style.backgroundImage = "url('" + backup + "')";
-            
-            const img2 = new Image();
-            img2.src = backup;
-            img2.onerror = function() {
-              wrapper.style.backgroundImage = "url('https://via.placeholder.com/150x220?text=No+Cover')";
-            };
-          };
-        });
-    
-        // 💡 滚轮横转魔法：让普通鼠标上下滚轮，转化为书架左右滑动
-        gridContainer.addEventListener('wheel', function(e) {
-          if (gridContainer.classList.contains('mode-scroll')) {
-            e.preventDefault(); 
-            gridContainer.scrollLeft += e.deltaY; 
-          }
-        });
-
-        // 4. 绑定双模切换事件
-        if (allBooks.length > 5) {
-          const toggleBtn = document.getElementById(btnId);
-          toggleBtn.addEventListener('click', function() {
-            const isCollapsed = this.getAttribute('data-state') === 'collapsed';
-            
-            if (isCollapsed) {
-              gridContainer.classList.remove('mode-scroll');
-              gridContainer.classList.add('mode-grid');
-              this.setAttribute('data-state', 'expanded');
-              this.innerHTML = '收起书架 ▴';
-            } else {
-              gridContainer.classList.remove('mode-grid');
-              gridContainer.classList.add('mode-scroll');
-              this.setAttribute('data-state', 'collapsed');
-              this.innerHTML = '查看全部 (' + allBooks.length + ') ▾';
-            }
-          });
-        }
-      });
-    })
-    .catch(error => {
-      shelfContainer.innerHTML = '<div class="error-text">书架加载失败: ' + error.message + '</div>';
-    });
-});
-
-function getGenreIcon(genre) {
-  const icons = { "经济理财": "🤑", "历史": "⏳", "科学技术": "🔬", "文学": "📚", "未分类": "📖" };
-  return icons[genre] || "🔖";
-}
-</script>
-
-<style>
-.bn-genre-section { margin-bottom: 40px; }
-.loading-text, .error-text { text-align: center; padding: 40px; color: #767676; font-size: 15px; }
-.error-text { color: #cc0000; line-height: 1.8; }
-
-.shelf-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  border-bottom: 2px solid #006644 !important;
-  padding-bottom: 8px;
-  margin-top: 30px !important;
-  margin-bottom: 20px !important;
-}
-.shelf-title {
-  font-size: 20px !important;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 !important;
-  border: none !important;
-  padding: 0 !important;
-}
-
-.bn-view-all-btn {
-  background: none;
-  border: none;
-  color: #006644;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 4px 8px;
-  transition: color 0.2s;
-}
-.bn-view-all-btn:hover { color: #004d33; text-decoration: underline; }
-
-/* 默认：横向滚动模式 */
-.bn-book-grid.mode-scroll {
-  display: flex;
-  overflow-x: auto;
-  gap: 25px;
-  padding: 10px 5px 20px 5px;
-  scrollbar-width: none; /* 隐藏 Firefox 滚动条 */
-}
-.bn-book-grid.mode-scroll::-webkit-scrollbar { display: none; } /* 隐藏 Chrome 滚动条 */
-.bn-book-grid.mode-scroll .bn-book-card { flex: 0 0 150px; }
-
-/* 点击展开后：网格平铺模式 */
-.bn-book-grid.mode-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 25px;
-  padding: 10px 0;
-}
-
-.bn-book-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background: #fff;
-  padding: 10px;
-  border-radius: 6px;
-  transition: transform 0.3s ease;
-}
-.bn-book-card:hover { transform: translateY(-6px); }
-
-/* 💡 降维打击样式：绝对定死外框大小，不受 Hexo 主题任何 img 规则的干扰 */
-.cover-wrapper {
-  width: 150px !important;
-  height: 220px !important;
-  overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06);
-  margin-bottom: 12px;
-  background-color: #f5f5f5;
   
-  /* 精准背景图定位及完全填满 */
-  background-position: center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  transition: transform 0.3s ease;
-}
-.bn-book-card:hover .cover-wrapper { transform: scale(1.05); }
-
-.bn-book-title { font-size: 14px; font-weight: 600; color: #2b2b2b; margin: 4px 0; line-height: 1.3; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.bn-book-author { font-size: 12px; color: #767676; margin-bottom: 10px; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-.bn-read-btn {
-  display: inline-block;
-  width: 85%;
-  padding: 6px 0;
-  background-color: #006644 !important;
-  color: #ffffff !important;
-  font-size: 12px;
-  font-weight: 500;
-  text-decoration: none !important;
-  border-radius: 20px;
-  transition: background-color 0.2s ease;
-  margin-top: auto;
-}
-.bn-read-btn:hover { background-color: #004d33 !important; box-shadow: 0 4px 8px rgba(0,102,68,0.2); }
-</style>
+  
+  
+  <div class="post-block">
+    <div class="post-content">
+      <div class="collection-title">
+        <h1 class="collection-header">从群居到经济
+          <small>标签</small>
+        </h1>
       </div>
+
       
-      
-      
+    <div class="collection-year">
+      <span class="collection-header">2026</span>
     </div>
 
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2026-07-23T20:56:01+08:00"
+              content="2026-07-23">
+          07-23
+        </time>
+      </div>
 
+      <div class="post-title">
+          <a class="post-title-link" href="/%E7%BB%8F%E6%B5%8E/%E4%BB%8E%E7%BE%A4%E5%B1%85%E5%88%B0%E7%BB%8F%E6%B5%8E%EF%BC%9A%E4%BA%BA%E7%B1%BB%E6%96%87%E6%98%8E%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AD%A5/" itemprop="url">
+            <span itemprop="name">从群居到经济：人类文明的第一步</span>
+          </a>
+      </div>
 
-    <div class="comments utterances-container"></div>
+      
+    </header>
+  </article>
+
+    </div>
+  </div>
+  
+  
+  
+
 </div>
   </main>
 
